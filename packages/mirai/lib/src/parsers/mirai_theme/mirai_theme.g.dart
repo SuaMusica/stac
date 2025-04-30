@@ -110,6 +110,8 @@ _$MiraiThemeImpl _$$MiraiThemeImplFromJson(Map<String, dynamic> json) =>
           ? null
           : MiraiTabBarThemeData.fromJson(
               json['tabBarTheme'] as Map<String, dynamic>),
+      extensions: fromJsonThemeExtension(
+          json['extensions'] as List<Map<String, dynamic>>),
     );
 
 Map<String, dynamic> _$$MiraiThemeImplToJson(_$MiraiThemeImpl instance) =>
