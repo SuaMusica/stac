@@ -93,6 +93,10 @@ class Mirai {
     MiraiNetworkService.initialize(dio ?? Dio());
   }
 
+  static void setParseCustomColor(Color? Function(String?)? parseCustomColor) {
+    MiraiRegistry.instance.parseCustomColor = parseCustomColor;
+  }
+
   static Widget? fromJson(Map<String, dynamic>? json, BuildContext context) {
     try {
       if (json != null) {

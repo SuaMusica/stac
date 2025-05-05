@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mirai/src/SM/sm_stac_theme_extension.dart'
-    hide SMColorExtension;
 import 'package:mirai/src/parsers/mirai_app_bar_theme/mirai_app_bar_theme.dart';
 import 'package:mirai/src/parsers/mirai_bottom_app_bar_theme/mirai_bottom_app_bar_theme.dart';
 import 'package:mirai/src/parsers/mirai_bottom_nav_bar_theme/mirai_bottom_nav_bar_theme.dart';
@@ -68,29 +66,15 @@ class MiraiTheme with _$MiraiTheme {
     MiraiListTileThemeData? listTileTheme,
     MiraiNavigationBarThemeData? navigationBarTheme,
     MiraiTabBarThemeData? tabBarTheme,
-    @JsonKey(fromJson: fromJsonThemeExtension, includeToJson: false)
-    Iterable<ThemeExtension<SMStacThemeExtension>>? extensions,
   }) = _MiraiTheme;
 
   factory MiraiTheme.fromJson(Map<String, dynamic> json) =>
       _$MiraiThemeFromJson(json);
-
-  factory MiraiTheme.fromJsonWithExtensions(List<Map<String, dynamic>> json) {
-    final firstJson = json.first;
-    return _$MiraiThemeFromJson(firstJson)
-        .copyWith(extensions: fromJsonThemeExtension(firstJson['extensions']));
-  }
-}
-
-Iterable<ThemeExtension<SMStacThemeExtension>>? fromJsonThemeExtension(
-    List<Map<String, dynamic>> json) {
-  return [SMStacThemeExtension.fromJson(json.first)];
 }
 
 extension MiraiThemeParser on MiraiTheme {
   ThemeData? parse(BuildContext context) {
     return ThemeData(
-      extensions: extensions,
       applyElevationOverlayColor: applyElevationOverlayColor,
       inputDecorationTheme: inputDecorationTheme.parse(context),
       useMaterial3: useMaterial3,
