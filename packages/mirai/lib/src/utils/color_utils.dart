@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirai/src/framework/mirai_registry.dart';
 import 'package:mirai/src/utils/color_type.dart';
 
 extension ColorExt on String? {
@@ -69,6 +70,10 @@ extension ColorExt on String? {
       case ColorType.scaffoldBackgroundColor:
         return Theme.of(context).scaffoldBackgroundColor;
       case ColorType.none:
+        final customColor = MiraiRegistry.instance.parseCustomColor?.call(this);
+        if (customColor != null) {
+          return customColor;
+        }
         final buffer = StringBuffer();
         if (this!.length == 6 || this!.length == 7) buffer.write('ff');
         buffer.write(this!.replaceFirst('#', ''));

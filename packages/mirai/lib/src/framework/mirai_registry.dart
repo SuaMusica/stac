@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:mirai/src/utils/log.dart';
 import 'package:mirai_framework/mirai_framework.dart';
 
@@ -7,6 +8,8 @@ class MiraiRegistry {
   static final MiraiRegistry _singleton = MiraiRegistry._internal();
 
   factory MiraiRegistry() => _singleton;
+
+  Color? Function(String?)? parseCustomColor;
 
   static MiraiRegistry get instance => _singleton;
 
