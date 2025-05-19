@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:stac/src/utils/log.dart';
 import 'package:stac_framework/stac_framework.dart';
 
@@ -13,6 +14,8 @@ class StacRegistry {
   static final _stacParsers = <String, StacParser>{};
 
   static final _stacActionParsers = <String, StacActionParser>{};
+
+  Color? Function(String?)? parseCustomColor;
 
   bool register(StacParser parser, [bool override = false]) {
     final String type = parser.type;
