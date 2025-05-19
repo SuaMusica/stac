@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_type.dart';
+import 'package:stac/stac.dart';
 
 const String _hashtag = "#";
 const String _empty = "";
@@ -91,6 +92,10 @@ Color? _parseThemeColor(String color, BuildContext context) {
     case StacColorType.scaffoldBackgroundColor:
       return Theme.of(context).scaffoldBackgroundColor;
     case StacColorType.none:
+      final customColor = StacRegistry.instance.parseCustomColor?.call(color);
+      if (customColor != null) {
+        return customColor;
+      }
       return null;
   }
 }
