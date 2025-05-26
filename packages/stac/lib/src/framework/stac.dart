@@ -10,6 +10,7 @@ import 'package:stac/src/framework/stac_registry.dart';
 import 'package:stac/src/parsers/parsers.dart';
 import 'package:stac/src/services/stac_network_service.dart';
 import 'package:stac/src/utils/log.dart';
+import 'package:stac/src/utils/version/stac_version.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 typedef ErrorWidgetBuilder = Widget Function(
@@ -112,11 +113,13 @@ class Stac {
     List<StacActionParser> actionParsers = const [],
     Dio? dio,
     bool override = false,
+    String? appVersion,
   }) async {
     _parsers.addAll(parsers);
     _actionParsers.addAll(actionParsers);
     StacRegistry.instance.registerAll(_parsers, override);
     StacRegistry.instance.registerAllActions(_actionParsers, override);
+    StacRegistry.instance.registerAppVersion(appVersion);
     StacNetworkService.initialize(dio ?? Dio());
   }
 
@@ -126,8 +129,19 @@ class Stac {
   static Widget? fromJson(Map<String, dynamic>? json, BuildContext context) {
     try {
       if (json != null) {
+        final stacRegistry = StacRegistry.instance;
+        StacVersion? jsonVersion = json['version'];
+
+        if (jsonVersion != null && stacRegistry.appVersion != null) {
+          final isSatisfied = jsonVersion.isSatisfied(stacRegistry.appVersion);
+          if (!isSatisfied) {
+            Log.w('Stac version ${jsonVersion.version} is not satisfied');
+            return null;
+          }
+        }
+
         String widgetType = json['type'];
-        StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
+        StacParser? stacParser = stacRegistry.getParser(widgetType);
         if (stacParser != null) {
           final model = stacParser.getModel(json);
           return stacParser.parse(context, model);
