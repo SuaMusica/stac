@@ -71,32 +71,37 @@ extension StacVersionX on StacVersion {
     final current = appVersion.split('.').toIntList();
     final target = versionCode.split('.').toIntList();
 
-    final maxLength = math.max(current.length, target.length);
-    current.length = maxLength;
-    target.length = maxLength;
-    current.fillRange(current.length, maxLength, 0);
-    target.fillRange(target.length, maxLength, 0);
+    final maxLength =
+        [current.length, target.length].reduce((a, b) => a > b ? a : b);
 
-    debugPrint(
-        'stacteste: current: $current | target: $target | maxLength: $maxLength');
+    while (current.length < maxLength) {
+      current.add(0);
+    }
+    while (target.length < maxLength) {
+      target.add(0);
+    }
 
-    // Compara os números
     for (int i = 0; i < maxLength; i++) {
       if (current[i] != target[i]) {
         final comp = current[i].compareTo(target[i]);
-        debugPrint(
-            'stacteste: comp: $comp | condition: $condition | current: $current | target: $target');
         return switch (condition) {
           StacConditionVersion.greaterThan => comp > 0,
           StacConditionVersion.greaterThanOrEqual => comp >= 0,
           StacConditionVersion.lessThan => comp < 0,
           StacConditionVersion.lessThanOrEqual => comp <= 0,
-          StacConditionVersion.equal => comp == 0,
-          StacConditionVersion.notEqual => comp != 0,
+          StacConditionVersion.equal => false,
+          StacConditionVersion.notEqual => true,
         };
       }
     }
 
-    return false;
+    return switch (condition) {
+      StacConditionVersion.greaterThan => false,
+      StacConditionVersion.greaterThanOrEqual => true,
+      StacConditionVersion.lessThan => false,
+      StacConditionVersion.lessThanOrEqual => true,
+      StacConditionVersion.equal => true,
+      StacConditionVersion.notEqual => false,
+    };
   }
 }
