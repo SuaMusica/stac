@@ -8,13 +8,13 @@ part of 'stac_version.dart';
 
 _$StacVersionImpl _$$StacVersionImplFromJson(Map<String, dynamic> json) =>
     _$StacVersionImpl(
-      version: json['version'] as String,
-      condition: $enumDecode(_$StacConditionVersionEnumMap, json['condition']),
+      versionCode: json['versionCode'] as String,
+      condition: StacVersion.fromJsonCondition(json['condition'] as String?),
     );
 
 Map<String, dynamic> _$$StacVersionImplToJson(_$StacVersionImpl instance) =>
     <String, dynamic>{
-      'version': instance.version,
+      'versionCode': instance.versionCode,
       'condition': _$StacConditionVersionEnumMap[instance.condition]!,
     };
 
