@@ -20,7 +20,9 @@ StacVersion _$StacVersionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StacVersion {
-  String get version => throw _privateConstructorUsedError;
+  String get versionCode =>
+      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  @JsonKey(fromJson: StacVersion.fromJsonCondition)
   StacConditionVersion get condition => throw _privateConstructorUsedError;
 
   /// Serializes this StacVersion to a JSON map.
@@ -39,7 +41,10 @@ abstract class $StacVersionCopyWith<$Res> {
           StacVersion value, $Res Function(StacVersion) then) =
       _$StacVersionCopyWithImpl<$Res, StacVersion>;
   @useResult
-  $Res call({String version, StacConditionVersion condition});
+  $Res call(
+      {String versionCode,
+      @JsonKey(fromJson: StacVersion.fromJsonCondition)
+      StacConditionVersion condition});
 }
 
 /// @nodoc
@@ -57,13 +62,13 @@ class _$StacVersionCopyWithImpl<$Res, $Val extends StacVersion>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = null,
+    Object? versionCode = null,
     Object? condition = null,
   }) {
     return _then(_value.copyWith(
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
+      versionCode: null == versionCode
+          ? _value.versionCode
+          : versionCode // ignore: cast_nullable_to_non_nullable
               as String,
       condition: null == condition
           ? _value.condition
@@ -81,7 +86,10 @@ abstract class _$$StacVersionImplCopyWith<$Res>
       __$$StacVersionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String version, StacConditionVersion condition});
+  $Res call(
+      {String versionCode,
+      @JsonKey(fromJson: StacVersion.fromJsonCondition)
+      StacConditionVersion condition});
 }
 
 /// @nodoc
@@ -97,13 +105,13 @@ class __$$StacVersionImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = null,
+    Object? versionCode = null,
     Object? condition = null,
   }) {
     return _then(_$StacVersionImpl(
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
+      versionCode: null == versionCode
+          ? _value.versionCode
+          : versionCode // ignore: cast_nullable_to_non_nullable
               as String,
       condition: null == condition
           ? _value.condition
@@ -116,19 +124,24 @@ class __$$StacVersionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$StacVersionImpl implements _StacVersion {
-  const _$StacVersionImpl({required this.version, required this.condition});
+  const _$StacVersionImpl(
+      {required this.versionCode,
+      @JsonKey(fromJson: StacVersion.fromJsonCondition)
+      required this.condition});
 
   factory _$StacVersionImpl.fromJson(Map<String, dynamic> json) =>
       _$$StacVersionImplFromJson(json);
 
   @override
-  final String version;
+  final String versionCode;
+// ignore: invalid_annotation_target
   @override
+  @JsonKey(fromJson: StacVersion.fromJsonCondition)
   final StacConditionVersion condition;
 
   @override
   String toString() {
-    return 'StacVersion(version: $version, condition: $condition)';
+    return 'StacVersion(versionCode: $versionCode, condition: $condition)';
   }
 
   @override
@@ -136,14 +149,15 @@ class _$StacVersionImpl implements _StacVersion {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StacVersionImpl &&
-            (identical(other.version, version) || other.version == version) &&
+            (identical(other.versionCode, versionCode) ||
+                other.versionCode == versionCode) &&
             (identical(other.condition, condition) ||
                 other.condition == condition));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, version, condition);
+  int get hashCode => Object.hash(runtimeType, versionCode, condition);
 
   /// Create a copy of StacVersion
   /// with the given fields replaced by the non-null parameter values.
@@ -163,15 +177,17 @@ class _$StacVersionImpl implements _StacVersion {
 
 abstract class _StacVersion implements StacVersion {
   const factory _StacVersion(
-      {required final String version,
+      {required final String versionCode,
+      @JsonKey(fromJson: StacVersion.fromJsonCondition)
       required final StacConditionVersion condition}) = _$StacVersionImpl;
 
   factory _StacVersion.fromJson(Map<String, dynamic> json) =
       _$StacVersionImpl.fromJson;
 
   @override
-  String get version;
+  String get versionCode; // ignore: invalid_annotation_target
   @override
+  @JsonKey(fromJson: StacVersion.fromJsonCondition)
   StacConditionVersion get condition;
 
   /// Create a copy of StacVersion

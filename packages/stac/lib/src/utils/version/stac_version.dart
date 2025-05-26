@@ -1,5 +1,7 @@
 import 'dart:math' as math;
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stac/stac.dart';
 
 part 'stac_version.freezed.dart';
 part 'stac_version.g.dart';
@@ -7,44 +9,17 @@ part 'stac_version.g.dart';
 @freezed
 class StacVersion with _$StacVersion {
   const factory StacVersion({
-    required String version,
+    required String versionCode,
+    // ignore: invalid_annotation_target
+    @JsonKey(fromJson: StacVersion.fromJsonCondition)
     required StacConditionVersion condition,
   }) = _StacVersion;
 
   factory StacVersion.fromJson(Map<String, dynamic> json) =>
       _$StacVersionFromJson(json);
 
-  bool isSatisfied(String? targetVersion) {
-    if (targetVersion == null) {
-      return false;
-    }
-
-    final current = version.split('.').toIntList();
-    final target = targetVersion.split('.').toIntList();
-
-    final maxLength = math.max(current.length, target.length);
-    current.length = maxLength;
-    target.length = maxLength;
-    current.fillRange(current.length, maxLength, 0);
-    target.fillRange(target.length, maxLength, 0);
-
-    // Compara os números
-    for (int i = 0; i < maxLength; i++) {
-      if (current[i] != target[i]) {
-        final comp = current[i].compareTo(target[i]);
-        return switch (condition) {
-          StacConditionVersion.greaterThan => comp > 0,
-          StacConditionVersion.greaterThanOrEqual => comp >= 0,
-          StacConditionVersion.lessThan => comp < 0,
-          StacConditionVersion.lessThanOrEqual => comp <= 0,
-          StacConditionVersion.equal => false,
-          StacConditionVersion.notEqual => true,
-        };
-      }
-    }
-
-    return false;
-  }
+  static StacConditionVersion fromJsonCondition(String? json) =>
+      json?.toStacConditionVersion() ?? StacConditionVersion.notEqual;
 }
 
 enum StacConditionVersion {
@@ -80,4 +55,40 @@ extension StacConditionVersionToStringX on StacConditionVersion {
 
 extension ListStringX on List<String> {
   List<int> toIntList() => map((e) => int.tryParse(e) ?? 0).toList();
+}
+
+extension StacVersionX on StacVersion {
+  bool isSatisfied() {
+    final appVersion = StacRegistry.instance.appVersion;
+
+    if (appVersion == null) {
+      return false;
+    }
+
+    final current = appVersion.split('.').toIntList();
+    final target = versionCode.split('.').toIntList();
+
+    final maxLength = math.max(current.length, target.length);
+    current.length = maxLength;
+    target.length = maxLength;
+    current.fillRange(current.length, maxLength, 0);
+    target.fillRange(target.length, maxLength, 0);
+
+    // Compara os números
+    for (int i = 0; i < maxLength; i++) {
+      if (current[i] != target[i]) {
+        final comp = current[i].compareTo(target[i]);
+        return switch (condition) {
+          StacConditionVersion.greaterThan => comp > 0,
+          StacConditionVersion.greaterThanOrEqual => comp >= 0,
+          StacConditionVersion.lessThan => comp < 0,
+          StacConditionVersion.lessThanOrEqual => comp <= 0,
+          StacConditionVersion.equal => false,
+          StacConditionVersion.notEqual => true,
+        };
+      }
+    }
+
+    return false;
+  }
 }

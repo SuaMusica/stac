@@ -130,12 +130,14 @@ class Stac {
     try {
       if (json != null) {
         final stacRegistry = StacRegistry.instance;
-        StacVersion? jsonVersion = json['version'];
+        Map<String, dynamic>? jsonVersion = json['version'];
 
         if (jsonVersion != null && stacRegistry.appVersion != null) {
-          final isSatisfied = jsonVersion.isSatisfied(stacRegistry.appVersion);
+          final stacVersion = StacVersion.fromJson(jsonVersion);
+          final isSatisfied = stacVersion.isSatisfied();
           if (!isSatisfied) {
-            Log.w('Stac version ${jsonVersion.version} is not satisfied');
+            Log.w(
+                'Stac versionCode ${stacVersion.versionCode} is not satisfied; current version is: ${stacRegistry.appVersion}');
             return null;
           }
         }
