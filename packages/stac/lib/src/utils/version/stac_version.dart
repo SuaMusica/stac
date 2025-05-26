@@ -65,6 +65,9 @@ extension StacVersionX on StacVersion {
       return false;
     }
 
+    debugPrint(
+        'stacteste: appVersion: $appVersion | versionCode: $versionCode');
+
     final current = appVersion.split('.').toIntList();
     final target = versionCode.split('.').toIntList();
 
@@ -74,17 +77,22 @@ extension StacVersionX on StacVersion {
     current.fillRange(current.length, maxLength, 0);
     target.fillRange(target.length, maxLength, 0);
 
+    debugPrint(
+        'stacteste: current: $current | target: $target | maxLength: $maxLength');
+
     // Compara os números
     for (int i = 0; i < maxLength; i++) {
       if (current[i] != target[i]) {
         final comp = current[i].compareTo(target[i]);
+        debugPrint(
+            'stacteste: comp: $comp | condition: $condition | current: $current | target: $target');
         return switch (condition) {
           StacConditionVersion.greaterThan => comp > 0,
           StacConditionVersion.greaterThanOrEqual => comp >= 0,
           StacConditionVersion.lessThan => comp < 0,
           StacConditionVersion.lessThanOrEqual => comp <= 0,
-          StacConditionVersion.equal => false,
-          StacConditionVersion.notEqual => true,
+          StacConditionVersion.equal => comp == 0,
+          StacConditionVersion.notEqual => comp != 0,
         };
       }
     }
