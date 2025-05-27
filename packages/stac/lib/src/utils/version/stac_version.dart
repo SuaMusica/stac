@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/stac.dart';
@@ -9,7 +8,7 @@ part 'stac_version.g.dart';
 @freezed
 class StacVersion with _$StacVersion {
   const factory StacVersion({
-    required String versionCode,
+    required String versionCode,//buildNumber - int
     // ignore: invalid_annotation_target
     @JsonKey(fromJson: StacVersion.fromJsonCondition)
     required StacConditionVersion condition,
@@ -20,6 +19,14 @@ class StacVersion with _$StacVersion {
 
   static StacConditionVersion fromJsonCondition(String? json) =>
       json?.toStacConditionVersion() ?? StacConditionVersion.notEqual;
+
+  // {
+  //   "version": {
+  //     "versionCode": "6936",
+  //     "versionCode_ios": "6940",
+  //     "condition": ">"
+  //   }
+  // }
 }
 
 enum StacConditionVersion {
