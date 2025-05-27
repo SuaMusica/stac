@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:stac/src/framework/stac_registry.dart';
 import 'package:stac/src/utils/version/stac_version.dart';
+
+String platform = Platform.operatingSystem;
 
 void main() {
   group('StacVersion', () {
@@ -157,6 +161,112 @@ void main() {
       conditions.forEach((condition, expected) {
         expect(condition.toTypeString(), expected);
       });
+    });
+  });
+
+  /// platform tests
+  group('platform tests', () {
+    test('uses platform-specific buildNumber when available', () {
+      final json = {
+        'buildNumber': 1000,
+        'buildNumber_$platform': 2000,
+        'condition': '>',
+      };
+
+      final version = StacVersion.fromJson(json);
+
+      // Should use platform-specific buildNumber (`platform` in this case)
+      expect(version.buildNumber, 2000);
+      expect(version.condition, StacConditionVersion.greaterThan);
+    });
+
+    test(
+        'falls back to generic buildNumber when platform-specific not available',
+        () {
+      final json = {
+        'buildNumber': 1500,
+        'buildNumber_ios': 2500, // Different platform
+        'condition': '>=',
+      };
+
+      final version = StacVersion.fromJson(json);
+
+      // Should use generic buildNumber since `platform`-specific is not available
+      expect(version.buildNumber, 1500);
+      expect(version.condition, StacConditionVersion.greaterThanOrEqual);
+    });
+
+    test('uses platform-specific condition when available', () {
+      final json = {
+        'buildNumber': 1000,
+        'condition': '>',
+        'condition_$platform': '<=',
+      };
+
+      final version = StacVersion.fromJson(json);
+
+      expect(version.buildNumber, 1000);
+      // Should use platform-specific condition
+      expect(version.condition, StacConditionVersion.lessThanOrEqual);
+    });
+
+    test('falls back to generic condition when platform-specific not available',
+        () {
+      final json = {
+        'buildNumber': 1000,
+        'condition': '<',
+        'condition_windows': '!=', // Different platform
+      };
+
+      final version = StacVersion.fromJson(json);
+
+      expect(version.buildNumber, 1000);
+      // Should use generic condition since `platform`-specific is not available
+      expect(version.condition, StacConditionVersion.lessThan);
+    });
+
+    test('uses both platform-specific values when available', () {
+      final json = {
+        'buildNumber': 1000,
+        'buildNumber_$platform': 3000,
+        'condition': '>',
+        'condition_$platform': '==',
+      };
+
+      final version = StacVersion.fromJson(json);
+
+      // Should use both platform-specific values
+      expect(version.buildNumber, 3000);
+      expect(version.condition, StacConditionVersion.equal);
+    });
+
+    test('handles missing generic fallback gracefully', () {
+      final json = {
+        'buildNumber_ios':
+            2000, // Only platform-specific for different platform
+        'condition_android':
+            '>=', // Only platform-specific for different platform
+      };
+
+      // This should throw or handle gracefully since there's no fallback
+      expect(() => StacVersion.fromJson(json), throwsA(isA<Error>()));
+    });
+
+    test('toPlatformJson method works correctly', () {
+      final json = {
+        'key': 'generic_value',
+        'key_$platform': 'platform_value',
+        'other_key': 'other_generic',
+      };
+
+      // Should return platform-specific value when available
+      expect(StacVersion.toPlatformJson(json, 'key'), 'platform_value');
+
+      // Should return generic value when platform-specific not available
+      expect(StacVersion.toPlatformJson(json, 'other_key'), 'other_generic');
+
+      // Should return null when neither exists
+      expect(StacVersion.toPlatformJson(json, 'missing_key'), isNull);
     });
   });
 }
