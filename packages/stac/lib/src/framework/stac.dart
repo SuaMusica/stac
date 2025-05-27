@@ -114,7 +114,7 @@ class Stac {
     List<StacActionParser> actionParsers = const [],
     Dio? dio,
     bool override = false,
-    String? buildNumber,
+    int? buildNumber,
   }) async {
     _parsers.addAll(parsers);
     _actionParsers.addAll(actionParsers);
@@ -140,7 +140,7 @@ class Stac {
           final isSatisfied = stacVersion.isSatisfied();
           if (!isSatisfied) {
             Log.w(
-                'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current version is: ${stacRegistry.buildNumber}');
+                'Stac versionCode ${stacVersion.versionCode} is not satisfied; current version is: ${stacRegistry.buildNumber}');
             return null;
           }
         }
