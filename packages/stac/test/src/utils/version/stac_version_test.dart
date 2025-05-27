@@ -6,28 +6,28 @@ void main() {
   group('StacVersion', () {
     setUp(() {
       // Reset the app version before each test
-      StacRegistry.instance.registerAppVersion(null);
+      StacRegistry.instance.registerBuildNumber(null);
     });
 
     test('creates StacVersion instance correctly', () {
       final version = StacVersion(
-        versionCode: '1.0.0',
+        buildNumber: 1000,
         condition: StacConditionVersion.equal,
       );
 
-      expect(version.versionCode, '1.0.0');
+      expect(version.buildNumber, 1000);
       expect(version.condition, StacConditionVersion.equal);
     });
 
     test('creates StacVersion from JSON correctly', () {
       final json = {
-        'versionCode': '1.0.0',
+        'buildNumber': 1000,
         'condition': '>',
       };
 
       final version = StacVersion.fromJson(json);
 
-      expect(version.versionCode, '1.0.0');
+      expect(version.buildNumber, 1000);
       expect(version.condition, StacConditionVersion.greaterThan);
     });
 
@@ -56,13 +56,13 @@ void main() {
 
     group('isSatisfied', () {
       setUp(() {
-        StacRegistry.instance.registerAppVersion('2.0.0');
+        StacRegistry.instance.registerBuildNumber(2000);
       });
 
       test('returns false when app version is null', () {
-        StacRegistry.instance.registerAppVersion(null);
+        StacRegistry.instance.registerBuildNumber(null);
         final version = StacVersion(
-          versionCode: '1.0.0',
+          buildNumber: 1000,
           condition: StacConditionVersion.equal,
         );
         expect(version.isSatisfied(), false);
@@ -70,13 +70,13 @@ void main() {
 
       test('handles equal condition correctly', () {
         final version = StacVersion(
-          versionCode: '2.0.0',
+          buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
         expect(version.isSatisfied(), true);
 
         final differentVersion = StacVersion(
-          versionCode: '1.0.0',
+          buildNumber: 1000,
           condition: StacConditionVersion.equal,
         );
         expect(differentVersion.isSatisfied(), false);
@@ -84,13 +84,13 @@ void main() {
 
       test('handles greater than condition correctly', () {
         final version = StacVersion(
-          versionCode: '1.0.0',
+          buildNumber: 1000,
           condition: StacConditionVersion.greaterThan,
         );
         expect(version.isSatisfied(), true);
 
         final higherVersion = StacVersion(
-          versionCode: '3.0.0',
+          buildNumber: 3000,
           condition: StacConditionVersion.greaterThan,
         );
         expect(higherVersion.isSatisfied(), false);
@@ -98,45 +98,45 @@ void main() {
 
       test('handles less than condition correctly', () {
         final version = StacVersion(
-          versionCode: '3.0.0',
+          buildNumber: 3000,
           condition: StacConditionVersion.lessThan,
         );
         expect(version.isSatisfied(), true);
 
         final lowerVersion = StacVersion(
-          versionCode: '1.0.0',
+          buildNumber: 1000,
           condition: StacConditionVersion.lessThan,
         );
         expect(lowerVersion.isSatisfied(), false);
       });
 
       test('handles version components of different lengths', () {
-        StacRegistry.instance.registerAppVersion('2.0.0.1');
+        StacRegistry.instance.registerBuildNumber(20001);
 
         final version = StacVersion(
-          versionCode: '2.0.0',
+          buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
         expect(version.isSatisfied(), false);
 
         final versionWithExtra = StacVersion(
-          versionCode: '2.0.0.0',
+          buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
         expect(versionWithExtra.isSatisfied(), false);
 
         final exactVersion = StacVersion(
-          versionCode: '2.0.0.1',
+          buildNumber: 20001,
           condition: StacConditionVersion.equal,
         );
         expect(exactVersion.isSatisfied(), true);
       });
 
       test('handles version with non-numeric components', () {
-        StacRegistry.instance.registerAppVersion('2.0.alpha');
+        StacRegistry.instance.registerBuildNumber(2000);
 
         final version = StacVersion(
-          versionCode: '2.0.0',
+          buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
         // Non-numeric components should be treated as 0
