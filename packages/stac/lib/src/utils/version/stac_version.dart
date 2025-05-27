@@ -1,32 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/stac.dart';
 
-part 'stac_version.freezed.dart';
-part 'stac_version.g.dart';
+class StacVersion {
+  const StacVersion({
+    required this.buildNumber,
+    required this.condition,
+  });
 
-@freezed
-class StacVersion with _$StacVersion {
-  const factory StacVersion({
-    required String versionCode,//buildNumber - int
-    // ignore: invalid_annotation_target
-    @JsonKey(fromJson: StacVersion.fromJsonCondition)
-    required StacConditionVersion condition,
-  }) = _StacVersion;
+  final int buildNumber;
+  final StacConditionVersion condition;
 
-  factory StacVersion.fromJson(Map<String, dynamic> json) =>
-      _$StacVersionFromJson(json);
+  factory StacVersion.fromJson(Map<String, dynamic> json) {
+    return StacVersion(
+      buildNumber: toPlatformJson(json, 'buildNumber').toInt(),
+      condition: toPlatformJson(json, 'condition').toStacConditionVersion(),
+    );
+  }
+
+  static dynamic toPlatformJson(Map<String, dynamic> json, String key) =>
+      json['${key}_${Platform.operatingSystem}'] ?? json[key];
 
   static StacConditionVersion fromJsonCondition(String? json) =>
       json?.toStacConditionVersion() ?? StacConditionVersion.notEqual;
-
-  // {
-  //   "version": {
-  //     "versionCode": "6936",
-  //     "versionCode_ios": "6940",
-  //     "condition": ">"
-  //   }
-  // }
 }
 
 enum StacConditionVersion {
@@ -66,17 +64,17 @@ extension ListStringX on List<String> {
 
 extension StacVersionX on StacVersion {
   bool isSatisfied() {
-    final appVersion = StacRegistry.instance.appVersion;
+    final buildNumber = StacRegistry.instance.buildNumber;
 
-    if (appVersion == null) {
+    if (buildNumber == null) {
       return false;
     }
 
     debugPrint(
-        'stacteste: appVersion: $appVersion | versionCode: $versionCode');
+        'stacteste: buildNumber: $buildNumber | buildNumber: $buildNumber');
 
-    final current = appVersion.split('.').toIntList();
-    final target = versionCode.split('.').toIntList();
+    final current = buildNumber.split('.').toIntList();
+    final target = buildNumber.split('.').toIntList();
 
     final maxLength =
         [current.length, target.length].reduce((a, b) => a > b ? a : b);
