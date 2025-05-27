@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -131,8 +130,6 @@ class Stac {
     try {
       if (json != null) {
         final stacRegistry = StacRegistry.instance;
-        // Map<String, dynamic>? jsonVersionSpecific = json['version_${Platform.operatingSystem}'];
-
         Map<String, dynamic>? jsonVersion = json['version'];
 
         if (jsonVersion != null && stacRegistry.buildNumber != null) {
@@ -140,7 +137,7 @@ class Stac {
           final isSatisfied = stacVersion.isSatisfied();
           if (!isSatisfied) {
             Log.w(
-                'Stac versionCode ${stacVersion.versionCode} is not satisfied; current version is: ${stacRegistry.buildNumber}');
+                'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${stacRegistry.buildNumber}');
             return null;
           }
         }
