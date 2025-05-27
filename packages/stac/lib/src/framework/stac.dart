@@ -114,13 +114,13 @@ class Stac {
     List<StacActionParser> actionParsers = const [],
     Dio? dio,
     bool override = false,
-    String? appVersion,
+    String? buildNumber,
   }) async {
     _parsers.addAll(parsers);
     _actionParsers.addAll(actionParsers);
     StacRegistry.instance.registerAll(_parsers, override);
     StacRegistry.instance.registerAllActions(_actionParsers, override);
-    StacRegistry.instance.registerAppVersion(appVersion);
+    StacRegistry.instance.registerBuildNumber(buildNumber);
     StacNetworkService.initialize(dio ?? Dio());
   }
 
@@ -135,12 +135,12 @@ class Stac {
 
         Map<String, dynamic>? jsonVersion = json['version'];
 
-        if (jsonVersion != null && stacRegistry.appVersion != null) {
+        if (jsonVersion != null && stacRegistry.buildNumber != null) {
           final stacVersion = StacVersion.fromJson(jsonVersion);
           final isSatisfied = stacVersion.isSatisfied();
           if (!isSatisfied) {
             Log.w(
-                'Stac versionCode ${stacVersion.versionCode} is not satisfied; current version is: ${stacRegistry.appVersion}');
+                'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current version is: ${stacRegistry.buildNumber}');
             return null;
           }
         }
