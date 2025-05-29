@@ -69,7 +69,7 @@ void main() {
           buildNumber: 1000,
           condition: StacConditionVersion.equal,
         );
-        expect(version.isSatisfied(), false);
+        expect(version.isSatisfied(StacRegistry.instance.buildNumber), false);
       });
 
       test('handles equal condition correctly', () {
@@ -77,13 +77,14 @@ void main() {
           buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
-        expect(version.isSatisfied(), true);
+        expect(version.isSatisfied(StacRegistry.instance.buildNumber), true);
 
         final differentVersion = StacVersion(
           buildNumber: 1000,
           condition: StacConditionVersion.equal,
         );
-        expect(differentVersion.isSatisfied(), false);
+        expect(differentVersion.isSatisfied(StacRegistry.instance.buildNumber),
+            false);
       });
 
       test('handles greater than condition correctly', () {
@@ -91,13 +92,14 @@ void main() {
           buildNumber: 1000,
           condition: StacConditionVersion.greaterThan,
         );
-        expect(version.isSatisfied(), true);
+        expect(version.isSatisfied(StacRegistry.instance.buildNumber), true);
 
         final higherVersion = StacVersion(
           buildNumber: 3000,
           condition: StacConditionVersion.greaterThan,
         );
-        expect(higherVersion.isSatisfied(), false);
+        expect(higherVersion.isSatisfied(StacRegistry.instance.buildNumber),
+            false);
       });
 
       test('handles less than condition correctly', () {
@@ -105,13 +107,14 @@ void main() {
           buildNumber: 3000,
           condition: StacConditionVersion.lessThan,
         );
-        expect(version.isSatisfied(), true);
+        expect(version.isSatisfied(StacRegistry.instance.buildNumber), true);
 
         final lowerVersion = StacVersion(
           buildNumber: 1000,
           condition: StacConditionVersion.lessThan,
         );
-        expect(lowerVersion.isSatisfied(), false);
+        expect(
+            lowerVersion.isSatisfied(StacRegistry.instance.buildNumber), false);
       });
 
       test('handles version components of different lengths', () {
@@ -121,19 +124,21 @@ void main() {
           buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
-        expect(version.isSatisfied(), false);
+        expect(version.isSatisfied(StacRegistry.instance.buildNumber), false);
 
         final versionWithExtra = StacVersion(
           buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
-        expect(versionWithExtra.isSatisfied(), false);
+        expect(versionWithExtra.isSatisfied(StacRegistry.instance.buildNumber),
+            false);
 
         final exactVersion = StacVersion(
           buildNumber: 20001,
           condition: StacConditionVersion.equal,
         );
-        expect(exactVersion.isSatisfied(), true);
+        expect(
+            exactVersion.isSatisfied(StacRegistry.instance.buildNumber), true);
       });
 
       test('handles version with non-numeric components', () {
@@ -144,7 +149,7 @@ void main() {
           condition: StacConditionVersion.equal,
         );
         // Non-numeric components should be treated as 0
-        expect(version.isSatisfied(), true);
+        expect(version.isSatisfied(StacRegistry.instance.buildNumber), true);
       });
     });
 

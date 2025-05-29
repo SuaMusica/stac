@@ -60,8 +60,7 @@ extension ListStringX on List<String> {
 }
 
 extension StacVersionX on StacVersion {
-  bool isSatisfied() {
-    final appBuildNumber = StacRegistry.instance.buildNumber;
+  bool isSatisfied(int? appBuildNumber) {
     if (appBuildNumber == null) {
       return true;
     }
