@@ -131,10 +131,12 @@ class Stac {
       if (json != null) {
         Map<String, dynamic>? jsonVersion = json['version'];
 
+        /// Check if has version and buildNumber is not null
         if (jsonVersion != null && StacRegistry.instance.buildNumber != null) {
           final stacVersion = StacVersion.fromJson(jsonVersion);
           final isSatisfied =
               stacVersion.isSatisfied(StacRegistry.instance.buildNumber!);
+          // If version is not satisfied, return null
           if (!isSatisfied) {
             Log.w(
                 'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${StacRegistry.instance.buildNumber}');
