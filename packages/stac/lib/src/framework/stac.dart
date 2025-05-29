@@ -129,21 +129,21 @@ class Stac {
   static Widget? fromJson(Map<String, dynamic>? json, BuildContext context) {
     try {
       if (json != null) {
-        final stacRegistry = StacRegistry.instance;
         Map<String, dynamic>? jsonVersion = json['version'];
 
-        if (jsonVersion != null && stacRegistry.buildNumber != null) {
+        if (jsonVersion != null && StacRegistry.instance.buildNumber != null) {
           final stacVersion = StacVersion.fromJson(jsonVersion);
-          final isSatisfied = stacVersion.isSatisfied();
+          final isSatisfied =
+              stacVersion.isSatisfied(StacRegistry.instance.buildNumber!);
           if (!isSatisfied) {
             Log.w(
-                'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${stacRegistry.buildNumber}');
+                'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${StacRegistry.instance.buildNumber}');
             return null;
           }
         }
 
         String widgetType = json['type'];
-        StacParser? stacParser = stacRegistry.getParser(widgetType);
+        StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
         if (stacParser != null) {
           final model = stacParser.getModel(json);
           return stacParser.parse(context, model);
