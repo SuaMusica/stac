@@ -16,6 +16,8 @@ class StacRegistry {
   static final _stacActionParsers = <String, StacActionParser>{};
 
   Color? Function(String?)? parseCustomColor;
+  int? _buildNumber;
+  int? get buildNumber => _buildNumber;
 
   bool register(StacParser parser, [bool override = false]) {
     final String type = parser.type;
@@ -69,6 +71,12 @@ class StacRegistry {
         return registerAction(parser, override);
       },
     );
+  }
+
+  void registerBuildNumber(int? buildNumber) {
+    if (buildNumber != null) {
+      _buildNumber = buildNumber;
+    }
   }
 
   StacParser<dynamic>? getParser(String type) {
