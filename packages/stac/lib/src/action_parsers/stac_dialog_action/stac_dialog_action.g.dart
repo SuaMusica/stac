@@ -41,4 +41,5 @@ const _$TraversalEdgeBehaviorEnumMap = {
   TraversalEdgeBehavior.closedLoop: 'closedLoop',
   TraversalEdgeBehavior.leaveFlutterView: 'leaveFlutterView',
   TraversalEdgeBehavior.parentScope: 'parentScope',
+  TraversalEdgeBehavior.stop: 'stop',
 };
