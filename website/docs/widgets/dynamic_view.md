@@ -403,7 +403,6 @@ You can access specific array elements in the targetPath:
 
 1. Use `targetPath` to extract only the data you need from complex API responses
 2. For list data, always use the `itemTemplate` property to define how each item should be rendered
-   <<<<<<< HEAD
 3. **Always provide an `emptyTemplate`** for list-based views to handle empty API responses gracefully
 4. Design empty states that are informative and actionable - include clear messaging and relevant actions like refresh buttons
 5. Keep templates modular and reusable when possible
@@ -412,14 +411,10 @@ You can access specific array elements in the targetPath:
 8. Provide custom `loaderWidget` and `errorWidget` for better user experience
 9. Use `resultTarget` when you need to reference the data with a specific name in your template
 10. Keep templates modular and reusable when possible
-    > > > > > > > dev
 
 ## Limitations
 
 - API endpoints must return JSON data
 - For very large datasets, consider pagination or limiting the number of items to avoid performance issues
 - Complex data transformations may require custom code outside of the template system
-  <<<<<<< HEAD
-  =======
 - Nested array access in placeholder syntax is limited to the formats shown in the examples
-  > > > > > > > dev
