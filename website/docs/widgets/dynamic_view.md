@@ -407,7 +407,7 @@ You can access specific array elements in the targetPath:
 4. Design empty states that are informative and actionable - include clear messaging and relevant actions like refresh buttons
 5. Keep templates modular and reusable when possible
 6. Use appropriate error handling in your UI design for cases when the API request fails
-7. # For empty states, use appropriate icons and colors that match your app's design system
+7. For empty states, use appropriate icons and colors that match your app's design system
 8. Provide custom `loaderWidget` and `errorWidget` for better user experience
 9. Use `resultTarget` when you need to reference the data with a specific name in your template
 10. Keep templates modular and reusable when possible
