@@ -36,3 +36,4 @@ abstract class StacScaffold with _$StacScaffold {
   factory StacScaffold.fromJson(Map<String, dynamic> json) =>
       _$StacScaffoldFromJson(json);
 }
+

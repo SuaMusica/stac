@@ -9,6 +9,7 @@ import 'package:stac/src/parsers/actions/stac_network_request/stac_network_reque
 import 'package:stac/src/parsers/parsers.dart';
 import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value_parser.dart';
+import 'package:stac/src/parsers/widgets/stac_text/stac_text_parser.dart';
 import 'package:stac/src/services/stac_network_service.dart';
 import 'package:stac/src/utils/variable_resolver.dart';
 import 'package:stac/src/utils/widget_type.dart';
