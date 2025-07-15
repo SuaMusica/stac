@@ -18,7 +18,7 @@ packages:
     source: hosted
     version: "7.4.5"
   args:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: args
       sha256: d0481093c50b1da8910eb0bb301626d4d8eb7284aa739614d2b394ee09e3ea04
@@ -311,10 +311,10 @@ packages:
     dependency: "direct main"
     description:
       name: freezed_annotation
-      sha256: c87ff004c8aa6af2d531668b46a4ea379f7191dc6dfa066acd53d506da6e044b
+      sha256: "7294967ff0a6d98638e7acb774aac3af2550777accd8149c90af5b014e6d44d8"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.1.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -727,6 +727,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0-dev.5"
+  stac_export:
+    dependency: "direct main"
+    description:
+      path: "../../packages/stac_export"
+      relative: true
+    source: path
+    version: "0.0.1"
   stac_framework:
     dependency: "direct overridden"
     description:

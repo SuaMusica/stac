@@ -1,12 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_gallery/app/details/details_screen.dart';
 import 'package:stac_gallery/app/example/example_screen_parser.dart';
-import 'package:stac_gallery/app/home/home_screen.dart';
-import 'package:stac_gallery/app_theme/app_theme_cubit.dart';
 import 'package:stac_webview/stac_webview.dart';
 
 class MyHttpOverrides extends HttpOverrides {
@@ -35,23 +31,60 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AppThemeCubit()..loadThemes(),
-      child: BlocBuilder<AppThemeCubit, AppThemeState>(
-        builder: (context, state) {
-          return StacApp(
-            theme: state.lightTheme,
-            darkTheme: state.darkTheme,
-            themeMode: state.themeMode,
-            homeBuilder: (context) => HomeScreen(),
-            title: 'Stac Gallery',
-            routes: {
-              '/homeScreen': (context) => const HomeScreen(),
-              '/detailsScreen': (context) => const DetailsScreen(),
-            },
-          );
-        },
+    return MaterialApp(
+      title: 'STAC Gallery',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('STAC Gallery'),
+      ),
+      body: Center(
+        child: Container(
+          color: Colors.blue,
+          width: 100,
+          height: 100,
+          alignment: Alignment.center,
+          child: Text('Hello, Stac!!'),
+        ),
       ),
     );
   }
 }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return BlocProvider(
+//       create: (context) => AppThemeCubit()..loadThemes(),
+//       child: BlocBuilder<AppThemeCubit, AppThemeState>(
+//         builder: (context, state) {
+//           return StacApp(
+//             theme: state.lightTheme,
+//             darkTheme: state.darkTheme,
+//             themeMode: state.themeMode,
+//             homeBuilder: (context) => HomeScreen(),
+//             title: 'Stac Gallery',
+//             routes: {
+//               '/homeScreen': (context) => const HomeScreen(),
+//               '/detailsScreen': (context) => const DetailsScreen(),
+//             },
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
