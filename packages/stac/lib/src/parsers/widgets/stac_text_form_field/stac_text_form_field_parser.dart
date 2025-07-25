@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/parsers.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/utils/color_utils.dart';

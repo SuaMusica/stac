@@ -71,8 +71,6 @@ abstract mixin class $StacTabCopyWith<$Res> {
       StacEdgeInsets? iconMargin,
       StacDouble? height,
       Map<String, dynamic>? child});
-
-  $StacEdgeInsetsCopyWith<$Res>? get iconMargin;
 }
 
 /// @nodoc
@@ -115,20 +113,6 @@ class _$StacTabCopyWithImpl<$Res> implements $StacTabCopyWith<$Res> {
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacTab
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get iconMargin {
-    if (_self.iconMargin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.iconMargin!, (value) {
-      return _then(_self.copyWith(iconMargin: value));
-    });
   }
 }
 
@@ -228,9 +212,6 @@ abstract mixin class _$StacTabCopyWith<$Res> implements $StacTabCopyWith<$Res> {
       StacEdgeInsets? iconMargin,
       StacDouble? height,
       Map<String, dynamic>? child});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get iconMargin;
 }
 
 /// @nodoc
@@ -273,20 +254,6 @@ class __$StacTabCopyWithImpl<$Res> implements _$StacTabCopyWith<$Res> {
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacTab
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get iconMargin {
-    if (_self.iconMargin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.iconMargin!, (value) {
-      return _then(_self.copyWith(iconMargin: value));
-    });
   }
 }
 

@@ -238,8 +238,6 @@ abstract mixin class $StacTextFormFieldCopyWith<$Res> {
       List<StacFormFieldValidator> validatorRules});
 
   $StacInputDecorationCopyWith<$Res>? get decoration;
-  $StacTextStyleCopyWith<$Res>? get style;
-  $StacEdgeInsetsCopyWith<$Res> get scrollPadding;
 }
 
 /// @nodoc
@@ -458,30 +456,6 @@ class _$StacTextFormFieldCopyWithImpl<$Res>
       return _then(_self.copyWith(decoration: value));
     });
   }
-
-  /// Create a copy of StacTextFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
-  }
-
-  /// Create a copy of StacTextFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get scrollPadding {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.scrollPadding, (value) {
-      return _then(_self.copyWith(scrollPadding: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -513,11 +487,8 @@ class _StacTextFormField implements StacTextFormField {
       this.maxLengthEnforcement,
       this.expands = false,
       this.keyboardAppearance,
-      this.scrollPadding = const StacEdgeInsets(
-          bottom: StacDouble(20),
-          top: StacDouble(20),
-          left: StacDouble(20),
-          right: StacDouble(20)),
+      this.scrollPadding =
+          const StacEdgeInsets(bottom: 20, top: 20, left: 20, right: 20),
       this.restorationId,
       this.enableIMEPersonalizedLearning = true,
       this.enableSuggestions = true,
@@ -825,10 +796,6 @@ abstract mixin class _$StacTextFormFieldCopyWith<$Res>
 
   @override
   $StacInputDecorationCopyWith<$Res>? get decoration;
-  @override
-  $StacTextStyleCopyWith<$Res>? get style;
-  @override
-  $StacEdgeInsetsCopyWith<$Res> get scrollPadding;
 }
 
 /// @nodoc
@@ -1045,30 +1012,6 @@ class __$StacTextFormFieldCopyWithImpl<$Res>
 
     return $StacInputDecorationCopyWith<$Res>(_self.decoration!, (value) {
       return _then(_self.copyWith(decoration: value));
-    });
-  }
-
-  /// Create a copy of StacTextFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
-  }
-
-  /// Create a copy of StacTextFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get scrollPadding {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.scrollPadding, (value) {
-      return _then(_self.copyWith(scrollPadding: value));
     });
   }
 }

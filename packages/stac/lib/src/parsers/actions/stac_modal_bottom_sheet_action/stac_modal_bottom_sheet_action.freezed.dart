@@ -127,8 +127,6 @@ abstract mixin class $StacModalBottomSheetActionCopyWith<$Res> {
       bool useSafeArea});
 
   $StacNetworkRequestCopyWith<$Res>? get request;
-  $StacBorderCopyWith<$Res>? get shape;
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -235,34 +233,6 @@ class _$StacModalBottomSheetActionCopyWithImpl<$Res>
 
     return $StacNetworkRequestCopyWith<$Res>(_self.request!, (value) {
       return _then(_self.copyWith(request: value));
-    });
-  }
-
-  /// Create a copy of StacModalBottomSheetAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacModalBottomSheetAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
     });
   }
 }
@@ -438,10 +408,6 @@ abstract mixin class _$StacModalBottomSheetActionCopyWith<$Res>
 
   @override
   $StacNetworkRequestCopyWith<$Res>? get request;
-  @override
-  $StacBorderCopyWith<$Res>? get shape;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -548,34 +514,6 @@ class __$StacModalBottomSheetActionCopyWithImpl<$Res>
 
     return $StacNetworkRequestCopyWith<$Res>(_self.request!, (value) {
       return _then(_self.copyWith(request: value));
-    });
-  }
-
-  /// Create a copy of StacModalBottomSheetAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacModalBottomSheetAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
     });
   }
 }

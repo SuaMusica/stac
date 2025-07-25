@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/utils/stac_scroll_physics.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
 
 export 'stac_single_child_scroll_view_parser.dart';
 

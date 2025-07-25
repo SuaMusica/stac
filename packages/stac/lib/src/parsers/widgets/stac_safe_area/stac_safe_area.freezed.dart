@@ -82,8 +82,6 @@ abstract mixin class $StacSafeAreaCopyWith<$Res> {
       bool bottom,
       StacEdgeInsets minimum,
       bool maintainBottomViewPadding});
-
-  $StacEdgeInsetsCopyWith<$Res> get minimum;
 }
 
 /// @nodoc
@@ -136,16 +134,6 @@ class _$StacSafeAreaCopyWithImpl<$Res> implements $StacSafeAreaCopyWith<$Res> {
           : maintainBottomViewPadding // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacSafeArea
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get minimum {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.minimum, (value) {
-      return _then(_self.copyWith(minimum: value));
-    });
   }
 }
 
@@ -258,9 +246,6 @@ abstract mixin class _$StacSafeAreaCopyWith<$Res>
       bool bottom,
       StacEdgeInsets minimum,
       bool maintainBottomViewPadding});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res> get minimum;
 }
 
 /// @nodoc
@@ -314,16 +299,6 @@ class __$StacSafeAreaCopyWithImpl<$Res>
           : maintainBottomViewPadding // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacSafeArea
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get minimum {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.minimum, (value) {
-      return _then(_self.copyWith(minimum: value));
-    });
   }
 }
 

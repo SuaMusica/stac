@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_system_ui_overlay_style_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/theme/stac_icon_theme_data/stac_icon_theme_data.dart';
-import 'package:stac/src/parsers/widgets/stac_system_ui_olverlay_style/stac_system_ui_overlay_style.dart';
 import 'package:stac/src/parsers/widgets/widgets.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/painting/stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 
 part 'stac_app_bar_theme.freezed.dart';
 part 'stac_app_bar_theme.g.dart';

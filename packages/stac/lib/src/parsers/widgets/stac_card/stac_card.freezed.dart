@@ -98,7 +98,6 @@ abstract mixin class $StacCardCopyWith<$Res> {
       bool semanticContainer});
 
   $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacEdgeInsetsCopyWith<$Res>? get margin;
 }
 
 /// @nodoc
@@ -179,20 +178,6 @@ class _$StacCardCopyWithImpl<$Res> implements $StacCardCopyWith<$Res> {
 
     return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacCard
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get margin {
-    if (_self.margin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.margin!, (value) {
-      return _then(_self.copyWith(margin: value));
     });
   }
 }
@@ -326,8 +311,6 @@ abstract mixin class _$StacCardCopyWith<$Res>
 
   @override
   $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get margin;
 }
 
 /// @nodoc
@@ -408,20 +391,6 @@ class __$StacCardCopyWithImpl<$Res> implements _$StacCardCopyWith<$Res> {
 
     return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacCard
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get margin {
-    if (_self.margin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.margin!, (value) {
-      return _then(_self.copyWith(margin: value));
     });
   }
 }

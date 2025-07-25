@@ -98,8 +98,6 @@ abstract mixin class $StacSingleChildScrollViewCopyWith<$Res> {
       Clip clipBehavior,
       String? restorationId,
       ScrollViewKeyboardDismissBehavior keyboardDismissBehavior});
-
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
 }
 
 /// @nodoc
@@ -168,20 +166,6 @@ class _$StacSingleChildScrollViewCopyWithImpl<$Res>
           : keyboardDismissBehavior // ignore: cast_nullable_to_non_nullable
               as ScrollViewKeyboardDismissBehavior,
     ));
-  }
-
-  /// Create a copy of StacSingleChildScrollView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 
@@ -317,9 +301,6 @@ abstract mixin class _$StacSingleChildScrollViewCopyWith<$Res>
       Clip clipBehavior,
       String? restorationId,
       ScrollViewKeyboardDismissBehavior keyboardDismissBehavior});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
 }
 
 /// @nodoc
@@ -388,20 +369,6 @@ class __$StacSingleChildScrollViewCopyWithImpl<$Res>
           : keyboardDismissBehavior // ignore: cast_nullable_to_non_nullable
               as ScrollViewKeyboardDismissBehavior,
     ));
-  }
-
-  /// Create a copy of StacSingleChildScrollView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 

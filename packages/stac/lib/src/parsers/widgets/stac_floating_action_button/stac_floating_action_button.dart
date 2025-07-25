@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 import 'package:stac/src/utils/button_utils.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 
 export 'stac_floating_action_button_parser.dart';
 

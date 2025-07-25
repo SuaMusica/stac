@@ -20,8 +20,8 @@ mixin _$StacDynamicView {
   Map<String, dynamic> get template;
   String get resultTarget;
   Map<String, dynamic>? get emptyTemplate;
-  StacWidget? get loaderWidget;
-  StacWidget? get errorWidget;
+  Map<String, dynamic>? get loaderWidget;
+  Map<String, dynamic>? get errorWidget;
 
   /// Create a copy of StacDynamicView
   /// with the given fields replaced by the non-null parameter values.
@@ -83,8 +83,8 @@ abstract mixin class $StacDynamicViewCopyWith<$Res> {
       Map<String, dynamic> template,
       String resultTarget,
       Map<String, dynamic>? emptyTemplate,
-      StacWidget? loaderWidget,
-      StacWidget? errorWidget});
+      Map<String, dynamic>? loaderWidget,
+      Map<String, dynamic>? errorWidget});
 
   $StacNetworkRequestCopyWith<$Res> get request;
 }
@@ -134,11 +134,11 @@ class _$StacDynamicViewCopyWithImpl<$Res>
       loaderWidget: freezed == loaderWidget
           ? _self.loaderWidget
           : loaderWidget // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
       errorWidget: freezed == errorWidget
           ? _self.errorWidget
           : errorWidget // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
     ));
   }
 
@@ -162,8 +162,8 @@ class _StacDynamicView implements StacDynamicView {
       required final Map<String, dynamic> template,
       this.resultTarget = '',
       final Map<String, dynamic>? emptyTemplate,
-      final StacWidget? loaderWidget,
-      final StacWidget? errorWidget})
+      final Map<String, dynamic>? loaderWidget,
+      final Map<String, dynamic>? errorWidget})
       : _template = template,
         _emptyTemplate = emptyTemplate,
         _loaderWidget = loaderWidget,
@@ -197,9 +197,9 @@ class _StacDynamicView implements StacDynamicView {
     return EqualUnmodifiableMapView(value);
   }
 
-  final StacWidget? _loaderWidget;
+  final Map<String, dynamic>? _loaderWidget;
   @override
-  StacWidget? get loaderWidget {
+  Map<String, dynamic>? get loaderWidget {
     final value = _loaderWidget;
     if (value == null) return null;
     if (_loaderWidget is EqualUnmodifiableMapView) return _loaderWidget;
@@ -207,9 +207,9 @@ class _StacDynamicView implements StacDynamicView {
     return EqualUnmodifiableMapView(value);
   }
 
-  final StacWidget? _errorWidget;
+  final Map<String, dynamic>? _errorWidget;
   @override
-  StacWidget? get errorWidget {
+  Map<String, dynamic>? get errorWidget {
     final value = _errorWidget;
     if (value == null) return null;
     if (_errorWidget is EqualUnmodifiableMapView) return _errorWidget;
@@ -283,8 +283,8 @@ abstract mixin class _$StacDynamicViewCopyWith<$Res>
       Map<String, dynamic> template,
       String resultTarget,
       Map<String, dynamic>? emptyTemplate,
-      StacWidget? loaderWidget,
-      StacWidget? errorWidget});
+      Map<String, dynamic>? loaderWidget,
+      Map<String, dynamic>? errorWidget});
 
   @override
   $StacNetworkRequestCopyWith<$Res> get request;
@@ -335,11 +335,11 @@ class __$StacDynamicViewCopyWithImpl<$Res>
       loaderWidget: freezed == loaderWidget
           ? _self._loaderWidget
           : loaderWidget // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
       errorWidget: freezed == errorWidget
           ? _self._errorWidget
           : errorWidget // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
     ));
   }
 

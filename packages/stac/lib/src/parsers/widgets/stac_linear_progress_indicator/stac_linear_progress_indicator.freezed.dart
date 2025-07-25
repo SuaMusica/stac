@@ -80,8 +80,6 @@ abstract mixin class $StacLinearProgressIndicatorCopyWith<$Res> {
       String? semanticsLabel,
       String? semanticsValue,
       StacBorderRadius borderRadius});
-
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -135,16 +133,6 @@ class _$StacLinearProgressIndicatorCopyWithImpl<$Res>
           : borderRadius // ignore: cast_nullable_to_non_nullable
               as StacBorderRadius,
     ));
-  }
-
-  /// Create a copy of StacLinearProgressIndicator
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 
@@ -241,9 +229,6 @@ abstract mixin class _$StacLinearProgressIndicatorCopyWith<$Res>
       String? semanticsLabel,
       String? semanticsValue,
       StacBorderRadius borderRadius});
-
-  @override
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -297,16 +282,6 @@ class __$StacLinearProgressIndicatorCopyWithImpl<$Res>
           : borderRadius // ignore: cast_nullable_to_non_nullable
               as StacBorderRadius,
     ));
-  }
-
-  /// Create a copy of StacLinearProgressIndicator
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 

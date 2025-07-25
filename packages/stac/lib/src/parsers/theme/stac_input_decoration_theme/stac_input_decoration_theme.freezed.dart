@@ -211,24 +211,12 @@ abstract mixin class $StacInputDecorationThemeCopyWith<$Res> {
       bool alignLabelWithHint,
       StacBoxConstraints? constraints});
 
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  $StacTextStyleCopyWith<$Res>? get floatingLabelStyle;
-  $StacTextStyleCopyWith<$Res>? get helperStyle;
-  $StacTextStyleCopyWith<$Res>? get hintStyle;
-  $StacTextStyleCopyWith<$Res>? get errorStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  $StacTextStyleCopyWith<$Res>? get prefixStyle;
-  $StacTextStyleCopyWith<$Res>? get suffixStyle;
-  $StacTextStyleCopyWith<$Res>? get counterStyle;
-  $StacBorderSideCopyWith<$Res>? get activeIndicatorBorder;
-  $StacBorderSideCopyWith<$Res>? get outlineBorder;
   $StacInputBorderCopyWith<$Res>? get errorBorder;
   $StacInputBorderCopyWith<$Res>? get focusedBorder;
   $StacInputBorderCopyWith<$Res>? get focusedErrorBorder;
   $StacInputBorderCopyWith<$Res>? get disabledBorder;
   $StacInputBorderCopyWith<$Res>? get enabledBorder;
   $StacInputBorderCopyWith<$Res>? get border;
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -413,160 +401,6 @@ class _$StacInputDecorationThemeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get floatingLabelStyle {
-    if (_self.floatingLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.floatingLabelStyle!, (value) {
-      return _then(_self.copyWith(floatingLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get helperStyle {
-    if (_self.helperStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.helperStyle!, (value) {
-      return _then(_self.copyWith(helperStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get hintStyle {
-    if (_self.hintStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.hintStyle!, (value) {
-      return _then(_self.copyWith(hintStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get errorStyle {
-    if (_self.errorStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.errorStyle!, (value) {
-      return _then(_self.copyWith(errorStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get prefixStyle {
-    if (_self.prefixStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.prefixStyle!, (value) {
-      return _then(_self.copyWith(prefixStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get suffixStyle {
-    if (_self.suffixStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.suffixStyle!, (value) {
-      return _then(_self.copyWith(suffixStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get counterStyle {
-    if (_self.counterStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.counterStyle!, (value) {
-      return _then(_self.copyWith(counterStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get activeIndicatorBorder {
-    if (_self.activeIndicatorBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.activeIndicatorBorder!, (value) {
-      return _then(_self.copyWith(activeIndicatorBorder: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get outlineBorder {
-    if (_self.outlineBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.outlineBorder!, (value) {
-      return _then(_self.copyWith(outlineBorder: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacInputBorderCopyWith<$Res>? get errorBorder {
     if (_self.errorBorder == null) {
       return null;
@@ -644,20 +478,6 @@ class _$StacInputDecorationThemeCopyWithImpl<$Res>
 
     return $StacInputBorderCopyWith<$Res>(_self.border!, (value) {
       return _then(_self.copyWith(border: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
     });
   }
 }
@@ -941,28 +761,6 @@ abstract mixin class _$StacInputDecorationThemeCopyWith<$Res>
       StacBoxConstraints? constraints});
 
   @override
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get floatingLabelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get helperStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get hintStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get errorStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  @override
-  $StacTextStyleCopyWith<$Res>? get prefixStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get suffixStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get counterStyle;
-  @override
-  $StacBorderSideCopyWith<$Res>? get activeIndicatorBorder;
-  @override
-  $StacBorderSideCopyWith<$Res>? get outlineBorder;
-  @override
   $StacInputBorderCopyWith<$Res>? get errorBorder;
   @override
   $StacInputBorderCopyWith<$Res>? get focusedBorder;
@@ -974,8 +772,6 @@ abstract mixin class _$StacInputDecorationThemeCopyWith<$Res>
   $StacInputBorderCopyWith<$Res>? get enabledBorder;
   @override
   $StacInputBorderCopyWith<$Res>? get border;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -1160,160 +956,6 @@ class __$StacInputDecorationThemeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get floatingLabelStyle {
-    if (_self.floatingLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.floatingLabelStyle!, (value) {
-      return _then(_self.copyWith(floatingLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get helperStyle {
-    if (_self.helperStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.helperStyle!, (value) {
-      return _then(_self.copyWith(helperStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get hintStyle {
-    if (_self.hintStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.hintStyle!, (value) {
-      return _then(_self.copyWith(hintStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get errorStyle {
-    if (_self.errorStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.errorStyle!, (value) {
-      return _then(_self.copyWith(errorStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get prefixStyle {
-    if (_self.prefixStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.prefixStyle!, (value) {
-      return _then(_self.copyWith(prefixStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get suffixStyle {
-    if (_self.suffixStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.suffixStyle!, (value) {
-      return _then(_self.copyWith(suffixStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get counterStyle {
-    if (_self.counterStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.counterStyle!, (value) {
-      return _then(_self.copyWith(counterStyle: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get activeIndicatorBorder {
-    if (_self.activeIndicatorBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.activeIndicatorBorder!, (value) {
-      return _then(_self.copyWith(activeIndicatorBorder: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get outlineBorder {
-    if (_self.outlineBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.outlineBorder!, (value) {
-      return _then(_self.copyWith(outlineBorder: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacInputBorderCopyWith<$Res>? get errorBorder {
     if (_self.errorBorder == null) {
       return null;
@@ -1391,20 +1033,6 @@ class __$StacInputDecorationThemeCopyWithImpl<$Res>
 
     return $StacInputBorderCopyWith<$Res>(_self.border!, (value) {
       return _then(_self.copyWith(border: value));
-    });
-  }
-
-  /// Create a copy of StacInputDecorationTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
     });
   }
 }

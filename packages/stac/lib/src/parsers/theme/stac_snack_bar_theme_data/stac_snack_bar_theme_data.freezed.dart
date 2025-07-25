@@ -131,8 +131,6 @@ abstract mixin class $StacSnackBarThemeDataCopyWith<$Res> {
       String? disabledActionBackgroundColor});
 
   $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding;
 }
 
 /// @nodoc
@@ -239,34 +237,6 @@ class _$StacSnackBarThemeDataCopyWithImpl<$Res>
 
     return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding {
-    if (_self.insetPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.insetPadding!, (value) {
-      return _then(_self.copyWith(insetPadding: value));
     });
   }
 }
@@ -432,10 +402,6 @@ abstract mixin class _$StacSnackBarThemeDataCopyWith<$Res>
 
   @override
   $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding;
 }
 
 /// @nodoc
@@ -542,34 +508,6 @@ class __$StacSnackBarThemeDataCopyWithImpl<$Res>
 
     return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding {
-    if (_self.insetPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.insetPadding!, (value) {
-      return _then(_self.copyWith(insetPadding: value));
     });
   }
 }

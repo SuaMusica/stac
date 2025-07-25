@@ -107,7 +107,6 @@ abstract mixin class $StacNavigationDrawerThemeDataCopyWith<$Res> {
 
   $StacShapeBorderCopyWith<$Res>? get indicatorShape;
   $StacSizeCopyWith<$Res>? get indicatorSize;
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -204,20 +203,6 @@ class _$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
 
     return $StacSizeCopyWith<$Res>(_self.indicatorSize!, (value) {
       return _then(_self.copyWith(indicatorSize: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle {
-    if (_self.labelTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelTextStyle!, (value) {
-      return _then(_self.copyWith(labelTextStyle: value));
     });
   }
 
@@ -364,8 +349,6 @@ abstract mixin class _$StacNavigationDrawerThemeDataCopyWith<$Res>
   @override
   $StacSizeCopyWith<$Res>? get indicatorSize;
   @override
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -462,20 +445,6 @@ class __$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
 
     return $StacSizeCopyWith<$Res>(_self.indicatorSize!, (value) {
       return _then(_self.copyWith(indicatorSize: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle {
-    if (_self.labelTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelTextStyle!, (value) {
-      return _then(_self.copyWith(labelTextStyle: value));
     });
   }
 

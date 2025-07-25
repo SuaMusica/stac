@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/parsers/widgets/stac_list_view/stac_list_view.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';

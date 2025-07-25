@@ -57,8 +57,6 @@ abstract mixin class $StacShadowCopyWith<$Res> {
       _$StacShadowCopyWithImpl;
   @useResult
   $Res call({String color, StacOffset offset, StacDouble blurRadius});
-
-  $StacOffsetCopyWith<$Res> get offset;
 }
 
 /// @nodoc
@@ -92,16 +90,6 @@ class _$StacShadowCopyWithImpl<$Res> implements $StacShadowCopyWith<$Res> {
               as StacDouble,
     ));
   }
-
-  /// Create a copy of StacShadow
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res> get offset {
-    return $StacOffsetCopyWith<$Res>(_self.offset, (value) {
-      return _then(_self.copyWith(offset: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -109,7 +97,7 @@ class _$StacShadowCopyWithImpl<$Res> implements $StacShadowCopyWith<$Res> {
 class _StacShadow implements StacShadow {
   const _StacShadow(
       {this.color = '#000000',
-      this.offset = const StacOffset(dx: StacDouble.zero, dy: StacDouble.zero),
+      this.offset = StacOffset.zero,
       this.blurRadius = StacDouble.zero});
   factory _StacShadow.fromJson(Map<String, dynamic> json) =>
       _$StacShadowFromJson(json);
@@ -169,9 +157,6 @@ abstract mixin class _$StacShadowCopyWith<$Res>
   @override
   @useResult
   $Res call({String color, StacOffset offset, StacDouble blurRadius});
-
-  @override
-  $StacOffsetCopyWith<$Res> get offset;
 }
 
 /// @nodoc
@@ -204,16 +189,6 @@ class __$StacShadowCopyWithImpl<$Res> implements _$StacShadowCopyWith<$Res> {
           : blurRadius // ignore: cast_nullable_to_non_nullable
               as StacDouble,
     ));
-  }
-
-  /// Create a copy of StacShadow
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res> get offset {
-    return $StacOffsetCopyWith<$Res>(_self.offset, (value) {
-      return _then(_self.copyWith(offset: value));
-    });
   }
 }
 

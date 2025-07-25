@@ -243,16 +243,8 @@ abstract mixin class $StacDatePickerThemeDataCopyWith<$Res> {
       StacButtonStyle? confirmButtonStyle});
 
   $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle;
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle;
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle;
-  $StacTextStyleCopyWith<$Res>? get dayStyle;
   $StacShapeBorderCopyWith<$Res>? get dayShape;
-  $StacBorderSideCopyWith<$Res>? get todayBorder;
-  $StacTextStyleCopyWith<$Res>? get yearStyle;
   $StacShapeBorderCopyWith<$Res>? get rangePickerShape;
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle;
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle;
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
   $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle;
   $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle;
@@ -481,62 +473,6 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle {
-    if (_self.headerHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headerHeadlineStyle!, (value) {
-      return _then(_self.copyWith(headerHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle {
-    if (_self.headerHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headerHelpStyle!, (value) {
-      return _then(_self.copyWith(headerHelpStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle {
-    if (_self.weekdayStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.weekdayStyle!, (value) {
-      return _then(_self.copyWith(weekdayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get dayStyle {
-    if (_self.dayStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.dayStyle!, (value) {
-      return _then(_self.copyWith(dayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacShapeBorderCopyWith<$Res>? get dayShape {
     if (_self.dayShape == null) {
       return null;
@@ -551,34 +487,6 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get todayBorder {
-    if (_self.todayBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.todayBorder!, (value) {
-      return _then(_self.copyWith(todayBorder: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get yearStyle {
-    if (_self.yearStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.yearStyle!, (value) {
-      return _then(_self.copyWith(yearStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacShapeBorderCopyWith<$Res>? get rangePickerShape {
     if (_self.rangePickerShape == null) {
       return null;
@@ -586,36 +494,6 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
 
     return $StacShapeBorderCopyWith<$Res>(_self.rangePickerShape!, (value) {
       return _then(_self.copyWith(rangePickerShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle {
-    if (_self.rangePickerHeaderHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHeadlineStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle {
-    if (_self.rangePickerHeaderHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHelpStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHelpStyle: value));
     });
   }
 
@@ -981,25 +859,9 @@ abstract mixin class _$StacDatePickerThemeDataCopyWith<$Res>
   @override
   $StacShapeBorderCopyWith<$Res>? get shape;
   @override
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get dayStyle;
-  @override
   $StacShapeBorderCopyWith<$Res>? get dayShape;
   @override
-  $StacBorderSideCopyWith<$Res>? get todayBorder;
-  @override
-  $StacTextStyleCopyWith<$Res>? get yearStyle;
-  @override
   $StacShapeBorderCopyWith<$Res>? get rangePickerShape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle;
   @override
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
   @override
@@ -1231,62 +1093,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle {
-    if (_self.headerHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headerHeadlineStyle!, (value) {
-      return _then(_self.copyWith(headerHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle {
-    if (_self.headerHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headerHelpStyle!, (value) {
-      return _then(_self.copyWith(headerHelpStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle {
-    if (_self.weekdayStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.weekdayStyle!, (value) {
-      return _then(_self.copyWith(weekdayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get dayStyle {
-    if (_self.dayStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.dayStyle!, (value) {
-      return _then(_self.copyWith(dayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacShapeBorderCopyWith<$Res>? get dayShape {
     if (_self.dayShape == null) {
       return null;
@@ -1301,34 +1107,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get todayBorder {
-    if (_self.todayBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.todayBorder!, (value) {
-      return _then(_self.copyWith(todayBorder: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get yearStyle {
-    if (_self.yearStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.yearStyle!, (value) {
-      return _then(_self.copyWith(yearStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacShapeBorderCopyWith<$Res>? get rangePickerShape {
     if (_self.rangePickerShape == null) {
       return null;
@@ -1336,36 +1114,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
 
     return $StacShapeBorderCopyWith<$Res>(_self.rangePickerShape!, (value) {
       return _then(_self.copyWith(rangePickerShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle {
-    if (_self.rangePickerHeaderHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHeadlineStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle {
-    if (_self.rangePickerHeaderHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHelpStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHelpStyle: value));
     });
   }
 

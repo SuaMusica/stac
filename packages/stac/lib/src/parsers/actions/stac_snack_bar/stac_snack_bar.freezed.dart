@@ -132,8 +132,6 @@ abstract mixin class $StacSnackBarCopyWith<$Res> {
       DismissDirection? dismissDirection,
       Clip clipBehavior});
 
-  $StacEdgeInsetsCopyWith<$Res>? get margin;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
   $StacShapeBorderCopyWith<$Res>? get shape;
   $StacSnackBarActionCopyWith<$Res>? get action;
   $StacDurationCopyWith<$Res> get duration;
@@ -239,34 +237,6 @@ class _$StacSnackBarCopyWithImpl<$Res> implements $StacSnackBarCopyWith<$Res> {
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip,
     ));
-  }
-
-  /// Create a copy of StacSnackBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get margin {
-    if (_self.margin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.margin!, (value) {
-      return _then(_self.copyWith(margin: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 
   /// Create a copy of StacSnackBar
@@ -492,10 +462,6 @@ abstract mixin class _$StacSnackBarCopyWith<$Res>
       Clip clipBehavior});
 
   @override
-  $StacEdgeInsetsCopyWith<$Res>? get margin;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
   $StacShapeBorderCopyWith<$Res>? get shape;
   @override
   $StacSnackBarActionCopyWith<$Res>? get action;
@@ -604,34 +570,6 @@ class __$StacSnackBarCopyWithImpl<$Res>
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip,
     ));
-  }
-
-  /// Create a copy of StacSnackBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get margin {
-    if (_self.margin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.margin!, (value) {
-      return _then(_self.copyWith(margin: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 
   /// Create a copy of StacSnackBar

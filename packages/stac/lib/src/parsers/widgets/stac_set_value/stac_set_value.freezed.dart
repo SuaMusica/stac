@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StacSetValue {
   List<Map<String, dynamic>> get values;
-  StacWidget? get child;
+  Map<String, dynamic>? get child;
 
   /// Create a copy of StacSetValue
   /// with the given fields replaced by the non-null parameter values.
@@ -57,7 +57,7 @@ abstract mixin class $StacSetValueCopyWith<$Res> {
           StacSetValue value, $Res Function(StacSetValue) _then) =
       _$StacSetValueCopyWithImpl;
   @useResult
-  $Res call({List<Map<String, dynamic>> values, StacWidget? child});
+  $Res call({List<Map<String, dynamic>> values, Map<String, dynamic>? child});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class _$StacSetValueCopyWithImpl<$Res> implements $StacSetValueCopyWith<$Res> {
       child: freezed == child
           ? _self.child
           : child // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -93,7 +93,7 @@ class _$StacSetValueCopyWithImpl<$Res> implements $StacSetValueCopyWith<$Res> {
 class _StacSetValue implements StacSetValue {
   const _StacSetValue(
       {final List<Map<String, dynamic>> values = const [],
-      final StacWidget? child})
+      final Map<String, dynamic>? child})
       : _values = values,
         _child = child;
   factory _StacSetValue.fromJson(Map<String, dynamic> json) =>
@@ -108,9 +108,9 @@ class _StacSetValue implements StacSetValue {
     return EqualUnmodifiableListView(_values);
   }
 
-  final StacWidget? _child;
+  final Map<String, dynamic>? _child;
   @override
-  StacWidget? get child {
+  Map<String, dynamic>? get child {
     final value = _child;
     if (value == null) return null;
     if (_child is EqualUnmodifiableMapView) return _child;
@@ -163,7 +163,7 @@ abstract mixin class _$StacSetValueCopyWith<$Res>
       __$StacSetValueCopyWithImpl;
   @override
   @useResult
-  $Res call({List<Map<String, dynamic>> values, StacWidget? child});
+  $Res call({List<Map<String, dynamic>> values, Map<String, dynamic>? child});
 }
 
 /// @nodoc
@@ -190,7 +190,7 @@ class __$StacSetValueCopyWithImpl<$Res>
       child: freezed == child
           ? _self._child
           : child // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
     ));
   }
 }

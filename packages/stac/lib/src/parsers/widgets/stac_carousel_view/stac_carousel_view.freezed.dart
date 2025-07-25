@@ -118,8 +118,6 @@ abstract mixin class $StacCarouselViewCopyWith<$Res> {
       StacDouble? itemExtent,
       List<int>? flexWeights,
       List<Map<String, dynamic>>? children});
-
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
 }
 
 /// @nodoc
@@ -208,20 +206,6 @@ class _$StacCarouselViewCopyWithImpl<$Res>
           : children // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
     ));
-  }
-
-  /// Create a copy of StacCarouselView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 
@@ -401,9 +385,6 @@ abstract mixin class _$StacCarouselViewCopyWith<$Res>
       StacDouble? itemExtent,
       List<int>? flexWeights,
       List<Map<String, dynamic>>? children});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
 }
 
 /// @nodoc
@@ -492,20 +473,6 @@ class __$StacCarouselViewCopyWithImpl<$Res>
           : children // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
     ));
-  }
-
-  /// Create a copy of StacCarouselView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 

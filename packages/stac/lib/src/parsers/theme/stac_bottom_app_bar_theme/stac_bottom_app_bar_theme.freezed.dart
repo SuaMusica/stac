@@ -73,8 +73,6 @@ abstract mixin class $StacBottomAppBarThemeCopyWith<$Res> {
       String? surfaceTintColor,
       String? shadowColor,
       StacEdgeInsets? padding});
-
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
 }
 
 /// @nodoc
@@ -123,20 +121,6 @@ class _$StacBottomAppBarThemeCopyWithImpl<$Res>
           : padding // ignore: cast_nullable_to_non_nullable
               as StacEdgeInsets?,
     ));
-  }
-
-  /// Create a copy of StacBottomAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 
@@ -224,9 +208,6 @@ abstract mixin class _$StacBottomAppBarThemeCopyWith<$Res>
       String? surfaceTintColor,
       String? shadowColor,
       StacEdgeInsets? padding});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
 }
 
 /// @nodoc
@@ -275,20 +256,6 @@ class __$StacBottomAppBarThemeCopyWithImpl<$Res>
           : padding // ignore: cast_nullable_to_non_nullable
               as StacEdgeInsets?,
     ));
-  }
-
-  /// Create a copy of StacBottomAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 

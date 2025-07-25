@@ -147,11 +147,6 @@ abstract mixin class $StacListTileThemeDataCopyWith<$Res> {
       ListTileTitleAlignment? titleAlignment,
       List<StacShadow>? shadows});
 
-  $StacBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle;
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
@@ -266,77 +261,6 @@ class _$StacListTileThemeDataCopyWithImpl<$Res>
           : shadows // ignore: cast_nullable_to_non_nullable
               as List<StacShadow>?,
     ));
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle {
-    if (_self.subtitleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.subtitleTextStyle!, (value) {
-      return _then(_self.copyWith(subtitleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle {
-    if (_self.leadingAndTrailingTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.leadingAndTrailingTextStyle!,
-        (value) {
-      return _then(_self.copyWith(leadingAndTrailingTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
   }
 
   /// Create a copy of StacListTileThemeData
@@ -547,16 +471,6 @@ abstract mixin class _$StacListTileThemeDataCopyWith<$Res>
       List<StacShadow>? shadows});
 
   @override
-  $StacBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  @override
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
@@ -671,77 +585,6 @@ class __$StacListTileThemeDataCopyWithImpl<$Res>
           : shadows // ignore: cast_nullable_to_non_nullable
               as List<StacShadow>?,
     ));
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle {
-    if (_self.subtitleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.subtitleTextStyle!, (value) {
-      return _then(_self.copyWith(subtitleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle {
-    if (_self.leadingAndTrailingTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.leadingAndTrailingTextStyle!,
-        (value) {
-      return _then(_self.copyWith(leadingAndTrailingTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
   }
 
   /// Create a copy of StacListTileThemeData

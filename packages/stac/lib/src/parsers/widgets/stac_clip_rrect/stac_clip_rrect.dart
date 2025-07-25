@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/parsers.dart';
+import 'package:stac_models/types/stac_border_radius/stac_border_radius.dart';
 
 export 'stac_clip_rrect_parser.dart';
 

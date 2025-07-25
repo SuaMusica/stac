@@ -201,8 +201,6 @@ abstract mixin class $StacInkWellCopyWith<$Res> {
       Map<String, dynamic>? statesController,
       StacDuration? hoverDuration});
 
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius;
-  $StacBorderCopyWith<$Res>? get customBorder;
   $StacDurationCopyWith<$Res>? get hoverDuration;
 }
 
@@ -376,34 +374,6 @@ class _$StacInkWellCopyWithImpl<$Res> implements $StacInkWellCopyWith<$Res> {
           : hoverDuration // ignore: cast_nullable_to_non_nullable
               as StacDuration?,
     ));
-  }
-
-  /// Create a copy of StacInkWell
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius {
-    if (_self.borderRadius == null) {
-      return null;
-    }
-
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius!, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
-  }
-
-  /// Create a copy of StacInkWell
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get customBorder {
-    if (_self.customBorder == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.customBorder!, (value) {
-      return _then(_self.copyWith(customBorder: value));
-    });
   }
 
   /// Create a copy of StacInkWell
@@ -846,10 +816,6 @@ abstract mixin class _$StacInkWellCopyWith<$Res>
       StacDuration? hoverDuration});
 
   @override
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius;
-  @override
-  $StacBorderCopyWith<$Res>? get customBorder;
-  @override
   $StacDurationCopyWith<$Res>? get hoverDuration;
 }
 
@@ -1023,34 +989,6 @@ class __$StacInkWellCopyWithImpl<$Res> implements _$StacInkWellCopyWith<$Res> {
           : hoverDuration // ignore: cast_nullable_to_non_nullable
               as StacDuration?,
     ));
-  }
-
-  /// Create a copy of StacInkWell
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius {
-    if (_self.borderRadius == null) {
-      return null;
-    }
-
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius!, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
-  }
-
-  /// Create a copy of StacInkWell
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get customBorder {
-    if (_self.customBorder == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.customBorder!, (value) {
-      return _then(_self.copyWith(customBorder: value));
-    });
   }
 
   /// Create a copy of StacInkWell

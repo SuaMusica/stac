@@ -421,8 +421,6 @@ abstract mixin class $StacTableRowCopyWith<$Res> {
   @useResult
   $Res call(
       {StacBoxDecoration? decoration, List<Map<String, dynamic>> children});
-
-  $StacBoxDecorationCopyWith<$Res>? get decoration;
 }
 
 /// @nodoc
@@ -450,20 +448,6 @@ class _$StacTableRowCopyWithImpl<$Res> implements $StacTableRowCopyWith<$Res> {
           : children // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
     ));
-  }
-
-  /// Create a copy of StacTableRow
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxDecorationCopyWith<$Res>? get decoration {
-    if (_self.decoration == null) {
-      return null;
-    }
-
-    return $StacBoxDecorationCopyWith<$Res>(_self.decoration!, (value) {
-      return _then(_self.copyWith(decoration: value));
-    });
   }
 }
 
@@ -533,9 +517,6 @@ abstract mixin class _$StacTableRowCopyWith<$Res>
   @useResult
   $Res call(
       {StacBoxDecoration? decoration, List<Map<String, dynamic>> children});
-
-  @override
-  $StacBoxDecorationCopyWith<$Res>? get decoration;
 }
 
 /// @nodoc
@@ -564,20 +545,6 @@ class __$StacTableRowCopyWithImpl<$Res>
           : children // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
     ));
-  }
-
-  /// Create a copy of StacTableRow
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxDecorationCopyWith<$Res>? get decoration {
-    if (_self.decoration == null) {
-      return null;
-    }
-
-    return $StacBoxDecorationCopyWith<$Res>(_self.decoration!, (value) {
-      return _then(_self.copyWith(decoration: value));
-    });
   }
 }
 
@@ -633,8 +600,6 @@ abstract mixin class $StacTableBorderCopyWith<$Res> {
       StacDouble width,
       BorderStyle style,
       StacBorderRadius borderRadius});
-
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -673,16 +638,6 @@ class _$StacTableBorderCopyWithImpl<$Res>
           : borderRadius // ignore: cast_nullable_to_non_nullable
               as StacBorderRadius,
     ));
-  }
-
-  /// Create a copy of StacTableBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 
@@ -761,9 +716,6 @@ abstract mixin class _$StacTableBorderCopyWith<$Res>
       StacDouble width,
       BorderStyle style,
       StacBorderRadius borderRadius});
-
-  @override
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -802,16 +754,6 @@ class __$StacTableBorderCopyWithImpl<$Res>
           : borderRadius // ignore: cast_nullable_to_non_nullable
               as StacBorderRadius,
     ));
-  }
-
-  /// Create a copy of StacTableBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 

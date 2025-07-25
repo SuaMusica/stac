@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/parsers.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_offset/stac_offset.dart';
 import 'package:stac/src/utils/text_input_utils.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
+import 'package:stac_models/types/stac_offset/stac_offset.dart';
 
 export 'stac_dropdown_menu_parser.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/parsers/widgets/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
 
 export 'stac_card_parser.dart';
 

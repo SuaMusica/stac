@@ -23,10 +23,12 @@ _StacBottomNavBarThemeData _$StacBottomNavBarThemeDataFromJson(
       unselectedItemColor: json['unselectedItemColor'] as String?,
       selectedLabelStyle: json['selectedLabelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['selectedLabelStyle']),
+          : StacTextStyle.fromJson(
+              json['selectedLabelStyle'] as Map<String, dynamic>),
       unselectedLabelStyle: json['unselectedLabelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['unselectedLabelStyle']),
+          : StacTextStyle.fromJson(
+              json['unselectedLabelStyle'] as Map<String, dynamic>),
       showSelectedLabels: json['showSelectedLabels'] as bool?,
       showUnselectedLabels: json['showUnselectedLabels'] as bool?,
       type: $enumDecodeNullable(_$BottomNavigationBarTypeEnumMap, json['type']),

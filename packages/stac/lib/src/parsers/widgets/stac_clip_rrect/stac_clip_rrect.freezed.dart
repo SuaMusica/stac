@@ -63,8 +63,6 @@ abstract mixin class $StacClipRRectCopyWith<$Res> {
       {StacBorderRadius borderRadius,
       Clip clipBehavior,
       Map<String, dynamic>? child});
-
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -98,16 +96,6 @@ class _$StacClipRRectCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacClipRRect
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 
@@ -188,9 +176,6 @@ abstract mixin class _$StacClipRRectCopyWith<$Res>
       {StacBorderRadius borderRadius,
       Clip clipBehavior,
       Map<String, dynamic>? child});
-
-  @override
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -224,16 +209,6 @@ class __$StacClipRRectCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacClipRRect
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 

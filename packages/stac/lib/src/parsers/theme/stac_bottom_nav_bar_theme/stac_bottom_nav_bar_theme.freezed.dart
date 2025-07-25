@@ -119,8 +119,6 @@ abstract mixin class $StacBottomNavBarThemeDataCopyWith<$Res> {
 
   $StacIconThemeDataCopyWith<$Res>? get selectedIconTheme;
   $StacIconThemeDataCopyWith<$Res>? get unselectedIconTheme;
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle;
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -232,34 +230,6 @@ class _$StacBottomNavBarThemeDataCopyWithImpl<$Res>
     return $StacIconThemeDataCopyWith<$Res>(_self.unselectedIconTheme!,
         (value) {
       return _then(_self.copyWith(unselectedIconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacBottomNavBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle {
-    if (_self.selectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.selectedLabelStyle!, (value) {
-      return _then(_self.copyWith(selectedLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBottomNavBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
     });
   }
 }
@@ -411,10 +381,6 @@ abstract mixin class _$StacBottomNavBarThemeDataCopyWith<$Res>
   $StacIconThemeDataCopyWith<$Res>? get selectedIconTheme;
   @override
   $StacIconThemeDataCopyWith<$Res>? get unselectedIconTheme;
-  @override
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -526,34 +492,6 @@ class __$StacBottomNavBarThemeDataCopyWithImpl<$Res>
     return $StacIconThemeDataCopyWith<$Res>(_self.unselectedIconTheme!,
         (value) {
       return _then(_self.copyWith(unselectedIconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacBottomNavBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle {
-    if (_self.selectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.selectedLabelStyle!, (value) {
-      return _then(_self.copyWith(selectedLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBottomNavBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
     });
   }
 }

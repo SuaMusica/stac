@@ -12,7 +12,8 @@ class StacConditionalParser extends StacParser<StacConditional> {
   String get type => WidgetType.conditional.name;
 
   @override
-  StacConditional getModel(StacWidget json) => StacConditional.fromJson(json);
+  StacConditional getModel(Map<String, dynamic> json) =>
+      StacConditional.fromJson(json);
 
   @override
   Widget parse(BuildContext context, StacConditional model) {

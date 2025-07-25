@@ -93,10 +93,6 @@ abstract mixin class $StacMaterialBannerThemeDataCopyWith<$Res> {
       double? elevation,
       StacEdgeInsets? padding,
       StacEdgeInsets? leadingPadding});
-
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  $StacEdgeInsetsCopyWith<$Res>? get leadingPadding;
 }
 
 /// @nodoc
@@ -155,48 +151,6 @@ class _$StacMaterialBannerThemeDataCopyWithImpl<$Res>
           : leadingPadding // ignore: cast_nullable_to_non_nullable
               as StacEdgeInsets?,
     ));
-  }
-
-  /// Create a copy of StacMaterialBannerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacMaterialBannerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacMaterialBannerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get leadingPadding {
-    if (_self.leadingPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.leadingPadding!, (value) {
-      return _then(_self.copyWith(leadingPadding: value));
-    });
   }
 }
 
@@ -307,13 +261,6 @@ abstract mixin class _$StacMaterialBannerThemeDataCopyWith<$Res>
       double? elevation,
       StacEdgeInsets? padding,
       StacEdgeInsets? leadingPadding});
-
-  @override
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get leadingPadding;
 }
 
 /// @nodoc
@@ -372,48 +319,6 @@ class __$StacMaterialBannerThemeDataCopyWithImpl<$Res>
           : leadingPadding // ignore: cast_nullable_to_non_nullable
               as StacEdgeInsets?,
     ));
-  }
-
-  /// Create a copy of StacMaterialBannerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacMaterialBannerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacMaterialBannerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get leadingPadding {
-    if (_self.leadingPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.leadingPadding!, (value) {
-      return _then(_self.copyWith(leadingPadding: value));
-    });
   }
 }
 

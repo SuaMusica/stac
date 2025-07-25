@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
-import 'package:stac/src/parsers/widgets/stac_border/stac_border.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
+import 'package:stac_models/types/stac_border/stac_border.dart';
 
 part 'stac_dialog_theme.freezed.dart';
 part 'stac_dialog_theme.g.dart';
@@ -39,7 +42,7 @@ extension StacDialogThemeParser on StacDialogTheme {
       alignment: alignment?.parse,
       titleTextStyle: titleTextStyle?.parse(context),
       contentTextStyle: contentTextStyle?.parse(context),
-      actionsPadding: actionsPadding.parse,
+      actionsPadding: actionsPadding?.parse,
       iconColor: iconColor.toColor(context),
     );
   }

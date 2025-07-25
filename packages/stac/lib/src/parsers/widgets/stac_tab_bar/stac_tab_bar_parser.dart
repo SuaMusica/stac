@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/parsers/widgets/stac_tab_bar/stac_tab_bar.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/src/parsers/widgets/stac_box_decoration/stac_box_decoration.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacTabBarParser extends StacParser<StacTabBar> {
@@ -33,12 +33,12 @@ class StacTabBarParser extends StacParser<StacTabBar> {
       automaticIndicatorColorAdjustment:
           model.automaticIndicatorColorAdjustment,
       indicatorWeight: model.indicatorWeight.parse,
-      indicatorPadding: model.indicatorPadding.parse,
+      indicatorPadding: model.indicatorPadding?.parse ?? EdgeInsets.zero,
       indicator: model.indicator?.parse(context),
       indicatorSize: model.indicatorSize,
       labelColor: model.labelColor.toColor(context),
       labelStyle: model.labelStyle?.parse(context),
-      labelPadding: model.labelPadding.parse,
+      labelPadding: model.labelPadding?.parse,
       unselectedLabelColor: model.unselectedLabelColor.toColor(context),
       unselectedLabelStyle: model.unselectedLabelStyle?.parse(context),
       dragStartBehavior: model.dragStartBehavior,

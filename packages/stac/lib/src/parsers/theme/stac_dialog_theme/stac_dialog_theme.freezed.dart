@@ -102,11 +102,7 @@ abstract mixin class $StacDialogThemeCopyWith<$Res> {
       StacEdgeInsets? actionsPadding,
       String? iconColor});
 
-  $StacBorderCopyWith<$Res>? get shape;
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
 }
 
 /// @nodoc
@@ -181,20 +177,6 @@ class _$StacDialogThemeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacAlignmentGeometryCopyWith<$Res>? get alignment {
     if (_self.alignment == null) {
       return null;
@@ -202,48 +184,6 @@ class _$StacDialogThemeCopyWithImpl<$Res>
 
     return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
       return _then(_self.copyWith(alignment: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
     });
   }
 }
@@ -369,15 +309,7 @@ abstract mixin class _$StacDialogThemeCopyWith<$Res>
       String? iconColor});
 
   @override
-  $StacBorderCopyWith<$Res>? get shape;
-  @override
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
 }
 
 /// @nodoc
@@ -452,20 +384,6 @@ class __$StacDialogThemeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacAlignmentGeometryCopyWith<$Res>? get alignment {
     if (_self.alignment == null) {
       return null;
@@ -473,48 +391,6 @@ class __$StacDialogThemeCopyWithImpl<$Res>
 
     return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
       return _then(_self.copyWith(alignment: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
     });
   }
 }

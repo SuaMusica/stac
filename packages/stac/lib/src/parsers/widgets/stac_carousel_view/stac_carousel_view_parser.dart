@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_carousel_view/stac_carousel_view.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -23,7 +23,7 @@ class StacCarouselViewParser extends StacParser<StacCarouselView> {
     switch (model.carouselType) {
       case StacCarouselViewType.regular:
         return CarouselView(
-          padding: model.padding.parse,
+          padding: model.padding?.parse,
           backgroundColor: model.backgroundColor.toColor(context),
           elevation: model.elevation?.parse,
           overlayColor:
@@ -42,7 +42,7 @@ class StacCarouselViewParser extends StacParser<StacCarouselView> {
         );
       case StacCarouselViewType.weighted:
         return CarouselView.weighted(
-          padding: model.padding.parse,
+          padding: model.padding?.parse,
           backgroundColor: model.backgroundColor.toColor(context),
           elevation: model.elevation?.parse,
           overlayColor:

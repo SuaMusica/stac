@@ -22,8 +22,9 @@ _StacTextFormField _$StacTextFormFieldFromJson(Map<String, dynamic> json) =>
       textCapitalization: $enumDecodeNullable(
               _$TextCapitalizationEnumMap, json['textCapitalization']) ??
           TextCapitalization.none,
-      style:
-          json['style'] == null ? null : StacTextStyle.fromJson(json['style']),
+      style: json['style'] == null
+          ? null
+          : StacTextStyle.fromJson(json['style'] as Map<String, dynamic>),
       textAlign: $enumDecodeNullable(_$TextAlignEnumMap, json['textAlign']) ??
           TextAlign.start,
       textAlignVertical: $enumDecodeNullable(
@@ -49,11 +50,7 @@ _StacTextFormField _$StacTextFormFieldFromJson(Map<String, dynamic> json) =>
       keyboardAppearance:
           $enumDecodeNullable(_$BrightnessEnumMap, json['keyboardAppearance']),
       scrollPadding: json['scrollPadding'] == null
-          ? const StacEdgeInsets(
-              bottom: StacDouble(20),
-              top: StacDouble(20),
-              left: StacDouble(20),
-              right: StacDouble(20))
+          ? const StacEdgeInsets(bottom: 20, top: 20, left: 20, right: 20)
           : StacEdgeInsets.fromJson(json['scrollPadding']),
       restorationId: json['restorationId'] as String?,
       enableIMEPersonalizedLearning:

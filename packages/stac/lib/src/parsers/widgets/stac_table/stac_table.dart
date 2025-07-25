@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/stac.dart';
+import 'package:stac_models/painting/stac_box_decoration/stac_box_decoration.dart';
+import 'package:stac_models/types/stac_border_radius/stac_border_radius.dart';
 
 export 'stac_table_parser.dart';
 

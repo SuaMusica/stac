@@ -18,7 +18,7 @@ packages:
     source: hosted
     version: "7.4.5"
   args:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: args
       sha256: d0481093c50b1da8910eb0bb301626d4d8eb7284aa739614d2b394ee09e3ea04
@@ -727,13 +727,6 @@ packages:
       relative: true
     source: path
     version: "1.0.0-dev.5"
-  stac_export:
-    dependency: "direct main"
-    description:
-      path: "../../packages/stac_export"
-      relative: true
-    source: path
-    version: "0.0.1"
   stac_framework:
     dependency: "direct overridden"
     description:
@@ -748,6 +741,13 @@ packages:
       relative: true
     source: path
     version: "1.1.0"
+  stac_models:
+    dependency: "direct main"
+    description:
+      path: "../../packages/stac_models"
+      relative: true
+    source: path
+    version: "0.0.1"
   stac_webview:
     dependency: "direct main"
     description:
