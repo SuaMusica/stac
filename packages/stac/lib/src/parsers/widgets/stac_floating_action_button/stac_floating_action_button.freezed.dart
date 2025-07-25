@@ -154,9 +154,6 @@ abstract mixin class $StacFloatingActionButtonCopyWith<$Res> {
       String? tooltip,
       Object? heroTag,
       Map<String, dynamic> child});
-
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle;
 }
 
 /// @nodoc
@@ -277,34 +274,6 @@ class _$StacFloatingActionButtonCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of StacFloatingActionButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacFloatingActionButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle {
-    if (_self.extendedTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.extendedTextStyle!, (value) {
-      return _then(_self.copyWith(extendedTextStyle: value));
-    });
   }
 }
 
@@ -530,11 +499,6 @@ abstract mixin class _$StacFloatingActionButtonCopyWith<$Res>
       String? tooltip,
       Object? heroTag,
       Map<String, dynamic> child});
-
-  @override
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle;
 }
 
 /// @nodoc
@@ -655,34 +619,6 @@ class __$StacFloatingActionButtonCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of StacFloatingActionButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacFloatingActionButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle {
-    if (_self.extendedTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.extendedTextStyle!, (value) {
-      return _then(_self.copyWith(extendedTextStyle: value));
-    });
   }
 }
 

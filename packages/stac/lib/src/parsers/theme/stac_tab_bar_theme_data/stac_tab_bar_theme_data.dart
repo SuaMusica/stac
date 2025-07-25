@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_box_decoration/stac_box_decoration.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
+import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/painting/stac_box_decoration/stac_box_decoration.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 
 part 'stac_tab_bar_theme_data.freezed.dart';
 part 'stac_tab_bar_theme_data.g.dart';
@@ -30,12 +33,12 @@ abstract class StacTabBarThemeData with _$StacTabBarThemeData {
 extension StacTabBarThemeDataParser on StacTabBarThemeData {
   TabBarTheme? parse(BuildContext context) {
     return TabBarTheme(
-      indicator: indicator.parse(context),
+      indicator: indicator?.parse(context),
       indicatorColor: indicatorColor.toColor(context),
       indicatorSize: indicatorSize,
       dividerColor: dividerColor.toColor(context),
       labelColor: labelColor.toColor(context),
-      labelPadding: labelPadding.parse,
+      labelPadding: labelPadding?.parse,
       labelStyle: labelStyle?.parse(context),
       unselectedLabelColor: unselectedLabelColor.toColor(context),
       unselectedLabelStyle: unselectedLabelStyle?.parse(context),

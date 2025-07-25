@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/parsers/widgets/stac_grid_view/stac_grid_view.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -24,7 +24,7 @@ class StacGridViewParser extends StacParser<StacGridView> {
       primary: model.primary,
       physics: model.physics?.parse,
       shrinkWrap: model.shrinkWrap,
-      padding: model.padding.parse,
+      padding: model.padding?.parse,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: model.crossAxisCount ?? 0,
         mainAxisSpacing: model.mainAxisSpacing.parse,

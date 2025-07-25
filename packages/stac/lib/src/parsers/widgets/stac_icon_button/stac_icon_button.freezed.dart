@@ -143,8 +143,6 @@ abstract mixin class $StacIconButtonCopyWith<$Res> {
       Map<String, dynamic>? selectedIcon,
       Map<String, dynamic>? icon});
 
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
   $StacButtonStyleCopyWith<$Res>? get style;
 }
 
@@ -259,34 +257,6 @@ class _$StacIconButtonCopyWithImpl<$Res>
           : icon // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacIconButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacIconButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
-    });
   }
 
   /// Create a copy of StacIconButton
@@ -512,10 +482,6 @@ abstract mixin class _$StacIconButtonCopyWith<$Res>
       Map<String, dynamic>? icon});
 
   @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
-  @override
   $StacButtonStyleCopyWith<$Res>? get style;
 }
 
@@ -630,34 +596,6 @@ class __$StacIconButtonCopyWithImpl<$Res>
           : icon // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacIconButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacIconButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
-    });
   }
 
   /// Create a copy of StacIconButton

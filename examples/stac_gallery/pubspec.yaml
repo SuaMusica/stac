@@ -39,8 +39,7 @@ dependencies:
   flutter_bloc: ^9.1.0
   stac: ^0.10.0
   stac_webview: ^0.1.2
-  stac_export: ^0.1.0
-  args: ^2.7.0
+  stac_models:
 
 dev_dependencies:
   flutter_test:

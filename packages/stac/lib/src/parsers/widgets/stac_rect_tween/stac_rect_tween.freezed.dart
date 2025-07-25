@@ -57,9 +57,6 @@ abstract mixin class $StacRectTweenCopyWith<$Res> {
       _$StacRectTweenCopyWithImpl;
   @useResult
   $Res call({String type, StacRect? begin, StacRect? end});
-
-  $StacRectCopyWith<$Res>? get begin;
-  $StacRectCopyWith<$Res>? get end;
 }
 
 /// @nodoc
@@ -93,34 +90,6 @@ class _$StacRectTweenCopyWithImpl<$Res>
           : end // ignore: cast_nullable_to_non_nullable
               as StacRect?,
     ));
-  }
-
-  /// Create a copy of StacRectTween
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRectCopyWith<$Res>? get begin {
-    if (_self.begin == null) {
-      return null;
-    }
-
-    return $StacRectCopyWith<$Res>(_self.begin!, (value) {
-      return _then(_self.copyWith(begin: value));
-    });
-  }
-
-  /// Create a copy of StacRectTween
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRectCopyWith<$Res>? get end {
-    if (_self.end == null) {
-      return null;
-    }
-
-    return $StacRectCopyWith<$Res>(_self.end!, (value) {
-      return _then(_self.copyWith(end: value));
-    });
   }
 }
 
@@ -182,11 +151,6 @@ abstract mixin class _$StacRectTweenCopyWith<$Res>
   @override
   @useResult
   $Res call({String type, StacRect? begin, StacRect? end});
-
-  @override
-  $StacRectCopyWith<$Res>? get begin;
-  @override
-  $StacRectCopyWith<$Res>? get end;
 }
 
 /// @nodoc
@@ -220,34 +184,6 @@ class __$StacRectTweenCopyWithImpl<$Res>
           : end // ignore: cast_nullable_to_non_nullable
               as StacRect?,
     ));
-  }
-
-  /// Create a copy of StacRectTween
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRectCopyWith<$Res>? get begin {
-    if (_self.begin == null) {
-      return null;
-    }
-
-    return $StacRectCopyWith<$Res>(_self.begin!, (value) {
-      return _then(_self.copyWith(begin: value));
-    });
-  }
-
-  /// Create a copy of StacRectTween
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRectCopyWith<$Res>? get end {
-    if (_self.end == null) {
-      return null;
-    }
-
-    return $StacRectCopyWith<$Res>(_self.end!, (value) {
-      return _then(_self.copyWith(end: value));
-    });
   }
 }
 

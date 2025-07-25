@@ -165,8 +165,6 @@ abstract mixin class $StacListTileCopyWith<$Res> {
       StacDouble? horizontalTitleGap,
       StacDouble? minVerticalPadding,
       StacDouble? minLeadingWidth});
-
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
 }
 
 /// @nodoc
@@ -304,20 +302,6 @@ class _$StacListTileCopyWithImpl<$Res> implements $StacListTileCopyWith<$Res> {
           : minLeadingWidth // ignore: cast_nullable_to_non_nullable
               as StacDouble?,
     ));
-  }
-
-  /// Create a copy of StacListTile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
   }
 }
 
@@ -590,9 +574,6 @@ abstract mixin class _$StacListTileCopyWith<$Res>
       StacDouble? horizontalTitleGap,
       StacDouble? minVerticalPadding,
       StacDouble? minLeadingWidth});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
 }
 
 /// @nodoc
@@ -731,20 +712,6 @@ class __$StacListTileCopyWithImpl<$Res>
           : minLeadingWidth // ignore: cast_nullable_to_non_nullable
               as StacDouble?,
     ));
-  }
-
-  /// Create a copy of StacListTile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
   }
 }
 

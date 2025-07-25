@@ -102,8 +102,6 @@ abstract mixin class $StacPositionedCopyWith<$Res> {
       TextDirection textDirection,
       StacRect? rect,
       Map<String, dynamic>? child});
-
-  $StacRectCopyWith<$Res>? get rect;
 }
 
 /// @nodoc
@@ -182,20 +180,6 @@ class _$StacPositionedCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacPositioned
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRectCopyWith<$Res>? get rect {
-    if (_self.rect == null) {
-      return null;
-    }
-
-    return $StacRectCopyWith<$Res>(_self.rect!, (value) {
-      return _then(_self.copyWith(rect: value));
-    });
   }
 }
 
@@ -332,9 +316,6 @@ abstract mixin class _$StacPositionedCopyWith<$Res>
       TextDirection textDirection,
       StacRect? rect,
       Map<String, dynamic>? child});
-
-  @override
-  $StacRectCopyWith<$Res>? get rect;
 }
 
 /// @nodoc
@@ -413,20 +394,6 @@ class __$StacPositionedCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacPositioned
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRectCopyWith<$Res>? get rect {
-    if (_self.rect == null) {
-      return null;
-    }
-
-    return $StacRectCopyWith<$Res>(_self.rect!, (value) {
-      return _then(_self.copyWith(rect: value));
-    });
   }
 }
 

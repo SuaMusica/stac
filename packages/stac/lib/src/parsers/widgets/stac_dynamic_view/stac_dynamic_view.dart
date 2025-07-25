@@ -16,8 +16,8 @@ abstract class StacDynamicView with _$StacDynamicView {
     required Map<String, dynamic> template,
     @Default('') String resultTarget,
     Map<String, dynamic>? emptyTemplate,
-    StacWidget? loaderWidget,
-    StacWidget? errorWidget,
+    Map<String, dynamic>? loaderWidget,
+    Map<String, dynamic>? errorWidget,
   }) = _StacDynamicView;
 
   factory StacDynamicView.fromJson(Map<String, dynamic> json) =>

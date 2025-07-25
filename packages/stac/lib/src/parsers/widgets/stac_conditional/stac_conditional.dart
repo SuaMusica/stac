@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac_framework/stac_framework.dart';
 
 export 'stac_conditional_parser.dart';
 
@@ -10,8 +9,8 @@ part 'stac_conditional.g.dart';
 abstract class StacConditional with _$StacConditional {
   const factory StacConditional({
     required String condition,
-    required StacWidget ifTrue,
-    StacWidget? ifFalse,
+    required Map<String, dynamic> ifTrue,
+    Map<String, dynamic>? ifFalse,
   }) = _StacConditional;
 
   factory StacConditional.fromJson(Map<String, dynamic> json) =>

@@ -2,6 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/parsers/widgets/stac_mouse_cursor/stac_mouse_cursor.dart';
 import 'package:stac/stac.dart';
+import 'package:stac_models/types/stac_border/stac_border.dart';
+import 'package:stac_models/types/stac_border_radius/stac_border_radius.dart';
 
 part 'stac_inkwell.freezed.dart';
 part 'stac_inkwell.g.dart';

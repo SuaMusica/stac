@@ -19,7 +19,8 @@ _StacSnackBarThemeData _$StacSnackBarThemeDataFromJson(
       width: (json['width'] as num?)?.toDouble(),
       contentTextStyle: json['contentTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['contentTextStyle']),
+          : StacTextStyle.fromJson(
+              json['contentTextStyle'] as Map<String, dynamic>),
       actionTextColor: json['actionTextColor'] as String?,
       disabledActionTextColor: json['disabledActionTextColor'] as String?,
       insetPadding: json['insetPadding'] == null

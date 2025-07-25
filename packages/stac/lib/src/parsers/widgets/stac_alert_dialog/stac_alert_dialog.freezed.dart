@@ -183,14 +183,6 @@ abstract mixin class $StacAlertDialogCopyWith<$Res> {
       StacAlignmentGeometry? alignment,
       bool scrollable});
 
-  $StacEdgeInsetsCopyWith<$Res>? get iconPadding;
-  $StacEdgeInsetsCopyWith<$Res>? get titlePadding;
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
-  $StacEdgeInsetsCopyWith<$Res>? get buttonPadding;
-  $StacEdgeInsetsCopyWith<$Res> get insetPadding;
   $StacShapeBorderCopyWith<$Res>? get shape;
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
@@ -347,114 +339,6 @@ class _$StacAlertDialogCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get iconPadding {
-    if (_self.iconPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.iconPadding!, (value) {
-      return _then(_self.copyWith(iconPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get titlePadding {
-    if (_self.titlePadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.titlePadding!, (value) {
-      return _then(_self.copyWith(titlePadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get buttonPadding {
-    if (_self.buttonPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.buttonPadding!, (value) {
-      return _then(_self.copyWith(buttonPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get insetPadding {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.insetPadding, (value) {
-      return _then(_self.copyWith(insetPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacShapeBorderCopyWith<$Res>? get shape {
     if (_self.shape == null) {
       return null;
@@ -505,11 +389,8 @@ class _StacAlertDialog implements StacAlertDialog {
       this.shadowColor,
       this.surfaceTintColor,
       this.semanticLabel,
-      this.insetPadding = const StacEdgeInsets(
-          left: StacDouble(40),
-          right: StacDouble(40),
-          top: StacDouble(24),
-          bottom: StacDouble(24)),
+      this.insetPadding =
+          const StacEdgeInsets(left: 40, right: 40, top: 24, bottom: 24),
       this.clipBehavior = Clip.none,
       this.shape,
       this.alignment,
@@ -757,22 +638,6 @@ abstract mixin class _$StacAlertDialogCopyWith<$Res>
       bool scrollable});
 
   @override
-  $StacEdgeInsetsCopyWith<$Res>? get iconPadding;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get titlePadding;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  @override
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get buttonPadding;
-  @override
-  $StacEdgeInsetsCopyWith<$Res> get insetPadding;
-  @override
   $StacShapeBorderCopyWith<$Res>? get shape;
   @override
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
@@ -924,114 +789,6 @@ class __$StacAlertDialogCopyWithImpl<$Res>
           : scrollable // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get iconPadding {
-    if (_self.iconPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.iconPadding!, (value) {
-      return _then(_self.copyWith(iconPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get titlePadding {
-    if (_self.titlePadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.titlePadding!, (value) {
-      return _then(_self.copyWith(titlePadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get buttonPadding {
-    if (_self.buttonPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.buttonPadding!, (value) {
-      return _then(_self.copyWith(buttonPadding: value));
-    });
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get insetPadding {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.insetPadding, (value) {
-      return _then(_self.copyWith(insetPadding: value));
-    });
   }
 
   /// Create a copy of StacAlertDialog

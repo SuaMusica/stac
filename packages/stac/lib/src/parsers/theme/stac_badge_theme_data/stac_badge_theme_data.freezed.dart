@@ -83,10 +83,7 @@ abstract mixin class $StacBadgeThemeDataCopyWith<$Res> {
       StacAlignmentGeometry? alignment,
       StacOffset? offset});
 
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
-  $StacOffsetCopyWith<$Res>? get offset;
 }
 
 /// @nodoc
@@ -151,34 +148,6 @@ class _$StacBadgeThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacAlignmentGeometryCopyWith<$Res>? get alignment {
     if (_self.alignment == null) {
       return null;
@@ -186,20 +155,6 @@ class _$StacBadgeThemeDataCopyWithImpl<$Res>
 
     return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
       return _then(_self.copyWith(alignment: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res>? get offset {
-    if (_self.offset == null) {
-      return null;
-    }
-
-    return $StacOffsetCopyWith<$Res>(_self.offset!, (value) {
-      return _then(_self.copyWith(offset: value));
     });
   }
 }
@@ -302,13 +257,7 @@ abstract mixin class _$StacBadgeThemeDataCopyWith<$Res>
       StacOffset? offset});
 
   @override
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
-  @override
-  $StacOffsetCopyWith<$Res>? get offset;
 }
 
 /// @nodoc
@@ -373,34 +322,6 @@ class __$StacBadgeThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacAlignmentGeometryCopyWith<$Res>? get alignment {
     if (_self.alignment == null) {
       return null;
@@ -408,20 +329,6 @@ class __$StacBadgeThemeDataCopyWithImpl<$Res>
 
     return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
       return _then(_self.copyWith(alignment: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res>? get offset {
-    if (_self.offset == null) {
-      return null;
-    }
-
-    return $StacOffsetCopyWith<$Res>(_self.offset!, (value) {
-      return _then(_self.copyWith(offset: value));
     });
   }
 }

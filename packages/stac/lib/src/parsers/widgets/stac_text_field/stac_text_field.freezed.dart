@@ -177,7 +177,6 @@ abstract mixin class $StacTextFieldCopyWith<$Res> {
       List<StacInputFormatter> inputFormatters});
 
   $StacInputDecorationCopyWith<$Res>? get decoration;
-  $StacTextStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -334,20 +333,6 @@ class _$StacTextFieldCopyWithImpl<$Res>
 
     return $StacInputDecorationCopyWith<$Res>(_self.decoration!, (value) {
       return _then(_self.copyWith(decoration: value));
-    });
-  }
-
-  /// Create a copy of StacTextField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
     });
   }
 }
@@ -595,8 +580,6 @@ abstract mixin class _$StacTextFieldCopyWith<$Res>
 
   @override
   $StacInputDecorationCopyWith<$Res>? get decoration;
-  @override
-  $StacTextStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -753,20 +736,6 @@ class __$StacTextFieldCopyWithImpl<$Res>
 
     return $StacInputDecorationCopyWith<$Res>(_self.decoration!, (value) {
       return _then(_self.copyWith(decoration: value));
-    });
-  }
-
-  /// Create a copy of StacTextField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
     });
   }
 }

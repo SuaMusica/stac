@@ -73,9 +73,6 @@ abstract mixin class $StacInputBorderCopyWith<$Res> {
       StacDouble width,
       String? color,
       StacGradient? gradient});
-
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius;
-  $StacGradientCopyWith<$Res>? get gradient;
 }
 
 /// @nodoc
@@ -124,34 +121,6 @@ class _$StacInputBorderCopyWithImpl<$Res>
           : gradient // ignore: cast_nullable_to_non_nullable
               as StacGradient?,
     ));
-  }
-
-  /// Create a copy of StacInputBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius {
-    if (_self.borderRadius == null) {
-      return null;
-    }
-
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius!, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
-  }
-
-  /// Create a copy of StacInputBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacGradientCopyWith<$Res>? get gradient {
-    if (_self.gradient == null) {
-      return null;
-    }
-
-    return $StacGradientCopyWith<$Res>(_self.gradient!, (value) {
-      return _then(_self.copyWith(gradient: value));
-    });
   }
 }
 
@@ -241,11 +210,6 @@ abstract mixin class _$StacInputBorderCopyWith<$Res>
       StacDouble width,
       String? color,
       StacGradient? gradient});
-
-  @override
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius;
-  @override
-  $StacGradientCopyWith<$Res>? get gradient;
 }
 
 /// @nodoc
@@ -294,34 +258,6 @@ class __$StacInputBorderCopyWithImpl<$Res>
           : gradient // ignore: cast_nullable_to_non_nullable
               as StacGradient?,
     ));
-  }
-
-  /// Create a copy of StacInputBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res>? get borderRadius {
-    if (_self.borderRadius == null) {
-      return null;
-    }
-
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius!, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
-  }
-
-  /// Create a copy of StacInputBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacGradientCopyWith<$Res>? get gradient {
-    if (_self.gradient == null) {
-      return null;
-    }
-
-    return $StacGradientCopyWith<$Res>(_self.gradient!, (value) {
-      return _then(_self.copyWith(gradient: value));
-    });
   }
 }
 

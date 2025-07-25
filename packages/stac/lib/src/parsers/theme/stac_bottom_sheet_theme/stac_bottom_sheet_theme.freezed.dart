@@ -117,9 +117,7 @@ abstract mixin class $StacBottomSheetThemeDataCopyWith<$Res> {
       Clip? clipBehavior,
       StacBoxConstraints? constraints});
 
-  $StacBorderCopyWith<$Res>? get shape;
   $StacSizeCopyWith<$Res>? get dragHandleSize;
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -209,20 +207,6 @@ class _$StacBottomSheetThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSizeCopyWith<$Res>? get dragHandleSize {
     if (_self.dragHandleSize == null) {
       return null;
@@ -230,20 +214,6 @@ class _$StacBottomSheetThemeDataCopyWithImpl<$Res>
 
     return $StacSizeCopyWith<$Res>(_self.dragHandleSize!, (value) {
       return _then(_self.copyWith(dragHandleSize: value));
-    });
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
     });
   }
 }
@@ -391,11 +361,7 @@ abstract mixin class _$StacBottomSheetThemeDataCopyWith<$Res>
       StacBoxConstraints? constraints});
 
   @override
-  $StacBorderCopyWith<$Res>? get shape;
-  @override
   $StacSizeCopyWith<$Res>? get dragHandleSize;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -485,20 +451,6 @@ class __$StacBottomSheetThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSizeCopyWith<$Res>? get dragHandleSize {
     if (_self.dragHandleSize == null) {
       return null;
@@ -506,20 +458,6 @@ class __$StacBottomSheetThemeDataCopyWithImpl<$Res>
 
     return $StacSizeCopyWith<$Res>(_self.dragHandleSize!, (value) {
       return _then(_self.copyWith(dragHandleSize: value));
-    });
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
     });
   }
 }

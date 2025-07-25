@@ -3,8 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/parsers/widgets/stac_input_decoration/stac_input_decoration.dart';
 import 'package:stac/src/parsers/widgets/stac_input_formatters/stac_input_formatter.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 import 'package:stac/src/utils/text_input_utils.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 
 export 'stac_text_field_parser.dart';
 

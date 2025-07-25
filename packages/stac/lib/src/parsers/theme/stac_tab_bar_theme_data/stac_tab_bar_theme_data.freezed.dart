@@ -102,11 +102,6 @@ abstract mixin class $StacTabBarThemeDataCopyWith<$Res> {
       String? unselectedLabelColor,
       StacTextStyle? unselectedLabelStyle,
       String? overlayColor});
-
-  $StacBoxDecorationCopyWith<$Res>? get indicator;
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -175,62 +170,6 @@ class _$StacTabBarThemeDataCopyWithImpl<$Res>
           : overlayColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxDecorationCopyWith<$Res>? get indicator {
-    if (_self.indicator == null) {
-      return null;
-    }
-
-    return $StacBoxDecorationCopyWith<$Res>(_self.indicator!, (value) {
-      return _then(_self.copyWith(indicator: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
-    });
   }
 }
 
@@ -355,15 +294,6 @@ abstract mixin class _$StacTabBarThemeDataCopyWith<$Res>
       String? unselectedLabelColor,
       StacTextStyle? unselectedLabelStyle,
       String? overlayColor});
-
-  @override
-  $StacBoxDecorationCopyWith<$Res>? get indicator;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -432,62 +362,6 @@ class __$StacTabBarThemeDataCopyWithImpl<$Res>
           : overlayColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxDecorationCopyWith<$Res>? get indicator {
-    if (_self.indicator == null) {
-      return null;
-    }
-
-    return $StacBoxDecorationCopyWith<$Res>(_self.indicator!, (value) {
-      return _then(_self.copyWith(indicator: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
-    });
   }
 }
 

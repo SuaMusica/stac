@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac/src/parsers/widgets/stac_form_field_validator/stac_form_validator.dart';
 import 'package:stac/src/parsers/widgets/stac_input_decoration/stac_input_decoration.dart';
 import 'package:stac/src/parsers/widgets/stac_input_formatters/stac_input_formatter.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 import 'package:stac/src/utils/text_input_utils.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 
 export 'stac_text_form_field_parser.dart';
 
@@ -42,11 +42,7 @@ abstract class StacTextFormField with _$StacTextFormField {
     MaxLengthEnforcement? maxLengthEnforcement,
     @Default(false) bool expands,
     Brightness? keyboardAppearance,
-    @Default(StacEdgeInsets(
-        bottom: StacDouble(20),
-        top: StacDouble(20),
-        left: StacDouble(20),
-        right: StacDouble(20)))
+    @Default(StacEdgeInsets(bottom: 20, top: 20, left: 20, right: 20))
     StacEdgeInsets scrollPadding,
     String? restorationId,
     @Default(true) bool enableIMEPersonalizedLearning,

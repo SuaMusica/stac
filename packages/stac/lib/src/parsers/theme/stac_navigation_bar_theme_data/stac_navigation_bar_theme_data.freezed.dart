@@ -103,8 +103,6 @@ abstract mixin class $StacNavigationBarThemeDataCopyWith<$Res> {
       StacIconThemeData? iconTheme,
       NavigationDestinationLabelBehavior? labelBehavior});
 
-  $StacBorderCopyWith<$Res>? get indicatorShape;
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -174,34 +172,6 @@ class _$StacNavigationBarThemeDataCopyWithImpl<$Res>
           : labelBehavior // ignore: cast_nullable_to_non_nullable
               as NavigationDestinationLabelBehavior?,
     ));
-  }
-
-  /// Create a copy of StacNavigationBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get indicatorShape {
-    if (_self.indicatorShape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.indicatorShape!, (value) {
-      return _then(_self.copyWith(indicatorShape: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle {
-    if (_self.labelTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelTextStyle!, (value) {
-      return _then(_self.copyWith(labelTextStyle: value));
-    });
   }
 
   /// Create a copy of StacNavigationBarThemeData
@@ -342,10 +312,6 @@ abstract mixin class _$StacNavigationBarThemeDataCopyWith<$Res>
       NavigationDestinationLabelBehavior? labelBehavior});
 
   @override
-  $StacBorderCopyWith<$Res>? get indicatorShape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -415,34 +381,6 @@ class __$StacNavigationBarThemeDataCopyWithImpl<$Res>
           : labelBehavior // ignore: cast_nullable_to_non_nullable
               as NavigationDestinationLabelBehavior?,
     ));
-  }
-
-  /// Create a copy of StacNavigationBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get indicatorShape {
-    if (_self.indicatorShape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.indicatorShape!, (value) {
-      return _then(_self.copyWith(indicatorShape: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle {
-    if (_self.labelTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelTextStyle!, (value) {
-      return _then(_self.copyWith(labelTextStyle: value));
-    });
   }
 
   /// Create a copy of StacNavigationBarThemeData

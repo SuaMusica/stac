@@ -15,7 +15,8 @@ _StacMaterialBannerThemeData _$StacMaterialBannerThemeDataFromJson(
       dividerColor: json['dividerColor'] as String?,
       contentTextStyle: json['contentTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['contentTextStyle']),
+          : StacTextStyle.fromJson(
+              json['contentTextStyle'] as Map<String, dynamic>),
       elevation: (json['elevation'] as num?)?.toDouble(),
       padding: json['padding'] == null
           ? null

@@ -1,12 +1,12 @@
-# melos_managed_dependency_overrides: stac,stac_export,stac_framework,stac_logger,stac_webview
+# melos_managed_dependency_overrides: stac,stac_framework,stac_logger,stac_webview,stac_models
 dependency_overrides:
   stac:
     path: ../../packages/stac
-  stac_export:
-    path: ../../packages/stac_export
   stac_framework:
     path: ../../packages/stac_framework
   stac_logger:
     path: ../../packages/stac_logger
+  stac_models:
+    path: ../../packages/stac_models
   stac_webview:
     path: ../../packages/stac_webview

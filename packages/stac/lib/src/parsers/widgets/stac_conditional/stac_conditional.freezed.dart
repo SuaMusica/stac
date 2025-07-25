@@ -16,8 +16,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StacConditional {
   String get condition;
-  StacWidget get ifTrue;
-  StacWidget? get ifFalse;
+  Map<String, dynamic> get ifTrue;
+  Map<String, dynamic>? get ifFalse;
 
   /// Create a copy of StacConditional
   /// with the given fields replaced by the non-null parameter values.
@@ -61,7 +61,10 @@ abstract mixin class $StacConditionalCopyWith<$Res> {
           StacConditional value, $Res Function(StacConditional) _then) =
       _$StacConditionalCopyWithImpl;
   @useResult
-  $Res call({String condition, StacWidget ifTrue, StacWidget? ifFalse});
+  $Res call(
+      {String condition,
+      Map<String, dynamic> ifTrue,
+      Map<String, dynamic>? ifFalse});
 }
 
 /// @nodoc
@@ -89,11 +92,11 @@ class _$StacConditionalCopyWithImpl<$Res>
       ifTrue: null == ifTrue
           ? _self.ifTrue
           : ifTrue // ignore: cast_nullable_to_non_nullable
-              as StacWidget,
+              as Map<String, dynamic>,
       ifFalse: freezed == ifFalse
           ? _self.ifFalse
           : ifFalse // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -103,8 +106,8 @@ class _$StacConditionalCopyWithImpl<$Res>
 class _StacConditional implements StacConditional {
   const _StacConditional(
       {required this.condition,
-      required final StacWidget ifTrue,
-      final StacWidget? ifFalse})
+      required final Map<String, dynamic> ifTrue,
+      final Map<String, dynamic>? ifFalse})
       : _ifTrue = ifTrue,
         _ifFalse = ifFalse;
   factory _StacConditional.fromJson(Map<String, dynamic> json) =>
@@ -112,17 +115,17 @@ class _StacConditional implements StacConditional {
 
   @override
   final String condition;
-  final StacWidget _ifTrue;
+  final Map<String, dynamic> _ifTrue;
   @override
-  StacWidget get ifTrue {
+  Map<String, dynamic> get ifTrue {
     if (_ifTrue is EqualUnmodifiableMapView) return _ifTrue;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_ifTrue);
   }
 
-  final StacWidget? _ifFalse;
+  final Map<String, dynamic>? _ifFalse;
   @override
-  StacWidget? get ifFalse {
+  Map<String, dynamic>? get ifFalse {
     final value = _ifFalse;
     if (value == null) return null;
     if (_ifFalse is EqualUnmodifiableMapView) return _ifFalse;
@@ -178,7 +181,10 @@ abstract mixin class _$StacConditionalCopyWith<$Res>
       __$StacConditionalCopyWithImpl;
   @override
   @useResult
-  $Res call({String condition, StacWidget ifTrue, StacWidget? ifFalse});
+  $Res call(
+      {String condition,
+      Map<String, dynamic> ifTrue,
+      Map<String, dynamic>? ifFalse});
 }
 
 /// @nodoc
@@ -206,11 +212,11 @@ class __$StacConditionalCopyWithImpl<$Res>
       ifTrue: null == ifTrue
           ? _self._ifTrue
           : ifTrue // ignore: cast_nullable_to_non_nullable
-              as StacWidget,
+              as Map<String, dynamic>,
       ifFalse: freezed == ifFalse
           ? _self._ifFalse
           : ifFalse // ignore: cast_nullable_to_non_nullable
-              as StacWidget?,
+              as Map<String, dynamic>?,
     ));
   }
 }

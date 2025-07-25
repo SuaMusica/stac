@@ -1,0 +1,11 @@
+enum StacAlignmentDirectional {
+  topStart,
+  topCenter,
+  topEnd,
+  centerStart,
+  center,
+  centerEnd,
+  bottomStart,
+  bottomCenter,
+  bottomEnd,
+}

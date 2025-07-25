@@ -19,14 +19,16 @@ _StacAlertDialog _$StacAlertDialogFromJson(Map<String, dynamic> json) =>
           : StacEdgeInsets.fromJson(json['titlePadding']),
       titleTextStyle: json['titleTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['titleTextStyle']),
+          : StacTextStyle.fromJson(
+              json['titleTextStyle'] as Map<String, dynamic>),
       content: json['content'] as Map<String, dynamic>?,
       contentPadding: json['contentPadding'] == null
           ? null
           : StacEdgeInsets.fromJson(json['contentPadding']),
       contentTextStyle: json['contentTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['contentTextStyle']),
+          : StacTextStyle.fromJson(
+              json['contentTextStyle'] as Map<String, dynamic>),
       actions: (json['actions'] as List<dynamic>?)
           ?.map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -53,11 +55,7 @@ _StacAlertDialog _$StacAlertDialogFromJson(Map<String, dynamic> json) =>
       surfaceTintColor: json['surfaceTintColor'] as String?,
       semanticLabel: json['semanticLabel'] as String?,
       insetPadding: json['insetPadding'] == null
-          ? const StacEdgeInsets(
-              left: StacDouble(40),
-              right: StacDouble(40),
-              top: StacDouble(24),
-              bottom: StacDouble(24))
+          ? const StacEdgeInsets(left: 40, right: 40, top: 24, bottom: 24)
           : StacEdgeInsets.fromJson(json['insetPadding']),
       clipBehavior:
           $enumDecodeNullable(_$ClipEnumMap, json['clipBehavior']) ?? Clip.none,

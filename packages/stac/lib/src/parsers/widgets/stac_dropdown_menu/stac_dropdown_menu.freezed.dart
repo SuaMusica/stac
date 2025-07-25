@@ -166,10 +166,7 @@ abstract mixin class $StacDropdownMenuCopyWith<$Res> {
       List<StacDropdownMenuEntry> dropdownMenuEntries,
       DropdownMenuCloseBehavior? closeBehavior});
 
-  $StacTextStyleCopyWith<$Res>? get textStyle;
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  $StacOffsetCopyWith<$Res>? get alignmentOffset;
-  $StacEdgeInsetsCopyWith<$Res>? get expandedInsets;
 }
 
 /// @nodoc
@@ -309,20 +306,6 @@ class _$StacDropdownMenuCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDropdownMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
     if (_self.inputDecorationTheme == null) {
       return null;
@@ -331,34 +314,6 @@ class _$StacDropdownMenuCopyWithImpl<$Res>
     return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
         (value) {
       return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacDropdownMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res>? get alignmentOffset {
-    if (_self.alignmentOffset == null) {
-      return null;
-    }
-
-    return $StacOffsetCopyWith<$Res>(_self.alignmentOffset!, (value) {
-      return _then(_self.copyWith(alignmentOffset: value));
-    });
-  }
-
-  /// Create a copy of StacDropdownMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get expandedInsets {
-    if (_self.expandedInsets == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.expandedInsets!, (value) {
-      return _then(_self.copyWith(expandedInsets: value));
     });
   }
 }
@@ -631,13 +586,7 @@ abstract mixin class _$StacDropdownMenuCopyWith<$Res>
       DropdownMenuCloseBehavior? closeBehavior});
 
   @override
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  @override
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  @override
-  $StacOffsetCopyWith<$Res>? get alignmentOffset;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get expandedInsets;
 }
 
 /// @nodoc
@@ -777,20 +726,6 @@ class __$StacDropdownMenuCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDropdownMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
     if (_self.inputDecorationTheme == null) {
       return null;
@@ -799,34 +734,6 @@ class __$StacDropdownMenuCopyWithImpl<$Res>
     return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
         (value) {
       return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacDropdownMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res>? get alignmentOffset {
-    if (_self.alignmentOffset == null) {
-      return null;
-    }
-
-    return $StacOffsetCopyWith<$Res>(_self.alignmentOffset!, (value) {
-      return _then(_self.copyWith(alignmentOffset: value));
-    });
-  }
-
-  /// Create a copy of StacDropdownMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get expandedInsets {
-    if (_self.expandedInsets == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.expandedInsets!, (value) {
-      return _then(_self.copyWith(expandedInsets: value));
     });
   }
 }

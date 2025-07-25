@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_rect/stac_rect.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac_models/types/stac_rect/stac_rect.dart';
 
 part 'stac_rect_tween.freezed.dart';
 part 'stac_rect_tween.g.dart';

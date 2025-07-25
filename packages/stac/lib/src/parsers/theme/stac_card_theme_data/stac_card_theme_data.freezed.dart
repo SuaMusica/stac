@@ -77,9 +77,6 @@ abstract mixin class $StacCardThemeDataCopyWith<$Res> {
       double? elevation,
       StacEdgeInsets? margin,
       StacBorder? shape});
-
-  $StacEdgeInsetsCopyWith<$Res>? get margin;
-  $StacBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -133,34 +130,6 @@ class _$StacCardThemeDataCopyWithImpl<$Res>
           : shape // ignore: cast_nullable_to_non_nullable
               as StacBorder?,
     ));
-  }
-
-  /// Create a copy of StacCardThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get margin {
-    if (_self.margin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.margin!, (value) {
-      return _then(_self.copyWith(margin: value));
-    });
-  }
-
-  /// Create a copy of StacCardThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 }
 
@@ -253,11 +222,6 @@ abstract mixin class _$StacCardThemeDataCopyWith<$Res>
       double? elevation,
       StacEdgeInsets? margin,
       StacBorder? shape});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get margin;
-  @override
-  $StacBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -311,34 +275,6 @@ class __$StacCardThemeDataCopyWithImpl<$Res>
           : shape // ignore: cast_nullable_to_non_nullable
               as StacBorder?,
     ));
-  }
-
-  /// Create a copy of StacCardThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get margin {
-    if (_self.margin == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.margin!, (value) {
-      return _then(_self.copyWith(margin: value));
-    });
-  }
-
-  /// Create a copy of StacCardThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 }
 

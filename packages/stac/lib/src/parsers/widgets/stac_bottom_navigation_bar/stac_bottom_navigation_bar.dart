@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/parsers/widgets/stac_navigation_bar_item/stac_bottom_navigation_bar_item.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
+import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 
 export 'stac_bottom_navigation_bar_parser.dart';
 

@@ -23,7 +23,7 @@ _StacButtonStyle _$StacButtonStyleFromJson(Map<String, dynamic> json) =>
       elevation: (json['elevation'] as num?)?.toDouble(),
       textStyle: json['textStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['textStyle']),
+          : StacTextStyle.fromJson(json['textStyle'] as Map<String, dynamic>),
       padding: json['padding'] == null
           ? null
           : StacEdgeInsets.fromJson(json['padding']),

@@ -130,9 +130,6 @@ abstract mixin class $StacFloatingActionButtonThemeDataCopyWith<$Res> {
       double? extendedIconLabelSpacing,
       StacEdgeInsets? extendedPadding,
       StacTextStyle? extendedTextStyle});
-
-  $StacEdgeInsetsCopyWith<$Res>? get extendedPadding;
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle;
 }
 
 /// @nodoc
@@ -226,34 +223,6 @@ class _$StacFloatingActionButtonThemeDataCopyWithImpl<$Res>
           : extendedTextStyle // ignore: cast_nullable_to_non_nullable
               as StacTextStyle?,
     ));
-  }
-
-  /// Create a copy of StacFloatingActionButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get extendedPadding {
-    if (_self.extendedPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.extendedPadding!, (value) {
-      return _then(_self.copyWith(extendedPadding: value));
-    });
-  }
-
-  /// Create a copy of StacFloatingActionButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle {
-    if (_self.extendedTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.extendedTextStyle!, (value) {
-      return _then(_self.copyWith(extendedTextStyle: value));
-    });
   }
 }
 
@@ -418,11 +387,6 @@ abstract mixin class _$StacFloatingActionButtonThemeDataCopyWith<$Res>
       double? extendedIconLabelSpacing,
       StacEdgeInsets? extendedPadding,
       StacTextStyle? extendedTextStyle});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get extendedPadding;
-  @override
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle;
 }
 
 /// @nodoc
@@ -516,34 +480,6 @@ class __$StacFloatingActionButtonThemeDataCopyWithImpl<$Res>
           : extendedTextStyle // ignore: cast_nullable_to_non_nullable
               as StacTextStyle?,
     ));
-  }
-
-  /// Create a copy of StacFloatingActionButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get extendedPadding {
-    if (_self.extendedPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.extendedPadding!, (value) {
-      return _then(_self.copyWith(extendedPadding: value));
-    });
-  }
-
-  /// Create a copy of StacFloatingActionButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get extendedTextStyle {
-    if (_self.extendedTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.extendedTextStyle!, (value) {
-      return _then(_self.copyWith(extendedTextStyle: value));
-    });
   }
 }
 

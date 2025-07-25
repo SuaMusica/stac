@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:stac/src/framework/stac_registry.dart';
 import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request_parser.dart';
 import 'package:stac/src/parsers/parsers.dart';
+import 'package:stac/src/parsers/widgets/stac_app_bar/stac_app_bar_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_text/stac_text_parser.dart';
@@ -15,6 +16,7 @@ import 'package:stac/src/utils/variable_resolver.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_logger/stac_logger.dart';
+import 'package:stac_models/core/stac_model.dart';
 
 typedef ErrorWidgetBuilder = Widget Function(
   BuildContext context,
@@ -162,6 +164,35 @@ class Stac {
         }
       }
     } catch (e) {
+      Log.e(e);
+    }
+    return null;
+  }
+
+  static Widget? fromStacWidget(
+      {required StacWidget widget, required BuildContext context}) {
+    try {
+      String widgetType = widget.type;
+      StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
+
+      if (stacParser != null) {
+        Map<String, dynamic> resolvedJson;
+        if (widgetType == WidgetType.setValue.name) {
+          resolvedJson = widget.toJson();
+        } else {
+          resolvedJson = resolveVariablesInJson(
+            widget.toJson(),
+            StacRegistry.instance,
+          );
+        }
+        final model = stacParser.getModel(resolvedJson);
+
+        return stacParser.parse(context, model);
+      } else {
+        Log.w('Widget type [$widgetType] not supported');
+      }
+    } catch (e) {
+      Log.e('error in ${widget.type}');
       Log.e(e);
     }
     return null;

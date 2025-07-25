@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_app_bar/stac_app_bar.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
-import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_system_ui_overlay_style_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac_framework/stac_framework.dart';
+import 'package:stac/stac.dart';
+import 'package:stac_models/stac_models.dart';
 
 class StacAppBarParser extends StacParser<StacAppBar> {
   const StacAppBarParser();
@@ -19,27 +20,36 @@ class StacAppBarParser extends StacParser<StacAppBar> {
   @override
   Widget parse(BuildContext context, StacAppBar model) {
     return AppBar(
-      leading: Stac.fromJson(model.leading, context),
-      title: Stac.fromJson(model.title, context),
-      titleTextStyle: model.titleTextStyle?.parse(context),
-      toolbarTextStyle: model.toolbarTextStyle?.parse(context),
+      leading: model.leading?.parse(context),
+      automaticallyImplyLeading: model.automaticallyImplyLeading ?? true,
+      title: model.title?.parse(context),
+      actions: model.actions.parseList(context),
+      flexibleSpace: model.flexibleSpace?.parse(context),
+      bottom: model.bottom?.parsePreferredSizeWidget(context),
+      elevation: model.elevation,
+      scrolledUnderElevation: model.scrolledUnderElevation,
       shadowColor: model.shadowColor?.toColor(context),
+      surfaceTintColor: model.surfaceTintColor?.toColor(context),
+      // shape: shape,
       backgroundColor: model.backgroundColor?.toColor(context),
       foregroundColor: model.foregroundColor?.toColor(context),
-      surfaceTintColor: model.surfaceTintColor?.toColor(context),
-      actions: model.actions
-          .map((action) => Stac.fromJson(action, context) ?? const SizedBox())
-          .toList(),
-      bottom: Stac.fromJson(model.bottom, context).toPreferredSizeWidget,
-      titleSpacing: model.titleSpacing?.parse,
-      toolbarOpacity: model.toolbarOpacity.parse,
-      bottomOpacity: model.bottomOpacity.parse,
-      toolbarHeight: model.toolbarHeight?.parse,
-      leadingWidth: model.leadingWidth?.parse,
-      primary: model.primary,
+      // iconTheme: iconTheme,
+      // actionsIconTheme: actionsIconTheme,
+      primary: model.primary ?? true,
       centerTitle: model.centerTitle,
-      elevation: model.elevation?.parse,
-      scrolledUnderElevation: model.scrolledUnderElevation?.parse,
+      excludeHeaderSemantics: model.excludeHeaderSemantics ?? false,
+      titleSpacing: model.titleSpacing,
+      toolbarOpacity: model.toolbarOpacity ?? 1.0,
+      bottomOpacity: model.bottomOpacity ?? 1.0,
+      toolbarHeight: model.toolbarHeight,
+      leadingWidth: model.leadingWidth,
+      toolbarTextStyle: model.toolbarTextStyle?.parse(context),
+      titleTextStyle: model.titleTextStyle?.parse(context),
+      systemOverlayStyle: model.systemOverlayStyle!.parse(context),
+      forceMaterialTransparency: model.forceMaterialTransparency ?? false,
+      useDefaultSemanticsOrder: model.useDefaultSemanticsOrder ?? true,
+      clipBehavior: model.clipBehavior?.parse,
+      actionsPadding: model.actionsPadding?.parse,
     );
   }
 }

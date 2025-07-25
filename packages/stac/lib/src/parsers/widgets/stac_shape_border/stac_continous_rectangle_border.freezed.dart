@@ -58,9 +58,6 @@ abstract mixin class $StacContinousRectangleBorderCopyWith<$Res> {
       _$StacContinousRectangleBorderCopyWithImpl;
   @useResult
   $Res call({StacBorderSide side, StacBorderRadius borderRadius});
-
-  $StacBorderSideCopyWith<$Res> get side;
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -89,26 +86,6 @@ class _$StacContinousRectangleBorderCopyWithImpl<$Res>
           : borderRadius // ignore: cast_nullable_to_non_nullable
               as StacBorderRadius,
     ));
-  }
-
-  /// Create a copy of StacContinousRectangleBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res> get side {
-    return $StacBorderSideCopyWith<$Res>(_self.side, (value) {
-      return _then(_self.copyWith(side: value));
-    });
-  }
-
-  /// Create a copy of StacContinousRectangleBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 
@@ -174,11 +151,6 @@ abstract mixin class _$StacContinousRectangleBorderCopyWith<$Res>
   @override
   @useResult
   $Res call({StacBorderSide side, StacBorderRadius borderRadius});
-
-  @override
-  $StacBorderSideCopyWith<$Res> get side;
-  @override
-  $StacBorderRadiusCopyWith<$Res> get borderRadius;
 }
 
 /// @nodoc
@@ -207,26 +179,6 @@ class __$StacContinousRectangleBorderCopyWithImpl<$Res>
           : borderRadius // ignore: cast_nullable_to_non_nullable
               as StacBorderRadius,
     ));
-  }
-
-  /// Create a copy of StacContinousRectangleBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res> get side {
-    return $StacBorderSideCopyWith<$Res>(_self.side, (value) {
-      return _then(_self.copyWith(side: value));
-    });
-  }
-
-  /// Create a copy of StacContinousRectangleBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderRadiusCopyWith<$Res> get borderRadius {
-    return $StacBorderRadiusCopyWith<$Res>(_self.borderRadius, (value) {
-      return _then(_self.copyWith(borderRadius: value));
-    });
   }
 }
 

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_border_side/stac_border_side.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_mouse_cursor/stac_mouse_cursor.dart';
 import 'package:stac/src/parsers/widgets/stac_shape_border/stac_rounded_rectangle_border.dart';
 import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/types/stac_border_side/stac_border_side.dart';
 
 part 'stac_checkbox_theme_data.freezed.dart';
 part 'stac_checkbox_theme_data.g.dart';

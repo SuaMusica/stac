@@ -163,15 +163,9 @@ abstract mixin class $StacChipCopyWith<$Res> {
       StacBoxConstraints? avatarBoxConstraints,
       StacBoxConstraints? deleteIconBoxConstraints});
 
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  $StacBorderSideCopyWith<$Res>? get side;
   $StacRoundedRectangleBorderCopyWith<$Res>? get shape;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints;
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints;
 }
 
 /// @nodoc
@@ -310,48 +304,6 @@ class _$StacChipCopyWithImpl<$Res> implements $StacChipCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacRoundedRectangleBorderCopyWith<$Res>? get shape {
     if (_self.shape == null) {
       return null;
@@ -359,20 +311,6 @@ class _$StacChipCopyWithImpl<$Res> implements $StacChipCopyWith<$Res> {
 
     return $StacRoundedRectangleBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
     });
   }
 
@@ -401,36 +339,6 @@ class _$StacChipCopyWithImpl<$Res> implements $StacChipCopyWith<$Res> {
 
     return $StacIconThemeDataCopyWith<$Res>(_self.iconTheme!, (value) {
       return _then(_self.copyWith(iconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints {
-    if (_self.avatarBoxConstraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.avatarBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(avatarBoxConstraints: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints {
-    if (_self.deleteIconBoxConstraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.deleteIconBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(deleteIconBoxConstraints: value));
     });
   }
 }
@@ -681,23 +589,11 @@ abstract mixin class _$StacChipCopyWith<$Res>
       StacBoxConstraints? deleteIconBoxConstraints});
 
   @override
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  @override
-  $StacBorderSideCopyWith<$Res>? get side;
-  @override
   $StacRoundedRectangleBorderCopyWith<$Res>? get shape;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
   @override
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
   @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints;
 }
 
 /// @nodoc
@@ -836,48 +732,6 @@ class __$StacChipCopyWithImpl<$Res> implements _$StacChipCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacRoundedRectangleBorderCopyWith<$Res>? get shape {
     if (_self.shape == null) {
       return null;
@@ -885,20 +739,6 @@ class __$StacChipCopyWithImpl<$Res> implements _$StacChipCopyWith<$Res> {
 
     return $StacRoundedRectangleBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
     });
   }
 
@@ -927,36 +767,6 @@ class __$StacChipCopyWithImpl<$Res> implements _$StacChipCopyWith<$Res> {
 
     return $StacIconThemeDataCopyWith<$Res>(_self.iconTheme!, (value) {
       return _then(_self.copyWith(iconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints {
-    if (_self.avatarBoxConstraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.avatarBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(avatarBoxConstraints: value));
-    });
-  }
-
-  /// Create a copy of StacChip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints {
-    if (_self.deleteIconBoxConstraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.deleteIconBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(deleteIconBoxConstraints: value));
     });
   }
 }

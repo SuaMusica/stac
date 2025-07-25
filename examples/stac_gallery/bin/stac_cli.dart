@@ -1,17 +1,43 @@
-import 'package:stac_export/core/stac_export.dart';
-import 'package:stac_export/widgets/stac_scaffold/stac_scaffold.dart';
-import 'package:stac_export/widgets/stac_text/stac_text.dart';
+import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/types/stac_border/stac_border.dart';
+import 'package:stac_models/types/stac_double.dart';
+import 'package:stac_models/types/stac_text_types.dart';
 
-void main() {
-  final text = StacScaffold(
-    body: StacText(
-      data: 'Hello, MO!',
-      style: StacTextStyle(
-        color: '#FF0000',
-        fontSize: 18,
+final double fontSize = 20;
+
+void main(List<String> args) {
+  final json = homeScreen().toJson();
+  json.removeWhere((key, value) => value == null);
+  print(json);
+}
+
+StacWidget homeScreen() {
+  return StacScaffold(
+    appBar: StacAppBar(
+      title: StacText(
+        data: 'Hello, Stac!!',
+      ),
+    ),
+    body: StacCenter(
+      child: StacContainer(
+        width: StacDouble(200),
+        height: StacDouble(200),
+        decoration: StacBoxDecoration(
+          color: StacColors.red,
+          border: StacBorder(
+            color: StacColors.black,
+            width: 10,
+          ),
+        ),
+        child: StacText(
+          data: 'Hello, Stac!!',
+          style: StacTextStyle(
+            color: StacColors.white,
+            fontSize: fontSize,
+            fontWeight: StacFontWeight.bold,
+          ),
+        ),
       ),
     ),
   );
-
-  print(StacExport.toJsonString(text, pretty: true));
 }

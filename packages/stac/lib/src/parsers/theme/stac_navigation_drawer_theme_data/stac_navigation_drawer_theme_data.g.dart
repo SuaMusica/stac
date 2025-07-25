@@ -24,7 +24,8 @@ _StacNavigationDrawerThemeData _$StacNavigationDrawerThemeDataFromJson(
           : StacSize.fromJson(json['indicatorSize'] as Map<String, dynamic>),
       labelTextStyle: json['labelTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['labelTextStyle']),
+          : StacTextStyle.fromJson(
+              json['labelTextStyle'] as Map<String, dynamic>),
       iconTheme: json['iconTheme'] == null
           ? null
           : StacIconThemeData.fromJson(

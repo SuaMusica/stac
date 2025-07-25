@@ -183,12 +183,9 @@ abstract mixin class $StacButtonStyleCopyWith<$Res> {
       bool? enableFeedback,
       StacAlignmentGeometry? alignment});
 
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
   $StacSizeCopyWith<$Res>? get minimumSize;
   $StacSizeCopyWith<$Res>? get fixedSize;
   $StacSizeCopyWith<$Res>? get maximumSize;
-  $StacBorderSideCopyWith<$Res>? get side;
   $StacRoundedRectangleBorderCopyWith<$Res>? get shape;
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
@@ -346,34 +343,6 @@ class _$StacButtonStyleCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacButtonStyle
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacButtonStyle
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSizeCopyWith<$Res>? get minimumSize {
     if (_self.minimumSize == null) {
       return null;
@@ -409,20 +378,6 @@ class _$StacButtonStyleCopyWithImpl<$Res>
 
     return $StacSizeCopyWith<$Res>(_self.maximumSize!, (value) {
       return _then(_self.copyWith(maximumSize: value));
-    });
-  }
-
-  /// Create a copy of StacButtonStyle
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
     });
   }
 
@@ -703,17 +658,11 @@ abstract mixin class _$StacButtonStyleCopyWith<$Res>
       StacAlignmentGeometry? alignment});
 
   @override
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
   $StacSizeCopyWith<$Res>? get minimumSize;
   @override
   $StacSizeCopyWith<$Res>? get fixedSize;
   @override
   $StacSizeCopyWith<$Res>? get maximumSize;
-  @override
-  $StacBorderSideCopyWith<$Res>? get side;
   @override
   $StacRoundedRectangleBorderCopyWith<$Res>? get shape;
   @override
@@ -874,34 +823,6 @@ class __$StacButtonStyleCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacButtonStyle
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacButtonStyle
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSizeCopyWith<$Res>? get minimumSize {
     if (_self.minimumSize == null) {
       return null;
@@ -937,20 +858,6 @@ class __$StacButtonStyleCopyWithImpl<$Res>
 
     return $StacSizeCopyWith<$Res>(_self.maximumSize!, (value) {
       return _then(_self.copyWith(maximumSize: value));
-    });
-  }
-
-  /// Create a copy of StacButtonStyle
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
     });
   }
 

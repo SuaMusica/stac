@@ -56,8 +56,6 @@ abstract mixin class $StacCircleBorderCopyWith<$Res> {
       _$StacCircleBorderCopyWithImpl;
   @useResult
   $Res call({StacBorderSide side, StacDouble eccentricity});
-
-  $StacBorderSideCopyWith<$Res> get side;
 }
 
 /// @nodoc
@@ -86,16 +84,6 @@ class _$StacCircleBorderCopyWithImpl<$Res>
           : eccentricity // ignore: cast_nullable_to_non_nullable
               as StacDouble,
     ));
-  }
-
-  /// Create a copy of StacCircleBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res> get side {
-    return $StacBorderSideCopyWith<$Res>(_self.side, (value) {
-      return _then(_self.copyWith(side: value));
-    });
   }
 }
 
@@ -158,9 +146,6 @@ abstract mixin class _$StacCircleBorderCopyWith<$Res>
   @override
   @useResult
   $Res call({StacBorderSide side, StacDouble eccentricity});
-
-  @override
-  $StacBorderSideCopyWith<$Res> get side;
 }
 
 /// @nodoc
@@ -189,16 +174,6 @@ class __$StacCircleBorderCopyWithImpl<$Res>
           : eccentricity // ignore: cast_nullable_to_non_nullable
               as StacDouble,
     ));
-  }
-
-  /// Create a copy of StacCircleBorder
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res> get side {
-    return $StacBorderSideCopyWith<$Res>(_self.side, (value) {
-      return _then(_self.copyWith(side: value));
-    });
   }
 }
 

@@ -21,10 +21,12 @@ _StacDialogTheme _$StacDialogThemeFromJson(Map<String, dynamic> json) =>
               json['alignment'] as Map<String, dynamic>),
       titleTextStyle: json['titleTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['titleTextStyle']),
+          : StacTextStyle.fromJson(
+              json['titleTextStyle'] as Map<String, dynamic>),
       contentTextStyle: json['contentTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['contentTextStyle']),
+          : StacTextStyle.fromJson(
+              json['contentTextStyle'] as Map<String, dynamic>),
       actionsPadding: json['actionsPadding'] == null
           ? null
           : StacEdgeInsets.fromJson(json['actionsPadding']),

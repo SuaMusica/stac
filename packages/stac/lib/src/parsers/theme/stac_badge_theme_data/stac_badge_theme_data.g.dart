@@ -14,7 +14,7 @@ _StacBadgeThemeData _$StacBadgeThemeDataFromJson(Map<String, dynamic> json) =>
       largeSize: (json['largeSize'] as num?)?.toDouble(),
       textStyle: json['textStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['textStyle']),
+          : StacTextStyle.fromJson(json['textStyle'] as Map<String, dynamic>),
       padding: json['padding'] == null
           ? null
           : StacEdgeInsets.fromJson(json['padding']),

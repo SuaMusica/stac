@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/parsers/widgets/stac_rounded_rectangle_border/stac_rounded_rectangle_border.dart';
 import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
@@ -20,7 +23,7 @@ class StacChipParser extends StacParser<StacChip> {
       avatar: Stac.fromJson(model.avatar, context),
       label: Stac.fromJson(model.label, context) ?? const SizedBox.shrink(),
       labelStyle: model.labelStyle?.parse(context),
-      labelPadding: model.labelPadding.parse,
+      labelPadding: model.labelPadding?.parse,
       deleteIcon: Stac.fromJson(model.deleteIcon, context),
       onDeleted: () => Stac.onCallFromJson(model.onDeleted, context),
       deleteIconColor: model.deleteIconColor.toColor(context),
@@ -31,7 +34,7 @@ class StacChipParser extends StacParser<StacChip> {
       autofocus: model.autofocus,
       color: WidgetStateProperty.all(model.color.toColor(context)),
       backgroundColor: model.backgroundColor.toColor(context),
-      padding: model.padding.parse,
+      padding: model.padding?.parse,
       visualDensity: model.visualDensity?.parse,
       materialTapTargetSize: model.materialTapTargetSize,
       elevation: model.elevation?.parse,

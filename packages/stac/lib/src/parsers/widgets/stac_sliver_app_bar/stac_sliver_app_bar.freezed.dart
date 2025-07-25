@@ -225,10 +225,6 @@ abstract mixin class $StacSliverAppBarCopyWith<$Res> {
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
   $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle;
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
 }
 
 /// @nodoc
@@ -463,63 +459,6 @@ class _$StacSliverAppBarCopyWithImpl<$Res>
 
     return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle {
-    if (_self.toolbarTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.toolbarTextStyle!, (value) {
-      return _then(_self.copyWith(toolbarTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle {
-    if (_self.systemOverlayStyle == null) {
-      return null;
-    }
-
-    return $StacSystemUIOverlayStyleCopyWith<$Res>(_self.systemOverlayStyle!,
-        (value) {
-      return _then(_self.copyWith(systemOverlayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
     });
   }
 }
@@ -876,14 +815,6 @@ abstract mixin class _$StacSliverAppBarCopyWith<$Res>
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
   @override
   $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  @override
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
 }
 
 /// @nodoc
@@ -1118,63 +1049,6 @@ class __$StacSliverAppBarCopyWithImpl<$Res>
 
     return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
       return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle {
-    if (_self.toolbarTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.toolbarTextStyle!, (value) {
-      return _then(_self.copyWith(toolbarTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle {
-    if (_self.systemOverlayStyle == null) {
-      return null;
-    }
-
-    return $StacSystemUIOverlayStyleCopyWith<$Res>(_self.systemOverlayStyle!,
-        (value) {
-      return _then(_self.copyWith(systemOverlayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
     });
   }
 }

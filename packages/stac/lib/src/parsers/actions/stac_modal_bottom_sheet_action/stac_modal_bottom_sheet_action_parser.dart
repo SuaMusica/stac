@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/actions/stac_modal_bottom_sheet_action/stac_modal_bottom_sheet_action.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_border/stac_border.dart';
-import 'package:stac/src/parsers/widgets/stac_box_constraints/stac_box_constraints.dart';
+import 'package:stac/src/parsers/actions/stac_modal_bottom_sheet_action/stac_modal_bottom_sheet_action.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/action_type.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_framework/stac_framework.dart';

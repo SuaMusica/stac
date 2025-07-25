@@ -55,8 +55,6 @@ abstract mixin class $StacPaddingCopyWith<$Res> {
       _$StacPaddingCopyWithImpl;
   @useResult
   $Res call({StacEdgeInsets padding, Map<String, dynamic>? child});
-
-  $StacEdgeInsetsCopyWith<$Res> get padding;
 }
 
 /// @nodoc
@@ -84,16 +82,6 @@ class _$StacPaddingCopyWithImpl<$Res> implements $StacPaddingCopyWith<$Res> {
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacPadding
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get padding {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 
@@ -161,9 +149,6 @@ abstract mixin class _$StacPaddingCopyWith<$Res>
   @override
   @useResult
   $Res call({StacEdgeInsets padding, Map<String, dynamic>? child});
-
-  @override
-  $StacEdgeInsetsCopyWith<$Res> get padding;
 }
 
 /// @nodoc
@@ -191,16 +176,6 @@ class __$StacPaddingCopyWithImpl<$Res> implements _$StacPaddingCopyWith<$Res> {
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacPadding
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res> get padding {
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 }
 

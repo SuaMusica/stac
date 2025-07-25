@@ -125,7 +125,6 @@ abstract mixin class $StacButtonThemeDataCopyWith<$Res> {
       StacColorScheme? colorScheme,
       MaterialTapTargetSize? materialTapTargetSize});
 
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
   $StacShapeBorderCopyWith<$Res>? get shape;
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
 }
@@ -221,20 +220,6 @@ class _$StacButtonThemeDataCopyWithImpl<$Res>
           : materialTapTargetSize // ignore: cast_nullable_to_non_nullable
               as MaterialTapTargetSize?,
     ));
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 
   /// Create a copy of StacButtonThemeData
@@ -426,8 +411,6 @@ abstract mixin class _$StacButtonThemeDataCopyWith<$Res>
       MaterialTapTargetSize? materialTapTargetSize});
 
   @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
   $StacShapeBorderCopyWith<$Res>? get shape;
   @override
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
@@ -524,20 +507,6 @@ class __$StacButtonThemeDataCopyWithImpl<$Res>
           : materialTapTargetSize // ignore: cast_nullable_to_non_nullable
               as MaterialTapTargetSize?,
     ));
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
   }
 
   /// Create a copy of StacButtonThemeData
