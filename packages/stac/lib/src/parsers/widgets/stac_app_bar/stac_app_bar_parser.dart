@@ -45,7 +45,7 @@ class StacAppBarParser extends StacParser<StacAppBar> {
       leadingWidth: model.leadingWidth,
       toolbarTextStyle: model.toolbarTextStyle?.parse(context),
       titleTextStyle: model.titleTextStyle?.parse(context),
-      systemOverlayStyle: model.systemOverlayStyle!.parse(context),
+      systemOverlayStyle: model.systemOverlayStyle?.parse(context),
       forceMaterialTransparency: model.forceMaterialTransparency ?? false,
       useDefaultSemanticsOrder: model.useDefaultSemanticsOrder ?? true,
       clipBehavior: model.clipBehavior?.parse,
