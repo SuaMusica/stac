@@ -23,7 +23,9 @@ class StacWidget extends StacElement {
   @override
   Map<String, dynamic> toJson() => jsonData ?? {};
 
-  String get type => throw UnimplementedError();
+  static String get type => throw UnimplementedError();
+
+  String getType() => type;
 }
 
 /// JSON Converter for individual StacWidget objects
