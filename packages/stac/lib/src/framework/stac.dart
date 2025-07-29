@@ -9,6 +9,7 @@ import 'package:stac/src/parsers/actions/stac_network_request/stac_network_reque
 import 'package:stac/src/parsers/parsers.dart';
 import 'package:stac/src/parsers/widgets/stac_app_bar/stac_app_bar_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell_parser.dart';
+import 'package:stac/src/parsers/widgets/stac_row/stac_row_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_text/stac_text_parser.dart';
 import 'package:stac/src/services/stac_network_service.dart';
@@ -172,7 +173,7 @@ class Stac {
   static Widget? fromStacWidget(
       {required StacWidget widget, required BuildContext context}) {
     try {
-      String widgetType = widget.type;
+      String widgetType = widget.getType();
       StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
 
       if (stacParser != null) {
@@ -192,7 +193,7 @@ class Stac {
         Log.w('Widget type [$widgetType] not supported');
       }
     } catch (e) {
-      Log.e('error in ${widget.type}');
+      Log.e('error in ${widget.getType()}');
       Log.e(e);
     }
     return null;

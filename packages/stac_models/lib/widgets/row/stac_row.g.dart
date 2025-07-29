@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'stac_row.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+StacRow _$StacRowFromJson(Map<String, dynamic> json) => StacRow(
+  mainAxisAlignment: $enumDecodeNullable(
+    _$StacMainAxisAlignmentEnumMap,
+    json['mainAxisAlignment'],
+  ),
+  mainAxisSize: $enumDecodeNullable(
+    _$StacMainAxisSizeEnumMap,
+    json['mainAxisSize'],
+  ),
+  crossAxisAlignment: $enumDecodeNullable(
+    _$StacCrossAxisAlignmentEnumMap,
+    json['crossAxisAlignment'],
+  ),
+  textDirection: $enumDecodeNullable(
+    _$StacTextDirectionEnumMap,
+    json['textDirection'],
+  ),
+  verticalDirection: $enumDecodeNullable(
+    _$StacVerticalDirectionEnumMap,
+    json['verticalDirection'],
+  ),
+  textBaseline: $enumDecodeNullable(
+    _$StacTextBaselineEnumMap,
+    json['textBaseline'],
+  ),
+  spacing: json['spacing'] == null
+      ? null
+      : StacDouble.fromJson(json['spacing']),
+  children: const StacWidgetListJsonConverter().fromJson(
+    json['children'] as List<Map<String, dynamic>>?,
+  ),
+);
+
+Map<String, dynamic> _$StacRowToJson(StacRow instance) => <String, dynamic>{
+  'mainAxisAlignment':
+      _$StacMainAxisAlignmentEnumMap[instance.mainAxisAlignment],
+  'mainAxisSize': _$StacMainAxisSizeEnumMap[instance.mainAxisSize],
+  'crossAxisAlignment':
+      _$StacCrossAxisAlignmentEnumMap[instance.crossAxisAlignment],
+  'textDirection': _$StacTextDirectionEnumMap[instance.textDirection],
+  'verticalDirection':
+      _$StacVerticalDirectionEnumMap[instance.verticalDirection],
+  'textBaseline': _$StacTextBaselineEnumMap[instance.textBaseline],
+  'spacing': instance.spacing?.toJson(),
+  'children': const StacWidgetListJsonConverter().toJson(instance.children),
+};
+
+const _$StacMainAxisAlignmentEnumMap = {
+  StacMainAxisAlignment.start: 'start',
+  StacMainAxisAlignment.end: 'end',
+  StacMainAxisAlignment.center: 'center',
+  StacMainAxisAlignment.spaceBetween: 'spaceBetween',
+  StacMainAxisAlignment.spaceAround: 'spaceAround',
+  StacMainAxisAlignment.spaceEvenly: 'spaceEvenly',
+};
+
+const _$StacMainAxisSizeEnumMap = {
+  StacMainAxisSize.min: 'min',
+  StacMainAxisSize.max: 'max',
+};
+
+const _$StacCrossAxisAlignmentEnumMap = {
+  StacCrossAxisAlignment.start: 'start',
+  StacCrossAxisAlignment.end: 'end',
+  StacCrossAxisAlignment.center: 'center',
+  StacCrossAxisAlignment.stretch: 'stretch',
+  StacCrossAxisAlignment.baseline: 'baseline',
+};
+
+const _$StacTextDirectionEnumMap = {
+  StacTextDirection.rtl: 'rtl',
+  StacTextDirection.ltr: 'ltr',
+};
+
+const _$StacVerticalDirectionEnumMap = {
+  StacVerticalDirection.up: 'up',
+  StacVerticalDirection.down: 'down',
+};
+
+const _$StacTextBaselineEnumMap = {
+  StacTextBaseline.alphabetic: 'alphabetic',
+  StacTextBaseline.ideographic: 'ideographic',
+};

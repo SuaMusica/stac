@@ -1,0 +1,4 @@
+enum StacVerticalDirection {
+  up,
+  down,
+}
