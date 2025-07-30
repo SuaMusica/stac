@@ -5,9 +5,7 @@ part 'stac_spacer.g.dart';
 
 @JsonSerializable()
 class StacSpacer extends StacWidget {
-  const StacSpacer({
-    this.flex,
-  });
+  const StacSpacer({this.flex});
 
   final int? flex;
 

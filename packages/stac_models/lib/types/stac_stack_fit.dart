@@ -1,5 +1,1 @@
-enum StacStackFit {
-  loose,
-  expand,
-  passthrough,
-}
+enum StacStackFit { loose, expand, passthrough }
