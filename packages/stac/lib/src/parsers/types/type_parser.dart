@@ -16,15 +16,19 @@ import 'package:stac_models/types/stac_box_fit.dart';
 import 'package:stac_models/types/stac_box_shadow/stac_box_shadow.dart';
 import 'package:stac_models/types/stac_box_shape.dart';
 import 'package:stac_models/types/stac_clip.dart';
+import 'package:stac_models/types/stac_cross_axis_alignment.dart';
 import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
 import 'package:stac_models/types/stac_floating_action_button_location.dart';
 import 'package:stac_models/types/stac_gradient/stac_gradient.dart';
 import 'package:stac_models/types/stac_image_repeat.dart';
+import 'package:stac_models/types/stac_main_axis_alignment.dart';
+import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
 import 'package:stac_models/types/stac_rect/stac_rect.dart';
 import 'package:stac_models/types/stac_text_types.dart';
+import 'package:stac_models/types/stac_vertical_direction.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {
@@ -557,6 +561,64 @@ extension StacBoxConstraintsParser on StacBoxConstraints {
       minHeight: minHeight.parse,
       maxHeight: maxHeight.parse,
     );
+  }
+}
+
+extension StacMainAxisAlignmentParser on StacMainAxisAlignment {
+  MainAxisAlignment get parse {
+    switch (this) {
+      case StacMainAxisAlignment.start:
+        return MainAxisAlignment.start;
+      case StacMainAxisAlignment.end:
+        return MainAxisAlignment.end;
+      case StacMainAxisAlignment.center:
+        return MainAxisAlignment.center;
+      case StacMainAxisAlignment.spaceBetween:
+        return MainAxisAlignment.spaceBetween;
+      case StacMainAxisAlignment.spaceAround:
+        return MainAxisAlignment.spaceAround;
+      case StacMainAxisAlignment.spaceEvenly:
+        return MainAxisAlignment.spaceEvenly;
+    }
+  }
+}
+
+extension StacMainAxisSizeParser on StacMainAxisSize {
+  MainAxisSize get parse {
+    switch (this) {
+      case StacMainAxisSize.min:
+        return MainAxisSize.min;
+      case StacMainAxisSize.max:
+        return MainAxisSize.max;
+    }
+  }
+}
+
+extension StacCrossAxisAlignmentParser on StacCrossAxisAlignment {
+  CrossAxisAlignment get parse {
+    switch (this) {
+      case StacCrossAxisAlignment.start:
+        return CrossAxisAlignment.start;
+      case StacCrossAxisAlignment.end:
+        return CrossAxisAlignment.end;
+      case StacCrossAxisAlignment.center:
+        return CrossAxisAlignment.center;
+      case StacCrossAxisAlignment.stretch:
+        return CrossAxisAlignment.stretch;
+      case StacCrossAxisAlignment.baseline:
+        return CrossAxisAlignment.baseline;
+    }
+  }
+}
+
+extension StacVerticalDirectionParser on StacVerticalDirection {
+  VerticalDirection get parse {
+    switch (this) {
+      case StacVerticalDirection.up:
+        return VerticalDirection.up;
+      case StacVerticalDirection.down:
+        return VerticalDirection.down;
+    }
   }
 }
 
