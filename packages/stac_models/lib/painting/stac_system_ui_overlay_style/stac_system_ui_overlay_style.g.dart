@@ -13,18 +13,18 @@ StacSystemUIOverlayStyle _$StacSystemUIOverlayStyleFromJson(
   systemNavigationBarDividerColor:
       json['systemNavigationBarDividerColor'] as String?,
   systemNavigationBarIconBrightness: $enumDecodeNullable(
-    _$BrightnessEnumMap,
+    _$StacBrightnessEnumMap,
     json['systemNavigationBarIconBrightness'],
   ),
   systemNavigationBarContrastEnforced:
       json['systemNavigationBarContrastEnforced'] as bool?,
   statusBarColor: json['statusBarColor'] as String?,
   statusBarBrightness: $enumDecodeNullable(
-    _$BrightnessEnumMap,
+    _$StacBrightnessEnumMap,
     json['statusBarBrightness'],
   ),
   statusBarIconBrightness: $enumDecodeNullable(
-    _$BrightnessEnumMap,
+    _$StacBrightnessEnumMap,
     json['statusBarIconBrightness'],
   ),
   systemStatusBarContrastEnforced:
@@ -37,17 +37,18 @@ Map<String, dynamic> _$StacSystemUIOverlayStyleToJson(
   'systemNavigationBarColor': instance.systemNavigationBarColor,
   'systemNavigationBarDividerColor': instance.systemNavigationBarDividerColor,
   'systemNavigationBarIconBrightness':
-      _$BrightnessEnumMap[instance.systemNavigationBarIconBrightness],
+      _$StacBrightnessEnumMap[instance.systemNavigationBarIconBrightness],
   'systemNavigationBarContrastEnforced':
       instance.systemNavigationBarContrastEnforced,
   'statusBarColor': instance.statusBarColor,
-  'statusBarBrightness': _$BrightnessEnumMap[instance.statusBarBrightness],
+  'statusBarBrightness': _$StacBrightnessEnumMap[instance.statusBarBrightness],
   'statusBarIconBrightness':
-      _$BrightnessEnumMap[instance.statusBarIconBrightness],
+      _$StacBrightnessEnumMap[instance.statusBarIconBrightness],
   'systemStatusBarContrastEnforced': instance.systemStatusBarContrastEnforced,
 };
 
-const _$BrightnessEnumMap = {
-  Brightness.dark: 'dark',
-  Brightness.light: 'light',
+const _$StacBrightnessEnumMap = {
+  StacBrightness.light: 'light',
+  StacBrightness.dark: 'dark',
+  StacBrightness.system: 'system',
 };

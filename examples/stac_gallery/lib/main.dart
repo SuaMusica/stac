@@ -49,15 +49,19 @@ StacWidget homeScreen() {
   return StacScaffold(
     appBar: StacAppBar(
       title: StacText(
-        data: 'STAC Gallery',
+        data: 'STAC dede',
       ),
     ),
     body: StacCenter(
       child: StacContainer(
-        color: StacColors.blue,
-        width: StacDouble(100.0),
-        height: StacDouble(100.0),
-      ),
+          color: StacColors.blue,
+          width: StacDouble(100.0),
+          height: StacDouble(100.0),
+          child: StacCenter(
+            child: StacText(
+              data: 'Hello, World!',
+            ),
+          )),
     ),
   );
 }

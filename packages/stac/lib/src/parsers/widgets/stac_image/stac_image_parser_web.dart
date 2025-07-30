@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
 import 'package:stac_logger/stac_logger.dart';
+import 'package:stac_models/types/stac_double.dart';
+import 'package:stac_models/types/stac_image_type.dart';
+import 'package:stac_models/widgets/image/stac_image.dart';
 
 class StacImageParser extends StacParser<StacImage> {
   const StacImageParser();
@@ -24,6 +27,8 @@ class StacImageParser extends StacParser<StacImage> {
         return const SizedBox();
       case StacImageType.asset:
         return _assetImage(model, context);
+      default:
+        return const SizedBox();
     }
   }
 
@@ -31,13 +36,13 @@ class StacImageParser extends StacParser<StacImage> {
     if (model.src.contains(".svg")) {
       return SvgPicture.network(
         model.src,
-        alignment: model.alignment.value,
+        alignment: model.alignment?.parse ?? Alignment.center,
         colorFilter: model.color != null
             ? ColorFilter.mode(model.color.toColor(context)!, BlendMode.srcIn)
             : null,
         width: model.width?.parse,
         height: model.height?.parse,
-        fit: model.fit ?? BoxFit.contain,
+        fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
         },
@@ -45,11 +50,11 @@ class StacImageParser extends StacParser<StacImage> {
     } else {
       return Image.network(
         model.src,
-        alignment: model.alignment.value,
+        alignment: model.alignment?.parse ?? Alignment.center,
         color: model.color?.toColor(context),
         width: model.width?.parse,
         height: model.height?.parse,
-        fit: model.fit,
+        fit: model.fit?.parse,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
         },
@@ -61,11 +66,11 @@ class StacImageParser extends StacParser<StacImage> {
     if (!model.src.endsWith(".svg")) {
       return Image.asset(
         model.src,
-        alignment: model.alignment.value,
+        alignment: model.alignment?.parse ?? Alignment.center,
         color: model.color?.toColor(context),
         width: model.width?.parse,
         height: model.height?.parse,
-        fit: model.fit,
+        fit: model.fit?.parse,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
         },
@@ -73,13 +78,13 @@ class StacImageParser extends StacParser<StacImage> {
     } else {
       return SvgPicture.asset(
         model.src,
-        alignment: model.alignment.value,
+        alignment: model.alignment?.parse ?? Alignment.center,
         colorFilter: model.color != null
             ? ColorFilter.mode(model.color.toColor(context)!, BlendMode.srcIn)
             : null,
         width: model.width?.parse,
         height: model.height?.parse,
-        fit: model.fit ?? BoxFit.contain,
+        fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
         },
