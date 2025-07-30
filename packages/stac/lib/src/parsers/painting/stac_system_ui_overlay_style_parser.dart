@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_models/stac_models.dart';
 
@@ -9,11 +10,12 @@ extension StacSystemUIOverlayStyleParser on StacSystemUIOverlayStyle {
       systemNavigationBarColor: systemNavigationBarColor?.toColor(context),
       systemNavigationBarDividerColor:
           systemNavigationBarDividerColor.toColor(context),
-      systemNavigationBarIconBrightness: systemNavigationBarIconBrightness,
+      systemNavigationBarIconBrightness:
+          systemNavigationBarIconBrightness?.parse,
       systemNavigationBarContrastEnforced: systemNavigationBarContrastEnforced,
       statusBarColor: statusBarColor.toColor(context),
-      statusBarBrightness: statusBarBrightness,
-      statusBarIconBrightness: statusBarIconBrightness,
+      statusBarBrightness: statusBarBrightness?.parse,
+      statusBarIconBrightness: statusBarIconBrightness?.parse,
       systemStatusBarContrastEnforced: systemStatusBarContrastEnforced,
     );
   }

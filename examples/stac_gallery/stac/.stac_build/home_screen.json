@@ -1,0 +1,26 @@
+{
+  "body": {
+    "child": {
+      "decoration": {
+        "color": "#FFE91E63"
+      },
+      "width": 200.0,
+      "height": 200.0,
+      "child": {
+        "child": {
+          "data": "Hello World - UPDATED!",
+          "style": {
+            "fontSize": 17.0,
+            "fontWeight": "bold"
+          },
+          "type": "text"
+        },
+        "type": "center"
+      },
+      "type": "container"
+    },
+    "type": "center"
+  },
+  "drawerDragStartBehavior": "start",
+  "type": "scaffold"
+}
