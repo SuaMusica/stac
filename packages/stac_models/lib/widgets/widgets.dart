@@ -10,3 +10,4 @@ export 'row/stac_row.dart';
 export 'column/stac_column.dart';
 export 'sized_box/stac_sized_box.dart';
 export 'padding/stac_padding.dart';
+export 'stack/stac_stack.dart';
