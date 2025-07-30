@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_stack/stac_stack.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/stack/stac_stack.dart';
 
 class StacStackParser extends StacParser<StacStack> {
   const StacStackParser();
@@ -16,13 +17,11 @@ class StacStackParser extends StacParser<StacStack> {
   @override
   Widget parse(BuildContext context, StacStack model) {
     return Stack(
-      alignment: model.alignment.value,
-      clipBehavior: model.clipBehavior,
-      fit: model.fit,
-      textDirection: model.textDirection,
-      children: model.children
-          .map((value) => Stac.fromJson(value, context) ?? const SizedBox())
-          .toList(),
+      alignment: model.alignment?.parse ?? AlignmentDirectional.topStart,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
+      fit: model.fit?.parse ?? StackFit.loose,
+      textDirection: model.textDirection?.parse,
+      children: model.children?.parseList(context) ?? [],
     );
   }
 }

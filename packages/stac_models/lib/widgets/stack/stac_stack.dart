@@ -1,0 +1,44 @@
+import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/types/stac_alignment.dart';
+import 'package:stac_models/types/stac_text_types.dart';
+import 'package:stac_models/types/stac_stack_fit.dart';
+import 'package:stac_models/types/stac_clip.dart';
+
+part 'stac_stack.g.dart';
+
+@JsonSerializable()
+class StacStack extends StacWidget {
+  const StacStack({
+    this.alignment,
+    this.textDirection,
+    this.fit,
+    this.clipBehavior,
+    this.children,
+  });
+
+  final StacAlignment? alignment;
+
+  final StacTextDirection? textDirection;
+
+  final StacStackFit? fit;
+
+  final StacClip? clipBehavior;
+
+  @StacWidgetListJsonConverter()
+  final List<StacWidget>? children;
+
+  @override
+  String get type => 'stack';
+
+  factory StacStack.fromJson(Map<String, dynamic> json) =>
+      _$StacStackFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() {
+    final json = _$StacStackToJson(this);
+    json['type'] = type;
+    return json;
+  }
+}
+
