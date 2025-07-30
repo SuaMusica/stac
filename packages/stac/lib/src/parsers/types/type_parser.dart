@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/painting/stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 import 'package:stac_models/types/stac_alignment_directional.dart';
 import 'package:stac_models/types/stac_blend_mode.dart';
@@ -617,6 +618,16 @@ extension StacVerticalDirectionParser on StacVerticalDirection {
         return VerticalDirection.up;
       case StacVerticalDirection.down:
         return VerticalDirection.down;
+
+extension StacBrightnessParser on StacBrightness {
+  Brightness get parse {
+    switch (this) {
+      case StacBrightness.light:
+        return Brightness.light;
+      case StacBrightness.dark:
+        return Brightness.dark;
+      case StacBrightness.system:
+        return Brightness.light;
     }
   }
 }

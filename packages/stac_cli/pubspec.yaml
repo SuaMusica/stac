@@ -1,0 +1,24 @@
+name: stac_cli
+description: "A CLI tool for building STAC DSL files into JSON format."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  args: ^2.5.0
+  analyzer: ^6.7.0
+  dart_style: ^2.3.7
+  path: ^1.9.0
+  io: ^1.0.4
+  http: ^1.2.0
+  stac_models:
+    path: ../stac_models
+
+dev_dependencies:
+  test: ^1.25.8
+  lints: ^5.0.0
+
+executables:
+  stac: stac_cli
