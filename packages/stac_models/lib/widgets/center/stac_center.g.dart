@@ -23,4 +23,5 @@ Map<String, dynamic> _$StacCenterToJson(StacCenter instance) =>
       'widthFactor': instance.widthFactor?.toJson(),
       'heightFactor': instance.heightFactor?.toJson(),
       'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'type': instance.type,
     };

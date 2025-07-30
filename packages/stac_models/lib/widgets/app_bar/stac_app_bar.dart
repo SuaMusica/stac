@@ -109,11 +109,7 @@ class StacAppBar extends StacWidget {
       _$StacAppBarFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacAppBarToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacAppBarToJson(this);
 
   @override
   String get type => 'appBar';

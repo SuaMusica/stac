@@ -45,9 +45,5 @@ class StacImage extends StacWidget {
       _$StacImageFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacImageToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacImageToJson(this);
 }

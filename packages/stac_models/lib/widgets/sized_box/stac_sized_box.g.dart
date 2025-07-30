@@ -19,4 +19,5 @@ Map<String, dynamic> _$StacSizedBoxToJson(StacSizedBox instance) =>
       'width': instance.width?.toJson(),
       'height': instance.height?.toJson(),
       'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'type': instance.type,
     };

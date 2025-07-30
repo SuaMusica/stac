@@ -96,6 +96,7 @@ Map<String, dynamic> _$StacScaffoldToJson(
   'primary': instance.primary,
   'resizeToAvoidBottomInset': instance.resizeToAvoidBottomInset,
   'restorationId': instance.restorationId,
+  'type': instance.type,
 };
 
 const _$StacDragStartBehaviorEnumMap = {

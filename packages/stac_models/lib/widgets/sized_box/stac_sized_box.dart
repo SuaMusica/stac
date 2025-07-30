@@ -21,9 +21,5 @@ class StacSizedBox extends StacWidget {
       _$StacSizedBoxFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacSizedBoxToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacSizedBoxToJson(this);
 }

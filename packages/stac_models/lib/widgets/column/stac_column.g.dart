@@ -52,6 +52,7 @@ Map<String, dynamic> _$StacColumnToJson(StacColumn instance) =>
       'textBaseline': _$StacTextBaselineEnumMap[instance.textBaseline],
       'spacing': instance.spacing?.toJson(),
       'children': const StacWidgetListJsonConverter().toJson(instance.children),
+      'type': instance.type,
     };
 
 const _$StacMainAxisAlignmentEnumMap = {

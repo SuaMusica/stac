@@ -56,6 +56,7 @@ Map<String, dynamic> _$StacContainerToJson(StacContainer instance) =>
       'transformAlignment': _$StacAlignmentEnumMap[instance.transformAlignment],
       'child': const StacWidgetJsonConverter().toJson(instance.child),
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
+      'type': instance.type,
     };
 
 const _$StacAlignmentEnumMap = {

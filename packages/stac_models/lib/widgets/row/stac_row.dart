@@ -40,9 +40,5 @@ class StacRow extends StacWidget {
       _$StacRowFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacRowToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacRowToJson(this);
 }

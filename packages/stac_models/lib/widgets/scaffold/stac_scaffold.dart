@@ -92,9 +92,5 @@ class StacScaffold extends StacWidget {
       _$StacScaffoldFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacScaffoldToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacScaffoldToJson(this);
 }
