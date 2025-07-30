@@ -1,15 +1,26 @@
-import 'package:stac_models/core/stac_model.dart';
-import 'package:stac_models/painting/stac_color/stac_colors.dart';
+import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/types/stac_double.dart';
-import 'package:stac_models/widgets/widgets.dart';
+import 'package:stac_models/types/stac_text_types.dart';
 
 StacWidget homeScreen() {
-  return StacContainer(
-    color: StacColors.pink,
-    width: StacDouble(100),
-    height: StacDouble(100),
-    child: StacText(
-      data: 'Hello World',
+  return StacScaffold(
+    body: StacCenter(
+      child: StacContainer(
+        width: StacDouble(200.0),
+        height: StacDouble(200.0),
+        decoration: StacBoxDecoration(
+          color: StacColors.pink,
+        ),
+        child: StacCenter(
+          child: StacText(
+            data: 'Hello World - UPDATED!',
+            style: StacTextStyle(
+              fontSize: 17,
+              fontWeight: StacFontWeight.bold,
+            ),
+          ),
+        ),
+      ),
     ),
   );
 }

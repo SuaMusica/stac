@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/stac_model.dart';
 
@@ -20,11 +18,11 @@ class StacSystemUIOverlayStyle extends StacElement {
 
   final String? systemNavigationBarColor;
   final String? systemNavigationBarDividerColor;
-  final Brightness? systemNavigationBarIconBrightness;
+  final StacBrightness? systemNavigationBarIconBrightness;
   final bool? systemNavigationBarContrastEnforced;
   final String? statusBarColor;
-  final Brightness? statusBarBrightness;
-  final Brightness? statusBarIconBrightness;
+  final StacBrightness? statusBarBrightness;
+  final StacBrightness? statusBarIconBrightness;
   final bool? systemStatusBarContrastEnforced;
 
   factory StacSystemUIOverlayStyle.fromJson(Map<String, dynamic> json) =>
@@ -33,3 +31,5 @@ class StacSystemUIOverlayStyle extends StacElement {
   @override
   Map<String, dynamic> toJson() => _$StacSystemUIOverlayStyleToJson(this);
 }
+
+enum StacBrightness { light, dark, system }
