@@ -12,7 +12,7 @@ class StacRowParser extends StacParser<StacRow> {
   StacRow getModel(Map<String, dynamic> json) => StacRow.fromJson(json);
 
   @override
-  String get type => StacRow.type;
+  String get type => StacRow().type;
 
   @override
   Widget parse(BuildContext context, StacRow model) {

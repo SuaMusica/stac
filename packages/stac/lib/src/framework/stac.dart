@@ -174,7 +174,7 @@ class Stac {
   static Widget? fromStacWidget(
       {required StacWidget widget, required BuildContext context}) {
     try {
-      String widgetType = widget.getType();
+      String widgetType = widget.type;
       StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
 
       if (stacParser != null) {
@@ -194,7 +194,7 @@ class Stac {
         Log.w('Widget type [$widgetType] not supported');
       }
     } catch (e) {
-      Log.e('error in ${widget.getType()}');
+      Log.e('error in ${widget.type}');
       Log.e(e);
     }
     return null;
