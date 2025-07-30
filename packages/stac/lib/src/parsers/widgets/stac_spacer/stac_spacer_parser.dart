@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_spacer/stac_spacer.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/spacer/stac_spacer.dart';
 
 class StacSpacerParser extends StacParser<StacSpacer> {
   const StacSpacerParser();
@@ -14,6 +14,6 @@ class StacSpacerParser extends StacParser<StacSpacer> {
 
   @override
   Widget parse(BuildContext context, StacSpacer model) {
-    return Spacer(flex: model.flex);
+    return Spacer(flex: model.flex ?? 1);
   }
 }
