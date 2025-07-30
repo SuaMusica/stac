@@ -8,7 +8,6 @@ final double fontSize = 20;
 void main(List<String> args) {
   final json = homeScreen().toJson();
   json.removeWhere((key, value) => value == null);
-  print(json);
 }
 
 StacWidget homeScreen() {

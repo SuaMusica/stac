@@ -414,7 +414,7 @@ class StacCli {
         '''
 import 'dart:convert';
 import 'dart:isolate';
-${originalContent}
+$originalContent
 
 void main(List<String> args, SendPort sendPort) {
   try {
