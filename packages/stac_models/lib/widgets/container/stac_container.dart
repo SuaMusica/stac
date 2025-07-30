@@ -48,9 +48,5 @@ class StacContainer extends StacWidget {
       _$StacContainerFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacContainerToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacContainerToJson(this);
 }

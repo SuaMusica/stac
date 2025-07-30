@@ -35,6 +35,7 @@ Map<String, dynamic> _$StacImageToJson(StacImage instance) => <String, dynamic>{
   'filterQuality': _$StacFilterQualityEnumMap[instance.filterQuality],
   'semanticLabel': instance.semanticLabel,
   'excludeFromSemantics': instance.excludeFromSemantics,
+  'type': instance.type,
 };
 
 const _$StacAlignmentEnumMap = {

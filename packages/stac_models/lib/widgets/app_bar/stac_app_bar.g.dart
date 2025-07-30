@@ -89,6 +89,7 @@ Map<String, dynamic> _$StacAppBarToJson(StacAppBar instance) =>
       'useDefaultSemanticsOrder': instance.useDefaultSemanticsOrder,
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
       'actionsPadding': instance.actionsPadding?.toJson(),
+      'type': instance.type,
     };
 
 const _$StacClipEnumMap = {

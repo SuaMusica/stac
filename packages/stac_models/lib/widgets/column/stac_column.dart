@@ -40,9 +40,5 @@ class StacColumn extends StacWidget {
       _$StacColumnFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacColumnToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacColumnToJson(this);
 }

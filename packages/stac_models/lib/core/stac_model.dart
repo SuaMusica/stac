@@ -23,6 +23,7 @@ class StacWidget extends StacElement {
   @override
   Map<String, dynamic> toJson() => jsonData ?? {};
 
+  @JsonKey(includeToJson: true)
   String get type => throw UnimplementedError();
 }
 

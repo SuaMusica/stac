@@ -19,4 +19,5 @@ Map<String, dynamic> _$StacPaddingToJson(StacPadding instance) =>
     <String, dynamic>{
       'padding': instance.padding?.toJson(),
       'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'type': instance.type,
     };
