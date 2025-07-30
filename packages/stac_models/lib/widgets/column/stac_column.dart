@@ -34,7 +34,7 @@ class StacColumn extends StacWidget {
   final List<StacWidget>? children;
 
   @override
-  static String get type => 'column';
+  String get type => 'column';
 
   factory StacColumn.fromJson(Map<String, dynamic> json) =>
       _$StacColumnFromJson(json);

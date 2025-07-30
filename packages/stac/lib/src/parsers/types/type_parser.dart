@@ -618,6 +618,9 @@ extension StacVerticalDirectionParser on StacVerticalDirection {
         return VerticalDirection.up;
       case StacVerticalDirection.down:
         return VerticalDirection.down;
+    }
+  }
+}
 
 extension StacBrightnessParser on StacBrightness {
   Brightness get parse {

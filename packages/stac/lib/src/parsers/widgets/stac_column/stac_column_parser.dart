@@ -12,7 +12,7 @@ class StacColumnParser extends StacParser<StacColumn> {
   StacColumn getModel(Map<String, dynamic> json) => StacColumn.fromJson(json);
 
   @override
-  String get type => StacColumn.type;
+  String get type => StacColumn().type;
 
   @override
   Widget parse(BuildContext context, StacColumn model) {

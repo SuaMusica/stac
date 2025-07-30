@@ -15,7 +15,7 @@ class StacSizedBox extends StacWidget {
   final StacWidget? child;
 
   @override
-  static String get type => 'sizedBox';
+  String get type => 'sizedBox';
 
   factory StacSizedBox.fromJson(Map<String, dynamic> json) =>
       _$StacSizedBoxFromJson(json);
