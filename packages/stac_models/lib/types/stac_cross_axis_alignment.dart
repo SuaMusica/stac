@@ -1,7 +1,1 @@
-enum StacCrossAxisAlignment {
-  start,
-  end,
-  center,
-  stretch,
-  baseline,
-}
+enum StacCrossAxisAlignment { start, end, center, stretch, baseline }

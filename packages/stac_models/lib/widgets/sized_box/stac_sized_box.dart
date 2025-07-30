@@ -6,11 +6,7 @@ part 'stac_sized_box.g.dart';
 
 @JsonSerializable()
 class StacSizedBox extends StacWidget {
-  const StacSizedBox({
-    this.width,
-    this.height,
-    this.child,
-  });
+  const StacSizedBox({this.width, this.height, this.child});
 
   final StacDouble? width;
   final StacDouble? height;

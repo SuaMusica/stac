@@ -6,10 +6,7 @@ part 'stac_padding.g.dart';
 
 @JsonSerializable()
 class StacPadding extends StacWidget {
-  const StacPadding({
-    this.padding,
-    this.child,
-  });
+  const StacPadding({this.padding, this.child});
 
   final StacEdgeInsets? padding;
 

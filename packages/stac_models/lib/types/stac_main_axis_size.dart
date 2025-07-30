@@ -1,4 +1,1 @@
-enum StacMainAxisSize {
-  min,
-  max,
-}
+enum StacMainAxisSize { min, max }
