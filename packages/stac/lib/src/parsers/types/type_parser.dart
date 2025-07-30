@@ -563,7 +563,6 @@ extension StacBoxConstraintsParser on StacBoxConstraints {
   }
 }
 
-
 extension StacMainAxisAlignmentParser on StacMainAxisAlignment {
   MainAxisAlignment get parse {
     switch (this) {
