@@ -5,10 +5,7 @@ part 'stac_expanded.g.dart';
 
 @JsonSerializable()
 class StacExpanded extends StacWidget {
-  const StacExpanded({
-    this.flex,
-    this.child,
-  });
+  const StacExpanded({this.flex, this.child});
 
   final int? flex;
 

@@ -41,4 +41,3 @@ class StacStack extends StacWidget {
     return json;
   }
 }
-
