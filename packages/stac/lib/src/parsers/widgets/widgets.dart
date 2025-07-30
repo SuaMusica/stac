@@ -34,7 +34,7 @@ export 'package:stac/src/parsers/widgets/stac_duration/stac_duration.dart';
 export 'package:stac/src/parsers/widgets/stac_dynamic_view/stac_dynamic_view.dart';
 export 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
 export 'package:stac/src/parsers/widgets/stac_elevated_button/stac_elevated_button.dart';
-export 'package:stac/src/parsers/widgets/stac_expanded/stac_expanded.dart';
+export 'package:stac/src/parsers/widgets/stac_expanded/stac_expanded_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_filled_button/stac_filled_button.dart';
 export 'package:stac/src/parsers/widgets/stac_fitted_box/stac_fitted_box.dart';
 export 'package:stac/src/parsers/widgets/stac_flexible/stac_flexible.dart';
