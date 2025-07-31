@@ -3,7 +3,6 @@ import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/types/stac_double.dart';
 
 class StacSizedBoxParser extends StacParser<StacSizedBox> {
   const StacSizedBoxParser();
@@ -18,8 +17,8 @@ class StacSizedBoxParser extends StacParser<StacSizedBox> {
   @override
   Widget parse(BuildContext context, StacSizedBox model) {
     return SizedBox(
-      width: model.width?.parse,
-      height: model.height?.parse,
+      width: model.width,
+      height: model.height,
       child: model.child.parse(context),
     );
   }

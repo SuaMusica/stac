@@ -1,6 +1,5 @@
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_text_types.dart';
 
 final double fontSize = 20;
@@ -19,8 +18,8 @@ StacWidget homeScreen() {
     ),
     body: StacCenter(
       child: StacContainer(
-        width: StacDouble(200),
-        height: StacDouble(200),
+        width: 200,
+        height: 200,
         decoration: StacBoxDecoration(
           color: StacColors.red,
           border: StacBorder(

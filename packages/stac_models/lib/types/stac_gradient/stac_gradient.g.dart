@@ -12,7 +12,9 @@ StacGradient _$StacGradientFromJson(Map<String, dynamic> json) => StacGradient(
     json['gradientType'],
   ),
   colors: (json['colors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  stops: (json['stops'] as List<dynamic>?)?.map(StacDouble.fromJson).toList(),
+  stops: (json['stops'] as List<dynamic>?)
+      ?.map((e) => (e as num).toDouble())
+      .toList(),
   begin: $enumDecodeNullable(_$StacAlignmentEnumMap, json['begin']),
   end: $enumDecodeNullable(_$StacAlignmentEnumMap, json['end']),
   center: $enumDecodeNullable(_$StacAlignmentEnumMap, json['center']),
@@ -28,7 +30,7 @@ Map<String, dynamic> _$StacGradientToJson(StacGradient instance) =>
     <String, dynamic>{
       'gradientType': _$StacGradientTypeEnumMap[instance.gradientType],
       'colors': instance.colors,
-      'stops': instance.stops?.map((e) => e.toJson()).toList(),
+      'stops': instance.stops,
       'begin': _$StacAlignmentEnumMap[instance.begin],
       'end': _$StacAlignmentEnumMap[instance.end],
       'center': _$StacAlignmentEnumMap[instance.center],

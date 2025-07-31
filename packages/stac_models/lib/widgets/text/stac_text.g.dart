@@ -46,6 +46,7 @@ Map<String, dynamic> _$StacTextToJson(StacText instance) => <String, dynamic>{
   'semanticsLabel': instance.semanticsLabel,
   'textWidthBasis': _$StacTextWidthBasisEnumMap[instance.textWidthBasis],
   'selectionColor': instance.selectionColor,
+  'type': instance.type,
 };
 
 const _$StacTextAlignEnumMap = {

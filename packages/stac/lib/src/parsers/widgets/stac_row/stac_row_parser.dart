@@ -3,7 +3,6 @@ import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/types/stac_double.dart';
 
 class StacRowParser extends StacParser<StacRow> {
   const StacRowParser();
@@ -25,7 +24,7 @@ class StacRowParser extends StacParser<StacRow> {
         textDirection: model.textDirection?.parse,
         verticalDirection:
             model.verticalDirection?.parse ?? VerticalDirection.down,
-        spacing: model.spacing?.parse ?? 0,
+        spacing: model.spacing ?? 0,
         children: model.children.parseList(context) ?? []);
   }
 }

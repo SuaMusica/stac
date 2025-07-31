@@ -22,8 +22,8 @@ StacContainer _$StacContainerFromJson(
       : StacBoxDecoration.fromJson(
           json['foregroundDecoration'] as Map<String, dynamic>,
         ),
-  width: json['width'] == null ? null : StacDouble.fromJson(json['width']),
-  height: json['height'] == null ? null : StacDouble.fromJson(json['height']),
+  width: const DoubleConverter().fromJson(json['width']),
+  height: const DoubleConverter().fromJson(json['height']),
   constraints: json['constraints'] == null
       ? null
       : StacBoxConstraints.fromJson(
@@ -36,7 +36,7 @@ StacContainer _$StacContainerFromJson(
     _$StacAlignmentEnumMap,
     json['transformAlignment'],
   ),
-  child: const StacWidgetJsonConverter().fromJson(
+  child: const StacWidgetConverter().fromJson(
     json['child'] as Map<String, dynamic>?,
   ),
   clipBehavior: $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']),
@@ -49,13 +49,14 @@ Map<String, dynamic> _$StacContainerToJson(StacContainer instance) =>
       'color': instance.color,
       'decoration': instance.decoration?.toJson(),
       'foregroundDecoration': instance.foregroundDecoration?.toJson(),
-      'width': instance.width?.toJson(),
-      'height': instance.height?.toJson(),
+      'width': const DoubleConverter().toJson(instance.width),
+      'height': const DoubleConverter().toJson(instance.height),
       'constraints': instance.constraints?.toJson(),
       'margin': instance.margin?.toJson(),
       'transformAlignment': _$StacAlignmentEnumMap[instance.transformAlignment],
-      'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'child': const StacWidgetConverter().toJson(instance.child),
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
+      'type': instance.type,
     };
 
 const _$StacAlignmentEnumMap = {
