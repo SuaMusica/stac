@@ -14,3 +14,4 @@ export 'stack/stac_stack.dart';
 export 'positioned/stac_positioned.dart';
 export 'expanded/stac_expanded.dart';
 export 'spacer/stac_spacer.dart';
+export 'flexible/stac_flexible.dart';
