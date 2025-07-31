@@ -1,0 +1,4 @@
+enum StacFlexFit {
+  tight,
+  loose,
+}
