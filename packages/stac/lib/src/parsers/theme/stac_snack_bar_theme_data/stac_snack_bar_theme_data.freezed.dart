@@ -129,8 +129,6 @@ abstract mixin class $StacSnackBarThemeDataCopyWith<$Res> {
       double? actionOverflowThreshold,
       String? actionBackgroundColor,
       String? disabledActionBackgroundColor});
-
-  $StacShapeBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -224,20 +222,6 @@ class _$StacSnackBarThemeDataCopyWithImpl<$Res>
           : disabledActionBackgroundColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 }
 
@@ -399,9 +383,6 @@ abstract mixin class _$StacSnackBarThemeDataCopyWith<$Res>
       double? actionOverflowThreshold,
       String? actionBackgroundColor,
       String? disabledActionBackgroundColor});
-
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -495,20 +476,6 @@ class __$StacSnackBarThemeDataCopyWithImpl<$Res>
           : disabledActionBackgroundColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 }
 

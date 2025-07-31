@@ -87,8 +87,6 @@ abstract mixin class $StacOutlinedButtonCopyWith<$Res> {
       dynamic autofocus,
       Clip clipBehavior,
       Map<String, dynamic> child});
-
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -147,20 +145,6 @@ class _$StacOutlinedButtonCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of StacOutlinedButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 
@@ -310,9 +294,6 @@ abstract mixin class _$StacOutlinedButtonCopyWith<$Res>
       dynamic autofocus,
       Clip clipBehavior,
       Map<String, dynamic> child});
-
-  @override
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -371,20 +352,6 @@ class __$StacOutlinedButtonCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of StacOutlinedButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 

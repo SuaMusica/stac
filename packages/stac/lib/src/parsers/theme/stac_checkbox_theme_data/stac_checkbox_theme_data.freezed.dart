@@ -22,7 +22,7 @@ mixin _$StacCheckboxThemeData {
   double? get splashRadius;
   MaterialTapTargetSize? get materialTapTargetSize;
   StacVisualDensity? get visualDensity;
-  StacRoundedRactangleBorder? get shape;
+  StacShapeBorder? get shape;
   StacBorderSide? get side;
 
   /// Create a copy of StacCheckboxThemeData
@@ -93,11 +93,10 @@ abstract mixin class $StacCheckboxThemeDataCopyWith<$Res> {
       double? splashRadius,
       MaterialTapTargetSize? materialTapTargetSize,
       StacVisualDensity? visualDensity,
-      StacRoundedRactangleBorder? shape,
+      StacShapeBorder? shape,
       StacBorderSide? side});
 
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -155,7 +154,7 @@ class _$StacCheckboxThemeDataCopyWithImpl<$Res>
       shape: freezed == shape
           ? _self.shape
           : shape // ignore: cast_nullable_to_non_nullable
-              as StacRoundedRactangleBorder?,
+              as StacShapeBorder?,
       side: freezed == side
           ? _self.side
           : side // ignore: cast_nullable_to_non_nullable
@@ -174,20 +173,6 @@ class _$StacCheckboxThemeDataCopyWithImpl<$Res>
 
     return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
       return _then(_self.copyWith(visualDensity: value));
-    });
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacRoundedRactangleBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
     });
   }
 }
@@ -223,7 +208,7 @@ class _StacCheckboxThemeData implements StacCheckboxThemeData {
   @override
   final StacVisualDensity? visualDensity;
   @override
-  final StacRoundedRactangleBorder? shape;
+  final StacShapeBorder? shape;
   @override
   final StacBorderSide? side;
 
@@ -302,13 +287,11 @@ abstract mixin class _$StacCheckboxThemeDataCopyWith<$Res>
       double? splashRadius,
       MaterialTapTargetSize? materialTapTargetSize,
       StacVisualDensity? visualDensity,
-      StacRoundedRactangleBorder? shape,
+      StacShapeBorder? shape,
       StacBorderSide? side});
 
   @override
   $StacVisualDensityCopyWith<$Res>? get visualDensity;
-  @override
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -366,7 +349,7 @@ class __$StacCheckboxThemeDataCopyWithImpl<$Res>
       shape: freezed == shape
           ? _self.shape
           : shape // ignore: cast_nullable_to_non_nullable
-              as StacRoundedRactangleBorder?,
+              as StacShapeBorder?,
       side: freezed == side
           ? _self.side
           : side // ignore: cast_nullable_to_non_nullable
@@ -385,20 +368,6 @@ class __$StacCheckboxThemeDataCopyWithImpl<$Res>
 
     return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
       return _then(_self.copyWith(visualDensity: value));
-    });
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacRoundedRactangleBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
     });
   }
 }

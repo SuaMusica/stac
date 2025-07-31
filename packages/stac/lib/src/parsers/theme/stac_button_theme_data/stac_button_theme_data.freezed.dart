@@ -125,7 +125,6 @@ abstract mixin class $StacButtonThemeDataCopyWith<$Res> {
       StacColorScheme? colorScheme,
       MaterialTapTargetSize? materialTapTargetSize});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
 }
 
@@ -220,20 +219,6 @@ class _$StacButtonThemeDataCopyWithImpl<$Res>
           : materialTapTargetSize // ignore: cast_nullable_to_non_nullable
               as MaterialTapTargetSize?,
     ));
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacButtonThemeData
@@ -411,8 +396,6 @@ abstract mixin class _$StacButtonThemeDataCopyWith<$Res>
       MaterialTapTargetSize? materialTapTargetSize});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
 }
 
@@ -507,20 +490,6 @@ class __$StacButtonThemeDataCopyWithImpl<$Res>
           : materialTapTargetSize // ignore: cast_nullable_to_non_nullable
               as MaterialTapTargetSize?,
     ));
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacButtonThemeData

@@ -95,9 +95,6 @@ abstract mixin class $StacDrawerThemeDataCopyWith<$Res> {
       StacShapeBorder? endShape,
       double? width,
       Clip? clipBehavior});
-
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacShapeBorderCopyWith<$Res>? get endShape;
 }
 
 /// @nodoc
@@ -161,34 +158,6 @@ class _$StacDrawerThemeDataCopyWithImpl<$Res>
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip?,
     ));
-  }
-
-  /// Create a copy of StacDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get endShape {
-    if (_self.endShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.endShape!, (value) {
-      return _then(_self.copyWith(endShape: value));
-    });
   }
 }
 
@@ -304,11 +273,6 @@ abstract mixin class _$StacDrawerThemeDataCopyWith<$Res>
       StacShapeBorder? endShape,
       double? width,
       Clip? clipBehavior});
-
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get endShape;
 }
 
 /// @nodoc
@@ -372,34 +336,6 @@ class __$StacDrawerThemeDataCopyWithImpl<$Res>
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip?,
     ));
-  }
-
-  /// Create a copy of StacDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get endShape {
-    if (_self.endShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.endShape!, (value) {
-      return _then(_self.copyWith(endShape: value));
-    });
   }
 }
 

@@ -136,7 +136,6 @@ abstract mixin class $StacAppBarThemeCopyWith<$Res> {
       StacSystemUIOverlayStyle? systemOverlayStyle,
       StacEdgeInsets? actionsPadding});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
 }
@@ -242,20 +241,6 @@ class _$StacAppBarThemeCopyWithImpl<$Res>
           : actionsPadding // ignore: cast_nullable_to_non_nullable
               as StacEdgeInsets?,
     ));
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacAppBarTheme
@@ -456,8 +441,6 @@ abstract mixin class _$StacAppBarThemeCopyWith<$Res>
       StacEdgeInsets? actionsPadding});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   @override
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
@@ -564,20 +547,6 @@ class __$StacAppBarThemeCopyWithImpl<$Res>
           : actionsPadding // ignore: cast_nullable_to_non_nullable
               as StacEdgeInsets?,
     ));
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacAppBarTheme
