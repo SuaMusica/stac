@@ -8,7 +8,7 @@ part of 'stac_expanded.dart';
 
 StacExpanded _$StacExpandedFromJson(Map<String, dynamic> json) => StacExpanded(
   flex: (json['flex'] as num?)?.toInt(),
-  child: const StacWidgetJsonConverter().fromJson(
+  child: const StacWidgetConverter().fromJson(
     json['child'] as Map<String, dynamic>?,
   ),
 );
@@ -16,5 +16,6 @@ StacExpanded _$StacExpandedFromJson(Map<String, dynamic> json) => StacExpanded(
 Map<String, dynamic> _$StacExpandedToJson(StacExpanded instance) =>
     <String, dynamic>{
       'flex': instance.flex,
-      'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'child': const StacWidgetConverter().toJson(instance.child),
+      'type': instance.type,
     };

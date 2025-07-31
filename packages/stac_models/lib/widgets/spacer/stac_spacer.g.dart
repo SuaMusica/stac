@@ -10,4 +10,4 @@ StacSpacer _$StacSpacerFromJson(Map<String, dynamic> json) =>
     StacSpacer(flex: (json['flex'] as num?)?.toInt());
 
 Map<String, dynamic> _$StacSpacerToJson(StacSpacer instance) =>
-    <String, dynamic>{'flex': instance.flex};
+    <String, dynamic>{'flex': instance.flex, 'type': instance.type};

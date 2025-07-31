@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/stac_model.dart';
-import 'package:stac_models/types/stac_double.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
+import 'package:stac_models/core/converters/widget_converter.dart';
 
 part 'stac_positioned.g.dart';
 
@@ -16,19 +17,25 @@ class StacPositioned extends StacWidget {
     required this.child,
   });
 
-  final StacDouble? left;
+  @DoubleConverter()
+  final double? left;
 
-  final StacDouble? top;
+  @DoubleConverter()
+  final double? top;
 
-  final StacDouble? right;
+  @DoubleConverter()
+  final double? right;
 
-  final StacDouble? bottom;
+  @DoubleConverter()
+  final double? bottom;
 
-  final StacDouble? width;
+  @DoubleConverter()
+  final double? width;
 
-  final StacDouble? height;
+  @DoubleConverter()
+  final double? height;
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? child;
 
   @override

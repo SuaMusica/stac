@@ -14,9 +14,7 @@ StacStack _$StacStackFromJson(Map<String, dynamic> json) => StacStack(
   ),
   fit: $enumDecodeNullable(_$StacStackFitEnumMap, json['fit']),
   clipBehavior: $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']),
-  children: const StacWidgetListJsonConverter().fromJson(
-    json['children'] as List<Map<String, dynamic>>?,
-  ),
+  children: const StacWidgetListConverter().fromJson(json['children']),
 );
 
 Map<String, dynamic> _$StacStackToJson(StacStack instance) => <String, dynamic>{
@@ -24,7 +22,8 @@ Map<String, dynamic> _$StacStackToJson(StacStack instance) => <String, dynamic>{
   'textDirection': _$StacTextDirectionEnumMap[instance.textDirection],
   'fit': _$StacStackFitEnumMap[instance.fit],
   'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
-  'children': const StacWidgetListJsonConverter().toJson(instance.children),
+  'children': const StacWidgetListConverter().toJson(instance.children),
+  'type': instance.type,
 };
 
 const _$StacAlignmentEnumMap = {
