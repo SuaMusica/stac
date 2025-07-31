@@ -36,9 +36,5 @@ class StacStack extends StacWidget {
       _$StacStackFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacStackToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacStackToJson(this);
 }
