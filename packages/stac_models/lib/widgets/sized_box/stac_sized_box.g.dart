@@ -7,17 +7,17 @@ part of 'stac_sized_box.dart';
 // **************************************************************************
 
 StacSizedBox _$StacSizedBoxFromJson(Map<String, dynamic> json) => StacSizedBox(
-  width: json['width'] == null ? null : StacDouble.fromJson(json['width']),
-  height: json['height'] == null ? null : StacDouble.fromJson(json['height']),
-  child: const StacWidgetJsonConverter().fromJson(
+  width: const DoubleConverter().fromJson(json['width']),
+  height: const DoubleConverter().fromJson(json['height']),
+  child: const StacWidgetConverter().fromJson(
     json['child'] as Map<String, dynamic>?,
   ),
 );
 
 Map<String, dynamic> _$StacSizedBoxToJson(StacSizedBox instance) =>
     <String, dynamic>{
-      'width': instance.width?.toJson(),
-      'height': instance.height?.toJson(),
-      'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'width': const DoubleConverter().toJson(instance.width),
+      'height': const DoubleConverter().toJson(instance.height),
+      'child': const StacWidgetConverter().toJson(instance.child),
       'type': instance.type,
     };

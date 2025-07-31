@@ -187,6 +187,8 @@ class Stac {
             StacRegistry.instance,
           );
         }
+
+        Log.d(resolvedJson);
         final model = stacParser.getModel(resolvedJson);
 
         return stacParser.parse(context, model);

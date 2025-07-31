@@ -6,7 +6,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_image_type.dart';
 import 'package:stac_models/widgets/image/stac_image.dart';
 
@@ -41,8 +40,8 @@ class StacImageParser extends StacParser<StacImage> {
         colorFilter: model.color != null
             ? ColorFilter.mode(model.color.toColor(context)!, BlendMode.srcIn)
             : null,
-        width: model.width?.parse,
-        height: model.height?.parse,
+        width: model.width,
+        height: model.height,
         fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
@@ -53,8 +52,8 @@ class StacImageParser extends StacParser<StacImage> {
         imageUrl: model.src,
         alignment: model.alignment?.parse ?? Alignment.center,
         color: model.color?.toColor(context),
-        width: model.width?.parse,
-        height: model.height?.parse,
+        width: model.width,
+        height: model.height,
         fit: model.fit?.parse ?? BoxFit.contain,
         errorWidget: (context, error, stackTrace) {
           return const SizedBox();
@@ -69,8 +68,8 @@ class StacImageParser extends StacParser<StacImage> {
         File(model.src),
         alignment: model.alignment?.parse ?? Alignment.center,
         color: model.color?.toColor(context),
-        width: model.width?.parse,
-        height: model.height?.parse,
+        width: model.width,
+        height: model.height,
         fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
@@ -83,8 +82,8 @@ class StacImageParser extends StacParser<StacImage> {
         colorFilter: model.color != null
             ? ColorFilter.mode(model.color.toColor(context)!, BlendMode.srcIn)
             : null,
-        width: model.width?.parse,
-        height: model.height?.parse,
+        width: model.width,
+        height: model.height,
         fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
@@ -99,8 +98,8 @@ class StacImageParser extends StacParser<StacImage> {
         model.src,
         alignment: model.alignment?.parse ?? Alignment.center,
         color: model.color?.toColor(context),
-        width: model.width?.parse,
-        height: model.height?.parse,
+        width: model.width,
+        height: model.height,
         fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();
@@ -113,8 +112,8 @@ class StacImageParser extends StacParser<StacImage> {
         colorFilter: model.color != null
             ? ColorFilter.mode(model.color.toColor(context)!, BlendMode.srcIn)
             : null,
-        width: model.width?.parse,
-        height: model.height?.parse,
+        width: model.width,
+        height: model.height,
         fit: model.fit?.parse ?? BoxFit.contain,
         errorBuilder: (context, error, stackTrace) {
           return const SizedBox();

@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
 
 part 'stac_box_shadow.g.dart';
@@ -17,9 +17,14 @@ class StacBoxShadow implements StacElement {
   });
 
   final StacColor? color;
-  final StacDouble? blurRadius;
+
+  @DoubleConverter()
+  final double? blurRadius;
+
   final StacOffset? offset;
-  final StacDouble? spreadRadius;
+
+  @DoubleConverter()
+  final double? spreadRadius;
   final StacBlurStyle? blurStyle;
 
   factory StacBoxShadow.fromJson(Map<String, dynamic> json) =>

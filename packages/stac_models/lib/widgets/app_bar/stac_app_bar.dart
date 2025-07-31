@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/core/stac_model.dart';
 import 'package:stac_models/painting/stac_color/stac_colors.dart';
 import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
@@ -40,21 +41,21 @@ class StacAppBar extends StacWidget {
     this.actionsPadding,
   });
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? leading;
 
   final bool? automaticallyImplyLeading;
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? title;
 
-  @StacWidgetListJsonConverter()
+  @StacWidgetListConverter()
   final List<StacWidget>? actions;
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? flexibleSpace;
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? bottom;
 
   final double? elevation;
