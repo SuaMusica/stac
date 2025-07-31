@@ -34,7 +34,7 @@ class StacFloatingActionButton extends StacWidget {
     this.onPressed,
     this.textStyle,
     this.buttonType = StacFloatingActionButtonType.small,
-    this.autofocus = false,
+    this.autofocus,
     this.icon,
     this.backgroundColor,
     this.foregroundColor,
@@ -66,7 +66,7 @@ class StacFloatingActionButton extends StacWidget {
 
   /// True if this widget will be selected as the initial focus when no other
   /// node in its scope is currently focused.
-  final bool autofocus;
+  final bool? autofocus;
 
   /// The icon to display in the button.
   final Map<String, dynamic>? icon;

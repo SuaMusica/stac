@@ -19,7 +19,7 @@ StacFloatingActionButton _$StacFloatingActionButtonFromJson(
         json['buttonType'],
       ) ??
       StacFloatingActionButtonType.small,
-  autofocus: json['autofocus'] as bool? ?? false,
+  autofocus: json['autofocus'] as bool?,
   icon: json['icon'] as Map<String, dynamic>?,
   backgroundColor: json['backgroundColor'] as String?,
   foregroundColor: json['foregroundColor'] as String?,

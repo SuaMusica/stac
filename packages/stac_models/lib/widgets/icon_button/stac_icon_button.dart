@@ -47,7 +47,7 @@ class StacIconButton extends StacWidget {
     this.onHover,
     this.onLongPress,
     this.mouseCursor,
-    this.autofocus = false,
+    this.autofocus,
     this.tooltip,
     this.enableFeedback,
     this.constraints,
@@ -105,7 +105,7 @@ class StacIconButton extends StacWidget {
 
   /// True if this widget will be selected as the initial focus when no other
   /// node in its scope is currently focused.
-  final bool autofocus;
+  final bool? autofocus;
 
   /// The tooltip text for the button.
   final String? tooltip;

@@ -33,8 +33,8 @@ class StacOutlinedButtonParser extends StacParser<StacOutlinedButton> {
           ? null
           : (bool value) => Stac.onCallFromJson(model.onFocusChange, context),
       style: model.style?.parseOutlinedButton(context),
-      autofocus: model.autofocus,
-      clipBehavior: model.clipBehavior.parse,
+      autofocus: model.autofocus ?? false,
+      clipBehavior: model.clipBehavior?.parse,
       child: model.child?.parse(context),
     );
   }

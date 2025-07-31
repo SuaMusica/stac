@@ -42,7 +42,7 @@ class StacIconButtonParser extends StacParser<StacIconButton> {
           ? null
           : () => Stac.onCallFromJson(model.onLongPress, context),
       mouseCursor: model.mouseCursor?.parse,
-      autofocus: model.autofocus,
+      autofocus: model.autofocus ?? false,
       tooltip: model.tooltip,
       enableFeedback: model.enableFeedback,
       constraints: model.constraints?.parse,
