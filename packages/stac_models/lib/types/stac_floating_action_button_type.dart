@@ -11,4 +11,4 @@ enum StacFloatingActionButtonType {
 
   /// Small floating action button.
   small,
-} 
+}
