@@ -1,21 +1,28 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/types/stac_double.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
 
 part 'stac_box_constraints.g.dart';
 
 @JsonSerializable()
 class StacBoxConstraints {
   const StacBoxConstraints({
-    required this.minWidth,
-    required this.maxWidth,
-    required this.minHeight,
-    required this.maxHeight,
+    this.minWidth,
+    this.maxWidth,
+    this.minHeight,
+    this.maxHeight,
   });
 
-  final StacDouble minWidth;
-  final StacDouble maxWidth;
-  final StacDouble minHeight;
-  final StacDouble maxHeight;
+  @DoubleConverter()
+  final double? minWidth;
+
+  @DoubleConverter()
+  final double? maxWidth;
+
+  @DoubleConverter()
+  final double? minHeight;
+
+  @DoubleConverter()
+  final double? maxHeight;
 
   factory StacBoxConstraints.fromJson(Map<String, dynamic> json) =>
       _$StacBoxConstraintsFromJson(json);

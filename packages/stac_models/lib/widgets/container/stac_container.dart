@@ -1,4 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
+import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/core/stac_model.dart';
 import 'package:stac_models/painting/stac_box_decoration/stac_box_decoration.dart';
 import 'package:stac_models/painting/stac_color/stac_colors.dart';
@@ -6,12 +8,25 @@ import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
 import 'package:stac_models/types/stac_clip.dart';
-import 'package:stac_models/types/stac_double.dart';
 
 part 'stac_container.g.dart';
 
+/// A STAC model representing Flutter's [Container] widget.
+///
+/// Combines styling, positioning, and sizing properties for child widgets.
+/// Supports padding, margins, colors, decorations, sizing, and alignment.
+///
+/// ```json
+/// {
+///   "type": "container",
+///   "padding": {"all": 16.0},
+///   "color": "#FF0000",
+///   "child": {"type": "text", "text": "Hello"}
+/// }
+/// ```
 @JsonSerializable()
 class StacContainer extends StacWidget {
+  /// Creates a [StacContainer] with optional styling properties.
   const StacContainer({
     this.alignment,
     this.padding,
@@ -27,26 +42,56 @@ class StacContainer extends StacWidget {
     this.clipBehavior,
   });
 
+  /// How to align the [child] within the container.
   final StacAlignment? alignment;
+
+  /// Inner spacing around the [child].
   final StacEdgeInsets? padding;
+
+  /// Background color. Cannot be used with [decoration].
   final StacColor? color;
+
+  /// Background decoration (borders, gradients, shadows).
   final StacBoxDecoration? decoration;
+
+  /// Foreground decoration painted over the [child].
   final StacBoxDecoration? foregroundDecoration;
-  final StacDouble? width;
-  final StacDouble? height;
+
+  /// Fixed width. If null, expands to fill available space.
+  /// Supports string values like "20" or "infinite".
+  @DoubleConverter()
+  final double? width;
+
+  /// Fixed height. If null, expands to fill available space.
+  /// Supports string values like "20" or "infinite".
+  @DoubleConverter()
+  final double? height;
+
+  /// Size constraints for the container.
   final StacBoxConstraints? constraints;
+
+  /// Outer spacing around the container.
   final StacEdgeInsets? margin;
+
+  /// Transform alignment for the container.
   final StacAlignment? transformAlignment;
-  @StacWidgetJsonConverter()
+
+  /// The child widget contained within this container.
+  @StacWidgetConverter()
   final StacWidget? child;
+
+  /// How to clip the container's content.
   final StacClip? clipBehavior;
 
+  /// Widget type identifier.
   @override
   String get type => 'container';
 
+  /// Creates a [StacContainer] from JSON.
   factory StacContainer.fromJson(Map<String, dynamic> json) =>
       _$StacContainerFromJson(json);
 
+  /// Converts this container to JSON.
   @override
   Map<String, dynamic> toJson() => _$StacContainerToJson(this);
 }

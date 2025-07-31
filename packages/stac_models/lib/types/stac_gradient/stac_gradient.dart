@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/painting/stac_color/stac_colors.dart';
 import 'package:stac_models/types/stac_alignment.dart';
-import 'package:stac_models/types/stac_double.dart';
 
 part 'stac_gradient.g.dart';
 
@@ -28,7 +27,7 @@ class StacGradient {
 
   final StacGradientType? gradientType;
   final List<StacColor>? colors;
-  final List<StacDouble>? stops;
+  final List<double>? stops;
   final StacAlignment? begin;
   final StacAlignment? end;
   final StacAlignment? center;

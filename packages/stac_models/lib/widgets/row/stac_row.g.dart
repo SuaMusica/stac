@@ -31,12 +31,8 @@ StacRow _$StacRowFromJson(Map<String, dynamic> json) => StacRow(
     _$StacTextBaselineEnumMap,
     json['textBaseline'],
   ),
-  spacing: json['spacing'] == null
-      ? null
-      : StacDouble.fromJson(json['spacing']),
-  children: const StacWidgetListJsonConverter().fromJson(
-    json['children'] as List<Map<String, dynamic>>?,
-  ),
+  spacing: const DoubleConverter().fromJson(json['spacing']),
+  children: const StacWidgetListConverter().fromJson(json['children']),
 );
 
 Map<String, dynamic> _$StacRowToJson(StacRow instance) => <String, dynamic>{
@@ -49,8 +45,8 @@ Map<String, dynamic> _$StacRowToJson(StacRow instance) => <String, dynamic>{
   'verticalDirection':
       _$StacVerticalDirectionEnumMap[instance.verticalDirection],
   'textBaseline': _$StacTextBaselineEnumMap[instance.textBaseline],
-  'spacing': instance.spacing?.toJson(),
-  'children': const StacWidgetListJsonConverter().toJson(instance.children),
+  'spacing': const DoubleConverter().toJson(instance.spacing),
+  'children': const StacWidgetListConverter().toJson(instance.children),
   'type': instance.type,
 };
 

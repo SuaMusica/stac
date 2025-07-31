@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:stac/stac.dart' show Stac;
 import 'package:stac_gallery/app/example/example_screen_parser.dart';
 import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/painting/painting.dart';
 import 'package:stac_models/painting/stac_color/stac_colors.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/widgets/widgets.dart';
 import 'package:stac_webview/stac_webview.dart';
 
@@ -52,16 +52,19 @@ StacWidget homeScreen() {
         data: 'STAC dede',
       ),
     ),
-    body: StacCenter(
-      child: StacContainer(
+    body: StacColumn(
+      children: [
+        StacContainer(
+          width: double.infinity,
           color: StacColors.blue,
-          width: StacDouble(100.0),
-          height: StacDouble(100.0),
-          child: StacCenter(
-            child: StacText(
-              data: 'Hello, World!',
-            ),
-          )),
+          child: StacText(data: 'Hello, World!'),
+        ),
+        StacContainer(
+          width: double.infinity,
+          color: StacColors.red,
+          child: StacText(data: 'Hello, World!'),
+        ),
+      ],
     ),
   );
 }

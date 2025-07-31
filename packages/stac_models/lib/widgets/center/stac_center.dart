@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
+import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/core/stac_model.dart';
-import 'package:stac_models/types/stac_double.dart';
 
 part 'stac_center.g.dart';
 
@@ -8,11 +9,13 @@ part 'stac_center.g.dart';
 class StacCenter extends StacWidget {
   StacCenter({this.widthFactor, this.heightFactor, this.child});
 
-  final StacDouble? widthFactor;
+  @DoubleConverter()
+  final double? widthFactor;
 
-  final StacDouble? heightFactor;
+  @DoubleConverter()
+  final double? heightFactor;
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? child;
 
   factory StacCenter.fromJson(Map<String, dynamic> json) =>

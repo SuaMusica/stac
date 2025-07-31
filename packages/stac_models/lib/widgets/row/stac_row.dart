@@ -1,7 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
+import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/core/stac_model.dart';
 import 'package:stac_models/types/stac_cross_axis_alignment.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_text_types.dart';
@@ -23,14 +24,21 @@ class StacRow extends StacWidget {
   });
 
   final StacMainAxisAlignment? mainAxisAlignment;
-  final StacMainAxisSize? mainAxisSize;
-  final StacCrossAxisAlignment? crossAxisAlignment;
-  final StacTextDirection? textDirection;
-  final StacVerticalDirection? verticalDirection;
-  final StacTextBaseline? textBaseline;
-  final StacDouble? spacing;
 
-  @StacWidgetListJsonConverter()
+  final StacMainAxisSize? mainAxisSize;
+
+  final StacCrossAxisAlignment? crossAxisAlignment;
+
+  final StacTextDirection? textDirection;
+
+  final StacVerticalDirection? verticalDirection;
+
+  final StacTextBaseline? textBaseline;
+
+  @DoubleConverter()
+  final double? spacing;
+
+  @StacWidgetListConverter()
   final List<StacWidget>? children;
 
   @override
