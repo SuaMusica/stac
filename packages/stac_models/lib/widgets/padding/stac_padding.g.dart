@@ -10,7 +10,7 @@ StacPadding _$StacPaddingFromJson(Map<String, dynamic> json) => StacPadding(
   padding: json['padding'] == null
       ? null
       : StacEdgeInsets.fromJson(json['padding']),
-  child: const StacWidgetJsonConverter().fromJson(
+  child: const StacWidgetConverter().fromJson(
     json['child'] as Map<String, dynamic>?,
   ),
 );
@@ -18,5 +18,6 @@ StacPadding _$StacPaddingFromJson(Map<String, dynamic> json) => StacPadding(
 Map<String, dynamic> _$StacPaddingToJson(StacPadding instance) =>
     <String, dynamic>{
       'padding': instance.padding?.toJson(),
-      'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'child': const StacWidgetConverter().toJson(instance.child),
+      'type': instance.type,
     };

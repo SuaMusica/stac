@@ -8,16 +8,16 @@ part of 'stac_rect.dart';
 
 StacRect _$StacRectFromJson(Map<String, dynamic> json) => StacRect(
   rectType: $enumDecode(_$StacRectTypeEnumMap, json['rectType']),
-  left: json['left'] == null ? null : StacDouble.fromJson(json['left']),
-  top: json['top'] == null ? null : StacDouble.fromJson(json['top']),
-  right: json['right'] == null ? null : StacDouble.fromJson(json['right']),
-  bottom: json['bottom'] == null ? null : StacDouble.fromJson(json['bottom']),
-  width: json['width'] == null ? null : StacDouble.fromJson(json['width']),
-  height: json['height'] == null ? null : StacDouble.fromJson(json['height']),
+  left: const DoubleConverter().fromJson(json['left']),
+  top: const DoubleConverter().fromJson(json['top']),
+  right: const DoubleConverter().fromJson(json['right']),
+  bottom: const DoubleConverter().fromJson(json['bottom']),
+  width: const DoubleConverter().fromJson(json['width']),
+  height: const DoubleConverter().fromJson(json['height']),
   center: json['center'] == null
       ? null
       : StacOffset.fromJson(json['center'] as Map<String, dynamic>),
-  radius: json['radius'] == null ? null : StacDouble.fromJson(json['radius']),
+  radius: const DoubleConverter().fromJson(json['radius']),
   a: json['a'] == null
       ? null
       : StacOffset.fromJson(json['a'] as Map<String, dynamic>),
@@ -28,14 +28,14 @@ StacRect _$StacRectFromJson(Map<String, dynamic> json) => StacRect(
 
 Map<String, dynamic> _$StacRectToJson(StacRect instance) => <String, dynamic>{
   'rectType': _$StacRectTypeEnumMap[instance.rectType]!,
-  'left': instance.left?.toJson(),
-  'top': instance.top?.toJson(),
-  'right': instance.right?.toJson(),
-  'bottom': instance.bottom?.toJson(),
-  'width': instance.width?.toJson(),
-  'height': instance.height?.toJson(),
+  'left': const DoubleConverter().toJson(instance.left),
+  'top': const DoubleConverter().toJson(instance.top),
+  'right': const DoubleConverter().toJson(instance.right),
+  'bottom': const DoubleConverter().toJson(instance.bottom),
+  'width': const DoubleConverter().toJson(instance.width),
+  'height': const DoubleConverter().toJson(instance.height),
   'center': instance.center?.toJson(),
-  'radius': instance.radius?.toJson(),
+  'radius': const DoubleConverter().toJson(instance.radius),
   'a': instance.a?.toJson(),
   'b': instance.b?.toJson(),
 };

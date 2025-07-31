@@ -17,7 +17,6 @@ import 'package:stac_models/types/stac_box_shadow/stac_box_shadow.dart';
 import 'package:stac_models/types/stac_box_shape.dart';
 import 'package:stac_models/types/stac_clip.dart';
 import 'package:stac_models/types/stac_cross_axis_alignment.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
 import 'package:stac_models/types/stac_floating_action_button_location.dart';
@@ -330,24 +329,24 @@ extension StacRectParser on StacRect {
   Rect? get parse {
     Rect fromCenter() => Rect.fromCenter(
           center: center?.parse ?? Offset.zero,
-          width: width?.parse ?? 0.0,
-          height: height?.parse ?? 0.0,
+          width: width ?? 0.0,
+          height: height ?? 0.0,
         );
     Rect fromCircle() => Rect.fromCircle(
           center: center?.parse ?? Offset.zero,
-          radius: radius?.parse ?? 0.0,
+          radius: radius ?? 0.0,
         );
     Rect fromLTRB() => Rect.fromLTRB(
-          left?.parse ?? 0.0,
-          top?.parse ?? 0.0,
-          right?.parse ?? 0.0,
-          bottom?.parse ?? 0.0,
+          left ?? 0.0,
+          top ?? 0.0,
+          right ?? 0.0,
+          bottom ?? 0.0,
         );
     Rect fromLTWH() => Rect.fromLTWH(
-          left?.parse ?? 0.0,
-          top?.parse ?? 0.0,
-          width?.parse ?? 0.0,
-          height?.parse ?? 0.0,
+          left ?? 0.0,
+          top ?? 0.0,
+          width ?? 0.0,
+          height ?? 0.0,
         );
     Rect fromPoints() => Rect.fromPoints(
           a?.parse ?? Offset.zero,
@@ -462,9 +461,9 @@ extension StacBoxShadowParser on StacBoxShadow {
   BoxShadow parse(BuildContext context) {
     return BoxShadow(
       color: color.toColor(context) ?? const Color(0xFF000000),
-      blurRadius: blurRadius?.parse ?? 0.0,
+      blurRadius: blurRadius ?? 0.0,
       offset: offset?.parse ?? Offset.zero,
-      spreadRadius: spreadRadius?.parse ?? 0.0,
+      spreadRadius: spreadRadius ?? 0.0,
       blurStyle: blurStyle?.parse ?? BlurStyle.normal,
     );
   }
@@ -517,13 +516,13 @@ extension StacGradientParser on StacGradient {
           colors: colors?.map((e) => e.toColor(context)!).toList() ?? [],
           begin: begin?.parse ?? Alignment.centerLeft,
           end: end?.parse ?? Alignment.centerRight,
-          stops: stops?.map((e) => e.parse).toList().toList(),
+          stops: stops,
           tileMode: tileMode?.parse ?? TileMode.clamp,
         );
 
     Gradient radialGradient() => RadialGradient(
           colors: colors?.map((e) => e.toColor(context)!).toList() ?? [],
-          stops: stops?.map((e) => e.parse).toList().toList(),
+          stops: stops,
           tileMode: tileMode?.parse ?? TileMode.clamp,
           focal: focal?.parse,
           focalRadius: focalRadius ?? 0.0,
@@ -533,7 +532,7 @@ extension StacGradientParser on StacGradient {
 
     Gradient sweepGradient() => SweepGradient(
           colors: colors?.map((e) => e.toColor(context)!).toList() ?? [],
-          stops: stops?.map((e) => e.parse).toList().toList(),
+          stops: stops,
           center: center?.parse ?? Alignment.center,
           startAngle: startAngle ?? 0.0,
           endAngle: endAngle ?? math.pi * 2,
@@ -556,10 +555,10 @@ extension StacGradientParser on StacGradient {
 extension StacBoxConstraintsParser on StacBoxConstraints {
   BoxConstraints get parse {
     return BoxConstraints(
-      minWidth: minWidth.parse,
-      maxWidth: maxWidth.parse,
-      minHeight: minHeight.parse,
-      maxHeight: maxHeight.parse,
+      minWidth: minWidth ?? 0.0,
+      maxWidth: maxWidth ?? double.infinity,
+      minHeight: minHeight ?? 0.0,
+      maxHeight: maxHeight ?? double.infinity,
     );
   }
 }

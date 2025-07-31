@@ -52,11 +52,7 @@ class StacText extends StacWidget {
   String get type => 'text';
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacTextToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacTextToJson(this);
 
   factory StacText.fromJson(Map<String, dynamic> json) =>
       _$StacTextFromJson(json);

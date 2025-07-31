@@ -1,13 +1,12 @@
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/types/stac_double.dart';
 import 'package:stac_models/types/stac_text_types.dart';
 
 StacWidget homeScreen() {
   return StacScaffold(
     body: StacCenter(
       child: StacContainer(
-        width: StacDouble(200.0),
-        height: StacDouble(200.0),
+        width: 200,
+        height: 200,
         decoration: StacBoxDecoration(
           color: StacColors.pink,
         ),
