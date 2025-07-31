@@ -76,6 +76,10 @@ StacWidget homeScreen() {
             ),
           ),
         ),
+        StacOutlinedButton(
+          onPressed: {},
+          child: StacText(data: 'Hello, World!'),
+        ),
       ],
     ),
     floatingActionButton: StacFloatingActionButton(
