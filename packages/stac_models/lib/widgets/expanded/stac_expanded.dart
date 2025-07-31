@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/converters/widget_converter.dart';
 
 part 'stac_expanded.g.dart';
 
@@ -9,7 +10,7 @@ class StacExpanded extends StacWidget {
 
   final int? flex;
 
-  @StacWidgetJsonConverter()
+  @StacWidgetConverter()
   final StacWidget? child;
 
   @override

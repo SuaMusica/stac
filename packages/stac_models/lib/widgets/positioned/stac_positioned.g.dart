@@ -6,27 +6,27 @@ part of 'stac_positioned.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-StacPositioned _$StacPositionedFromJson(
-  Map<String, dynamic> json,
-) => StacPositioned(
-  left: json['left'] == null ? null : StacDouble.fromJson(json['left']),
-  top: json['top'] == null ? null : StacDouble.fromJson(json['top']),
-  right: json['right'] == null ? null : StacDouble.fromJson(json['right']),
-  bottom: json['bottom'] == null ? null : StacDouble.fromJson(json['bottom']),
-  width: json['width'] == null ? null : StacDouble.fromJson(json['width']),
-  height: json['height'] == null ? null : StacDouble.fromJson(json['height']),
-  child: const StacWidgetJsonConverter().fromJson(
-    json['child'] as Map<String, dynamic>?,
-  ),
-);
+StacPositioned _$StacPositionedFromJson(Map<String, dynamic> json) =>
+    StacPositioned(
+      left: const DoubleConverter().fromJson(json['left']),
+      top: const DoubleConverter().fromJson(json['top']),
+      right: const DoubleConverter().fromJson(json['right']),
+      bottom: const DoubleConverter().fromJson(json['bottom']),
+      width: const DoubleConverter().fromJson(json['width']),
+      height: const DoubleConverter().fromJson(json['height']),
+      child: const StacWidgetConverter().fromJson(
+        json['child'] as Map<String, dynamic>?,
+      ),
+    );
 
 Map<String, dynamic> _$StacPositionedToJson(StacPositioned instance) =>
     <String, dynamic>{
-      'left': instance.left?.toJson(),
-      'top': instance.top?.toJson(),
-      'right': instance.right?.toJson(),
-      'bottom': instance.bottom?.toJson(),
-      'width': instance.width?.toJson(),
-      'height': instance.height?.toJson(),
-      'child': const StacWidgetJsonConverter().toJson(instance.child),
+      'left': const DoubleConverter().toJson(instance.left),
+      'top': const DoubleConverter().toJson(instance.top),
+      'right': const DoubleConverter().toJson(instance.right),
+      'bottom': const DoubleConverter().toJson(instance.bottom),
+      'width': const DoubleConverter().toJson(instance.width),
+      'height': const DoubleConverter().toJson(instance.height),
+      'child': const StacWidgetConverter().toJson(instance.child),
+      'type': instance.type,
     };
