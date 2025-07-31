@@ -35,8 +35,8 @@ class StacElevatedButton extends StacWidget {
     this.onHover,
     this.onFocusChange,
     this.style,
-    this.autofocus = false,
-    this.clipBehavior = StacClip.none,
+    this.autofocus,
+    this.clipBehavior,
     this.child,
   });
 
@@ -58,10 +58,10 @@ class StacElevatedButton extends StacWidget {
 
   /// True if this widget will be selected as the initial focus when no other
   /// node in its scope is currently focused.
-  final bool autofocus;
+  final bool? autofocus;
 
   /// How to clip the button's content.
-  final StacClip clipBehavior;
+  final StacClip? clipBehavior;
 
   /// The widget below this widget in the tree.
   /// Typically a [Text] widget.

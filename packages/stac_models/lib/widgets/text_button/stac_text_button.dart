@@ -4,15 +4,15 @@ import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_clip.dart';
 
-part 'stac_outlined_button.g.dart';
+part 'stac_text_button.g.dart';
 
-/// A Stac model representing Flutter's [OutlinedButton] widget.
+/// A Stac model representing Flutter's [TextButton] widget.
 ///
-/// Represents a Material Design outlined button that responds to touches
+/// Represents a Material Design text button that responds to touches
 /// by filling with color.
 ///
 /// ```dart
-/// StacOutlinedButton(
+/// StacTextButton(
 ///   onPressed: {'action': 'navigate', 'route': '/next'},
 ///   child: StacText(data: 'Press me'),
 ///   style: StacButtonStyle(elevation: 4.0),
@@ -21,15 +21,15 @@ part 'stac_outlined_button.g.dart';
 ///
 /// ```json
 /// {
-///   "type": "outlinedButton",
+///   "type": "textButton",
 ///   "child": {"type": "text", "data": "Press me"},
 ///   "onPressed": {"action": "navigate", "route": "/next"}
 /// }
 /// ```
 @JsonSerializable()
-class StacOutlinedButton extends StacWidget {
-  /// Creates a [StacOutlinedButton] with the given properties.
-  const StacOutlinedButton({
+class StacTextButton extends StacWidget {
+  /// Creates a [StacTextButton] with the given properties.
+  const StacTextButton({
     this.onPressed,
     this.onLongPress,
     this.onHover,
@@ -37,6 +37,7 @@ class StacOutlinedButton extends StacWidget {
     this.style,
     this.autofocus,
     this.clipBehavior,
+    this.isSemanticButton,
     this.child,
   });
 
@@ -63,6 +64,9 @@ class StacOutlinedButton extends StacWidget {
   /// How to clip the button's content.
   final StacClip? clipBehavior;
 
+  /// Whether this button is a semantic button.
+  final bool? isSemanticButton;
+
   /// The widget below this widget in the tree.
   /// Typically a [Text] widget.
   @StacWidgetConverter()
@@ -70,13 +74,13 @@ class StacOutlinedButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'outlinedButton';
+  String get type => 'textButton';
 
-  /// Creates a [StacOutlinedButton] from JSON.
-  factory StacOutlinedButton.fromJson(Map<String, dynamic> json) =>
-      _$StacOutlinedButtonFromJson(json);
+  /// Creates a [StacTextButton] from JSON.
+  factory StacTextButton.fromJson(Map<String, dynamic> json) =>
+      _$StacTextButtonFromJson(json);
 
   /// Converts this button to JSON.
   @override
-  Map<String, dynamic> toJson() => _$StacOutlinedButtonToJson(this);
+  Map<String, dynamic> toJson() => _$StacTextButtonToJson(this);
 }

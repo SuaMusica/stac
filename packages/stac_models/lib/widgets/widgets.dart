@@ -19,3 +19,4 @@ export 'sized_box/stac_sized_box.dart';
 export 'spacer/stac_spacer.dart';
 export 'stack/stac_stack.dart';
 export 'text/stac_text.dart';
+export 'text_button/stac_text_button.dart';

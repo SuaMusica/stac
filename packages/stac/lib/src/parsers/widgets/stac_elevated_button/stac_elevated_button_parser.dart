@@ -30,8 +30,8 @@ class StacElevatedButtonParser extends StacParser<StacElevatedButton> {
       onFocusChange: (bool value) =>
           value == false ? null : model.onFocusChange,
       style: model.style?.parseElevatedButton(context),
-      autofocus: model.autofocus,
-      clipBehavior: model.clipBehavior.parse,
+      autofocus: model.autofocus ?? false,
+      clipBehavior: model.clipBehavior?.parse,
       child: model.child?.parse(context),
     );
   }

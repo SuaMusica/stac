@@ -32,7 +32,7 @@ StacIconButton _$StacIconButtonFromJson(Map<String, dynamic> json) =>
         _$StacMouseCursorEnumMap,
         json['mouseCursor'],
       ),
-      autofocus: json['autofocus'] as bool? ?? false,
+      autofocus: json['autofocus'] as bool?,
       tooltip: json['tooltip'] as String?,
       enableFeedback: json['enableFeedback'] as bool?,
       constraints: json['constraints'] == null

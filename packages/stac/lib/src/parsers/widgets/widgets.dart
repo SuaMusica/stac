@@ -82,7 +82,7 @@ export 'package:stac/src/parsers/widgets/stac_tab_bar/stac_tab_bar.dart';
 export 'package:stac/src/parsers/widgets/stac_tab_bar_view/stac_tab_bar_view.dart';
 export 'package:stac/src/parsers/widgets/stac_table/stac_table.dart';
 export 'package:stac/src/parsers/widgets/stac_table_cell/stac_table_cell.dart';
-export 'package:stac/src/parsers/widgets/stac_text_button/stac_text_button.dart';
+export 'package:stac/src/parsers/widgets/stac_text_button/stac_text_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_text_field/stac_text_field.dart';
 export 'package:stac/src/parsers/widgets/stac_text_form_field/stac_text_form_field.dart';
 export 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';

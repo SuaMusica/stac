@@ -15,10 +15,11 @@ StacFilledButton _$StacFilledButtonFromJson(Map<String, dynamic> json) =>
       style: json['style'] == null
           ? null
           : StacButtonStyle.fromJson(json['style'] as Map<String, dynamic>),
-      autofocus: json['autofocus'] as bool? ?? false,
-      clipBehavior:
-          $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']) ??
-          StacClip.none,
+      autofocus: json['autofocus'] as bool?,
+      clipBehavior: $enumDecodeNullable(
+        _$StacClipEnumMap,
+        json['clipBehavior'],
+      ),
       child: const StacWidgetConverter().fromJson(
         json['child'] as Map<String, dynamic>?,
       ),
@@ -32,7 +33,7 @@ Map<String, dynamic> _$StacFilledButtonToJson(StacFilledButton instance) =>
       'onFocusChange': instance.onFocusChange,
       'style': instance.style?.toJson(),
       'autofocus': instance.autofocus,
-      'clipBehavior': _$StacClipEnumMap[instance.clipBehavior]!,
+      'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
       'child': const StacWidgetConverter().toJson(instance.child),
       'type': instance.type,
     };
