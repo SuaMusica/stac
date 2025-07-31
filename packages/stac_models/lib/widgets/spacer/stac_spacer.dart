@@ -16,9 +16,5 @@ class StacSpacer extends StacWidget {
       _$StacSpacerFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacSpacerToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacSpacerToJson(this);
 }

@@ -20,9 +20,5 @@ class StacExpanded extends StacWidget {
       _$StacExpandedFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() {
-    final json = _$StacExpandedToJson(this);
-    json['type'] = type;
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$StacExpandedToJson(this);
 }
