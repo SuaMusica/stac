@@ -7,10 +7,7 @@ part 'stac_aspect_ratio.g.dart';
 
 @JsonSerializable()
 class StacAspectRatio extends StacWidget {
-  const StacAspectRatio({
-    required this.aspectRatio,
-    required this.child,
-  });
+  const StacAspectRatio({required this.aspectRatio, required this.child});
 
   @DoubleConverter()
   final double aspectRatio;
@@ -21,8 +18,7 @@ class StacAspectRatio extends StacWidget {
   @override
   String get type => 'aspectRatio';
 
-  factory StacAspectRatio.fromJson(Map<String, dynamic>
-  json) =>
+  factory StacAspectRatio.fromJson(Map<String, dynamic> json) =>
       _$StacAspectRatioFromJson(json);
 
   @override
