@@ -1,21 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'stac_shape_border.dart';
+part of 'stac_circle_border.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacShapeBorder _$StacShapeBorderFromJson(Map<String, dynamic> json) =>
-    _StacShapeBorder(
-      borderType: $enumDecode(_$StacShapeBorderTypeEnumMap, json['borderType']),
-      data: json['data'] as Map<String, dynamic>,
+StacCircleBorder _$StacCircleBorderFromJson(Map<String, dynamic> json) =>
+    StacCircleBorder(
+      side: json['side'] == null
+          ? null
+          : StacBorderSide.fromJson(json['side'] as Map<String, dynamic>),
+      eccentricity: (json['eccentricity'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$StacShapeBorderToJson(_StacShapeBorder instance) =>
+Map<String, dynamic> _$StacCircleBorderToJson(StacCircleBorder instance) =>
     <String, dynamic>{
-      'borderType': _$StacShapeBorderTypeEnumMap[instance.borderType]!,
-      'data': instance.data,
+      'side': instance.side?.toJson(),
+      'type': _$StacShapeBorderTypeEnumMap[instance.type]!,
+      'eccentricity': instance.eccentricity,
     };
 
 const _$StacShapeBorderTypeEnumMap = {

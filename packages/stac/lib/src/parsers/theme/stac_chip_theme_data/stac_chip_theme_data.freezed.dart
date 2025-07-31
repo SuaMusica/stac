@@ -166,7 +166,6 @@ abstract mixin class $StacChipThemeDataCopyWith<$Res> {
       StacBoxConstraints? avatarBoxConstraints,
       StacBoxConstraints? deleteIconBoxConstraints});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -301,20 +300,6 @@ class _$StacChipThemeDataCopyWithImpl<$Res>
           : deleteIconBoxConstraints // ignore: cast_nullable_to_non_nullable
               as StacBoxConstraints?,
     ));
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacChipThemeData
@@ -543,8 +528,6 @@ abstract mixin class _$StacChipThemeDataCopyWith<$Res>
       StacBoxConstraints? deleteIconBoxConstraints});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -679,20 +662,6 @@ class __$StacChipThemeDataCopyWithImpl<$Res>
           : deleteIconBoxConstraints // ignore: cast_nullable_to_non_nullable
               as StacBoxConstraints?,
     ));
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacChipThemeData

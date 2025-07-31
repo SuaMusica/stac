@@ -132,7 +132,6 @@ abstract mixin class $StacSnackBarCopyWith<$Res> {
       DismissDirection? dismissDirection,
       Clip clipBehavior});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacSnackBarActionCopyWith<$Res>? get action;
   $StacDurationCopyWith<$Res> get duration;
 }
@@ -237,20 +236,6 @@ class _$StacSnackBarCopyWithImpl<$Res> implements $StacSnackBarCopyWith<$Res> {
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip,
     ));
-  }
-
-  /// Create a copy of StacSnackBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacSnackBar
@@ -462,8 +447,6 @@ abstract mixin class _$StacSnackBarCopyWith<$Res>
       Clip clipBehavior});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacSnackBarActionCopyWith<$Res>? get action;
   @override
   $StacDurationCopyWith<$Res> get duration;
@@ -570,20 +553,6 @@ class __$StacSnackBarCopyWithImpl<$Res>
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip,
     ));
-  }
-
-  /// Create a copy of StacSnackBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacSnackBar

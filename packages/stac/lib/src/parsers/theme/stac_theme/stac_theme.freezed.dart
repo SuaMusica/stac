@@ -359,20 +359,13 @@ abstract mixin class $StacThemeCopyWith<$Res> {
   $StacDialogThemeCopyWith<$Res>? get dialogTheme;
   $StacDividerThemeDataCopyWith<$Res>? get dividerTheme;
   $StacDrawerThemeDataCopyWith<$Res>? get drawerTheme;
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme;
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme;
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme;
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme;
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme;
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme;
   $StacNavigationBarThemeDataCopyWith<$Res>? get navigationBarTheme;
   $StacNavigationDrawerThemeDataCopyWith<$Res>? get navigationDrawerTheme;
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme;
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme;
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme;
   $StacTabBarThemeDataCopyWith<$Res>? get tabBarTheme;
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme;
 }
 
 /// @nodoc
@@ -1011,34 +1004,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme {
-    if (_self.elevatedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.elevatedButtonTheme!, (value) {
-      return _then(_self.copyWith(elevatedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme {
-    if (_self.filledButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.filledButtonTheme!, (value) {
-      return _then(_self.copyWith(filledButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme {
     if (_self.floatingActionButtonTheme == null) {
@@ -1055,20 +1020,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme {
-    if (_self.iconButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.iconButtonTheme!, (value) {
-      return _then(_self.copyWith(iconButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme {
     if (_self.listTileTheme == null) {
       return null;
@@ -1076,20 +1027,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
 
     return $StacListTileThemeDataCopyWith<$Res>(_self.listTileTheme!, (value) {
       return _then(_self.copyWith(listTileTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme {
-    if (_self.menuButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.menuButtonTheme!, (value) {
-      return _then(_self.copyWith(menuButtonTheme: value));
     });
   }
 
@@ -1127,34 +1064,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme {
-    if (_self.outlinedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.outlinedButtonTheme!, (value) {
-      return _then(_self.copyWith(outlinedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme {
-    if (_self.segmentedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.segmentedButtonTheme!, (value) {
-      return _then(_self.copyWith(segmentedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme {
     if (_self.snackBarTheme == null) {
       return null;
@@ -1176,20 +1085,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
 
     return $StacTabBarThemeDataCopyWith<$Res>(_self.tabBarTheme!, (value) {
       return _then(_self.copyWith(tabBarTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme {
-    if (_self.textButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.textButtonTheme!, (value) {
-      return _then(_self.copyWith(textButtonTheme: value));
     });
   }
 }
@@ -1713,32 +1608,18 @@ abstract mixin class _$StacThemeCopyWith<$Res>
   @override
   $StacDrawerThemeDataCopyWith<$Res>? get drawerTheme;
   @override
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme;
-  @override
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme;
   @override
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme;
-  @override
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme;
   @override
   $StacNavigationBarThemeDataCopyWith<$Res>? get navigationBarTheme;
   @override
   $StacNavigationDrawerThemeDataCopyWith<$Res>? get navigationDrawerTheme;
   @override
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme;
-  @override
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme;
   @override
   $StacTabBarThemeDataCopyWith<$Res>? get tabBarTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme;
 }
 
 /// @nodoc
@@ -2377,34 +2258,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme {
-    if (_self.elevatedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.elevatedButtonTheme!, (value) {
-      return _then(_self.copyWith(elevatedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme {
-    if (_self.filledButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.filledButtonTheme!, (value) {
-      return _then(_self.copyWith(filledButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme {
     if (_self.floatingActionButtonTheme == null) {
@@ -2421,20 +2274,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme {
-    if (_self.iconButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.iconButtonTheme!, (value) {
-      return _then(_self.copyWith(iconButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme {
     if (_self.listTileTheme == null) {
       return null;
@@ -2442,20 +2281,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
 
     return $StacListTileThemeDataCopyWith<$Res>(_self.listTileTheme!, (value) {
       return _then(_self.copyWith(listTileTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme {
-    if (_self.menuButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.menuButtonTheme!, (value) {
-      return _then(_self.copyWith(menuButtonTheme: value));
     });
   }
 
@@ -2493,34 +2318,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme {
-    if (_self.outlinedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.outlinedButtonTheme!, (value) {
-      return _then(_self.copyWith(outlinedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme {
-    if (_self.segmentedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.segmentedButtonTheme!, (value) {
-      return _then(_self.copyWith(segmentedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme {
     if (_self.snackBarTheme == null) {
       return null;
@@ -2542,20 +2339,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
 
     return $StacTabBarThemeDataCopyWith<$Res>(_self.tabBarTheme!, (value) {
       return _then(_self.copyWith(tabBarTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme {
-    if (_self.textButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.textButtonTheme!, (value) {
-      return _then(_self.copyWith(textButtonTheme: value));
     });
   }
 }

@@ -92,8 +92,6 @@ abstract mixin class $StacTextButtonCopyWith<$Res> {
       Clip clipBehavior,
       bool isSemanticButton,
       Map<String, dynamic> child});
-
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -157,20 +155,6 @@ class _$StacTextButtonCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of StacTextButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 
@@ -328,9 +312,6 @@ abstract mixin class _$StacTextButtonCopyWith<$Res>
       Clip clipBehavior,
       bool isSemanticButton,
       Map<String, dynamic> child});
-
-  @override
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -394,20 +375,6 @@ class __$StacTextButtonCopyWithImpl<$Res>
           : child // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of StacTextButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 

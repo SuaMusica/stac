@@ -142,8 +142,6 @@ abstract mixin class $StacIconButtonCopyWith<$Res> {
       bool? isSelected,
       Map<String, dynamic>? selectedIcon,
       Map<String, dynamic>? icon});
-
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -257,20 +255,6 @@ class _$StacIconButtonCopyWithImpl<$Res>
           : icon // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacIconButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 
@@ -480,9 +464,6 @@ abstract mixin class _$StacIconButtonCopyWith<$Res>
       bool? isSelected,
       Map<String, dynamic>? selectedIcon,
       Map<String, dynamic>? icon});
-
-  @override
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -596,20 +577,6 @@ class __$StacIconButtonCopyWithImpl<$Res>
           : icon // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacIconButton
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 

@@ -3,29 +3,29 @@ import 'dart:math' as math;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/painting/stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
+import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
-import 'package:stac_models/types/stac_alignment_directional.dart';
+import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
 import 'package:stac_models/types/stac_blend_mode.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
-import 'package:stac_models/types/stac_border_radius/stac_border_radius.dart';
-import 'package:stac_models/types/stac_border_side/stac_border_side.dart';
 import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
 import 'package:stac_models/types/stac_box_fit.dart';
 import 'package:stac_models/types/stac_box_shadow/stac_box_shadow.dart';
 import 'package:stac_models/types/stac_box_shape.dart';
+import 'package:stac_models/types/stac_circle_border/stac_circle_border.dart';
 import 'package:stac_models/types/stac_clip.dart';
+import 'package:stac_models/types/stac_continuous_rectangle_border/stac_continuous_rectangle_border.dart';
 import 'package:stac_models/types/stac_cross_axis_alignment.dart';
-import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
-import 'package:stac_models/types/stac_floating_action_button_location.dart';
 import 'package:stac_models/types/stac_gradient/stac_gradient.dart';
 import 'package:stac_models/types/stac_image_repeat.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
 import 'package:stac_models/types/stac_rect/stac_rect.dart';
+import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
@@ -645,5 +645,185 @@ extension StacStackFitParser on StacStackFit {
       case StacStackFit.passthrough:
         return StackFit.passthrough;
     }
+  }
+}
+
+extension StacIconAlignmentParser on StacIconAlignment {
+  IconAlignment get parse {
+    switch (this) {
+      case StacIconAlignment.start:
+        return IconAlignment.start;
+      case StacIconAlignment.end:
+        return IconAlignment.end;
+    }
+  }
+}
+
+extension StacSizeParser on StacSize {
+  Size get parse {
+    return Size(width, height);
+  }
+}
+
+extension StacMouseCursorParser on StacMouseCursor {
+  MouseCursor get parse {
+    switch (this) {
+      case StacMouseCursor.none:
+        return SystemMouseCursors.basic;
+      case StacMouseCursor.basic:
+        return SystemMouseCursors.basic;
+      case StacMouseCursor.click:
+        return SystemMouseCursors.click;
+      case StacMouseCursor.forbidden:
+        return SystemMouseCursors.forbidden;
+      case StacMouseCursor.wait:
+        return SystemMouseCursors.wait;
+      case StacMouseCursor.progress:
+        return SystemMouseCursors.progress;
+      case StacMouseCursor.contextMenu:
+        return SystemMouseCursors.contextMenu;
+      case StacMouseCursor.help:
+        return SystemMouseCursors.help;
+      case StacMouseCursor.text:
+        return SystemMouseCursors.text;
+      case StacMouseCursor.verticalText:
+        return SystemMouseCursors.verticalText;
+      case StacMouseCursor.cell:
+        return SystemMouseCursors.cell;
+      case StacMouseCursor.precise:
+        return SystemMouseCursors.precise;
+      case StacMouseCursor.move:
+        return SystemMouseCursors.move;
+      case StacMouseCursor.grab:
+        return SystemMouseCursors.grab;
+      case StacMouseCursor.grabbing:
+        return SystemMouseCursors.grabbing;
+      case StacMouseCursor.noDrop:
+        return SystemMouseCursors.noDrop;
+      case StacMouseCursor.alias:
+        return SystemMouseCursors.alias;
+      case StacMouseCursor.copy:
+        return SystemMouseCursors.copy;
+      case StacMouseCursor.disappearing:
+        return SystemMouseCursors.disappearing;
+      case StacMouseCursor.allScroll:
+        return SystemMouseCursors.allScroll;
+      case StacMouseCursor.resizeLeftRight:
+        return SystemMouseCursors.resizeLeftRight;
+      case StacMouseCursor.resizeUpDown:
+        return SystemMouseCursors.resizeUpDown;
+      case StacMouseCursor.resizeUpLeftDownRight:
+        return SystemMouseCursors.resizeUpLeftDownRight;
+      case StacMouseCursor.resizeUpRightDownLeft:
+        return SystemMouseCursors.resizeUpRightDownLeft;
+      case StacMouseCursor.resizeUp:
+        return SystemMouseCursors.resizeUp;
+      case StacMouseCursor.resizeDown:
+        return SystemMouseCursors.resizeDown;
+      case StacMouseCursor.resizeLeft:
+        return SystemMouseCursors.resizeLeft;
+      case StacMouseCursor.resizeRight:
+        return SystemMouseCursors.resizeRight;
+      case StacMouseCursor.resizeUpLeft:
+        return SystemMouseCursors.resizeUpLeft;
+      case StacMouseCursor.resizeUpRight:
+        return SystemMouseCursors.resizeUpRight;
+      case StacMouseCursor.resizeDownLeft:
+        return SystemMouseCursors.resizeDownLeft;
+      case StacMouseCursor.resizeDownRight:
+        return SystemMouseCursors.resizeDownRight;
+      case StacMouseCursor.resizeColumn:
+        return SystemMouseCursors.resizeColumn;
+      case StacMouseCursor.resizeRow:
+        return SystemMouseCursors.resizeRow;
+      case StacMouseCursor.zoomIn:
+        return SystemMouseCursors.zoomIn;
+      case StacMouseCursor.zoomOut:
+        return SystemMouseCursors.zoomOut;
+    }
+  }
+}
+
+extension StacMaterialTapTargetSizeParser on StacMaterialTapTargetSize {
+  MaterialTapTargetSize get parse {
+    switch (this) {
+      case StacMaterialTapTargetSize.padded:
+        return MaterialTapTargetSize.padded;
+      case StacMaterialTapTargetSize.shrinkWrap:
+        return MaterialTapTargetSize.shrinkWrap;
+    }
+  }
+}
+
+extension StacDurationParser on StacDuration {
+  Duration get parse {
+    return Duration(
+      days: days ?? 0,
+      hours: hours ?? 0,
+      minutes: minutes ?? 0,
+      seconds: seconds ?? 0,
+      milliseconds: milliseconds ?? 0,
+      microseconds: microseconds ?? 0,
+    );
+  }
+}
+
+extension StacVisualDensityParser on StacVisualDensity {
+  VisualDensity get parse {
+    return VisualDensity(
+      horizontal: horizontal ?? 0.0,
+      vertical: vertical ?? 0.0,
+    );
+  }
+}
+
+extension StacShapeBorderParser on StacShapeBorder {
+  OutlinedBorder parse(BuildContext context) {
+    switch (this) {
+      case StacRoundedRectangleBorder():
+        return (this as StacRoundedRectangleBorder).parse(context);
+      case StacCircleBorder():
+        return (this as StacCircleBorder).parse(context);
+      default:
+        return RoundedRectangleBorder(
+          side: BorderSide.none,
+          borderRadius: BorderRadius.zero,
+        );
+    }
+  }
+}
+
+extension StacRoundedRectangleBorderParser on StacRoundedRectangleBorder {
+  RoundedRectangleBorder parse(BuildContext context) {
+    return RoundedRectangleBorder(
+      side: side?.parse(context) ?? BorderSide.none,
+      borderRadius: borderRadius?.parse ?? BorderRadius.zero,
+    );
+  }
+}
+
+extension StacCircleBorderParser on StacCircleBorder {
+  CircleBorder parse(BuildContext context) {
+    return CircleBorder(
+      side: side?.parse(context) ?? BorderSide.none,
+      eccentricity: eccentricity ?? 0.0,
+    );
+  }
+}
+
+extension StacContinuousRectangleBorderParser on StacContinuousRectangleBorder {
+  ContinuousRectangleBorder parse(BuildContext context) {
+    return ContinuousRectangleBorder(
+      side: side?.parse(context) ?? BorderSide.none,
+      borderRadius: borderRadius?.parse ?? BorderRadius.zero,
+    );
+  }
+}
+
+extension StacBeveledRectangleBorderParser on StacBeveledRectangleBorder {
+  BeveledRectangleBorder parse(BuildContext context) {
+    return BeveledRectangleBorder(
+      side: side?.parse(context) ?? BorderSide.none,
+    );
   }
 }
