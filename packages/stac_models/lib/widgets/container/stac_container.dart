@@ -11,17 +11,25 @@ import 'package:stac_models/types/stac_clip.dart';
 
 part 'stac_container.g.dart';
 
-/// A STAC model representing Flutter's [Container] widget.
+/// A Stac model representing Flutter's [Container] widget.
 ///
 /// Combines styling, positioning, and sizing properties for child widgets.
 /// Supports padding, margins, colors, decorations, sizing, and alignment.
+///
+/// ```dart
+/// StacContainer(
+///   padding: StacEdgeInsets.all(16.0),
+///   color: StacColors.red,
+///   child: StacText(data: 'Hello'),
+/// )
+/// ```
 ///
 /// ```json
 /// {
 ///   "type": "container",
 ///   "padding": {"all": 16.0},
 ///   "color": "#FF0000",
-///   "child": {"type": "text", "text": "Hello"}
+///   "child": {"type": "text", "data": "Hello"}
 /// }
 /// ```
 @JsonSerializable()
