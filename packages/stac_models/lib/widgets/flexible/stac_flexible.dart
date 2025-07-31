@@ -7,11 +7,7 @@ part 'stac_flexible.g.dart';
 
 @JsonSerializable()
 class StacFlexible extends StacWidget {
-  const StacFlexible({
-    this.flex,
-    this.fit,
-    required this.child,
-  });
+  const StacFlexible({this.flex, this.fit, required this.child});
 
   final int? flex;
 

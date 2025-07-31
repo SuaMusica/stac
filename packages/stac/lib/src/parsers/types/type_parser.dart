@@ -649,7 +649,6 @@ extension StacStackFitParser on StacStackFit {
   }
 }
 
-
 extension StacFlexFitParser on StacFlexFit {
   FlexFit get parse {
     switch (this) {
