@@ -78,6 +78,10 @@ StacWidget homeScreen() {
         ),
       ],
     ),
+    floatingActionButton: StacFloatingActionButton(
+      onPressed: {},
+      child: StacText(data: '+'),
+    ),
   );
 }
 
