@@ -43,7 +43,7 @@ export 'package:stac/src/parsers/widgets/stac_font_weight/stac_font_weight.dart'
 export 'package:stac/src/parsers/widgets/stac_form/stac_form.dart';
 export 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 export 'package:stac/src/parsers/widgets/stac_form_field_validator/stac_form_validator.dart';
-export 'package:stac/src/parsers/widgets/stac_fractionally_sized_box/stac_fractionally_sized_box.dart';
+export 'package:stac/src/parsers/widgets/stac_fractionally_sized_box/stac_fractionally_sized_box_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_gesture_detector/stac_gesture_detector.dart';
 export 'package:stac/src/parsers/widgets/stac_gradient/stac_gradient.dart';
 export 'package:stac/src/parsers/widgets/stac_grid_view/stac_grid_view.dart';
