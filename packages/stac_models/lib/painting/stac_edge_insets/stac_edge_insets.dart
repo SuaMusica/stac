@@ -13,35 +13,22 @@ class StacEdgeInsets extends StacElement {
   final double? bottom;
 
   const StacEdgeInsets.all(double value)
-      : this(
-    left: value,
-    top: value,
-    right: value,
-    bottom: value,
-  );
+    : this(left: value, top: value, right: value, bottom: value);
 
-  const StacEdgeInsets.only({
-    this.left,
-    this.top,
-    this.right,
-    this.bottom,
-  });
+  const StacEdgeInsets.only({this.left, this.top, this.right, this.bottom});
 
-  const StacEdgeInsets.symmetric({
-    double? vertical,
-    double? horizontal,
-  }) : this(
-    left: horizontal,
-    top: vertical,
-    right: horizontal,
-    bottom: vertical,
-  );
+  const StacEdgeInsets.symmetric({double? vertical, double? horizontal})
+    : this(
+        left: horizontal,
+        top: vertical,
+        right: horizontal,
+        bottom: vertical,
+      );
 
   const StacEdgeInsets.horizontal(double value)
-      : this.symmetric(horizontal: value);
+    : this.symmetric(horizontal: value);
 
-  const StacEdgeInsets.vertical(double value)
-      : this.symmetric(vertical: value);
+  const StacEdgeInsets.vertical(double value) : this.symmetric(vertical: value);
 
   factory StacEdgeInsets.fromJson(dynamic json) {
     Map<String, dynamic> resultantJson;
