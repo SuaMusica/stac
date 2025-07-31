@@ -5,7 +5,7 @@ export 'package:stac/src/parsers/widgets/stac_align/stac_align.dart';
 export 'package:stac/src/parsers/widgets/stac_alignment/stac_alignment.dart';
 export 'package:stac/src/parsers/widgets/stac_alignment_directional/stac_alignment_directional.dart';
 export 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
-export 'package:stac/src/parsers/widgets/stac_aspect_ratio/stac_aspect_ratio.dart';
+export 'package:stac/src/parsers/widgets/stac_aspect_ratio/stac_aspect_ratio_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_auto_complete/stac_auto_complete.dart';
 export 'package:stac/src/parsers/widgets/stac_backdrop_filter/stac_backdrop_filter.dart';
 export 'package:stac/src/parsers/widgets/stac_bottom_navigation_bar/stac_bottom_navigation_bar.dart';
