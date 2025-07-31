@@ -8,6 +8,7 @@ export 'elevated_button/stac_elevated_button.dart';
 export 'expanded/stac_expanded.dart';
 export 'filled_button/stac_filled_button.dart';
 export 'floating_action_button/stac_floating_action_button.dart';
+export 'icon_button/stac_icon_button.dart';
 export 'image/stac_image.dart';
 export 'padding/stac_padding.dart';
 export 'positioned/stac_positioned.dart';
