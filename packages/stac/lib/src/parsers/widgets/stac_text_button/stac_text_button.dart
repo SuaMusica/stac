@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 
 export 'stac_text_button_parser.dart';
 

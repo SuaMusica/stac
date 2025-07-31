@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac/src/parsers/widgets/stac_alignment/stac_alignment.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
 
 export 'stac_icon_button_parser.dart';

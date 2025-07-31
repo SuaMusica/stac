@@ -6,8 +6,8 @@ part of 'stac_button_style.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacButtonStyle _$StacButtonStyleFromJson(Map<String, dynamic> json) =>
-    _StacButtonStyle(
+StacButtonStyle _$StacButtonStyleFromJson(Map<String, dynamic> json) =>
+    StacButtonStyle(
       foregroundColor: json['foregroundColor'] as String?,
       backgroundColor: json['backgroundColor'] as String?,
       disabledForegroundColor: json['disabledForegroundColor'] as String?,
@@ -16,8 +16,10 @@ _StacButtonStyle _$StacButtonStyleFromJson(Map<String, dynamic> json) =>
       surfaceTintColor: json['surfaceTintColor'] as String?,
       iconColor: json['iconColor'] as String?,
       iconSize: (json['iconSize'] as num?)?.toDouble(),
-      iconAlignment:
-          $enumDecodeNullable(_$IconAlignmentEnumMap, json['iconAlignment']),
+      iconAlignment: $enumDecodeNullable(
+        _$StacIconAlignmentEnumMap,
+        json['iconAlignment'],
+      ),
       disabledIconColor: json['disabledIconColor'] as String?,
       overlayColor: json['overlayColor'] as String?,
       elevation: (json['elevation'] as num?)?.toDouble(),
@@ -41,63 +43,84 @@ _StacButtonStyle _$StacButtonStyleFromJson(Map<String, dynamic> json) =>
           : StacBorderSide.fromJson(json['side'] as Map<String, dynamic>),
       shape: json['shape'] == null
           ? null
-          : StacRoundedRectangleBorder.fromJson(
-              json['shape'] as Map<String, dynamic>),
+          : StacShapeBorder.fromJson(json['shape'] as Map<String, dynamic>),
+      enableFeedback: json['enableFeedback'] as bool?,
+      alignment: $enumDecodeNullable(_$StacAlignmentEnumMap, json['alignment']),
+      tapTargetSize: $enumDecodeNullable(
+        _$StacMaterialTapTargetSizeEnumMap,
+        json['tapTargetSize'],
+      ),
+      animationDuration: json['animationDuration'] == null
+          ? null
+          : StacDuration.fromJson(
+              json['animationDuration'] as Map<String, dynamic>,
+            ),
       enabledMouseCursor: $enumDecodeNullable(
-          _$StacMouseCursorEnumMap, json['enabledMouseCursor']),
+        _$StacMouseCursorEnumMap,
+        json['enabledMouseCursor'],
+      ),
       disabledMouseCursor: $enumDecodeNullable(
-          _$StacMouseCursorEnumMap, json['disabledMouseCursor']),
+        _$StacMouseCursorEnumMap,
+        json['disabledMouseCursor'],
+      ),
       visualDensity: json['visualDensity'] == null
           ? null
           : StacVisualDensity.fromJson(
-              json['visualDensity'] as Map<String, dynamic>),
-      tapTargetSize: $enumDecodeNullable(
-          _$MaterialTapTargetSizeEnumMap, json['tapTargetSize']),
-      animationDuration: json['animationDuration'] == null
-          ? null
-          : Duration(microseconds: (json['animationDuration'] as num).toInt()),
-      enableFeedback: json['enableFeedback'] as bool?,
-      alignment: json['alignment'] == null
-          ? null
-          : StacAlignmentGeometry.fromJson(
-              json['alignment'] as Map<String, dynamic>),
+              json['visualDensity'] as Map<String, dynamic>,
+            ),
     );
 
-Map<String, dynamic> _$StacButtonStyleToJson(_StacButtonStyle instance) =>
-    <String, dynamic>{
-      'foregroundColor': instance.foregroundColor,
-      'backgroundColor': instance.backgroundColor,
-      'disabledForegroundColor': instance.disabledForegroundColor,
-      'disabledBackgroundColor': instance.disabledBackgroundColor,
-      'shadowColor': instance.shadowColor,
-      'surfaceTintColor': instance.surfaceTintColor,
-      'iconColor': instance.iconColor,
-      'iconSize': instance.iconSize,
-      'iconAlignment': _$IconAlignmentEnumMap[instance.iconAlignment],
-      'disabledIconColor': instance.disabledIconColor,
-      'overlayColor': instance.overlayColor,
-      'elevation': instance.elevation,
-      'textStyle': instance.textStyle,
-      'padding': instance.padding,
-      'minimumSize': instance.minimumSize,
-      'fixedSize': instance.fixedSize,
-      'maximumSize': instance.maximumSize,
-      'side': instance.side,
-      'shape': instance.shape,
-      'enabledMouseCursor':
-          _$StacMouseCursorEnumMap[instance.enabledMouseCursor],
-      'disabledMouseCursor':
-          _$StacMouseCursorEnumMap[instance.disabledMouseCursor],
-      'visualDensity': instance.visualDensity,
-      'tapTargetSize': _$MaterialTapTargetSizeEnumMap[instance.tapTargetSize],
-      'animationDuration': instance.animationDuration?.inMicroseconds,
-      'enableFeedback': instance.enableFeedback,
-      'alignment': instance.alignment,
-    };
+Map<String, dynamic> _$StacButtonStyleToJson(
+  StacButtonStyle instance,
+) => <String, dynamic>{
+  'foregroundColor': instance.foregroundColor,
+  'backgroundColor': instance.backgroundColor,
+  'disabledForegroundColor': instance.disabledForegroundColor,
+  'disabledBackgroundColor': instance.disabledBackgroundColor,
+  'shadowColor': instance.shadowColor,
+  'surfaceTintColor': instance.surfaceTintColor,
+  'iconColor': instance.iconColor,
+  'iconSize': instance.iconSize,
+  'iconAlignment': _$StacIconAlignmentEnumMap[instance.iconAlignment],
+  'disabledIconColor': instance.disabledIconColor,
+  'overlayColor': instance.overlayColor,
+  'elevation': instance.elevation,
+  'textStyle': instance.textStyle?.toJson(),
+  'padding': instance.padding?.toJson(),
+  'minimumSize': instance.minimumSize?.toJson(),
+  'fixedSize': instance.fixedSize?.toJson(),
+  'maximumSize': instance.maximumSize?.toJson(),
+  'side': instance.side?.toJson(),
+  'shape': instance.shape?.toJson(),
+  'enableFeedback': instance.enableFeedback,
+  'alignment': _$StacAlignmentEnumMap[instance.alignment],
+  'tapTargetSize': _$StacMaterialTapTargetSizeEnumMap[instance.tapTargetSize],
+  'animationDuration': instance.animationDuration?.toJson(),
+  'enabledMouseCursor': _$StacMouseCursorEnumMap[instance.enabledMouseCursor],
+  'disabledMouseCursor': _$StacMouseCursorEnumMap[instance.disabledMouseCursor],
+  'visualDensity': instance.visualDensity?.toJson(),
+};
 
-const _$IconAlignmentEnumMap = {
-  IconAlignment.start: 'start',
-  IconAlignment.end: 'end',
+const _$StacIconAlignmentEnumMap = {
+  StacIconAlignment.start: 'start',
+  StacIconAlignment.end: 'end',
+};
+
+const _$StacAlignmentEnumMap = {
+  StacAlignment.topLeft: 'topLeft',
+  StacAlignment.topCenter: 'topCenter',
+  StacAlignment.topRight: 'topRight',
+  StacAlignment.centerLeft: 'centerLeft',
+  StacAlignment.center: 'center',
+  StacAlignment.centerRight: 'centerRight',
+  StacAlignment.bottomLeft: 'bottomLeft',
+  StacAlignment.bottomCenter: 'bottomCenter',
+  StacAlignment.bottomRight: 'bottomRight',
+};
+
+const _$StacMaterialTapTargetSizeEnumMap = {
+  StacMaterialTapTargetSize.padded: 'padded',
+  StacMaterialTapTargetSize.shrinkWrap: 'shrinkWrap',
 };
 
 const _$StacMouseCursorEnumMap = {
@@ -137,9 +160,4 @@ const _$StacMouseCursorEnumMap = {
   StacMouseCursor.resizeRow: 'resizeRow',
   StacMouseCursor.zoomIn: 'zoomIn',
   StacMouseCursor.zoomOut: 'zoomOut',
-};
-
-const _$MaterialTapTargetSizeEnumMap = {
-  MaterialTapTargetSize.padded: 'padded',
-  MaterialTapTargetSize.shrinkWrap: 'shrinkWrap',
 };

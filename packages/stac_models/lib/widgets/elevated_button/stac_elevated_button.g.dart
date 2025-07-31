@@ -6,8 +6,8 @@ part of 'stac_elevated_button.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacElevatedButton _$StacElevatedButtonFromJson(Map<String, dynamic> json) =>
-    _StacElevatedButton(
+StacElevatedButton _$StacElevatedButtonFromJson(Map<String, dynamic> json) =>
+    StacElevatedButton(
       onPressed: json['onPressed'] as Map<String, dynamic>?,
       onLongPress: json['onLongPress'] as Map<String, dynamic>?,
       onHover: json['onHover'] as Map<String, dynamic>?,
@@ -17,25 +17,29 @@ _StacElevatedButton _$StacElevatedButtonFromJson(Map<String, dynamic> json) =>
           : StacButtonStyle.fromJson(json['style'] as Map<String, dynamic>),
       autofocus: json['autofocus'] as bool? ?? false,
       clipBehavior:
-          $enumDecodeNullable(_$ClipEnumMap, json['clipBehavior']) ?? Clip.none,
-      child: json['child'] as Map<String, dynamic>,
+          $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']) ??
+          StacClip.none,
+      child: const StacWidgetConverter().fromJson(
+        json['child'] as Map<String, dynamic>?,
+      ),
     );
 
-Map<String, dynamic> _$StacElevatedButtonToJson(_StacElevatedButton instance) =>
+Map<String, dynamic> _$StacElevatedButtonToJson(StacElevatedButton instance) =>
     <String, dynamic>{
       'onPressed': instance.onPressed,
       'onLongPress': instance.onLongPress,
       'onHover': instance.onHover,
       'onFocusChange': instance.onFocusChange,
-      'style': instance.style,
+      'style': instance.style?.toJson(),
       'autofocus': instance.autofocus,
-      'clipBehavior': _$ClipEnumMap[instance.clipBehavior]!,
-      'child': instance.child,
+      'clipBehavior': _$StacClipEnumMap[instance.clipBehavior]!,
+      'child': const StacWidgetConverter().toJson(instance.child),
+      'type': instance.type,
     };
 
-const _$ClipEnumMap = {
-  Clip.none: 'none',
-  Clip.hardEdge: 'hardEdge',
-  Clip.antiAlias: 'antiAlias',
-  Clip.antiAliasWithSaveLayer: 'antiAliasWithSaveLayer',
+const _$StacClipEnumMap = {
+  StacClip.none: 'none',
+  StacClip.hardEdge: 'hardEdge',
+  StacClip.antiAlias: 'antiAlias',
+  StacClip.antiAliasWithSaveLayer: 'antiAliasWithSaveLayer',
 };

@@ -1,55 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
-import 'package:stac/src/parsers/widgets/stac_mouse_cursor/stac_mouse_cursor.dart';
-import 'package:stac/src/parsers/widgets/stac_rounded_rectangle_border/stac_rounded_rectangle_border.dart';
-import 'package:stac/src/parsers/widgets/stac_size/stac_size.dart';
-import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_models/types/stac_border_side/stac_border_side.dart';
-
-part 'stac_button_style.freezed.dart';
-part 'stac_button_style.g.dart';
-
-@freezed
-abstract class StacButtonStyle with _$StacButtonStyle {
-  const factory StacButtonStyle({
-    String? foregroundColor,
-    String? backgroundColor,
-    String? disabledForegroundColor,
-    String? disabledBackgroundColor,
-    String? shadowColor,
-    String? surfaceTintColor,
-    String? iconColor,
-    double? iconSize,
-    IconAlignment? iconAlignment,
-    String? disabledIconColor,
-    String? overlayColor,
-    double? elevation,
-    StacTextStyle? textStyle,
-    StacEdgeInsets? padding,
-    StacSize? minimumSize,
-    StacSize? fixedSize,
-    StacSize? maximumSize,
-    StacBorderSide? side,
-    StacRoundedRectangleBorder? shape,
-    StacMouseCursor? enabledMouseCursor,
-    StacMouseCursor? disabledMouseCursor,
-    StacVisualDensity? visualDensity,
-    MaterialTapTargetSize? tapTargetSize,
-    Duration? animationDuration,
-    bool? enableFeedback,
-    StacAlignmentGeometry? alignment,
-  }) = _StacButtonStyle;
-
-  factory StacButtonStyle.fromJson(Map<String, dynamic> json) =>
-      _$StacButtonStyleFromJson(json);
-}
+import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 
 extension StacButtonStyleParser on StacButtonStyle {
   ButtonStyle parseElevatedButton(BuildContext context) {
@@ -62,7 +16,7 @@ extension StacButtonStyleParser on StacButtonStyle {
       surfaceTintColor: surfaceTintColor?.toColor(context),
       iconColor: iconColor?.toColor(context),
       iconSize: iconSize,
-      iconAlignment: iconAlignment,
+      iconAlignment: iconAlignment?.parse,
       disabledIconColor: disabledIconColor?.toColor(context),
       overlayColor: overlayColor?.toColor(context),
       elevation: elevation,
@@ -72,12 +26,12 @@ extension StacButtonStyleParser on StacButtonStyle {
       fixedSize: fixedSize?.parse,
       maximumSize: maximumSize?.parse,
       side: side?.parse(context),
-      shape: shape?.parse(context),
-      enabledMouseCursor: enabledMouseCursor?.value,
-      disabledMouseCursor: disabledMouseCursor?.value,
+      shape: shape!.parse(context),
+      enabledMouseCursor: enabledMouseCursor?.parse,
+      disabledMouseCursor: disabledMouseCursor?.parse,
       visualDensity: visualDensity?.parse,
-      tapTargetSize: tapTargetSize,
-      animationDuration: animationDuration,
+      tapTargetSize: tapTargetSize?.parse,
+      animationDuration: animationDuration?.parse,
       enableFeedback: enableFeedback,
       alignment: alignment?.parse,
     );
@@ -93,7 +47,7 @@ extension StacButtonStyleParser on StacButtonStyle {
       surfaceTintColor: surfaceTintColor?.toColor(context),
       iconColor: iconColor?.toColor(context),
       iconSize: iconSize,
-      iconAlignment: iconAlignment,
+      iconAlignment: iconAlignment?.parse,
       disabledIconColor: disabledIconColor?.toColor(context),
       overlayColor: overlayColor?.toColor(context),
       elevation: elevation,
@@ -103,12 +57,12 @@ extension StacButtonStyleParser on StacButtonStyle {
       fixedSize: fixedSize?.parse,
       maximumSize: maximumSize?.parse,
       side: side?.parse(context),
-      shape: shape?.parse(context),
-      enabledMouseCursor: enabledMouseCursor?.value,
-      disabledMouseCursor: disabledMouseCursor?.value,
+      // shape: shape?.parse(context),
+      enabledMouseCursor: enabledMouseCursor?.parse,
+      disabledMouseCursor: disabledMouseCursor?.parse,
       visualDensity: visualDensity?.parse,
-      tapTargetSize: tapTargetSize,
-      animationDuration: animationDuration,
+      tapTargetSize: tapTargetSize?.parse,
+      animationDuration: animationDuration?.parse,
       enableFeedback: enableFeedback,
       alignment: alignment?.parse,
     );
@@ -124,7 +78,7 @@ extension StacButtonStyleParser on StacButtonStyle {
       surfaceTintColor: surfaceTintColor?.toColor(context),
       iconColor: iconColor?.toColor(context),
       iconSize: iconSize,
-      iconAlignment: iconAlignment,
+      iconAlignment: iconAlignment?.parse,
       disabledIconColor: disabledIconColor?.toColor(context),
       overlayColor: overlayColor?.toColor(context),
       elevation: elevation,
@@ -134,12 +88,12 @@ extension StacButtonStyleParser on StacButtonStyle {
       fixedSize: fixedSize?.parse,
       maximumSize: maximumSize?.parse,
       side: side?.parse(context),
-      shape: shape.parse(context),
-      enabledMouseCursor: enabledMouseCursor?.value,
-      disabledMouseCursor: disabledMouseCursor?.value,
+      // shape: shape.parse(context),
+      enabledMouseCursor: enabledMouseCursor?.parse,
+      disabledMouseCursor: disabledMouseCursor?.parse,
       visualDensity: visualDensity?.parse,
-      tapTargetSize: tapTargetSize,
-      animationDuration: animationDuration,
+      tapTargetSize: tapTargetSize?.parse,
+      animationDuration: animationDuration?.parse,
       enableFeedback: enableFeedback,
       alignment: alignment?.parse,
     );
@@ -160,13 +114,13 @@ extension StacButtonStyleParser on StacButtonStyle {
       maximumSize: maximumSize?.parse,
       iconSize: iconSize,
       side: side?.parse(context),
-      shape: shape?.parse(context),
+      // shape: shape?.parse(context),
       padding: padding?.parse,
-      enabledMouseCursor: enabledMouseCursor?.value,
-      disabledMouseCursor: disabledMouseCursor?.value,
+      enabledMouseCursor: enabledMouseCursor?.parse,
+      disabledMouseCursor: disabledMouseCursor?.parse,
       visualDensity: visualDensity?.parse,
-      tapTargetSize: tapTargetSize,
-      animationDuration: animationDuration,
+      tapTargetSize: tapTargetSize?.parse,
+      animationDuration: animationDuration?.parse,
       enableFeedback: enableFeedback,
       alignment: alignment?.parse,
     );
@@ -182,7 +136,7 @@ extension StacButtonStyleParser on StacButtonStyle {
       surfaceTintColor: surfaceTintColor.toColor(context),
       iconColor: iconColor?.toColor(context),
       iconSize: iconSize,
-      iconAlignment: iconAlignment,
+      iconAlignment: iconAlignment?.parse,
       disabledIconColor: disabledIconColor?.toColor(context),
       overlayColor: overlayColor?.toColor(context),
       elevation: elevation,
@@ -192,12 +146,12 @@ extension StacButtonStyleParser on StacButtonStyle {
       fixedSize: fixedSize?.parse,
       maximumSize: maximumSize?.parse,
       side: side?.parse(context),
-      shape: shape.parse(context),
-      enabledMouseCursor: enabledMouseCursor?.value,
-      disabledMouseCursor: disabledMouseCursor?.value,
+      // shape: shape.parse(context),
+      enabledMouseCursor: enabledMouseCursor?.parse,
+      disabledMouseCursor: disabledMouseCursor?.parse,
       visualDensity: visualDensity?.parse,
-      tapTargetSize: tapTargetSize,
-      animationDuration: animationDuration,
+      tapTargetSize: tapTargetSize?.parse,
+      animationDuration: animationDuration?.parse,
       enableFeedback: enableFeedback,
       alignment: alignment?.parse,
     );
@@ -221,13 +175,13 @@ extension StacButtonStyleParser on StacButtonStyle {
       minimumSize: minimumSize?.parse,
       fixedSize: fixedSize?.parse,
       maximumSize: maximumSize?.parse,
-      enabledMouseCursor: enabledMouseCursor?.value,
-      disabledMouseCursor: disabledMouseCursor?.value,
+      enabledMouseCursor: enabledMouseCursor?.parse,
+      disabledMouseCursor: disabledMouseCursor?.parse,
       side: side?.parse(context),
-      shape: shape.parse(context),
+      // shape: shape.parse(context),
       visualDensity: visualDensity?.parse,
-      tapTargetSize: tapTargetSize,
-      animationDuration: animationDuration,
+      tapTargetSize: tapTargetSize?.parse,
+      animationDuration: animationDuration?.parse,
       enableFeedback: enableFeedback,
       alignment: alignment?.parse,
     );

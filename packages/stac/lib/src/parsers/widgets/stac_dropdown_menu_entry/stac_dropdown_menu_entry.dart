@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/framework/framework.dart' show Stac;
 import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 
 part 'stac_dropdown_menu_entry.freezed.dart';
 part 'stac_dropdown_menu_entry.g.dart';
