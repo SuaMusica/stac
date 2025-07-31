@@ -26,6 +26,7 @@ import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
 import 'package:stac_models/types/stac_rect/stac_rect.dart';
+import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
 
@@ -630,6 +631,19 @@ extension StacBrightnessParser on StacBrightness {
         return Brightness.dark;
       case StacBrightness.system:
         return Brightness.light;
+    }
+  }
+}
+
+extension StacStackFitParser on StacStackFit {
+  StackFit get parse {
+    switch (this) {
+      case StacStackFit.loose:
+        return StackFit.loose;
+      case StacStackFit.expand:
+        return StackFit.expand;
+      case StacStackFit.passthrough:
+        return StackFit.passthrough;
     }
   }
 }
