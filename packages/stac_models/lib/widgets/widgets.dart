@@ -25,3 +25,4 @@ export 'flexible/stac_flexible.dart';
 export 'fractionally_sized_box/stac_fractionally_sized_box.dart';
 export 'fitted_box/stac_fitted_box.dart';
 export 'limited_box/stac_limited_box.dart';
+export 'opacity/stac_opacity.dart';
