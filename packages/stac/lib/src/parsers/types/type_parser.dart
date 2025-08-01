@@ -20,7 +20,6 @@ import 'package:stac_models/types/stac_continuous_rectangle_border/stac_continuo
 import 'package:stac_models/types/stac_cross_axis_alignment.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
 import 'package:stac_models/types/stac_flex_fit.dart';
-import 'package:stac_models/types/stac_floating_action_button_location.dart';
 import 'package:stac_models/types/stac_gradient/stac_gradient.dart';
 import 'package:stac_models/types/stac_image_repeat.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
