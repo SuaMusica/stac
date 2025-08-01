@@ -242,12 +242,7 @@ abstract mixin class $StacDatePickerThemeDataCopyWith<$Res> {
       StacButtonStyle? cancelButtonStyle,
       StacButtonStyle? confirmButtonStyle});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacShapeBorderCopyWith<$Res>? get dayShape;
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape;
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle;
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle;
 }
 
 /// @nodoc
@@ -459,48 +454,6 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get dayShape {
-    if (_self.dayShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.dayShape!, (value) {
-      return _then(_self.copyWith(dayShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape {
-    if (_self.rangePickerShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.rangePickerShape!, (value) {
-      return _then(_self.copyWith(rangePickerShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
     if (_self.inputDecorationTheme == null) {
       return null;
@@ -509,34 +462,6 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
     return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
         (value) {
       return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle {
-    if (_self.cancelButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.cancelButtonStyle!, (value) {
-      return _then(_self.copyWith(cancelButtonStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle {
-    if (_self.confirmButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.confirmButtonStyle!, (value) {
-      return _then(_self.copyWith(confirmButtonStyle: value));
     });
   }
 }
@@ -857,17 +782,7 @@ abstract mixin class _$StacDatePickerThemeDataCopyWith<$Res>
       StacButtonStyle? confirmButtonStyle});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get dayShape;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape;
-  @override
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle;
 }
 
 /// @nodoc
@@ -1079,48 +994,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get dayShape {
-    if (_self.dayShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.dayShape!, (value) {
-      return _then(_self.copyWith(dayShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape {
-    if (_self.rangePickerShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.rangePickerShape!, (value) {
-      return _then(_self.copyWith(rangePickerShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
     if (_self.inputDecorationTheme == null) {
       return null;
@@ -1129,34 +1002,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
     return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
         (value) {
       return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle {
-    if (_self.cancelButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.cancelButtonStyle!, (value) {
-      return _then(_self.copyWith(cancelButtonStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle {
-    if (_self.confirmButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.confirmButtonStyle!, (value) {
-      return _then(_self.copyWith(confirmButtonStyle: value));
     });
   }
 }

@@ -183,7 +183,6 @@ abstract mixin class $StacAlertDialogCopyWith<$Res> {
       StacAlignmentGeometry? alignment,
       bool scrollable});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
 
@@ -333,20 +332,6 @@ class _$StacAlertDialogCopyWithImpl<$Res>
           : scrollable // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacAlertDialog
@@ -638,8 +623,6 @@ abstract mixin class _$StacAlertDialogCopyWith<$Res>
       bool scrollable});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
 
@@ -789,20 +772,6 @@ class __$StacAlertDialogCopyWithImpl<$Res>
           : scrollable // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacAlertDialog
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacAlertDialog

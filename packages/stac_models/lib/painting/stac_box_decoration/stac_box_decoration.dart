@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/types/stac_blend_mode.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
-import 'package:stac_models/types/stac_border_radius/stac_border_radius.dart';
 import 'package:stac_models/types/stac_box_shadow/stac_box_shadow.dart';
 import 'package:stac_models/types/stac_box_shape.dart';
 import 'package:stac_models/types/stac_gradient/stac_gradient.dart';

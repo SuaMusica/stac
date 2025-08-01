@@ -87,8 +87,6 @@ abstract mixin class $StacDropdownMenuEntryCopyWith<$Res> {
       Map<String, dynamic>? trailingIcon,
       bool enabled,
       StacButtonStyle? style});
-
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -142,20 +140,6 @@ class _$StacDropdownMenuEntryCopyWithImpl<$Res>
           : style // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacDropdownMenuEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 
@@ -284,9 +268,6 @@ abstract mixin class _$StacBDropdownMenuEntryCopyWith<$Res>
       Map<String, dynamic>? trailingIcon,
       bool enabled,
       StacButtonStyle? style});
-
-  @override
-  $StacButtonStyleCopyWith<$Res>? get style;
 }
 
 /// @nodoc
@@ -340,20 +321,6 @@ class __$StacBDropdownMenuEntryCopyWithImpl<$Res>
           : style // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacDropdownMenuEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get style {
-    if (_self.style == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.style!, (value) {
-      return _then(_self.copyWith(style: value));
-    });
   }
 }
 

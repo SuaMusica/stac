@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_elevated_button.dart';
+import 'package:stac_models/widgets/elevated_button/stac_elevated_button.dart';
 
 class StacElevatedButtonParser extends StacParser<StacElevatedButton> {
   const StacElevatedButtonParser();
@@ -29,9 +30,9 @@ class StacElevatedButtonParser extends StacParser<StacElevatedButton> {
       onFocusChange: (bool value) =>
           value == false ? null : model.onFocusChange,
       style: model.style?.parseElevatedButton(context),
-      autofocus: model.autofocus,
-      clipBehavior: model.clipBehavior,
-      child: Stac.fromJson(model.child, context),
+      autofocus: model.autofocus ?? false,
+      clipBehavior: model.clipBehavior?.parse,
+      child: model.child?.parse(context),
     );
   }
 }

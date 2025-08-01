@@ -105,7 +105,6 @@ abstract mixin class $StacNavigationDrawerThemeDataCopyWith<$Res> {
       StacTextStyle? labelTextStyle,
       StacIconThemeData? iconTheme});
 
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape;
   $StacSizeCopyWith<$Res>? get indicatorSize;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
@@ -176,20 +175,6 @@ class _$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
           : iconTheme // ignore: cast_nullable_to_non_nullable
               as StacIconThemeData?,
     ));
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape {
-    if (_self.indicatorShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.indicatorShape!, (value) {
-      return _then(_self.copyWith(indicatorShape: value));
-    });
   }
 
   /// Create a copy of StacNavigationDrawerThemeData
@@ -345,8 +330,6 @@ abstract mixin class _$StacNavigationDrawerThemeDataCopyWith<$Res>
       StacIconThemeData? iconTheme});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape;
-  @override
   $StacSizeCopyWith<$Res>? get indicatorSize;
   @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
@@ -418,20 +401,6 @@ class __$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
           : iconTheme // ignore: cast_nullable_to_non_nullable
               as StacIconThemeData?,
     ));
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape {
-    if (_self.indicatorShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.indicatorShape!, (value) {
-      return _then(_self.copyWith(indicatorShape: value));
-    });
   }
 
   /// Create a copy of StacNavigationDrawerThemeData

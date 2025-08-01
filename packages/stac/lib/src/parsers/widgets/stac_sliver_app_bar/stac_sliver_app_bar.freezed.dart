@@ -224,7 +224,6 @@ abstract mixin class $StacSliverAppBarCopyWith<$Res> {
 
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
-  $StacShapeBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -445,20 +444,6 @@ class _$StacSliverAppBarCopyWithImpl<$Res>
 
     return $StacIconThemeDataCopyWith<$Res>(_self.actionsIconTheme!, (value) {
       return _then(_self.copyWith(actionsIconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
     });
   }
 }
@@ -813,8 +798,6 @@ abstract mixin class _$StacSliverAppBarCopyWith<$Res>
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   @override
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -1035,20 +1018,6 @@ class __$StacSliverAppBarCopyWithImpl<$Res>
 
     return $StacIconThemeDataCopyWith<$Res>(_self.actionsIconTheme!, (value) {
       return _then(_self.copyWith(actionsIconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacSliverAppBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
     });
   }
 }
