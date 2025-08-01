@@ -20,3 +20,7 @@ export 'spacer/stac_spacer.dart';
 export 'stack/stac_stack.dart';
 export 'text/stac_text.dart';
 export 'text_button/stac_text_button.dart';
+export 'aspect_ratio/stac_aspect_ratio.dart';
+export 'flexible/stac_flexible.dart';
+export 'fractionally_sized_box/stac_fractionally_sized_box.dart';
+export 'fitted_box/stac_fitted_box.dart';

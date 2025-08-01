@@ -19,6 +19,8 @@ import 'package:stac_models/types/stac_clip.dart';
 import 'package:stac_models/types/stac_continuous_rectangle_border/stac_continuous_rectangle_border.dart';
 import 'package:stac_models/types/stac_cross_axis_alignment.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
+import 'package:stac_models/types/stac_flex_fit.dart';
+import 'package:stac_models/types/stac_floating_action_button_location.dart';
 import 'package:stac_models/types/stac_gradient/stac_gradient.dart';
 import 'package:stac_models/types/stac_image_repeat.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
@@ -825,5 +827,16 @@ extension StacBeveledRectangleBorderParser on StacBeveledRectangleBorder {
     return BeveledRectangleBorder(
       side: side?.parse(context) ?? BorderSide.none,
     );
+  }
+}
+
+extension StacFlexFitParser on StacFlexFit {
+  FlexFit get parse {
+    switch (this) {
+      case StacFlexFit.tight:
+        return FlexFit.tight;
+      case StacFlexFit.loose:
+        return FlexFit.loose;
+    }
   }
 }
