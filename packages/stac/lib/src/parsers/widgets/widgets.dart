@@ -53,7 +53,7 @@ export 'package:stac/src/parsers/widgets/stac_icon_button/stac_icon_button_parse
 export 'package:stac/src/parsers/widgets/stac_image/stac_image.dart';
 export 'package:stac/src/parsers/widgets/stac_input_decoration/stac_input_decoration.dart';
 export 'package:stac/src/parsers/widgets/stac_input_formatters/stac_input_formatter.dart';
-export 'package:stac/src/parsers/widgets/stac_limited_box/stac_limited_box.dart';
+export 'package:stac/src/parsers/widgets/stac_limited_box/stac_limited_box_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_linear_progress_indicator/stac_linear_progress_indicator.dart';
 export 'package:stac/src/parsers/widgets/stac_list_tile/stac_list_tile.dart';
 export 'package:stac/src/parsers/widgets/stac_list_view/stac_list_view.dart';

@@ -24,3 +24,4 @@ export 'aspect_ratio/stac_aspect_ratio.dart';
 export 'flexible/stac_flexible.dart';
 export 'fractionally_sized_box/stac_fractionally_sized_box.dart';
 export 'fitted_box/stac_fitted_box.dart';
+export 'limited_box/stac_limited_box.dart';
