@@ -48,11 +48,11 @@ class __StacSliderState extends State<_StacSlider> {
 
   void _onChanged(double value) {
     selectedValue = value;
-    if (widget.model.onChanged != null) {
-      Stac.onCallFromJson(widget.model.onChanged, context);
-    }
     if (widget.model.id != null) {
       widget.formScope?.formData[widget.model.id!] = value;
+    }
+    if (widget.model.onChanged != null) {
+      Stac.onCallFromJson(widget.model.onChanged, context);
     }
     setState(() {});
   }
