@@ -5,7 +5,7 @@ import 'package:stac/src/parsers/theme/stac_badge_theme_data/stac_badge_theme_da
 import 'package:stac/src/parsers/theme/stac_bottom_app_bar_theme/stac_bottom_app_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_nav_bar_theme/stac_bottom_nav_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_sheet_theme/stac_bottom_sheet_theme.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac/src/parsers/theme/stac_button_theme_data/stac_button_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_card_theme_data/stac_card_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_checkbox_theme_data/stac_checkbox_theme_data.dart';
