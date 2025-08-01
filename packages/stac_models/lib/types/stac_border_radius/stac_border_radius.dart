@@ -12,6 +12,15 @@ class StacBorderRadius implements StacElement {
     this.bottomRight,
   });
 
+  /// Creates a border radius with all corners set to the same value.
+  const StacBorderRadius.all(double radius)
+    : this(
+        topLeft: radius,
+        topRight: radius,
+        bottomLeft: radius,
+        bottomRight: radius,
+      );
+
   final double? topLeft;
   final double? topRight;
   final double? bottomLeft;

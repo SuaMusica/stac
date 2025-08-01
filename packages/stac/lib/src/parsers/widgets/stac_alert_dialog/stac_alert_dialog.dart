@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 
 export 'stac_alert_dialog_parser.dart';
 

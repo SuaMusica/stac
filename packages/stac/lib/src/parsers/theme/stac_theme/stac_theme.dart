@@ -5,7 +5,7 @@ import 'package:stac/src/parsers/theme/stac_badge_theme_data/stac_badge_theme_da
 import 'package:stac/src/parsers/theme/stac_bottom_app_bar_theme/stac_bottom_app_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_nav_bar_theme/stac_bottom_nav_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_sheet_theme/stac_bottom_sheet_theme.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac/src/parsers/theme/stac_button_theme_data/stac_button_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_card_theme_data/stac_card_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_checkbox_theme_data/stac_checkbox_theme_data.dart';
@@ -28,6 +28,7 @@ import 'package:stac/src/parsers/theme/stac_snack_bar_theme_data/stac_snack_bar_
 import 'package:stac/src/parsers/theme/stac_tab_bar_theme_data/stac_tab_bar_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_text_theme/stac_text_theme.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 
 part 'stac_theme.freezed.dart';
 part 'stac_theme.g.dart';

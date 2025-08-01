@@ -93,8 +93,6 @@ abstract mixin class $StacDrawerCopyWith<$Res> {
       Map<String, dynamic>? child,
       String? semanticLabel,
       Clip? clipBehavior});
-
-  $StacShapeBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -157,20 +155,6 @@ class _$StacDrawerCopyWithImpl<$Res> implements $StacDrawerCopyWith<$Res> {
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip?,
     ));
-  }
-
-  /// Create a copy of StacDrawer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 }
 
@@ -293,9 +277,6 @@ abstract mixin class _$StacDrawerCopyWith<$Res>
       Map<String, dynamic>? child,
       String? semanticLabel,
       Clip? clipBehavior});
-
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
 }
 
 /// @nodoc
@@ -358,20 +339,6 @@ class __$StacDrawerCopyWithImpl<$Res> implements _$StacDrawerCopyWith<$Res> {
           : clipBehavior // ignore: cast_nullable_to_non_nullable
               as Clip?,
     ));
-  }
-
-  /// Create a copy of StacDrawer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 }
 

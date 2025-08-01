@@ -8,6 +8,7 @@ import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 import 'package:stac_models/types/stac_border_side/stac_border_side.dart';
 import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
+import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 
 part 'stac_chip_theme_data.freezed.dart';
 part 'stac_chip_theme_data.g.dart';
