@@ -20,7 +20,7 @@ class StacFittedBoxParser extends StacParser<StacFittedBox> {
     return FittedBox(
       fit: model.fit?.parse ?? BoxFit.contain,
       alignment: model.alignment?.parse ?? Alignment.center,
-      clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.none,
       child: model.child.parse(context),
     );
   }
