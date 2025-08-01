@@ -19,6 +19,7 @@ import 'package:stac_models/types/stac_clip.dart';
 import 'package:stac_models/types/stac_cross_axis_alignment.dart';
 import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
+import 'package:stac_models/types/stac_flex_fit.dart';
 import 'package:stac_models/types/stac_floating_action_button_location.dart';
 import 'package:stac_models/types/stac_gradient/stac_gradient.dart';
 import 'package:stac_models/types/stac_image_repeat.dart';
@@ -644,6 +645,17 @@ extension StacStackFitParser on StacStackFit {
         return StackFit.expand;
       case StacStackFit.passthrough:
         return StackFit.passthrough;
+    }
+  }
+}
+
+extension StacFlexFitParser on StacFlexFit {
+  FlexFit get parse {
+    switch (this) {
+      case StacFlexFit.tight:
+        return FlexFit.tight;
+      case StacFlexFit.loose:
+        return FlexFit.loose;
     }
   }
 }
