@@ -20,8 +20,8 @@ export 'package:stac/src/parsers/widgets/stac_circular_progress_indicator/stac_c
 export 'package:stac/src/parsers/widgets/stac_clip_oval/stac_clip_oval.dart';
 export 'package:stac/src/parsers/widgets/stac_clip_rrect/stac_clip_rrect.dart';
 export 'package:stac/src/parsers/widgets/stac_colored_box/stac_colored_box.dart';
-export 'package:stac/src/parsers/widgets/stac_column/stac_column_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_conditional/stac_conditional.dart';
+export 'package:stac/src/parsers/widgets/stac_column/stac_column_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_container/stac_container_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_custom_scroll_view/stac_custom_scroll_view.dart';
 export 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
@@ -58,7 +58,7 @@ export 'package:stac/src/parsers/widgets/stac_linear_progress_indicator/stac_lin
 export 'package:stac/src/parsers/widgets/stac_list_tile/stac_list_tile.dart';
 export 'package:stac/src/parsers/widgets/stac_list_view/stac_list_view.dart';
 export 'package:stac/src/parsers/widgets/stac_network_widget/stac_network_widget.dart';
-export 'package:stac/src/parsers/widgets/stac_opacity/stac_opacity.dart';
+export 'package:stac/src/parsers/widgets/stac_opacity/stac_opacity_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_outlined_button/stac_outlined_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_padding/stac_padding_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_page_view/stac_page_view.dart';
