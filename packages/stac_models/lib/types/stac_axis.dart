@@ -1,0 +1,4 @@
+enum StacAxis {
+  horizontal,
+  vertical,
+}
