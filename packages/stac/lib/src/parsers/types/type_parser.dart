@@ -7,6 +7,8 @@ import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
+import 'package:stac_models/types/stac_alignment_directional.dart';
+import 'package:stac_models/types/stac_axis.dart';
 import 'package:stac_models/types/stac_blend_mode.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
@@ -30,6 +32,8 @@ import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
+import 'package:stac_models/types/stac_wrap_alignment.dart';
+import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {
@@ -631,7 +635,7 @@ extension StacBrightnessParser on StacBrightness {
       case StacBrightness.dark:
         return Brightness.dark;
       case StacBrightness.system:
-        return Brightness.light;
+        return Brightness.light; // Or handle as per your system theme logic
     }
   }
 }
@@ -836,6 +840,49 @@ extension StacFlexFitParser on StacFlexFit {
         return FlexFit.tight;
       case StacFlexFit.loose:
         return FlexFit.loose;
+    }
+  }
+}
+
+extension StacWrapAlignmentParser on StacWrapAlignment {
+  WrapAlignment get parse {
+    switch (this) {
+      case StacWrapAlignment.start:
+        return WrapAlignment.start;
+      case StacWrapAlignment.end:
+        return WrapAlignment.end;
+      case StacWrapAlignment.center:
+        return WrapAlignment.center;
+      case StacWrapAlignment.spaceBetween:
+        return WrapAlignment.spaceBetween;
+      case StacWrapAlignment.spaceAround:
+        return WrapAlignment.spaceAround;
+      case StacWrapAlignment.spaceEvenly:
+        return WrapAlignment.spaceEvenly;
+    }
+  }
+}
+
+extension StacWrapCrossAlignmentParser on StacWrapCrossAlignment {
+  WrapCrossAlignment get parse {
+    switch (this) {
+      case StacWrapCrossAlignment.start:
+        return WrapCrossAlignment.start;
+      case StacWrapCrossAlignment.end:
+        return WrapCrossAlignment.end;
+      case StacWrapCrossAlignment.center:
+        return WrapCrossAlignment.center;
+    }
+  }
+}
+
+extension StacAxisParser on StacAxis {
+  Axis get parse {
+    switch (this) {
+      case StacAxis.horizontal:
+        return Axis.horizontal;
+      case StacAxis.vertical:
+        return Axis.vertical;
     }
   }
 }
