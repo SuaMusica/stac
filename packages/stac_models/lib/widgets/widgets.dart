@@ -27,3 +27,5 @@ export 'fitted_box/stac_fitted_box.dart';
 export 'limited_box/stac_limited_box.dart';
 export 'opacity/stac_opacity.dart';
 export 'visibility/stac_visibility.dart';
+export 'safe_area/stac_safe_area.dart';
+
