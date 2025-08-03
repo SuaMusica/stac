@@ -14,15 +14,23 @@ abstract class StacElement {
 /// Base class for all STAC widgets
 /// This is a concrete implementation that can hold raw JSON data,
 /// used primarily by JSON converters for deserialization
+@JsonSerializable()
 class StacWidget extends StacElement {
   const StacWidget({this.jsonData});
 
   /// Raw JSON data for this widget
   final Map<String, dynamic>? jsonData;
 
-  @override
-  Map<String, dynamic> toJson() => jsonData ?? {};
-
+  /// The type of the widget
   @JsonKey(includeToJson: true)
   String get type => throw UnimplementedError();
+
+  /// Creates a new widget from a JSON map
+  factory StacWidget.fromJson(Map<String, dynamic> json) {
+    return StacWidget(jsonData: json);
+  }
+
+  /// Converts this widget to a JSON map
+  @override
+  Map<String, dynamic> toJson() => jsonData ?? {};
 }

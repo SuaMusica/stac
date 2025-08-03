@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/stac_models.dart';
 
 part 'stac_scaffold.g.dart';
@@ -32,21 +31,16 @@ class StacScaffold extends StacWidget {
     this.restorationId,
   });
 
-  @StacWidgetConverter()
   final StacWidget? appBar;
 
   final String? backgroundColor;
 
-  @StacWidgetConverter()
   final StacWidget? body;
 
-  @StacWidgetConverter()
   final StacWidget? bottomNavigationBar;
 
-  @StacWidgetConverter()
   final StacWidget? bottomSheet;
 
-  @StacWidgetConverter()
   final StacWidget? drawer;
 
   final StacDragStartBehavior? drawerDragStartBehavior;
@@ -57,7 +51,6 @@ class StacScaffold extends StacWidget {
 
   final String? drawerScrimColor;
 
-  @StacWidgetConverter()
   final StacWidget? endDrawer;
 
   final bool? endDrawerEnableOpenDragGesture;
@@ -66,7 +59,6 @@ class StacScaffold extends StacWidget {
 
   final bool? extendBodyBehindAppBar;
 
-  @StacWidgetConverter()
   final StacWidget? floatingActionButton;
 
   final StacFloatingActionButtonLocation? floatingActionButtonLocation;
@@ -77,7 +69,6 @@ class StacScaffold extends StacWidget {
 
   final StacAlignmentDirectional? persistentFooterAlignment;
 
-  @StacWidgetListConverter()
   final List<StacWidget>? persistentFooterButtons;
 
   final bool? primary;

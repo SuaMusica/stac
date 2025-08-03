@@ -7,22 +7,24 @@ part of 'stac_scaffold.dart';
 // **************************************************************************
 
 StacScaffold _$StacScaffoldFromJson(Map<String, dynamic> json) => StacScaffold(
-  appBar: const StacWidgetConverter().fromJson(
-    json['appBar'] as Map<String, dynamic>?,
-  ),
+  appBar: json['appBar'] == null
+      ? null
+      : StacWidget.fromJson(json['appBar'] as Map<String, dynamic>),
   backgroundColor: json['backgroundColor'] as String?,
-  body: const StacWidgetConverter().fromJson(
-    json['body'] as Map<String, dynamic>?,
-  ),
-  bottomNavigationBar: const StacWidgetConverter().fromJson(
-    json['bottomNavigationBar'] as Map<String, dynamic>?,
-  ),
-  bottomSheet: const StacWidgetConverter().fromJson(
-    json['bottomSheet'] as Map<String, dynamic>?,
-  ),
-  drawer: const StacWidgetConverter().fromJson(
-    json['drawer'] as Map<String, dynamic>?,
-  ),
+  body: json['body'] == null
+      ? null
+      : StacWidget.fromJson(json['body'] as Map<String, dynamic>),
+  bottomNavigationBar: json['bottomNavigationBar'] == null
+      ? null
+      : StacWidget.fromJson(
+          json['bottomNavigationBar'] as Map<String, dynamic>,
+        ),
+  bottomSheet: json['bottomSheet'] == null
+      ? null
+      : StacWidget.fromJson(json['bottomSheet'] as Map<String, dynamic>),
+  drawer: json['drawer'] == null
+      ? null
+      : StacWidget.fromJson(json['drawer'] as Map<String, dynamic>),
   drawerDragStartBehavior:
       $enumDecodeNullable(
         _$StacDragStartBehaviorEnumMap,
@@ -32,16 +34,18 @@ StacScaffold _$StacScaffoldFromJson(Map<String, dynamic> json) => StacScaffold(
   drawerEdgeDragWidth: (json['drawerEdgeDragWidth'] as num?)?.toDouble(),
   drawerEnableOpenDragGesture: json['drawerEnableOpenDragGesture'] as bool?,
   drawerScrimColor: json['drawerScrimColor'] as String?,
-  endDrawer: const StacWidgetConverter().fromJson(
-    json['endDrawer'] as Map<String, dynamic>?,
-  ),
+  endDrawer: json['endDrawer'] == null
+      ? null
+      : StacWidget.fromJson(json['endDrawer'] as Map<String, dynamic>),
   endDrawerEnableOpenDragGesture:
       json['endDrawerEnableOpenDragGesture'] as bool?,
   extendBody: json['extendBody'] as bool?,
   extendBodyBehindAppBar: json['extendBodyBehindAppBar'] as bool?,
-  floatingActionButton: const StacWidgetConverter().fromJson(
-    json['floatingActionButton'] as Map<String, dynamic>?,
-  ),
+  floatingActionButton: json['floatingActionButton'] == null
+      ? null
+      : StacWidget.fromJson(
+          json['floatingActionButton'] as Map<String, dynamic>,
+        ),
   floatingActionButtonLocation: $enumDecodeNullable(
     _$StacFloatingActionButtonLocationEnumMap,
     json['floatingActionButtonLocation'],
@@ -52,9 +56,9 @@ StacScaffold _$StacScaffoldFromJson(Map<String, dynamic> json) => StacScaffold(
     _$StacAlignmentDirectionalEnumMap,
     json['persistentFooterAlignment'],
   ),
-  persistentFooterButtons: const StacWidgetListConverter().fromJson(
-    json['persistentFooterButtons'],
-  ),
+  persistentFooterButtons: (json['persistentFooterButtons'] as List<dynamic>?)
+      ?.map((e) => StacWidget.fromJson(e as Map<String, dynamic>))
+      .toList(),
   primary: json['primary'] as bool?,
   resizeToAvoidBottomInset: json['resizeToAvoidBottomInset'] as bool?,
   restorationId: json['restorationId'] as String?,
@@ -62,26 +66,22 @@ StacScaffold _$StacScaffoldFromJson(Map<String, dynamic> json) => StacScaffold(
 
 Map<String, dynamic> _$StacScaffoldToJson(StacScaffold instance) =>
     <String, dynamic>{
-      'appBar': const StacWidgetConverter().toJson(instance.appBar),
+      'appBar': instance.appBar?.toJson(),
       'backgroundColor': instance.backgroundColor,
-      'body': const StacWidgetConverter().toJson(instance.body),
-      'bottomNavigationBar': const StacWidgetConverter().toJson(
-        instance.bottomNavigationBar,
-      ),
-      'bottomSheet': const StacWidgetConverter().toJson(instance.bottomSheet),
-      'drawer': const StacWidgetConverter().toJson(instance.drawer),
+      'body': instance.body?.toJson(),
+      'bottomNavigationBar': instance.bottomNavigationBar?.toJson(),
+      'bottomSheet': instance.bottomSheet?.toJson(),
+      'drawer': instance.drawer?.toJson(),
       'drawerDragStartBehavior':
           _$StacDragStartBehaviorEnumMap[instance.drawerDragStartBehavior],
       'drawerEdgeDragWidth': instance.drawerEdgeDragWidth,
       'drawerEnableOpenDragGesture': instance.drawerEnableOpenDragGesture,
       'drawerScrimColor': instance.drawerScrimColor,
-      'endDrawer': const StacWidgetConverter().toJson(instance.endDrawer),
+      'endDrawer': instance.endDrawer?.toJson(),
       'endDrawerEnableOpenDragGesture': instance.endDrawerEnableOpenDragGesture,
       'extendBody': instance.extendBody,
       'extendBodyBehindAppBar': instance.extendBodyBehindAppBar,
-      'floatingActionButton': const StacWidgetConverter().toJson(
-        instance.floatingActionButton,
-      ),
+      'floatingActionButton': instance.floatingActionButton?.toJson(),
       'floatingActionButtonLocation':
           _$StacFloatingActionButtonLocationEnumMap[instance
               .floatingActionButtonLocation],
@@ -89,9 +89,9 @@ Map<String, dynamic> _$StacScaffoldToJson(StacScaffold instance) =>
       'onEndDrawerChanged': instance.onEndDrawerChanged,
       'persistentFooterAlignment':
           _$StacAlignmentDirectionalEnumMap[instance.persistentFooterAlignment],
-      'persistentFooterButtons': const StacWidgetListConverter().toJson(
-        instance.persistentFooterButtons,
-      ),
+      'persistentFooterButtons': instance.persistentFooterButtons
+          ?.map((e) => e.toJson())
+          .toList(),
       'primary': instance.primary,
       'resizeToAvoidBottomInset': instance.resizeToAvoidBottomInset,
       'restorationId': instance.restorationId,
