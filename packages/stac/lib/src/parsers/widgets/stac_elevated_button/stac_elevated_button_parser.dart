@@ -22,10 +22,10 @@ class StacElevatedButtonParser extends StacParser<StacElevatedButton> {
     return ElevatedButton(
       onPressed: model.onPressed == null
           ? null
-          : () => Stac.onCallFromJson(model.onPressed, context),
+          : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
       onLongPress: model.onLongPress == null
           ? null
-          : () => Stac.onCallFromJson(model.onLongPress, context),
+          : () => Stac.onCallFromJson(model.onLongPress?.toJson(), context),
       onHover: (bool value) => value == false ? null : model.onHover,
       onFocusChange: (bool value) =>
           value == false ? null : model.onFocusChange,

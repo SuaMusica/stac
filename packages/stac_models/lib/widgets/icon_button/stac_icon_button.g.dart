@@ -25,9 +25,15 @@ StacIconButton _$StacIconButtonFromJson(Map<String, dynamic> json) =>
       highlightColor: json['highlightColor'] as String?,
       splashColor: json['splashColor'] as String?,
       disabledColor: json['disabledColor'] as String?,
-      onPressed: json['onPressed'] as Map<String, dynamic>?,
-      onHover: json['onHover'] as Map<String, dynamic>?,
-      onLongPress: json['onLongPress'] as Map<String, dynamic>?,
+      onPressed: json['onPressed'] == null
+          ? null
+          : StacAction.fromJson(json['onPressed'] as Map<String, dynamic>),
+      onHover: json['onHover'] == null
+          ? null
+          : StacAction.fromJson(json['onHover'] as Map<String, dynamic>),
+      onLongPress: json['onLongPress'] == null
+          ? null
+          : StacAction.fromJson(json['onLongPress'] as Map<String, dynamic>),
       mouseCursor: $enumDecodeNullable(
         _$StacMouseCursorEnumMap,
         json['mouseCursor'],
@@ -65,9 +71,9 @@ Map<String, dynamic> _$StacIconButtonToJson(StacIconButton instance) =>
       'highlightColor': instance.highlightColor,
       'splashColor': instance.splashColor,
       'disabledColor': instance.disabledColor,
-      'onPressed': instance.onPressed,
-      'onHover': instance.onHover,
-      'onLongPress': instance.onLongPress,
+      'onPressed': instance.onPressed?.toJson(),
+      'onHover': instance.onHover?.toJson(),
+      'onLongPress': instance.onLongPress?.toJson(),
       'mouseCursor': _$StacMouseCursorEnumMap[instance.mouseCursor],
       'autofocus': instance.autofocus,
       'tooltip': instance.tooltip,

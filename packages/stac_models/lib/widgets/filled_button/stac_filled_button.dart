@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/stac_action.dart';
 import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_clip.dart';
@@ -41,16 +42,16 @@ class StacFilledButton extends StacWidget {
 
   /// Called when the button is tapped or otherwise activated.
   /// If null, the button will be disabled.
-  final Map<String, dynamic>? onPressed;
+  final StacAction? onPressed;
 
   /// Called when the button is long-pressed.
-  final Map<String, dynamic>? onLongPress;
+  final StacAction? onLongPress;
 
   /// Called when a pointer enters or exits the button response area.
-  final Map<String, dynamic>? onHover;
+  final StacAction? onHover;
 
   /// Called when the focus changes.
-  final Map<String, dynamic>? onFocusChange;
+  final StacAction? onFocusChange;
 
   /// Customizes this button's appearance.
   final StacButtonStyle? style;

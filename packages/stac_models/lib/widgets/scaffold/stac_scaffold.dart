@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/stac_action.dart';
 import 'package:stac_models/stac_models.dart';
 
 part 'stac_scaffold.g.dart';
@@ -63,9 +64,9 @@ class StacScaffold extends StacWidget {
 
   final StacFloatingActionButtonLocation? floatingActionButtonLocation;
 
-  final Map<String, dynamic>? onDrawerChanged;
+  final StacAction? onDrawerChanged;
 
-  final Map<String, dynamic>? onEndDrawerChanged;
+  final StacAction? onEndDrawerChanged;
 
   final StacAlignmentDirectional? persistentFooterAlignment;
 
