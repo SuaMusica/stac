@@ -7,20 +7,22 @@ part of 'stac_app_bar.dart';
 // **************************************************************************
 
 StacAppBar _$StacAppBarFromJson(Map<String, dynamic> json) => StacAppBar(
-  leading: const StacWidgetConverter().fromJson(
-    json['leading'] as Map<String, dynamic>?,
-  ),
+  leading: json['leading'] == null
+      ? null
+      : StacWidget.fromJson(json['leading'] as Map<String, dynamic>),
   automaticallyImplyLeading: json['automaticallyImplyLeading'] as bool?,
-  title: const StacWidgetConverter().fromJson(
-    json['title'] as Map<String, dynamic>?,
-  ),
-  actions: const StacWidgetListConverter().fromJson(json['actions']),
-  flexibleSpace: const StacWidgetConverter().fromJson(
-    json['flexibleSpace'] as Map<String, dynamic>?,
-  ),
-  bottom: const StacWidgetConverter().fromJson(
-    json['bottom'] as Map<String, dynamic>?,
-  ),
+  title: json['title'] == null
+      ? null
+      : StacWidget.fromJson(json['title'] as Map<String, dynamic>),
+  actions: (json['actions'] as List<dynamic>?)
+      ?.map((e) => StacWidget.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  flexibleSpace: json['flexibleSpace'] == null
+      ? null
+      : StacWidget.fromJson(json['flexibleSpace'] as Map<String, dynamic>),
+  bottom: json['bottom'] == null
+      ? null
+      : StacWidget.fromJson(json['bottom'] as Map<String, dynamic>),
   elevation: (json['elevation'] as num?)?.toDouble(),
   scrolledUnderElevation: (json['scrolledUnderElevation'] as num?)?.toDouble(),
   shadowColor: json['shadowColor'] as String?,
@@ -56,38 +58,37 @@ StacAppBar _$StacAppBarFromJson(Map<String, dynamic> json) => StacAppBar(
       : StacEdgeInsets.fromJson(json['actionsPadding']),
 );
 
-Map<String, dynamic> _$StacAppBarToJson(
-  StacAppBar instance,
-) => <String, dynamic>{
-  'leading': const StacWidgetConverter().toJson(instance.leading),
-  'automaticallyImplyLeading': instance.automaticallyImplyLeading,
-  'title': const StacWidgetConverter().toJson(instance.title),
-  'actions': const StacWidgetListConverter().toJson(instance.actions),
-  'flexibleSpace': const StacWidgetConverter().toJson(instance.flexibleSpace),
-  'bottom': const StacWidgetConverter().toJson(instance.bottom),
-  'elevation': instance.elevation,
-  'scrolledUnderElevation': instance.scrolledUnderElevation,
-  'shadowColor': instance.shadowColor,
-  'surfaceTintColor': instance.surfaceTintColor,
-  'backgroundColor': instance.backgroundColor,
-  'foregroundColor': instance.foregroundColor,
-  'primary': instance.primary,
-  'centerTitle': instance.centerTitle,
-  'excludeHeaderSemantics': instance.excludeHeaderSemantics,
-  'titleSpacing': instance.titleSpacing,
-  'toolbarOpacity': instance.toolbarOpacity,
-  'bottomOpacity': instance.bottomOpacity,
-  'toolbarHeight': instance.toolbarHeight,
-  'leadingWidth': instance.leadingWidth,
-  'toolbarTextStyle': instance.toolbarTextStyle?.toJson(),
-  'titleTextStyle': instance.titleTextStyle?.toJson(),
-  'systemOverlayStyle': instance.systemOverlayStyle?.toJson(),
-  'forceMaterialTransparency': instance.forceMaterialTransparency,
-  'useDefaultSemanticsOrder': instance.useDefaultSemanticsOrder,
-  'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
-  'actionsPadding': instance.actionsPadding?.toJson(),
-  'type': instance.type,
-};
+Map<String, dynamic> _$StacAppBarToJson(StacAppBar instance) =>
+    <String, dynamic>{
+      'leading': instance.leading?.toJson(),
+      'automaticallyImplyLeading': instance.automaticallyImplyLeading,
+      'title': instance.title?.toJson(),
+      'actions': instance.actions?.map((e) => e.toJson()).toList(),
+      'flexibleSpace': instance.flexibleSpace?.toJson(),
+      'bottom': instance.bottom?.toJson(),
+      'elevation': instance.elevation,
+      'scrolledUnderElevation': instance.scrolledUnderElevation,
+      'shadowColor': instance.shadowColor,
+      'surfaceTintColor': instance.surfaceTintColor,
+      'backgroundColor': instance.backgroundColor,
+      'foregroundColor': instance.foregroundColor,
+      'primary': instance.primary,
+      'centerTitle': instance.centerTitle,
+      'excludeHeaderSemantics': instance.excludeHeaderSemantics,
+      'titleSpacing': instance.titleSpacing,
+      'toolbarOpacity': instance.toolbarOpacity,
+      'bottomOpacity': instance.bottomOpacity,
+      'toolbarHeight': instance.toolbarHeight,
+      'leadingWidth': instance.leadingWidth,
+      'toolbarTextStyle': instance.toolbarTextStyle?.toJson(),
+      'titleTextStyle': instance.titleTextStyle?.toJson(),
+      'systemOverlayStyle': instance.systemOverlayStyle?.toJson(),
+      'forceMaterialTransparency': instance.forceMaterialTransparency,
+      'useDefaultSemanticsOrder': instance.useDefaultSemanticsOrder,
+      'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
+      'actionsPadding': instance.actionsPadding?.toJson(),
+      'type': instance.type,
+    };
 
 const _$StacClipEnumMap = {
   StacClip.none: 'none',

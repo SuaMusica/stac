@@ -36,9 +36,9 @@ StacContainer _$StacContainerFromJson(
     _$StacAlignmentEnumMap,
     json['transformAlignment'],
   ),
-  child: const StacWidgetConverter().fromJson(
-    json['child'] as Map<String, dynamic>?,
-  ),
+  child: json['child'] == null
+      ? null
+      : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
   clipBehavior: $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']),
 );
 
@@ -54,7 +54,7 @@ Map<String, dynamic> _$StacContainerToJson(StacContainer instance) =>
       'constraints': instance.constraints?.toJson(),
       'margin': instance.margin?.toJson(),
       'transformAlignment': _$StacAlignmentEnumMap[instance.transformAlignment],
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
       'type': instance.type,
     };

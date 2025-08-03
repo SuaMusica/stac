@@ -14,9 +14,9 @@ StacFittedBox _$StacFittedBoxFromJson(Map<String, dynamic> json) =>
         _$StacClipEnumMap,
         json['clipBehavior'],
       ),
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacFittedBoxToJson(StacFittedBox instance) =>
@@ -24,7 +24,7 @@ Map<String, dynamic> _$StacFittedBoxToJson(StacFittedBox instance) =>
       'fit': _$StacBoxFitEnumMap[instance.fit],
       'alignment': _$StacAlignmentEnumMap[instance.alignment],
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'type': instance.type,
     };
 

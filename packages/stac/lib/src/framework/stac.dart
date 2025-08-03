@@ -18,7 +18,7 @@ import 'package:stac/src/utils/variable_resolver.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_logger/stac_logger.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 
 typedef ErrorWidgetBuilder = Widget Function(
   BuildContext context,

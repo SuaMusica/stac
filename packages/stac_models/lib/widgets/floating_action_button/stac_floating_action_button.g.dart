@@ -41,9 +41,9 @@ StacFloatingActionButton _$StacFloatingActionButtonFromJson(
   enableFeedback: json['enableFeedback'] as bool?,
   tooltip: json['tooltip'] as String?,
   heroTag: json['heroTag'],
-  child: const StacWidgetConverter().fromJson(
-    json['child'] as Map<String, dynamic>?,
-  ),
+  child: json['child'] == null
+      ? null
+      : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$StacFloatingActionButtonToJson(
@@ -69,7 +69,7 @@ Map<String, dynamic> _$StacFloatingActionButtonToJson(
   'enableFeedback': instance.enableFeedback,
   'tooltip': instance.tooltip,
   'heroTag': instance.heroTag,
-  'child': const StacWidgetConverter().toJson(instance.child),
+  'child': instance.child?.toJson(),
   'type': instance.type,
 };
 

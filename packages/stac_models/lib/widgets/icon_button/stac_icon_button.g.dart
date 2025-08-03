@@ -44,12 +44,12 @@ StacIconButton _$StacIconButtonFromJson(Map<String, dynamic> json) =>
           ? null
           : StacButtonStyle.fromJson(json['style'] as Map<String, dynamic>),
       isSelected: json['isSelected'] as bool?,
-      selectedIcon: const StacWidgetConverter().fromJson(
-        json['selectedIcon'] as Map<String, dynamic>?,
-      ),
-      icon: const StacWidgetConverter().fromJson(
-        json['icon'] as Map<String, dynamic>?,
-      ),
+      selectedIcon: json['selectedIcon'] == null
+          ? null
+          : StacWidget.fromJson(json['selectedIcon'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : StacWidget.fromJson(json['icon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacIconButtonToJson(StacIconButton instance) =>
@@ -75,8 +75,8 @@ Map<String, dynamic> _$StacIconButtonToJson(StacIconButton instance) =>
       'constraints': instance.constraints?.toJson(),
       'style': instance.style?.toJson(),
       'isSelected': instance.isSelected,
-      'selectedIcon': const StacWidgetConverter().toJson(instance.selectedIcon),
-      'icon': const StacWidgetConverter().toJson(instance.icon),
+      'selectedIcon': instance.selectedIcon?.toJson(),
+      'icon': instance.icon?.toJson(),
       'type': instance.type,
     };
 
