@@ -38,3 +38,6 @@ mason-lock.json
 
 # Local Netlify folder
 .netlify
+
+# Cursor Files
+.cursor/
