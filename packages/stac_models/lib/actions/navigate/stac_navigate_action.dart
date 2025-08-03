@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/actions/network_request/stac_network_request.dart';
 import 'package:stac_models/core/stac_action.dart';
 
 part 'stac_navigate_action.g.dart';
@@ -17,6 +18,7 @@ enum NavigationStyle {
 @JsonSerializable()
 class StacNavigateAction extends StacAction {
   const StacNavigateAction({
+    this.request,
     this.widgetJson,
     this.assetPath,
     this.routeName,
@@ -25,7 +27,7 @@ class StacNavigateAction extends StacAction {
     this.arguments,
   });
 
-  //   StacNetworkRequest? request,
+  final StacNetworkRequest? request;
   final Map<String, dynamic>? widgetJson;
   final String? assetPath;
   final String? routeName;

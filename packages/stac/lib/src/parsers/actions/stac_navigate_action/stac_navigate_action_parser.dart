@@ -21,11 +21,9 @@ class StacNavigateActionParser extends StacActionParser<StacNavigateAction> {
     Widget? widget;
     if (model.widgetJson != null) {
       widget = Stac.fromJson(model.widgetJson, context);
-    }
-    // else if (model.request != null) {
-    //   widget = Stac.fromNetwork(context: context, request: model.request!);
-    // }
-    else if (model.assetPath != null) {
+    } else if (model.request != null) {
+      widget = Stac.fromNetwork(context: context, request: model.request!);
+    } else if (model.assetPath != null) {
       widget = Stac.fromAssets(model.assetPath!);
     }
     return _navigate(

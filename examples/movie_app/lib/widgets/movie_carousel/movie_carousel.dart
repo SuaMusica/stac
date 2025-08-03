@@ -1,4 +1,4 @@
-import 'package:stac/stac.dart';
+import 'package:stac_models/actions/network_request/stac_network_request.dart';
 
 class MovieCarousel {
   MovieCarousel({required this.request});
