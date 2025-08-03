@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/stac_action.dart';
 import 'package:stac_models/stac_models.dart';
 
 part 'stac_scaffold.g.dart';

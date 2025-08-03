@@ -44,10 +44,7 @@ class MyApp extends StatelessWidget {
             theme: state.lightTheme,
             darkTheme: state.darkTheme,
             themeMode: state.themeMode,
-            homeBuilder: (context) => Stac.fromStacWidget(
-              widget: home(),
-              context: context,
-            ),
+            homeBuilder: (context) => HomeScreen(),
             title: 'Stac Gallery',
             routes: {
               '/homeScreen': (context) => const HomeScreen(),
