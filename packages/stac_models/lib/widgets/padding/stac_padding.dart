@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/painting/painting.dart';
 
@@ -11,7 +10,6 @@ class StacPadding extends StacWidget {
 
   final StacEdgeInsets? padding;
 
-  @StacWidgetConverter()
   final StacWidget? child;
 
   @override

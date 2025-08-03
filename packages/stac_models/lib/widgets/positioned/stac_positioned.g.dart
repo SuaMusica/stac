@@ -14,9 +14,9 @@ StacPositioned _$StacPositionedFromJson(Map<String, dynamic> json) =>
       bottom: const DoubleConverter().fromJson(json['bottom']),
       width: const DoubleConverter().fromJson(json['width']),
       height: const DoubleConverter().fromJson(json['height']),
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacPositionedToJson(StacPositioned instance) =>
@@ -27,6 +27,6 @@ Map<String, dynamic> _$StacPositionedToJson(StacPositioned instance) =>
       'bottom': const DoubleConverter().toJson(instance.bottom),
       'width': const DoubleConverter().toJson(instance.width),
       'height': const DoubleConverter().toJson(instance.height),
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'type': instance.type,
     };

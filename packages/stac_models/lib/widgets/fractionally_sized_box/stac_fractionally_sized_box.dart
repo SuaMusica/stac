@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/core/converters/double_converter.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 
 part 'stac_fractionally_sized_box.g.dart';
@@ -23,7 +22,6 @@ class StacFractionallySizedBox extends StacWidget {
 
   final StacAlignment? alignment;
 
-  @StacWidgetConverter()
   final StacWidget? child;
 
   @override

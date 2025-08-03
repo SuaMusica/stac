@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_clip.dart';
@@ -65,7 +64,7 @@ class StacFilledButton extends StacWidget {
 
   /// The widget below this widget in the tree.
   /// Typically a [Text] widget.
-  @StacWidgetConverter()
+
   final StacWidget? child;
 
   /// Widget type identifier.

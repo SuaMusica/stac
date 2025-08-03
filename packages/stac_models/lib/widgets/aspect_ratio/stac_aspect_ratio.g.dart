@@ -9,14 +9,14 @@ part of 'stac_aspect_ratio.dart';
 StacAspectRatio _$StacAspectRatioFromJson(Map<String, dynamic> json) =>
     StacAspectRatio(
       aspectRatio: (json['aspectRatio'] as num).toDouble(),
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacAspectRatioToJson(StacAspectRatio instance) =>
     <String, dynamic>{
       'aspectRatio': instance.aspectRatio,
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'type': instance.type,
     };

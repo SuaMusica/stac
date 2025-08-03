@@ -32,7 +32,9 @@ StacColumn _$StacColumnFromJson(Map<String, dynamic> json) => StacColumn(
     json['textBaseline'],
   ),
   spacing: const DoubleConverter().fromJson(json['spacing']),
-  children: const StacWidgetListConverter().fromJson(json['children']),
+  children: (json['children'] as List<dynamic>?)
+      ?.map((e) => StacWidget.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$StacColumnToJson(StacColumn instance) =>
@@ -47,7 +49,7 @@ Map<String, dynamic> _$StacColumnToJson(StacColumn instance) =>
           _$StacVerticalDirectionEnumMap[instance.verticalDirection],
       'textBaseline': _$StacTextBaselineEnumMap[instance.textBaseline],
       'spacing': const DoubleConverter().toJson(instance.spacing),
-      'children': const StacWidgetListConverter().toJson(instance.children),
+      'children': instance.children?.map((e) => e.toJson()).toList(),
       'type': instance.type,
     };
 

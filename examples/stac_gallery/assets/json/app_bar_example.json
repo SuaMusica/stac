@@ -5,7 +5,7 @@
     "automaticallyImplyLeading": true,
     "title": {
       "type": "text",
-      "data": "Stac s",
+      "data": "Stac Appbar",
       "children": [],
       "style": null,
       "softWrap": null,
