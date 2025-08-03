@@ -8,7 +8,7 @@ part 'stac_set_value_action.g.dart';
 abstract class StacSetValueAction with _$StacSetValueAction {
   const factory StacSetValueAction({
     @Default([]) List<Map<String, dynamic>> values,
-    StacAction? action,
+    Map<String, dynamic>? action,
   }) = _StacSetValueAction;
 
   factory StacSetValueAction.fromJson(Map<String, dynamic> json) =>

@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StacSetValueAction {
   List<Map<String, dynamic>> get values;
-  StacAction? get action;
+  Map<String, dynamic>? get action;
 
   /// Create a copy of StacSetValueAction
   /// with the given fields replaced by the non-null parameter values.
@@ -57,7 +57,7 @@ abstract mixin class $StacSetValueActionCopyWith<$Res> {
           StacSetValueAction value, $Res Function(StacSetValueAction) _then) =
       _$StacSetValueActionCopyWithImpl;
   @useResult
-  $Res call({List<Map<String, dynamic>> values, StacAction? action});
+  $Res call({List<Map<String, dynamic>> values, Map<String, dynamic>? action});
 }
 
 /// @nodoc
@@ -84,7 +84,7 @@ class _$StacSetValueActionCopyWithImpl<$Res>
       action: freezed == action
           ? _self.action
           : action // ignore: cast_nullable_to_non_nullable
-              as StacAction?,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -94,7 +94,7 @@ class _$StacSetValueActionCopyWithImpl<$Res>
 class _StacSetValueAction implements StacSetValueAction {
   const _StacSetValueAction(
       {final List<Map<String, dynamic>> values = const [],
-      final StacAction? action})
+      final Map<String, dynamic>? action})
       : _values = values,
         _action = action;
   factory _StacSetValueAction.fromJson(Map<String, dynamic> json) =>
@@ -109,9 +109,9 @@ class _StacSetValueAction implements StacSetValueAction {
     return EqualUnmodifiableListView(_values);
   }
 
-  final StacAction? _action;
+  final Map<String, dynamic>? _action;
   @override
-  StacAction? get action {
+  Map<String, dynamic>? get action {
     final value = _action;
     if (value == null) return null;
     if (_action is EqualUnmodifiableMapView) return _action;
@@ -164,7 +164,7 @@ abstract mixin class _$StacSetValueActionCopyWith<$Res>
       __$StacSetValueActionCopyWithImpl;
   @override
   @useResult
-  $Res call({List<Map<String, dynamic>> values, StacAction? action});
+  $Res call({List<Map<String, dynamic>> values, Map<String, dynamic>? action});
 }
 
 /// @nodoc
@@ -191,7 +191,7 @@ class __$StacSetValueActionCopyWithImpl<$Res>
       action: freezed == action
           ? _self._action
           : action // ignore: cast_nullable_to_non_nullable
-              as StacAction?,
+              as Map<String, dynamic>?,
     ));
   }
 }
