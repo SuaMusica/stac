@@ -125,8 +125,6 @@ abstract mixin class $StacModalBottomSheetActionCopyWith<$Res> {
       bool enableDrag,
       bool? showDragHandle,
       bool useSafeArea});
-
-  $StacNetworkRequestCopyWith<$Res>? get request;
 }
 
 /// @nodoc
@@ -220,20 +218,6 @@ class _$StacModalBottomSheetActionCopyWithImpl<$Res>
           : useSafeArea // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacModalBottomSheetAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res>? get request {
-    if (_self.request == null) {
-      return null;
-    }
-
-    return $StacNetworkRequestCopyWith<$Res>(_self.request!, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 
@@ -405,9 +389,6 @@ abstract mixin class _$StacModalBottomSheetActionCopyWith<$Res>
       bool enableDrag,
       bool? showDragHandle,
       bool useSafeArea});
-
-  @override
-  $StacNetworkRequestCopyWith<$Res>? get request;
 }
 
 /// @nodoc
@@ -501,20 +482,6 @@ class __$StacModalBottomSheetActionCopyWithImpl<$Res>
           : useSafeArea // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacModalBottomSheetAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res>? get request {
-    if (_self.request == null) {
-      return null;
-    }
-
-    return $StacNetworkRequestCopyWith<$Res>(_self.request!, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 

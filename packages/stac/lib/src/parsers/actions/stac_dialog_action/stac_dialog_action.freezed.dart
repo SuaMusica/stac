@@ -90,8 +90,6 @@ abstract mixin class $StacDialogActionCopyWith<$Res> {
       String? barrierLabel,
       bool useSafeArea,
       TraversalEdgeBehavior? traversalEdgeBehavior});
-
-  $StacNetworkRequestCopyWith<$Res>? get request;
 }
 
 /// @nodoc
@@ -150,20 +148,6 @@ class _$StacDialogActionCopyWithImpl<$Res>
           : traversalEdgeBehavior // ignore: cast_nullable_to_non_nullable
               as TraversalEdgeBehavior?,
     ));
-  }
-
-  /// Create a copy of StacDialogAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res>? get request {
-    if (_self.request == null) {
-      return null;
-    }
-
-    return $StacNetworkRequestCopyWith<$Res>(_self.request!, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 
@@ -282,9 +266,6 @@ abstract mixin class _$StacDialogActionCopyWith<$Res>
       String? barrierLabel,
       bool useSafeArea,
       TraversalEdgeBehavior? traversalEdgeBehavior});
-
-  @override
-  $StacNetworkRequestCopyWith<$Res>? get request;
 }
 
 /// @nodoc
@@ -343,20 +324,6 @@ class __$StacDialogActionCopyWithImpl<$Res>
           : traversalEdgeBehavior // ignore: cast_nullable_to_non_nullable
               as TraversalEdgeBehavior?,
     ));
-  }
-
-  /// Create a copy of StacDialogAction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res>? get request {
-    if (_self.request == null) {
-      return null;
-    }
-
-    return $StacNetworkRequestCopyWith<$Res>(_self.request!, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 

@@ -85,8 +85,6 @@ abstract mixin class $StacDynamicViewCopyWith<$Res> {
       Map<String, dynamic>? emptyTemplate,
       Map<String, dynamic>? loaderWidget,
       Map<String, dynamic>? errorWidget});
-
-  $StacNetworkRequestCopyWith<$Res> get request;
 }
 
 /// @nodoc
@@ -140,16 +138,6 @@ class _$StacDynamicViewCopyWithImpl<$Res>
           : errorWidget // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacDynamicView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res> get request {
-    return $StacNetworkRequestCopyWith<$Res>(_self.request, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 
@@ -285,9 +273,6 @@ abstract mixin class _$StacDynamicViewCopyWith<$Res>
       Map<String, dynamic>? emptyTemplate,
       Map<String, dynamic>? loaderWidget,
       Map<String, dynamic>? errorWidget});
-
-  @override
-  $StacNetworkRequestCopyWith<$Res> get request;
 }
 
 /// @nodoc
@@ -341,16 +326,6 @@ class __$StacDynamicViewCopyWithImpl<$Res>
           : errorWidget // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
-  }
-
-  /// Create a copy of StacDynamicView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res> get request {
-    return $StacNetworkRequestCopyWith<$Res>(_self.request, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 

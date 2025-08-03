@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac_framework/stac_framework.dart';
 
 part 'stac_set_value_action.freezed.dart';
 part 'stac_set_value_action.g.dart';
