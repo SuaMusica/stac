@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 
 /// JSON Converter for individual StacWidget objects
 /// Used with @StacWidgetJsonConverter() annotation
