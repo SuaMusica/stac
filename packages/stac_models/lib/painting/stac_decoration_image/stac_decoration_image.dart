@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 import 'package:stac_models/types/stac_box_fit.dart';
 import 'package:stac_models/types/stac_filter_quality.dart';
