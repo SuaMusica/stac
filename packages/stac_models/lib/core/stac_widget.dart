@@ -1,8 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-/// Type aliases for common STAC types
-typedef StacAction = dynamic;
-
 /// Base interface for all STAC elements that can be serialized to JSON
 abstract class StacElement {
   const StacElement();
