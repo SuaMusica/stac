@@ -26,8 +26,8 @@ class StacFloatingActionButtonParser
         return FloatingActionButton.extended(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
-          icon: Stac.fromJson(model.icon, context),
+              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
+          icon: model.icon?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
@@ -51,7 +51,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton.large(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
+              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
@@ -73,7 +73,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
+              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
@@ -95,7 +95,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton.small(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
+              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),

@@ -8,10 +8,18 @@ part of 'stac_text_button.dart';
 
 StacTextButton _$StacTextButtonFromJson(Map<String, dynamic> json) =>
     StacTextButton(
-      onPressed: json['onPressed'] as Map<String, dynamic>?,
-      onLongPress: json['onLongPress'] as Map<String, dynamic>?,
-      onHover: json['onHover'] as Map<String, dynamic>?,
-      onFocusChange: json['onFocusChange'] as Map<String, dynamic>?,
+      onPressed: json['onPressed'] == null
+          ? null
+          : StacAction.fromJson(json['onPressed'] as Map<String, dynamic>),
+      onLongPress: json['onLongPress'] == null
+          ? null
+          : StacAction.fromJson(json['onLongPress'] as Map<String, dynamic>),
+      onHover: json['onHover'] == null
+          ? null
+          : StacAction.fromJson(json['onHover'] as Map<String, dynamic>),
+      onFocusChange: json['onFocusChange'] == null
+          ? null
+          : StacAction.fromJson(json['onFocusChange'] as Map<String, dynamic>),
       style: json['style'] == null
           ? null
           : StacButtonStyle.fromJson(json['style'] as Map<String, dynamic>),
@@ -28,10 +36,10 @@ StacTextButton _$StacTextButtonFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StacTextButtonToJson(StacTextButton instance) =>
     <String, dynamic>{
-      'onPressed': instance.onPressed,
-      'onLongPress': instance.onLongPress,
-      'onHover': instance.onHover,
-      'onFocusChange': instance.onFocusChange,
+      'onPressed': instance.onPressed?.toJson(),
+      'onLongPress': instance.onLongPress?.toJson(),
+      'onHover': instance.onHover?.toJson(),
+      'onFocusChange': instance.onFocusChange?.toJson(),
       'style': instance.style?.toJson(),
       'autofocus': instance.autofocus,
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/stac_action.dart';
 import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 import 'package:stac_models/types/stac_floating_action_button_type.dart';
@@ -55,7 +56,7 @@ class StacFloatingActionButton extends StacWidget {
 
   /// Called when the button is tapped or otherwise activated.
   /// If null, the button will be disabled.
-  final Map<String, dynamic>? onPressed;
+  final StacAction? onPressed;
 
   /// The text style for the button's text.
   final StacTextStyle? textStyle;
@@ -68,7 +69,7 @@ class StacFloatingActionButton extends StacWidget {
   final bool? autofocus;
 
   /// The icon to display in the button.
-  final Map<String, dynamic>? icon;
+  final StacWidget? icon;
 
   /// The background color of the button.
   final String? backgroundColor;
