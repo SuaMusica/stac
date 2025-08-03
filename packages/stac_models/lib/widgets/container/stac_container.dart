@@ -84,7 +84,6 @@ class StacContainer extends StacWidget {
   final StacAlignment? transformAlignment;
 
   /// The child widget contained within this container.
-
   final StacWidget? child;
 
   /// How to clip the container's content.

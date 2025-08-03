@@ -117,7 +117,6 @@ class StacFloatingActionButton extends StacWidget {
 
   /// The widget below this widget in the tree.
   /// Typically an [Icon] widget.
-
   final StacWidget? child;
 
   /// Widget type identifier.
