@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
@@ -22,13 +22,18 @@ class StacElevatedButtonParser extends StacParser<StacElevatedButton> {
     return ElevatedButton(
       onPressed: model.onPressed == null
           ? null
-          : () => Stac.onCallFromJson(model.onPressed, context),
+          : () => model.onPressed?.parse(context),
       onLongPress: model.onLongPress == null
           ? null
-          : () => Stac.onCallFromJson(model.onLongPress, context),
-      onHover: (bool value) => value == false ? null : model.onHover,
-      onFocusChange: (bool value) =>
-          value == false ? null : model.onFocusChange,
+          : () => model.onLongPress?.parse(context),
+      onHover: model.onHover == null
+          ? null
+          : (bool value) =>
+              value == false ? null : model.onHover?.parse(context),
+      onFocusChange: model.onFocusChange == null
+          ? null
+          : (bool value) =>
+              value == false ? null : model.onFocusChange?.parse(context),
       style: model.style?.parseElevatedButton(context),
       autofocus: model.autofocus ?? false,
       clipBehavior: model.clipBehavior?.parse,

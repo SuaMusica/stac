@@ -34,13 +34,14 @@ class StacIconButtonParser extends StacParser<StacIconButton> {
       disabledColor: model.disabledColor?.toColor(context),
       onPressed: model.onPressed == null
           ? null
-          : () => Stac.onCallFromJson(model.onPressed, context),
+          : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
       onHover: model.onHover == null
           ? null
-          : (bool value) => Stac.onCallFromJson(model.onHover, context),
+          : (bool value) =>
+              Stac.onCallFromJson(model.onHover?.toJson(), context),
       onLongPress: model.onLongPress == null
           ? null
-          : () => Stac.onCallFromJson(model.onLongPress, context),
+          : () => Stac.onCallFromJson(model.onLongPress?.toJson(), context),
       mouseCursor: model.mouseCursor?.parse,
       autofocus: model.autofocus ?? false,
       tooltip: model.tooltip,

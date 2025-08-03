@@ -12,7 +12,7 @@ class StacSetValueActionParser extends StacActionParser<StacSetValueAction> {
   String get actionType => ActionType.setValue.name;
 
   @override
-  StacSetValueAction getModel(StacAction json) =>
+  StacSetValueAction getModel(Map<String, dynamic> json) =>
       StacSetValueAction.fromJson(json);
 
   @override

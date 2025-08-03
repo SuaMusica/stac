@@ -50,8 +50,12 @@ StacScaffold _$StacScaffoldFromJson(Map<String, dynamic> json) => StacScaffold(
     _$StacFloatingActionButtonLocationEnumMap,
     json['floatingActionButtonLocation'],
   ),
-  onDrawerChanged: json['onDrawerChanged'] as Map<String, dynamic>?,
-  onEndDrawerChanged: json['onEndDrawerChanged'] as Map<String, dynamic>?,
+  onDrawerChanged: json['onDrawerChanged'] == null
+      ? null
+      : StacAction.fromJson(json['onDrawerChanged'] as Map<String, dynamic>),
+  onEndDrawerChanged: json['onEndDrawerChanged'] == null
+      ? null
+      : StacAction.fromJson(json['onEndDrawerChanged'] as Map<String, dynamic>),
   persistentFooterAlignment: $enumDecodeNullable(
     _$StacAlignmentDirectionalEnumMap,
     json['persistentFooterAlignment'],
@@ -85,8 +89,8 @@ Map<String, dynamic> _$StacScaffoldToJson(StacScaffold instance) =>
       'floatingActionButtonLocation':
           _$StacFloatingActionButtonLocationEnumMap[instance
               .floatingActionButtonLocation],
-      'onDrawerChanged': instance.onDrawerChanged,
-      'onEndDrawerChanged': instance.onEndDrawerChanged,
+      'onDrawerChanged': instance.onDrawerChanged?.toJson(),
+      'onEndDrawerChanged': instance.onEndDrawerChanged?.toJson(),
       'persistentFooterAlignment':
           _$StacAlignmentDirectionalEnumMap[instance.persistentFooterAlignment],
       'persistentFooterButtons': instance.persistentFooterButtons

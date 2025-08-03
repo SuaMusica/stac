@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request.dart';
+import 'package:stac_models/actions/network_request/stac_network_request.dart';
 
 export 'stac_network_widget_parser.dart';
 

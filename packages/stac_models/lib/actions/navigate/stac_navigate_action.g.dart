@@ -6,30 +6,34 @@ part of 'stac_navigate_action.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacNavigateAction _$StacNavigateActionFromJson(Map<String, dynamic> json) =>
-    _StacNavigateAction(
+StacNavigateAction _$StacNavigateActionFromJson(Map<String, dynamic> json) =>
+    StacNavigateAction(
       request: json['request'] == null
           ? null
           : StacNetworkRequest.fromJson(
-              json['request'] as Map<String, dynamic>),
+              json['request'] as Map<String, dynamic>,
+            ),
       widgetJson: json['widgetJson'] as Map<String, dynamic>?,
       assetPath: json['assetPath'] as String?,
       routeName: json['routeName'] as String?,
       navigationStyle: $enumDecodeNullable(
-          _$NavigationStyleEnumMap, json['navigationStyle']),
+        _$NavigationStyleEnumMap,
+        json['navigationStyle'],
+      ),
       result: json['result'] as Map<String, dynamic>?,
       arguments: json['arguments'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$StacNavigateActionToJson(_StacNavigateAction instance) =>
+Map<String, dynamic> _$StacNavigateActionToJson(StacNavigateAction instance) =>
     <String, dynamic>{
-      'request': instance.request,
+      'request': instance.request?.toJson(),
       'widgetJson': instance.widgetJson,
       'assetPath': instance.assetPath,
       'routeName': instance.routeName,
       'navigationStyle': _$NavigationStyleEnumMap[instance.navigationStyle],
       'result': instance.result,
       'arguments': instance.arguments,
+      'actionType': instance.actionType,
     };
 
 const _$NavigationStyleEnumMap = {
