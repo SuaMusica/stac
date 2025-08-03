@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
@@ -26,7 +26,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton.extended(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
+              : () => model.onPressed?.parse(context),
           icon: model.icon?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
@@ -51,7 +51,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton.large(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
+              : () => model.onPressed?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
@@ -73,7 +73,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
+              : () => model.onPressed?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
@@ -95,7 +95,7 @@ class StacFloatingActionButtonParser
         return FloatingActionButton.small(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
+              : () => model.onPressed?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
@@ -22,18 +22,16 @@ class StacFilledButtonParser extends StacParser<StacFilledButton> {
     return FilledButton(
       onPressed: model.onPressed == null
           ? null
-          : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
+          : () => model.onPressed?.parse(context),
       onLongPress: model.onLongPress == null
           ? null
-          : () => Stac.onCallFromJson(model.onLongPress?.toJson(), context),
+          : () => model.onLongPress?.parse(context),
       onHover: model.onHover == null
           ? null
-          : (bool value) =>
-              Stac.onCallFromJson(model.onHover?.toJson(), context),
+          : (bool value) => model.onHover?.parse(context),
       onFocusChange: model.onFocusChange == null
           ? null
-          : (bool value) =>
-              Stac.onCallFromJson(model.onFocusChange?.toJson(), context),
+          : (bool value) => model.onFocusChange?.parse(context),
       style: model.style?.parseFilledButton(context),
       autofocus: model.autofocus ?? false,
       clipBehavior: model.clipBehavior?.parse,
