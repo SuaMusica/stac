@@ -9,7 +9,9 @@ part of 'stac_floating_action_button.dart';
 StacFloatingActionButton _$StacFloatingActionButtonFromJson(
   Map<String, dynamic> json,
 ) => StacFloatingActionButton(
-  onPressed: json['onPressed'] as Map<String, dynamic>?,
+  onPressed: json['onPressed'] == null
+      ? null
+      : StacAction.fromJson(json['onPressed'] as Map<String, dynamic>),
   textStyle: json['textStyle'] == null
       ? null
       : StacTextStyle.fromJson(json['textStyle'] as Map<String, dynamic>),
@@ -20,7 +22,9 @@ StacFloatingActionButton _$StacFloatingActionButtonFromJson(
       ) ??
       StacFloatingActionButtonType.small,
   autofocus: json['autofocus'] as bool?,
-  icon: json['icon'] as Map<String, dynamic>?,
+  icon: json['icon'] == null
+      ? null
+      : StacWidget.fromJson(json['icon'] as Map<String, dynamic>),
   backgroundColor: json['backgroundColor'] as String?,
   foregroundColor: json['foregroundColor'] as String?,
   focusColor: json['focusColor'] as String?,
@@ -49,11 +53,11 @@ StacFloatingActionButton _$StacFloatingActionButtonFromJson(
 Map<String, dynamic> _$StacFloatingActionButtonToJson(
   StacFloatingActionButton instance,
 ) => <String, dynamic>{
-  'onPressed': instance.onPressed,
+  'onPressed': instance.onPressed?.toJson(),
   'textStyle': instance.textStyle?.toJson(),
   'buttonType': _$StacFloatingActionButtonTypeEnumMap[instance.buttonType]!,
   'autofocus': instance.autofocus,
-  'icon': instance.icon,
+  'icon': instance.icon?.toJson(),
   'backgroundColor': instance.backgroundColor,
   'foregroundColor': instance.foregroundColor,
   'focusColor': instance.focusColor,

@@ -63,9 +63,9 @@ class StacScaffold extends StacWidget {
 
   final StacFloatingActionButtonLocation? floatingActionButtonLocation;
 
-  final Map<String, dynamic>? onDrawerChanged;
+  final StacAction? onDrawerChanged;
 
-  final Map<String, dynamic>? onEndDrawerChanged;
+  final StacAction? onEndDrawerChanged;
 
   final StacAlignmentDirectional? persistentFooterAlignment;
 

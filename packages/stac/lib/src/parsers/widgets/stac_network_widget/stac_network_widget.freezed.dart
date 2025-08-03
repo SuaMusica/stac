@@ -53,8 +53,6 @@ abstract mixin class $StacNetworkWidgetCopyWith<$Res> {
       _$StacNetworkWidgetCopyWithImpl;
   @useResult
   $Res call({StacNetworkRequest request});
-
-  $StacNetworkRequestCopyWith<$Res> get request;
 }
 
 /// @nodoc
@@ -78,16 +76,6 @@ class _$StacNetworkWidgetCopyWithImpl<$Res>
           : request // ignore: cast_nullable_to_non_nullable
               as StacNetworkRequest,
     ));
-  }
-
-  /// Create a copy of StacNetworkWidget
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res> get request {
-    return $StacNetworkRequestCopyWith<$Res>(_self.request, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 
@@ -143,9 +131,6 @@ abstract mixin class _$StacNetworkWidgetCopyWith<$Res>
   @override
   @useResult
   $Res call({StacNetworkRequest request});
-
-  @override
-  $StacNetworkRequestCopyWith<$Res> get request;
 }
 
 /// @nodoc
@@ -169,16 +154,6 @@ class __$StacNetworkWidgetCopyWithImpl<$Res>
           : request // ignore: cast_nullable_to_non_nullable
               as StacNetworkRequest,
     ));
-  }
-
-  /// Create a copy of StacNetworkWidget
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacNetworkRequestCopyWith<$Res> get request {
-    return $StacNetworkRequestCopyWith<$Res>(_self.request, (value) {
-      return _then(_self.copyWith(request: value));
-    });
   }
 }
 

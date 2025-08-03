@@ -1,0 +1,15 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:stac/stac.dart';
+import 'package:stac_models/stac_models.dart';
+
+extension StacActionParser on StacAction? {
+  FutureOr<dynamic> parse(BuildContext context) {
+    if (this == null) {
+      return null;
+    }
+
+    return Stac.onCallFromJson(this!.toJson(), context);
+  }
+}

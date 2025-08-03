@@ -91,13 +91,13 @@ class StacIconButton extends StacWidget {
 
   /// Called when the button is tapped or otherwise activated.
   /// If null, the button will be disabled.
-  final Map<String, dynamic>? onPressed;
+  final StacAction? onPressed;
 
   /// Called when the button is hovered.
-  final Map<String, dynamic>? onHover;
+  final StacAction? onHover;
 
   /// Called when the button is long pressed.
-  final Map<String, dynamic>? onLongPress;
+  final StacAction? onLongPress;
 
   /// The mouse cursor for the button.
   final StacMouseCursor? mouseCursor;

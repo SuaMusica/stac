@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 
-typedef StacAction = Map<String, dynamic>;
-
 /// [StacActionParser] is an abstract class that is used to parse a JSON object into
 /// a model and then handle an action based on the model.
 ///
@@ -21,7 +19,7 @@ abstract class StacActionParser<T> {
   /// This method should be implemented to parse a JSON object into a model.
   /// The JSON object is typically a part of the STAC action.
   /// The model [T] should contain all the necessary data to handle the action.
-  T getModel(StacAction json);
+  T getModel(Map<String, dynamic> json);
 
   /// Handles the action based on the model [T].
   ///

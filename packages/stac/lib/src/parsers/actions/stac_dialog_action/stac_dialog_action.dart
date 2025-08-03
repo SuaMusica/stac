@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request.dart';
+import 'package:stac_models/stac_models.dart';
 
 export 'stac_dialog_action_parser.dart';
 
