@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/converters/double_converter.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/painting/stac_box_decoration/stac_box_decoration.dart';
 import 'package:stac_models/painting/stac_color/stac_colors.dart';
 import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
@@ -85,7 +84,6 @@ class StacContainer extends StacWidget {
   final StacAlignment? transformAlignment;
 
   /// The child widget contained within this container.
-  @StacWidgetConverter()
   final StacWidget? child;
 
   /// How to clip the container's content.

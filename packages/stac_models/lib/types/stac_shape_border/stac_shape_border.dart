@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
 import 'package:stac_models/types/stac_border_side/stac_border_side.dart';
 import 'package:stac_models/types/stac_circle_border/stac_circle_border.dart';

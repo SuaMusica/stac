@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
@@ -123,11 +122,9 @@ class StacIconButton extends StacWidget {
   final bool? isSelected;
 
   /// The icon to display when the button is selected.
-  @StacWidgetConverter()
   final StacWidget? selectedIcon;
 
   /// The icon to display in the button.
-  @StacWidgetConverter()
   final StacWidget? icon;
 
   /// Widget type identifier.

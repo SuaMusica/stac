@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 import 'package:stac_models/types/stac_floating_action_button_type.dart';
 
@@ -118,7 +117,6 @@ class StacFloatingActionButton extends StacWidget {
 
   /// The widget below this widget in the tree.
   /// Typically an [Icon] widget.
-  @StacWidgetConverter()
   final StacWidget? child;
 
   /// Widget type identifier.

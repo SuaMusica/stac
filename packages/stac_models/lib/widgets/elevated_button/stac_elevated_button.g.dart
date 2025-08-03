@@ -20,9 +20,9 @@ StacElevatedButton _$StacElevatedButtonFromJson(Map<String, dynamic> json) =>
         _$StacClipEnumMap,
         json['clipBehavior'],
       ),
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacElevatedButtonToJson(StacElevatedButton instance) =>
@@ -34,7 +34,7 @@ Map<String, dynamic> _$StacElevatedButtonToJson(StacElevatedButton instance) =>
       'style': instance.style?.toJson(),
       'autofocus': instance.autofocus,
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'type': instance.type,
     };
 

@@ -21,9 +21,9 @@ StacTextButton _$StacTextButtonFromJson(Map<String, dynamic> json) =>
         json['clipBehavior'],
       ),
       isSemanticButton: json['isSemanticButton'] as bool?,
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacTextButtonToJson(StacTextButton instance) =>
@@ -36,7 +36,7 @@ Map<String, dynamic> _$StacTextButtonToJson(StacTextButton instance) =>
       'autofocus': instance.autofocus,
       'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
       'isSemanticButton': instance.isSemanticButton,
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'type': instance.type,
     };
 

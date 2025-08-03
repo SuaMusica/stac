@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/stac_model.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/types/stac_flex_fit.dart';
 
 part 'stac_flexible.g.dart';
@@ -13,7 +12,6 @@ class StacFlexible extends StacWidget {
 
   final StacFlexFit? fit;
 
-  @StacWidgetConverter()
   final StacWidget? child;
 
   @override
