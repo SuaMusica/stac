@@ -68,7 +68,6 @@ class StacTextButton extends StacWidget {
 
   /// The widget below this widget in the tree.
   /// Typically a [Text] widget.
-
   final StacWidget? child;
 
   /// Widget type identifier.

@@ -122,11 +122,9 @@ class StacIconButton extends StacWidget {
   final bool? isSelected;
 
   /// The icon to display when the button is selected.
-
   final StacWidget? selectedIcon;
 
   /// The icon to display in the button.
-
   final StacWidget? icon;
 
   /// Widget type identifier.
