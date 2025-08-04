@@ -27,7 +27,7 @@ class StacWrapParser extends StacParser<StacWrap> {
         textDirection: model.textDirection?.parse,
         verticalDirection:
             model.verticalDirection?.parse ?? VerticalDirection.down,
-        clipBehavior: model.clipBehavior?.parse ?? Clip.none,
+        clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
         children: model.children?.parseList(context) ?? const <Widget>[]);
   }
 }
