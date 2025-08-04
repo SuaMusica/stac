@@ -1,5 +1,1 @@
-enum StacWrapCrossAlignment {
-  start,
-  end,
-  center,
-}
+enum StacWrapCrossAlignment { start, end, center }

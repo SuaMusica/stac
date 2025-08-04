@@ -30,11 +30,7 @@ part 'stac_limited_box.g.dart';
 @JsonSerializable()
 class StacLimitedBox extends StacWidget {
   /// Creates a [StacLimitedBox] with the given properties.
-  const StacLimitedBox({
-    this.maxWidth,
-    this.maxHeight,
-    this.child,
-  });
+  const StacLimitedBox({this.maxWidth, this.maxHeight, this.child});
 
   /// The maximum width the child can be.
   /// Defaults to [double.infinity] in the Flutter widget.

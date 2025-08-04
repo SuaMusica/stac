@@ -40,7 +40,7 @@ class StacVisibilityParser extends StacParser<StacVisibility> {
         child: child,
       );
     }
-    
+
     final replacement =
         model.replacement?.parse(context) ?? const SizedBox.shrink();
 
@@ -56,4 +56,3 @@ class StacVisibilityParser extends StacParser<StacVisibility> {
     );
   }
 }
-

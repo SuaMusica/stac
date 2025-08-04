@@ -8,7 +8,6 @@ import 'package:stac_models/types/stac_vertical_direction.dart';
 import 'package:stac_models/types/stac_wrap_alignment.dart';
 import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
 
-
 part 'stac_wrap.g.dart';
 
 /// A Stac model representing Flutter's [Wrap] widget.
