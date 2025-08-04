@@ -7,9 +7,9 @@ part of 'stac_safe_area.dart';
 // **************************************************************************
 
 StacSafeArea _$StacSafeAreaFromJson(Map<String, dynamic> json) => StacSafeArea(
-  child: const StacWidgetConverter().fromJson(
-    json['child'] as Map<String, dynamic>?,
-  ),
+  child: json['child'] == null
+      ? null
+      : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
   left: json['left'] as bool?,
   top: json['top'] as bool?,
   right: json['right'] as bool?,
@@ -22,7 +22,7 @@ StacSafeArea _$StacSafeAreaFromJson(Map<String, dynamic> json) => StacSafeArea(
 
 Map<String, dynamic> _$StacSafeAreaToJson(StacSafeArea instance) =>
     <String, dynamic>{
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'left': instance.left,
       'top': instance.top,
       'right': instance.right,

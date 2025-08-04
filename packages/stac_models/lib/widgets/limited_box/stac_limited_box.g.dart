@@ -10,15 +10,15 @@ StacLimitedBox _$StacLimitedBoxFromJson(Map<String, dynamic> json) =>
     StacLimitedBox(
       maxWidth: const DoubleConverter().fromJson(json['maxWidth']),
       maxHeight: const DoubleConverter().fromJson(json['maxHeight']),
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StacLimitedBoxToJson(StacLimitedBox instance) =>
     <String, dynamic>{
       'maxWidth': const DoubleConverter().toJson(instance.maxWidth),
       'maxHeight': const DoubleConverter().toJson(instance.maxHeight),
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'type': instance.type,
     };

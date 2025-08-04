@@ -1,10 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/converters/double_converter.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
-import 'package:stac_models/core/stac_model.dart';
-import 'package:stac_models/widgets/widgets.dart'; // For StacWidget
+import 'package:stac_models/core/stac_widget.dart';
 
-part 'stac_opacity.g.dart'; // This name is derived from the Dart file name 'stac_opacity.dart'
+part 'stac_opacity.g.dart';
 
 @JsonSerializable()
 class StacOpacity extends StacWidget {
@@ -19,11 +17,10 @@ class StacOpacity extends StacWidget {
 
   final bool? alwaysIncludeSemantics;
 
-  @StacWidgetConverter()
   final StacWidget? child;
 
   @override
-  String get type => 'opacity'; // Consistent with 'opacity' directory
+  String get type => 'opacity';
 
   factory StacOpacity.fromJson(Map<String, dynamic> json) =>
       _$StacOpacityFromJson(json);

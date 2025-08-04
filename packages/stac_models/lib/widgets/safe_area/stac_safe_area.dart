@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
-import 'package:stac_models/core/stac_model.dart';
 import 'package:stac_models/painting/painting.dart';
+import 'package:stac_models/core/stac_widget.dart';
 
 part 'stac_safe_area.g.dart';
 
@@ -17,7 +16,6 @@ class StacSafeArea extends StacWidget {
     this.maintainBottomViewPadding,
   });
 
-  @StacWidgetConverter()
   final StacWidget? child;
 
   final bool? left;
