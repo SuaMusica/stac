@@ -1,13 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:stac_models/core/converters/double_converter.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
-import 'package:stac_models/core/stac_model.dart';
 import 'package:stac_models/types/stac_axis.dart';
 import 'package:stac_models/types/stac_clip.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
 import 'package:stac_models/types/stac_wrap_alignment.dart';
 import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
+import 'package:stac_models/core/stac_widget.dart';
 
 import '../../types/stac_text_types.dart' show StacTextDirection;
 
@@ -28,7 +27,6 @@ class StacWrap extends StacWidget {
     this.clipBehavior,
   });
 
-  @StacWidgetListConverter()
   final List<StacWidget>? children;
 
   final StacAxis? direction;

@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/core/converters/widget_converter.dart';
-import 'package:stac_models/core/stac_model.dart';
+import 'package:stac_models/core/stac_widget.dart';
 
 part 'stac_visibility.g.dart';
 
@@ -17,12 +16,10 @@ class StacVisibility extends StacWidget {
     this.maintainInteractivity,
   });
 
-  @StacWidgetConverter()
   final StacWidget? child;
 
   final bool? visible;
 
-  @StacWidgetConverter()
   final StacWidget? replacement;
 
   final bool? maintainState;

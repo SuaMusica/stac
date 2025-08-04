@@ -8,13 +8,13 @@ part of 'stac_visibility.dart';
 
 StacVisibility _$StacVisibilityFromJson(Map<String, dynamic> json) =>
     StacVisibility(
-      child: const StacWidgetConverter().fromJson(
-        json['child'] as Map<String, dynamic>?,
-      ),
+      child: json['child'] == null
+          ? null
+          : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
       visible: json['visible'] as bool?,
-      replacement: const StacWidgetConverter().fromJson(
-        json['replacement'] as Map<String, dynamic>?,
-      ),
+      replacement: json['replacement'] == null
+          ? null
+          : StacWidget.fromJson(json['replacement'] as Map<String, dynamic>),
       maintainState: json['maintainState'] as bool?,
       maintainAnimation: json['maintainAnimation'] as bool?,
       maintainSize: json['maintainSize'] as bool?,
@@ -24,9 +24,9 @@ StacVisibility _$StacVisibilityFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StacVisibilityToJson(StacVisibility instance) =>
     <String, dynamic>{
-      'child': const StacWidgetConverter().toJson(instance.child),
+      'child': instance.child?.toJson(),
       'visible': instance.visible,
-      'replacement': const StacWidgetConverter().toJson(instance.replacement),
+      'replacement': instance.replacement?.toJson(),
       'maintainState': instance.maintainState,
       'maintainAnimation': instance.maintainAnimation,
       'maintainSize': instance.maintainSize,

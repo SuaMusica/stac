@@ -7,7 +7,9 @@ part of 'stac_wrap.dart';
 // **************************************************************************
 
 StacWrap _$StacWrapFromJson(Map<String, dynamic> json) => StacWrap(
-  children: const StacWidgetListConverter().fromJson(json['children']),
+  children: (json['children'] as List<dynamic>?)
+      ?.map((e) => StacWidget.fromJson(e as Map<String, dynamic>))
+      .toList(),
   direction: $enumDecodeNullable(_$StacAxisEnumMap, json['direction']),
   alignment: $enumDecodeNullable(_$StacWrapAlignmentEnumMap, json['alignment']),
   spacing: const DoubleConverter().fromJson(json['spacing']),
@@ -32,7 +34,7 @@ StacWrap _$StacWrapFromJson(Map<String, dynamic> json) => StacWrap(
 );
 
 Map<String, dynamic> _$StacWrapToJson(StacWrap instance) => <String, dynamic>{
-  'children': const StacWidgetListConverter().toJson(instance.children),
+  'children': instance.children?.map((e) => e.toJson()).toList(),
   'direction': _$StacAxisEnumMap[instance.direction],
   'alignment': _$StacWrapAlignmentEnumMap[instance.alignment],
   'spacing': const DoubleConverter().toJson(instance.spacing),
