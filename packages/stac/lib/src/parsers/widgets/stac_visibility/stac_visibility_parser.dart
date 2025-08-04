@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_visibility/stac_visibility.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac_models/widgets/visibility/stac_visibility.dart';
 
 class StacVisibilityParser extends StacParser<StacVisibility> {
   const StacVisibilityParser();
@@ -16,23 +16,33 @@ class StacVisibilityParser extends StacParser<StacVisibility> {
 
   @override
   Widget parse(BuildContext context, StacVisibility model) {
-    final child =
-        Stac.fromJson(model.child, context) ?? const SizedBox.shrink();
+    final child = model.child?.parse(context) ?? const SizedBox.shrink();
 
-    final useMaintainConstructor = model.maintainState == true &&
-        model.maintainAnimation == true &&
-        model.maintainSize == true &&
-        model.maintainSemantics == true &&
-        model.maintainInteractivity == true;
+    bool shouldUseMaintainConstructor = (model.maintainState ?? false) ||
+        (model.maintainAnimation ?? false) ||
+        (model.maintainSize ?? false) ||
+        (model.maintainSemantics ?? false) ||
+        (model.maintainInteractivity ?? false);
 
-    if (useMaintainConstructor) {
+    if (shouldUseMaintainConstructor) {
+      if (model.maintainState == false ||
+          model.maintainAnimation == false ||
+          model.maintainSize == false ||
+          model.maintainSemantics == false ||
+          model.maintainInteractivity == false) {
+        shouldUseMaintainConstructor = false;
+      }
+    }
+
+    if (shouldUseMaintainConstructor) {
       return Visibility.maintain(
         visible: model.visible ?? true,
         child: child,
       );
     }
+
     final replacement =
-        Stac.fromJson(model.replacement, context) ?? const SizedBox.shrink();
+        model.replacement?.parse(context) ?? const SizedBox.shrink();
 
     return Visibility(
       visible: model.visible ?? true,

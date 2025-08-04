@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac_models/widgets/wrap/stac_wrap.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_wrap.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 
 class StacWrapParser extends StacParser<StacWrap> {
   const StacWrapParser();
@@ -18,18 +17,17 @@ class StacWrapParser extends StacParser<StacWrap> {
   @override
   Widget parse(BuildContext context, StacWrap model) {
     return Wrap(
-      direction: model.direction,
-      alignment: model.alignment,
-      spacing: model.spacing.parse,
-      runAlignment: model.runAlignment,
-      runSpacing: model.runSpacing.parse,
-      crossAxisAlignment: model.crossAxisAlignment,
-      textDirection: model.textDirection,
-      verticalDirection: model.verticalDirection,
-      clipBehavior: model.clipBehavior,
-      children: model.children
-          .map((e) => Stac.fromJson(e, context) ?? const SizedBox())
-          .toList(),
-    );
+        direction: model.direction?.parse ?? Axis.horizontal,
+        alignment: model.alignment?.parse ?? WrapAlignment.start,
+        spacing: model.spacing ?? 0.0,
+        runAlignment: model.runAlignment?.parse ?? WrapAlignment.start,
+        runSpacing: model.runSpacing ?? 0.0,
+        crossAxisAlignment:
+            model.crossAxisAlignment?.parse ?? WrapCrossAlignment.start,
+        textDirection: model.textDirection?.parse,
+        verticalDirection:
+            model.verticalDirection?.parse ?? VerticalDirection.down,
+        clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
+        children: model.children?.parseList(context) ?? const <Widget>[]);
   }
 }
