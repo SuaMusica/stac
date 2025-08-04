@@ -6,9 +6,8 @@ import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
-import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
-import 'package:stac_models/types/stac_alignment_directional.dart';
 import 'package:stac_models/types/stac_axis.dart';
+import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
 import 'package:stac_models/types/stac_blend_mode.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
@@ -883,6 +882,19 @@ extension StacAxisParser on StacAxis {
         return Axis.horizontal;
       case StacAxis.vertical:
         return Axis.vertical;
+    }
+  }
+}
+
+/// Extends [StacRefreshIndicatorTriggerMode] to provide parsing functionality.
+extension StacRefreshIndicatorTriggerModeParser on StacRefreshIndicatorTriggerMode {
+  /// Parses the [StacRefreshIndicatorTriggerMode] into a Flutter [RefreshIndicatorTriggerMode].
+  RefreshIndicatorTriggerMode parse() {
+    switch (this) {
+      case StacRefreshIndicatorTriggerMode.onEdge:
+        return RefreshIndicatorTriggerMode.onEdge;
+      case StacRefreshIndicatorTriggerMode.anywhere:
+        return RefreshIndicatorTriggerMode.anywhere;
     }
   }
 }

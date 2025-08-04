@@ -66,7 +66,7 @@ export 'package:stac/src/parsers/widgets/stac_placeholder/stac_placeholder.dart'
 export 'package:stac/src/parsers/widgets/stac_positioned/stac_positioned_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_radio/stac_radio.dart';
 export 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group.dart';
-export 'package:stac/src/parsers/widgets/stac_refresh_indicator/stac_refresh_indicator.dart';
+export 'package:stac/src/parsers/widgets/stac_refresh_indicator/stac_refresh_indicator_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_safe_area/stac_safe_area_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_scaffold/stac_scaffold_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value.dart';

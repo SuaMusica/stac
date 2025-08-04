@@ -13,6 +13,7 @@ export 'image/stac_image.dart';
 export 'outlined_button/stac_outlined_button.dart';
 export 'padding/stac_padding.dart';
 export 'positioned/stac_positioned.dart';
+export 'refresh_indicator/stac_refresh_indicator.dart';
 export 'row/stac_row.dart';
 export 'scaffold/stac_scaffold.dart';
 export 'sized_box/stac_sized_box.dart';
