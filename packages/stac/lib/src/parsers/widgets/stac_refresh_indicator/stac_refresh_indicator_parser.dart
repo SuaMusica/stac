@@ -2,12 +2,14 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_refresh_indicator/stac_refresh_indicator.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/core/core.dart';
+import 'package:stac_models/widgets/refresh_indicator/stac_refresh_indicator.dart';
 
 class StacRefreshIndicatorParser extends StacParser<StacRefreshIndicator> {
   const StacRefreshIndicatorParser();
@@ -34,33 +36,32 @@ class _RefreshIndicatorWidget extends StatefulWidget {
 }
 
 class _RefreshIndicatorWidgetState extends State<_RefreshIndicatorWidget> {
-  Map<String, dynamic>? childWidgetJson;
+  StacWidget? childWidget;
 
   @override
   void initState() {
     super.initState();
 
-    childWidgetJson = widget.model.child;
+    childWidget = widget.model.child;
   }
 
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      displacement: widget.model.displacement.parse,
-      edgeOffset: widget.model.edgeOffset.parse,
+      displacement: widget.model.displacement ?? 40.0,
+      edgeOffset: widget.model.edgeOffset ?? 0.0,
       onRefresh: () async {
-        Response result =
-            await Stac.onCallFromJson(widget.model.onRefresh, context);
+        Response result = await widget.model.onRefresh?.parse(context) as Response;
 
         if (context.mounted) {
           if (result.data != null) {
             if (result.data is Map<String, dynamic>) {
               setState(() {
-                childWidgetJson = result.data;
+                childWidget = result.data;
               });
             } else if (result.data is String) {
               setState(() {
-                childWidgetJson = jsonDecode(result.data);
+                childWidget = jsonDecode(result.data);
               });
             }
           }
@@ -70,9 +71,9 @@ class _RefreshIndicatorWidgetState extends State<_RefreshIndicatorWidget> {
       backgroundColor: widget.model.backgroundColor.toColor(context),
       semanticsLabel: widget.model.semanticsLabel,
       semanticsValue: widget.model.semanticsValue,
-      strokeWidth: widget.model.strokeWidth.parse,
-      triggerMode: widget.model.triggerMode,
-      child: Stac.fromJson(childWidgetJson, context) ?? const SizedBox(),
+      strokeWidth: widget.model.strokeWidth ?? RefreshProgressIndicator.defaultStrokeWidth,
+      triggerMode: widget.model.triggerMode?.parse() ?? RefreshIndicatorTriggerMode.onEdge,
+      child: childWidget.parse(context) ?? const SizedBox.shrink(),
     );
   }
 }

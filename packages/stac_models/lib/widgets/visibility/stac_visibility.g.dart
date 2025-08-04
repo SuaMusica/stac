@@ -8,10 +8,10 @@ part of 'stac_visibility.dart';
 
 StacVisibility _$StacVisibilityFromJson(Map<String, dynamic> json) =>
     StacVisibility(
+      visible: json['visible'] as bool?,
       child: json['child'] == null
           ? null
           : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
-      visible: json['visible'] as bool?,
       replacement: json['replacement'] == null
           ? null
           : StacWidget.fromJson(json['replacement'] as Map<String, dynamic>),
