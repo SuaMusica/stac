@@ -72,7 +72,7 @@ class _RefreshIndicatorWidgetState extends State<_RefreshIndicatorWidget> {
       semanticsLabel: widget.model.semanticsLabel,
       semanticsValue: widget.model.semanticsValue,
       strokeWidth: widget.model.strokeWidth ?? RefreshProgressIndicator.defaultStrokeWidth,
-      triggerMode: widget.model.triggerMode?.parse() ?? RefreshIndicatorTriggerMode.onEdge,
+      triggerMode: widget.model.triggerMode?.parse ?? RefreshIndicatorTriggerMode.onEdge,
       child: childWidget.parse(context) ?? const SizedBox.shrink(),
     );
   }

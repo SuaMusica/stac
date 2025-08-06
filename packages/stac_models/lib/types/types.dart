@@ -11,3 +11,6 @@ export 'stac_refresh_indicator_trigger_mode.dart';
 export 'stac_rounded_rectangle_border/stac_rounded_rectangle_border.dart';
 export 'stac_size/stac_size.dart';
 export 'stac_visual_density/stac_visual_density.dart';
+export 'stac_scroll_physics.dart';
+export 'stac_scroll_view_keyboard_dismiss_behavior.dart';
+

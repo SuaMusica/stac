@@ -27,6 +27,9 @@ import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
 import 'package:stac_models/types/stac_rect/stac_rect.dart';
+import 'package:stac_models/types/stac_refresh_indicator_trigger_mode.dart';
+import 'package:stac_models/types/stac_scroll_physics.dart';
+import 'package:stac_models/types/stac_scroll_view_keyboard_dismiss_behavior.dart';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_text_types.dart';
@@ -888,8 +891,8 @@ extension StacAxisParser on StacAxis {
 
 /// Extends [StacRefreshIndicatorTriggerMode] to provide parsing functionality.
 extension StacRefreshIndicatorTriggerModeParser on StacRefreshIndicatorTriggerMode {
-  /// Parses the [StacRefreshIndicatorTriggerMode] into a Flutter [RefreshIndicatorTriggerMode].
-  RefreshIndicatorTriggerMode parse() {
+  /// Parses this [StacRefreshIndicatorTriggerMode] into a Flutter [RefreshIndicatorTriggerMode].
+  RefreshIndicatorTriggerMode get parse {
     switch (this) {
       case StacRefreshIndicatorTriggerMode.onEdge:
         return RefreshIndicatorTriggerMode.onEdge;
@@ -898,3 +901,36 @@ extension StacRefreshIndicatorTriggerModeParser on StacRefreshIndicatorTriggerMo
     }
   }
 }
+
+/// Extends [StacScrollPhysics] enum to provide parsing functionality.
+extension StacScrollPhysicsEnumParser on StacScrollPhysics {
+  /// Parses this [StacScrollPhysics] enum into a Flutter [ScrollPhysics] object.
+  ScrollPhysics get parse {
+    switch (this) {
+      case StacScrollPhysics.never:
+        return const NeverScrollableScrollPhysics();
+      case StacScrollPhysics.bouncing:
+        return const BouncingScrollPhysics();
+      case StacScrollPhysics.clamping:
+        return const ClampingScrollPhysics();
+      case StacScrollPhysics.fixed:
+        return const FixedExtentScrollPhysics();
+      case StacScrollPhysics.page:
+        return const PageScrollPhysics();
+    }
+  }
+}
+
+/// Extends [StacScrollViewKeyboardDismissBehavior] to provide parsing functionality.
+extension StacScrollViewKeyboardDismissBehaviorParser on StacScrollViewKeyboardDismissBehavior {
+  /// Parses this [StacScrollViewKeyboardDismissBehavior] into a Flutter [ScrollViewKeyboardDismissBehavior] object.
+  ScrollViewKeyboardDismissBehavior get parse {
+    switch (this) {
+      case StacScrollViewKeyboardDismissBehavior.manual:
+        return ScrollViewKeyboardDismissBehavior.manual;
+      case StacScrollViewKeyboardDismissBehavior.onDrag:
+        return ScrollViewKeyboardDismissBehavior.onDrag;
+    }
+  }
+}
+
