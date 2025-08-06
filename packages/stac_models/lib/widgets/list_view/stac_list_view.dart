@@ -127,6 +127,7 @@ class StacListView extends StacWidget {
   /// {@macro flutter.material.Material.clipBehavior}
   final StacClip? clipBehavior;
 
+  /// Widget type identifier.
   @override
   String get type => 'listView';
 

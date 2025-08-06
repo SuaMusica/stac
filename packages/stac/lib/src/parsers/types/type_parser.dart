@@ -934,3 +934,32 @@ extension StacScrollViewKeyboardDismissBehaviorParser on StacScrollViewKeyboardD
   }
 }
 
+/// Extends [StacListTileStyle] to provide parsing functionality.
+extension StacListTileStyleParser on StacListTileStyle {
+  /// Parses this [StacListTileStyle] into a Flutter [ListTileStyle].
+  ListTileStyle get parse {
+    switch (this) {
+      case StacListTileStyle.list:
+        return ListTileStyle.list;
+      case StacListTileStyle.drawer:
+        return ListTileStyle.drawer;
+    }
+  }
+}
+
+/// Extends [StacListTileTitleAlignment] to provide parsing functionality.
+extension StacListTileTitleAlignmentParser on StacListTileTitleAlignment {
+  /// Parses this [StacListTileTitleAlignment] into a Flutter [ListTileTitleAlignment].
+  ListTileTitleAlignment get parse {
+    switch (this) {
+      case StacListTileTitleAlignment.titleHeight:
+        return ListTileTitleAlignment.titleHeight;
+      case StacListTileTitleAlignment.threeLine:
+        return ListTileTitleAlignment.threeLine;
+      case StacListTileTitleAlignment.bottom:
+        return ListTileTitleAlignment.bottom;
+      case StacListTileTitleAlignment.center:
+        return ListTileTitleAlignment.center;
+    }
+  }
+}
