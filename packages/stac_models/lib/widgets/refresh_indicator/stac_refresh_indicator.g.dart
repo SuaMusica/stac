@@ -16,6 +16,7 @@ StacRefreshIndicator _$StacRefreshIndicatorFromJson(
       ? null
       : StacAction.fromJson(json['onRefresh'] as Map<String, dynamic>),
   displacement: const DoubleConverter().fromJson(json['displacement']),
+  edgeOffset: const DoubleConverter().fromJson(json['edgeOffset']),
   color: json['color'] as String?,
   backgroundColor: json['backgroundColor'] as String?,
   semanticsLabel: json['semanticsLabel'] as String?,
@@ -33,6 +34,7 @@ Map<String, dynamic> _$StacRefreshIndicatorToJson(
   'child': instance.child?.toJson(),
   'onRefresh': instance.onRefresh?.toJson(),
   'displacement': const DoubleConverter().toJson(instance.displacement),
+  'edgeOffset': const DoubleConverter().toJson(instance.edgeOffset),
   'color': instance.color,
   'backgroundColor': instance.backgroundColor,
   'semanticsLabel': instance.semanticsLabel,
