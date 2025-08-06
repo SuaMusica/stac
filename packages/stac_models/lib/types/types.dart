@@ -6,6 +6,7 @@ export 'stac_border_side/stac_border_side.dart';
 export 'stac_drag_start_behavior.dart';
 export 'stac_duration/stac_duration.dart';
 export 'stac_floating_action_button_location.dart';
+export 'stac_hit_test_behavior.dart';
 export 'stac_list_tile_style.dart';
 export 'stac_list_tile_title_alignment.dart';
 export 'stac_mouse_cursor.dart';
@@ -15,4 +16,3 @@ export 'stac_size/stac_size.dart';
 export 'stac_visual_density/stac_visual_density.dart';
 export 'stac_scroll_physics.dart';
 export 'stac_scroll_view_keyboard_dismiss_behavior.dart';
-
