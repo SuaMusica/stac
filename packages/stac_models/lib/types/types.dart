@@ -6,6 +6,8 @@ export 'stac_border_side/stac_border_side.dart';
 export 'stac_drag_start_behavior.dart';
 export 'stac_duration/stac_duration.dart';
 export 'stac_floating_action_button_location.dart';
+export 'stac_list_tile_style.dart';
+export 'stac_list_tile_title_alignment.dart';
 export 'stac_mouse_cursor.dart';
 export 'stac_refresh_indicator_trigger_mode.dart';
 export 'stac_rounded_rectangle_border/stac_rounded_rectangle_border.dart';
