@@ -8,7 +8,6 @@ import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_models/widgets/gesture_detector/stac_gesture_detector.dart';
 import 'package:stac_models/stac_models.dart';
 
-
 class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
   const StacGestureDetectorParser();
 
@@ -25,12 +24,9 @@ class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
       onTapDown: model.onTapDown != null
           ? (_) => model.onTapDown!.parse(context)
           : null,
-      onTapUp: model.onTapUp != null
-          ? (_) => model.onTapUp!.parse(context)
-          : null,
-      onTap: model.onTap != null 
-          ? () => model.onTap!.parse(context) 
-          : null,
+      onTapUp:
+          model.onTapUp != null ? (_) => model.onTapUp!.parse(context) : null,
+      onTap: model.onTap != null ? () => model.onTap!.parse(context) : null,
       onTapCancel: model.onTapCancel != null
           ? () => model.onTapCancel!.parse(context)
           : null,
@@ -97,9 +93,10 @@ class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
       onSecondaryLongPressStart: model.onSecondaryLongPressStart != null
           ? (_) => model.onSecondaryLongPressStart!.parse(context)
           : null,
-      onSecondaryLongPressMoveUpdate: model.onSecondaryLongPressMoveUpdate != null
-          ? (_) => model.onSecondaryLongPressMoveUpdate!.parse(context)
-          : null,
+      onSecondaryLongPressMoveUpdate:
+          model.onSecondaryLongPressMoveUpdate != null
+              ? (_) => model.onSecondaryLongPressMoveUpdate!.parse(context)
+              : null,
       onSecondaryLongPressUp: model.onSecondaryLongPressUp != null
           ? () => model.onSecondaryLongPressUp!.parse(context)
           : null,
@@ -178,9 +175,8 @@ class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
       onPanUpdate: model.onPanUpdate != null
           ? (_) => model.onPanUpdate!.parse(context)
           : null,
-      onPanEnd: model.onPanEnd != null
-          ? (_) => model.onPanEnd!.parse(context)
-          : null,
+      onPanEnd:
+          model.onPanEnd != null ? (_) => model.onPanEnd!.parse(context) : null,
       onPanCancel: model.onPanCancel != null
           ? () => model.onPanCancel!.parse(context)
           : null,
@@ -195,7 +191,8 @@ class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
           : null,
       behavior: model.behavior?.parse,
       excludeFromSemantics: model.excludeFromSemantics ?? false,
-      dragStartBehavior: model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
       child: model.child.parse(context),
     );
   }
