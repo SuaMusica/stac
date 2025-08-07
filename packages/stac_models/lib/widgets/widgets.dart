@@ -32,3 +32,4 @@ export 'visibility/stac_visibility.dart';
 export 'safe_area/stac_safe_area.dart';
 export 'wrap/stac_wrap.dart';
 export 'single_child_scroll_view/stac_single_child_scroll_view.dart';
+export 'vertical_divider/stac_vertical_divider.dart';
