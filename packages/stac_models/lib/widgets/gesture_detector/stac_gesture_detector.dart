@@ -1,9 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/core/stac_widget.dart';
-import 'package:stac_models/core/stac_action.dart';
-import 'package:stac_models/types/stac_hit_test_behavior.dart';
-import 'package:stac_models/types/stac_drag_start_behavior.dart';
 
 part 'stac_gesture_detector.g.dart';
 

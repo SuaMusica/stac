@@ -102,12 +102,10 @@ class StacListView extends StacWidget {
   @DoubleConverter()
   final double? cacheExtent;
 
-  /// The raw JSON for the widgets to display in the list.
-  /// Each item is a Map<String, dynamic> representing a StacWidget.
+  /// The StacWidgets to display in the list.
   final List<StacWidget>? children;
 
-  /// The raw JSON for the separator widget to display between list items.
-  /// This is a Map<String, dynamic> representing a StacWidget.
+  /// The StacWidget to display between list items as a separator.
   final StacWidget? separator;
 
   /// The number of children that will contribute semantic information.

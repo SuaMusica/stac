@@ -6,7 +6,6 @@ import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_models/widgets/gesture_detector/stac_gesture_detector.dart';
-import 'package:stac_models/stac_models.dart';
 
 class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
   const StacGestureDetectorParser();
