@@ -5,6 +5,7 @@ export 'center/stac_center.dart';
 export 'column/stac_column.dart';
 export 'container/stac_container.dart';
 export 'divider/stac_divider.dart';
+export 'dynamic_view/stac_dynamic_view.dart';
 export 'elevated_button/stac_elevated_button.dart';
 export 'expanded/stac_expanded.dart';
 export 'filled_button/stac_filled_button.dart';
