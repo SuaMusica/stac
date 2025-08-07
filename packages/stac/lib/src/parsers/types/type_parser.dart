@@ -6,9 +6,8 @@ import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
-import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
-import 'package:stac_models/types/stac_alignment_directional.dart';
 import 'package:stac_models/types/stac_axis.dart';
+import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
 import 'package:stac_models/types/stac_blend_mode.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
@@ -883,6 +882,98 @@ extension StacAxisParser on StacAxis {
         return Axis.horizontal;
       case StacAxis.vertical:
         return Axis.vertical;
+    }
+  }
+}
+
+/// Extends [StacRefreshIndicatorTriggerMode] to provide parsing functionality.
+extension StacRefreshIndicatorTriggerModeParser
+    on StacRefreshIndicatorTriggerMode {
+  /// Parses this [StacRefreshIndicatorTriggerMode] into a Flutter [RefreshIndicatorTriggerMode].
+  RefreshIndicatorTriggerMode get parse {
+    switch (this) {
+      case StacRefreshIndicatorTriggerMode.onEdge:
+        return RefreshIndicatorTriggerMode.onEdge;
+      case StacRefreshIndicatorTriggerMode.anywhere:
+        return RefreshIndicatorTriggerMode.anywhere;
+    }
+  }
+}
+
+/// Extends [StacScrollPhysics] enum to provide parsing functionality.
+extension StacScrollPhysicsEnumParser on StacScrollPhysics {
+  /// Parses this [StacScrollPhysics] enum into a Flutter [ScrollPhysics] object.
+  ScrollPhysics get parse {
+    switch (this) {
+      case StacScrollPhysics.never:
+        return const NeverScrollableScrollPhysics();
+      case StacScrollPhysics.bouncing:
+        return const BouncingScrollPhysics();
+      case StacScrollPhysics.clamping:
+        return const ClampingScrollPhysics();
+      case StacScrollPhysics.fixed:
+        return const FixedExtentScrollPhysics();
+      case StacScrollPhysics.page:
+        return const PageScrollPhysics();
+    }
+  }
+}
+
+/// Extends [StacScrollViewKeyboardDismissBehavior] to provide parsing functionality.
+extension StacScrollViewKeyboardDismissBehaviorParser
+    on StacScrollViewKeyboardDismissBehavior {
+  /// Parses this [StacScrollViewKeyboardDismissBehavior] into a Flutter [ScrollViewKeyboardDismissBehavior] object.
+  ScrollViewKeyboardDismissBehavior get parse {
+    switch (this) {
+      case StacScrollViewKeyboardDismissBehavior.manual:
+        return ScrollViewKeyboardDismissBehavior.manual;
+      case StacScrollViewKeyboardDismissBehavior.onDrag:
+        return ScrollViewKeyboardDismissBehavior.onDrag;
+    }
+  }
+}
+
+/// Extends [StacListTileStyle] to provide parsing functionality.
+extension StacListTileStyleParser on StacListTileStyle {
+  /// Parses this [StacListTileStyle] into a Flutter [ListTileStyle].
+  ListTileStyle get parse {
+    switch (this) {
+      case StacListTileStyle.list:
+        return ListTileStyle.list;
+      case StacListTileStyle.drawer:
+        return ListTileStyle.drawer;
+    }
+  }
+}
+
+/// Extends [StacListTileTitleAlignment] to provide parsing functionality.
+extension StacListTileTitleAlignmentParser on StacListTileTitleAlignment {
+  /// Parses this [StacListTileTitleAlignment] into a Flutter [ListTileTitleAlignment].
+  ListTileTitleAlignment get parse {
+    switch (this) {
+      case StacListTileTitleAlignment.titleHeight:
+        return ListTileTitleAlignment.titleHeight;
+      case StacListTileTitleAlignment.threeLine:
+        return ListTileTitleAlignment.threeLine;
+      case StacListTileTitleAlignment.bottom:
+        return ListTileTitleAlignment.bottom;
+      case StacListTileTitleAlignment.center:
+        return ListTileTitleAlignment.center;
+    }
+  }
+}
+
+/// Extends [StacHitTestBehavior] to provide parsing functionality.
+extension StacHitTestBehaviorParser on StacHitTestBehavior {
+  /// Parses this [StacHitTestBehavior] into a Flutter [HitTestBehavior].
+  HitTestBehavior get parse {
+    switch (this) {
+      case StacHitTestBehavior.deferToChild:
+        return HitTestBehavior.deferToChild;
+      case StacHitTestBehavior.opaque:
+        return HitTestBehavior.opaque;
+      case StacHitTestBehavior.translucent:
+        return HitTestBehavior.translucent;
     }
   }
 }

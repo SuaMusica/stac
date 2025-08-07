@@ -7,9 +7,6 @@ part of 'stac_wrap.dart';
 // **************************************************************************
 
 StacWrap _$StacWrapFromJson(Map<String, dynamic> json) => StacWrap(
-  children: (json['children'] as List<dynamic>?)
-      ?.map((e) => StacWidget.fromJson(e as Map<String, dynamic>))
-      .toList(),
   direction: $enumDecodeNullable(_$StacAxisEnumMap, json['direction']),
   alignment: $enumDecodeNullable(_$StacWrapAlignmentEnumMap, json['alignment']),
   spacing: const DoubleConverter().fromJson(json['spacing']),
@@ -31,10 +28,12 @@ StacWrap _$StacWrapFromJson(Map<String, dynamic> json) => StacWrap(
     json['verticalDirection'],
   ),
   clipBehavior: $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']),
+  children: (json['children'] as List<dynamic>?)
+      ?.map((e) => StacWidget.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$StacWrapToJson(StacWrap instance) => <String, dynamic>{
-  'children': instance.children?.map((e) => e.toJson()).toList(),
   'direction': _$StacAxisEnumMap[instance.direction],
   'alignment': _$StacWrapAlignmentEnumMap[instance.alignment],
   'spacing': const DoubleConverter().toJson(instance.spacing),
@@ -46,6 +45,7 @@ Map<String, dynamic> _$StacWrapToJson(StacWrap instance) => <String, dynamic>{
   'verticalDirection':
       _$StacVerticalDirectionEnumMap[instance.verticalDirection],
   'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
+  'children': instance.children?.map((e) => e.toJson()).toList(),
   'type': instance.type,
 };
 
