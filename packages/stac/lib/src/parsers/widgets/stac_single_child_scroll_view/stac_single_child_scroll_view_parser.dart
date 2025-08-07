@@ -27,7 +27,7 @@ class StacSingleChildScrollViewParser
       primary: model.primary,
       physics: model.physics?.parse,
       dragStartBehavior:
-      model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
       clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
       restorationId: model.restorationId,
       keyboardDismissBehavior: model.keyboardDismissBehavior?.parse ??

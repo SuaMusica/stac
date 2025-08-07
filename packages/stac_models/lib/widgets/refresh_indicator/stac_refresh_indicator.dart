@@ -57,7 +57,7 @@ class StacRefreshIndicator extends StacWidget {
 
   /// The widget below this widget in the tree.
   final StacWidget? child;
-  
+
   /// A StacAction that's called when the user has dragged the refresh indicator
   /// far enough to demonstrate that they want the app to refresh.
   final StacAction? onRefresh;

@@ -890,7 +890,8 @@ extension StacAxisParser on StacAxis {
 }
 
 /// Extends [StacRefreshIndicatorTriggerMode] to provide parsing functionality.
-extension StacRefreshIndicatorTriggerModeParser on StacRefreshIndicatorTriggerMode {
+extension StacRefreshIndicatorTriggerModeParser
+    on StacRefreshIndicatorTriggerMode {
   /// Parses this [StacRefreshIndicatorTriggerMode] into a Flutter [RefreshIndicatorTriggerMode].
   RefreshIndicatorTriggerMode get parse {
     switch (this) {
@@ -922,7 +923,8 @@ extension StacScrollPhysicsEnumParser on StacScrollPhysics {
 }
 
 /// Extends [StacScrollViewKeyboardDismissBehavior] to provide parsing functionality.
-extension StacScrollViewKeyboardDismissBehaviorParser on StacScrollViewKeyboardDismissBehavior {
+extension StacScrollViewKeyboardDismissBehaviorParser
+    on StacScrollViewKeyboardDismissBehavior {
   /// Parses this [StacScrollViewKeyboardDismissBehavior] into a Flutter [ScrollViewKeyboardDismissBehavior] object.
   ScrollViewKeyboardDismissBehavior get parse {
     switch (this) {

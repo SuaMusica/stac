@@ -35,9 +35,7 @@ class StacListTileParser extends StacParser<StacListTile> {
       textColor: model.textColor?.toColor(context),
       contentPadding: model.contentPadding?.parse,
       enabled: model.enabled ?? true,
-      onTap: model.onTap != null
-          ? () => model.onTap?.parse(context)
-          : null,
+      onTap: model.onTap != null ? () => model.onTap?.parse(context) : null,
       onLongPress: model.onLongPress != null
           ? () => model.onLongPress?.parse(context)
           : null,

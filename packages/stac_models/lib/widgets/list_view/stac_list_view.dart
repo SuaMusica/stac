@@ -8,8 +8,6 @@ import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_scroll_physics.dart';
 import 'package:stac_models/types/stac_scroll_view_keyboard_dismiss_behavior.dart';
 
-
-
 part 'stac_list_view.g.dart';
 
 /// A Stac model representing Flutter's [ListView.separated] widget.
@@ -30,7 +28,7 @@ part 'stac_list_view.g.dart';
 ///   padding: StacEdgeInsets.all(10.0),
 ///   // ... other properties
 /// )
-/// 
+///
 ///
 ///
 /// json
@@ -47,7 +45,7 @@ part 'stac_list_view.g.dart';
 ///   "padding": {"all": 10.0}
 ///   // ... other properties
 /// }
-/// 
+///
 @JsonSerializable()
 class StacListView extends StacWidget {
   /// Creates a [StacListView].
@@ -139,4 +137,3 @@ class StacListView extends StacWidget {
   @override
   Map<String, dynamic> toJson() => _$StacListViewToJson(this);
 }
-

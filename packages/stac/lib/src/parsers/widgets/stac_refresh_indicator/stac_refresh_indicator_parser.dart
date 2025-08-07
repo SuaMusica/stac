@@ -51,7 +51,8 @@ class _RefreshIndicatorWidgetState extends State<_RefreshIndicatorWidget> {
       displacement: widget.model.displacement ?? 40.0,
       edgeOffset: widget.model.edgeOffset ?? 0.0,
       onRefresh: () async {
-        Response result = await widget.model.onRefresh?.parse(context) as Response;
+        Response result =
+            await widget.model.onRefresh?.parse(context) as Response;
 
         if (context.mounted) {
           if (result.data != null) {
@@ -71,8 +72,10 @@ class _RefreshIndicatorWidgetState extends State<_RefreshIndicatorWidget> {
       backgroundColor: widget.model.backgroundColor.toColor(context),
       semanticsLabel: widget.model.semanticsLabel,
       semanticsValue: widget.model.semanticsValue,
-      strokeWidth: widget.model.strokeWidth ?? RefreshProgressIndicator.defaultStrokeWidth,
-      triggerMode: widget.model.triggerMode?.parse ?? RefreshIndicatorTriggerMode.onEdge,
+      strokeWidth: widget.model.strokeWidth ??
+          RefreshProgressIndicator.defaultStrokeWidth,
+      triggerMode:
+          widget.model.triggerMode?.parse ?? RefreshIndicatorTriggerMode.onEdge,
       child: childWidget.parse(context) ?? const SizedBox.shrink(),
     );
   }
