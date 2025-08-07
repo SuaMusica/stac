@@ -26,7 +26,7 @@ export 'package:stac/src/parsers/widgets/stac_container/stac_container_parser.da
 export 'package:stac/src/parsers/widgets/stac_custom_scroll_view/stac_custom_scroll_view.dart';
 export 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
 export 'package:stac/src/parsers/widgets/stac_default_tab_controller/stac_default_tab_controller.dart';
-export 'package:stac/src/parsers/widgets/stac_divider/stac_divider.dart';
+export 'package:stac/src/parsers/widgets/stac_divider/stac_divider_parser.dart'; // Updated export
 export 'package:stac/src/parsers/widgets/stac_drawer/stac_drawer.dart';
 export 'package:stac/src/parsers/widgets/stac_dropdown_menu/stac_dropdown_menu.dart';
 export 'package:stac/src/parsers/widgets/stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
