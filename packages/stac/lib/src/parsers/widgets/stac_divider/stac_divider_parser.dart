@@ -3,6 +3,7 @@ import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_models/widgets/divider/stac_divider.dart';
+
 class StacDividerParser extends StacParser<StacDivider> {
   const StacDividerParser();
 
@@ -10,8 +11,7 @@ class StacDividerParser extends StacParser<StacDivider> {
   String get type => WidgetType.divider.name;
 
   @override
-  StacDivider getModel(Map<String, dynamic> json) =>
-      StacDivider.fromJson(json);
+  StacDivider getModel(Map<String, dynamic> json) => StacDivider.fromJson(json);
 
   @override
   Widget parse(BuildContext context, StacDivider model) {
