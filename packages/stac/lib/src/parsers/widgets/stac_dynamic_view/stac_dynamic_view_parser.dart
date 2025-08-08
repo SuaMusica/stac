@@ -3,11 +3,14 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_dynamic_view/stac_dynamic_view.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/services/stac_network_service.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_logger/stac_logger.dart';
+import 'package:stac_models/core/core.dart';
+import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/widgets/dynamic_view/stac_dynamic_view.dart';
 
 class StacDynamicViewParser extends StacParser<StacDynamicView> {
   const StacDynamicViewParser();
@@ -26,11 +29,11 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
       future: _fetchData(context, model),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Stac.fromJson(model.loaderWidget, context) ??
+          return model.loaderWidget.parse(context) ??
               const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           Log.e(snapshot.error);
-          return Stac.fromJson(model.errorWidget, context) ?? const SizedBox();
+          return model.errorWidget.parse(context) ?? const SizedBox();
         } else if (snapshot.hasData) {
           final response = snapshot.data;
           if (response != null) {
@@ -45,11 +48,11 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
                 responseData = response.data;
               }
 
-              final data = model.targetPath.isEmpty
+              final data = model.targetPath?.isEmpty ?? true
                   ? responseData
                   : _extractNestedData(
                       responseData,
-                      model.targetPath.split('.'),
+                      model.targetPath?.split('.') ?? [],
                     );
 
               Log.d("data: $data");
@@ -58,28 +61,27 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
                 // Check if data is an empty list and we have an empty template
                 if (_isEmptyList(data) && model.emptyTemplate != null) {
                   Log.d("Data is empty list, using empty template");
-                  return Stac.fromJson(model.emptyTemplate!, context) ??
-                      const SizedBox();
+                  return model.emptyTemplate.parse(context) ?? const SizedBox();
                 }
 
                 // Prepare data for template based on resultTarget
-                final dataForTemplate = model.resultTarget.isNotEmpty
-                    ? {model.resultTarget: data}
-                    : data;
+                final dataForTemplate =
+                    (model.resultTarget?.isNotEmpty ?? false)
+                        ? {model.resultTarget: data}
+                        : data;
 
                 // Apply the data to the template
                 final renderedTemplate = _applyDataToTemplate(
-                  model.template,
+                  model.template ?? StacSizedBox(),
                   dataForTemplate,
-                  model.resultTarget,
+                  model.resultTarget ?? "",
                 );
                 return Stac.fromJson(renderedTemplate, context) ??
                     const SizedBox();
               }
             } catch (e) {
               Log.e('Error parsing API response: $e');
-              return Stac.fromJson(model.errorWidget, context) ??
-                  const SizedBox();
+              return model.errorWidget.parse(context) ?? const SizedBox();
             }
           }
           return const SizedBox();
@@ -154,21 +156,20 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
   }
 
   Map<String, dynamic> _applyDataToTemplate(
-    Map<String, dynamic> currentTemplate,
+    StacWidget currentTemplate,
     dynamic data,
     String resultTarget,
   ) {
     // Deep copy template to avoid modifying the original
-    Map<String, dynamic> resolvedTemplate =
-        jsonDecode(jsonEncode(currentTemplate));
+    Map<String, dynamic> resolvedTemplateJson = currentTemplate.toJson();
 
     // Check for list processing with itemTemplate
-    if (resolvedTemplate.containsKey('itemTemplate')) {
+    if (resolvedTemplateJson.containsKey('itemTemplate')) {
       dynamic listForIteration;
       final String itemTemplateKey = 'itemTemplate';
       // Ensure itemTemplateActual is correctly typed.
       final itemTemplateActual =
-          resolvedTemplate[itemTemplateKey] as Map<String, dynamic>;
+          resolvedTemplateJson[itemTemplateKey] as Map<String, dynamic>;
 
       if (resultTarget.isNotEmpty &&
           data is Map &&
@@ -184,13 +185,13 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
         if (listForIteration is List && listForIteration.isEmpty) {
           Log.d(
               "List for iteration is empty, removing itemTemplate and children");
-          resolvedTemplate.remove(itemTemplateKey);
+          resolvedTemplateJson.remove(itemTemplateKey);
           // Clear children or set to empty list
-          resolvedTemplate['children'] = [];
-          return resolvedTemplate;
+          resolvedTemplateJson['children'] = [];
+          return resolvedTemplateJson;
         }
 
-        resolvedTemplate
+        resolvedTemplateJson
             .remove(itemTemplateKey); // Remove from outer template structure
         final processedChildItems = <Map<String, dynamic>>[];
 
@@ -209,15 +210,16 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
           }
         }
 
-        if (!resolvedTemplate.containsKey('children')) {
-          resolvedTemplate['children'] = [];
+        if (!resolvedTemplateJson.containsKey('children')) {
+          resolvedTemplateJson['children'] = [];
         }
-        if (resolvedTemplate['children'] is List) {
-          (resolvedTemplate['children'] as List).addAll(processedChildItems);
+        if (resolvedTemplateJson['children'] is List) {
+          (resolvedTemplateJson['children'] as List)
+              .addAll(processedChildItems);
         } else {
           Log.w(
               "Template has 'children' but it's not a List. Overwriting with processed items.");
-          resolvedTemplate['children'] = processedChildItems;
+          resolvedTemplateJson['children'] = processedChildItems;
         }
       } else {
         Log.d(
@@ -231,13 +233,13 @@ class StacDynamicViewParser extends StacParser<StacDynamicView> {
       // Ensure it's Map<dynamic, dynamic> for _processTemplateRecursively
       final Map<dynamic, dynamic> mapDataContext =
           Map<dynamic, dynamic>.from(data);
-      _processTemplateRecursively(resolvedTemplate, mapDataContext);
+      _processTemplateRecursively(resolvedTemplateJson, mapDataContext);
     } else {
       Log.d(
           "Overall dataContext is not a Map, skipping final placeholder processing for the main template structure. DataContext: $data");
     }
 
-    return resolvedTemplate;
+    return resolvedTemplateJson;
   }
 
   Map<String, dynamic> _applyDataToItem(
