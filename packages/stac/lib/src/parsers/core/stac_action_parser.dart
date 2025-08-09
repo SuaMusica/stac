@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:stac/stac.dart';
 import 'package:stac_models/stac_models.dart';
 
-extension StacActionParser on StacAction? {
+extension StacActionParserExtension on StacAction? {
   FutureOr<dynamic> parse(BuildContext context) {
     if (this == null) {
       return null;
