@@ -93,12 +93,15 @@ class StacIcon extends StacWidget {
   /// Blend mode for the icon.
   final StacBlendMode? blendMode;
 
+  /// Widget type identifier.
   @override
   String get type => 'icon';
 
+  /// Creates a [StacIcon] from JSON.
   factory StacIcon.fromJson(Map<String, dynamic> json) =>
       _$StacIconFromJson(json);
 
+  /// Converts this [StacIcon] to JSON.
   @override
   Map<String, dynamic> toJson() => _$StacIconToJson(this);
 }
