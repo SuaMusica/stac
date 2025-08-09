@@ -14,7 +14,7 @@ part 'stac_icon_button.g.dart';
 /// ```dart
 /// StacIconButton(
 ///   onPressed: {'action': 'navigate', 'route': '/next'},
-///   icon: StacIcon(icon: Icons.add),
+///   icon: StacIcon(icon: 'add'),
 ///   color: '#FF5722',
 /// )
 /// ```

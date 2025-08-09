@@ -20,8 +20,8 @@ export 'package:stac/src/parsers/widgets/stac_circular_progress_indicator/stac_c
 export 'package:stac/src/parsers/widgets/stac_clip_oval/stac_clip_oval.dart';
 export 'package:stac/src/parsers/widgets/stac_clip_rrect/stac_clip_rrect.dart';
 export 'package:stac/src/parsers/widgets/stac_colored_box/stac_colored_box.dart';
-export 'package:stac/src/parsers/widgets/stac_conditional/stac_conditional.dart';
 export 'package:stac/src/parsers/widgets/stac_column/stac_column_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_conditional/stac_conditional.dart';
 export 'package:stac/src/parsers/widgets/stac_container/stac_container_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_custom_scroll_view/stac_custom_scroll_view.dart';
 export 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
@@ -48,7 +48,7 @@ export 'package:stac/src/parsers/widgets/stac_gesture_detector/stac_gesture_dete
 export 'package:stac/src/parsers/widgets/stac_gradient/stac_gradient.dart';
 export 'package:stac/src/parsers/widgets/stac_grid_view/stac_grid_view.dart';
 export 'package:stac/src/parsers/widgets/stac_hero/stac_hero.dart';
-export 'package:stac/src/parsers/widgets/stac_icon/stac_icon.dart';
+export 'package:stac/src/parsers/widgets/stac_icon/stac_icon_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_icon_button/stac_icon_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_image/stac_image.dart';
 export 'package:stac/src/parsers/widgets/stac_input_decoration/stac_input_decoration.dart';
@@ -87,5 +87,5 @@ export 'package:stac/src/parsers/widgets/stac_text_field/stac_text_field.dart';
 export 'package:stac/src/parsers/widgets/stac_text_form_field/stac_text_form_field.dart';
 export 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 export 'package:stac/src/parsers/widgets/stac_vertical_divider/stac_vertical_divider_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_wrap/stac_wrap_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_visibility/stac_visibility_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_wrap/stac_wrap_parser.dart';
