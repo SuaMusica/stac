@@ -977,3 +977,13 @@ extension StacHitTestBehaviorParser on StacHitTestBehavior {
     }
   }
 }
+
+extension StacShadowParser on StacShadow {
+  Shadow parse(BuildContext context) {
+    return Shadow(
+      color: color.toColor(context) ?? Colors.transparent,
+      offset: (offset)?.parse ?? Offset.zero,
+      blurRadius: (blurRadius) ?? 0.0,
+    );
+  }
+}
