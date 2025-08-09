@@ -8,9 +8,7 @@ import 'package:stac/src/services/stac_network_service.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_logger/stac_logger.dart';
-import 'package:stac_models/core/core.dart';
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/widgets/dynamic_view/stac_dynamic_view.dart';
 
 class StacDynamicViewParser extends StacParser<StacDynamicView> {
   const StacDynamicViewParser();
