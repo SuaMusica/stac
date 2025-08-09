@@ -14,7 +14,7 @@ part 'stac_floating_action_button.g.dart';
 /// ```dart
 /// StacFloatingActionButton(
 ///   onPressed: {'action': 'navigate', 'route': '/next'},
-///   child: StacIcon(icon: Icons.add),
+///   child: StacIcon(icon: 'add'),
 ///   backgroundColor: '#FF5722',
 /// )
 /// ```
