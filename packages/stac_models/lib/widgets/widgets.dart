@@ -18,6 +18,7 @@ export 'icon/stac_icon.dart';
 export 'icon/stac_icons.dart';
 export 'icon_button/stac_icon_button.dart';
 export 'image/stac_image.dart';
+export 'ink_well/stac_ink_well.dart';
 export 'limited_box/stac_limited_box.dart';
 export 'opacity/stac_opacity.dart';
 export 'outlined_button/stac_outlined_button.dart';
