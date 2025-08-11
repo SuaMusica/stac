@@ -33,6 +33,9 @@ import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
 import 'package:stac_models/types/stac_wrap_alignment.dart';
 import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {
@@ -74,6 +77,113 @@ extension StacFloatingActionButtonLocationParser
         return FloatingActionButtonLocation.endDocked;
       case StacFloatingActionButtonLocation.miniEndDocked:
         return FloatingActionButtonLocation.miniEndDocked;
+    }
+  }
+}
+
+extension StacInputDecorationParser on StacInputDecoration {
+  InputDecoration parse(BuildContext context) {
+    return InputDecoration(
+      icon: icon.parse(context),
+      labelText: labelText,
+      labelStyle: labelStyle?.parse(context),
+      hintText: hintText,
+      hintStyle: hintStyle?.parse(context),
+      helperText: helperText,
+      helperStyle: helperStyle?.parse(context),
+      errorText: errorText,
+      errorStyle: errorStyle?.parse(context),
+      prefixIcon: prefixIcon.parse(context),
+      prefixText: prefixText,
+      prefixStyle: prefixStyle?.parse(context),
+      suffixIcon: suffixIcon.parse(context),
+      suffixText: suffixText,
+      suffixStyle: suffixStyle?.parse(context),
+      isDense: isDense,
+      contentPadding: contentPadding?.parse,
+      filled: filled,
+      fillColor: fillColor?.toColor(context),
+      alignLabelWithHint: alignLabelWithHint,
+    );
+  }
+}
+
+// Kept for backward compatibility if nullable usage is needed elsewhere
+// Removed nullable backward-compat InputDecoration parser extension
+
+extension StacTextInputTypeParser on StacTextInputType {
+  TextInputType get parse {
+    switch (this) {
+      case StacTextInputType.text:
+        return TextInputType.text;
+      case StacTextInputType.multiline:
+        return TextInputType.multiline;
+      case StacTextInputType.number:
+        return TextInputType.number;
+      case StacTextInputType.phone:
+        return TextInputType.phone;
+      case StacTextInputType.datetime:
+        return TextInputType.datetime;
+      case StacTextInputType.emailAddress:
+        return TextInputType.emailAddress;
+      case StacTextInputType.url:
+        return TextInputType.url;
+      case StacTextInputType.visiblePassword:
+        return TextInputType.visiblePassword;
+      case StacTextInputType.name:
+        return TextInputType.name;
+      case StacTextInputType.streetAddress:
+        return TextInputType.streetAddress;
+      case StacTextInputType.none:
+        return TextInputType.none;
+    }
+  }
+}
+
+extension StacTextInputActionParser on StacTextInputAction {
+  TextInputAction get parse {
+    switch (this) {
+      case StacTextInputAction.none:
+        return TextInputAction.none;
+      case StacTextInputAction.unspecified:
+        return TextInputAction.unspecified;
+      case StacTextInputAction.done:
+        return TextInputAction.done;
+      case StacTextInputAction.go:
+        return TextInputAction.go;
+      case StacTextInputAction.search:
+        return TextInputAction.search;
+      case StacTextInputAction.send:
+        return TextInputAction.send;
+      case StacTextInputAction.next:
+        return TextInputAction.next;
+      case StacTextInputAction.previous:
+        return TextInputAction.previous;
+      case StacTextInputAction.continueAction:
+        return TextInputAction.continueAction;
+      case StacTextInputAction.join:
+        return TextInputAction.join;
+      case StacTextInputAction.route:
+        return TextInputAction.route;
+      case StacTextInputAction.emergencyCall:
+        return TextInputAction.emergencyCall;
+      case StacTextInputAction.newline:
+        return TextInputAction.newline;
+    }
+  }
+}
+
+extension StacTextCapitalizationParser on StacTextCapitalization {
+  TextCapitalization get parse {
+    switch (this) {
+      case StacTextCapitalization.none:
+        return TextCapitalization.none;
+      case StacTextCapitalization.characters:
+        return TextCapitalization.characters;
+      case StacTextCapitalization.words:
+        return TextCapitalization.words;
+      case StacTextCapitalization.sentences:
+        return TextCapitalization.sentences;
     }
   }
 }

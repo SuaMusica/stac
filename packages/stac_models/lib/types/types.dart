@@ -17,4 +17,5 @@ export 'stac_scroll_physics.dart';
 export 'stac_scroll_view_keyboard_dismiss_behavior.dart';
 export 'stac_shadow/stac_shadow.dart';
 export 'stac_size/stac_size.dart';
+export 'stac_text_input_types.dart';
 export 'stac_visual_density/stac_visual_density.dart';
