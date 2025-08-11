@@ -34,6 +34,7 @@ export 'spacer/stac_spacer.dart';
 export 'stack/stac_stack.dart';
 export 'text/stac_text.dart';
 export 'text_button/stac_text_button.dart';
+export 'text_field/stac_text_field.dart';
 export 'vertical_divider/stac_vertical_divider.dart';
 export 'visibility/stac_visibility.dart';
 export 'wrap/stac_wrap.dart';
