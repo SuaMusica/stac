@@ -21,6 +21,7 @@ export 'icon_button/stac_icon_button.dart';
 export 'image/stac_image.dart';
 export 'ink_well/stac_ink_well.dart';
 export 'limited_box/stac_limited_box.dart';
+export 'network_widget/stac_network_widget.dart';
 export 'opacity/stac_opacity.dart';
 export 'outlined_button/stac_outlined_button.dart';
 export 'padding/stac_padding.dart';
