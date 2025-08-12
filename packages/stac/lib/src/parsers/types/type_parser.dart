@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/gestures.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_models/stac_models.dart';
@@ -29,13 +30,13 @@ import 'package:stac_models/types/stac_offset/stac_offset.dart';
 import 'package:stac_models/types/stac_rect/stac_rect.dart';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
-import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
 import 'package:stac_models/types/stac_wrap_alignment.dart';
 import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/utils/input_formatters.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {
@@ -749,6 +750,51 @@ extension StacBrightnessParser on StacBrightness {
   }
 }
 
+extension StacSmartDashesTypeParser on StacSmartDashesType {
+  SmartDashesType get parse {
+    switch (this) {
+      case StacSmartDashesType.disabled:
+        return SmartDashesType.disabled;
+      case StacSmartDashesType.enabled:
+        return SmartDashesType.enabled;
+    }
+  }
+}
+
+extension StacSmartQuotesTypeParser on StacSmartQuotesType {
+  SmartQuotesType get parse {
+    switch (this) {
+      case StacSmartQuotesType.disabled:
+        return SmartQuotesType.disabled;
+      case StacSmartQuotesType.enabled:
+        return SmartQuotesType.enabled;
+    }
+  }
+}
+
+extension StacMaxLengthEnforcementParser on StacMaxLengthEnforcement {
+  MaxLengthEnforcement get parse {
+    switch (this) {
+      case StacMaxLengthEnforcement.none:
+        return MaxLengthEnforcement.none;
+      case StacMaxLengthEnforcement.enforced:
+        return MaxLengthEnforcement.enforced;
+    }
+  }
+}
+
+/// Maps [StacInputFormatterType] to core [InputFormatterType].
+extension StacInputFormatterTypeCoreParser on StacInputFormatterType {
+  InputFormatterType get toCore {
+    switch (this) {
+      case StacInputFormatterType.allow:
+        return InputFormatterType.allow;
+      case StacInputFormatterType.deny:
+        return InputFormatterType.deny;
+    }
+  }
+}
+
 extension StacStackFitParser on StacStackFit {
   StackFit get parse {
     switch (this) {
@@ -1095,5 +1141,20 @@ extension StacShadowParser on StacShadow {
       offset: (offset)?.parse ?? Offset.zero,
       blurRadius: (blurRadius) ?? 0.0,
     );
+  }
+}
+
+/// Extends [StacAutovalidateMode] to provide parsing functionality.
+extension StacAutovalidateModeParser on StacAutovalidateMode {
+  /// Parses this [StacAutovalidateMode] into a Flutter [AutovalidateMode].
+  AutovalidateMode get parse {
+    switch (this) {
+      case StacAutovalidateMode.disabled:
+        return AutovalidateMode.disabled;
+      case StacAutovalidateMode.always:
+        return AutovalidateMode.always;
+      case StacAutovalidateMode.onUserInteraction:
+        return AutovalidateMode.onUserInteraction;
+    }
   }
 }
