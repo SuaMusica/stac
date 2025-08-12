@@ -1,5 +1,4 @@
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/types/stac_text_types.dart';
 
 StacWidget homeScreen() {
   return StacScaffold(

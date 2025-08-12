@@ -3,7 +3,10 @@ import 'package:stac_models/core/converters/double_converter.dart';
 import 'package:stac_models/core/stac_action.dart';
 import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/painting/painting.dart';
-import 'package:stac_models/types/types.dart';
+import 'package:stac_models/types/stac_drag_start_behavior.dart';
+import 'package:stac_models/types/stac_mouse_cursor.dart';
+import 'package:stac_models/types/stac_scroll_physics.dart';
+import 'package:stac_models/types/stac_text_input_types.dart';
 import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_clip.dart';
 

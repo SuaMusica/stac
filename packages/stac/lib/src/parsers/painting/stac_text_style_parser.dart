@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/types/stac_text_types.dart';
 
 extension StacTextStyleParser on StacTextStyle {
   TextStyle parse(BuildContext context) {

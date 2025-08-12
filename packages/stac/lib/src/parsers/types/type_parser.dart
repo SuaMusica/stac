@@ -785,7 +785,7 @@ extension StacMaxLengthEnforcementParser on StacMaxLengthEnforcement {
 
 /// Maps [StacInputFormatterType] to core [InputFormatterType].
 extension StacInputFormatterTypeCoreParser on StacInputFormatterType {
-  InputFormatterType get toCore {
+  InputFormatterType get parse {
     switch (this) {
       case StacInputFormatterType.allow:
         return InputFormatterType.allow;
