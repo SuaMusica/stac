@@ -39,7 +39,7 @@ class StacInkwellParser extends StacParser<StacInkWell> {
       highlightColor: model.highlightColor?.toColor(context),
       overlayColor: model.overlayColor == null
           ? null
-          : MaterialStateProperty.all(model.overlayColor!.toColor(context)),
+          : WidgetStateProperty.all(model.overlayColor!.toColor(context)),
       splashColor: model.splashColor?.toColor(context),
       radius: model.radius,
       borderRadius: model.borderRadius?.parse,

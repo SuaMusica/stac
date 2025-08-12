@@ -1,6 +1,5 @@
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
-import 'package:stac_models/types/stac_text_types.dart';
 
 final double fontSize = 20;
 

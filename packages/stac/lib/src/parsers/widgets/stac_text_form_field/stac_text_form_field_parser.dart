@@ -96,8 +96,10 @@ class _TextFormFieldWidgetState extends State<_TextFormFieldWidget> {
       cursorColor: widget.model.cursorColor?.toColor(context),
       style: widget.model.style?.parse(context),
       decoration: widget.model.decoration?.parse(context),
-      inputFormatters:
-          widget.model.inputFormatters?.map((f) => f.parse()).toList(),
+      inputFormatters: widget.model.inputFormatters
+          ?.map((inputFormatter) =>
+              inputFormatter.type.parse.format(inputFormatter.rule ?? ""))
+          .toList(),
       validator: (value) {
         return _validate(
           value,

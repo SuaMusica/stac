@@ -126,8 +126,10 @@ class StacTextFormField extends StacWidget {
   /// Character used when [obscureText] is true.
   final String? obscuringCharacter;
 
-  /// Maximum and minimum lines.
+  /// Maximum lines.
   final int? maxLines;
+
+  /// Minimum lines.
   final int? minLines;
 
   /// Maximum number of characters allowed.
