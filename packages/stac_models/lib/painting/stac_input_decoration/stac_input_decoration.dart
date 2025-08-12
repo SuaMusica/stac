@@ -63,30 +63,30 @@ class StacInputDecoration extends StacElement {
 
   /// Optional label text to display above/beside the input.
   final String? labelText;
-  
+
   /// Text style for [labelText].
   final StacTextStyle? labelStyle;
 
   /// Optional placeholder text.
   final String? hintText;
-  
+
   /// Text style for [hintText].
   final StacTextStyle? hintStyle;
 
   /// Optional helper and error texts.
   final String? helperText;
-  
+
   /// Text style for [helperText].
   final StacTextStyle? helperStyle;
   final String? errorText;
-  
+
   /// Text style for [errorText].
   final StacTextStyle? errorStyle;
 
   /// Optional prefix/suffix widgets and texts.
   final StacWidget? prefixIcon;
   final String? prefixText;
-  
+
   /// Text style for [prefixText].
   final StacTextStyle? prefixStyle;
 
@@ -126,5 +126,3 @@ class StacInputDecoration extends StacElement {
   @override
   Map<String, dynamic> toJson() => _$StacInputDecorationToJson(this);
 }
-
-

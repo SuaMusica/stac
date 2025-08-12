@@ -33,7 +33,6 @@ class StacInkwellParser extends StacParser<StacInkWell> {
       onHighlightChanged: (_) => model.onHighlightChanged?.parse(context),
       onHover: (_) => model.onHover?.parse(context),
       onFocusChange: (_) => model.onFocusChange?.parse(context),
-
       mouseCursor: model.mouseCursor?.parse,
       focusColor: model.focusColor?.toColor(context),
       hoverColor: model.hoverColor?.toColor(context),
