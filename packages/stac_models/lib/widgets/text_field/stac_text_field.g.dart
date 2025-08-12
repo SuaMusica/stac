@@ -136,6 +136,9 @@ const _$StacTextInputTypeEnumMap = {
   StacTextInputType.emailAddress: 'emailAddress',
   StacTextInputType.url: 'url',
   StacTextInputType.visiblePassword: 'visiblePassword',
+  StacTextInputType.name: 'name',
+  StacTextInputType.streetAddress: 'streetAddress',
+  StacTextInputType.none: 'none',
 };
 
 const _$StacTextInputActionEnumMap = {

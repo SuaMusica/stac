@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/stac_widget.dart';
+import 'package:stac_models/types/stac_brightness.dart';
 
 part 'stac_system_ui_overlay_style.g.dart';
 
@@ -31,5 +32,3 @@ class StacSystemUIOverlayStyle extends StacElement {
   @override
   Map<String, dynamic> toJson() => _$StacSystemUIOverlayStyleToJson(this);
 }
-
-enum StacBrightness { light, dark, system }

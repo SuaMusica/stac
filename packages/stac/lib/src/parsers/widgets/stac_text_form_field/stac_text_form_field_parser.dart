@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/parsers.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/input_validations.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_logger/stac_logger.dart';
+import 'package:stac_models/widgets/text_form_field/stac_text_form_field.dart';
 
 class StacTextFormFieldParser extends StacParser<StacTextFormField> {
   const StacTextFormFieldParser();
@@ -62,41 +63,41 @@ class _TextFormFieldWidgetState extends State<_TextFormFieldWidget> {
           widget.formScope?.formData[widget.model.id!] = value;
         }
       },
-      keyboardType: widget.model.keyboardType?.value,
-      textInputAction: widget.model.textInputAction,
-      textCapitalization: widget.model.textCapitalization,
-      textAlign: widget.model.textAlign,
-      textAlignVertical: widget.model.textAlignVertical?.value,
-      textDirection: widget.model.textDirection,
-      readOnly: widget.model.readOnly,
+      keyboardType: widget.model.keyboardType?.parse,
+      textInputAction: widget.model.textInputAction?.parse,
+      textCapitalization:
+          widget.model.textCapitalization?.parse ?? TextCapitalization.none,
+      textAlign: widget.model.textAlign?.parse ?? TextAlign.start,
+      textDirection: widget.model.textDirection?.parse,
+      readOnly: widget.model.readOnly ?? false,
       showCursor: widget.model.showCursor,
-      autofocus: widget.model.autofocus,
-      autovalidateMode: widget.model.autovalidateMode,
-      obscuringCharacter: widget.model.obscuringCharacter,
+      autofocus: widget.model.autofocus ?? false,
+      autovalidateMode: widget.model.autovalidateMode?.parse,
+      obscuringCharacter: widget.model.obscuringCharacter ?? '•',
       maxLines: widget.model.maxLines,
       minLines: widget.model.minLines,
       maxLength: widget.model.maxLength,
       obscureText: _obscureText,
-      autocorrect: widget.model.autocorrect,
-      smartDashesType: widget.model.smartDashesType,
-      smartQuotesType: widget.model.smartQuotesType,
-      maxLengthEnforcement: widget.model.maxLengthEnforcement,
-      expands: widget.model.expands,
-      keyboardAppearance: widget.model.keyboardAppearance,
-      scrollPadding: widget.model.scrollPadding.parse,
+      autocorrect: widget.model.autocorrect ?? true,
+      smartDashesType: widget.model.smartDashesType?.parse,
+      smartQuotesType: widget.model.smartQuotesType?.parse,
+      maxLengthEnforcement: widget.model.maxLengthEnforcement?.parse,
+      expands: widget.model.expands ?? false,
+      keyboardAppearance: widget.model.keyboardAppearance?.parse,
+      scrollPadding:
+          widget.model.scrollPadding?.parse ?? const EdgeInsets.all(20),
       restorationId: widget.model.restorationId,
-      enableIMEPersonalizedLearning: widget.model.enableIMEPersonalizedLearning,
-      enableSuggestions: widget.model.enableSuggestions,
+      enableIMEPersonalizedLearning:
+          widget.model.enableIMEPersonalizedLearning ?? true,
+      enableSuggestions: widget.model.enableSuggestions ?? true,
       enabled: widget.model.enabled,
-      cursorWidth: widget.model.cursorWidth.parse,
-      cursorHeight: widget.model.cursorHeight?.parse,
+      cursorWidth: widget.model.cursorWidth ?? 2.0,
+      cursorHeight: widget.model.cursorHeight,
       cursorColor: widget.model.cursorColor?.toColor(context),
       style: widget.model.style?.parse(context),
-      decoration: widget.model.decoration.parse(context),
-      inputFormatters: widget.model.inputFormatters
-          .map((StacInputFormatter formatter) =>
-              formatter.type.format(formatter.rule ?? ""))
-          .toList(),
+      decoration: widget.model.decoration?.parse(context),
+      inputFormatters:
+          widget.model.inputFormatters?.map((f) => f.parse()).toList(),
       validator: (value) {
         return _validate(
           value,
@@ -107,8 +108,8 @@ class _TextFormFieldWidgetState extends State<_TextFormFieldWidget> {
   }
 
   String? _validate(String? value, StacTextFormField model) {
-    if (value != null && widget.model.validatorRules.isNotEmpty) {
-      for (StacFormFieldValidator validator in widget.model.validatorRules) {
+    if (value != null && (widget.model.validatorRules?.isNotEmpty ?? false)) {
+      for (final validator in widget.model.validatorRules!) {
         try {
           final validationType = InputValidationType.values.firstWhere(
             (e) => e.name == validator.rule,
