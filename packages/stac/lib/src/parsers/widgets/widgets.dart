@@ -40,7 +40,7 @@ export 'package:stac/src/parsers/widgets/stac_fitted_box/stac_fitted_box_parser.
 export 'package:stac/src/parsers/widgets/stac_flexible/stac_flexible_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_floating_action_button/stac_floating_action_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_font_weight/stac_font_weight.dart';
-export 'package:stac/src/parsers/widgets/stac_form/stac_form.dart';
+export 'package:stac/src/parsers/widgets/stac_form/stac_form_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 export 'package:stac/src/parsers/widgets/stac_form_field_validator/stac_form_validator.dart';
 export 'package:stac/src/parsers/widgets/stac_fractionally_sized_box/stac_fractionally_sized_box_parser.dart';
@@ -84,7 +84,7 @@ export 'package:stac/src/parsers/widgets/stac_table/stac_table.dart';
 export 'package:stac/src/parsers/widgets/stac_table_cell/stac_table_cell.dart';
 export 'package:stac/src/parsers/widgets/stac_text_button/stac_text_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_text_field/stac_text_field_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_text_form_field/stac_text_form_field.dart';
+export 'package:stac/src/parsers/widgets/stac_text_form_field/stac_text_form_field_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
 export 'package:stac/src/parsers/widgets/stac_vertical_divider/stac_vertical_divider_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_visibility/stac_visibility_parser.dart';

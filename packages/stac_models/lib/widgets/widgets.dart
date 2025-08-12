@@ -13,6 +13,7 @@ export 'filled_button/stac_filled_button.dart';
 export 'fitted_box/stac_fitted_box.dart';
 export 'flexible/stac_flexible.dart';
 export 'floating_action_button/stac_floating_action_button.dart';
+export 'form/stac_form.dart';
 export 'fractionally_sized_box/stac_fractionally_sized_box.dart';
 export 'icon/stac_icon.dart';
 export 'icon/stac_icons.dart';
