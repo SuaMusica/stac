@@ -118,7 +118,8 @@ class StacInkWell extends StacWidget {
   final StacColor? highlightColor;
 
   /// The overlay color of the ink response.
-  final StacColor? overlayColor; // Note: In Flutter this is MaterialStateProperty<Color?>. StacColor simplifies this for now.
+  final StacColor?
+  overlayColor; // Note: In Flutter this is MaterialStateProperty<Color?>. StacColor simplifies this for now.
 
   /// The splash color of the ink response.
   final StacColor? splashColor;
