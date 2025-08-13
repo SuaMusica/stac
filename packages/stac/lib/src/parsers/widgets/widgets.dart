@@ -76,7 +76,7 @@ export 'package:stac/src/parsers/widgets/stac_slider/stac_slider_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_sliver_app_bar/stac_sliver_app_bar.dart';
 export 'package:stac/src/parsers/widgets/stac_spacer/stac_spacer_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_stack/stac_stack_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_switch/stac_switch.dart';
+export 'package:stac/src/parsers/widgets/stac_switch/stac_switch_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_tab/stac_tab.dart';
 export 'package:stac/src/parsers/widgets/stac_tab_bar/stac_tab_bar.dart';
 export 'package:stac/src/parsers/widgets/stac_tab_bar_view/stac_tab_bar_view.dart';

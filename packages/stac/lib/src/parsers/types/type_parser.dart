@@ -1146,6 +1146,20 @@ extension StacHitTestBehaviorParser on StacHitTestBehavior {
   }
 }
 
+// Parser extension for StacSwitchType to follow enum parser conventions
+extension StacSwitchTypeParser on StacSwitchType {
+  StacSwitchType get parse {
+    switch (this) {
+      case StacSwitchType.adaptive:
+        return StacSwitchType.adaptive;
+      case StacSwitchType.cupertino:
+        return StacSwitchType.cupertino;
+      case StacSwitchType.material:
+        return StacSwitchType.material;
+    }
+  }
+}
+
 extension StacShadowParser on StacShadow {
   Shadow parse(BuildContext context) {
     return Shadow(
