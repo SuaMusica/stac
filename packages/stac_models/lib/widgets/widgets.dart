@@ -2,6 +2,7 @@ library;
 
 export 'app_bar/stac_app_bar.dart';
 export 'aspect_ratio/stac_aspect_ratio.dart';
+export 'backdrop_filter/stac_backdrop_filter.dart';
 export 'center/stac_center.dart';
 export 'card/stac_card.dart';
 export 'chip/stac_chip.dart';
