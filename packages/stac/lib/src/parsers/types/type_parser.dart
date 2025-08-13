@@ -535,12 +535,10 @@ extension StacBorderSideParser on StacBorderSide {
 
 extension StacBorderParser on StacBorder {
   Border parse(BuildContext context) {
-    // Check if individual border sides are specified
     final hasIndividualSides =
         top != null || right != null || bottom != null || left != null;
 
     if (hasIndividualSides) {
-      // Use individual border sides
       return Border(
         top: top?.parse(context) ?? BorderSide.none,
         right: right?.parse(context) ?? BorderSide.none,
@@ -548,7 +546,6 @@ extension StacBorderParser on StacBorder {
         left: left?.parse(context) ?? BorderSide.none,
       );
     } else {
-      // Fall back to uniform border behavior for all sides
       return Border.all(
         color: color.toColor(context) ?? const Color(0xFF000000),
         width: width ?? 1.0,
@@ -742,7 +739,7 @@ extension StacBrightnessParser on StacBrightness {
       case StacBrightness.dark:
         return Brightness.dark;
       case StacBrightness.system:
-        return Brightness.light; // Or handle as per your system theme logic
+        return Brightness.light;
     }
   }
 }
@@ -780,7 +777,6 @@ extension StacMaxLengthEnforcementParser on StacMaxLengthEnforcement {
   }
 }
 
-/// Maps [StacInputFormatterType] to core [InputFormatterType].
 extension StacInputFormatterTypeCoreParser on StacInputFormatterType {
   InputFormatterType get parse {
     switch (this) {
@@ -1146,7 +1142,6 @@ extension StacHitTestBehaviorParser on StacHitTestBehavior {
   }
 }
 
-// Parser extension for StacSwitchType to follow enum parser conventions
 extension StacSwitchTypeParser on StacSwitchType {
   StacSwitchType get parse {
     switch (this) {
