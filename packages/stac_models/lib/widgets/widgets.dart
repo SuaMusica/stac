@@ -29,6 +29,7 @@ export 'positioned/stac_positioned.dart';
 export 'refresh_indicator/stac_refresh_indicator.dart';
 export 'check_box/stac_check_box.dart';
 export 'radio/stac_radio.dart';
+export 'radio_group/stac_radio_group.dart';
 export 'slider/stac_slider.dart';
 export 'row/stac_row.dart';
 export 'safe_area/stac_safe_area.dart';
