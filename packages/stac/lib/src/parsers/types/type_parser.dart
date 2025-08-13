@@ -27,7 +27,6 @@ import 'package:stac_models/types/stac_image_repeat.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
-import 'package:stac_models/types/stac_rect/stac_rect.dart';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
@@ -477,6 +476,22 @@ extension StacRectParser on StacRect {
         return fromLTWH();
       case StacRectType.fromPoints:
         return fromPoints();
+    }
+  }
+}
+
+extension StacRectTweenParser on StacRectTween {
+  RectTween parse(BuildContext context) {
+    final begin = this.begin?.parse;
+    final end = this.end?.parse;
+
+    switch (type) {
+      case 'materialRectArcTween':
+        return MaterialRectArcTween(begin: begin, end: end);
+      case 'materialRectCenterArcTween':
+        return MaterialRectCenterArcTween(begin: begin, end: end);
+      default:
+        return RectTween(begin: begin, end: end);
     }
   }
 }
