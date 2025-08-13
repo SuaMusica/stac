@@ -6,41 +6,38 @@ part of 'stac_check_box.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacCheckBox _$StacCheckBoxFromJson(Map<String, dynamic> json) =>
-    _StacCheckBox(
-      id: json['id'] as String?,
-      value: json['value'] as bool?,
-      tristate: json['tristate'] as bool? ?? false,
-      onChanged: json['onChanged'] as Map<String, dynamic>?,
-      mouseCursor:
-          $enumDecodeNullable(_$StacMouseCursorEnumMap, json['mouseCursor']),
-      activeColor: json['activeColor'] as String?,
-      fillColor: json['fillColor'] == null
-          ? null
-          : StacMaterialColor.fromJson(
-              json['fillColor'] as Map<String, dynamic>),
-      checkColor: json['checkColor'] as String?,
-      focusColor: json['focusColor'] as String?,
-      hoverColor: json['hoverColor'] as String?,
-      overlayColor: json['overlayColor'] == null
-          ? null
-          : StacMaterialColor.fromJson(
-              json['overlayColor'] as Map<String, dynamic>),
-      splashRadius: json['splashRadius'] == null
-          ? null
-          : StacDouble.fromJson(json['splashRadius']),
-      materialTapTargetSize: $enumDecodeNullable(
-          _$MaterialTapTargetSizeEnumMap, json['materialTapTargetSize']),
-      autofocus: json['autofocus'] as bool? ?? false,
-      isError: json['isError'] as bool? ?? false,
-    );
+StacCheckBox _$StacCheckBoxFromJson(Map<String, dynamic> json) => StacCheckBox(
+  id: json['id'] as String?,
+  value: json['value'] as bool?,
+  tristate: json['tristate'] as bool?,
+  onChanged: json['onChanged'] == null
+      ? null
+      : StacAction.fromJson(json['onChanged'] as Map<String, dynamic>),
+  mouseCursor: $enumDecodeNullable(
+    _$StacMouseCursorEnumMap,
+    json['mouseCursor'],
+  ),
+  activeColor: json['activeColor'] as String?,
+  fillColor: json['fillColor'] as String?,
+  checkColor: json['checkColor'] as String?,
+  focusColor: json['focusColor'] as String?,
+  hoverColor: json['hoverColor'] as String?,
+  overlayColor: json['overlayColor'] as String?,
+  splashRadius: const DoubleConverter().fromJson(json['splashRadius']),
+  materialTapTargetSize: $enumDecodeNullable(
+    _$StacMaterialTapTargetSizeEnumMap,
+    json['materialTapTargetSize'],
+  ),
+  autofocus: json['autofocus'] as bool?,
+  isError: json['isError'] as bool?,
+);
 
-Map<String, dynamic> _$StacCheckBoxToJson(_StacCheckBox instance) =>
+Map<String, dynamic> _$StacCheckBoxToJson(StacCheckBox instance) =>
     <String, dynamic>{
       'id': instance.id,
       'value': instance.value,
       'tristate': instance.tristate,
-      'onChanged': instance.onChanged,
+      'onChanged': instance.onChanged?.toJson(),
       'mouseCursor': _$StacMouseCursorEnumMap[instance.mouseCursor],
       'activeColor': instance.activeColor,
       'fillColor': instance.fillColor,
@@ -48,11 +45,12 @@ Map<String, dynamic> _$StacCheckBoxToJson(_StacCheckBox instance) =>
       'focusColor': instance.focusColor,
       'hoverColor': instance.hoverColor,
       'overlayColor': instance.overlayColor,
-      'splashRadius': instance.splashRadius,
+      'splashRadius': const DoubleConverter().toJson(instance.splashRadius),
       'materialTapTargetSize':
-          _$MaterialTapTargetSizeEnumMap[instance.materialTapTargetSize],
+          _$StacMaterialTapTargetSizeEnumMap[instance.materialTapTargetSize],
       'autofocus': instance.autofocus,
       'isError': instance.isError,
+      'type': instance.type,
     };
 
 const _$StacMouseCursorEnumMap = {
@@ -94,7 +92,7 @@ const _$StacMouseCursorEnumMap = {
   StacMouseCursor.zoomOut: 'zoomOut',
 };
 
-const _$MaterialTapTargetSizeEnumMap = {
-  MaterialTapTargetSize.padded: 'padded',
-  MaterialTapTargetSize.shrinkWrap: 'shrinkWrap',
+const _$StacMaterialTapTargetSizeEnumMap = {
+  StacMaterialTapTargetSize.padded: 'padded',
+  StacMaterialTapTargetSize.shrinkWrap: 'shrinkWrap',
 };
