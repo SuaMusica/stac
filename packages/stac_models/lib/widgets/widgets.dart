@@ -37,6 +37,7 @@ export 'single_child_scroll_view/stac_single_child_scroll_view.dart';
 export 'sized_box/stac_sized_box.dart';
 export 'spacer/stac_spacer.dart';
 export 'stack/stac_stack.dart';
+export 'switch/stac_switch.dart';
 export 'text/stac_text.dart';
 export 'text_button/stac_text_button.dart';
 export 'text_field/stac_text_field.dart';
