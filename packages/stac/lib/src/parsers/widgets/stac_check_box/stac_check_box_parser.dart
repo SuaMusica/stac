@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/theme/stac_material_color/stac_material_color.dart';
-import 'package:stac/src/parsers/widgets/stac_check_box/stac_check_box.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac/src/framework/stac.dart';
+import 'package:stac_models/widgets/check_box/stac_check_box.dart';
 
 class StacCheckBoxParser extends StacParser<StacCheckBox> {
   const StacCheckBoxParser();
 
   @override
-  StacCheckBox getModel(Map<String, dynamic> json) =>
-      StacCheckBox.fromJson(json);
+  String get type => WidgetType.checkBox.name;
 
   @override
-  String get type => WidgetType.checkBox.name;
+  StacCheckBox getModel(Map<String, dynamic> json) =>
+      StacCheckBox.fromJson(json);
 
   @override
   Widget parse(BuildContext context, StacCheckBox model) {
@@ -34,43 +34,52 @@ class _StacCheckBox extends StatefulWidget {
 }
 
 class _StacCheckBoxState extends State<_StacCheckBox> {
-  bool isMarkChecked = false;
+  bool? _currentValue;
 
   @override
   void initState() {
+    super.initState();
+    _currentValue = widget.model.value;
     if (widget.model.id != null && widget.formScope != null) {
       widget.formScope!.formData[widget.model.id!] = widget.model.value;
     }
-
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Checkbox(
-      value: isMarkChecked,
-      tristate: widget.model.tristate,
-      onChanged: (value) {
+      value: _currentValue,
+      tristate: widget.model.tristate ?? false,
+      onChanged: (bool? value) {
         setState(() {
-          isMarkChecked = !isMarkChecked;
+          _currentValue = value ?? false;
         });
         if (widget.model.id != null) {
           widget.formScope?.formData[widget.model.id!] = value;
         }
+        if (widget.model.onChanged != null) {
+          Stac.onCallFromJson(widget.model.onChanged!.toJson(), context);
+        }
       },
-      mouseCursor: widget.model.mouseCursor?.value,
-      activeColor: widget.model.activeColor.toColor(context),
-      fillColor:
-          WidgetStateProperty.all(widget.model.fillColor?.parse(context)),
-      checkColor: widget.model.checkColor.toColor(context),
-      focusColor: widget.model.focusColor.toColor(context),
-      hoverColor: widget.model.hoverColor.toColor(context),
-      overlayColor:
-          WidgetStateProperty.all(widget.model.overlayColor?.parse(context)),
-      splashRadius: widget.model.splashRadius?.parse,
-      materialTapTargetSize: widget.model.materialTapTargetSize,
-      autofocus: widget.model.autofocus,
-      isError: widget.model.isError,
+      mouseCursor: widget.model.mouseCursor?.parse,
+      activeColor: widget.model.activeColor?.toColor(context),
+      fillColor: widget.model.fillColor != null
+          ? WidgetStateProperty.all(
+              widget.model.fillColor!.toColor(context),
+            )
+          : null,
+      checkColor: widget.model.checkColor?.toColor(context),
+      focusColor: widget.model.focusColor?.toColor(context),
+      hoverColor: widget.model.hoverColor?.toColor(context),
+      overlayColor: widget.model.overlayColor != null
+          ? WidgetStateProperty.all(
+              widget.model.overlayColor!.toColor(context),
+            )
+          : null,
+      splashRadius: widget.model.splashRadius,
+      materialTapTargetSize: widget.model.materialTapTargetSize?.parse,
+      autofocus: widget.model.autofocus ?? false,
+      isError: widget.model.isError ?? false,
     );
   }
 }
