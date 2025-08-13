@@ -31,5 +31,7 @@ export 'stac_radio_type.dart';
 export 'stac_slider_interaction.dart';
 export 'stac_slider_type.dart';
 export 'stac_switch_type.dart';
+export 'stac_blend_mode.dart';
+export 'stac_image_filter/stac_image_filter.dart';
 export 'stac_rect/stac_rect.dart';
 export 'stac_rect_tween/stac_rect_tween.dart';
