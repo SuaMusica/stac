@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_slider.dart';
+import 'package:stac_models/widgets/slider/stac_slider.dart';
+import 'package:stac_models/types/stac_slider_type.dart';
 
 class StacSliderParser extends StacParser<StacSlider> {
   const StacSliderParser();
@@ -39,7 +39,7 @@ class __StacSliderState extends State<_StacSlider> {
 
   @override
   void initState() {
-    selectedValue = widget.model.value.parse;
+    selectedValue = widget.model.value;
     if (widget.model.id != null) {
       widget.formScope?.formData[widget.model.id!] = selectedValue;
     }
@@ -48,25 +48,20 @@ class __StacSliderState extends State<_StacSlider> {
 
   void _onChanged(double value) {
     selectedValue = value;
-    if (widget.model.onChanged != null) {
-      Stac.onCallFromJson(widget.model.onChanged, context);
-    }
     if (widget.model.id != null) {
       widget.formScope?.formData[widget.model.id!] = value;
     }
+    widget.model.onChanged?.parse(context);
+
     setState(() {});
   }
 
   void _onChangeStart(double value) {
-    if (widget.model.onChangeStart != null) {
-      Stac.onCallFromJson(widget.model.onChangeStart, context);
-    }
+    widget.model.onChangeStart?.parse(context);
   }
 
   void _onChangeEnd(double value) {
-    if (widget.model.onChangeEnd != null) {
-      Stac.onCallFromJson(widget.model.onChangeEnd, context);
-    }
+    widget.model.onChangeEnd?.parse(context);
   }
 
   @override
@@ -74,7 +69,7 @@ class __StacSliderState extends State<_StacSlider> {
     final StacSlider model = widget.model;
     final FocusNode focusNode = FocusNode();
 
-    switch (model.sliderType) {
+    switch (model.sliderType ?? StacSliderType.adaptive) {
       case StacSliderType.material:
         return _buildMaterialSlider(model, focusNode, selectedValue);
       case StacSliderType.adaptive:
@@ -91,12 +86,12 @@ class __StacSliderState extends State<_StacSlider> {
   ) {
     return Slider(
       value: value,
-      secondaryTrackValue: model.secondaryTrackValue?.parse,
+      secondaryTrackValue: model.secondaryTrackValue,
       onChanged: (value) => _onChanged(value),
       onChangeStart: (value) => _onChangeStart(value),
       onChangeEnd: (value) => _onChangeEnd(value),
-      min: model.min.parse,
-      max: model.max.parse,
+      min: model.min ?? 0.0,
+      max: model.max ?? 1.0,
       divisions: model.divisions,
       label: model.label,
       activeColor: model.activeColor?.toColor(context),
@@ -106,10 +101,10 @@ class __StacSliderState extends State<_StacSlider> {
       overlayColor: WidgetStateProperty.all(
         model.overlayColor?.toColor(context),
       ),
-      mouseCursor: model.mouseCursor?.value,
+      mouseCursor: model.mouseCursor?.parse,
       focusNode: focusNode,
-      autofocus: model.autofocus,
-      allowedInteraction: model.allowedInteraction,
+      autofocus: model.autofocus ?? false,
+      allowedInteraction: model.allowedInteraction?.parse,
     );
   }
 
@@ -120,12 +115,12 @@ class __StacSliderState extends State<_StacSlider> {
   ) {
     return Slider.adaptive(
       value: value,
-      secondaryTrackValue: model.secondaryTrackValue?.parse,
+      secondaryTrackValue: model.secondaryTrackValue,
       onChanged: (value) => _onChanged(value),
       onChangeStart: (value) => _onChangeStart(value),
       onChangeEnd: (value) => _onChangeEnd(value),
-      min: model.min.parse,
-      max: model.max.parse,
+      min: model.min ?? 0.0,
+      max: model.max ?? 1.0,
       divisions: model.divisions,
       label: model.label,
       activeColor: model.activeColor?.toColor(context),
@@ -135,10 +130,10 @@ class __StacSliderState extends State<_StacSlider> {
       overlayColor: WidgetStateProperty.all(
         model.overlayColor?.toColor(context),
       ),
-      mouseCursor: model.mouseCursor?.value,
+      mouseCursor: model.mouseCursor?.parse,
       focusNode: focusNode,
-      autofocus: model.autofocus,
-      allowedInteraction: model.allowedInteraction,
+      autofocus: model.autofocus ?? false,
+      allowedInteraction: model.allowedInteraction?.parse,
     );
   }
 
@@ -152,8 +147,8 @@ class __StacSliderState extends State<_StacSlider> {
       onChanged: (value) => _onChanged(value),
       onChangeStart: (value) => _onChangeStart(value),
       onChangeEnd: (value) => _onChangeEnd(value),
-      min: model.min.parse,
-      max: model.max.parse,
+      min: model.min ?? 0.0,
+      max: model.max ?? 1.0,
       divisions: model.divisions,
       activeColor: model.activeColor?.toColor(context),
       thumbColor: model.thumbColor?.toColor(context) ?? CupertinoColors.white,

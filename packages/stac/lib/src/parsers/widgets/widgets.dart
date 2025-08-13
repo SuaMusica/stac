@@ -72,7 +72,7 @@ export 'package:stac/src/parsers/widgets/stac_scaffold/stac_scaffold_parser.dart
 export 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value.dart';
 export 'package:stac/src/parsers/widgets/stac_single_child_scroll_view/stac_single_child_scroll_view_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_sized_box/stac_sized_box_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_slider/stac_slider.dart';
+export 'package:stac/src/parsers/widgets/stac_slider/stac_slider_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_sliver_app_bar/stac_sliver_app_bar.dart';
 export 'package:stac/src/parsers/widgets/stac_spacer/stac_spacer_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_stack/stac_stack_parser.dart';
