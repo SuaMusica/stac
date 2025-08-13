@@ -109,9 +109,6 @@ extension StacInputDecorationParser on StacInputDecoration {
   }
 }
 
-// Kept for backward compatibility if nullable usage is needed elsewhere
-// Removed nullable backward-compat InputDecoration parser extension
-
 extension StacTextInputTypeParser on StacTextInputType {
   TextInputType get parse {
     switch (this) {
