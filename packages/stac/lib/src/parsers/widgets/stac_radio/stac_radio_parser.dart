@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_scope.dart';
-import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/radio/stac_radio.dart';
+import 'package:stac_models/types/stac_radio_type.dart';
 
 class StacRadioParser extends StacParser<StacRadio> {
   const StacRadioParser();
@@ -37,7 +40,7 @@ class _RadioWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final FocusNode focusNode = FocusNode();
 
-    switch (model.radioType) {
+    switch (model.radioType ?? StacRadioType.material) {
       case StacRadioType.cupertino:
         return _buildCupertinoRadio(context, model, focusNode);
       case StacRadioType.adaptive:
@@ -48,9 +51,7 @@ class _RadioWidget extends StatelessWidget {
   }
 
   void _onChanged(dynamic value, BuildContext context) {
-    if (model.onChanged != null) {
-      Stac.onCallFromJson(model.onChanged, context);
-    }
+    model.onChanged?.parse(context);
     radioGroupScope?.onSelect(value);
   }
 
@@ -68,15 +69,15 @@ class _RadioWidget extends StatelessWidget {
           onChanged: (dynamic value) {
             _onChanged(value, context);
           },
-          mouseCursor: model.mouseCursor?.value,
-          toggleable: model.toggleable,
-          activeColor: model.activeColor.toColor(context),
+          mouseCursor: model.mouseCursor?.parse,
+          toggleable: model.toggleable ?? false,
+          activeColor: model.activeColor?.toColor(context),
           inactiveColor: model.inactiveColor?.toColor(context),
           fillColor: model.fillColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
           focusNode: focusNode,
-          autofocus: model.autofocus,
-          useCheckmarkStyle: model.useCheckmarkStyle,
+          autofocus: model.autofocus ?? false,
+          useCheckmarkStyle: model.useCheckmarkStyle ?? false,
         );
       },
     );
@@ -96,8 +97,8 @@ class _RadioWidget extends StatelessWidget {
           onChanged: (dynamic value) {
             _onChanged(value, context);
           },
-          mouseCursor: model.mouseCursor?.value,
-          toggleable: model.toggleable,
+          mouseCursor: model.mouseCursor?.parse,
+          toggleable: model.toggleable ?? false,
           activeColor: model.activeColor?.toColor(context),
           fillColor: WidgetStateProperty.all(model.fillColor?.toColor(context)),
           focusColor: model.focusColor?.toColor(context),
@@ -105,12 +106,12 @@ class _RadioWidget extends StatelessWidget {
           overlayColor: WidgetStateProperty.all(
             model.overlayColor?.toColor(context),
           ),
-          splashRadius: model.splashRadius?.parse,
-          materialTapTargetSize: model.materialTapTargetSize,
+          splashRadius: model.splashRadius,
+          materialTapTargetSize: model.materialTapTargetSize?.parse,
           visualDensity: model.visualDensity?.parse,
           focusNode: focusNode,
-          autofocus: model.autofocus,
-          useCupertinoCheckmarkStyle: model.useCupertinoCheckmarkStyle,
+          autofocus: model.autofocus ?? false,
+          useCupertinoCheckmarkStyle: model.useCupertinoCheckmarkStyle ?? false,
         );
       },
     );
@@ -130,20 +131,20 @@ class _RadioWidget extends StatelessWidget {
           onChanged: (dynamic value) {
             _onChanged(value, context);
           },
-          mouseCursor: model.mouseCursor?.value,
-          toggleable: model.toggleable,
-          activeColor: model.activeColor.toColor(context),
+          mouseCursor: model.mouseCursor?.parse,
+          toggleable: model.toggleable ?? false,
+          activeColor: model.activeColor?.toColor(context),
           fillColor: WidgetStateProperty.all(model.fillColor?.toColor(context)),
           focusColor: model.focusColor?.toColor(context),
           hoverColor: model.hoverColor?.toColor(context),
           overlayColor: WidgetStateProperty.all(
             model.overlayColor?.toColor(context),
           ),
-          splashRadius: model.splashRadius?.parse,
-          materialTapTargetSize: model.materialTapTargetSize,
+          splashRadius: model.splashRadius,
+          materialTapTargetSize: model.materialTapTargetSize?.parse,
           visualDensity: model.visualDensity?.parse,
           focusNode: focusNode,
-          autofocus: model.autofocus,
+          autofocus: model.autofocus ?? false,
         );
       },
     );
