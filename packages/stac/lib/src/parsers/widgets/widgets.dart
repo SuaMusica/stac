@@ -13,7 +13,7 @@ export 'package:stac/src/parsers/widgets/stac_bottom_navigation_view/stac_bottom
 export 'package:stac/src/parsers/widgets/stac_card/stac_card.dart';
 export 'package:stac/src/parsers/widgets/stac_carousel_view/stac_carousel_view.dart';
 export 'package:stac/src/parsers/widgets/stac_center/stac_center_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_check_box/stac_check_box.dart';
+export 'package:stac/src/parsers/widgets/stac_check_box/stac_check_box_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_chip/stac_chip.dart';
 export 'package:stac/src/parsers/widgets/stac_circle_avatar/stac_circle_avatar.dart';
 export 'package:stac/src/parsers/widgets/stac_circular_progress_indicator/stac_circular_progress_indicator.dart';
