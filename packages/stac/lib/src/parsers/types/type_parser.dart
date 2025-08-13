@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/gestures.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_models/stac_models.dart';
@@ -29,10 +30,13 @@ import 'package:stac_models/types/stac_offset/stac_offset.dart';
 import 'package:stac_models/types/stac_rect/stac_rect.dart';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
-import 'package:stac_models/types/stac_text_types.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
 import 'package:stac_models/types/stac_wrap_alignment.dart';
 import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/utils/input_formatters.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {
@@ -74,6 +78,110 @@ extension StacFloatingActionButtonLocationParser
         return FloatingActionButtonLocation.endDocked;
       case StacFloatingActionButtonLocation.miniEndDocked:
         return FloatingActionButtonLocation.miniEndDocked;
+    }
+  }
+}
+
+extension StacInputDecorationParser on StacInputDecoration {
+  InputDecoration parse(BuildContext context) {
+    return InputDecoration(
+      icon: icon.parse(context),
+      labelText: labelText,
+      labelStyle: labelStyle?.parse(context),
+      hintText: hintText,
+      hintStyle: hintStyle?.parse(context),
+      helperText: helperText,
+      helperStyle: helperStyle?.parse(context),
+      errorText: errorText,
+      errorStyle: errorStyle?.parse(context),
+      prefixIcon: prefixIcon.parse(context),
+      prefixText: prefixText,
+      prefixStyle: prefixStyle?.parse(context),
+      suffixIcon: suffixIcon.parse(context),
+      suffixText: suffixText,
+      suffixStyle: suffixStyle?.parse(context),
+      isDense: isDense,
+      contentPadding: contentPadding?.parse,
+      filled: filled,
+      fillColor: fillColor?.toColor(context),
+      alignLabelWithHint: alignLabelWithHint,
+    );
+  }
+}
+
+extension StacTextInputTypeParser on StacTextInputType {
+  TextInputType get parse {
+    switch (this) {
+      case StacTextInputType.text:
+        return TextInputType.text;
+      case StacTextInputType.multiline:
+        return TextInputType.multiline;
+      case StacTextInputType.number:
+        return TextInputType.number;
+      case StacTextInputType.phone:
+        return TextInputType.phone;
+      case StacTextInputType.datetime:
+        return TextInputType.datetime;
+      case StacTextInputType.emailAddress:
+        return TextInputType.emailAddress;
+      case StacTextInputType.url:
+        return TextInputType.url;
+      case StacTextInputType.visiblePassword:
+        return TextInputType.visiblePassword;
+      case StacTextInputType.name:
+        return TextInputType.name;
+      case StacTextInputType.streetAddress:
+        return TextInputType.streetAddress;
+      case StacTextInputType.none:
+        return TextInputType.none;
+    }
+  }
+}
+
+extension StacTextInputActionParser on StacTextInputAction {
+  TextInputAction get parse {
+    switch (this) {
+      case StacTextInputAction.none:
+        return TextInputAction.none;
+      case StacTextInputAction.unspecified:
+        return TextInputAction.unspecified;
+      case StacTextInputAction.done:
+        return TextInputAction.done;
+      case StacTextInputAction.go:
+        return TextInputAction.go;
+      case StacTextInputAction.search:
+        return TextInputAction.search;
+      case StacTextInputAction.send:
+        return TextInputAction.send;
+      case StacTextInputAction.next:
+        return TextInputAction.next;
+      case StacTextInputAction.previous:
+        return TextInputAction.previous;
+      case StacTextInputAction.continueAction:
+        return TextInputAction.continueAction;
+      case StacTextInputAction.join:
+        return TextInputAction.join;
+      case StacTextInputAction.route:
+        return TextInputAction.route;
+      case StacTextInputAction.emergencyCall:
+        return TextInputAction.emergencyCall;
+      case StacTextInputAction.newline:
+        return TextInputAction.newline;
+    }
+  }
+}
+
+extension StacTextCapitalizationParser on StacTextCapitalization {
+  TextCapitalization get parse {
+    switch (this) {
+      case StacTextCapitalization.none:
+        return TextCapitalization.none;
+      case StacTextCapitalization.characters:
+        return TextCapitalization.characters;
+      case StacTextCapitalization.words:
+        return TextCapitalization.words;
+      case StacTextCapitalization.sentences:
+        return TextCapitalization.sentences;
     }
   }
 }
@@ -639,6 +747,51 @@ extension StacBrightnessParser on StacBrightness {
   }
 }
 
+extension StacSmartDashesTypeParser on StacSmartDashesType {
+  SmartDashesType get parse {
+    switch (this) {
+      case StacSmartDashesType.disabled:
+        return SmartDashesType.disabled;
+      case StacSmartDashesType.enabled:
+        return SmartDashesType.enabled;
+    }
+  }
+}
+
+extension StacSmartQuotesTypeParser on StacSmartQuotesType {
+  SmartQuotesType get parse {
+    switch (this) {
+      case StacSmartQuotesType.disabled:
+        return SmartQuotesType.disabled;
+      case StacSmartQuotesType.enabled:
+        return SmartQuotesType.enabled;
+    }
+  }
+}
+
+extension StacMaxLengthEnforcementParser on StacMaxLengthEnforcement {
+  MaxLengthEnforcement get parse {
+    switch (this) {
+      case StacMaxLengthEnforcement.none:
+        return MaxLengthEnforcement.none;
+      case StacMaxLengthEnforcement.enforced:
+        return MaxLengthEnforcement.enforced;
+    }
+  }
+}
+
+/// Maps [StacInputFormatterType] to core [InputFormatterType].
+extension StacInputFormatterTypeCoreParser on StacInputFormatterType {
+  InputFormatterType get parse {
+    switch (this) {
+      case StacInputFormatterType.allow:
+        return InputFormatterType.allow;
+      case StacInputFormatterType.deny:
+        return InputFormatterType.deny;
+    }
+  }
+}
+
 extension StacStackFitParser on StacStackFit {
   StackFit get parse {
     switch (this) {
@@ -985,5 +1138,20 @@ extension StacShadowParser on StacShadow {
       offset: (offset)?.parse ?? Offset.zero,
       blurRadius: (blurRadius) ?? 0.0,
     );
+  }
+}
+
+/// Extends [StacAutovalidateMode] to provide parsing functionality.
+extension StacAutovalidateModeParser on StacAutovalidateMode {
+  /// Parses this [StacAutovalidateMode] into a Flutter [AutovalidateMode].
+  AutovalidateMode get parse {
+    switch (this) {
+      case StacAutovalidateMode.disabled:
+        return AutovalidateMode.disabled;
+      case StacAutovalidateMode.always:
+        return AutovalidateMode.always;
+      case StacAutovalidateMode.onUserInteraction:
+        return AutovalidateMode.onUserInteraction;
+    }
   }
 }

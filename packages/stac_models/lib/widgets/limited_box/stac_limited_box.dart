@@ -53,7 +53,7 @@ class StacLimitedBox extends StacWidget {
   factory StacLimitedBox.fromJson(Map<String, dynamic> json) =>
       _$StacLimitedBoxFromJson(json);
 
-  /// Converts this StacLimitedBox to JSON.
+  /// Converts this [StacLimitedBox] to JSON.
   @override
   Map<String, dynamic> toJson() => _$StacLimitedBoxToJson(this);
 }
