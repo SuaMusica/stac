@@ -7,3 +7,4 @@ export 'stac_edge_insets/stac_edge_insets.dart';
 export 'stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
 export 'stac_text_span/stac_text_span.dart';
 export 'stac_text_style/stac_text_style.dart';
+export 'stac_input_decoration/stac_input_decoration.dart';
