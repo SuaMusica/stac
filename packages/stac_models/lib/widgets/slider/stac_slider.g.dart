@@ -6,49 +6,55 @@ part of 'stac_slider.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacSlider _$StacSliderFromJson(Map<String, dynamic> json) => _StacSlider(
-      id: json['id'] as String?,
-      sliderType:
-          $enumDecodeNullable(_$StacSliderTypeEnumMap, json['sliderType']) ??
-              StacSliderType.material,
-      value: StacDouble.fromJson(json['value']),
-      secondaryTrackValue: json['secondaryTrackValue'] == null
-          ? null
-          : StacDouble.fromJson(json['secondaryTrackValue']),
-      onChanged: json['onChanged'] as Map<String, dynamic>?,
-      onChangeStart: json['onChangeStart'] as Map<String, dynamic>?,
-      onChangeEnd: json['onChangeEnd'] as Map<String, dynamic>?,
-      min: json['min'] == null
-          ? StacDouble.zero
-          : StacDouble.fromJson(json['min']),
-      max: json['max'] == null
-          ? const StacDouble(1.0)
-          : StacDouble.fromJson(json['max']),
-      divisions: (json['divisions'] as num?)?.toInt(),
-      label: json['label'] as String?,
-      activeColor: json['activeColor'] as String?,
-      inactiveColor: json['inactiveColor'] as String?,
-      secondaryActiveColor: json['secondaryActiveColor'] as String?,
-      thumbColor: json['thumbColor'] as String?,
-      overlayColor: json['overlayColor'] as String?,
-      mouseCursor:
-          $enumDecodeNullable(_$StacMouseCursorEnumMap, json['mouseCursor']),
-      autofocus: json['autofocus'] as bool? ?? false,
-      allowedInteraction: $enumDecodeNullable(
-          _$SliderInteractionEnumMap, json['allowedInteraction']),
-    );
+StacSlider _$StacSliderFromJson(Map<String, dynamic> json) => StacSlider(
+  id: json['id'] as String?,
+  sliderType: $enumDecodeNullable(_$StacSliderTypeEnumMap, json['sliderType']),
+  value: (json['value'] as num).toDouble(),
+  secondaryTrackValue: const DoubleConverter().fromJson(
+    json['secondaryTrackValue'],
+  ),
+  onChanged: json['onChanged'] == null
+      ? null
+      : StacAction.fromJson(json['onChanged'] as Map<String, dynamic>),
+  onChangeStart: json['onChangeStart'] == null
+      ? null
+      : StacAction.fromJson(json['onChangeStart'] as Map<String, dynamic>),
+  onChangeEnd: json['onChangeEnd'] == null
+      ? null
+      : StacAction.fromJson(json['onChangeEnd'] as Map<String, dynamic>),
+  min: const DoubleConverter().fromJson(json['min']),
+  max: const DoubleConverter().fromJson(json['max']),
+  divisions: (json['divisions'] as num?)?.toInt(),
+  label: json['label'] as String?,
+  activeColor: json['activeColor'] as String?,
+  inactiveColor: json['inactiveColor'] as String?,
+  secondaryActiveColor: json['secondaryActiveColor'] as String?,
+  thumbColor: json['thumbColor'] as String?,
+  overlayColor: json['overlayColor'] as String?,
+  mouseCursor: $enumDecodeNullable(
+    _$StacMouseCursorEnumMap,
+    json['mouseCursor'],
+  ),
+  autofocus: json['autofocus'] as bool?,
+  allowedInteraction: $enumDecodeNullable(
+    _$StacSliderInteractionEnumMap,
+    json['allowedInteraction'],
+  ),
+);
 
-Map<String, dynamic> _$StacSliderToJson(_StacSlider instance) =>
+Map<String, dynamic> _$StacSliderToJson(StacSlider instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'sliderType': _$StacSliderTypeEnumMap[instance.sliderType]!,
+      'sliderType': _$StacSliderTypeEnumMap[instance.sliderType],
       'value': instance.value,
-      'secondaryTrackValue': instance.secondaryTrackValue,
-      'onChanged': instance.onChanged,
-      'onChangeStart': instance.onChangeStart,
-      'onChangeEnd': instance.onChangeEnd,
-      'min': instance.min,
-      'max': instance.max,
+      'secondaryTrackValue': const DoubleConverter().toJson(
+        instance.secondaryTrackValue,
+      ),
+      'onChanged': instance.onChanged?.toJson(),
+      'onChangeStart': instance.onChangeStart?.toJson(),
+      'onChangeEnd': instance.onChangeEnd?.toJson(),
+      'min': const DoubleConverter().toJson(instance.min),
+      'max': const DoubleConverter().toJson(instance.max),
       'divisions': instance.divisions,
       'label': instance.label,
       'activeColor': instance.activeColor,
@@ -59,7 +65,8 @@ Map<String, dynamic> _$StacSliderToJson(_StacSlider instance) =>
       'mouseCursor': _$StacMouseCursorEnumMap[instance.mouseCursor],
       'autofocus': instance.autofocus,
       'allowedInteraction':
-          _$SliderInteractionEnumMap[instance.allowedInteraction],
+          _$StacSliderInteractionEnumMap[instance.allowedInteraction],
+      'type': instance.type,
     };
 
 const _$StacSliderTypeEnumMap = {
@@ -107,9 +114,9 @@ const _$StacMouseCursorEnumMap = {
   StacMouseCursor.zoomOut: 'zoomOut',
 };
 
-const _$SliderInteractionEnumMap = {
-  SliderInteraction.tapAndSlide: 'tapAndSlide',
-  SliderInteraction.tapOnly: 'tapOnly',
-  SliderInteraction.slideOnly: 'slideOnly',
-  SliderInteraction.slideThumb: 'slideThumb',
+const _$StacSliderInteractionEnumMap = {
+  StacSliderInteraction.tapAndSlide: 'tapAndSlide',
+  StacSliderInteraction.tapOnly: 'tapOnly',
+  StacSliderInteraction.slideOnly: 'slideOnly',
+  StacSliderInteraction.slideThumb: 'slideThumb',
 };

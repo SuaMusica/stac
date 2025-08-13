@@ -535,12 +535,10 @@ extension StacBorderSideParser on StacBorderSide {
 
 extension StacBorderParser on StacBorder {
   Border parse(BuildContext context) {
-    // Check if individual border sides are specified
     final hasIndividualSides =
         top != null || right != null || bottom != null || left != null;
 
     if (hasIndividualSides) {
-      // Use individual border sides
       return Border(
         top: top?.parse(context) ?? BorderSide.none,
         right: right?.parse(context) ?? BorderSide.none,
@@ -548,7 +546,6 @@ extension StacBorderParser on StacBorder {
         left: left?.parse(context) ?? BorderSide.none,
       );
     } else {
-      // Fall back to uniform border behavior for all sides
       return Border.all(
         color: color.toColor(context) ?? const Color(0xFF000000),
         width: width ?? 1.0,
@@ -742,7 +739,7 @@ extension StacBrightnessParser on StacBrightness {
       case StacBrightness.dark:
         return Brightness.dark;
       case StacBrightness.system:
-        return Brightness.light; // Or handle as per your system theme logic
+        return Brightness.light;
     }
   }
 }
@@ -780,7 +777,6 @@ extension StacMaxLengthEnforcementParser on StacMaxLengthEnforcement {
   }
 }
 
-/// Maps [StacInputFormatterType] to core [InputFormatterType].
 extension StacInputFormatterTypeCoreParser on StacInputFormatterType {
   InputFormatterType get parse {
     switch (this) {
@@ -897,6 +893,21 @@ extension StacMouseCursorParser on StacMouseCursor {
         return SystemMouseCursors.zoomIn;
       case StacMouseCursor.zoomOut:
         return SystemMouseCursors.zoomOut;
+    }
+  }
+}
+
+extension StacSliderInteractionParser on StacSliderInteraction {
+  SliderInteraction get parse {
+    switch (this) {
+      case StacSliderInteraction.tapAndSlide:
+        return SliderInteraction.tapAndSlide;
+      case StacSliderInteraction.tapOnly:
+        return SliderInteraction.tapOnly;
+      case StacSliderInteraction.slideOnly:
+        return SliderInteraction.slideOnly;
+      case StacSliderInteraction.slideThumb:
+        return SliderInteraction.slideThumb;
     }
   }
 }
@@ -1127,6 +1138,19 @@ extension StacHitTestBehaviorParser on StacHitTestBehavior {
         return HitTestBehavior.opaque;
       case StacHitTestBehavior.translucent:
         return HitTestBehavior.translucent;
+    }
+  }
+}
+
+extension StacSwitchTypeParser on StacSwitchType {
+  StacSwitchType get parse {
+    switch (this) {
+      case StacSwitchType.adaptive:
+        return StacSwitchType.adaptive;
+      case StacSwitchType.cupertino:
+        return StacSwitchType.cupertino;
+      case StacSwitchType.material:
+        return StacSwitchType.material;
     }
   }
 }
