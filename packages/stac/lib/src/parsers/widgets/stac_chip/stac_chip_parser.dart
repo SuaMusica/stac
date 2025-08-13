@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_rounded_rectangle_border/stac_rounded_rectangle_border.dart';
-import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
+import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_models/widgets/chip/stac_chip.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacChipParser extends StacParser<StacChip> {
   const StacChipParser();
@@ -20,27 +21,30 @@ class StacChipParser extends StacParser<StacChip> {
   @override
   Widget parse(BuildContext context, StacChip model) {
     return Chip(
-      avatar: Stac.fromJson(model.avatar, context),
-      label: Stac.fromJson(model.label, context) ?? const SizedBox.shrink(),
+      avatar: model.avatar?.parse(context),
+      label: model.label.parse(context) ?? const SizedBox.shrink(),
       labelStyle: model.labelStyle?.parse(context),
       labelPadding: model.labelPadding?.parse,
-      deleteIcon: Stac.fromJson(model.deleteIcon, context),
-      onDeleted: () => Stac.onCallFromJson(model.onDeleted, context),
-      deleteIconColor: model.deleteIconColor.toColor(context),
+      deleteIcon: model.deleteIcon?.parse(context),
+      onDeleted: model.onDeleted == null
+          ? null
+          : () => model.onDeleted!.parse(context),
+      deleteIconColor: model.deleteIconColor?.toColor(context),
       deleteButtonTooltipMessage: model.deleteButtonTooltipMessage,
       side: model.side?.parse(context),
       shape: model.shape?.parse(context),
-      clipBehavior: model.clipBehavior,
-      autofocus: model.autofocus,
-      color: WidgetStateProperty.all(model.color.toColor(context)),
-      backgroundColor: model.backgroundColor.toColor(context),
+      clipBehavior: model.clipBehavior?.parse ?? Clip.none,
+      autofocus: model.autofocus ?? false,
+      color: model.color == null
+          ? null
+          : WidgetStateProperty.all(model.color!.toColor(context)),
+      backgroundColor: model.backgroundColor?.toColor(context),
       padding: model.padding?.parse,
       visualDensity: model.visualDensity?.parse,
-      materialTapTargetSize: model.materialTapTargetSize,
-      elevation: model.elevation?.parse,
-      shadowColor: model.shadowColor.toColor(context),
-      surfaceTintColor: model.surfaceTintColor.toColor(context),
-      iconTheme: model.iconTheme?.parse(context),
+      materialTapTargetSize: model.materialTapTargetSize?.parse,
+      elevation: model.elevation,
+      shadowColor: model.shadowColor?.toColor(context),
+      surfaceTintColor: model.surfaceTintColor?.toColor(context),
       avatarBoxConstraints: model.avatarBoxConstraints?.parse,
       deleteIconBoxConstraints: model.deleteIconBoxConstraints?.parse,
     );

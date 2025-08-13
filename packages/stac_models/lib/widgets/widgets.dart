@@ -4,6 +4,7 @@ export 'app_bar/stac_app_bar.dart';
 export 'aspect_ratio/stac_aspect_ratio.dart';
 export 'center/stac_center.dart';
 export 'card/stac_card.dart';
+export 'chip/stac_chip.dart';
 export 'column/stac_column.dart';
 export 'container/stac_container.dart';
 export 'divider/stac_divider.dart';
