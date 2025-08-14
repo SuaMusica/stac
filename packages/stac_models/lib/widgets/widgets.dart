@@ -33,6 +33,7 @@ export 'outlined_button/stac_outlined_button.dart';
 export 'padding/stac_padding.dart';
 export 'positioned/stac_positioned.dart';
 export 'refresh_indicator/stac_refresh_indicator.dart';
+export 'custom_scroll_view/stac_custom_scroll_view.dart';
 export 'check_box/stac_check_box.dart';
 export 'radio/stac_radio.dart';
 export 'radio_group/stac_radio_group.dart';
