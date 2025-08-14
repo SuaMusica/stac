@@ -7,9 +7,9 @@ export 'package:stac/src/parsers/widgets/stac_alignment_directional/stac_alignme
 export 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
 export 'package:stac/src/parsers/widgets/stac_aspect_ratio/stac_aspect_ratio_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_auto_complete/stac_auto_complete.dart';
-export 'package:stac/src/parsers/widgets/stac_backdrop_filter/stac_backdrop_filter.dart';
-export 'package:stac/src/parsers/widgets/stac_bottom_navigation_bar/stac_bottom_navigation_bar.dart';
-export 'package:stac/src/parsers/widgets/stac_bottom_navigation_view/stac_bottom_navigation_view.dart';
+export 'package:stac/src/parsers/widgets/stac_backdrop_filter/stac_backdrop_filter_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_bottom_navigation_bar/stac_bottom_navigation_bar_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_bottom_navigation_view/stac_bottom_navigation_view_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_card/stac_card_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_carousel_view/stac_carousel_view.dart';
 export 'package:stac/src/parsers/widgets/stac_center/stac_center_parser.dart';
@@ -23,7 +23,7 @@ export 'package:stac/src/parsers/widgets/stac_colored_box/stac_colored_box.dart'
 export 'package:stac/src/parsers/widgets/stac_column/stac_column_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_conditional/stac_conditional.dart';
 export 'package:stac/src/parsers/widgets/stac_container/stac_container_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_custom_scroll_view/stac_custom_scroll_view.dart';
+export 'package:stac/src/parsers/widgets/stac_custom_scroll_view/stac_custom_scroll_view_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
 export 'package:stac/src/parsers/widgets/stac_default_tab_controller/stac_default_tab_controller.dart';
 export 'package:stac/src/parsers/widgets/stac_divider/stac_divider_parser.dart';

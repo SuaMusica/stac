@@ -9,7 +9,6 @@ import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 import 'package:stac_models/types/stac_axis.dart';
 import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
-import 'package:stac_models/types/stac_blend_mode.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
 import 'package:stac_models/types/stac_border/stac_border.dart';
 import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
@@ -27,6 +26,8 @@ import 'package:stac_models/types/stac_image_repeat.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
+import 'dart:ui';
+import 'dart:typed_data';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
@@ -480,6 +481,37 @@ extension StacRectParser on StacRect {
   }
 }
 
+extension StacImageFilterParser on StacImageFilter {
+  ImageFilter get parse {
+    switch (type) {
+      case StacImageFilterType.blur:
+        final sx = sigmaX ?? 0.0;
+        final sy = sigmaY ?? sx;
+        return ImageFilter.blur(sigmaX: sx, sigmaY: sy);
+      case StacImageFilterType.matrix:
+        if (matrix != null && matrix!.length == 16) {
+          return ImageFilter.matrix(Float64List.fromList(matrix!));
+        }
+        return ImageFilter.matrix(Float64List.fromList(List.filled(16, 0)));
+      case StacImageFilterType.dilate:
+        final rx = radiusX ?? 0.0;
+        final ry = radiusY ?? rx;
+        return ImageFilter.dilate(radiusX: rx, radiusY: ry);
+      case StacImageFilterType.erode:
+        final rx = radiusX ?? 0.0;
+        final ry = radiusY ?? rx;
+        return ImageFilter.erode(radiusX: rx, radiusY: ry);
+      case StacImageFilterType.compose:
+        final innerFilter = inner?.parse;
+        final outerFilter = outer?.parse;
+        if (innerFilter != null && outerFilter != null) {
+          return ImageFilter.compose(inner: innerFilter, outer: outerFilter);
+        }
+        return ImageFilter.blur(sigmaX: 0, sigmaY: 0);
+    }
+  }
+}
+
 extension StacRectTweenParser on StacRectTween {
   RectTween parse(BuildContext context) {
     final begin = this.begin?.parse;
@@ -631,6 +663,31 @@ extension StacTileModeParser on StacTileMode {
         return TileMode.mirror;
       case StacTileMode.decal:
         return TileMode.decal;
+    }
+  }
+}
+
+extension StacBottomNavigationBarLandscapeLayoutParser
+    on StacBottomNavigationBarLandscapeLayout {
+  BottomNavigationBarLandscapeLayout get parse {
+    switch (this) {
+      case StacBottomNavigationBarLandscapeLayout.spread:
+        return BottomNavigationBarLandscapeLayout.spread;
+      case StacBottomNavigationBarLandscapeLayout.centered:
+        return BottomNavigationBarLandscapeLayout.centered;
+      case StacBottomNavigationBarLandscapeLayout.linear:
+        return BottomNavigationBarLandscapeLayout.linear;
+    }
+  }
+}
+
+extension StacBottomNavigationBarTypeParser on StacBottomNavigationBarType {
+  BottomNavigationBarType get parse {
+    switch (this) {
+      case StacBottomNavigationBarType.fixed:
+        return BottomNavigationBarType.fixed;
+      case StacBottomNavigationBarType.shifting:
+        return BottomNavigationBarType.shifting;
     }
   }
 }

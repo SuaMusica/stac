@@ -2,6 +2,9 @@ library;
 
 export 'app_bar/stac_app_bar.dart';
 export 'aspect_ratio/stac_aspect_ratio.dart';
+export 'backdrop_filter/stac_backdrop_filter.dart';
+export 'bottom_navigation_bar/stac_bottom_navigation_bar.dart';
+export 'bottom_navigation_view/stac_bottom_navigation_view.dart';
 export 'center/stac_center.dart';
 export 'card/stac_card.dart';
 export 'chip/stac_chip.dart';
@@ -30,6 +33,7 @@ export 'outlined_button/stac_outlined_button.dart';
 export 'padding/stac_padding.dart';
 export 'positioned/stac_positioned.dart';
 export 'refresh_indicator/stac_refresh_indicator.dart';
+export 'custom_scroll_view/stac_custom_scroll_view.dart';
 export 'check_box/stac_check_box.dart';
 export 'radio/stac_radio.dart';
 export 'radio_group/stac_radio_group.dart';
