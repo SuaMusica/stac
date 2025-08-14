@@ -667,6 +667,31 @@ extension StacTileModeParser on StacTileMode {
   }
 }
 
+extension StacBottomNavigationBarLandscapeLayoutParser
+    on StacBottomNavigationBarLandscapeLayout {
+  BottomNavigationBarLandscapeLayout get parse {
+    switch (this) {
+      case StacBottomNavigationBarLandscapeLayout.spread:
+        return BottomNavigationBarLandscapeLayout.spread;
+      case StacBottomNavigationBarLandscapeLayout.centered:
+        return BottomNavigationBarLandscapeLayout.centered;
+      case StacBottomNavigationBarLandscapeLayout.linear:
+        return BottomNavigationBarLandscapeLayout.linear;
+    }
+  }
+}
+
+extension StacBottomNavigationBarTypeParser on StacBottomNavigationBarType {
+  BottomNavigationBarType get parse {
+    switch (this) {
+      case StacBottomNavigationBarType.fixed:
+        return BottomNavigationBarType.fixed;
+      case StacBottomNavigationBarType.shifting:
+        return BottomNavigationBarType.shifting;
+    }
+  }
+}
+
 extension StacGradientParser on StacGradient {
   Gradient? parse(BuildContext context) {
     Gradient linearGradient() => LinearGradient(

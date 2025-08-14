@@ -35,3 +35,4 @@ export 'stac_blend_mode.dart';
 export 'stac_image_filter/stac_image_filter.dart';
 export 'stac_rect/stac_rect.dart';
 export 'stac_rect_tween/stac_rect_tween.dart';
+export 'stac_bottom_navigation_bar_item/stac_bottom_navigation_bar_item.dart';
