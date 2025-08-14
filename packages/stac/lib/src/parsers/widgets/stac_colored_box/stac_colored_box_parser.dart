@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_colored_box.dart';
+import 'package:stac_models/widgets/colored_box/stac_colored_box.dart';
 
 class StacColoredBoxParser extends StacParser<StacColoredBox> {
   const StacColoredBoxParser();
@@ -20,7 +19,7 @@ class StacColoredBoxParser extends StacParser<StacColoredBox> {
   Widget parse(BuildContext context, StacColoredBox model) {
     return ColoredBox(
       color: model.color.toColor(context)!,
-      child: Stac.fromJson(model.child, context),
+      child: model.child.parse(context),
     );
   }
 }
