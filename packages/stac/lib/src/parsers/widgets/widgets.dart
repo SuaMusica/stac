@@ -62,7 +62,7 @@ export 'package:stac/src/parsers/widgets/stac_opacity/stac_opacity_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_outlined_button/stac_outlined_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_padding/stac_padding_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_page_view/stac_page_view.dart';
-export 'package:stac/src/parsers/widgets/stac_placeholder/stac_placeholder.dart';
+export 'package:stac/src/parsers/widgets/stac_placeholder/stac_placeholder_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_positioned/stac_positioned_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_radio/stac_radio_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_parser.dart';
