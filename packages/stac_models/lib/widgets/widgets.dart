@@ -32,6 +32,7 @@ export 'network_widget/stac_network_widget.dart';
 export 'opacity/stac_opacity.dart';
 export 'outlined_button/stac_outlined_button.dart';
 export 'padding/stac_padding.dart';
+export 'placeholder/stac_placeholder.dart';
 export 'positioned/stac_positioned.dart';
 export 'refresh_indicator/stac_refresh_indicator.dart';
 export 'custom_scroll_view/stac_custom_scroll_view.dart';
