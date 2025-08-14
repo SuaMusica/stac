@@ -8,6 +8,7 @@ export 'bottom_navigation_view/stac_bottom_navigation_view.dart';
 export 'center/stac_center.dart';
 export 'card/stac_card.dart';
 export 'colored_box/stac_colored_box.dart';
+export 'clip_rrect/stac_clip_rrect.dart';
 export 'chip/stac_chip.dart';
 export 'column/stac_column.dart';
 export 'container/stac_container.dart';
