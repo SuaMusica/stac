@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/circular_progress_indicator/stac_circular_progress_indicator.dart';
 
 class StacCircularProgressIndicatorParser
     extends StacParser<StacCircularProgressIndicator> {
@@ -17,11 +18,11 @@ class StacCircularProgressIndicatorParser
   @override
   Widget parse(BuildContext context, StacCircularProgressIndicator model) {
     return CircularProgressIndicator(
-      value: model.value?.parse,
-      backgroundColor: model.backgroundColor.toColor(context),
-      color: model.color.toColor(context),
-      strokeWidth: model.strokeWidth.parse,
-      strokeAlign: model.strokeAlign.parse,
+      value: model.value,
+      backgroundColor: model.backgroundColor?.toColor(context),
+      color: model.color?.toColor(context),
+      strokeWidth: model.strokeWidth ?? 4.0,
+      strokeAlign: model.strokeAlign ?? 0.0,
       semanticsLabel: model.semanticsLabel,
       semanticsValue: model.semanticsValue,
       strokeCap: model.strokeCap,

@@ -35,10 +35,7 @@ part 'stac_colored_box.g.dart';
 @JsonSerializable()
 class StacColoredBox extends StacWidget {
   /// Creates a [StacColoredBox].
-  const StacColoredBox({
-    required this.color,
-    this.child,
-  });
+  const StacColoredBox({required this.color, this.child});
 
   /// The background color to paint behind the [child].
   final StacColor color;
@@ -58,5 +55,3 @@ class StacColoredBox extends StacWidget {
   @override
   Map<String, dynamic> toJson() => _$StacColoredBoxToJson(this);
 }
-
-
