@@ -10,6 +10,7 @@ export 'card/stac_card.dart';
 export 'colored_box/stac_colored_box.dart';
 export 'clip_rrect/stac_clip_rrect.dart';
 export 'clip_oval/stac_clip_oval.dart';
+export 'circular_progress_indicator/stac_circular_progress_indicator.dart';
 export 'chip/stac_chip.dart';
 export 'column/stac_column.dart';
 export 'container/stac_container.dart';
