@@ -40,7 +40,7 @@ class ExampleScreenParser extends StacParser<ExampleScreen> {
                   ),
                   Switch(
                     value: state.themeMode == ThemeMode.dark,
-                    activeColor: Theme.of(context).colorScheme.primary,
+                    activeThumbColor: Theme.of(context).colorScheme.primary,
                     activeTrackColor: Theme.of(context).colorScheme.onSurface,
                     inactiveTrackColor:
                         Theme.of(context).colorScheme.primary.withAlpha(80),
