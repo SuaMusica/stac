@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/converters/double_converter.dart';
 import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/painting/stac_color/stac_colors.dart';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_models/types/stac_clip.dart';
 
 part 'stac_drawer.g.dart';
 
@@ -96,7 +96,7 @@ class StacDrawer extends StacWidget {
   final String? semanticLabel;
 
   /// The clip behavior for the drawer's content.
-  final Clip? clipBehavior;
+  final StacClip? clipBehavior;
 
   /// Widget type identifier for this model.
   @override

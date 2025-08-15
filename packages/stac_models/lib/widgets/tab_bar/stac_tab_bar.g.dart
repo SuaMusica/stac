@@ -26,7 +26,7 @@ StacTabBar _$StacTabBarFromJson(Map<String, dynamic> json) => StacTabBar(
       ? null
       : StacBoxDecoration.fromJson(json['indicator'] as Map<String, dynamic>),
   indicatorSize: $enumDecodeNullable(
-    _$TabBarIndicatorSizeEnumMap,
+    _$StacTabBarIndicatorSizeEnumMap,
     json['indicatorSize'],
   ),
   labelColor: json['labelColor'] as String?,
@@ -49,7 +49,7 @@ StacTabBar _$StacTabBarFromJson(Map<String, dynamic> json) => StacTabBar(
   enableFeedback: json['enableFeedback'] as bool?,
   physics: $enumDecodeNullable(_$StacScrollPhysicsEnumMap, json['physics']),
   tabAlignment: $enumDecodeNullable(
-    _$TabAlignmentEnumMap,
+    _$StacTabAlignmentEnumMap,
     json['tabAlignment'],
   ),
   dividerColor: json['dividerColor'] as String?,
@@ -69,7 +69,7 @@ Map<String, dynamic> _$StacTabBarToJson(
   'indicatorWeight': const DoubleConverter().toJson(instance.indicatorWeight),
   'indicatorPadding': instance.indicatorPadding?.toJson(),
   'indicator': instance.indicator?.toJson(),
-  'indicatorSize': _$TabBarIndicatorSizeEnumMap[instance.indicatorSize],
+  'indicatorSize': _$StacTabBarIndicatorSizeEnumMap[instance.indicatorSize],
   'labelColor': instance.labelColor,
   'labelStyle': instance.labelStyle?.toJson(),
   'labelPadding': instance.labelPadding?.toJson(),
@@ -79,15 +79,15 @@ Map<String, dynamic> _$StacTabBarToJson(
       _$StacDragStartBehaviorEnumMap[instance.dragStartBehavior],
   'enableFeedback': instance.enableFeedback,
   'physics': _$StacScrollPhysicsEnumMap[instance.physics],
-  'tabAlignment': _$TabAlignmentEnumMap[instance.tabAlignment],
+  'tabAlignment': _$StacTabAlignmentEnumMap[instance.tabAlignment],
   'dividerColor': instance.dividerColor,
   'dividerHeight': const DoubleConverter().toJson(instance.dividerHeight),
   'type': instance.type,
 };
 
-const _$TabBarIndicatorSizeEnumMap = {
-  TabBarIndicatorSize.tab: 'tab',
-  TabBarIndicatorSize.label: 'label',
+const _$StacTabBarIndicatorSizeEnumMap = {
+  StacTabBarIndicatorSize.tab: 'tab',
+  StacTabBarIndicatorSize.label: 'label',
 };
 
 const _$StacDragStartBehaviorEnumMap = {
@@ -103,9 +103,9 @@ const _$StacScrollPhysicsEnumMap = {
   StacScrollPhysics.page: 'page',
 };
 
-const _$TabAlignmentEnumMap = {
-  TabAlignment.start: 'start',
-  TabAlignment.startOffset: 'startOffset',
-  TabAlignment.fill: 'fill',
-  TabAlignment.center: 'center',
+const _$StacTabAlignmentEnumMap = {
+  StacTabAlignment.start: 'start',
+  StacTabAlignment.startOffset: 'startOffset',
+  StacTabAlignment.fill: 'fill',
+  StacTabAlignment.center: 'center',
 };

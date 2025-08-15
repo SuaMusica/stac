@@ -19,7 +19,7 @@ StacDrawer _$StacDrawerFromJson(Map<String, dynamic> json) => StacDrawer(
       ? null
       : StacWidget.fromJson(json['child'] as Map<String, dynamic>),
   semanticLabel: json['semanticLabel'] as String?,
-  clipBehavior: $enumDecodeNullable(_$ClipEnumMap, json['clipBehavior']),
+  clipBehavior: $enumDecodeNullable(_$StacClipEnumMap, json['clipBehavior']),
 );
 
 Map<String, dynamic> _$StacDrawerToJson(StacDrawer instance) =>
@@ -32,13 +32,13 @@ Map<String, dynamic> _$StacDrawerToJson(StacDrawer instance) =>
       'width': const DoubleConverter().toJson(instance.width),
       'child': instance.child?.toJson(),
       'semanticLabel': instance.semanticLabel,
-      'clipBehavior': _$ClipEnumMap[instance.clipBehavior],
+      'clipBehavior': _$StacClipEnumMap[instance.clipBehavior],
       'type': instance.type,
     };
 
-const _$ClipEnumMap = {
-  Clip.none: 'none',
-  Clip.hardEdge: 'hardEdge',
-  Clip.antiAlias: 'antiAlias',
-  Clip.antiAliasWithSaveLayer: 'antiAliasWithSaveLayer',
+const _$StacClipEnumMap = {
+  StacClip.none: 'none',
+  StacClip.hardEdge: 'hardEdge',
+  StacClip.antiAlias: 'antiAlias',
+  StacClip.antiAliasWithSaveLayer: 'antiAliasWithSaveLayer',
 };

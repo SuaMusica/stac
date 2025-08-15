@@ -26,7 +26,7 @@ class StacDrawerParser extends StacParser<StacDrawer> {
       shape: model.shape?.parse(context),
       width: model.width,
       semanticLabel: model.semanticLabel,
-      clipBehavior: model.clipBehavior,
+      clipBehavior: model.clipBehavior?.parse,
       child: model.child?.parse(context),
     );
   }
