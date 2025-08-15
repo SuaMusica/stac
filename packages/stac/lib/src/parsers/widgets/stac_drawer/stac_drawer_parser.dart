@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+// Removed unused framework import
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_drawer/stac_drawer.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/drawer/stac_drawer.dart';
 
 class StacDrawerParser extends StacParser<StacDrawer> {
   const StacDrawerParser();
@@ -20,14 +20,14 @@ class StacDrawerParser extends StacParser<StacDrawer> {
   Widget parse(BuildContext context, StacDrawer model) {
     return Drawer(
       backgroundColor: model.backgroundColor?.toColor(context),
-      elevation: model.elevation?.parse,
+      elevation: model.elevation,
       shadowColor: model.shadowColor?.toColor(context),
       surfaceTintColor: model.surfaceTintColor?.toColor(context),
       shape: model.shape?.parse(context),
-      width: model.width?.parse,
+      width: model.width,
       semanticLabel: model.semanticLabel,
       clipBehavior: model.clipBehavior,
-      child: Stac.fromJson(model.child, context),
+      child: model.child?.parse(context),
     );
   }
 }
