@@ -18,7 +18,7 @@ abstract class StacSwitch with _$StacSwitch {
     @Default(false) value,
     Map<String, dynamic>? onChanged,
     @Default(false) bool autofocus,
-    String? activeColor,
+    String? activeThumbColor,
     String? activeTrackColor,
     String? focusColor,
     String? hoverColor,
