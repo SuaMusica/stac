@@ -38,3 +38,5 @@ export 'stac_rect/stac_rect.dart';
 export 'stac_rect_tween/stac_rect_tween.dart';
 export 'stac_bottom_navigation_bar_item/stac_bottom_navigation_bar_item.dart';
 export 'stac_axis.dart';
+export 'stac_tab_bar_indicator_size.dart';
+export 'stac_tab_alignment.dart';

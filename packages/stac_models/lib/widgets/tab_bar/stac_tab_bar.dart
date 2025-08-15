@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/converters/double_converter.dart';
 import 'package:stac_models/core/stac_widget.dart';
@@ -8,6 +7,8 @@ import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
 import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_scroll_physics.dart';
+import 'package:stac_models/types/stac_tab_bar_indicator_size.dart';
+import 'package:stac_models/types/stac_tab_alignment.dart';
 
 part 'stac_tab_bar.g.dart';
 
@@ -102,7 +103,7 @@ class StacTabBar extends StacWidget {
   final StacBoxDecoration? indicator;
 
   /// How the indicator's size is computed.
-  final TabBarIndicatorSize? indicatorSize;
+  final StacTabBarIndicatorSize? indicatorSize;
 
   /// Color of selected tab labels.
   final StacColor? labelColor;
@@ -129,7 +130,7 @@ class StacTabBar extends StacWidget {
   final StacScrollPhysics? physics;
 
   /// How the tabs should be aligned.
-  final TabAlignment? tabAlignment;
+  final StacTabAlignment? tabAlignment;
 
   /// Divider color drawn below the tab bar (Material 3).
   final StacColor? dividerColor;
