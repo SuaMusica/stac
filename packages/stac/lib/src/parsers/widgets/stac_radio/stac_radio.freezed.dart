@@ -17,7 +17,6 @@ T _$identity<T>(T value) => value;
 mixin _$StacRadio {
   StacRadioType get radioType;
   dynamic get value;
-  Map<String, dynamic>? get onChanged;
   StacMouseCursor? get mouseCursor;
   bool get toggleable;
   String? get activeColor;
@@ -51,7 +50,6 @@ mixin _$StacRadio {
             (identical(other.radioType, radioType) ||
                 other.radioType == radioType) &&
             const DeepCollectionEquality().equals(other.value, value) &&
-            const DeepCollectionEquality().equals(other.onChanged, onChanged) &&
             (identical(other.mouseCursor, mouseCursor) ||
                 other.mouseCursor == mouseCursor) &&
             (identical(other.toggleable, toggleable) ||
@@ -90,7 +88,6 @@ mixin _$StacRadio {
       runtimeType,
       radioType,
       const DeepCollectionEquality().hash(value),
-      const DeepCollectionEquality().hash(onChanged),
       mouseCursor,
       toggleable,
       activeColor,
@@ -108,7 +105,7 @@ mixin _$StacRadio {
 
   @override
   String toString() {
-    return 'StacRadio(radioType: $radioType, value: $value, onChanged: $onChanged, mouseCursor: $mouseCursor, toggleable: $toggleable, activeColor: $activeColor, inactiveColor: $inactiveColor, fillColor: $fillColor, focusColor: $focusColor, hoverColor: $hoverColor, overlayColor: $overlayColor, splashRadius: $splashRadius, materialTapTargetSize: $materialTapTargetSize, visualDensity: $visualDensity, autofocus: $autofocus, useCheckmarkStyle: $useCheckmarkStyle, useCupertinoCheckmarkStyle: $useCupertinoCheckmarkStyle)';
+    return 'StacRadio(radioType: $radioType, value: $value, mouseCursor: $mouseCursor, toggleable: $toggleable, activeColor: $activeColor, inactiveColor: $inactiveColor, fillColor: $fillColor, focusColor: $focusColor, hoverColor: $hoverColor, overlayColor: $overlayColor, splashRadius: $splashRadius, materialTapTargetSize: $materialTapTargetSize, visualDensity: $visualDensity, autofocus: $autofocus, useCheckmarkStyle: $useCheckmarkStyle, useCupertinoCheckmarkStyle: $useCupertinoCheckmarkStyle)';
   }
 }
 
@@ -120,7 +117,6 @@ abstract mixin class $StacRadioCopyWith<$Res> {
   $Res call(
       {StacRadioType radioType,
       dynamic value,
-      Map<String, dynamic>? onChanged,
       StacMouseCursor? mouseCursor,
       bool toggleable,
       String? activeColor,
@@ -153,7 +149,6 @@ class _$StacRadioCopyWithImpl<$Res> implements $StacRadioCopyWith<$Res> {
   $Res call({
     Object? radioType = null,
     Object? value = freezed,
-    Object? onChanged = freezed,
     Object? mouseCursor = freezed,
     Object? toggleable = null,
     Object? activeColor = freezed,
@@ -178,10 +173,6 @@ class _$StacRadioCopyWithImpl<$Res> implements $StacRadioCopyWith<$Res> {
           ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      onChanged: freezed == onChanged
-          ? _self.onChanged
-          : onChanged // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
       mouseCursor: freezed == mouseCursor
           ? _self.mouseCursor
           : mouseCursor // ignore: cast_nullable_to_non_nullable
@@ -262,7 +253,6 @@ class _StacRadio implements StacRadio {
   const _StacRadio(
       {this.radioType = StacRadioType.material,
       this.value,
-      final Map<String, dynamic>? onChanged,
       this.mouseCursor,
       this.toggleable = false,
       this.activeColor,
@@ -276,8 +266,7 @@ class _StacRadio implements StacRadio {
       this.visualDensity,
       this.autofocus = false,
       this.useCheckmarkStyle = false,
-      this.useCupertinoCheckmarkStyle = false})
-      : _onChanged = onChanged;
+      this.useCupertinoCheckmarkStyle = false});
   factory _StacRadio.fromJson(Map<String, dynamic> json) =>
       _$StacRadioFromJson(json);
 
@@ -286,16 +275,6 @@ class _StacRadio implements StacRadio {
   final StacRadioType radioType;
   @override
   final dynamic value;
-  final Map<String, dynamic>? _onChanged;
-  @override
-  Map<String, dynamic>? get onChanged {
-    final value = _onChanged;
-    if (value == null) return null;
-    if (_onChanged is EqualUnmodifiableMapView) return _onChanged;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
   @override
   final StacMouseCursor? mouseCursor;
   @override
@@ -352,8 +331,6 @@ class _StacRadio implements StacRadio {
             (identical(other.radioType, radioType) ||
                 other.radioType == radioType) &&
             const DeepCollectionEquality().equals(other.value, value) &&
-            const DeepCollectionEquality()
-                .equals(other._onChanged, _onChanged) &&
             (identical(other.mouseCursor, mouseCursor) ||
                 other.mouseCursor == mouseCursor) &&
             (identical(other.toggleable, toggleable) ||
@@ -392,7 +369,6 @@ class _StacRadio implements StacRadio {
       runtimeType,
       radioType,
       const DeepCollectionEquality().hash(value),
-      const DeepCollectionEquality().hash(_onChanged),
       mouseCursor,
       toggleable,
       activeColor,
@@ -410,7 +386,7 @@ class _StacRadio implements StacRadio {
 
   @override
   String toString() {
-    return 'StacRadio(radioType: $radioType, value: $value, onChanged: $onChanged, mouseCursor: $mouseCursor, toggleable: $toggleable, activeColor: $activeColor, inactiveColor: $inactiveColor, fillColor: $fillColor, focusColor: $focusColor, hoverColor: $hoverColor, overlayColor: $overlayColor, splashRadius: $splashRadius, materialTapTargetSize: $materialTapTargetSize, visualDensity: $visualDensity, autofocus: $autofocus, useCheckmarkStyle: $useCheckmarkStyle, useCupertinoCheckmarkStyle: $useCupertinoCheckmarkStyle)';
+    return 'StacRadio(radioType: $radioType, value: $value, mouseCursor: $mouseCursor, toggleable: $toggleable, activeColor: $activeColor, inactiveColor: $inactiveColor, fillColor: $fillColor, focusColor: $focusColor, hoverColor: $hoverColor, overlayColor: $overlayColor, splashRadius: $splashRadius, materialTapTargetSize: $materialTapTargetSize, visualDensity: $visualDensity, autofocus: $autofocus, useCheckmarkStyle: $useCheckmarkStyle, useCupertinoCheckmarkStyle: $useCupertinoCheckmarkStyle)';
   }
 }
 
@@ -425,7 +401,6 @@ abstract mixin class _$StacRadioCopyWith<$Res>
   $Res call(
       {StacRadioType radioType,
       dynamic value,
-      Map<String, dynamic>? onChanged,
       StacMouseCursor? mouseCursor,
       bool toggleable,
       String? activeColor,
@@ -459,7 +434,6 @@ class __$StacRadioCopyWithImpl<$Res> implements _$StacRadioCopyWith<$Res> {
   $Res call({
     Object? radioType = null,
     Object? value = freezed,
-    Object? onChanged = freezed,
     Object? mouseCursor = freezed,
     Object? toggleable = null,
     Object? activeColor = freezed,
@@ -484,10 +458,6 @@ class __$StacRadioCopyWithImpl<$Res> implements _$StacRadioCopyWith<$Res> {
           ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      onChanged: freezed == onChanged
-          ? _self._onChanged
-          : onChanged // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
       mouseCursor: freezed == mouseCursor
           ? _self.mouseCursor
           : mouseCursor // ignore: cast_nullable_to_non_nullable
