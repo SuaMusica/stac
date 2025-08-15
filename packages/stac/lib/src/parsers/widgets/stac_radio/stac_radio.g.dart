@@ -11,7 +11,6 @@ _StacRadio _$StacRadioFromJson(Map<String, dynamic> json) => _StacRadio(
           $enumDecodeNullable(_$StacRadioTypeEnumMap, json['radioType']) ??
               StacRadioType.material,
       value: json['value'],
-      onChanged: json['onChanged'] as Map<String, dynamic>?,
       mouseCursor:
           $enumDecodeNullable(_$StacMouseCursorEnumMap, json['mouseCursor']),
       toggleable: json['toggleable'] as bool? ?? false,
@@ -40,7 +39,6 @@ Map<String, dynamic> _$StacRadioToJson(_StacRadio instance) =>
     <String, dynamic>{
       'radioType': _$StacRadioTypeEnumMap[instance.radioType]!,
       'value': instance.value,
-      'onChanged': instance.onChanged,
       'mouseCursor': _$StacMouseCursorEnumMap[instance.mouseCursor],
       'toggleable': instance.toggleable,
       'activeColor': instance.activeColor,
