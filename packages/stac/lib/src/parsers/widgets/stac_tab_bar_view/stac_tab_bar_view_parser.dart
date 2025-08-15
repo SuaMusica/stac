@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:flutter/gestures.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_tab_bar_view.dart';
+import 'package:stac_models/widgets/tab_bar_view/stac_tab_bar_view.dart';
 
 class StacTabBarViewParser extends StacParser<StacTabBarView> {
   const StacTabBarViewParser({this.controller});
@@ -23,11 +23,12 @@ class StacTabBarViewParser extends StacParser<StacTabBarView> {
     return TabBarView(
       controller: controller,
       physics: model.physics?.parse,
-      dragStartBehavior: model.dragStartBehavior,
-      viewportFraction: model.viewportFraction.parse,
-      clipBehavior: model.clipBehavior,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+      viewportFraction: model.viewportFraction ?? 1.0,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
       children: model.children
-          .map((child) => Stac.fromJson(child, context) ?? const SizedBox())
+          .map((c) => c.parse(context) ?? const SizedBox())
           .toList(),
     );
   }
