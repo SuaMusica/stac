@@ -15,6 +15,7 @@ export 'drawer/stac_drawer.dart';
 export 'default_tab_controller/stac_default_tab_controller.dart';
 export 'page_view/stac_page_view.dart';
 export 'tab/stac_tab.dart';
+export 'tab_bar/stac_tab_bar.dart';
 export 'chip/stac_chip.dart';
 export 'column/stac_column.dart';
 export 'container/stac_container.dart';
