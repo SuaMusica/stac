@@ -14,6 +14,7 @@ export 'circular_progress_indicator/stac_circular_progress_indicator.dart';
 export 'drawer/stac_drawer.dart';
 export 'default_tab_controller/stac_default_tab_controller.dart';
 export 'page_view/stac_page_view.dart';
+export 'tab/stac_tab.dart';
 export 'chip/stac_chip.dart';
 export 'column/stac_column.dart';
 export 'container/stac_container.dart';
