@@ -17,7 +17,6 @@ To know more about the Radio widget in Flutter, refer to the [official documenta
 |----------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------------|
 | radioType                  | `StacRadioType`        | The type of radio.                                                                                              |
 | value                      | `dynamic`               | The value represented by this radio.                                                                            |
-| onChanged                  | `Map<String, dynamic>`  | The action needs trigger when radio value change.                                                               |
 | mouseCursor                | `StacMouseCursor`      | The cursor for a mouse pointer when it enters or is hovering over the radio.                                    |
 | toggleable                 | `bool`                  | Set to true if this wanted to deselect when selected.                                                           |
 | activeColor                | `String`                | The color to use when this radio button is selected.                                                            |

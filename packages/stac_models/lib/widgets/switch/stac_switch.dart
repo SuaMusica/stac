@@ -47,7 +47,7 @@ class StacSwitch extends StacWidget {
     this.value,
     this.onChanged,
     this.autofocus,
-    this.activeColor,
+    this.activeThumbColor,
     this.activeTrackColor,
     this.focusColor,
     this.hoverColor,
@@ -87,7 +87,7 @@ class StacSwitch extends StacWidget {
   /// The color to use when this switch is on.
   ///
   /// Type: [StacColor]
-  final StacColor? activeColor;
+  final StacColor? activeThumbColor;
 
   /// The color to use for the track when this switch is on (Material only).
   ///
