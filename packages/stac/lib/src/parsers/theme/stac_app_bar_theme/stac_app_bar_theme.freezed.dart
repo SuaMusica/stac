@@ -15,7 +15,6 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$StacAppBarTheme {
-  String? get color;
   String? get backgroundColor;
   String? get foregroundColor;
   double? get elevation;
@@ -49,7 +48,6 @@ mixin _$StacAppBarTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StacAppBarTheme &&
-            (identical(other.color, color) || other.color == color) &&
             (identical(other.backgroundColor, backgroundColor) ||
                 other.backgroundColor == backgroundColor) &&
             (identical(other.foregroundColor, foregroundColor) ||
@@ -87,7 +85,6 @@ mixin _$StacAppBarTheme {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      color,
       backgroundColor,
       foregroundColor,
       elevation,
@@ -107,7 +104,7 @@ mixin _$StacAppBarTheme {
 
   @override
   String toString() {
-    return 'StacAppBarTheme(color: $color, backgroundColor: $backgroundColor, foregroundColor: $foregroundColor, elevation: $elevation, scrolledUnderElevation: $scrolledUnderElevation, shadowColor: $shadowColor, surfaceTintColor: $surfaceTintColor, shape: $shape, iconTheme: $iconTheme, actionsIconTheme: $actionsIconTheme, centerTitle: $centerTitle, titleSpacing: $titleSpacing, toolbarHeight: $toolbarHeight, toolbarTextStyle: $toolbarTextStyle, titleTextStyle: $titleTextStyle, systemOverlayStyle: $systemOverlayStyle, actionsPadding: $actionsPadding)';
+    return 'StacAppBarTheme(backgroundColor: $backgroundColor, foregroundColor: $foregroundColor, elevation: $elevation, scrolledUnderElevation: $scrolledUnderElevation, shadowColor: $shadowColor, surfaceTintColor: $surfaceTintColor, shape: $shape, iconTheme: $iconTheme, actionsIconTheme: $actionsIconTheme, centerTitle: $centerTitle, titleSpacing: $titleSpacing, toolbarHeight: $toolbarHeight, toolbarTextStyle: $toolbarTextStyle, titleTextStyle: $titleTextStyle, systemOverlayStyle: $systemOverlayStyle, actionsPadding: $actionsPadding)';
   }
 }
 
@@ -118,8 +115,7 @@ abstract mixin class $StacAppBarThemeCopyWith<$Res> {
       _$StacAppBarThemeCopyWithImpl;
   @useResult
   $Res call(
-      {String? color,
-      String? backgroundColor,
+      {String? backgroundColor,
       String? foregroundColor,
       double? elevation,
       double? scrolledUnderElevation,
@@ -153,7 +149,6 @@ class _$StacAppBarThemeCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
     Object? backgroundColor = freezed,
     Object? foregroundColor = freezed,
     Object? elevation = freezed,
@@ -172,10 +167,6 @@ class _$StacAppBarThemeCopyWithImpl<$Res>
     Object? actionsPadding = freezed,
   }) {
     return _then(_self.copyWith(
-      color: freezed == color
-          ? _self.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
       backgroundColor: freezed == backgroundColor
           ? _self.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
@@ -276,8 +267,7 @@ class _$StacAppBarThemeCopyWithImpl<$Res>
 @JsonSerializable()
 class _StacAppBarTheme implements StacAppBarTheme {
   const _StacAppBarTheme(
-      {this.color,
-      this.backgroundColor,
+      {this.backgroundColor,
       this.foregroundColor,
       this.elevation,
       this.scrolledUnderElevation,
@@ -296,8 +286,6 @@ class _StacAppBarTheme implements StacAppBarTheme {
   factory _StacAppBarTheme.fromJson(Map<String, dynamic> json) =>
       _$StacAppBarThemeFromJson(json);
 
-  @override
-  final String? color;
   @override
   final String? backgroundColor;
   @override
@@ -351,7 +339,6 @@ class _StacAppBarTheme implements StacAppBarTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _StacAppBarTheme &&
-            (identical(other.color, color) || other.color == color) &&
             (identical(other.backgroundColor, backgroundColor) ||
                 other.backgroundColor == backgroundColor) &&
             (identical(other.foregroundColor, foregroundColor) ||
@@ -389,7 +376,6 @@ class _StacAppBarTheme implements StacAppBarTheme {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      color,
       backgroundColor,
       foregroundColor,
       elevation,
@@ -409,7 +395,7 @@ class _StacAppBarTheme implements StacAppBarTheme {
 
   @override
   String toString() {
-    return 'StacAppBarTheme(color: $color, backgroundColor: $backgroundColor, foregroundColor: $foregroundColor, elevation: $elevation, scrolledUnderElevation: $scrolledUnderElevation, shadowColor: $shadowColor, surfaceTintColor: $surfaceTintColor, shape: $shape, iconTheme: $iconTheme, actionsIconTheme: $actionsIconTheme, centerTitle: $centerTitle, titleSpacing: $titleSpacing, toolbarHeight: $toolbarHeight, toolbarTextStyle: $toolbarTextStyle, titleTextStyle: $titleTextStyle, systemOverlayStyle: $systemOverlayStyle, actionsPadding: $actionsPadding)';
+    return 'StacAppBarTheme(backgroundColor: $backgroundColor, foregroundColor: $foregroundColor, elevation: $elevation, scrolledUnderElevation: $scrolledUnderElevation, shadowColor: $shadowColor, surfaceTintColor: $surfaceTintColor, shape: $shape, iconTheme: $iconTheme, actionsIconTheme: $actionsIconTheme, centerTitle: $centerTitle, titleSpacing: $titleSpacing, toolbarHeight: $toolbarHeight, toolbarTextStyle: $toolbarTextStyle, titleTextStyle: $titleTextStyle, systemOverlayStyle: $systemOverlayStyle, actionsPadding: $actionsPadding)';
   }
 }
 
@@ -422,8 +408,7 @@ abstract mixin class _$StacAppBarThemeCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? color,
-      String? backgroundColor,
+      {String? backgroundColor,
       String? foregroundColor,
       double? elevation,
       double? scrolledUnderElevation,
@@ -459,7 +444,6 @@ class __$StacAppBarThemeCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? color = freezed,
     Object? backgroundColor = freezed,
     Object? foregroundColor = freezed,
     Object? elevation = freezed,
@@ -478,10 +462,6 @@ class __$StacAppBarThemeCopyWithImpl<$Res>
     Object? actionsPadding = freezed,
   }) {
     return _then(_StacAppBarTheme(
-      color: freezed == color
-          ? _self.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
       backgroundColor: freezed == backgroundColor
           ? _self.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable

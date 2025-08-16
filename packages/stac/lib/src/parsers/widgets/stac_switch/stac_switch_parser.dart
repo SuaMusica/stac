@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:stac/stac.dart';
+import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac_models/widgets/switch/stac_switch.dart';
+import 'package:stac/stac.dart';
 import 'package:stac_models/types/stac_switch_type.dart';
+import 'package:stac_models/widgets/switch/stac_switch.dart';
 
 class StacSwitchParser extends StacParser<StacSwitch> {
   const StacSwitchParser();
@@ -78,8 +78,8 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return CupertinoSwitch(
       value: isSelected,
       onChanged: _onChanged,
-      activeTrackColor: model.activeColor?.toColor(context),
-      inactiveTrackColor: model.trackColor?.toColor(context),
+      activeTrackColor: model.activeTrackColor?.toColor(context),
+      inactiveTrackColor: model.inactiveTrackColor?.toColor(context),
       thumbColor: model.thumbColor?.toColor(context),
       applyTheme: model.applyTheme,
       focusColor: model.focusColor?.toColor(context),
@@ -95,7 +95,7 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return Switch.adaptive(
       value: isSelected,
       onChanged: _onChanged,
-      activeColor: model.activeColor?.toColor(context),
+      activeThumbColor: model.activeThumbColor?.toColor(context),
       activeTrackColor: model.activeTrackColor?.toColor(context),
       inactiveThumbColor: model.inactiveThumbColor?.toColor(context),
       inactiveTrackColor: model.inactiveTrackColor?.toColor(context),
@@ -132,10 +132,10 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return Switch(
       value: isSelected,
       onChanged: _onChanged,
-      activeColor: model.activeColor?.toColor(context),
-      activeTrackColor: model.activeTrackColor?.toColor(context),
-      inactiveThumbColor: model.inactiveThumbColor?.toColor(context),
-      inactiveTrackColor: model.inactiveTrackColor?.toColor(context),
+      activeThumbColor: model.activeThumbColor.toColor(context),
+      activeTrackColor: model.activeTrackColor.toColor(context),
+      inactiveThumbColor: model.inactiveThumbColor.toColor(context),
+      inactiveTrackColor: model.inactiveTrackColor.toColor(context),
       activeThumbImage: model.activeThumbImage != null
           ? NetworkImage(model.activeThumbImage!)
           : null,

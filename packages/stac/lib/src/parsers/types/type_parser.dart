@@ -1,9 +1,15 @@
 import 'dart:math' as math;
+import 'dart:typed_data';
+import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac/src/utils/input_formatters.dart';
 import 'package:stac_models/stac_models.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
 import 'package:stac_models/types/stac_alignment.dart';
@@ -24,17 +30,11 @@ import 'package:stac_models/types/stac_image_repeat.dart';
 import 'package:stac_models/types/stac_main_axis_alignment.dart';
 import 'package:stac_models/types/stac_main_axis_size.dart';
 import 'package:stac_models/types/stac_offset/stac_offset.dart';
-import 'dart:ui';
-import 'dart:typed_data';
 import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
 import 'package:stac_models/types/stac_stack_fit.dart';
 import 'package:stac_models/types/stac_vertical_direction.dart';
 import 'package:stac_models/types/stac_wrap_alignment.dart';
 import 'package:stac_models/types/stac_wrap_cross_alignment.dart';
-import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/utils/input_formatters.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {

@@ -6,6 +6,7 @@ import 'package:stac_models/types/stac_clip.dart';
 import 'package:stac_models/types/stac_drag_start_behavior.dart';
 import 'package:stac_models/types/stac_scroll_physics.dart';
 import 'package:stac_models/types/stac_scroll_view_keyboard_dismiss_behavior.dart';
+import 'package:stac_models/stac_models.dart';
 
 part 'stac_single_child_scroll_view.g.dart';
 
