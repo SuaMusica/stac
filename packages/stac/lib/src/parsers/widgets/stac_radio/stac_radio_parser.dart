@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_scope.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/radio/stac_radio.dart';
 import 'package:stac_models/types/stac_radio_type.dart';
+import 'package:stac_models/widgets/radio/stac_radio.dart';
 
 class StacRadioParser extends StacParser<StacRadio> {
   const StacRadioParser();
@@ -50,11 +49,6 @@ class _RadioWidget extends StatelessWidget {
     }
   }
 
-  void _onChanged(dynamic value, BuildContext context) {
-    model.onChanged?.parse(context);
-    radioGroupScope?.onSelect(value);
-  }
-
   Widget _buildCupertinoRadio(
     BuildContext context,
     StacRadio model,
@@ -65,10 +59,6 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return CupertinoRadio(
           value: model.value,
-          groupValue: value,
-          onChanged: (dynamic value) {
-            _onChanged(value, context);
-          },
           mouseCursor: model.mouseCursor?.parse,
           toggleable: model.toggleable ?? false,
           activeColor: model.activeColor?.toColor(context),
@@ -93,10 +83,6 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return Radio.adaptive(
           value: model.value,
-          groupValue: value,
-          onChanged: (dynamic value) {
-            _onChanged(value, context);
-          },
           mouseCursor: model.mouseCursor?.parse,
           toggleable: model.toggleable ?? false,
           activeColor: model.activeColor?.toColor(context),
@@ -127,10 +113,6 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return Radio(
           value: model.value,
-          groupValue: value,
-          onChanged: (dynamic value) {
-            _onChanged(value, context);
-          },
           mouseCursor: model.mouseCursor?.parse,
           toggleable: model.toggleable ?? false,
           activeColor: model.activeColor?.toColor(context),
