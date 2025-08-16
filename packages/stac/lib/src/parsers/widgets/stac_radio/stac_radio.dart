@@ -16,7 +16,6 @@ abstract class StacRadio with _$StacRadio {
   const factory StacRadio({
     @Default(StacRadioType.material) StacRadioType radioType,
     dynamic value,
-    Map<String, dynamic>? onChanged,
     StacMouseCursor? mouseCursor,
     @Default(false) bool toggleable,
     String? activeColor,

@@ -11,7 +11,6 @@ part 'stac_app_bar_theme.g.dart';
 @freezed
 abstract class StacAppBarTheme with _$StacAppBarTheme {
   const factory StacAppBarTheme({
-    String? color,
     String? backgroundColor,
     String? foregroundColor,
     double? elevation,
@@ -37,7 +36,6 @@ abstract class StacAppBarTheme with _$StacAppBarTheme {
 extension StacAppBarThemeParser on StacAppBarTheme {
   AppBarTheme? parse(BuildContext context) {
     return AppBarTheme(
-      color: color.toColor(context),
       backgroundColor: backgroundColor.toColor(context),
       foregroundColor: foregroundColor.toColor(context),
       elevation: elevation,

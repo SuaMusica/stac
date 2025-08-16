@@ -47,13 +47,6 @@ class _RadioWidget extends StatelessWidget {
     }
   }
 
-  void _onChanged(dynamic value, BuildContext context) {
-    if (model.onChanged != null) {
-      Stac.onCallFromJson(model.onChanged, context);
-    }
-    radioGroupScope?.onSelect(value);
-  }
-
   Widget _buildCupertinoRadio(
     BuildContext context,
     StacRadio model,
@@ -64,10 +57,6 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return CupertinoRadio(
           value: model.value,
-          groupValue: value,
-          onChanged: (dynamic value) {
-            _onChanged(value, context);
-          },
           mouseCursor: model.mouseCursor?.value,
           toggleable: model.toggleable,
           activeColor: model.activeColor.toColor(context),
@@ -92,10 +81,6 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return Radio.adaptive(
           value: model.value,
-          groupValue: value,
-          onChanged: (dynamic value) {
-            _onChanged(value, context);
-          },
           mouseCursor: model.mouseCursor?.value,
           toggleable: model.toggleable,
           activeColor: model.activeColor?.toColor(context),
@@ -126,10 +111,6 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return Radio(
           value: model.value,
-          groupValue: value,
-          onChanged: (dynamic value) {
-            _onChanged(value, context);
-          },
           mouseCursor: model.mouseCursor?.value,
           toggleable: model.toggleable,
           activeColor: model.activeColor.toColor(context),
