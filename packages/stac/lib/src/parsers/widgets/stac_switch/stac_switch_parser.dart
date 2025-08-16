@@ -80,7 +80,7 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return CupertinoSwitch(
       value: isSelected,
       onChanged: _onChanged,
-      activeTrackColor: model.activeColor?.toColor(context),
+      activeTrackColor: model.activeThumbColor?.toColor(context),
       inactiveTrackColor: model.trackColor?.parse(context),
       thumbColor: model.thumbColor?.parse(context),
       applyTheme: model.applyTheme,
@@ -96,7 +96,7 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return Switch.adaptive(
       value: isSelected,
       onChanged: _onChanged,
-      activeColor: model.activeColor?.toColor(context),
+      activeThumbColor: model.activeThumbColor?.toColor(context),
       activeTrackColor: model.activeTrackColor?.toColor(context),
       inactiveThumbColor: model.inactiveThumbColor?.toColor(context),
       inactiveTrackColor: model.inactiveTrackColor?.toColor(context),
@@ -133,7 +133,7 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return Switch(
       value: isSelected,
       onChanged: _onChanged,
-      activeColor: model.activeColor.toColor(context),
+      activeThumbColor: model.activeThumbColor.toColor(context),
       activeTrackColor: model.activeTrackColor.toColor(context),
       inactiveThumbColor: model.inactiveThumbColor.toColor(context),
       inactiveTrackColor: model.inactiveTrackColor.toColor(context),

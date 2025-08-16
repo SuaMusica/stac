@@ -19,7 +19,7 @@ mixin _$StacSwitch {
   dynamic get value;
   Map<String, dynamic>? get onChanged;
   bool get autofocus;
-  String? get activeColor;
+  String? get activeThumbColor;
   String? get activeTrackColor;
   String? get focusColor;
   String? get hoverColor;
@@ -62,8 +62,8 @@ mixin _$StacSwitch {
             const DeepCollectionEquality().equals(other.onChanged, onChanged) &&
             (identical(other.autofocus, autofocus) ||
                 other.autofocus == autofocus) &&
-            (identical(other.activeColor, activeColor) ||
-                other.activeColor == activeColor) &&
+            (identical(other.activeThumbColor, activeThumbColor) ||
+                other.activeThumbColor == activeThumbColor) &&
             (identical(other.activeTrackColor, activeTrackColor) ||
                 other.activeTrackColor == activeTrackColor) &&
             (identical(other.focusColor, focusColor) ||
@@ -113,7 +113,7 @@ mixin _$StacSwitch {
         const DeepCollectionEquality().hash(value),
         const DeepCollectionEquality().hash(onChanged),
         autofocus,
-        activeColor,
+        activeThumbColor,
         activeTrackColor,
         focusColor,
         hoverColor,
@@ -138,7 +138,7 @@ mixin _$StacSwitch {
 
   @override
   String toString() {
-    return 'StacSwitch(switchType: $switchType, value: $value, onChanged: $onChanged, autofocus: $autofocus, activeColor: $activeColor, activeTrackColor: $activeTrackColor, focusColor: $focusColor, hoverColor: $hoverColor, inactiveThumbColor: $inactiveThumbColor, inactiveTrackColor: $inactiveTrackColor, onLabelColor: $onLabelColor, offLabelColor: $offLabelColor, splashRadius: $splashRadius, dragStartBehavior: $dragStartBehavior, overlayColor: $overlayColor, thumbColor: $thumbColor, trackColor: $trackColor, materialTapTargetSize: $materialTapTargetSize, trackOutlineColor: $trackOutlineColor, trackOutlineWidth: $trackOutlineWidth, thumbIcon: $thumbIcon, inactiveThumbImage: $inactiveThumbImage, activeThumbImage: $activeThumbImage, applyTheme: $applyTheme, applyCupertinoTheme: $applyCupertinoTheme)';
+    return 'StacSwitch(switchType: $switchType, value: $value, onChanged: $onChanged, autofocus: $autofocus, activeThumbColor: $activeThumbColor, activeTrackColor: $activeTrackColor, focusColor: $focusColor, hoverColor: $hoverColor, inactiveThumbColor: $inactiveThumbColor, inactiveTrackColor: $inactiveTrackColor, onLabelColor: $onLabelColor, offLabelColor: $offLabelColor, splashRadius: $splashRadius, dragStartBehavior: $dragStartBehavior, overlayColor: $overlayColor, thumbColor: $thumbColor, trackColor: $trackColor, materialTapTargetSize: $materialTapTargetSize, trackOutlineColor: $trackOutlineColor, trackOutlineWidth: $trackOutlineWidth, thumbIcon: $thumbIcon, inactiveThumbImage: $inactiveThumbImage, activeThumbImage: $activeThumbImage, applyTheme: $applyTheme, applyCupertinoTheme: $applyCupertinoTheme)';
   }
 }
 
@@ -153,7 +153,7 @@ abstract mixin class $StacSwitchCopyWith<$Res> {
       dynamic value,
       Map<String, dynamic>? onChanged,
       bool autofocus,
-      String? activeColor,
+      String? activeThumbColor,
       String? activeTrackColor,
       String? focusColor,
       String? hoverColor,
@@ -197,7 +197,7 @@ class _$StacSwitchCopyWithImpl<$Res> implements $StacSwitchCopyWith<$Res> {
     Object? value = freezed,
     Object? onChanged = freezed,
     Object? autofocus = null,
-    Object? activeColor = freezed,
+    Object? activeThumbColor = freezed,
     Object? activeTrackColor = freezed,
     Object? focusColor = freezed,
     Object? hoverColor = freezed,
@@ -236,9 +236,9 @@ class _$StacSwitchCopyWithImpl<$Res> implements $StacSwitchCopyWith<$Res> {
           ? _self.autofocus
           : autofocus // ignore: cast_nullable_to_non_nullable
               as bool,
-      activeColor: freezed == activeColor
-          ? _self.activeColor
-          : activeColor // ignore: cast_nullable_to_non_nullable
+      activeThumbColor: freezed == activeThumbColor
+          ? _self.activeThumbColor
+          : activeThumbColor // ignore: cast_nullable_to_non_nullable
               as String?,
       activeTrackColor: freezed == activeTrackColor
           ? _self.activeTrackColor
@@ -388,7 +388,7 @@ class _StacSwitch implements StacSwitch {
       this.value = false,
       final Map<String, dynamic>? onChanged,
       this.autofocus = false,
-      this.activeColor,
+      this.activeThumbColor,
       this.activeTrackColor,
       this.focusColor,
       this.hoverColor,
@@ -434,7 +434,7 @@ class _StacSwitch implements StacSwitch {
   @JsonKey()
   final bool autofocus;
   @override
-  final String? activeColor;
+  final String? activeThumbColor;
   @override
   final String? activeTrackColor;
   @override
@@ -512,8 +512,8 @@ class _StacSwitch implements StacSwitch {
                 .equals(other._onChanged, _onChanged) &&
             (identical(other.autofocus, autofocus) ||
                 other.autofocus == autofocus) &&
-            (identical(other.activeColor, activeColor) ||
-                other.activeColor == activeColor) &&
+            (identical(other.activeThumbColor, activeThumbColor) ||
+                other.activeThumbColor == activeThumbColor) &&
             (identical(other.activeTrackColor, activeTrackColor) ||
                 other.activeTrackColor == activeTrackColor) &&
             (identical(other.focusColor, focusColor) ||
@@ -564,7 +564,7 @@ class _StacSwitch implements StacSwitch {
         const DeepCollectionEquality().hash(value),
         const DeepCollectionEquality().hash(_onChanged),
         autofocus,
-        activeColor,
+        activeThumbColor,
         activeTrackColor,
         focusColor,
         hoverColor,
@@ -589,7 +589,7 @@ class _StacSwitch implements StacSwitch {
 
   @override
   String toString() {
-    return 'StacSwitch(switchType: $switchType, value: $value, onChanged: $onChanged, autofocus: $autofocus, activeColor: $activeColor, activeTrackColor: $activeTrackColor, focusColor: $focusColor, hoverColor: $hoverColor, inactiveThumbColor: $inactiveThumbColor, inactiveTrackColor: $inactiveTrackColor, onLabelColor: $onLabelColor, offLabelColor: $offLabelColor, splashRadius: $splashRadius, dragStartBehavior: $dragStartBehavior, overlayColor: $overlayColor, thumbColor: $thumbColor, trackColor: $trackColor, materialTapTargetSize: $materialTapTargetSize, trackOutlineColor: $trackOutlineColor, trackOutlineWidth: $trackOutlineWidth, thumbIcon: $thumbIcon, inactiveThumbImage: $inactiveThumbImage, activeThumbImage: $activeThumbImage, applyTheme: $applyTheme, applyCupertinoTheme: $applyCupertinoTheme)';
+    return 'StacSwitch(switchType: $switchType, value: $value, onChanged: $onChanged, autofocus: $autofocus, activeThumbColor: $activeThumbColor, activeTrackColor: $activeTrackColor, focusColor: $focusColor, hoverColor: $hoverColor, inactiveThumbColor: $inactiveThumbColor, inactiveTrackColor: $inactiveTrackColor, onLabelColor: $onLabelColor, offLabelColor: $offLabelColor, splashRadius: $splashRadius, dragStartBehavior: $dragStartBehavior, overlayColor: $overlayColor, thumbColor: $thumbColor, trackColor: $trackColor, materialTapTargetSize: $materialTapTargetSize, trackOutlineColor: $trackOutlineColor, trackOutlineWidth: $trackOutlineWidth, thumbIcon: $thumbIcon, inactiveThumbImage: $inactiveThumbImage, activeThumbImage: $activeThumbImage, applyTheme: $applyTheme, applyCupertinoTheme: $applyCupertinoTheme)';
   }
 }
 
@@ -606,7 +606,7 @@ abstract mixin class _$StacSwitchCopyWith<$Res>
       dynamic value,
       Map<String, dynamic>? onChanged,
       bool autofocus,
-      String? activeColor,
+      String? activeThumbColor,
       String? activeTrackColor,
       String? focusColor,
       String? hoverColor,
@@ -654,7 +654,7 @@ class __$StacSwitchCopyWithImpl<$Res> implements _$StacSwitchCopyWith<$Res> {
     Object? value = freezed,
     Object? onChanged = freezed,
     Object? autofocus = null,
-    Object? activeColor = freezed,
+    Object? activeThumbColor = freezed,
     Object? activeTrackColor = freezed,
     Object? focusColor = freezed,
     Object? hoverColor = freezed,
@@ -693,9 +693,9 @@ class __$StacSwitchCopyWithImpl<$Res> implements _$StacSwitchCopyWith<$Res> {
           ? _self.autofocus
           : autofocus // ignore: cast_nullable_to_non_nullable
               as bool,
-      activeColor: freezed == activeColor
-          ? _self.activeColor
-          : activeColor // ignore: cast_nullable_to_non_nullable
+      activeThumbColor: freezed == activeThumbColor
+          ? _self.activeThumbColor
+          : activeThumbColor // ignore: cast_nullable_to_non_nullable
               as String?,
       activeTrackColor: freezed == activeTrackColor
           ? _self.activeTrackColor

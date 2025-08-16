@@ -1,3 +1,11 @@
+## 1.0.0-dev.6
+
+* BREAKING: Minimum Flutter SDK is now 3.35.0+
+* BREAKING: Switch — rename `activeColor` → `activeThumbColor` (align with Flutter API). Update your JSON accordingly
+* BREAKING: `ThemeData.bottomAppBarTheme` now expects `BottomAppBarThemeData` (aligned with Flutter 3.35). No JSON change for `StacBottomAppBarTheme`
+* docs: Updated Switch and Radio docs; added guidance for RadioGroup usage
+* chore: Static analysis cleanups for latest Flutter
+
 ## 1.0.0-dev.5
 
 * feat: WASM compatibility for Web/WASM platform support
