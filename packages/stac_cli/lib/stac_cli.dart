@@ -314,7 +314,7 @@ class StacCli {
         // Find top-level functions that return StacWidget
         for (final declaration in unit.declarations) {
           if (declaration is FunctionDeclaration) {
-            final returnType = declaration.declaredElement?.returnType;
+            final returnType = declaration.returnType?.type;
             if (_isStacWidgetType(returnType)) {
               functions.add(declaration.name.lexeme);
               _log('Found StacWidget function: ${declaration.name.lexeme}');
