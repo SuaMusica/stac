@@ -13,7 +13,7 @@ StacSwitch _$StacSwitchFromJson(Map<String, dynamic> json) => StacSwitch(
       ? null
       : StacAction.fromJson(json['onChanged'] as Map<String, dynamic>),
   autofocus: json['autofocus'] as bool?,
-  activeColor: json['activeColor'] as String?,
+  activeThumbColor: json['activeThumbColor'] as String?,
   activeTrackColor: json['activeTrackColor'] as String?,
   focusColor: json['focusColor'] as String?,
   hoverColor: json['hoverColor'] as String?,
@@ -52,7 +52,7 @@ Map<String, dynamic> _$StacSwitchToJson(StacSwitch instance) =>
       'value': instance.value,
       'onChanged': instance.onChanged?.toJson(),
       'autofocus': instance.autofocus,
-      'activeColor': instance.activeColor,
+      'activeThumbColor': instance.activeThumbColor,
       'activeTrackColor': instance.activeTrackColor,
       'focusColor': instance.focusColor,
       'hoverColor': instance.hoverColor,

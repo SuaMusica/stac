@@ -1,7 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/stac_models.dart';
-import 'package:stac_models/types/stac_axis.dart';
-import 'package:stac_models/types/stac_clip.dart';
 
 part 'stac_single_child_scroll_view.g.dart';
 
