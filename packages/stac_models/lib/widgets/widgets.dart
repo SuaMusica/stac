@@ -48,6 +48,7 @@ export 'custom_scroll_view/stac_custom_scroll_view.dart';
 export 'check_box/stac_check_box.dart';
 export 'radio/stac_radio.dart';
 export 'radio_group/stac_radio_group.dart';
+export 'grid_view/stac_grid_view.dart';
 export 'slider/stac_slider.dart';
 export 'row/stac_row.dart';
 export 'safe_area/stac_safe_area.dart';
