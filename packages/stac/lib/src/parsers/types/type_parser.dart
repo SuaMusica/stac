@@ -11,7 +11,9 @@ import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/input_formatters.dart';
 import 'package:stac_models/stac_models.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac_models/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
 import 'package:stac_models/types/stac_alignment.dart';
 import 'package:stac_models/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
 import 'package:stac_models/types/stac_blur_style.dart';
@@ -1143,6 +1145,72 @@ extension StacAxisParser on StacAxis {
       case StacAxis.vertical:
         return Axis.vertical;
     }
+  }
+}
+
+extension StacInputDecorationThemeParser on StacInputDecorationTheme? {
+  InputDecorationTheme parse(BuildContext context) {
+    FloatingLabelBehavior parseFloatingLabelBehavior(String? behavior) {
+      switch (behavior) {
+        case 'always':
+          return FloatingLabelBehavior.always;
+        case 'never':
+          return FloatingLabelBehavior.never;
+        case 'auto':
+        default:
+          return FloatingLabelBehavior.auto;
+      }
+    }
+
+    FloatingLabelAlignment parseFloatingLabelAlignment(String? alignment) {
+      switch (alignment) {
+        case 'center':
+          return FloatingLabelAlignment.center;
+        case 'start':
+        default:
+          return FloatingLabelAlignment.start;
+      }
+    }
+
+    return InputDecorationTheme(
+      labelStyle: this?.labelStyle?.parse(context),
+      floatingLabelStyle: this?.floatingLabelStyle?.parse(context),
+      helperStyle: this?.helperStyle?.parse(context),
+      helperMaxLines: this?.helperMaxLines,
+      hintStyle: this?.hintStyle?.parse(context),
+      errorStyle: this?.errorStyle?.parse(context),
+      errorMaxLines: this?.errorMaxLines,
+      floatingLabelBehavior:
+          parseFloatingLabelBehavior(this?.floatingLabelBehavior),
+      floatingLabelAlignment:
+          parseFloatingLabelAlignment(this?.floatingLabelAlignment),
+      isDense: this?.isDense ?? false,
+      contentPadding: this?.contentPadding?.parse,
+      isCollapsed: this?.isCollapsed ?? false,
+      iconColor: this?.iconColor.toColor(context),
+      prefixStyle: this?.prefixStyle?.parse(context),
+      prefixIconColor: this?.prefixIconColor.toColor(context),
+      suffixStyle: this?.suffixStyle?.parse(context),
+      suffixIconColor: this?.suffixIconColor.toColor(context),
+      counterStyle: this?.counterStyle?.parse(context),
+      filled: this?.filled ?? false,
+      fillColor: this?.fillColor.toColor(context),
+      alignLabelWithHint: this?.alignLabelWithHint ?? false,
+      constraints: this?.constraints?.parse,
+    );
+  }
+}
+
+extension StacDropdownMenuEntryParser on StacDropdownMenuEntry? {
+  DropdownMenuEntry? parse(BuildContext context) {
+    return DropdownMenuEntry(
+      value: this?.value,
+      label: this?.label ?? '',
+      labelWidget: this?.labelWidget?.parse(context),
+      leadingIcon: this?.leadingIcon?.parse(context),
+      enabled: this?.enabled ?? true,
+      style: this?.style?.parseTextButton(context),
+    );
   }
 }
 
