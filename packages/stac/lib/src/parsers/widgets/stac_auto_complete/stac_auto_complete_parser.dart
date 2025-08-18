@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'stac_auto_complete.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/auto_complete/stac_auto_complete.dart';
+import 'package:stac_models/types/stac_options_view_open_direction.dart';
 
 class StacAutoCompleteParser extends StacParser<StacAutoComplete> {
   const StacAutoCompleteParser();
@@ -26,10 +27,11 @@ class StacAutoCompleteParser extends StacParser<StacAutoComplete> {
           return option.contains(textEditingValue.text.toLowerCase());
         });
       },
-      onSelected: (String val) =>
-          Stac.onCallFromJson(model.onSelected, context),
-      optionsMaxHeight: model.optionsMaxHeight.parse,
-      optionsViewOpenDirection: model.optionsViewOpenDirection,
+      onSelected: (String val) => model.onSelected?.parse(context),
+      optionsMaxHeight: model.optionsMaxHeight ?? 200,
+      optionsViewOpenDirection:
+          (model.optionsViewOpenDirection ?? StacOptionsViewOpenDirection.down)
+              .parse,
       initialValue: model.initialValue != null
           ? TextEditingValue(text: model.initialValue!)
           : null,

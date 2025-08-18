@@ -41,3 +41,4 @@ export 'stac_axis.dart';
 export 'stac_tab_bar_indicator_size.dart';
 export 'stac_tab_alignment.dart';
 export 'stac_carousel_view_type.dart';
+export 'stac_options_view_open_direction.dart';

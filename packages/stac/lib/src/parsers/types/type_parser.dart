@@ -1146,6 +1146,17 @@ extension StacAxisParser on StacAxis {
   }
 }
 
+extension StacOptionsViewOpenDirectionParser on StacOptionsViewOpenDirection {
+  OptionsViewOpenDirection get parse {
+    switch (this) {
+      case StacOptionsViewOpenDirection.up:
+        return OptionsViewOpenDirection.up;
+      case StacOptionsViewOpenDirection.down:
+        return OptionsViewOpenDirection.down;
+    }
+  }
+}
+
 /// Extends [StacRefreshIndicatorTriggerMode] to provide parsing functionality.
 extension StacRefreshIndicatorTriggerModeParser
     on StacRefreshIndicatorTriggerMode {
