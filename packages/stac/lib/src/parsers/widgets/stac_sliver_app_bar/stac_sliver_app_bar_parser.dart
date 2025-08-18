@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_system_ui_overlay_style_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/theme/stac_icon_theme_data/stac_icon_theme_data.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_sliver_app_bar.dart';
+import 'package:stac_models/widgets/sliver_app_bar/stac_sliver_app_bar.dart';
 
 class StacSliverAppBarParser extends StacParser<StacSliverAppBar> {
   const StacSliverAppBarParser();
@@ -25,42 +22,38 @@ class StacSliverAppBarParser extends StacParser<StacSliverAppBar> {
   @override
   Widget parse(BuildContext context, StacSliverAppBar model) {
     return SliverAppBar(
-      leading: Stac.fromJson(model.leading, context),
-      automaticallyImplyLeading: model.automaticallyImplyLeading,
-      title: Stac.fromJson(model.title, context),
-      actions: model.actions
-          ?.map((e) => Stac.fromJson(e, context) ?? const SizedBox.shrink())
-          .toList(growable: false),
-      flexibleSpace: Stac.fromJson(model.flexibleSpace, context),
-      bottom: Stac.fromJson(model.bottom, context).toPreferredSizeWidget,
-      elevation: model.elevation?.parse,
-      scrolledUnderElevation: model.scrolledUnderElevation?.parse,
+      leading: model.leading?.parse(context),
+      automaticallyImplyLeading: model.automaticallyImplyLeading ?? true,
+      title: model.title?.parse(context),
+      actions: model.actions?.parseList(context) ?? const <Widget>[],
+      flexibleSpace: model.flexibleSpace?.parse(context),
+      bottom: model.bottom?.parsePreferredSizeWidget(context),
+      elevation: model.elevation,
+      scrolledUnderElevation: model.scrolledUnderElevation,
       shadowColor: model.shadowColor.toColor(context),
       surfaceTintColor: model.surfaceTintColor.toColor(context),
-      forceElevated: model.forceElevated,
+      forceElevated: model.forceElevated ?? false,
       backgroundColor: model.backgroundColor.toColor(context),
       foregroundColor: model.foregroundColor.toColor(context),
-      iconTheme: model.iconTheme?.parse(context),
-      actionsIconTheme: model.actionsIconTheme?.parse(context),
-      primary: model.primary,
+      primary: model.primary ?? true,
       centerTitle: model.centerTitle,
-      excludeHeaderSemantics: model.excludeHeaderSemantics,
-      titleSpacing: model.titleSpacing?.parse,
-      collapsedHeight: model.collapsedHeight?.parse,
-      expandedHeight: model.expandedHeight?.parse,
-      floating: model.floating,
-      pinned: model.pinned,
-      snap: model.snap,
-      stretch: model.stretch,
-      stretchTriggerOffset: model.stretchTriggerOffset.parse,
+      excludeHeaderSemantics: model.excludeHeaderSemantics ?? false,
+      titleSpacing: model.titleSpacing,
+      collapsedHeight: model.collapsedHeight,
+      expandedHeight: model.expandedHeight,
+      floating: model.floating ?? false,
+      pinned: model.pinned ?? true,
+      snap: model.snap ?? false,
+      stretch: model.stretch ?? false,
+      stretchTriggerOffset: model.stretchTriggerOffset ?? 100.0,
       shape: model.shape?.parse(context),
-      toolbarHeight: model.toolbarHeight.parse,
-      leadingWidth: model.leadingWidth?.parse,
+      toolbarHeight: model.toolbarHeight ?? 64.0,
+      leadingWidth: model.leadingWidth,
       toolbarTextStyle: model.toolbarTextStyle?.parse(context),
       titleTextStyle: model.titleTextStyle?.parse(context),
       systemOverlayStyle: model.systemOverlayStyle?.parse(context),
-      forceMaterialTransparency: model.forceMaterialTransparency,
-      clipBehavior: model.clipBehavior,
+      forceMaterialTransparency: model.forceMaterialTransparency ?? false,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
       actionsPadding: model.actionsPadding?.parse,
     );
   }
