@@ -63,7 +63,7 @@ class _StacPageViewWidgetState extends State<_StacPageViewWidget> {
         final child = widget.model.children?[index];
         return child?.parse(context) ?? const SizedBox();
       },
-      itemCount: widget.model.children?.length ?? 0,
+      itemCount: widget.model.children?.length,
       dragStartBehavior:
           widget.model.dragStartBehavior?.parse ?? DragStartBehavior.start,
       allowImplicitScrolling: widget.model.allowImplicitScrolling ?? false,
