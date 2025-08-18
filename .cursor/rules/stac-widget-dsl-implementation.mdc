@@ -1,0 +1,175 @@
+---
+description: |
+  Stac model scaffolding rule to create a StacWidget implementation/model for any specified Flutter widget,
+  including a code template, type-mapping guidance, and a migration workflow from legacy in-stac models.
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+# Stac model scaffolding rule
+
+When the user asks to "create a StacWidget implementation/model for <FlutterWidget>", follow this rule to scaffold a new Stac model class under `packages/stac_models` that mirrors the specified Flutter widget's API and our codebase conventions.
+
+Inputs you must confirm/derive before generating code:
+- Flutter widget class name: <FlutterWidget> (e.g., `Container`, `TextField`)
+- JSON type identifier string: prefer lowerCamel of the widget name (e.g., `container`, `textField`, `verticalDivider`). If the repository already uses a specific value for the same widget family, match it.
+- Property list to expose (map Flutter types to Stac types where available; see `packages/stac_models/lib/types` and `packages/stac_models/lib/painting`). Use `StacAction` for callbacks, `StacColor` for colors, `StacEdgeInsets` for insets, `StacTextStyle` for text style, enums from `types/` for flags, and annotate numeric doubles with `@DoubleConverter()`.
+
+File layout and naming:
+- Create directory: `packages/stac_models/lib/widgets/<kebab_case_widget>/`
+- Create file: `stac_<snake_case_widget>.dart`
+- Add `part 'stac_<snake_case_widget>.g.dart';` and `@JsonSerializable()`
+- Place comprehensive dartdoc with:
+  - What the widget does (1–3 sentences)
+  - Dart example
+  - JSON example
+  - "See also" link to Flutter docs
+
+Template to use for the model file (fill placeholders in ALL_CAPS):
+
+```dart
+import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_models/core/stac_widget.dart';
+import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/core/converters/double_converter.dart';
+
+part 'stac_WIDGET_SNAKE.g.dart';
+
+/// A Stac model representing Flutter's [WIDGET_NAME] widget.
+///
+/// SHORT_DESCRIPTION.
+///
+/// {@tool snippet}
+/// Dart Example:
+/// ```dart
+/// StacWidgetName(/* example props */)
+/// ```
+/// {@end-tool}
+///
+/// {@tool snippet}
+/// JSON Example:
+/// ```json
+/// {
+///   "type": "JSON_TYPE",
+///   /* props */
+/// }
+/// ```
+/// {@end-tool}
+///
+/// See also:
+///  * Flutter's [WIDGET_NAME documentation](https://api.flutter.dev/flutter/MATERIAL_OR_WIDGETS/WIDGET_NAME-class.html)
+@JsonSerializable()
+class StacWidgetName extends StacWidget {
+  const StacWidgetName({
+    // PROPERTIES_GO_HERE
+  });
+
+  // FIELDS_GO_HERE (prefer nullable; use Stac types; annotate doubles with @DoubleConverter())
+
+  /// Widget type identifier.
+  @override
+  String get type => 'JSON_TYPE';
+
+  /// Creates a [StacWidgetName] from a JSON map.
+  factory StacWidgetName.fromJson(Map<String, dynamic> json) =>
+      _$StacWidgetNameFromJson(json);
+
+  /// Converts this [StacWidgetName] instance to a JSON map.
+  @override
+  Map<String, dynamic> toJson() => _$StacWidgetNameToJson(this);
+}
+```
+
+After creating the file:
+1) Export it in `packages/stac_models/lib/widgets/widgets.dart`:
+   - `export '<kebab_case_widget>/stac_<snake_case_widget>.dart';`
+2) If you added new enums or types, export them in `packages/stac_models/lib/types/types.dart`.
+3) If you added new painting/config classes, export them in `packages/stac_models/lib/painting/painting.dart`.
+4) Run code generation (non-interactive):
+   - In repo root shell:
+     - `cd packages/stac_models; flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs`
+
+Type mapping guidance:
+- Colors: `StacColor` (typedef String), consumers parse via `toColor(context)`
+- Insets: `StacEdgeInsets`
+- Text styles: `StacTextStyle`
+- Enums: prefer existing in `packages/stac_models/lib/types` (e.g., `StacClip`, `StacAxis`, `StacScrollPhysics`, `StacMouseCursor`, `StacText*`)
+- Durations: `StacDuration`
+- Offsets/Rects: `StacOffset` / `StacRect`
+- Callbacks: `StacAction?` (e.g., `onTap`, `onChanged`)
+- Doubles: annotate with `@DoubleConverter()`
+
+Documentation style:
+- Match existing files like `stac_vertical_divider.dart`, `stac_limited_box.dart`, `stac_single_child_scroll_view.dart` for tone and structure.
+- Include Dart and JSON examples that are realistic and minimal.
+ - Every field MUST have its own individual dartdoc (no grouping multiple properties under one doc). For example, `cursorWidth`, `cursorHeight`, and `cursorColor` each need their own doc block.
+ - Every function/getter in the model MUST have individual dartdoc, including the `type` getter, `fromJson` factory, and `toJson` method.
+ - Use proper dartdoc (triple-slash `///`) not inline comments; these are documentation, not code comments.
+
+Naming conventions:
+- Class: `Stac<WidgetName>`; file: `stac_<snake>.dart`; folder: `<kebab>`
+- `type` string: lowerCamel version of widget (e.g., `container`, `textField`, `verticalDivider`). If an existing convention differs for the same widget family, mirror it for consistency.
+
+Out of scope for this rule:
+- Parser implementation in `packages/stac` (add later as needed to render the model).
+
+Migration workflow (when replacing an existing in-stac model):
+1) Inspect the old model and parser
+   - Locate any existing model under `packages/stac/lib/src/parsers/widgets/<widget>/` (e.g., a Freezed model like `stac_<widget>.dart`).
+   - Open the parser (e.g., `stac_<widget>_parser.dart`) and list all properties used to build the Flutter widget.
+   - Ensure you also review helper parsers used by this widget (e.g., `stac_input_decoration.dart`) to cover nested props.
+
+2) Reconcile properties with the new `stac_models` class
+   - Compare the old model’s fields with your new `Stac<WidgetName>` fields.
+   - If the old parser uses a property that’s missing in the new model, add it (prefer `Stac*` types and `@DoubleConverter()` for doubles).
+   - For nested/config objects, prefer adding a minimal Stac model (e.g., `StacInputDecoration`) rather than raw maps.
+
+3) Update or create the parser to use the new model
+   - If a parser does not exist yet, create `packages/stac/lib/src/parsers/widgets/<widget>/stac_<widget>_parser.dart` following existing parser patterns (constructor, `type`, `getModel`, and `parse` methods).
+   - Replace imports to point at `packages/stac_models/widgets/<kebab>/stac_<snake>.dart` (optionally alias as `models`).
+   - Parse JSON with `models.Stac<WidgetName>.fromJson(json)` in `getModel`.
+   - Use parse extensions in `type_parser.dart` to convert Stac enums/types to Flutter (e.g., `model.textAlign?.parse`).
+   - Use the StacWidget parse extension for nested Stac widgets (e.g., `prefixIcon.parse(context)` not `Stac.fromJson(...)`).
+   - Use the StacAction parse extension for callbacks: `model.onTap?.parse(context)`.
+   - Prefer non-nullable `parse` extensions; where nullable is needed, call with `?.parse` and allow Flutter defaults.
+
+4) Update widgets export and remove the old model
+   - Update `packages/stac/lib/src/parsers/widgets/widgets.dart` to export the parser file (e.g., `stac_<widget>_parser.dart`).
+   - Delete the old Freezed/JSON files under `packages/stac/lib/src/parsers/widgets/<widget>/`:
+     - `stac_<widget>.dart`
+     - `stac_<widget>.freezed.dart`
+     - `stac_<widget>.g.dart`
+   - Remove the export line for the old model from `packages/stac/lib/src/parsers/widgets/widgets.dart` so the new `stac_models` class can be imported without an alias (avoids name collisions).
+   - Remove conflicting imports of the old model (e.g., do not import `parsers.dart` if it re-exports the old model).
+   - Ensure the parser imports the new model directly from `stac_models` (no alias unless needed).
+
+5) Generate code and validate
+   - Run:
+     - `cd packages/stac_models; flutter pub get; flutter pub run build_runner build --delete-conflicting-outputs`
+   - Build the repo and fix any missing parse extensions or imports.
+   - Ensure lints are clean and examples still render.
+   - If parser changes introduced new enums/classes, add their parse extensions in `packages/stac/lib/src/parsers/types/type_parser.dart`.
+
+Recommended creation order (for new or migrated widgets):
+1) Check for an old in-stac model/parsers
+   - Inspect any existing model under `packages/stac/lib/src/parsers/widgets/<widget>/` and the parser to enumerate all properties used.
+2) Create any needed enums first (in `packages/stac_models/lib/types/`)
+   - Prefer adding minimal enums that mirror Flutter's APIs, with concise dartdoc and value docs.
+   - Immediately export them in `packages/stac_models/lib/types/types.dart`.
+3) Immediately create parse extensions after enum creation
+   - Add the parse extensions for the newly created enums/classes in `packages/stac/lib/src/parsers/types/type_parser.dart` right away.
+   - This ensures the model and parser can import and use them without interim lints.
+4) Update exports
+   - If you created new painting/config classes, export in `packages/stac_models/lib/painting/painting.dart`.
+5) Create the Stac model (in `packages/stac_models/lib/widgets/<kebab>/stac_<snake>.dart`)
+   - Import `stac_models/types/types.dart` so the new enums are available.
+   - Add full field docs and docs for `type`, `fromJson`, `toJson`.
+6) Update `packages/stac_models/lib/widgets/widgets.dart` to export the new model.
+7) Update or create the parser (in `packages/stac/lib/src/parsers/widgets/<widget>/stac_<widget>_parser.dart`)
+   - Import the model from `stac_models` directly (avoid importing `parsers.dart` if it re-exports legacy models).
+   - Use the newly added parse extensions.
+8) Delete the old model and generated files
+   - Remove `stac_<widget>.dart`, `stac_<widget>.freezed.dart`, `stac_<widget>.g.dart` under `packages/stac/lib/src/parsers/widgets/<widget>/`.
+9) Generate code and validate
+   - Run codegen in `packages/stac_models`, build the repo, and fix any missing imports or parse extensions.

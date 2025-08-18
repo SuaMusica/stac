@@ -41,3 +41,4 @@ mason-lock.json
 
 # Cursor Files
 .cursor/
+.cursor/rules/stac-widget-dsl-implementation.mdc
