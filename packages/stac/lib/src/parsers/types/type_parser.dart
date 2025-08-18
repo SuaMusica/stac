@@ -690,6 +690,32 @@ extension StacBottomNavigationBarTypeParser on StacBottomNavigationBarType {
   }
 }
 
+extension StacTabBarIndicatorSizeParser on StacTabBarIndicatorSize {
+  TabBarIndicatorSize get parse {
+    switch (this) {
+      case StacTabBarIndicatorSize.label:
+        return TabBarIndicatorSize.label;
+      case StacTabBarIndicatorSize.tab:
+        return TabBarIndicatorSize.tab;
+    }
+  }
+}
+
+extension StacTabAlignmentParser on StacTabAlignment {
+  TabAlignment get parse {
+    switch (this) {
+      case StacTabAlignment.center:
+        return TabAlignment.center;
+      case StacTabAlignment.fill:
+        return TabAlignment.fill;
+      case StacTabAlignment.startOffset:
+        return TabAlignment.startOffset;
+      case StacTabAlignment.start:
+        return TabAlignment.start;
+    }
+  }
+}
+
 extension StacGradientParser on StacGradient {
   Gradient? parse(BuildContext context) {
     Gradient linearGradient() => LinearGradient(

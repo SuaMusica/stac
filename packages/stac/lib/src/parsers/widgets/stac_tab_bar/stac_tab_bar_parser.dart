@@ -9,7 +9,6 @@ import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_models/widgets/tab_bar/stac_tab_bar.dart';
-import 'package:stac_models/types/types.dart';
 
 class StacTabBarParser extends StacParser<StacTabBar> {
   const StacTabBarParser({this.controller});
@@ -36,15 +35,7 @@ class StacTabBarParser extends StacParser<StacTabBar> {
       indicatorWeight: model.indicatorWeight ?? 2.0,
       indicatorPadding: model.indicatorPadding?.parse ?? EdgeInsets.zero,
       indicator: model.indicator?.parse(context),
-      indicatorSize: () {
-        switch (model.indicatorSize) {
-          case StacTabBarIndicatorSize.label:
-            return TabBarIndicatorSize.label;
-          case StacTabBarIndicatorSize.tab:
-          default:
-            return TabBarIndicatorSize.tab;
-        }
-      }(),
+      indicatorSize: model.indicatorSize?.parse,
       labelColor: model.labelColor?.toColor(context),
       labelStyle: model.labelStyle?.parse(context),
       labelPadding: model.labelPadding?.parse,
@@ -55,19 +46,7 @@ class StacTabBarParser extends StacParser<StacTabBar> {
       enableFeedback: model.enableFeedback,
       onTap: (_) {},
       physics: model.physics?.parse,
-      tabAlignment: () {
-        switch (model.tabAlignment) {
-          case StacTabAlignment.center:
-            return TabAlignment.center;
-          case StacTabAlignment.fill:
-            return TabAlignment.fill;
-          case StacTabAlignment.startOffset:
-            return TabAlignment.startOffset;
-          case StacTabAlignment.start:
-          default:
-            return TabAlignment.start;
-        }
-      }(),
+      tabAlignment: model.tabAlignment?.parse,
       dividerColor: model.dividerColor?.toColor(context),
       dividerHeight: model.dividerHeight,
     );

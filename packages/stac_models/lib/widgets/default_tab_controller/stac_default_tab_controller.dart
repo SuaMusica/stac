@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_models/core/stac_widget.dart';
+import 'package:stac_models/types/stac_duration/stac_duration.dart';
 
 part 'stac_default_tab_controller.g.dart';
 
@@ -39,6 +40,7 @@ class StacDefaultTabController extends StacWidget {
   const StacDefaultTabController({
     required this.length,
     this.initialIndex,
+    this.animationDuration,
     required this.child,
   });
 
@@ -47,6 +49,9 @@ class StacDefaultTabController extends StacWidget {
 
   /// The initial index of the selected tab.
   final int? initialIndex;
+
+  /// The duration of the tab change animation.
+  final StacDuration? animationDuration;
 
   /// The subtree that has access to the provided [TabController].
   final StacWidget child;

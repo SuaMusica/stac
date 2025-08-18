@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// Removed unused framework import
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
