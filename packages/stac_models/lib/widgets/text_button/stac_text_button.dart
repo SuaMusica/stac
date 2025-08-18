@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/core/stac_action.dart';
+import 'package:stac_models/core/stac_widget.dart';
 import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac_models/types/stac_clip.dart';
 
 part 'stac_text_button.g.dart';
 

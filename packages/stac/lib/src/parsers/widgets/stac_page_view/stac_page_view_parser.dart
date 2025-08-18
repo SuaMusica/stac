@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_page_view/stac_page_view.dart';
+import 'package:flutter/gestures.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/page_view/stac_page_view.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 
 class StacPageViewParser extends StacParser<StacPageView> {
   const StacPageViewParser();
@@ -40,33 +42,34 @@ class _StacPageViewWidgetState extends State<_StacPageViewWidget> {
     super.initState();
 
     _pageController = PageController(
-      initialPage: widget.model.initialPage,
-      viewportFraction: widget.model.viewportFraction.parse,
-      keepPage: widget.model.keepPage,
+      initialPage: widget.model.initialPage ?? 0,
+      viewportFraction: widget.model.viewportFraction ?? 1.0,
+      keepPage: widget.model.keepPage ?? true,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      scrollDirection: widget.model.scrollDirection,
-      reverse: widget.model.reverse,
+      scrollDirection: widget.model.scrollDirection?.parse ?? Axis.horizontal,
+      reverse: widget.model.reverse ?? false,
       controller: _pageController,
       physics: widget.model.physics?.parse,
-      pageSnapping: widget.model.pageSnapping,
+      pageSnapping: widget.model.pageSnapping ?? true,
       onPageChanged: (int index) {
-        Stac.onCallFromJson(widget.model.onPageChanged, context);
+        widget.model.onPageChanged?.parse(context);
       },
       itemBuilder: (context, index) {
-        return Stac.fromJson(widget.model.children[index], context) ??
-            const SizedBox();
+        final child = widget.model.children?[index];
+        return child?.parse(context) ?? const SizedBox();
       },
-      itemCount: widget.model.children.length,
-      dragStartBehavior: widget.model.dragStartBehavior,
-      allowImplicitScrolling: widget.model.allowImplicitScrolling,
+      itemCount: widget.model.children?.length,
+      dragStartBehavior:
+          widget.model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+      allowImplicitScrolling: widget.model.allowImplicitScrolling ?? false,
       restorationId: widget.model.restorationId,
-      clipBehavior: widget.model.clipBehavior,
-      padEnds: true,
+      clipBehavior: widget.model.clipBehavior?.parse ?? Clip.hardEdge,
+      padEnds: widget.model.padEnds ?? true,
     );
   }
 }

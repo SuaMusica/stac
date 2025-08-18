@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_tab/stac_tab.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/tab/stac_tab.dart';
 
 class StacTabParser extends StacParser<StacTab> {
   const StacTabParser();
@@ -16,10 +15,10 @@ class StacTabParser extends StacParser<StacTab> {
   Widget parse(BuildContext context, StacTab model) {
     return Tab(
       text: model.text,
-      icon: Stac.fromJson(model.icon, context),
+      icon: model.icon?.parse(context),
       iconMargin: model.iconMargin?.parse,
-      height: model.height?.parse,
-      child: Stac.fromJson(model.child, context),
+      height: model.height,
+      child: model.child?.parse(context),
     );
   }
 
