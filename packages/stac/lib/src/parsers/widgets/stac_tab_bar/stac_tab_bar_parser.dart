@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:flutter/gestures.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_tab_bar/stac_tab_bar.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/tab_bar/stac_tab_bar.dart';
 
 class StacTabBarParser extends StacParser<StacTabBar> {
   const StacTabBarParser({this.controller});
@@ -24,29 +25,29 @@ class StacTabBarParser extends StacParser<StacTabBar> {
   Widget parse(BuildContext context, StacTabBar model) {
     return TabBar(
       controller: controller,
-      tabs: model.tabs
-          .map((tab) => Stac.fromJson(tab, context) ?? const SizedBox())
-          .toList(),
-      isScrollable: model.isScrollable,
+      tabs:
+          model.tabs.map((t) => t.parse(context) ?? const SizedBox()).toList(),
+      isScrollable: model.isScrollable ?? false,
       padding: model.padding?.parse,
       indicatorColor: model.indicatorColor?.toColor(context),
       automaticIndicatorColorAdjustment:
-          model.automaticIndicatorColorAdjustment,
-      indicatorWeight: model.indicatorWeight.parse,
+          model.automaticIndicatorColorAdjustment ?? true,
+      indicatorWeight: model.indicatorWeight ?? 2.0,
       indicatorPadding: model.indicatorPadding?.parse ?? EdgeInsets.zero,
       indicator: model.indicator?.parse(context),
-      indicatorSize: model.indicatorSize,
-      labelColor: model.labelColor.toColor(context),
+      indicatorSize: model.indicatorSize?.parse,
+      labelColor: model.labelColor?.toColor(context),
       labelStyle: model.labelStyle?.parse(context),
       labelPadding: model.labelPadding?.parse,
-      unselectedLabelColor: model.unselectedLabelColor.toColor(context),
+      unselectedLabelColor: model.unselectedLabelColor?.toColor(context),
       unselectedLabelStyle: model.unselectedLabelStyle?.parse(context),
-      dragStartBehavior: model.dragStartBehavior,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
       enableFeedback: model.enableFeedback,
       onTap: (_) {},
       physics: model.physics?.parse,
-      tabAlignment: model.tabAlignment,
-      dividerColor: model.dividerColor.toColor(context),
+      tabAlignment: model.tabAlignment?.parse,
+      dividerColor: model.dividerColor?.toColor(context),
       dividerHeight: model.dividerHeight,
     );
   }

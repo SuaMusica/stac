@@ -1,5 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_models/stac_models.dart';
+import 'package:stac_models/core/stac_widget.dart';
+import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_models/types/stac_axis.dart';
+import 'package:stac_models/types/stac_clip.dart';
+import 'package:stac_models/types/stac_drag_start_behavior.dart';
+import 'package:stac_models/types/stac_scroll_physics.dart';
+import 'package:stac_models/types/stac_scroll_view_keyboard_dismiss_behavior.dart';
 
 part 'stac_single_child_scroll_view.g.dart';
 

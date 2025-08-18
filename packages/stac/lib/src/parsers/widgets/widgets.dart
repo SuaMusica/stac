@@ -25,9 +25,9 @@ export 'package:stac/src/parsers/widgets/stac_conditional/stac_conditional.dart'
 export 'package:stac/src/parsers/widgets/stac_container/stac_container_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_custom_scroll_view/stac_custom_scroll_view_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
-export 'package:stac/src/parsers/widgets/stac_default_tab_controller/stac_default_tab_controller.dart';
+export 'package:stac/src/parsers/widgets/stac_default_tab_controller/stac_default_tab_controller_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_divider/stac_divider_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_drawer/stac_drawer.dart';
+export 'package:stac/src/parsers/widgets/stac_drawer/stac_drawer_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_dropdown_menu/stac_dropdown_menu.dart';
 export 'package:stac/src/parsers/widgets/stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
 export 'package:stac/src/parsers/widgets/stac_duration/stac_duration.dart';
@@ -61,7 +61,7 @@ export 'package:stac/src/parsers/widgets/stac_network_widget/stac_network_widget
 export 'package:stac/src/parsers/widgets/stac_opacity/stac_opacity_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_outlined_button/stac_outlined_button_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_padding/stac_padding_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_page_view/stac_page_view.dart';
+export 'package:stac/src/parsers/widgets/stac_page_view/stac_page_view_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_placeholder/stac_placeholder_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_positioned/stac_positioned_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_radio/stac_radio_parser.dart';
@@ -77,9 +77,9 @@ export 'package:stac/src/parsers/widgets/stac_sliver_app_bar/stac_sliver_app_bar
 export 'package:stac/src/parsers/widgets/stac_spacer/stac_spacer_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_stack/stac_stack_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_switch/stac_switch_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_tab/stac_tab.dart';
-export 'package:stac/src/parsers/widgets/stac_tab_bar/stac_tab_bar.dart';
-export 'package:stac/src/parsers/widgets/stac_tab_bar_view/stac_tab_bar_view.dart';
+export 'package:stac/src/parsers/widgets/stac_tab/stac_tab_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_tab_bar/stac_tab_bar_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_tab_bar_view/stac_tab_bar_view_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_table/stac_table.dart';
 export 'package:stac/src/parsers/widgets/stac_table_cell/stac_table_cell.dart';
 export 'package:stac/src/parsers/widgets/stac_text_button/stac_text_button_parser.dart';
