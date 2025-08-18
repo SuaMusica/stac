@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_alert_dialog/stac_alert_dialog.dart';
-import 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac_models/widgets/alert_dialog/stac_alert_dialog.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -23,34 +21,34 @@ class StacAlertDialogParser extends StacParser<StacAlertDialog> {
   @override
   Widget parse(BuildContext context, StacAlertDialog model) {
     return AlertDialog(
-      icon: Stac.fromJson(model.icon, context),
+      icon: model.icon?.parse(context),
       iconPadding: model.iconPadding?.parse,
       iconColor: model.iconColor?.toColor(context),
-      title: Stac.fromJson(model.title, context),
+      title: model.title?.parse(context),
       titlePadding: model.titlePadding?.parse,
       titleTextStyle: model.titleTextStyle?.parse(context),
-      content: Stac.fromJson(model.content, context),
+      content: model.content?.parse(context),
       contentPadding: model.contentPadding?.parse,
       contentTextStyle: model.contentTextStyle?.parse(context),
-      actions: model.actions
-          ?.map((action) => Stac.fromJson(action, context) ?? const SizedBox())
-          .toList(),
+      actions: model.actions?.parseList(context),
       actionsPadding: model.actionsPadding?.parse,
-      actionsAlignment: model.actionsAlignment,
-      actionsOverflowAlignment: model.actionsOverflowAlignment,
-      actionsOverflowDirection: model.actionsOverflowDirection,
-      actionsOverflowButtonSpacing: model.actionsOverflowButtonSpacing?.parse,
+      actionsAlignment: model.actionsAlignment?.parse ?? MainAxisAlignment.end,
+      actionsOverflowAlignment: model.actionsOverflowAlignment?.parse,
+      actionsOverflowDirection:
+          model.actionsOverflowDirection?.parse ?? VerticalDirection.down,
+      actionsOverflowButtonSpacing: model.actionsOverflowButtonSpacing,
       buttonPadding: model.buttonPadding?.parse,
       backgroundColor: model.backgroundColor.toColor(context),
-      elevation: model.elevation?.parse,
+      elevation: model.elevation,
       shadowColor: model.shadowColor.toColor(context),
       surfaceTintColor: model.surfaceTintColor.toColor(context),
       semanticLabel: model.semanticLabel,
-      insetPadding: model.insetPadding.parse,
-      clipBehavior: model.clipBehavior,
+      insetPadding: model.insetPadding?.parse ??
+          const EdgeInsets.fromLTRB(40, 24, 40, 24),
+      clipBehavior: model.clipBehavior?.parse ?? Clip.none,
       shape: model.shape?.parse(context),
-      alignment: model.alignment?.parse,
-      scrollable: model.scrollable,
+      alignment: model.alignment?.parse ?? Alignment.center,
+      scrollable: model.scrollable ?? false,
     );
   }
 }
