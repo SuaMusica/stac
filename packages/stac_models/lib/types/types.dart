@@ -42,3 +42,6 @@ export 'stac_tab_bar_indicator_size.dart';
 export 'stac_tab_alignment.dart';
 export 'stac_carousel_view_type.dart';
 export 'stac_options_view_open_direction.dart';
+export 'stac_dropdown_menu_close_behavior.dart';
+export 'stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
+export 'stac_input_border/stac_input_border.dart';
