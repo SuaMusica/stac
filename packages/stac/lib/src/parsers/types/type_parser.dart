@@ -82,6 +82,19 @@ extension StacFloatingActionButtonLocationParser
   }
 }
 
+extension StacOverflowBarAlignmentParser on StacOverflowBarAlignment {
+  OverflowBarAlignment get parse {
+    switch (this) {
+      case StacOverflowBarAlignment.start:
+        return OverflowBarAlignment.start;
+      case StacOverflowBarAlignment.end:
+        return OverflowBarAlignment.end;
+      case StacOverflowBarAlignment.center:
+        return OverflowBarAlignment.center;
+    }
+  }
+}
+
 extension StacInputDecorationParser on StacInputDecoration {
   InputDecoration parse(BuildContext context) {
     return InputDecoration(

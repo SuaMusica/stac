@@ -45,3 +45,4 @@ export 'stac_options_view_open_direction.dart';
 export 'stac_dropdown_menu_close_behavior.dart';
 export 'stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
 export 'stac_input_border/stac_input_border.dart';
+export 'stac_overflow_bar_alignment.dart';
