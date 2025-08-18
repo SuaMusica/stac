@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_carousel_view/stac_carousel_view.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import '../../../framework/framework.dart';
+import 'package:stac_models/widgets/carousel_view/stac_carousel_view.dart';
+import 'package:stac_models/types/stac_carousel_view_type.dart';
 
 class StacCarouselViewParser extends StacParser<StacCarouselView> {
   const StacCarouselViewParser();
@@ -20,43 +21,39 @@ class StacCarouselViewParser extends StacParser<StacCarouselView> {
 
   @override
   Widget parse(BuildContext context, StacCarouselView model) {
-    switch (model.carouselType) {
+    final StacCarouselViewType carouselType =
+        model.carouselType ?? StacCarouselViewType.regular;
+    switch (carouselType) {
       case StacCarouselViewType.regular:
         return CarouselView(
           padding: model.padding?.parse,
           backgroundColor: model.backgroundColor.toColor(context),
-          elevation: model.elevation?.parse,
+          elevation: model.elevation,
           overlayColor:
               WidgetStateProperty.all(model.overlayColor.toColor(context)),
-          itemSnapping: model.itemSnapping,
-          shrinkExtent: model.shrinkExtent.parse,
-          scrollDirection: model.scrollDirection,
-          reverse: model.reverse,
-          onTap: (index) => Stac.fromJson(model.onTap, context),
-          enableSplash: model.enableSplash,
-          itemExtent: model.itemExtent?.parse ?? 0,
-          children: model.children
-                  ?.map((e) => Stac.fromJson(e, context) ?? SizedBox())
-                  .toList() ??
-              [],
+          itemSnapping: model.itemSnapping ?? false,
+          shrinkExtent: model.shrinkExtent ?? 0.0,
+          scrollDirection: model.scrollDirection?.parse ?? Axis.horizontal,
+          reverse: model.reverse ?? false,
+          onTap: (index) => model.onTap?.parse(context),
+          enableSplash: model.enableSplash ?? true,
+          itemExtent: model.itemExtent ?? 0,
+          children: model.children?.parseList(context) ?? const <Widget>[],
         );
       case StacCarouselViewType.weighted:
         return CarouselView.weighted(
           padding: model.padding?.parse,
           backgroundColor: model.backgroundColor.toColor(context),
-          elevation: model.elevation?.parse,
+          elevation: model.elevation,
           overlayColor:
               WidgetStateProperty.all(model.overlayColor.toColor(context)),
-          itemSnapping: model.itemSnapping,
-          shrinkExtent: model.shrinkExtent.parse,
-          scrollDirection: model.scrollDirection,
-          reverse: model.reverse,
-          onTap: (index) => Stac.fromJson(model.onTap, context),
-          flexWeights: model.flexWeights ?? [],
-          children: model.children
-                  ?.map((e) => Stac.fromJson(e, context) ?? SizedBox())
-                  .toList() ??
-              [],
+          itemSnapping: model.itemSnapping ?? false,
+          shrinkExtent: model.shrinkExtent ?? 0.0,
+          scrollDirection: model.scrollDirection?.parse ?? Axis.horizontal,
+          reverse: model.reverse ?? false,
+          onTap: (index) => model.onTap?.parse(context),
+          flexWeights: model.flexWeights ?? const <int>[],
+          children: model.children?.parseList(context) ?? const <Widget>[],
         );
     }
   }
