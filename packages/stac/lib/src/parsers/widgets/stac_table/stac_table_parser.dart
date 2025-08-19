@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac_models/widgets/table/stac_table.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacTableParser extends StacParser<StacTable> {
   const StacTableParser();
@@ -17,53 +16,18 @@ class StacTableParser extends StacParser<StacTable> {
   @override
   Widget parse(BuildContext context, StacTable model) {
     return Table(
-      children:
-          model.children.map((tableRow) => tableRow.parse(context)).toList(),
-      columnWidths:
-          model.columnWidths?.map((key, value) => MapEntry(key, value.parse)),
-      defaultColumnWidth:
-          model.defaultColumnWidth?.parse ?? const FlexColumnWidth(),
-      textDirection: model.textDirection,
-      border: model.border?.parse(context),
-      defaultVerticalAlignment: model.defaultVerticalAlignment,
-      textBaseline: model.textBaseline,
+      children: model.children.map((row) => row.parse(context)).toList(),
+      columnWidths: model.columnWidths?.map((key, value) =>
+          MapEntry(key, StacTableColumnWidthParser(value).parse)),
+      defaultColumnWidth: model.defaultColumnWidth != null
+          ? StacTableColumnWidthParser(model.defaultColumnWidth!).parse
+          : const FlexColumnWidth(),
+      textDirection: model.textDirection?.parse,
+      border: model.border != null
+          ? StacTableBorderParser(model.border!).parse(context)
+          : null,
+      defaultVerticalAlignment: model.defaultVerticalAlignment.parse,
+      textBaseline: model.textBaseline?.parse,
     );
-  }
-}
-
-extension StacTableRowParser on StacTableRow {
-  TableRow parse(BuildContext context) {
-    return TableRow(
-      decoration: decoration?.parse(context),
-      children: children
-          .map((json) => Stac.fromJson(json, context) ?? const SizedBox())
-          .toList(),
-    );
-  }
-}
-
-extension StacTableBorderParser on StacTableBorder {
-  TableBorder parse(BuildContext context) {
-    return TableBorder.all(
-      color: color.toColor(context) ?? Colors.black,
-      width: width.parse,
-      style: style,
-      borderRadius: borderRadius.parse,
-    );
-  }
-}
-
-extension StacTableColumnWidthParser on StacTableColumnWidth {
-  TableColumnWidth get parse {
-    switch (type) {
-      case StacTableColumnWidthType.fixedColumnWidth:
-        return FixedColumnWidth(value!.parse);
-      case StacTableColumnWidthType.flexColumnWidth:
-        return FlexColumnWidth(value!.parse);
-      case StacTableColumnWidthType.fractionColumnWidth:
-        return FractionColumnWidth(value!.parse);
-      case StacTableColumnWidthType.intrinsicColumnWidth:
-        return IntrinsicColumnWidth(flex: value!.parse);
-    }
   }
 }
