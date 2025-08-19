@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/stac.dart';
-import 'package:stac/src/parsers/widgets/stac_conditional/stac_conditional.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/expression_resolver.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/conditional/stac_conditional.dart';
 
 class StacConditionalParser extends StacParser<StacConditional> {
   const StacConditionalParser();
@@ -19,9 +19,9 @@ class StacConditionalParser extends StacParser<StacConditional> {
   Widget parse(BuildContext context, StacConditional model) {
     final result = ExpressionResolver.evaluate(model.condition);
     if (result) {
-      return Stac.fromJson(model.ifTrue, context) ?? const SizedBox();
+      return model.ifTrue.parse(context) ?? const SizedBox();
     } else if (model.ifFalse != null) {
-      return Stac.fromJson(model.ifFalse, context) ?? const SizedBox();
+      return model.ifFalse.parse(context) ?? const SizedBox();
     }
     return const SizedBox();
   }
