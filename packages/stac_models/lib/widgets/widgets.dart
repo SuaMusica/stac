@@ -74,3 +74,4 @@ export 'alert_dialog/stac_alert_dialog.dart';
 export 'table/stac_table.dart';
 export 'table_cell/stac_table_cell.dart';
 export 'table_row/stac_table_row.dart';
+export 'conditional/stac_conditional.dart';
