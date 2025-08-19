@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
+import 'package:flutter/services.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_dropdown_menu/stac_dropdown_menu.dart';
-import 'package:stac/src/parsers/widgets/stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
-import 'package:stac/src/parsers/widgets/stac_input_formatters/stac_input_formatter.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_models/widgets/dropdown_menu/stac_dropdown_menu.dart';
+import 'package:stac_models/types/stac_input_formatter/stac_input_formatter.dart';
+import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/utils/input_formatters.dart';
 
 class StacDropdownMenuParser extends StacParser<StacDropdownMenu> {
   const StacDropdownMenuParser();
@@ -54,32 +53,38 @@ class _DropDownMenuWidgetState extends State<_DropDownMenuWidget> {
       focusNode: _focusNode,
       controller: _controller,
       dropdownMenuEntries: model.dropdownMenuEntries
-          .map((StacDropdownMenuEntry dropDownMenu) =>
-              dropDownMenu.parse(context)!)
-          .toList(),
-      enabled: model.enabled,
-      width: model.width?.parse,
-      menuHeight: model.menuHeight?.parse,
-      leadingIcon: Stac.fromJson(model.leadingIcon, context),
-      trailingIcon: Stac.fromJson(model.trailingIcon, context),
-      label: Stac.fromJson(model.label, context),
+              ?.map((e) => e.parse(context))
+              .whereType<DropdownMenuEntry>()
+              .toList() ??
+          const <DropdownMenuEntry<dynamic>>[],
+      enabled: model.enabled ?? true,
+      width: model.width,
+      menuHeight: model.menuHeight,
+      leadingIcon: model.leadingIcon?.parse(context),
+      trailingIcon: model.trailingIcon?.parse(context),
+      label: model.label?.parse(context),
       hintText: model.hintText,
       helperText: model.helperText,
       errorText: model.errorText,
-      selectedTrailingIcon: Stac.fromJson(model.selectedTrailingIcon, context),
+      selectedTrailingIcon: model.selectedTrailingIcon?.parse(context),
       enableFilter: model.enableFilter ?? true,
       enableSearch: model.enableSearch ?? true,
-      keyboardType: model.keyboardType?.value,
+      keyboardType: model.keyboardType?.parse,
       textStyle: model.textStyle?.parse(context),
-      textAlign: model.textAlign,
+      textAlign: model.textAlign?.parse ?? TextAlign.start,
       inputDecorationTheme: model.inputDecorationTheme?.parse(context),
-      requestFocusOnTap: model.requestFocusOnTap,
+      requestFocusOnTap: model.requestFocusOnTap ?? false,
       expandedInsets: model.expandedInsets?.parse,
       alignmentOffset: model.alignmentOffset?.parse,
-      inputFormatters: model.inputFormatters
-          .map((StacInputFormatter formatter) =>
-              formatter.type.format(formatter.rule ?? ""))
-          .toList(),
+      inputFormatters: (model.inputFormatters ?? const <StacInputFormatter>[])
+          .map<TextInputFormatter>((StacInputFormatter formatter) {
+        switch (formatter.type) {
+          case StacInputFormatterType.allow:
+            return InputFormatterType.allow.format(formatter.rule ?? '');
+          case StacInputFormatterType.deny:
+            return InputFormatterType.deny.format(formatter.rule ?? '');
+        }
+      }).toList(),
     );
   }
 }
