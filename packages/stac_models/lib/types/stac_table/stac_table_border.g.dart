@@ -8,13 +8,11 @@ part of 'stac_table_border.dart';
 
 StacTableBorder _$StacTableBorderFromJson(Map<String, dynamic> json) =>
     StacTableBorder(
-      color: json['color'] as String? ?? '#000000',
-      width: json['width'] == null
-          ? 1.0
-          : const DoubleConverter().fromJson(json['width']),
+      color: json['color'] as String?,
+      width: const DoubleConverter().fromJson(json['width']),
       style: $enumDecodeNullable(_$StacBorderStyleEnumMap, json['style']),
       borderRadius: json['borderRadius'] == null
-          ? const StacBorderRadius()
+          ? null
           : StacBorderRadius.fromJson(json['borderRadius']),
     );
 
