@@ -71,3 +71,6 @@ export 'auto_complete/stac_auto_complete.dart';
 export 'dropdown_menu/stac_dropdown_menu.dart';
 export 'circle_avatar/stac_circle_avatar.dart';
 export 'alert_dialog/stac_alert_dialog.dart';
+export 'table/stac_table.dart';
+export 'table_cell/stac_table_cell.dart';
+export 'table_row/stac_table_row.dart';

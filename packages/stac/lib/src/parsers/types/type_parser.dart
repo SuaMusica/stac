@@ -6,6 +6,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
@@ -304,6 +305,21 @@ extension StacTextDirectionParser on StacTextDirection {
         return TextDirection.rtl;
       case StacTextDirection.ltr:
         return TextDirection.ltr;
+    }
+  }
+}
+
+/// Maps [StacTextBaseline] to Flutter's [TextBaseline].
+extension StacTextBaselineParser on StacTextBaseline? {
+  /// Parses this [StacTextBaseline] into a Flutter [TextBaseline].
+  TextBaseline? get parse {
+    switch (this) {
+      case StacTextBaseline.alphabetic:
+        return TextBaseline.alphabetic;
+      case StacTextBaseline.ideographic:
+        return TextBaseline.ideographic;
+      default:
+        return null;
     }
   }
 }
@@ -627,6 +643,44 @@ extension StacBorderRadiusParser on StacBorderRadius {
   }
 }
 
+/// Parses a [StacTableBorder] to a Flutter [TableBorder].
+extension StacTableBorderParser on StacTableBorder {
+  TableBorder parse(BuildContext context) {
+    return TableBorder.all(
+      color: color?.toColor(context) ?? Colors.black,
+      width: width ?? 1.0,
+      style: style?.parse ?? BorderStyle.solid,
+      borderRadius: borderRadius?.parse ?? BorderRadius.zero,
+    );
+  }
+}
+
+/// Parses a [StacTableColumnWidth] to a Flutter [TableColumnWidth].
+extension StacTableColumnWidthParser on StacTableColumnWidth {
+  TableColumnWidth get parse {
+    switch (type) {
+      case StacTableColumnWidthType.fixedColumnWidth:
+        return FixedColumnWidth(value ?? 0.0);
+      case StacTableColumnWidthType.flexColumnWidth:
+        return FlexColumnWidth(value ?? 1.0);
+      case StacTableColumnWidthType.fractionColumnWidth:
+        return FractionColumnWidth(value ?? 0.5);
+      case StacTableColumnWidthType.intrinsicColumnWidth:
+        return IntrinsicColumnWidth(flex: value ?? 1.0);
+    }
+  }
+}
+
+/// Parses a [StacTableRow] to a Flutter [TableRow].
+extension StacTableRowParser on StacTableRow {
+  TableRow parse(BuildContext context) {
+    return TableRow(
+      decoration: decoration?.parse(context),
+      children: children.parseList(context) ?? const <Widget>[],
+    );
+  }
+}
+
 extension StacBoxShadowParser on StacBoxShadow {
   BoxShadow parse(BuildContext context) {
     return BoxShadow(
@@ -838,6 +892,27 @@ extension StacVerticalDirectionParser on StacVerticalDirection {
         return VerticalDirection.up;
       case StacVerticalDirection.down:
         return VerticalDirection.down;
+    }
+  }
+}
+
+/// Maps [StacTableCellVerticalAlignment] to Flutter's [TableCellVerticalAlignment].
+extension StacTableCellVerticalAlignmentParser
+    on StacTableCellVerticalAlignment? {
+  TableCellVerticalAlignment get parse {
+    switch (this) {
+      case StacTableCellVerticalAlignment.top:
+        return TableCellVerticalAlignment.top;
+      case StacTableCellVerticalAlignment.middle:
+        return TableCellVerticalAlignment.middle;
+      case StacTableCellVerticalAlignment.bottom:
+        return TableCellVerticalAlignment.bottom;
+      case StacTableCellVerticalAlignment.baseline:
+        return TableCellVerticalAlignment.baseline;
+      case StacTableCellVerticalAlignment.fill:
+        return TableCellVerticalAlignment.fill;
+      default:
+        return TableCellVerticalAlignment.top;
     }
   }
 }
