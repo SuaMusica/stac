@@ -1,4 +1,4 @@
-import 'package:stac_models/stac_models.dart';
+import 'package:stac_core/stac_core.dart';
 
 StacWidget homeScreen() {
   return StacScaffold(

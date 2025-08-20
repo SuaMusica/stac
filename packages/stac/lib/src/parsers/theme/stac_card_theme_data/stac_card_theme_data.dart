@@ -3,8 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_models/types/stac_border/stac_border.dart';
+import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/types/stac_border/stac_border.dart';
 
 part 'stac_card_theme_data.freezed.dart';
 part 'stac_card_theme_data.g.dart';

@@ -727,6 +727,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0-dev.6"
+  stac_core:
+    dependency: "direct overridden"
+    description:
+      path: "../../packages/stac_core"
+      relative: true
+    source: path
+    version: "0.0.1"
   stac_framework:
     dependency: "direct overridden"
     description:
@@ -741,13 +748,6 @@ packages:
       relative: true
     source: path
     version: "1.1.0"
-  stac_models:
-    dependency: "direct overridden"
-    description:
-      path: "../../packages/stac_models"
-      relative: true
-    source: path
-    version: "0.0.1"
   stack_trace:
     dependency: transitive
     description:

@@ -6,8 +6,8 @@ import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/slider/stac_slider.dart';
-import 'package:stac_models/types/stac_slider_type.dart';
+import 'package:stac_core/widgets/slider/stac_slider.dart';
+import 'package:stac_core/types/stac_slider_type.dart';
 
 class StacSliderParser extends StacParser<StacSlider> {
   const StacSliderParser();

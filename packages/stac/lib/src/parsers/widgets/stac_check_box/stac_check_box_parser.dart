@@ -5,7 +5,7 @@ import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac/src/framework/stac.dart';
-import 'package:stac_models/widgets/check_box/stac_check_box.dart';
+import 'package:stac_core/widgets/check_box/stac_check_box.dart';
 
 class StacCheckBoxParser extends StacParser<StacCheckBox> {
   const StacCheckBoxParser();

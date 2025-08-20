@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac_models/painting/stac_decoration_image/stac_decoration_image.dart';
-import 'package:stac_models/types/stac_image_type.dart';
+import 'package:stac_core/painting/stac_decoration_image/stac_decoration_image.dart';
+import 'package:stac_core/types/stac_image_type.dart';
 
 extension StacDecorationImageParser on StacDecorationImage {
   DecorationImage? get parse {

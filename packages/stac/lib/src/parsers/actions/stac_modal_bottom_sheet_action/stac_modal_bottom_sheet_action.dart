@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac_models/actions/network_request/stac_network_request.dart';
-import 'package:stac_models/types/stac_border/stac_border.dart';
-import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
+import 'package:stac_core/actions/network_request/stac_network_request.dart';
+import 'package:stac_core/types/stac_border/stac_border.dart';
+import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
 
 part 'stac_modal_bottom_sheet_action.freezed.dart';
 part 'stac_modal_bottom_sheet_action.g.dart';

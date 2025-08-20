@@ -6,10 +6,10 @@ import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/theme/stac_icon_theme_data/stac_icon_theme_data.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_models/painting/stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
-import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/painting/stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
+import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
+import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
 
 part 'stac_app_bar_theme.freezed.dart';
 part 'stac_app_bar_theme.g.dart';

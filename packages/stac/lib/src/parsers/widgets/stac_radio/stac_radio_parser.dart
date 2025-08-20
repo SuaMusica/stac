@@ -5,8 +5,8 @@ import 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_scope
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/types/stac_radio_type.dart';
-import 'package:stac_models/widgets/radio/stac_radio.dart';
+import 'package:stac_core/types/stac_radio_type.dart';
+import 'package:stac_core/widgets/radio/stac_radio.dart';
 
 class StacRadioParser extends StacParser<StacRadio> {
   const StacRadioParser();

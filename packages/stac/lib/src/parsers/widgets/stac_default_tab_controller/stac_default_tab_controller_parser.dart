@@ -3,7 +3,7 @@ import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/default_tab_controller/stac_default_tab_controller.dart';
+import 'package:stac_core/widgets/default_tab_controller/stac_default_tab_controller.dart';
 
 class StacDefaultTabControllerParser
     extends StacParser<StacDefaultTabController> {
