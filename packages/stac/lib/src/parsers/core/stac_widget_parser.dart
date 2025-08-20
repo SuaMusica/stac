@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_models/core/stac_widget.dart';
+import 'package:stac_core/core/stac_widget.dart';
 
 extension StacWidgetParser on StacWidget? {
   Widget? parse(BuildContext context) {

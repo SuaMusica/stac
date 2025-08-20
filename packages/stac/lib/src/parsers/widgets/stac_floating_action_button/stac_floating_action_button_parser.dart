@@ -5,8 +5,8 @@ import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/types/stac_floating_action_button_type.dart';
-import 'package:stac_models/widgets/floating_action_button/stac_floating_action_button.dart';
+import 'package:stac_core/types/stac_floating_action_button_type.dart';
+import 'package:stac_core/widgets/floating_action_button/stac_floating_action_button.dart';
 
 class StacFloatingActionButtonParser
     extends StacParser<StacFloatingActionButton> {

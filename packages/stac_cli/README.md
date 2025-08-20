@@ -143,10 +143,10 @@ your_flutter_project/
 Here's an example of a STAC DSL file (`stac/home_screen.dart`):
 
 ```dart
-import 'package:stac_models/core/stac_model.dart';
-import 'package:stac_models/painting/stac_color/stac_colors.dart';
-import 'package:stac_models/types/stac_double.dart';
-import 'package:stac_models/widgets/widgets.dart';
+import 'package:stac_core/core/stac_model.dart';
+import 'package:stac_core/painting/stac_color/stac_colors.dart';
+import 'package:stac_core/types/stac_double.dart';
+import 'package:stac_core/widgets/widgets.dart';
 
 StacWidget homeScreen() {
   return StacContainer(

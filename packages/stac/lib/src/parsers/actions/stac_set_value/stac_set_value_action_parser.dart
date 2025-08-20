@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/action_type.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_models/actions/set_value/stac_set_value_action.dart';
+import 'package:stac_core/actions/set_value/stac_set_value_action.dart';
 
 class StacSetValueActionParser extends StacActionParser<StacSetValueAction> {
   const StacSetValueActionParser();

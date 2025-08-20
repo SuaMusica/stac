@@ -4,9 +4,9 @@ import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/painting/stac_box_decoration/stac_box_decoration.dart';
-import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
+import 'package:stac_core/painting/stac_box_decoration/stac_box_decoration.dart';
+import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
 
 part 'stac_tab_bar_theme_data.freezed.dart';
 part 'stac_tab_bar_theme_data.g.dart';

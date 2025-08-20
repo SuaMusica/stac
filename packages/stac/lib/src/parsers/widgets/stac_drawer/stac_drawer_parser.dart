@@ -4,7 +4,7 @@ import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/drawer/stac_drawer.dart';
+import 'package:stac_core/widgets/drawer/stac_drawer.dart';
 
 class StacDrawerParser extends StacParser<StacDrawer> {
   const StacDrawerParser();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
 
 part 'stac_drawer_theme_data.freezed.dart';
 part 'stac_drawer_theme_data.g.dart';

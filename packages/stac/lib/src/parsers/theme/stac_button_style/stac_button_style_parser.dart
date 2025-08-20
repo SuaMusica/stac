@@ -3,7 +3,7 @@ import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
 
 extension StacButtonStyleParser on StacButtonStyle {
   ButtonStyle parseElevatedButton(BuildContext context) {

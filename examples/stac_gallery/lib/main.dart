@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stac/stac.dart' show Stac, StacApp;
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_gallery/app/details/details_screen.dart';
 import 'package:stac_gallery/app/example/example_screen_parser.dart';
 import 'package:stac_gallery/app/home/home_screen.dart';
 import 'package:stac_gallery/app_theme/app_theme_cubit.dart';
-import 'package:stac_models/stac_models.dart';
 import 'package:stac_webview/stac_webview.dart';
 
 class MyHttpOverrides extends HttpOverrides {

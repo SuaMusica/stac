@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stac_models/widgets/form/stac_form.dart';
+import 'package:stac_core/widgets/form/stac_form.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
