@@ -5,7 +5,7 @@ import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parse
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/text_button/stac_text_button.dart';
+import 'package:stac_core/widgets/text_button/stac_text_button.dart';
 
 class StacTextButtonParser extends StacParser<StacTextButton> {
   const StacTextButtonParser();

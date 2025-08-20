@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/expanded/stac_expanded.dart';
+import 'package:stac_core/widgets/expanded/stac_expanded.dart';
 
 class StacExpandedParser extends StacParser<StacExpanded> {
   const StacExpandedParser();

@@ -5,8 +5,8 @@ import 'package:stac/src/parsers/theme/stac_icon_theme_data/stac_icon_theme_data
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_size/stac_size.dart';
 import 'package:stac/src/utils/utils.dart';
-import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_models/types/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
+import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
 
 part 'stac_navigation_drawer_theme_data.freezed.dart';
 part 'stac_navigation_drawer_theme_data.g.dart';

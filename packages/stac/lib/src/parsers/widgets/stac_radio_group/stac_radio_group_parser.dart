@@ -4,7 +4,7 @@ import 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_scope
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac_models/widgets/radio_group/stac_radio_group.dart';
+import 'package:stac_core/widgets/radio_group/stac_radio_group.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacRadioGroupParser extends StacParser<StacRadioGroup> {

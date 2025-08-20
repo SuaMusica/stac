@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/limited_box/stac_limited_box.dart';
+import 'package:stac_core/widgets/limited_box/stac_limited_box.dart';
 
 class StacLimitedBoxParser extends StacParser<StacLimitedBox> {
   const StacLimitedBoxParser();

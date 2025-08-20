@@ -5,10 +5,10 @@ import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_input_border/stac_input_border.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_models/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_models/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_models/types/stac_border_side/stac_border_side.dart';
-import 'package:stac_models/types/stac_box_constraints/stac_box_constraints.dart';
+import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
+import 'package:stac_core/types/stac_border_side/stac_border_side.dart';
+import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
 
 part 'stac_input_decoration_theme.freezed.dart';
 part 'stac_input_decoration_theme.g.dart';
