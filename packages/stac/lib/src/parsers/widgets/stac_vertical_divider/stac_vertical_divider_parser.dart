@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/vertical_divider/stac_vertical_divider.dart';
+import 'package:stac_core/widgets/vertical_divider/stac_vertical_divider.dart';
 
 class StacVerticalDividerParser extends StacParser<StacVerticalDivider> {
   const StacVerticalDividerParser();

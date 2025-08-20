@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: stac_models
+# melos_managed_dependency_overrides: stac_core
 dependency_overrides:
-  stac_models:
-    path: ../stac_models
+  stac_core:
+    path: ../stac_core

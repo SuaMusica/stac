@@ -5,7 +5,7 @@ import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_models/stac_models.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacContainerParser extends StacParser<StacContainer> {
   const StacContainerParser();

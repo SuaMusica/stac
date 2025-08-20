@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac_models/widgets/card/stac_card.dart';
+import 'package:stac_core/widgets/card/stac_card.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';

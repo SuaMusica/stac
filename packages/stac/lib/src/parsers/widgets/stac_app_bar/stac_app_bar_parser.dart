@@ -6,7 +6,7 @@ import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_models/stac_models.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacAppBarParser extends StacParser<StacAppBar> {
   const StacAppBarParser();

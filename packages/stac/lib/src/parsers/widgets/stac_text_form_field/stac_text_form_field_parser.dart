@@ -8,7 +8,7 @@ import 'package:stac/src/utils/input_validations.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_logger/stac_logger.dart';
-import 'package:stac_models/widgets/text_form_field/stac_text_form_field.dart';
+import 'package:stac_core/widgets/text_form_field/stac_text_form_field.dart';
 
 class StacTextFormFieldParser extends StacParser<StacTextFormField> {
   const StacTextFormFieldParser();

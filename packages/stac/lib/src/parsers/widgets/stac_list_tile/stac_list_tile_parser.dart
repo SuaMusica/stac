@@ -6,7 +6,7 @@ import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/list_tile/stac_list_tile.dart';
+import 'package:stac_core/widgets/list_tile/stac_list_tile.dart';
 
 class StacListTileParser extends StacParser<StacListTile> {
   const StacListTileParser();

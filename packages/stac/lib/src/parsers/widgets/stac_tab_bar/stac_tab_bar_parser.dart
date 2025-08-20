@@ -8,7 +8,7 @@ import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_models/widgets/tab_bar/stac_tab_bar.dart';
+import 'package:stac_core/widgets/tab_bar/stac_tab_bar.dart';
 
 class StacTabBarParser extends StacParser<StacTabBar> {
   const StacTabBarParser({this.controller});
