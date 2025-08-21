@@ -2,13 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/actions/stac_modal_bottom_sheet_action/stac_modal_bottom_sheet_action.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac_core/actions/modal_bottom_sheet/stac_modal_bottom_sheet_action.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/action_type.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-export 'stac_modal_bottom_sheet_action.dart';
 
 class StacModalBottomSheetActionParser
     extends StacActionParser<StacModalBottomSheetAction> {
@@ -27,7 +26,7 @@ class StacModalBottomSheetActionParser
       return _showModalBottomSheet(
         context,
         model,
-        Stac.fromJson(model.widget, context) ?? const SizedBox(),
+        model.widget?.parse(context) ?? const SizedBox(),
       );
     } else if (model.assetPath?.isNotEmpty ?? false) {
       return _showModalBottomSheet(
