@@ -1406,20 +1406,6 @@ extension StacHitTestBehaviorParser on StacHitTestBehavior {
   }
 }
 
-/// Build Flutter SnackBarAction from core model.
-extension StacSnackBarActionParser on StacSnackBarAction {
-  SnackBarAction parse(BuildContext context) {
-    return SnackBarAction(
-      textColor: textColor?.toColor(context),
-      disabledTextColor: disabledTextColor?.toColor(context),
-      backgroundColor: backgroundColor?.toColor(context),
-      disabledBackgroundColor: disabledBackgroundColor?.toColor(context),
-      label: label,
-      onPressed: () => onPressed.parse(context),
-    );
-  }
-}
-
 /// Extends [StacSnackBarBehavior] to map to Flutter's [SnackBarBehavior].
 extension StacSnackBarBehaviorParser on StacSnackBarBehavior? {
   SnackBarBehavior? get parse {

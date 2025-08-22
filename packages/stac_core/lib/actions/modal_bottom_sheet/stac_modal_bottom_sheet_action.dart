@@ -7,6 +7,26 @@ import 'package:stac_core/core/stac_action.dart';
 
 part 'stac_modal_bottom_sheet_action.g.dart';
 
+/// Core model for the "showModalBottomSheet" action.
+///
+/// Displays a Flutter `showModalBottomSheet` with content sourced from a STAC
+/// widget. Defaults (scroll control, dismissibility, etc.) are applied in the
+/// parser, not the model.
+///
+/// Dart example:
+/// ```dart
+/// const StacModalBottomSheetAction(
+///   widget: StacWidget.fromJson({"type": "text", "data": {"text": "Hello"}}),
+/// );
+/// ```
+///
+/// JSON example:
+/// ```json
+/// {
+///   "actionType": "showModalBottomSheet",
+///   "widget": {"type": "text", "data": {"text": "Hello"}}
+/// }
+/// ```
 @JsonSerializable()
 class StacModalBottomSheetAction extends StacAction {
   const StacModalBottomSheetAction({
@@ -19,36 +39,98 @@ class StacModalBottomSheetAction extends StacAction {
     this.shape,
     this.constraints,
     this.barrierColor,
-    this.isScrollControlled = false,
-    this.useRootNavigator = false,
-    this.isDismissible = true,
-    this.enableDrag = true,
+    this.isScrollControlled,
+    this.useRootNavigator,
+    this.isDismissible,
+    this.enableDrag,
     this.showDragHandle,
-    this.useSafeArea = false,
+    this.useSafeArea,
   });
 
+  /// Content widget to display inside the bottom sheet.
+  ///
+  /// Type: `StacWidget?`.
   final StacWidget? widget;
-  final StacNetworkRequest? request;
-  final String? assetPath;
-  final String? backgroundColor;
-  final String? barrierLabel;
-  final double? elevation;
-  final StacBorder? shape;
-  final StacBoxConstraints? constraints;
-  final String? barrierColor;
-  final bool isScrollControlled;
-  final bool useRootNavigator;
-  final bool isDismissible;
-  final bool enableDrag;
-  final bool? showDragHandle;
-  final bool useSafeArea;
 
+  /// Network request to fetch widget content.
+  ///
+  /// Type: `StacNetworkRequest?`.
+  final StacNetworkRequest? request;
+
+  /// Path to a local asset JSON for the widget.
+  ///
+  /// Type: `String?`.
+  final String? assetPath;
+
+  /// Background color hex for the sheet.
+  ///
+  /// Type: `String?`.
+  final String? backgroundColor;
+
+  /// Semantics label for the modal barrier.
+  ///
+  /// Type: `String?`.
+  final String? barrierLabel;
+
+  /// Elevation of the bottom sheet.
+  ///
+  /// Type: `double?`.
+  final double? elevation;
+
+  /// Shape border of the bottom sheet.
+  ///
+  /// Type: `StacBorder?`.
+  final StacBorder? shape;
+
+  /// Box constraints applied to the sheet.
+  ///
+  /// Type: `StacBoxConstraints?`.
+  final StacBoxConstraints? constraints;
+
+  /// Barrier color hex behind the sheet.
+  ///
+  /// Type: `String?`.
+  final String? barrierColor;
+
+  /// Whether the sheet can take full height when scrolled.
+  ///
+  /// Type: `bool?` (defaults applied in parser).
+  final bool? isScrollControlled;
+
+  /// Whether to use the root navigator.
+  ///
+  /// Type: `bool?` (defaults applied in parser).
+  final bool? useRootNavigator;
+
+  /// Whether the sheet is dismissible by tapping the barrier.
+  ///
+  /// Type: `bool?` (defaults applied in parser).
+  final bool? isDismissible;
+
+  /// Whether the sheet is draggable.
+  ///
+  /// Type: `bool?` (defaults applied in parser).
+  final bool? enableDrag;
+
+  /// Whether to show the drag handle.
+  ///
+  /// Type: `bool?`.
+  final bool? showDragHandle;
+
+  /// Whether to respect the safe area.
+  ///
+  /// Type: `bool?` (defaults applied in parser).
+  final bool? useSafeArea;
+
+  /// Unique action type string used for routing.
   @override
   String get actionType => 'showModalBottomSheet';
 
+  /// Creates a `StacModalBottomSheetAction` from JSON.
   factory StacModalBottomSheetAction.fromJson(Map<String, dynamic> json) =>
       _$StacModalBottomSheetActionFromJson(json);
 
+  /// Converts this action to JSON.
   @override
   Map<String, dynamic> toJson() => _$StacModalBottomSheetActionToJson(this);
 }

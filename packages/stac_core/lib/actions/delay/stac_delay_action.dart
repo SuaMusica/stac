@@ -3,18 +3,37 @@ import 'package:stac_core/core/stac_action.dart';
 
 part 'stac_delay_action.g.dart';
 
+/// Simple delay action that waits for a number of milliseconds.
+///
+/// Defaults are applied in the parser; the model accepts a nullable value.
+///
+/// Dart example:
+/// ```dart
+/// const StacDelayAction(milliseconds: 500);
+/// ```
+///
+/// JSON example:
+/// ```json
+/// { "actionType": "delay", "milliseconds": 500 }
+/// ```
 @JsonSerializable()
 class StacDelayAction extends StacAction {
-  const StacDelayAction({this.milliseconds = 1000});
+  const StacDelayAction({this.milliseconds});
 
-  final int milliseconds;
+  /// Delay in milliseconds to wait.
+  ///
+  /// Type: `int?` (defaults applied in parser).
+  final int? milliseconds;
 
+  /// Unique action type string used for routing.
   @override
   String get actionType => 'delay';
 
+  /// Creates a `StacDelayAction` from JSON.
   factory StacDelayAction.fromJson(Map<String, dynamic> json) =>
       _$StacDelayActionFromJson(json);
 
+  /// Converts this action to JSON.
   @override
   Map<String, dynamic> toJson() => _$StacDelayActionToJson(this);
 }

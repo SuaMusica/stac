@@ -49,10 +49,10 @@ class StacDialogActionParser extends StacActionParser<StacDialogAction> {
     return showDialog(
       context: context,
       builder: (_) => widget,
-      barrierDismissible: model.barrierDismissible,
+      barrierDismissible: model.barrierDismissible ?? true,
       barrierColor: model.barrierColor.toColor(context),
       barrierLabel: model.barrierLabel,
-      useSafeArea: model.useSafeArea,
+      useSafeArea: model.useSafeArea ?? true,
       traversalEdgeBehavior: model.traversalEdgeBehavior.parse,
     );
   }
