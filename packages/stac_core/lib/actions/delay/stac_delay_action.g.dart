@@ -6,12 +6,13 @@ part of 'stac_delay_action.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacDelayAction _$StacDelayActionFromJson(Map<String, dynamic> json) =>
-    _StacDelayAction(
+StacDelayAction _$StacDelayActionFromJson(Map<String, dynamic> json) =>
+    StacDelayAction(
       milliseconds: (json['milliseconds'] as num?)?.toInt() ?? 1000,
     );
 
-Map<String, dynamic> _$StacDelayActionToJson(_StacDelayAction instance) =>
+Map<String, dynamic> _$StacDelayActionToJson(StacDelayAction instance) =>
     <String, dynamic>{
       'milliseconds': instance.milliseconds,
+      'actionType': instance.actionType,
     };
