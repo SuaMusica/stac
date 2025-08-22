@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/actions/stac_multi_action/stac_multi_action.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac_core/actions/multi/stac_multi_action.dart';
 import 'package:stac/src/utils/action_type.dart';
-import 'package:stac/src/framework/framework.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacMultiActionParser extends StacActionParser<StacMultiAction> {
@@ -19,10 +19,8 @@ class StacMultiActionParser extends StacActionParser<StacMultiAction> {
   @override
   FutureOr onCall(BuildContext context, StacMultiAction model) async {
     final actions = model.actions ?? [];
-    for (var json in actions) {
-      model.sync
-          ? await Stac.onCallFromJson(json, context)
-          : Stac.onCallFromJson(json, context);
+    for (var action in actions) {
+      model.sync ? await action.parse(context) : action.parse(context);
     }
   }
 }
