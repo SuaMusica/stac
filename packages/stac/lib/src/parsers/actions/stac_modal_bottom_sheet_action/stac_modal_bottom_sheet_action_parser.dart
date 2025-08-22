@@ -57,12 +57,12 @@ class StacModalBottomSheetActionParser
       shape: model.shape?.parse(context),
       constraints: model.constraints?.parse,
       barrierColor: model.barrierColor.toColor(context),
-      isScrollControlled: model.isScrollControlled,
-      useRootNavigator: model.useRootNavigator,
-      isDismissible: model.isDismissible,
-      enableDrag: model.enableDrag,
+      isScrollControlled: model.isScrollControlled ?? false,
+      useRootNavigator: model.useRootNavigator ?? false,
+      isDismissible: model.isDismissible ?? true,
+      enableDrag: model.enableDrag ?? true,
       showDragHandle: model.showDragHandle,
-      useSafeArea: model.useSafeArea,
+      useSafeArea: model.useSafeArea ?? false,
     );
   }
 }

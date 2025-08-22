@@ -17,6 +17,7 @@ class StacDelayActionParser extends StacActionParser<StacDelayAction> {
 
   @override
   FutureOr onCall(BuildContext context, StacDelayAction model) {
-    return Future.delayed(Duration(milliseconds: model.milliseconds));
+    final ms = model.milliseconds ?? 1000;
+    return Future.delayed(Duration(milliseconds: ms));
   }
 }

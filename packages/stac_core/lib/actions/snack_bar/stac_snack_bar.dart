@@ -11,6 +11,27 @@ import 'package:stac_core/types/stac_duration/stac_duration.dart';
 
 part 'stac_snack_bar.g.dart';
 
+/// Core model for the SnackBar action.
+///
+/// Shows a Flutter `SnackBar` built from STAC JSON. Use with
+/// `StacSnackBarParser` to render at runtime.
+///
+/// Dart example:
+/// ```dart
+/// const StacSnackBar(
+///   content: {"type": "text", "data": {"text": "Saved"}},
+///   behavior: StacSnackBarBehavior.floating,
+/// );
+/// ```
+///
+/// JSON example:
+/// ```json
+/// {
+///   "actionType": "showSnackBar",
+///   "content": {"type": "text", "data": {"text": "Saved"}},
+///   "behavior": "floating"
+/// }
+/// ```
 @JsonSerializable()
 class StacSnackBar extends StacAction {
   const StacSnackBar({
@@ -33,30 +54,100 @@ class StacSnackBar extends StacAction {
     this.clipBehavior,
   });
 
+  /// Widget JSON rendered inside the SnackBar.
+  ///
+  /// Type: `Map<String, dynamic>`.
   final Map<String, dynamic> content;
+
+  /// Background color hex.
+  ///
+  /// Type: `String?`.
   final String? backgroundColor;
+
+  /// Elevation of the SnackBar.
+  ///
+  /// Type: `double?`.
   final double? elevation;
+
+  /// Outer margin.
+  ///
+  /// Type: `StacEdgeInsets?`.
   final StacEdgeInsets? margin;
+
+  /// Inner padding.
+  ///
+  /// Type: `StacEdgeInsets?`.
   final StacEdgeInsets? padding;
+
+  /// Fixed width.
+  ///
+  /// Type: `double?`.
   final double? width;
+
+  /// Shape border for the SnackBar.
+  ///
+  /// Type: `StacShapeBorder?`.
   final StacShapeBorder? shape;
+
+  /// Hit test behavior.
+  ///
+  /// Type: `StacHitTestBehavior?`.
   final StacHitTestBehavior? hitTestBehavior;
+
+  /// Behavior: fixed or floating.
+  ///
+  /// Type: `StacSnackBarBehavior?`.
   final StacSnackBarBehavior? behavior;
+
+  /// Optional action button.
+  ///
+  /// Type: `StacSnackBarAction?`.
   final StacSnackBarAction? action;
+
+  /// Threshold for overflowing actions.
+  ///
+  /// Type: `double?`.
   final double? actionOverflowThreshold;
+
+  /// Whether to show the close icon.
+  ///
+  /// Type: `bool?`.
   final bool? showCloseIcon;
+
+  /// Close icon color.
+  ///
+  /// Type: `String?`.
   final String? closeIconColor;
+
+  /// Display duration.
+  ///
+  /// Type: `StacDuration?`.
   final StacDuration? duration;
+
+  /// Callback action when SnackBar becomes visible.
+  ///
+  /// Type: `Map<String, dynamic>?`.
   final Map<String, dynamic>? onVisible;
+
+  /// Dismiss direction.
+  ///
+  /// Type: `StacDismissDirection?`.
   final StacDismissDirection? dismissDirection;
+
+  /// Clip behavior.
+  ///
+  /// Type: `StacClip?`.
   final StacClip? clipBehavior;
 
+  /// Unique action type string used for routing.
   @override
   String get actionType => 'showSnackBar';
 
+  /// Creates a `StacSnackBar` from JSON.
   factory StacSnackBar.fromJson(Map<String, dynamic> json) =>
       _$StacSnackBarFromJson(json);
 
+  /// Converts this action to JSON.
   @override
   Map<String, dynamic> toJson() => _$StacSnackBarToJson(this);
 }

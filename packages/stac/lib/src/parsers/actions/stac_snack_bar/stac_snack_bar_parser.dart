@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac_core/actions/snack_bar/stac_snack_bar.dart';
+import 'package:stac_core/actions/snack_bar/stac_snack_bar_action.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/action_type.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-// Types are parsed via extensions in type_parser.dart
 
 class StacSnackBarParser extends StacActionParser<StacSnackBar> {
   const StacSnackBarParser();
@@ -37,7 +37,7 @@ class StacSnackBarParser extends StacActionParser<StacSnackBar> {
         shape: model.shape?.parse(context),
         hitTestBehavior: model.hitTestBehavior?.parse,
         behavior: model.behavior?.parse,
-        action: model.action?.parse(context),
+        action: _parseAction(context, model.action),
         actionOverflowThreshold: model.actionOverflowThreshold,
         showCloseIcon: model.showCloseIcon,
         closeIconColor: model.closeIconColor?.toColor(context),
@@ -46,6 +46,19 @@ class StacSnackBarParser extends StacActionParser<StacSnackBar> {
         dismissDirection: model.dismissDirection?.parse,
         clipBehavior: model.clipBehavior.parse,
       ),
+    );
+  }
+
+  SnackBarAction? _parseAction(
+      BuildContext context, StacSnackBarAction? action) {
+    if (action == null) return null;
+    return SnackBarAction(
+      textColor: action.textColor?.toColor(context),
+      disabledTextColor: action.disabledTextColor?.toColor(context),
+      backgroundColor: action.backgroundColor?.toColor(context),
+      disabledBackgroundColor: action.disabledBackgroundColor?.toColor(context),
+      label: action.label,
+      onPressed: () => action.onPressed.parse(context),
     );
   }
 }
