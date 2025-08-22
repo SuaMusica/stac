@@ -12,7 +12,7 @@ class StacScaffold extends StacWidget {
     this.bottomNavigationBar,
     this.bottomSheet,
     this.drawer,
-    this.drawerDragStartBehavior = StacDragStartBehavior.start,
+    this.drawerDragStartBehavior,
     this.drawerEdgeDragWidth,
     this.drawerEnableOpenDragGesture,
     this.drawerScrimColor,

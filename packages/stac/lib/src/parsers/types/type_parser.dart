@@ -83,6 +83,21 @@ extension StacFloatingActionButtonLocationParser
   }
 }
 
+extension StacStrokeCapParser on StacStrokeCap? {
+  StrokeCap? get parse {
+    switch (this) {
+      case StacStrokeCap.butt:
+        return StrokeCap.butt;
+      case StacStrokeCap.round:
+        return StrokeCap.round;
+      case StacStrokeCap.square:
+        return StrokeCap.square;
+      default:
+        return null;
+    }
+  }
+}
+
 extension StacOverflowBarAlignmentParser on StacOverflowBarAlignment {
   OverflowBarAlignment get parse {
     switch (this) {
