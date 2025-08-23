@@ -16,7 +16,7 @@ StacCircularProgressIndicator _$StacCircularProgressIndicatorFromJson(
   strokeAlign: const DoubleConverter().fromJson(json['strokeAlign']),
   semanticsLabel: json['semanticsLabel'] as String?,
   semanticsValue: json['semanticsValue'] as String?,
-  strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
+  strokeCap: $enumDecodeNullable(_$StacStrokeCapEnumMap, json['strokeCap']),
 );
 
 Map<String, dynamic> _$StacCircularProgressIndicatorToJson(
@@ -29,12 +29,12 @@ Map<String, dynamic> _$StacCircularProgressIndicatorToJson(
   'strokeAlign': const DoubleConverter().toJson(instance.strokeAlign),
   'semanticsLabel': instance.semanticsLabel,
   'semanticsValue': instance.semanticsValue,
-  'strokeCap': _$StrokeCapEnumMap[instance.strokeCap],
+  'strokeCap': _$StacStrokeCapEnumMap[instance.strokeCap],
   'type': instance.type,
 };
 
-const _$StrokeCapEnumMap = {
-  StrokeCap.butt: 'butt',
-  StrokeCap.round: 'round',
-  StrokeCap.square: 'square',
+const _$StacStrokeCapEnumMap = {
+  StacStrokeCap.butt: 'butt',
+  StacStrokeCap.round: 'round',
+  StacStrokeCap.square: 'square',
 };
