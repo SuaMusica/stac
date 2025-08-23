@@ -52,3 +52,4 @@ export 'stac_table/stac_table_cell_vertical_alignment.dart';
 export 'stac_dialog_traversal_edge_behavior.dart';
 export 'stac_snack_bar_behavior.dart';
 export 'stac_dismiss_direction.dart';
+export 'stac_stroke_cap.dart';
