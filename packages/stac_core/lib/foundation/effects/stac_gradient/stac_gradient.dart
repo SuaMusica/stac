@@ -40,8 +40,7 @@ enum StacTileMode {
 /// {@tool snippet}
 /// Dart Example:
 /// ```dart
-/// const StacGradient(
-///   gradientType: StacGradientType.linear,
+/// StacLinearGradient(
 ///   colors: [StacColors.blue, StacColors.red],
 ///   stops: [0.0, 1.0],
 ///   begin: StacAlignment.topLeft,
@@ -79,6 +78,82 @@ class StacGradient {
     this.startAngle,
     this.endAngle,
   });
+
+  /// Creates a linear gradient.
+  ///
+  /// Example:
+  /// ```dart
+  /// StacLinearGradient(
+  ///   colors: [StacColors.blue, StacColors.red],
+  ///   begin: StacAlignment.topLeft,
+  ///   end: StacAlignment.bottomRight,
+  ///   stops: [0.0, 1.0],
+  /// )
+  /// ```
+  const StacGradient.linear({
+    required this.colors,
+    this.stops,
+    this.begin,
+    this.end,
+    this.tileMode,
+  }) : gradientType = StacGradientType.linear,
+       center = null,
+       focal = null,
+       focalRadius = null,
+       radius = null,
+       startAngle = null,
+       endAngle = null;
+
+  /// Creates a radial gradient.
+  ///
+  /// Example:
+  /// ```dart
+  /// StacRadialGradient(
+  ///   colors: [StacColors.blue, StacColors.red],
+  ///   center: StacAlignment.center,
+  ///   radius: 0.5,
+  ///   stops: [0.0, 1.0],
+  /// )
+  /// ```
+  const StacGradient.radial({
+    required this.colors,
+    this.stops,
+    this.center,
+    this.focal,
+    this.focalRadius,
+    this.radius,
+    this.tileMode,
+  }) : gradientType = StacGradientType.radial,
+       begin = null,
+       end = null,
+       startAngle = null,
+       endAngle = null;
+
+  /// Creates a sweep gradient.
+  ///
+  /// Example:
+  /// ```dart
+  /// StacSweepGradient(
+  ///   colors: [StacColors.blue, StacColors.red],
+  ///   center: StacAlignment.center,
+  ///   startAngle: 0.0,
+  ///   endAngle: 3.14159,
+  ///   stops: [0.0, 1.0],
+  /// )
+  /// ```
+  const StacGradient.sweep({
+    required this.colors,
+    this.stops,
+    this.center,
+    this.startAngle,
+    this.endAngle,
+    this.tileMode,
+  }) : gradientType = StacGradientType.sweep,
+       begin = null,
+       end = null,
+       focal = null,
+       focalRadius = null,
+       radius = null;
 
   /// The type of gradient (linear, radial, or sweep).
   final StacGradientType? gradientType;
@@ -123,3 +198,55 @@ class StacGradient {
   /// Converts this [StacGradient] instance to a JSON map.
   Map<String, dynamic> toJson() => _$StacGradientToJson(this);
 }
+
+/// A linear gradient that transitions colors along a straight line.
+///
+/// This is a convenience constructor for [StacGradient.linear] for a more Flutter-like API.
+/// Colors transition from [begin] to [end] alignment points.
+///
+/// Example:
+/// ```dart
+/// StacLinearGradient(
+///   colors: [StacColors.blue, StacColors.red],
+///   begin: StacAlignment.topLeft,
+///   end: StacAlignment.bottomRight,
+///   stops: [0.0, 1.0],
+/// )
+/// ```
+// ignore: constant_identifier_names
+const StacLinearGradient = StacGradient.linear;
+
+/// A radial gradient that transitions colors in a circular pattern from center outward.
+///
+/// This is a convenience constructor for [StacGradient.radial] for a more Flutter-like API.
+/// Colors transition from the center point outward in a circular pattern.
+///
+/// Example:
+/// ```dart
+/// StacRadialGradient(
+///   colors: [StacColors.blue, StacColors.red],
+///   center: StacAlignment.center,
+///   radius: 0.5,
+///   stops: [0.0, 1.0],
+/// )
+/// ```
+// ignore: constant_identifier_names
+const StacRadialGradient = StacGradient.radial;
+
+/// A sweep gradient that transitions colors in a circular sweep around a center point.
+///
+/// This is a convenience constructor for [StacGradient.sweep] for a more Flutter-like API.
+/// Colors transition in a circular sweep around the center point.
+///
+/// Example:
+/// ```dart
+/// StacSweepGradient(
+///   colors: [StacColors.blue, StacColors.red],
+///   center: StacAlignment.center,
+///   startAngle: 0.0,
+///   endAngle: 3.14159,
+///   stops: [0.0, 1.0],
+/// )
+/// ```
+// ignore: constant_identifier_names
+const StacSweepGradient = StacGradient.sweep;
