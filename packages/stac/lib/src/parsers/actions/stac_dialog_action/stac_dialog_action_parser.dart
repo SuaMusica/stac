@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:stac_core/actions/dialog/stac_dialog_action.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/actions/stac_dialog_action/stac_dialog_action.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/action_type.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/actions/dialog/stac_dialog_action.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacDialogActionParser extends StacActionParser<StacDialogAction> {
