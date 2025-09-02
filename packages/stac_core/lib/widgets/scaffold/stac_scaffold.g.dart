@@ -25,12 +25,10 @@ StacScaffold _$StacScaffoldFromJson(Map<String, dynamic> json) => StacScaffold(
   drawer: json['drawer'] == null
       ? null
       : StacWidget.fromJson(json['drawer'] as Map<String, dynamic>),
-  drawerDragStartBehavior:
-      $enumDecodeNullable(
-        _$StacDragStartBehaviorEnumMap,
-        json['drawerDragStartBehavior'],
-      ) ??
-      StacDragStartBehavior.start,
+  drawerDragStartBehavior: $enumDecodeNullable(
+    _$StacDragStartBehaviorEnumMap,
+    json['drawerDragStartBehavior'],
+  ),
   drawerEdgeDragWidth: (json['drawerEdgeDragWidth'] as num?)?.toDouble(),
   drawerEnableOpenDragGesture: json['drawerEnableOpenDragGesture'] as bool?,
   drawerScrimColor: json['drawerScrimColor'] as String?,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac_framework/stac_framework.dart';
 import 'package:stac_core/widgets/circular_progress_indicator/stac_circular_progress_indicator.dart';
 import 'package:stac_framework/stac_framework.dart';
 
@@ -25,7 +27,7 @@ class StacCircularProgressIndicatorParser
       strokeAlign: model.strokeAlign ?? 0.0,
       semanticsLabel: model.semanticsLabel,
       semanticsValue: model.semanticsValue,
-      // strokeCap: model.strokeCap,
+      strokeCap: model.strokeCap.parse,
     );
   }
 }
