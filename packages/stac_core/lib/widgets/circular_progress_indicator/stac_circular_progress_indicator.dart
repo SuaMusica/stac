@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
@@ -76,7 +74,7 @@ class StacCircularProgressIndicator extends StacWidget {
   final String? semanticsValue;
 
   /// Stroke line cap style.
-  final StrokeCap? strokeCap;
+  final String? strokeCap;
 
   /// Widget type identifier.
   @override
