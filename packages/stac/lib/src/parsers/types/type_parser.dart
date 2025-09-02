@@ -83,6 +83,21 @@ extension StacFloatingActionButtonLocationParser
   }
 }
 
+extension StacStrokeCapParser on StacStrokeCap? {
+  StrokeCap? get parse {
+    switch (this) {
+      case StacStrokeCap.butt:
+        return StrokeCap.butt;
+      case StacStrokeCap.round:
+        return StrokeCap.round;
+      case StacStrokeCap.square:
+        return StrokeCap.square;
+      default:
+        return null;
+    }
+  }
+}
+
 extension StacOverflowBarAlignmentParser on StacOverflowBarAlignment {
   OverflowBarAlignment get parse {
     switch (this) {
@@ -1401,6 +1416,81 @@ extension StacHitTestBehaviorParser on StacHitTestBehavior {
         return HitTestBehavior.opaque;
       case StacHitTestBehavior.translucent:
         return HitTestBehavior.translucent;
+    }
+  }
+}
+
+/// Extends [StacSnackBarBehavior] to map to Flutter's [SnackBarBehavior].
+extension StacSnackBarBehaviorParser on StacSnackBarBehavior? {
+  SnackBarBehavior? get parse {
+    switch (this) {
+      case StacSnackBarBehavior.fixed:
+        return SnackBarBehavior.fixed;
+      case StacSnackBarBehavior.floating:
+        return SnackBarBehavior.floating;
+      default:
+        return null;
+    }
+  }
+}
+
+/// Extends [StacDismissDirection] to map to Flutter's [DismissDirection].
+extension StacDismissDirectionParser on StacDismissDirection? {
+  DismissDirection? get parse {
+    switch (this) {
+      case StacDismissDirection.horizontal:
+        return DismissDirection.horizontal;
+      case StacDismissDirection.vertical:
+        return DismissDirection.vertical;
+      case StacDismissDirection.down:
+        return DismissDirection.down;
+      case StacDismissDirection.up:
+        return DismissDirection.up;
+      case StacDismissDirection.endToStart:
+        return DismissDirection.endToStart;
+      case StacDismissDirection.startToEnd:
+        return DismissDirection.startToEnd;
+      default:
+        return null;
+    }
+  }
+}
+
+/// Extends [StacClip] to map to Flutter's [Clip].
+extension StacClipNullableParser on StacClip? {
+  Clip get parse {
+    switch (this) {
+      case StacClip.none:
+        return Clip.none;
+      case StacClip.hardEdge:
+        return Clip.hardEdge;
+      case StacClip.antiAlias:
+        return Clip.antiAlias;
+      case StacClip.antiAliasWithSaveLayer:
+        return Clip.antiAliasWithSaveLayer;
+      default:
+        return Clip.hardEdge;
+    }
+  }
+}
+
+/// Extends [StacDialogTraversalEdgeBehavior] to provide parsing functionality.
+extension StacDialogTraversalEdgeBehaviorParser
+    on StacDialogTraversalEdgeBehavior? {
+  /// Parses this [StacDialogTraversalEdgeBehavior] into Flutter's
+  /// [TraversalEdgeBehavior].
+  TraversalEdgeBehavior? get parse {
+    switch (this) {
+      case StacDialogTraversalEdgeBehavior.closedLoop:
+        return TraversalEdgeBehavior.closedLoop;
+      case StacDialogTraversalEdgeBehavior.leaveFlutterView:
+        return TraversalEdgeBehavior.leaveFlutterView;
+      case StacDialogTraversalEdgeBehavior.parentScope:
+        return TraversalEdgeBehavior.parentScope;
+      case StacDialogTraversalEdgeBehavior.stop:
+        return TraversalEdgeBehavior.stop;
+      default:
+        return null;
     }
   }
 }

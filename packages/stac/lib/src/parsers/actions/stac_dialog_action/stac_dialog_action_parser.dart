@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:stac_core/actions/dialog/stac_dialog_action.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/framework/framework.dart';
 import 'package:stac/src/parsers/actions/stac_dialog_action/stac_dialog_action.dart';
 import 'package:stac/src/utils/action_type.dart';
@@ -48,11 +50,11 @@ class StacDialogActionParser extends StacActionParser<StacDialogAction> {
     return showDialog(
       context: context,
       builder: (_) => widget,
-      barrierDismissible: model.barrierDismissible,
+      barrierDismissible: model.barrierDismissible ?? true,
       barrierColor: model.barrierColor.toColor(context),
       barrierLabel: model.barrierLabel,
-      useSafeArea: model.useSafeArea,
-      traversalEdgeBehavior: model.traversalEdgeBehavior,
+      useSafeArea: model.useSafeArea ?? true,
+      traversalEdgeBehavior: model.traversalEdgeBehavior.parse,
     );
   }
 }
