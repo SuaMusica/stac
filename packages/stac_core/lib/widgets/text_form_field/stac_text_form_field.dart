@@ -1,16 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/painting.dart';
-import 'package:stac_core/types/stac_autovalidate_mode.dart';
-import 'package:stac_core/types/stac_brightness.dart';
-import 'package:stac_core/types/stac_form_field_validator/stac_form_field_validator.dart';
-import 'package:stac_core/types/stac_input_formatter/stac_input_formatter.dart';
-import 'package:stac_core/types/stac_max_length_enforcement.dart';
-import 'package:stac_core/types/stac_smart_dashes_type.dart';
-import 'package:stac_core/types/stac_smart_quotes_type.dart';
-import 'package:stac_core/types/stac_text_input_types.dart';
-import 'package:stac_core/types/stac_text_types.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_text_form_field.g.dart';
 

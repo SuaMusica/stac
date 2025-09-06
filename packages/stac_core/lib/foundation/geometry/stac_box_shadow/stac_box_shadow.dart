@@ -1,0 +1,36 @@
+import 'package:json_annotation/json_annotation.dart';
+import 'package:stac_core/core/converters/double_converter.dart';
+import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/colors/stac_color/stac_colors.dart';
+import 'package:stac_core/foundation/effects/stac_blur_style.dart';
+import 'package:stac_core/foundation/geometry/stac_offset/stac_offset.dart';
+
+part 'stac_box_shadow.g.dart';
+
+@JsonSerializable()
+class StacBoxShadow implements StacElement {
+  const StacBoxShadow({
+    this.color,
+    this.blurRadius,
+    this.offset,
+    this.spreadRadius,
+    this.blurStyle,
+  });
+
+  final StacColor? color;
+
+  @DoubleConverter()
+  final double? blurRadius;
+
+  final StacOffset? offset;
+
+  @DoubleConverter()
+  final double? spreadRadius;
+  final StacBlurStyle? blurStyle;
+
+  factory StacBoxShadow.fromJson(Map<String, dynamic> json) =>
+      _$StacBoxShadowFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$StacBoxShadowToJson(this);
+}

@@ -1,10 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/painting/stac_system_ui_overlay_style/stac_system_ui_overlay_style.dart';
-import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_core/types/stac_clip.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_app_bar.g.dart';
 

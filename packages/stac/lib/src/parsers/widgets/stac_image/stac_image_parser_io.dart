@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_core/types/stac_image_type.dart';
+import 'package:stac_core/foundation/ui_components/stac_image_type.dart';
 import 'package:stac_core/widgets/image/stac_image.dart';
 
 class StacImageParser extends StacParser<StacImage> {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/stac_core.dart';
 
 extension StacEdgeInsetsParser on StacEdgeInsets {
   EdgeInsets get parse {

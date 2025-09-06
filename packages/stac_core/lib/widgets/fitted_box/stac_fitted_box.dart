@@ -1,8 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_alignment.dart';
-import 'package:stac_core/types/stac_box_fit.dart';
-import 'package:stac_core/types/stac_clip.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_fitted_box.g.dart';
 

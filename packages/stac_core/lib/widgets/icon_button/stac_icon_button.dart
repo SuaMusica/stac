@@ -1,8 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/stac_core.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac_core/types/stac_alignment.dart';
-import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
 
 part 'stac_icon_button.g.dart';
 

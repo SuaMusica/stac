@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/stac_core.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
 
 part 'stac_outlined_button.g.dart';
 

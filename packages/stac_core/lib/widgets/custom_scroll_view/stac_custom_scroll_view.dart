@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/types.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_custom_scroll_view.g.dart';
 

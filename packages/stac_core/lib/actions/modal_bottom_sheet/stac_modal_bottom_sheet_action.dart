@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/actions/network_request/stac_network_request.dart';
-import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_border/stac_border.dart';
-import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
 import 'package:stac_core/core/stac_action.dart';
+import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/borders/stac_border/stac_border.dart';
+import 'package:stac_core/foundation/geometry/stac_box_constraints/stac_box_constraints.dart';
 
 part 'stac_modal_bottom_sheet_action.g.dart';
 

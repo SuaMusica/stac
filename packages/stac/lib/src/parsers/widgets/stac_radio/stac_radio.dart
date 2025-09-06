@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_mouse_cursor/stac_mouse_cursor.dart';
-import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
+import 'package:stac_core/stac_core.dart';
 
 export 'stac_radio_parser.dart';
 

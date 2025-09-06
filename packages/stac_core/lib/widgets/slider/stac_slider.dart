@@ -2,10 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/types/stac_mouse_cursor.dart';
-import 'package:stac_core/types/stac_slider_interaction.dart';
-import 'package:stac_core/types/stac_slider_type.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_slider.g.dart';
 

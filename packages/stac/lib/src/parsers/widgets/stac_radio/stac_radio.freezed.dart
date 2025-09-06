@@ -130,8 +130,6 @@ abstract mixin class $StacRadioCopyWith<$Res> {
       bool autofocus,
       bool useCheckmarkStyle,
       bool useCupertinoCheckmarkStyle});
-
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -229,20 +227,6 @@ class _$StacRadioCopyWithImpl<$Res> implements $StacRadioCopyWith<$Res> {
           : useCupertinoCheckmarkStyle // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacRadio
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 
@@ -670,9 +654,6 @@ abstract mixin class _$StacRadioCopyWith<$Res>
       bool autofocus,
       bool useCheckmarkStyle,
       bool useCupertinoCheckmarkStyle});
-
-  @override
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -770,20 +751,6 @@ class __$StacRadioCopyWithImpl<$Res> implements _$StacRadioCopyWith<$Res> {
           : useCupertinoCheckmarkStyle // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of StacRadio
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 
