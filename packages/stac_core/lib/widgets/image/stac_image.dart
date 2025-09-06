@@ -46,7 +46,7 @@ class StacImage extends StacWidget {
   final bool? excludeFromSemantics;
 
   @override
-  String get type => 'image';
+  String get type => WidgetType.image.name;
 
   factory StacImage.fromJson(Map<String, dynamic> json) =>
       _$StacImageFromJson(json);

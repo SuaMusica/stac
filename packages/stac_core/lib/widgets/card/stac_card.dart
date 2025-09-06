@@ -84,7 +84,7 @@ class StacCard extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'card';
+  String get type => WidgetType.card.name;
 
   /// Creates a [StacCard] from a JSON map.
   factory StacCard.fromJson(Map<String, dynamic> json) =>

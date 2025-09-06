@@ -69,7 +69,7 @@ class StacAutoComplete extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'autoComplete';
+  String get type => WidgetType.autocomplete.name;
 
   /// Creates a [StacAutoComplete] from a JSON map.
   factory StacAutoComplete.fromJson(Map<String, dynamic> json) =>

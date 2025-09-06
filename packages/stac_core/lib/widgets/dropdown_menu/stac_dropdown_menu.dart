@@ -141,7 +141,7 @@ class StacDropdownMenu extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'dropdownMenu';
+  String get type => WidgetType.dropdownMenu.name;
 
   /// Creates a [StacDropdownMenu] from a JSON map.
   factory StacDropdownMenu.fromJson(Map<String, dynamic> json) =>

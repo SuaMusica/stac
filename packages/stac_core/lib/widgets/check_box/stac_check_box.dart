@@ -128,7 +128,7 @@ class StacCheckBox extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'checkBox';
+  String get type => WidgetType.checkBox.name;
 
   /// Creates a [StacCheckBox] from a JSON map.
   factory StacCheckBox.fromJson(Map<String, dynamic> json) =>

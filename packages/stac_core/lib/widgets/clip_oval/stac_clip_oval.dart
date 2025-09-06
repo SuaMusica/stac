@@ -48,7 +48,7 @@ class StacClipOval extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'clipOval';
+  String get type => WidgetType.clipOval.name;
 
   /// Creates a [StacClipOval] from a JSON map.
   factory StacClipOval.fromJson(Map<String, dynamic> json) =>

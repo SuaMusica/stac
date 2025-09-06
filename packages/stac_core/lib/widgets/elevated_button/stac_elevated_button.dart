@@ -68,7 +68,7 @@ class StacElevatedButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'elevatedButton';
+  String get type => WidgetType.elevatedButton.name;
 
   /// Creates a [StacElevatedButton] from JSON.
   factory StacElevatedButton.fromJson(Map<String, dynamic> json) =>

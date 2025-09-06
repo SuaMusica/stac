@@ -215,7 +215,7 @@ class StacTextField extends StacWidget {
   ///
   /// Used to identify this widget type during JSON serialization.
   @override
-  String get type => 'textField';
+  String get type => WidgetType.textField.name;
 
   /// Creates a [StacTextField] from a JSON map.
   ///

@@ -4,7 +4,6 @@ import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 

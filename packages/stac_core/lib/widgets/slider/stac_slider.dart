@@ -146,7 +146,7 @@ class StacSlider extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'slider';
+  String get type => WidgetType.slider.name;
 
   /// Creates a [StacSlider] from a JSON map.
   factory StacSlider.fromJson(Map<String, dynamic> json) =>

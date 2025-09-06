@@ -121,7 +121,7 @@ class StacFloatingActionButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'floatingActionButton';
+  String get type => WidgetType.floatingActionButton.name;
 
   /// Creates a [StacFloatingActionButton] from JSON.
   factory StacFloatingActionButton.fromJson(Map<String, dynamic> json) =>

@@ -186,7 +186,7 @@ class StacSliverAppBar extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'sliverAppBar';
+  String get type => WidgetType.sliverAppBar.name;
 
   /// Creates a [StacSliverAppBar] from a JSON map.
   factory StacSliverAppBar.fromJson(Map<String, dynamic> json) =>

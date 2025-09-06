@@ -66,7 +66,7 @@ class StacOutlinedButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'outlinedButton';
+  String get type => WidgetType.outlinedButton.name;
 
   /// Creates a [StacOutlinedButton] from JSON.
   factory StacOutlinedButton.fromJson(Map<String, dynamic> json) =>

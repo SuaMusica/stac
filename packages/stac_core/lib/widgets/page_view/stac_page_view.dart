@@ -108,7 +108,7 @@ class StacPageView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'pageView';
+  String get type => WidgetType.pageView.name;
 
   /// Creates a [StacPageView] from a JSON map.
   factory StacPageView.fromJson(Map<String, dynamic> json) =>

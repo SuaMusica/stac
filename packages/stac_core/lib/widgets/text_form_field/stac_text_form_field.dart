@@ -184,7 +184,7 @@ class StacTextFormField extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'textFormField';
+  String get type => WidgetType.textFormField.name;
 
   /// Creates a [StacTextFormField] from a JSON map.
   factory StacTextFormField.fromJson(Map<String, dynamic> json) =>

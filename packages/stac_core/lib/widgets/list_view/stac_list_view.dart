@@ -120,7 +120,7 @@ class StacListView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'listView';
+  String get type => WidgetType.listView.name;
 
   /// Creates a [StacListView] from JSON.
   factory StacListView.fromJson(Map<String, dynamic> json) =>

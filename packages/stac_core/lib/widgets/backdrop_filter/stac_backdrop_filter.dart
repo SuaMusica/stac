@@ -56,7 +56,7 @@ class StacBackdropFilter extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'backdropFilter';
+  String get type => WidgetType.backdropFilter.name;
 
   /// Creates a [StacBackdropFilter] from JSON.
   factory StacBackdropFilter.fromJson(Map<String, dynamic> json) =>

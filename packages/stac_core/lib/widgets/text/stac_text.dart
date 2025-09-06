@@ -46,7 +46,7 @@ class StacText extends StacWidget {
   final StacColor? selectionColor;
 
   @override
-  String get type => 'text';
+  String get type => WidgetType.text.name;
 
   @override
   Map<String, dynamic> toJson() => _$StacTextToJson(this);

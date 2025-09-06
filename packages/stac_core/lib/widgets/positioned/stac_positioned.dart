@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_positioned.g.dart';
 
@@ -37,7 +38,7 @@ class StacPositioned extends StacWidget {
   final StacWidget? child;
 
   @override
-  String get type => 'positioned';
+  String get type => WidgetType.positioned.name;
 
   factory StacPositioned.fromJson(Map<String, dynamic> json) =>
       _$StacPositionedFromJson(json);

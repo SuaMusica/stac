@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_core/widgets/spacer/stac_spacer.dart';
 
 class StacSpacerParser extends StacParser<StacSpacer> {
   const StacSpacerParser();

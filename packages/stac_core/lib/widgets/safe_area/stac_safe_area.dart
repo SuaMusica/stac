@@ -74,7 +74,7 @@ class StacSafeArea extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'safeArea';
+  String get type => WidgetType.safeArea.name;
 
   /// Creates a [StacSafeArea] from JSON.
   factory StacSafeArea.fromJson(Map<String, dynamic> json) =>

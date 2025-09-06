@@ -99,7 +99,7 @@ class StacVerticalDivider extends StacWidget {
   ///
   /// This is used to identify the widget type in JSON serialization.
   @override
-  String get type => 'verticalDivider';
+  String get type => WidgetType.verticalDivider.name;
 
   /// Creates a [StacVerticalDivider] instance from a JSON map.
   ///

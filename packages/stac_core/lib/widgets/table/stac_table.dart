@@ -79,7 +79,7 @@ class StacTable extends StacWidget {
 
   @override
   /// Widget type identifier.
-  String get type => 'table';
+  String get type => WidgetType.table.name;
 
   /// Creates a [StacTable] from a JSON map.
   factory StacTable.fromJson(Map<String, dynamic> json) =>

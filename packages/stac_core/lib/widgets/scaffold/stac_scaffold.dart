@@ -78,7 +78,7 @@ class StacScaffold extends StacWidget {
   final String? restorationId;
 
   @override
-  String get type => 'scaffold';
+  String get type => WidgetType.scaffold.name;
 
   factory StacScaffold.fromJson(Map<String, dynamic> json) =>
       _$StacScaffoldFromJson(json);

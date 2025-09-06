@@ -78,7 +78,7 @@ class StacCircularProgressIndicator extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'circularProgressIndicator';
+  String get type => WidgetType.circularProgressIndicator.name;
 
   /// Creates a [StacCircularProgressIndicator] from a JSON map.
   factory StacCircularProgressIndicator.fromJson(Map<String, dynamic> json) =>

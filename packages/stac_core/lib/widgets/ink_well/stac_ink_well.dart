@@ -150,7 +150,7 @@ class StacInkWell extends StacWidget {
 
   /// Describes the type of this widget for JSON serialization.
   @override
-  String get type => 'inkWell';
+  String get type => WidgetType.inkWell.name;
 
   /// Creates a [StacInkWell] from a JSON map.
   factory StacInkWell.fromJson(Map<String, dynamic> json) =>

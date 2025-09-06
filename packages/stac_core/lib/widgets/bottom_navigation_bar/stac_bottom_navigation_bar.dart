@@ -140,7 +140,7 @@ class StacBottomNavigationBar extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'bottomNavigationBar';
+  String get type => WidgetType.bottomNavigationBar.name;
 
   /// Creates a [StacBottomNavigationBar] from a JSON map.
   factory StacBottomNavigationBar.fromJson(Map<String, dynamic> json) =>

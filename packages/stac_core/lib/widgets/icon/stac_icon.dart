@@ -92,7 +92,7 @@ class StacIcon extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'icon';
+  String get type => WidgetType.icon.name;
 
   /// Creates a [StacIcon] from JSON.
   factory StacIcon.fromJson(Map<String, dynamic> json) =>

@@ -143,7 +143,7 @@ class StacChip extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'chip';
+  String get type => WidgetType.chip.name;
 
   /// Creates a [StacChip] from a JSON map.
   factory StacChip.fromJson(Map<String, dynamic> json) =>

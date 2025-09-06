@@ -71,7 +71,7 @@ class StacDivider extends StacWidget {
   final StacColor? color;
 
   @override
-  String get type => 'divider';
+  String get type => WidgetType.divider.name;
 
   /// Creates a [StacDivider] from a JSON map.
   factory StacDivider.fromJson(Map<String, dynamic> json) =>
