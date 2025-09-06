@@ -1,9 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/painting/stac_text_span/stac_text_span.dart';
-import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_core/types/stac_text_types.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_text.g.dart';
 

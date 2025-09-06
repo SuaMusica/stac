@@ -1,12 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/types/stac_alignment.dart';
-import 'package:stac_core/types/stac_box_fit.dart';
-import 'package:stac_core/types/stac_filter_quality.dart';
-import 'package:stac_core/types/stac_image_repeat.dart';
-import 'package:stac_core/types/stac_image_type.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_image.g.dart';
 

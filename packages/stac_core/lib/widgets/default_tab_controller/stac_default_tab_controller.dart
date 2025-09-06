@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_duration/stac_duration.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_default_tab_controller.g.dart';
 

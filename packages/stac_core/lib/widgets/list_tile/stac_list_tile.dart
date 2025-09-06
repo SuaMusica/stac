@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/stac_core.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
 
 part 'stac_list_tile.g.dart';
 

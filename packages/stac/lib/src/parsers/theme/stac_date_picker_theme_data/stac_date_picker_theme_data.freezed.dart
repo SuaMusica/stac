@@ -240,8 +240,6 @@ abstract mixin class $StacDatePickerThemeDataCopyWith<$Res> {
       StacInputDecorationTheme? inputDecorationTheme,
       StacButtonStyle? cancelButtonStyle,
       StacButtonStyle? confirmButtonStyle});
-
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
 }
 
 /// @nodoc
@@ -447,21 +445,6 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
           : confirmButtonStyle // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
   }
 }
 
@@ -1161,9 +1144,6 @@ abstract mixin class _$StacDatePickerThemeDataCopyWith<$Res>
       StacInputDecorationTheme? inputDecorationTheme,
       StacButtonStyle? cancelButtonStyle,
       StacButtonStyle? confirmButtonStyle});
-
-  @override
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
 }
 
 /// @nodoc
@@ -1369,21 +1349,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
           : confirmButtonStyle // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
   }
 }
 

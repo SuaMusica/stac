@@ -1,15 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_core/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
-import 'package:stac_core/types/stac_dropdown_menu_close_behavior.dart';
-import 'package:stac_core/types/stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
-import 'package:stac_core/types/stac_input_formatter/stac_input_formatter.dart';
-import 'package:stac_core/types/stac_offset/stac_offset.dart';
-import 'package:stac_core/types/stac_text_input_types.dart';
-import 'package:stac_core/types/stac_text_types.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_dropdown_menu.g.dart';
 

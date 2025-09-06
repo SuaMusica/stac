@@ -13,31 +13,6 @@ import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parse
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac/src/utils/input_formatters.dart';
 import 'package:stac_core/stac_core.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac_core/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
-import 'package:stac_core/types/stac_alignment.dart';
-import 'package:stac_core/types/stac_beveled_rectangle_border/stac_beveled_rectangle_border.dart';
-import 'package:stac_core/types/stac_blur_style.dart';
-import 'package:stac_core/types/stac_border/stac_border.dart';
-import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
-import 'package:stac_core/types/stac_box_fit.dart';
-import 'package:stac_core/types/stac_box_shadow/stac_box_shadow.dart';
-import 'package:stac_core/types/stac_box_shape.dart';
-import 'package:stac_core/types/stac_circle_border/stac_circle_border.dart';
-import 'package:stac_core/types/stac_continuous_rectangle_border/stac_continuous_rectangle_border.dart';
-import 'package:stac_core/types/stac_cross_axis_alignment.dart';
-import 'package:stac_core/types/stac_filter_quality.dart';
-import 'package:stac_core/types/stac_flex_fit.dart';
-import 'package:stac_core/types/stac_gradient/stac_gradient.dart';
-import 'package:stac_core/types/stac_image_repeat.dart';
-import 'package:stac_core/types/stac_main_axis_alignment.dart';
-import 'package:stac_core/types/stac_main_axis_size.dart';
-import 'package:stac_core/types/stac_offset/stac_offset.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
-import 'package:stac_core/types/stac_stack_fit.dart';
-import 'package:stac_core/types/stac_vertical_direction.dart';
-import 'package:stac_core/types/stac_wrap_alignment.dart';
-import 'package:stac_core/types/stac_wrap_cross_alignment.dart';
 
 extension StacFloatingActionButtonLocationParser
     on StacFloatingActionButtonLocation {
@@ -114,7 +89,7 @@ extension StacOverflowBarAlignmentParser on StacOverflowBarAlignment {
 extension StacInputDecorationParser on StacInputDecoration {
   InputDecoration parse(BuildContext context) {
     return InputDecoration(
-      icon: icon.parse(context),
+      icon: icon?.parse(context),
       labelText: labelText,
       labelStyle: labelStyle?.parse(context),
       hintText: hintText,
@@ -123,7 +98,7 @@ extension StacInputDecorationParser on StacInputDecoration {
       helperStyle: helperStyle?.parse(context),
       errorText: errorText,
       errorStyle: errorStyle?.parse(context),
-      prefixIcon: prefixIcon.parse(context),
+      prefixIcon: prefixIcon?.parse(context),
       prefixText: prefixText,
       prefixStyle: prefixStyle?.parse(context),
       suffixIcon: suffixIcon.parse(context),

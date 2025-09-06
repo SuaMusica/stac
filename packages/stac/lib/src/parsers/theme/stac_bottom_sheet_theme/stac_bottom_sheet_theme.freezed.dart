@@ -115,8 +115,6 @@ abstract mixin class $StacBottomSheetThemeDataCopyWith<$Res> {
       StacSize? dragHandleSize,
       Clip? clipBehavior,
       StacBoxConstraints? constraints});
-
-  $StacSizeCopyWith<$Res>? get dragHandleSize;
 }
 
 /// @nodoc
@@ -200,20 +198,6 @@ class _$StacBottomSheetThemeDataCopyWithImpl<$Res>
           : constraints // ignore: cast_nullable_to_non_nullable
               as StacBoxConstraints?,
     ));
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSizeCopyWith<$Res>? get dragHandleSize {
-    if (_self.dragHandleSize == null) {
-      return null;
-    }
-
-    return $StacSizeCopyWith<$Res>(_self.dragHandleSize!, (value) {
-      return _then(_self.copyWith(dragHandleSize: value));
-    });
   }
 }
 
@@ -596,9 +580,6 @@ abstract mixin class _$StacBottomSheetThemeDataCopyWith<$Res>
       StacSize? dragHandleSize,
       Clip? clipBehavior,
       StacBoxConstraints? constraints});
-
-  @override
-  $StacSizeCopyWith<$Res>? get dragHandleSize;
 }
 
 /// @nodoc
@@ -682,20 +663,6 @@ class __$StacBottomSheetThemeDataCopyWithImpl<$Res>
           : constraints // ignore: cast_nullable_to_non_nullable
               as StacBoxConstraints?,
     ));
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSizeCopyWith<$Res>? get dragHandleSize {
-    if (_self.dragHandleSize == null) {
-      return null;
-    }
-
-    return $StacSizeCopyWith<$Res>(_self.dragHandleSize!, (value) {
-      return _then(_self.copyWith(dragHandleSize: value));
-    });
   }
 }
 

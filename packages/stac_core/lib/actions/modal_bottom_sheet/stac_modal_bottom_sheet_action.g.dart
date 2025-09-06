@@ -28,12 +28,12 @@ StacModalBottomSheetAction _$StacModalBottomSheetActionFromJson(
           json['constraints'] as Map<String, dynamic>,
         ),
   barrierColor: json['barrierColor'] as String?,
-  isScrollControlled: json['isScrollControlled'] as bool? ?? false,
-  useRootNavigator: json['useRootNavigator'] as bool? ?? false,
-  isDismissible: json['isDismissible'] as bool? ?? true,
-  enableDrag: json['enableDrag'] as bool? ?? true,
+  isScrollControlled: json['isScrollControlled'] as bool?,
+  useRootNavigator: json['useRootNavigator'] as bool?,
+  isDismissible: json['isDismissible'] as bool?,
+  enableDrag: json['enableDrag'] as bool?,
   showDragHandle: json['showDragHandle'] as bool?,
-  useSafeArea: json['useSafeArea'] as bool? ?? false,
+  useSafeArea: json['useSafeArea'] as bool?,
 );
 
 Map<String, dynamic> _$StacModalBottomSheetActionToJson(

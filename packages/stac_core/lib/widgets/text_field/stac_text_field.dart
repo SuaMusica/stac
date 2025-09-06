@@ -2,13 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/painting.dart';
-import 'package:stac_core/types/stac_clip.dart';
-import 'package:stac_core/types/stac_drag_start_behavior.dart';
-import 'package:stac_core/types/stac_mouse_cursor.dart';
-import 'package:stac_core/types/stac_scroll_physics.dart';
-import 'package:stac_core/types/stac_text_input_types.dart';
-import 'package:stac_core/types/stac_text_types.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_text_field.g.dart';
 

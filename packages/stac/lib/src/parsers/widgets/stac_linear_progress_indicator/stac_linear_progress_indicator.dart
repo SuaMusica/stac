@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac_core/types/stac_border_radius/stac_border_radius.dart';
+import 'package:stac_core/stac_core.dart';
 
 export 'stac_linear_progress_indicator_parser.dart';
 

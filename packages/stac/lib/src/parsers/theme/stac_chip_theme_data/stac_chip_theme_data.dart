@@ -4,11 +4,7 @@ import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_core/types/stac_border_side/stac_border_side.dart';
-import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_chip_theme_data.freezed.dart';
 part 'stac_chip_theme_data.g.dart';
