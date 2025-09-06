@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_action.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_delay_action.g.dart';
 
@@ -27,7 +28,7 @@ class StacDelayAction extends StacAction {
 
   /// Unique action type string used for routing.
   @override
-  String get actionType => 'delay';
+  String get actionType => ActionType.delay.name;
 
   /// Creates a `StacDelayAction` from JSON.
   factory StacDelayAction.fromJson(Map<String, dynamic> json) =>

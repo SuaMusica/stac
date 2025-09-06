@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_action.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_multi_action.g.dart';
 
@@ -45,7 +46,7 @@ class StacMultiAction extends StacAction {
   final bool sync;
 
   @override
-  String get actionType => 'multiAction';
+  String get actionType => ActionType.multiAction.name;
 
   /// Creates a `StacMultiAction` from JSON.
   factory StacMultiAction.fromJson(Map<String, dynamic> json) =>

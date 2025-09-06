@@ -71,6 +71,7 @@ export 'navigation/stac_floating_action_button_type.dart';
 export 'navigation/stac_tab_alignment.dart';
 export 'navigation/stac_tab_bar_indicator_size.dart';
 // Specifications
+export 'specifications/action_type.dart';
 export 'specifications/widget_type.dart';
 // Text and typography
 export 'text/stac_font_weight.dart';
