@@ -126,7 +126,7 @@ class StacIconButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'iconButton';
+  String get type => WidgetType.iconButton.name;
 
   /// Creates a [StacIconButton] from JSON.
   factory StacIconButton.fromJson(Map<String, dynamic> json) =>

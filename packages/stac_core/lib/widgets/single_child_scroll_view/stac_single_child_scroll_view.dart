@@ -116,7 +116,7 @@ class StacSingleChildScrollView extends StacWidget {
   final StacScrollViewKeyboardDismissBehavior? keyboardDismissBehavior;
 
   @override
-  String get type => 'SingleChildScrollView';
+  String get type => WidgetType.singleChildScrollView.name;
 
   /// Creates a [StacSingleChildScrollView] from a JSON map.
   factory StacSingleChildScrollView.fromJson(Map<String, dynamic> json) =>

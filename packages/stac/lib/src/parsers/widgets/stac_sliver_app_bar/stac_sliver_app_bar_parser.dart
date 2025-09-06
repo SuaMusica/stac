@@ -5,9 +5,8 @@ import 'package:stac/src/parsers/painting/stac_system_ui_overlay_style_parser.da
 import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_core/widgets/sliver_app_bar/stac_sliver_app_bar.dart';
 
 class StacSliverAppBarParser extends StacParser<StacSliverAppBar> {
   const StacSliverAppBarParser();

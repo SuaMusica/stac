@@ -49,7 +49,7 @@ class StacClipRRect extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'clipRRect';
+  String get type => WidgetType.clipRRect.name;
 
   /// Creates a [StacClipRRect] from a JSON map.
   factory StacClipRRect.fromJson(Map<String, dynamic> json) =>

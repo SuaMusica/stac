@@ -142,7 +142,7 @@ class StacCustomScrollView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'customScrollView';
+  String get type => WidgetType.customScrollView.name;
 
   /// Creates a [StacCustomScrollView] from a JSON map.
   factory StacCustomScrollView.fromJson(Map<String, dynamic> json) =>

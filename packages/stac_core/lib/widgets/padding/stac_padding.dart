@@ -13,7 +13,7 @@ class StacPadding extends StacWidget {
   final StacWidget? child;
 
   @override
-  String get type => 'padding';
+  String get type => WidgetType.padding.name;
 
   factory StacPadding.fromJson(Map<String, dynamic> json) =>
       _$StacPaddingFromJson(json);

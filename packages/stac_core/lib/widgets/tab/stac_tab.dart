@@ -63,7 +63,7 @@ class StacTab extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'tab';
+  String get type => WidgetType.tab.name;
 
   /// Creates a [StacTab] from a JSON map.
   factory StacTab.fromJson(Map<String, dynamic> json) =>

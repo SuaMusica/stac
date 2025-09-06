@@ -68,7 +68,7 @@ class StacFilledButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'filledButton';
+  String get type => WidgetType.filledButton.name;
 
   /// Creates a [StacFilledButton] from JSON.
   factory StacFilledButton.fromJson(Map<String, dynamic> json) =>

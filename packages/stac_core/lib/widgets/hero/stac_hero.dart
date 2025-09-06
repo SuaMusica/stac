@@ -65,7 +65,7 @@ class StacHero extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'hero';
+  String get type => WidgetType.hero.name;
 
   /// Creates a [StacHero] from a JSON map.
   factory StacHero.fromJson(Map<String, dynamic> json) =>

@@ -160,7 +160,7 @@ class StacAlertDialog extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'alertDialog';
+  String get type => WidgetType.alertDialog.name;
 
   /// Creates a [StacAlertDialog] from a JSON map.
   factory StacAlertDialog.fromJson(Map<String, dynamic> json) =>

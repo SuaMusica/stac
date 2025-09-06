@@ -158,7 +158,7 @@ class StacGridView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'gridView';
+  String get type => WidgetType.gridView.name;
 
   /// Creates a [StacGridView] from a JSON map.
   factory StacGridView.fromJson(Map<String, dynamic> json) =>

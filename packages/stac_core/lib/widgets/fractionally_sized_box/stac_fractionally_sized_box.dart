@@ -25,7 +25,7 @@ class StacFractionallySizedBox extends StacWidget {
   final StacWidget? child;
 
   @override
-  String get type => 'fractionallySizedBox';
+  String get type => WidgetType.fractionallySizedBox.name;
 
   factory StacFractionallySizedBox.fromJson(Map<String, dynamic> json) =>
       _$StacFractionallySizedBoxFromJson(json);

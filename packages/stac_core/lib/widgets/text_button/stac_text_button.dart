@@ -72,7 +72,7 @@ class StacTextButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'textButton';
+  String get type => WidgetType.textButton.name;
 
   /// Creates a [StacTextButton] from JSON.
   factory StacTextButton.fromJson(Map<String, dynamic> json) =>

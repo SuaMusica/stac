@@ -58,7 +58,7 @@ class StacDefaultTabController extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'defaultTabController';
+  String get type => WidgetType.defaultTabController.name;
 
   /// Creates a [StacDefaultTabController] from a JSON map.
   factory StacDefaultTabController.fromJson(Map<String, dynamic> json) =>

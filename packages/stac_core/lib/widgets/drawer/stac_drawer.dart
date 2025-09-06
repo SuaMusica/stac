@@ -98,7 +98,7 @@ class StacDrawer extends StacWidget {
 
   /// Widget type identifier for this model.
   @override
-  String get type => 'drawer';
+  String get type => WidgetType.drawer.name;
 
   /// Creates a [StacDrawer] from a JSON map.
   factory StacDrawer.fromJson(Map<String, dynamic> json) =>

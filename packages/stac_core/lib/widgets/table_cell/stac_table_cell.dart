@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_table_cell.g.dart';
 
@@ -37,7 +38,7 @@ class StacTableCell extends StacWidget {
   final StacWidget? child;
 
   @override
-  String get type => 'tableCell';
+  String get type => WidgetType.tableCell.name;
 
   factory StacTableCell.fromJson(Map<String, dynamic> json) =>
       _$StacTableCellFromJson(json);

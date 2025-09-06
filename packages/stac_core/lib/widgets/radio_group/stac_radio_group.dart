@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_radio_group.g.dart';
 
@@ -59,7 +60,7 @@ class StacRadioGroup extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'radioGroup';
+  String get type => WidgetType.radioGroup.name;
 
   /// Creates a [StacRadioGroup] from a JSON map.
   factory StacRadioGroup.fromJson(Map<String, dynamic> json) =>

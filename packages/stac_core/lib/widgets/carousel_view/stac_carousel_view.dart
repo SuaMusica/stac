@@ -139,7 +139,7 @@ class StacCarouselView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'carouselView';
+  String get type => WidgetType.carouselView.name;
 
   /// Creates a [StacCarouselView] from a JSON map.
   factory StacCarouselView.fromJson(Map<String, dynamic> json) =>

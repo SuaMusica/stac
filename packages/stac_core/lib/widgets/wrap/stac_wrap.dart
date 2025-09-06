@@ -103,7 +103,7 @@ class StacWrap extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'wrap';
+  String get type => WidgetType.wrap.name;
 
   /// Creates a [StacWrap] from JSON.
   factory StacWrap.fromJson(Map<String, dynamic> json) =>

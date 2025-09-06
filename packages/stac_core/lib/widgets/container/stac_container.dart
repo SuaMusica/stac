@@ -86,7 +86,7 @@ class StacContainer extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'container';
+  String get type => WidgetType.container.name;
 
   /// Creates a [StacContainer] from JSON.
   factory StacContainer.fromJson(Map<String, dynamic> json) =>

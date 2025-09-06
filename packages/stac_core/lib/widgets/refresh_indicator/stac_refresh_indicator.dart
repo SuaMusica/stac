@@ -95,7 +95,7 @@ class StacRefreshIndicator extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'refreshIndicator';
+  String get type => WidgetType.refreshIndicator.name;
 
   /// Creates a [StacRefreshIndicator] from JSON.
   factory StacRefreshIndicator.fromJson(Map<String, dynamic> json) =>

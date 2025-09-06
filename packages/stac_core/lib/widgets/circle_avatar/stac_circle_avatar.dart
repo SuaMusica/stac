@@ -80,7 +80,7 @@ class StacCircleAvatar extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'circleAvatar';
+  String get type => WidgetType.circleAvatar.name;
 
   /// Creates a [StacCircleAvatar] from a JSON map.
   factory StacCircleAvatar.fromJson(Map<String, dynamic> json) =>

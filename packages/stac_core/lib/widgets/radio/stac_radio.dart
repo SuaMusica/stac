@@ -136,7 +136,7 @@ class StacRadio extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'radio';
+  String get type => WidgetType.radio.name;
 
   /// Creates a [StacRadio] from a JSON map.
   factory StacRadio.fromJson(Map<String, dynamic> json) =>

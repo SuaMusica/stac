@@ -45,7 +45,7 @@ class StacColoredBox extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'coloredBox';
+  String get type => WidgetType.coloredBox.name;
 
   /// Creates a [StacColoredBox] from a JSON map.
   factory StacColoredBox.fromJson(Map<String, dynamic> json) =>

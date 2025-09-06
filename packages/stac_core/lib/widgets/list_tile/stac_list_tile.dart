@@ -175,7 +175,7 @@ class StacListTile extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'ListTile';
+  String get type => WidgetType.listTile.name;
 
   /// Creates a [StacListTile] from a JSON map.
   factory StacListTile.fromJson(Map<String, dynamic> json) =>

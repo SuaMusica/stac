@@ -1,13 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac_core/widgets/text_field/stac_text_field.dart';
-import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac_framework/stac_framework.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacTextFieldParser extends StacParser<StacTextField> {
   const StacTextFieldParser({

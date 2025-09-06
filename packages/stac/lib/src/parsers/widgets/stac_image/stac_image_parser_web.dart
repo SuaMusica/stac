@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_logger/stac_logger.dart';

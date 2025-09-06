@@ -74,7 +74,7 @@ class StacTabBarView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'tabBarView';
+  String get type => WidgetType.tabBarView.name;
 
   /// Creates a [StacTabBarView] from a JSON map.
   factory StacTabBarView.fromJson(Map<String, dynamic> json) =>

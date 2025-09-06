@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/actions/network_request/stac_network_request.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_dynamic_view.g.dart';
 
@@ -82,7 +83,7 @@ class StacDynamicView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'dynamicView';
+  String get type => WidgetType.dynamicView.name;
 
   /// Creates a [StacDynamicView] from a JSON map.
   factory StacDynamicView.fromJson(Map<String, dynamic> json) =>
