@@ -6,6 +6,7 @@ import 'package:stac_core/foundation/borders/stac_shape_border/stac_shape_border
 import 'package:stac_core/foundation/geometry/stac_edge_insets/stac_edge_insets.dart';
 import 'package:stac_core/foundation/interaction/stac_hit_test_behavior.dart';
 import 'package:stac_core/foundation/layout/stac_clip.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 import 'package:stac_core/foundation/ui_components/stac_dismiss_direction.dart';
 import 'package:stac_core/foundation/ui_components/stac_snack_bar_behavior.dart';
 
@@ -141,7 +142,7 @@ class StacSnackBar extends StacAction {
 
   /// Unique action type string used for routing.
   @override
-  String get actionType => 'showSnackBar';
+  String get actionType => ActionType.showSnackBar.name;
 
   /// Creates a `StacSnackBar` from JSON.
   factory StacSnackBar.fromJson(Map<String, dynamic> json) =>

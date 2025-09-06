@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_action.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_get_form_value.g.dart';
 
@@ -10,7 +11,7 @@ class StacGetFormValue extends StacAction {
   final String id;
 
   @override
-  String get actionType => 'getFormValue';
+  String get actionType => ActionType.getFormValue.name;
 
   factory StacGetFormValue.fromJson(Map<String, dynamic> json) =>
       _$StacGetFormValueFromJson(json);

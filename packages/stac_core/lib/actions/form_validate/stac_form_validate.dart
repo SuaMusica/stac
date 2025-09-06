@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_action.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_form_validate.g.dart';
 
@@ -11,7 +12,7 @@ class StacFormValidate extends StacAction {
   final StacAction? isNotValid;
 
   @override
-  String get actionType => 'validateForm';
+  String get actionType => ActionType.validateForm.name;
 
   factory StacFormValidate.fromJson(Map<String, dynamic> json) =>
       _$StacFormValidateFromJson(json);

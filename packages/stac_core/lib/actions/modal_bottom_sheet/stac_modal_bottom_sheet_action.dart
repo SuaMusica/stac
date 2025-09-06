@@ -4,6 +4,7 @@ import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
 import 'package:stac_core/foundation/borders/stac_border/stac_border.dart';
 import 'package:stac_core/foundation/geometry/stac_box_constraints/stac_box_constraints.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_modal_bottom_sheet_action.g.dart';
 
@@ -124,7 +125,7 @@ class StacModalBottomSheetAction extends StacAction {
 
   /// Unique action type string used for routing.
   @override
-  String get actionType => 'showModalBottomSheet';
+  String get actionType => ActionType.showModalBottomSheet.name;
 
   /// Creates a `StacModalBottomSheetAction` from JSON.
   factory StacModalBottomSheetAction.fromJson(Map<String, dynamic> json) =>
