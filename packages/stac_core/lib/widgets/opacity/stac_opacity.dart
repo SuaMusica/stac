@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_opacity.g.dart';
 
@@ -47,7 +48,7 @@ class StacOpacity extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'opacity';
+  String get type => WidgetType.opacity.name;
 
   /// Creates a [StacOpacity] from JSON.
   factory StacOpacity.fromJson(Map<String, dynamic> json) =>

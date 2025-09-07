@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac_core/widgets/table_cell/stac_table_cell.dart';
+import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacTableCellParser extends StacParser<StacTableCell> {

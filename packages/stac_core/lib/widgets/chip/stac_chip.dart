@@ -2,14 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac_core/types/stac_border_side/stac_border_side.dart';
-import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
-import 'package:stac_core/types/stac_clip.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
-import 'package:stac_core/types/stac_visual_density/stac_visual_density.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_chip.g.dart';
 
@@ -150,7 +143,7 @@ class StacChip extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'chip';
+  String get type => WidgetType.chip.name;
 
   /// Creates a [StacChip] from a JSON map.
   factory StacChip.fromJson(Map<String, dynamic> json) =>

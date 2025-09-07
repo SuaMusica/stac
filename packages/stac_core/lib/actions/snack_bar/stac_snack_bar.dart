@@ -1,13 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/actions/snack_bar/stac_snack_bar_action.dart';
 import 'package:stac_core/core/stac_action.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/types/stac_hit_test_behavior.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
-import 'package:stac_core/types/stac_snack_bar_behavior.dart';
-import 'package:stac_core/types/stac_dismiss_direction.dart';
-import 'package:stac_core/types/stac_clip.dart';
-import 'package:stac_core/types/stac_duration/stac_duration.dart';
+import 'package:stac_core/foundation/animation/stac_duration/stac_duration.dart';
+import 'package:stac_core/foundation/borders/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_core/foundation/geometry/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/foundation/interaction/stac_hit_test_behavior.dart';
+import 'package:stac_core/foundation/layout/stac_clip.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
+import 'package:stac_core/foundation/ui_components/stac_dismiss_direction.dart';
+import 'package:stac_core/foundation/ui_components/stac_snack_bar_behavior.dart';
 
 part 'stac_snack_bar.g.dart';
 
@@ -34,6 +35,7 @@ part 'stac_snack_bar.g.dart';
 /// ```
 @JsonSerializable()
 class StacSnackBar extends StacAction {
+  /// Creates a [StacSnackBar] that shows a snack bar.
   const StacSnackBar({
     required this.content,
     this.backgroundColor,
@@ -141,7 +143,7 @@ class StacSnackBar extends StacAction {
 
   /// Unique action type string used for routing.
   @override
-  String get actionType => 'showSnackBar';
+  String get actionType => ActionType.showSnackBar.name;
 
   /// Creates a `StacSnackBar` from JSON.
   factory StacSnackBar.fromJson(Map<String, dynamic> json) =>

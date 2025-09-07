@@ -1,1 +1,0 @@
-enum StacAxis { horizontal, vertical }

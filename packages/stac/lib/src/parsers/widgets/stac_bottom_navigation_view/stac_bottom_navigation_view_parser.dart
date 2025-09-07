@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_core/widgets/bottom_navigation_view/stac_bottom_navigation_view.dart';
 
 import '../stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
 

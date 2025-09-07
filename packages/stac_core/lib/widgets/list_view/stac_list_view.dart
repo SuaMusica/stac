@@ -1,12 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/types/stac_axis.dart';
-import 'package:stac_core/types/stac_clip.dart';
-import 'package:stac_core/types/stac_drag_start_behavior.dart';
-import 'package:stac_core/types/stac_scroll_physics.dart';
-import 'package:stac_core/types/stac_scroll_view_keyboard_dismiss_behavior.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_list_view.g.dart';
 
@@ -125,7 +120,7 @@ class StacListView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'listView';
+  String get type => WidgetType.listView.name;
 
   /// Creates a [StacListView] from JSON.
   factory StacListView.fromJson(Map<String, dynamic> json) =>

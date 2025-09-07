@@ -1,8 +1,29 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_table/stac_table_cell_vertical_alignment.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_table_cell.g.dart';
+
+/// Vertical alignment options for table cells.
+///
+/// Mirrors Flutter's `TableCellVerticalAlignment` and controls how the child of
+/// a table cell is positioned vertically within the row height.
+enum StacTableCellVerticalAlignment {
+  /// Align at the top of the row.
+  top,
+
+  /// Center vertically within the row.
+  middle,
+
+  /// Align at the bottom of the row.
+  bottom,
+
+  /// Align the baselines of text for the row.
+  baseline,
+
+  /// Expand to fill the full height of the row.
+  fill,
+}
 
 /// A Stac model representing Flutter's [TableCell] widget.
 @JsonSerializable()
@@ -17,8 +38,9 @@ class StacTableCell extends StacWidget {
   final StacWidget? child;
 
   @override
-  String get type => 'tableCell';
+  String get type => WidgetType.tableCell.name;
 
+  /// Creates a [StacTableCell] from a JSON map.
   factory StacTableCell.fromJson(Map<String, dynamic> json) =>
       _$StacTableCellFromJson(json);
 

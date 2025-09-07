@@ -5,8 +5,7 @@ import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/stac.dart';
-import 'package:stac_core/types/stac_switch_type.dart';
-import 'package:stac_core/widgets/switch/stac_switch.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacSwitchParser extends StacParser<StacSwitch> {
   const StacSwitchParser();

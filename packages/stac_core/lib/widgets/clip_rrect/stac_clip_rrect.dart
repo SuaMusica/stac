@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_border_radius/stac_border_radius.dart';
-import 'package:stac_core/types/stac_clip.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_clip_rrect.g.dart';
 
@@ -50,7 +49,7 @@ class StacClipRRect extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'clipRRect';
+  String get type => WidgetType.clipRRect.name;
 
   /// Creates a [StacClipRRect] from a JSON map.
   factory StacClipRRect.fromJson(Map<String, dynamic> json) =>

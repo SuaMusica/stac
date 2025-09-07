@@ -336,7 +336,6 @@ abstract mixin class $StacThemeCopyWith<$Res> {
       StacTabBarThemeData? tabBarTheme,
       StacButtonStyle? textButtonTheme});
 
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
   $StacScrollbarThemeDataCopyWith<$Res>? get scrollbarTheme;
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
   $StacMaterialColorCopyWith<$Res>? get primarySwatch;
@@ -682,21 +681,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
           : textButtonTheme // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
   }
 
   /// Create a copy of StacTheme
@@ -2083,8 +2067,6 @@ abstract mixin class _$StacThemeCopyWith<$Res>
       StacButtonStyle? textButtonTheme});
 
   @override
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  @override
   $StacScrollbarThemeDataCopyWith<$Res>? get scrollbarTheme;
   @override
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
@@ -2456,21 +2438,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
           : textButtonTheme // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
   }
 
   /// Create a copy of StacTheme

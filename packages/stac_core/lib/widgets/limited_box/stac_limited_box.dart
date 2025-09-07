@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_limited_box.g.dart';
 
@@ -47,7 +48,7 @@ class StacLimitedBox extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'limitedBox';
+  String get type => WidgetType.limitedBox.name;
 
   /// Creates a [StacLimitedBox] from JSON.
   factory StacLimitedBox.fromJson(Map<String, dynamic> json) =>

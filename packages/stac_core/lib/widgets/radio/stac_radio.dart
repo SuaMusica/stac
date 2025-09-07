@@ -2,11 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac_core/types/stac_mouse_cursor.dart';
-import 'package:stac_core/types/stac_radio_type.dart';
-import 'package:stac_core/types/stac_visual_density/stac_visual_density.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_radio.g.dart';
 
@@ -140,7 +136,7 @@ class StacRadio extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'radio';
+  String get type => WidgetType.radio.name;
 
   /// Creates a [StacRadio] from a JSON map.
   factory StacRadio.fromJson(Map<String, dynamic> json) =>

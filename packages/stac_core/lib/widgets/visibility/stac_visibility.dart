@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_visibility.g.dart';
 
@@ -72,7 +73,7 @@ class StacVisibility extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'visibility';
+  String get type => WidgetType.visibility.name;
 
   /// Creates a [StacVisibility] from JSON.
   factory StacVisibility.fromJson(Map<String, dynamic> json) =>

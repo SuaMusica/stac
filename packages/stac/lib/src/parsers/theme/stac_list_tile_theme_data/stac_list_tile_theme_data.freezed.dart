@@ -145,8 +145,6 @@ abstract mixin class $StacListTileThemeDataCopyWith<$Res> {
       StacVisualDensity? visualDensity,
       ListTileTitleAlignment? titleAlignment,
       List<StacShadow>? shadows});
-
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -260,20 +258,6 @@ class _$StacListTileThemeDataCopyWithImpl<$Res>
           : shadows // ignore: cast_nullable_to_non_nullable
               as List<StacShadow>?,
     ));
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 
@@ -742,9 +726,6 @@ abstract mixin class _$StacListTileThemeDataCopyWith<$Res>
       StacVisualDensity? visualDensity,
       ListTileTitleAlignment? titleAlignment,
       List<StacShadow>? shadows});
-
-  @override
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -858,20 +839,6 @@ class __$StacListTileThemeDataCopyWithImpl<$Res>
           : shadows // ignore: cast_nullable_to_non_nullable
               as List<StacShadow>?,
     ));
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_core/widgets/divider/stac_divider.dart';
 
 class StacDividerParser extends StacParser<StacDivider> {
   const StacDividerParser();

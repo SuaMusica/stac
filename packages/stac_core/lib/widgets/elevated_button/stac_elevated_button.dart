@@ -1,8 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac_core/types/stac_clip.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_elevated_button.g.dart';
 
@@ -69,7 +68,7 @@ class StacElevatedButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'elevatedButton';
+  String get type => WidgetType.elevatedButton.name;
 
   /// Creates a [StacElevatedButton] from JSON.
   factory StacElevatedButton.fromJson(Map<String, dynamic> json) =>

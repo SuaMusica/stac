@@ -1,12 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_box_decoration/stac_box_decoration.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/types/stac_alignment.dart';
-import 'package:stac_core/types/stac_box_constraints/stac_box_constraints.dart';
-import 'package:stac_core/types/stac_clip.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_container.g.dart';
 
@@ -91,7 +86,7 @@ class StacContainer extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'container';
+  String get type => WidgetType.container.name;
 
   /// Creates a [StacContainer] from JSON.
   factory StacContainer.fromJson(Map<String, dynamic> json) =>

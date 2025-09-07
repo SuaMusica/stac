@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_divider.g.dart';
 
@@ -71,7 +71,7 @@ class StacDivider extends StacWidget {
   final StacColor? color;
 
   @override
-  String get type => 'divider';
+  String get type => WidgetType.divider.name;
 
   /// Creates a [StacDivider] from a JSON map.
   factory StacDivider.fromJson(Map<String, dynamic> json) =>

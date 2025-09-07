@@ -15,10 +15,10 @@ StacDialogAction _$StacDialogActionFromJson(Map<String, dynamic> json) =>
               json['request'] as Map<String, dynamic>,
             ),
       assetPath: json['assetPath'] as String?,
-      barrierDismissible: json['barrierDismissible'] as bool? ?? true,
+      barrierDismissible: json['barrierDismissible'] as bool?,
       barrierColor: json['barrierColor'] as String?,
       barrierLabel: json['barrierLabel'] as String?,
-      useSafeArea: json['useSafeArea'] as bool? ?? true,
+      useSafeArea: json['useSafeArea'] as bool?,
       traversalEdgeBehavior: $enumDecodeNullable(
         _$StacDialogTraversalEdgeBehaviorEnumMap,
         json['traversalEdgeBehavior'],

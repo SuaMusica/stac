@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_clip.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_clip_oval.g.dart';
 
@@ -48,7 +48,7 @@ class StacClipOval extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'clipOval';
+  String get type => WidgetType.clipOval.name;
 
   /// Creates a [StacClipOval] from a JSON map.
   factory StacClipOval.fromJson(Map<String, dynamic> json) =>

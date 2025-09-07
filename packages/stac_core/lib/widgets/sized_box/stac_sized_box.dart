@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_sized_box.g.dart';
 
@@ -48,7 +49,7 @@ class StacSizedBox extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'sizedBox';
+  String get type => WidgetType.sizedBox.name;
 
   /// Creates a [StacSizedBox] from JSON.
   factory StacSizedBox.fromJson(Map<String, dynamic> json) =>

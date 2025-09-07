@@ -1,1 +1,0 @@
-enum StacFlexFit { tight, loose }

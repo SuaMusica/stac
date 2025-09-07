@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_options_view_open_direction.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_auto_complete.g.dart';
 
@@ -69,7 +69,7 @@ class StacAutoComplete extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'autoComplete';
+  String get type => WidgetType.autocomplete.name;
 
   /// Creates a [StacAutoComplete] from a JSON map.
   factory StacAutoComplete.fromJson(Map<String, dynamic> json) =>
