@@ -321,7 +321,7 @@ class StacGestureDetector extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'GestureDetector';
+  String get type => WidgetType.gestureDetector.name;
 
   /// Creates a [StacGestureDetector] from JSON.
   factory StacGestureDetector.fromJson(Map<String, dynamic> json) =>

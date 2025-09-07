@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/actions/network_request/stac_network_request.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_network_widget.g.dart';
 
@@ -44,7 +45,7 @@ class StacNetworkWidget extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'networkWidget';
+  String get type => WidgetType.networkWidget.name;
 
   /// Creates a [StacNetworkWidget] from a JSON map.
   factory StacNetworkWidget.fromJson(Map<String, dynamic> json) =>

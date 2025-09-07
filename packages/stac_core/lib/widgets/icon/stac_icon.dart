@@ -1,10 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_blend_mode.dart';
-import 'package:stac_core/types/stac_icon_type.dart';
-import 'package:stac_core/types/stac_shadow/stac_shadow.dart';
-import 'package:stac_core/types/stac_text_types.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_icon.g.dart';
 
@@ -33,6 +30,7 @@ part 'stac_icon.g.dart';
 /// ```
 @JsonSerializable()
 class StacIcon extends StacWidget {
+  /// Creates an icon widget with the specified properties.
   const StacIcon({
     required this.icon,
     this.iconType = StacIconType.material,
@@ -95,7 +93,7 @@ class StacIcon extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'icon';
+  String get type => WidgetType.icon.name;
 
   /// Creates a [StacIcon] from JSON.
   factory StacIcon.fromJson(Map<String, dynamic> json) =>

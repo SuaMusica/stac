@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_circle_avatar.g.dart';
 
@@ -80,7 +80,7 @@ class StacCircleAvatar extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'circleAvatar';
+  String get type => WidgetType.circleAvatar.name;
 
   /// Creates a [StacCircleAvatar] from a JSON map.
   factory StacCircleAvatar.fromJson(Map<String, dynamic> json) =>

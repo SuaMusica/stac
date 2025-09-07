@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_tab.g.dart';
 
@@ -63,7 +63,7 @@ class StacTab extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'tab';
+  String get type => WidgetType.tab.name;
 
   /// Creates a [StacTab] from a JSON map.
   factory StacTab.fromJson(Map<String, dynamic> json) =>

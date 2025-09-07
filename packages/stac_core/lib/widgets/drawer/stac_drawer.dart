@@ -1,9 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
-import 'package:stac_core/types/stac_clip.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_drawer.g.dart';
 
@@ -100,7 +98,7 @@ class StacDrawer extends StacWidget {
 
   /// Widget type identifier for this model.
   @override
-  String get type => 'drawer';
+  String get type => WidgetType.drawer.name;
 
   /// Creates a [StacDrawer] from a JSON map.
   factory StacDrawer.fromJson(Map<String, dynamic> json) =>

@@ -5,9 +5,7 @@ import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
 import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_alignment_geometry/stac_alignment_geometry.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac_core/painting/stac_text_style/stac_text_style.dart';
-import 'package:stac_core/types/stac_border/stac_border.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_dialog_theme.freezed.dart';
 part 'stac_dialog_theme.g.dart';

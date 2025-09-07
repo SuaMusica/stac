@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_blend_mode.dart';
-import 'package:stac_core/types/stac_image_filter/stac_image_filter.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_backdrop_filter.g.dart';
 
@@ -57,7 +56,7 @@ class StacBackdropFilter extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'backdropFilter';
+  String get type => WidgetType.backdropFilter.name;
 
   /// Creates a [StacBackdropFilter] from JSON.
   factory StacBackdropFilter.fromJson(Map<String, dynamic> json) =>

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_bottom_navigation_view.g.dart';
 
@@ -96,7 +97,7 @@ class StacBottomNavigationView extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'bottomNavigationView';
+  String get type => WidgetType.bottomNavigationView.name;
 
   /// Creates a [StacBottomNavigationView] from a JSON map.
   factory StacBottomNavigationView.fromJson(Map<String, dynamic> json) =>

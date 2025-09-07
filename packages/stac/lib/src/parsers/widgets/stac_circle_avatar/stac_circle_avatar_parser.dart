@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_core/widgets/circle_avatar/stac_circle_avatar.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacCircleAvatarParser extends StacParser<StacCircleAvatar> {

@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/stac_core.dart';
-import 'package:stac_core/theme/stac_button_style/stac_button_style.dart';
 
 part 'stac_outlined_button.g.dart';
 
@@ -67,7 +66,7 @@ class StacOutlinedButton extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'outlinedButton';
+  String get type => WidgetType.outlinedButton.name;
 
   /// Creates a [StacOutlinedButton] from JSON.
   factory StacOutlinedButton.fromJson(Map<String, dynamic> json) =>

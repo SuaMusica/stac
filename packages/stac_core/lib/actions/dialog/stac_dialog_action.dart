@@ -1,7 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/actions/network_request/stac_network_request.dart';
 import 'package:stac_core/core/stac_action.dart';
-import 'package:stac_core/types/stac_dialog_traversal_edge_behavior.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
+import 'package:stac_core/foundation/ui_components/stac_dialog_traversal_edge_behavior.dart';
 
 part 'stac_dialog_action.g.dart';
 
@@ -26,6 +27,7 @@ part 'stac_dialog_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacDialogAction extends StacAction {
+  /// Creates a [StacDialogAction] that shows a dialog.
   const StacDialogAction({
     this.widget,
     this.request,
@@ -79,7 +81,7 @@ class StacDialogAction extends StacAction {
 
   /// Unique action type string used for routing.
   @override
-  String get actionType => 'showDialog';
+  String get actionType => ActionType.showDialog.name;
 
   /// Creates a `StacDialogAction` from JSON.
   factory StacDialogAction.fromJson(Map<String, dynamic> json) =>

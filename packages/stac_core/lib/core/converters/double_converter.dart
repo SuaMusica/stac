@@ -9,6 +9,7 @@ import 'package:json_annotation/json_annotation.dart';
 /// - null -> null
 /// - double values -> pass through
 class DoubleConverter implements JsonConverter<double?, dynamic> {
+  /// Creates a [DoubleConverter] that converts string values to double.
   const DoubleConverter();
 
   @override

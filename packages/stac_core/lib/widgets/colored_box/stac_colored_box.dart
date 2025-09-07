@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_color/stac_colors.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_colored_box.g.dart';
 
@@ -45,7 +45,7 @@ class StacColoredBox extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'coloredBox';
+  String get type => WidgetType.coloredBox.name;
 
   /// Creates a [StacColoredBox] from a JSON map.
   factory StacColoredBox.fromJson(Map<String, dynamic> json) =>

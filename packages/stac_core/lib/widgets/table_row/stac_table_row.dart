@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/stac_box_decoration/stac_box_decoration.dart';
+import 'package:stac_core/foundation/decoration/stac_box_decoration/stac_box_decoration.dart';
 
 part 'stac_table_row.g.dart';
 

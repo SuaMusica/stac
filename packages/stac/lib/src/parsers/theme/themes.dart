@@ -6,7 +6,6 @@ export 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parse
 export 'package:stac/src/parsers/theme/stac_card_theme_data/stac_card_theme_data.dart';
 export 'package:stac/src/parsers/theme/stac_dialog_theme/stac_dialog_theme.dart';
 export 'package:stac/src/parsers/theme/stac_icon_theme_data/stac_icon_theme_data.dart';
-export 'package:stac/src/parsers/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
 export 'package:stac/src/parsers/theme/stac_material_color/stac_material_color.dart';
 export 'package:stac/src/parsers/theme/stac_navigation_bar_theme_data/stac_navigation_bar_theme_data.dart';
 export 'package:stac/src/parsers/theme/stac_snack_bar_theme_data/stac_snack_bar_theme_data.dart';

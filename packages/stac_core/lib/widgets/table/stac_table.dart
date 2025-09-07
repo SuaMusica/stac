@@ -1,9 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_table/stac_table_border.dart';
-import 'package:stac_core/types/stac_table/stac_table_cell_vertical_alignment.dart';
-import 'package:stac_core/types/stac_table/stac_table_column_width.dart';
-import 'package:stac_core/types/stac_text_types.dart';
+import 'package:stac_core/foundation/foundation.dart';
+import 'package:stac_core/widgets/table_cell/stac_table_cell.dart';
 import 'package:stac_core/widgets/table_row/stac_table_row.dart';
 
 part 'stac_table.g.dart';
@@ -48,6 +46,7 @@ part 'stac_table.g.dart';
 ///
 @JsonSerializable()
 class StacTable extends StacWidget {
+  /// Creates a table widget with the specified properties.
   const StacTable({
     this.children = const <StacTableRow>[],
     this.columnWidths,
@@ -81,7 +80,7 @@ class StacTable extends StacWidget {
 
   @override
   /// Widget type identifier.
-  String get type => 'table';
+  String get type => WidgetType.table.name;
 
   /// Creates a [StacTable] from a JSON map.
   factory StacTable.fromJson(Map<String, dynamic> json) =>

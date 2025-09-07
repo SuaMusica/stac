@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -531,6 +530,448 @@ class _$StacColorSchemeCopyWithImpl<$Res>
           : surfaceTint // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [StacColorScheme].
+extension StacColorSchemePatterns on StacColorScheme {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacColorScheme value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacColorScheme() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacColorScheme value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacColorScheme():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacColorScheme value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacColorScheme() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            Brightness brightness,
+            String primary,
+            String onPrimary,
+            String? primaryContainer,
+            String? onPrimaryContainer,
+            String? primaryFixed,
+            String? primaryFixedDim,
+            String? onPrimaryFixed,
+            String? onPrimaryFixedVariant,
+            String secondary,
+            String onSecondary,
+            String? secondaryContainer,
+            String? onSecondaryContainer,
+            String? secondaryFixed,
+            String? secondaryFixedDim,
+            String? onSecondaryFixed,
+            String? onSecondaryFixedVariant,
+            String? tertiary,
+            String? onTertiary,
+            String? tertiaryContainer,
+            String? onTertiaryContainer,
+            String? tertiaryFixed,
+            String? tertiaryFixedDim,
+            String? onTertiaryFixed,
+            String? onTertiaryFixedVariant,
+            String error,
+            String onError,
+            String? errorContainer,
+            String? onErrorContainer,
+            String surface,
+            String onSurface,
+            String? surfaceDim,
+            String? surfaceBright,
+            String? surfaceContainerLowest,
+            String? surfaceContainerLow,
+            String? surfaceContainer,
+            String? surfaceContainerHigh,
+            String? surfaceContainerHighest,
+            String? onSurfaceVariant,
+            String? outline,
+            String? outlineVariant,
+            String? shadow,
+            String? scrim,
+            String? inverseSurface,
+            String? onInverseSurface,
+            String? inversePrimary,
+            String? surfaceTint)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacColorScheme() when $default != null:
+        return $default(
+            _that.brightness,
+            _that.primary,
+            _that.onPrimary,
+            _that.primaryContainer,
+            _that.onPrimaryContainer,
+            _that.primaryFixed,
+            _that.primaryFixedDim,
+            _that.onPrimaryFixed,
+            _that.onPrimaryFixedVariant,
+            _that.secondary,
+            _that.onSecondary,
+            _that.secondaryContainer,
+            _that.onSecondaryContainer,
+            _that.secondaryFixed,
+            _that.secondaryFixedDim,
+            _that.onSecondaryFixed,
+            _that.onSecondaryFixedVariant,
+            _that.tertiary,
+            _that.onTertiary,
+            _that.tertiaryContainer,
+            _that.onTertiaryContainer,
+            _that.tertiaryFixed,
+            _that.tertiaryFixedDim,
+            _that.onTertiaryFixed,
+            _that.onTertiaryFixedVariant,
+            _that.error,
+            _that.onError,
+            _that.errorContainer,
+            _that.onErrorContainer,
+            _that.surface,
+            _that.onSurface,
+            _that.surfaceDim,
+            _that.surfaceBright,
+            _that.surfaceContainerLowest,
+            _that.surfaceContainerLow,
+            _that.surfaceContainer,
+            _that.surfaceContainerHigh,
+            _that.surfaceContainerHighest,
+            _that.onSurfaceVariant,
+            _that.outline,
+            _that.outlineVariant,
+            _that.shadow,
+            _that.scrim,
+            _that.inverseSurface,
+            _that.onInverseSurface,
+            _that.inversePrimary,
+            _that.surfaceTint);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            Brightness brightness,
+            String primary,
+            String onPrimary,
+            String? primaryContainer,
+            String? onPrimaryContainer,
+            String? primaryFixed,
+            String? primaryFixedDim,
+            String? onPrimaryFixed,
+            String? onPrimaryFixedVariant,
+            String secondary,
+            String onSecondary,
+            String? secondaryContainer,
+            String? onSecondaryContainer,
+            String? secondaryFixed,
+            String? secondaryFixedDim,
+            String? onSecondaryFixed,
+            String? onSecondaryFixedVariant,
+            String? tertiary,
+            String? onTertiary,
+            String? tertiaryContainer,
+            String? onTertiaryContainer,
+            String? tertiaryFixed,
+            String? tertiaryFixedDim,
+            String? onTertiaryFixed,
+            String? onTertiaryFixedVariant,
+            String error,
+            String onError,
+            String? errorContainer,
+            String? onErrorContainer,
+            String surface,
+            String onSurface,
+            String? surfaceDim,
+            String? surfaceBright,
+            String? surfaceContainerLowest,
+            String? surfaceContainerLow,
+            String? surfaceContainer,
+            String? surfaceContainerHigh,
+            String? surfaceContainerHighest,
+            String? onSurfaceVariant,
+            String? outline,
+            String? outlineVariant,
+            String? shadow,
+            String? scrim,
+            String? inverseSurface,
+            String? onInverseSurface,
+            String? inversePrimary,
+            String? surfaceTint)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacColorScheme():
+        return $default(
+            _that.brightness,
+            _that.primary,
+            _that.onPrimary,
+            _that.primaryContainer,
+            _that.onPrimaryContainer,
+            _that.primaryFixed,
+            _that.primaryFixedDim,
+            _that.onPrimaryFixed,
+            _that.onPrimaryFixedVariant,
+            _that.secondary,
+            _that.onSecondary,
+            _that.secondaryContainer,
+            _that.onSecondaryContainer,
+            _that.secondaryFixed,
+            _that.secondaryFixedDim,
+            _that.onSecondaryFixed,
+            _that.onSecondaryFixedVariant,
+            _that.tertiary,
+            _that.onTertiary,
+            _that.tertiaryContainer,
+            _that.onTertiaryContainer,
+            _that.tertiaryFixed,
+            _that.tertiaryFixedDim,
+            _that.onTertiaryFixed,
+            _that.onTertiaryFixedVariant,
+            _that.error,
+            _that.onError,
+            _that.errorContainer,
+            _that.onErrorContainer,
+            _that.surface,
+            _that.onSurface,
+            _that.surfaceDim,
+            _that.surfaceBright,
+            _that.surfaceContainerLowest,
+            _that.surfaceContainerLow,
+            _that.surfaceContainer,
+            _that.surfaceContainerHigh,
+            _that.surfaceContainerHighest,
+            _that.onSurfaceVariant,
+            _that.outline,
+            _that.outlineVariant,
+            _that.shadow,
+            _that.scrim,
+            _that.inverseSurface,
+            _that.onInverseSurface,
+            _that.inversePrimary,
+            _that.surfaceTint);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            Brightness brightness,
+            String primary,
+            String onPrimary,
+            String? primaryContainer,
+            String? onPrimaryContainer,
+            String? primaryFixed,
+            String? primaryFixedDim,
+            String? onPrimaryFixed,
+            String? onPrimaryFixedVariant,
+            String secondary,
+            String onSecondary,
+            String? secondaryContainer,
+            String? onSecondaryContainer,
+            String? secondaryFixed,
+            String? secondaryFixedDim,
+            String? onSecondaryFixed,
+            String? onSecondaryFixedVariant,
+            String? tertiary,
+            String? onTertiary,
+            String? tertiaryContainer,
+            String? onTertiaryContainer,
+            String? tertiaryFixed,
+            String? tertiaryFixedDim,
+            String? onTertiaryFixed,
+            String? onTertiaryFixedVariant,
+            String error,
+            String onError,
+            String? errorContainer,
+            String? onErrorContainer,
+            String surface,
+            String onSurface,
+            String? surfaceDim,
+            String? surfaceBright,
+            String? surfaceContainerLowest,
+            String? surfaceContainerLow,
+            String? surfaceContainer,
+            String? surfaceContainerHigh,
+            String? surfaceContainerHighest,
+            String? onSurfaceVariant,
+            String? outline,
+            String? outlineVariant,
+            String? shadow,
+            String? scrim,
+            String? inverseSurface,
+            String? onInverseSurface,
+            String? inversePrimary,
+            String? surfaceTint)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacColorScheme() when $default != null:
+        return $default(
+            _that.brightness,
+            _that.primary,
+            _that.onPrimary,
+            _that.primaryContainer,
+            _that.onPrimaryContainer,
+            _that.primaryFixed,
+            _that.primaryFixedDim,
+            _that.onPrimaryFixed,
+            _that.onPrimaryFixedVariant,
+            _that.secondary,
+            _that.onSecondary,
+            _that.secondaryContainer,
+            _that.onSecondaryContainer,
+            _that.secondaryFixed,
+            _that.secondaryFixedDim,
+            _that.onSecondaryFixed,
+            _that.onSecondaryFixedVariant,
+            _that.tertiary,
+            _that.onTertiary,
+            _that.tertiaryContainer,
+            _that.onTertiaryContainer,
+            _that.tertiaryFixed,
+            _that.tertiaryFixedDim,
+            _that.onTertiaryFixed,
+            _that.onTertiaryFixedVariant,
+            _that.error,
+            _that.onError,
+            _that.errorContainer,
+            _that.onErrorContainer,
+            _that.surface,
+            _that.onSurface,
+            _that.surfaceDim,
+            _that.surfaceBright,
+            _that.surfaceContainerLowest,
+            _that.surfaceContainerLow,
+            _that.surfaceContainer,
+            _that.surfaceContainerHigh,
+            _that.surfaceContainerHighest,
+            _that.onSurfaceVariant,
+            _that.outline,
+            _that.outlineVariant,
+            _that.shadow,
+            _that.scrim,
+            _that.inverseSurface,
+            _that.onInverseSurface,
+            _that.inversePrimary,
+            _that.surfaceTint);
+      case _:
+        return null;
+    }
   }
 }
 

@@ -94,8 +94,6 @@ abstract mixin class $StacCheckboxThemeDataCopyWith<$Res> {
       StacVisualDensity? visualDensity,
       StacShapeBorder? shape,
       StacBorderSide? side});
-
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -159,20 +157,6 @@ class _$StacCheckboxThemeDataCopyWithImpl<$Res>
           : side // ignore: cast_nullable_to_non_nullable
               as StacBorderSide?,
     ));
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 
@@ -502,9 +486,6 @@ abstract mixin class _$StacCheckboxThemeDataCopyWith<$Res>
       StacVisualDensity? visualDensity,
       StacShapeBorder? shape,
       StacBorderSide? side});
-
-  @override
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -568,20 +549,6 @@ class __$StacCheckboxThemeDataCopyWithImpl<$Res>
           : side // ignore: cast_nullable_to_non_nullable
               as StacBorderSide?,
     ));
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 

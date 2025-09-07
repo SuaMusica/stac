@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_core/painting/stac_edge_insets/stac_edge_insets.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_bottom_app_bar_theme.freezed.dart';
 part 'stac_bottom_app_bar_theme.g.dart';

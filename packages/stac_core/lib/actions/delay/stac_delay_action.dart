@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_action.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_delay_action.g.dart';
 
@@ -18,6 +19,7 @@ part 'stac_delay_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacDelayAction extends StacAction {
+  /// Creates a [StacDelayAction] that waits for a specified duration.
   const StacDelayAction({this.milliseconds});
 
   /// Delay in milliseconds to wait.
@@ -25,9 +27,9 @@ class StacDelayAction extends StacAction {
   /// Type: `int?` (defaults applied in parser).
   final int? milliseconds;
 
-  /// Unique action type string used for routing.
+  /// Action type identifier.
   @override
-  String get actionType => 'delay';
+  String get actionType => ActionType.delay.name;
 
   /// Creates a `StacDelayAction` from JSON.
   factory StacDelayAction.fromJson(Map<String, dynamic> json) =>

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_conditional.g.dart';
 
@@ -56,7 +57,7 @@ class StacConditional extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'conditional';
+  String get type => WidgetType.conditional.name;
 
   /// Creates a [StacConditional] from a JSON map.
   factory StacConditional.fromJson(Map<String, dynamic> json) =>

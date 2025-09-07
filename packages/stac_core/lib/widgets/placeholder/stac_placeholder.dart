@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
+import 'package:stac_core/foundation/specifications/widget_type.dart';
 
 part 'stac_placeholder.g.dart';
 
@@ -61,7 +62,7 @@ class StacPlaceholder extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'placeholder';
+  String get type => WidgetType.placeholder.name;
 
   /// Creates a [StacPlaceholder] from a JSON map.
   factory StacPlaceholder.fromJson(Map<String, dynamic> json) =>

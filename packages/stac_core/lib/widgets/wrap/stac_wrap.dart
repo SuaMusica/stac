@@ -1,12 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/converters/double_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_axis.dart';
-import 'package:stac_core/types/stac_clip.dart';
-import 'package:stac_core/types/stac_text_types.dart';
-import 'package:stac_core/types/stac_vertical_direction.dart';
-import 'package:stac_core/types/stac_wrap_alignment.dart';
-import 'package:stac_core/types/stac_wrap_cross_alignment.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_wrap.g.dart';
 
@@ -108,7 +103,7 @@ class StacWrap extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'wrap';
+  String get type => WidgetType.wrap.name;
 
   /// Creates a [StacWrap] from JSON.
   factory StacWrap.fromJson(Map<String, dynamic> json) =>

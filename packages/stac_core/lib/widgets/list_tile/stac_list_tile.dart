@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/stac_core.dart';
-import 'package:stac_core/types/stac_shape_border/stac_shape_border.dart';
 
 part 'stac_list_tile.g.dart';
 
@@ -176,7 +175,7 @@ class StacListTile extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'ListTile';
+  String get type => WidgetType.listTile.name;
 
   /// Creates a [StacListTile] from a JSON map.
   factory StacListTile.fromJson(Map<String, dynamic> json) =>

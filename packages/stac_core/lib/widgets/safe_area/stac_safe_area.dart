@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/painting/painting.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_safe_area.g.dart';
 
@@ -74,7 +74,7 @@ class StacSafeArea extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'safeArea';
+  String get type => WidgetType.safeArea.name;
 
   /// Creates a [StacSafeArea] from JSON.
   factory StacSafeArea.fromJson(Map<String, dynamic> json) =>

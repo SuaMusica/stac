@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/types/stac_rect_tween/stac_rect_tween.dart';
+import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_hero.g.dart';
 
@@ -65,7 +65,7 @@ class StacHero extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'hero';
+  String get type => WidgetType.hero.name;
 
   /// Creates a [StacHero] from a JSON map.
   factory StacHero.fromJson(Map<String, dynamic> json) =>

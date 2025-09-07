@@ -54,7 +54,7 @@ class StacForm extends StacWidget {
 
   /// Widget type identifier.
   @override
-  String get type => 'form';
+  String get type => WidgetType.form.name;
 
   /// Creates a [StacForm] from a JSON map.
   factory StacForm.fromJson(Map<String, dynamic> json) =>

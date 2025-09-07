@@ -1,1 +1,0 @@
-enum StacIconType { material, cupertino }
