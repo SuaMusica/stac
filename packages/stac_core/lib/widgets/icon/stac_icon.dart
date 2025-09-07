@@ -30,6 +30,7 @@ part 'stac_icon.g.dart';
 /// ```
 @JsonSerializable()
 class StacIcon extends StacWidget {
+  /// Creates an icon widget with the specified properties.
   const StacIcon({
     required this.icon,
     this.iconType = StacIconType.material,

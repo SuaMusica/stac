@@ -1,5 +1,18 @@
+/// Type alias for Stac color representation as a hex string.
+///
+/// Colors in the Stac framework are represented as hex strings (e.g., '#FF0000')
+/// or theme color names (e.g., 'primary', 'secondary').
 typedef StacColor = String;
 
+/// A collection of predefined colors for the Stac framework.
+///
+/// This class provides a comprehensive set of Material Design colors,
+/// Material 3 ColorScheme colors, and utility colors that can be used
+/// throughout Stac applications.
+///
+/// Colors are provided as hex strings with alpha channel support.
+/// Theme-based colors (like 'primary', 'secondary') reference the
+/// current theme's color scheme.
 class StacColors {
   // ==========================================
   // Basic Colors

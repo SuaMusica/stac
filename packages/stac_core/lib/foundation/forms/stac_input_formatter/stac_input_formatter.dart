@@ -9,6 +9,7 @@ part 'stac_input_formatter.g.dart';
 /// as the user types.
 @JsonSerializable()
 class StacInputFormatter extends StacElement {
+  /// Creates an input formatter with the specified type and optional rule.
   const StacInputFormatter({required this.type, this.rule});
 
   /// Formatter behavior: allow or deny based on a regular expression rule.
@@ -26,7 +27,10 @@ class StacInputFormatter extends StacElement {
   Map<String, dynamic> toJson() => _$StacInputFormatterToJson(this);
 }
 
+/// Input formatter behavior types for text field validation.
+///
 /// Mirrors the behavior of `InputFormatterType` used by platform formatters.
+/// Determines whether characters matching a regex pattern should be allowed or denied.
 enum StacInputFormatterType {
   /// Allow characters that match the provided regex [rule].
   allow,

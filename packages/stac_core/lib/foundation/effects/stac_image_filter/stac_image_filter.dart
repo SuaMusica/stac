@@ -3,8 +3,25 @@ import 'package:stac_core/core/converters/double_converter.dart';
 
 part 'stac_image_filter.g.dart';
 
-/// Enum of supported image filter constructors (shader not supported).
-enum StacImageFilterType { blur, matrix, dilate, erode, compose }
+/// Types of image filters supported by the Stac framework.
+///
+/// Note: Shader filters are not currently supported.
+enum StacImageFilterType {
+  /// Gaussian blur filter that blurs the image.
+  blur,
+
+  /// Matrix transformation filter that applies a 4x4 transformation matrix.
+  matrix,
+
+  /// Dilate filter that expands bright areas of the image.
+  dilate,
+
+  /// Erode filter that contracts bright areas of the image.
+  erode,
+
+  /// Compose filter that combines two filters sequentially.
+  compose,
+}
 
 /// A Stac model representing Flutter's ImageFilter.
 ///
@@ -22,6 +39,7 @@ enum StacImageFilterType { blur, matrix, dilate, erode, compose }
 /// ```
 @JsonSerializable(explicitToJson: true)
 class StacImageFilter {
+  /// Creates an image filter with the specified type and parameters.
   const StacImageFilter({
     required this.type,
     this.sigmaX,
@@ -70,21 +88,38 @@ class StacImageFilter {
     required StacImageFilter outer,
   }) : this(type: StacImageFilterType.compose, inner: inner, outer: outer);
 
+  /// The type of image filter to apply.
   final StacImageFilterType type;
 
+  /// Standard deviation for blur in the horizontal direction.
   @DoubleConverter()
   final double? sigmaX;
+
+  /// Standard deviation for blur in the vertical direction.
   @DoubleConverter()
   final double? sigmaY;
+
+  /// Horizontal radius for dilate/erode filters.
   @DoubleConverter()
   final double? radiusX;
+
+  /// Vertical radius for dilate/erode filters.
   @DoubleConverter()
   final double? radiusY;
+
+  /// 4x4 transformation matrix for matrix filters (length 16).
   final List<double>? matrix;
+
+  /// Inner filter for compose operations (applied first).
   final StacImageFilter? inner;
+
+  /// Outer filter for compose operations (applied second).
   final StacImageFilter? outer;
 
+  /// Creates a [StacImageFilter] from a JSON map.
   factory StacImageFilter.fromJson(Map<String, dynamic> json) =>
       _$StacImageFilterFromJson(json);
+
+  /// Converts this [StacImageFilter] instance to a JSON map.
   Map<String, dynamic> toJson() => _$StacImageFilterToJson(this);
 }

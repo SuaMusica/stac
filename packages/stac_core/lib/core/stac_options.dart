@@ -15,6 +15,7 @@
 /// );
 /// ```
 class StacOptions {
+  /// Creates a [StacOptions] with the given configuration.
   const StacOptions({
     required this.name,
     this.description,

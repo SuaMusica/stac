@@ -41,6 +41,7 @@ part 'stac_text_form_field.g.dart';
 ///  * Flutter's [TextFormField documentation](https://api.flutter.dev/flutter/material/TextFormField-class.html)
 @JsonSerializable(explicitToJson: true)
 class StacTextFormField extends StacWidget {
+  /// Creates a text form field widget with the specified properties.
   const StacTextFormField({
     this.id,
     this.decoration,

@@ -35,6 +35,7 @@ part 'stac_bottom_navigation_bar.g.dart';
 /// ```
 @JsonSerializable(explicitToJson: true)
 class StacBottomNavigationBar extends StacWidget {
+  /// Creates a bottom navigation bar widget with the specified properties.
   const StacBottomNavigationBar({
     required this.items,
     this.elevation,

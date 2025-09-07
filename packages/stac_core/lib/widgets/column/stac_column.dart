@@ -41,6 +41,7 @@ part 'stac_column.g.dart';
 /// {@end-tool}
 @JsonSerializable()
 class StacColumn extends StacWidget {
+  /// Creates a column widget with optional alignment and children.
   const StacColumn({
     this.mainAxisAlignment,
     this.mainAxisSize,
@@ -94,6 +95,7 @@ class StacColumn extends StacWidget {
   @override
   String get type => WidgetType.column.name;
 
+  /// Creates a [StacColumn] from a JSON map.
   factory StacColumn.fromJson(Map<String, dynamic> json) =>
       _$StacColumnFromJson(json);
 

@@ -1,3 +1,7 @@
+/// Clipping options for widgets that may overflow their bounds.
+///
+/// Different clipping modes offer trade-offs between performance and visual quality.
+/// Choose the appropriate mode based on your specific needs and performance requirements.
 enum StacClip {
   /// No clip at all.
   ///

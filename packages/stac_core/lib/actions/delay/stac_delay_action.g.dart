@@ -7,9 +7,7 @@ part of 'stac_delay_action.dart';
 // **************************************************************************
 
 StacDelayAction _$StacDelayActionFromJson(Map<String, dynamic> json) =>
-    StacDelayAction(
-      milliseconds: (json['milliseconds'] as num?)?.toInt() ?? 1000,
-    );
+    StacDelayAction(milliseconds: (json['milliseconds'] as num?)?.toInt());
 
 Map<String, dynamic> _$StacDelayActionToJson(StacDelayAction instance) =>
     <String, dynamic>{

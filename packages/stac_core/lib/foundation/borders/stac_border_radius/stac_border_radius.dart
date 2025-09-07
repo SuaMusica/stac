@@ -3,8 +3,52 @@ import 'package:stac_core/core/stac_widget.dart';
 
 part 'stac_border_radius.g.dart';
 
+/// A Stac representation of border radius for rounded corners.
+///
+/// This class defines the radius values for each corner of a rectangular border.
+/// It supports various input formats including single values, arrays, and
+/// individual corner specifications for flexible JSON configuration.
+///
+/// {@tool snippet}
+/// Dart Example:
+/// ```dart
+/// // All corners with same radius
+/// const StacBorderRadius.all(8.0)
+///
+/// // Individual corners
+/// const StacBorderRadius(
+///   topLeft: 8.0,
+///   topRight: 4.0,
+///   bottomLeft: 4.0,
+///   bottomRight: 8.0,
+/// )
+/// ```
+/// {@end-tool}
+///
+/// {@tool snippet}
+/// JSON Examples:
+/// ```json
+/// // Single value for all corners
+/// 8.0
+///
+/// // Array format [topLeft, topRight, bottomLeft, bottomRight]
+/// [8.0, 4.0, 4.0, 8.0]
+///
+/// // Object format
+/// {
+///   "topLeft": 8.0,
+///   "topRight": 4.0,
+///   "bottomLeft": 4.0,
+///   "bottomRight": 8.0
+/// }
+/// ```
+/// {@end-tool}
 @JsonSerializable()
 class StacBorderRadius implements StacElement {
+  /// Creates a border radius with optional individual corner values.
+  ///
+  /// All parameters are optional and default to null, which means no radius
+  /// will be applied to that corner.
   const StacBorderRadius({
     this.topLeft,
     this.topRight,
@@ -21,11 +65,34 @@ class StacBorderRadius implements StacElement {
         bottomRight: radius,
       );
 
+  /// The radius for the top-left corner in logical pixels.
+  ///
+  /// If null, no radius will be applied to this corner.
   final double? topLeft;
+
+  /// The radius for the top-right corner in logical pixels.
+  ///
+  /// If null, no radius will be applied to this corner.
   final double? topRight;
+
+  /// The radius for the bottom-left corner in logical pixels.
+  ///
+  /// If null, no radius will be applied to this corner.
   final double? bottomLeft;
+
+  /// The radius for the bottom-right corner in logical pixels.
+  ///
+  /// If null, no radius will be applied to this corner.
   final double? bottomRight;
 
+  /// Creates a [StacBorderRadius] from JSON data.
+  ///
+  /// Supports multiple input formats:
+  /// - A single number: applies to all corners
+  /// - An array of 4 numbers: [topLeft, topRight, bottomLeft, bottomRight]
+  /// - An object with individual corner properties
+  ///
+  /// Throws [ArgumentError] if the input format is invalid.
   factory StacBorderRadius.fromJson(dynamic json) {
     Map<String, dynamic> resultantJson;
 
@@ -56,6 +123,7 @@ class StacBorderRadius implements StacElement {
     return _$StacBorderRadiusFromJson(resultantJson);
   }
 
+  /// Converts this [StacBorderRadius] to a JSON representation.
   @override
   Map<String, dynamic> toJson() => _$StacBorderRadiusToJson(this);
 }

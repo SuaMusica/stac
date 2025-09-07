@@ -27,6 +27,7 @@ part 'stac_dialog_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacDialogAction extends StacAction {
+  /// Creates a [StacDialogAction] that shows a dialog.
   const StacDialogAction({
     this.widget,
     this.request,

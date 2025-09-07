@@ -33,6 +33,7 @@ part 'stac_multi_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacMultiAction extends StacAction {
+  /// Creates a [StacMultiAction] that executes multiple actions.
   const StacMultiAction({required this.actions, this.sync = false});
 
   /// List of child actions to execute.

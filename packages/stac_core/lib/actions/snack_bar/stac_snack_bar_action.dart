@@ -25,6 +25,7 @@ part 'stac_snack_bar_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacSnackBarAction {
+  /// Creates a [StacSnackBarAction] that shows a snack bar action.
   const StacSnackBarAction({
     this.textColor,
     this.disabledTextColor,

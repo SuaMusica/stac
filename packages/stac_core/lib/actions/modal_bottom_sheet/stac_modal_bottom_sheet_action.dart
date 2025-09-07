@@ -30,6 +30,7 @@ part 'stac_modal_bottom_sheet_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacModalBottomSheetAction extends StacAction {
+  /// Creates a [StacModalBottomSheetAction] that shows a modal bottom sheet.
   const StacModalBottomSheetAction({
     this.widget,
     this.request,

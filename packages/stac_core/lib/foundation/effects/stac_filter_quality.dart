@@ -1,3 +1,7 @@
+/// Filter quality options for image scaling and rendering.
+///
+/// This list and the values (order) should be kept in sync with the equivalent list
+/// in lib/ui/painting/image_filter.cc
 enum StacFilterQuality {
   // This list and the values (order) should be kept in sync with the equivalent list
   // in lib/ui/painting/image_filter.cc

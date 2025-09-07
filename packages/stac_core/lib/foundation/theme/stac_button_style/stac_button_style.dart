@@ -13,11 +13,27 @@ import 'package:stac_core/foundation/text/stac_text_style/stac_text_style.dart';
 
 part 'stac_button_style.g.dart';
 
-/// Enum for icon alignment in buttons
-enum StacIconAlignment { start, end }
+/// Icon alignment options for buttons.
+///
+/// Defines where the icon should be positioned relative to the button text.
+enum StacIconAlignment {
+  /// Icon appears at the start (left in LTR, right in RTL).
+  start,
 
-/// Enum for Material tap target size
-enum StacMaterialTapTargetSize { padded, shrinkWrap }
+  /// Icon appears at the end (right in LTR, left in RTL).
+  end,
+}
+
+/// Material tap target size options.
+///
+/// Defines the minimum size of the tap target area.
+enum StacMaterialTapTargetSize {
+  /// Tap target is padded to meet minimum size requirements.
+  padded,
+
+  /// Tap target shrinks to fit the button content.
+  shrinkWrap,
+}
 
 /// A Stac model representing Flutter's ButtonStyle.
 ///

@@ -1,3 +1,6 @@
+/// Blur style options for image filters and effects.
+///
+/// These values mirror DlBlurStyle and must be kept in sync.
 enum StacBlurStyle {
   // These mirror DlBlurStyle and must be kept in sync.
 

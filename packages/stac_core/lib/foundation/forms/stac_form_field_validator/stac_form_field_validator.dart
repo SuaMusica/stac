@@ -9,6 +9,7 @@ part 'stac_form_field_validator.g.dart';
 /// when the validation fails.
 @JsonSerializable()
 class StacFormFieldValidator extends StacElement {
+  /// Creates a form field validator with the specified rule and optional message.
   const StacFormFieldValidator({required this.rule, this.message});
 
   /// Identifier of the validation logic to apply.

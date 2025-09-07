@@ -6,10 +6,18 @@ import 'package:stac_core/foundation/borders/stac_circle_border/stac_circle_bord
 import 'package:stac_core/foundation/borders/stac_continuous_rectangle_border/stac_continuous_rectangle_border.dart';
 import 'package:stac_core/foundation/borders/stac_rounded_rectangle_border/stac_rounded_rectangle_border.dart';
 
+/// Types of shape borders supported by the Stac framework.
 enum StacShapeBorderType {
+  /// Circular border shape.
   circleBorder,
+
+  /// Rounded rectangle border with customizable corner radius.
   roundedRectangleBorder,
+
+  /// Continuous rectangle border with smooth curves.
   continuousRectangleBorder,
+
+  /// Beveled rectangle border with angled corners.
   beveledRectangleBorder,
 }
 
