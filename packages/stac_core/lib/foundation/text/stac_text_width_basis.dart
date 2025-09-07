@@ -1,3 +1,4 @@
+/// Text width calculation basis options.\n///\n/// Determines how the width of text widgets is calculated, affecting\n/// layout behavior for both single-line and multi-line text.
 enum StacTextWidthBasis {
   /// multiline text will take up the full width given by the parent. For single
   /// line text, only the minimum amount of width needed to contain the text

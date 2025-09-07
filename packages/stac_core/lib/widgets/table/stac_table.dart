@@ -46,6 +46,7 @@ part 'stac_table.g.dart';
 ///
 @JsonSerializable()
 class StacTable extends StacWidget {
+  /// Creates a table widget with the specified properties.
   const StacTable({
     this.children = const <StacTableRow>[],
     this.columnWidths,

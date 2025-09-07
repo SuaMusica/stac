@@ -40,6 +40,7 @@ class StacTableCell extends StacWidget {
   @override
   String get type => WidgetType.tableCell.name;
 
+  /// Creates a [StacTableCell] from a JSON map.
   factory StacTableCell.fromJson(Map<String, dynamic> json) =>
       _$StacTableCellFromJson(json);
 

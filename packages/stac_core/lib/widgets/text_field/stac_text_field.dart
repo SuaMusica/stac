@@ -49,6 +49,7 @@ part 'stac_text_field.g.dart';
 ///  * Flutter's [TextField documentation](https://api.flutter.dev/flutter/material/TextField-class.html)
 @JsonSerializable(explicitToJson: true)
 class StacTextField extends StacWidget {
+  /// Creates a text field widget with the specified properties.
   const StacTextField({
     this.initialValue,
     this.decoration,

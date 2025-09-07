@@ -30,7 +30,8 @@ part 'stac_center.g.dart';
 /// {@end-tool}
 @JsonSerializable()
 class StacCenter extends StacWidget {
-  StacCenter({this.widthFactor, this.heightFactor, this.child});
+  /// Creates a center widget with optional sizing factors and child.
+  const StacCenter({this.widthFactor, this.heightFactor, this.child});
 
   /// The width factor to expand to based on the child's width.
   ///
@@ -47,6 +48,7 @@ class StacCenter extends StacWidget {
   /// The widget to be centered.
   final StacWidget? child;
 
+  /// Creates a [StacCenter] from a JSON map.
   factory StacCenter.fromJson(Map<String, dynamic> json) =>
       _$StacCenterFromJson(json);
 

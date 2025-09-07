@@ -1,3 +1,7 @@
+/// Shape options for boxes and containers.
+///
+/// Defines the overall shape that a box should take when rendering
+/// borders, shadows, and other decorative elements.
 enum StacBoxShape {
   /// An axis-aligned rectangle, optionally with rounded corners.
   ///

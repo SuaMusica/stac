@@ -31,6 +31,7 @@ part 'stac_aspect_ratio.g.dart';
 /// {@end-tool}
 @JsonSerializable()
 class StacAspectRatio extends StacWidget {
+  /// Creates an aspect ratio widget with the specified ratio and child.
   const StacAspectRatio({required this.aspectRatio, required this.child});
 
   /// The width-to-height ratio to honor for laying out the [child].
@@ -45,6 +46,7 @@ class StacAspectRatio extends StacWidget {
   @override
   String get type => WidgetType.aspectRatio.name;
 
+  /// Creates a [StacAspectRatio] from a JSON map.
   factory StacAspectRatio.fromJson(Map<String, dynamic> json) =>
       _$StacAspectRatioFromJson(json);
 

@@ -33,6 +33,7 @@ part 'stac_expanded.g.dart';
 /// {@end-tool}
 @JsonSerializable()
 class StacExpanded extends StacWidget {
+  /// Creates an expanded widget with optional flex factor and child.
   const StacExpanded({this.flex, this.child});
 
   /// The flex factor to use for this child.
@@ -46,6 +47,7 @@ class StacExpanded extends StacWidget {
   @override
   String get type => WidgetType.expanded.name;
 
+  /// Creates a [StacExpanded] from a JSON map.
   factory StacExpanded.fromJson(Map<String, dynamic> json) =>
       _$StacExpandedFromJson(json);
 

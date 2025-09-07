@@ -4,36 +4,37 @@ import 'package:stac_core/foundation/foundation.dart';
 
 part 'stac_app_bar.g.dart';
 
+/// A Stac model representing Flutter's [AppBar] widget.
+///
+/// Displays a Material Design app bar at the top of the app.
+///
+/// {@tool snippet}
+/// Dart Example:
+/// ```dart
+/// StacAppBar(
+///   title: StacText(data: 'Page Title'),
+///   actions: [
+///     StacIconButton(icon: StacIcon(icon: StacIcons.search)),
+///   ],
+/// )
+/// ```
+/// {@end-tool}
+///
+/// {@tool snippet}
+/// JSON Example:
+/// ```json
+/// {
+///   "type": "appBar",
+///   "title": {"type": "text", "data": "Page Title"},
+///   "actions": [
+///     {"type": "iconButton", "icon": {"type": "icon", "icon": "search"}}
+///   ]
+/// }
+/// ```
+/// {@end-tool}
 @JsonSerializable()
 class StacAppBar extends StacWidget {
-  /// A Stac model representing Flutter's [AppBar] widget.
-  ///
-  /// Displays a Material Design app bar at the top of the app.
-  ///
-  /// {@tool snippet}
-  /// Dart Example:
-  /// ```dart
-  /// StacAppBar(
-  ///   title: StacText(data: 'Page Title'),
-  ///   actions: [
-  ///     StacIconButton(icon: StacIcon(icon: StacIcons.search)),
-  ///   ],
-  /// )
-  /// ```
-  /// {@end-tool}
-  ///
-  /// {@tool snippet}
-  /// JSON Example:
-  /// ```json
-  /// {
-  ///   "type": "appBar",
-  ///   "title": {"type": "text", "data": "Page Title"},
-  ///   "actions": [
-  ///     {"type": "iconButton", "icon": {"type": "icon", "icon": "search"}}
-  ///   ]
-  /// }
-  /// ```
-  /// {@end-tool}
+  /// Creates an app bar with the specified properties.
   StacAppBar({
     this.leading,
     this.automaticallyImplyLeading,
@@ -151,6 +152,7 @@ class StacAppBar extends StacWidget {
   /// Outer padding applied around the [actions] row.
   final StacEdgeInsets? actionsPadding;
 
+  /// Creates a [StacAppBar] from a JSON map.
   factory StacAppBar.fromJson(Map<String, dynamic> json) =>
       _$StacAppBarFromJson(json);
 

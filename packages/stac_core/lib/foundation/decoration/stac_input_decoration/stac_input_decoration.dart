@@ -37,6 +37,7 @@ part 'stac_input_decoration.g.dart';
 ///  * Flutter's [InputDecoration documentation](https://api.flutter.dev/flutter/material/InputDecoration-class.html)
 @JsonSerializable(explicitToJson: true)
 class StacInputDecoration extends StacElement {
+  /// Creates an input decoration with the specified properties.
   const StacInputDecoration({
     this.icon,
     this.labelText,
@@ -80,13 +81,18 @@ class StacInputDecoration extends StacElement {
 
   /// Text style for [helperText].
   final StacTextStyle? helperStyle;
+
+  /// Error text to display below the input field.
   final String? errorText;
 
   /// Text style for [errorText].
   final StacTextStyle? errorStyle;
 
   /// Optional prefix/suffix widgets and texts.
+  /// Widget to display before the input content.
   final StacWidget? prefixIcon;
+
+  /// Optional text to display before the input content.
   final String? prefixText;
 
   /// Text style for [prefixText].

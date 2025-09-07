@@ -35,6 +35,7 @@ part 'stac_snack_bar.g.dart';
 /// ```
 @JsonSerializable()
 class StacSnackBar extends StacAction {
+  /// Creates a [StacSnackBar] that shows a snack bar.
   const StacSnackBar({
     required this.content,
     this.backgroundColor,

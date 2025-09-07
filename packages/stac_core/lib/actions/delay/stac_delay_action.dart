@@ -19,6 +19,7 @@ part 'stac_delay_action.g.dart';
 /// ```
 @JsonSerializable()
 class StacDelayAction extends StacAction {
+  /// Creates a [StacDelayAction] that waits for a specified duration.
   const StacDelayAction({this.milliseconds});
 
   /// Delay in milliseconds to wait.
@@ -26,7 +27,7 @@ class StacDelayAction extends StacAction {
   /// Type: `int?` (defaults applied in parser).
   final int? milliseconds;
 
-  /// Unique action type string used for routing.
+  /// Action type identifier.
   @override
   String get actionType => ActionType.delay.name;
 

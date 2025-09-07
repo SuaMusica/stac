@@ -21,6 +21,57 @@ enum Method {
   delete,
 }
 
+/// A Stac action that performs HTTP network requests.
+///
+/// This action makes HTTP requests to specified URLs and can execute different
+/// actions based on the response status code using [results]. Supports all
+/// common HTTP methods (GET, POST, PUT, DELETE) and allows customization of
+/// headers, query parameters, and request body.
+///
+/// {@tool snippet}
+/// Dart Example:
+/// ```dart
+/// const StacNetworkRequest(
+///   url: 'https://api.example.com/users',
+///   method: Method.post,
+///   headers: {'Authorization': 'Bearer token123'},
+///   body: {'name': 'John', 'email': 'john@example.com'},
+///   results: [
+///     StacNetworkResult(
+///       statusCode: 200,
+///       action: {'type': 'navigate', 'routeName': '/success'}
+///     ),
+///     StacNetworkResult(
+///       statusCode: 400,
+///       action: {'type': 'showSnackBar', 'message': 'Invalid data'}
+///     ),
+///   ],
+/// )
+/// ```
+/// {@end-tool}
+///
+/// {@tool snippet}
+/// JSON Example:
+/// ```json
+/// {
+///   "type": "networkRequest",
+///   "url": "https://api.example.com/users",
+///   "method": "post",
+///   "headers": {"Authorization": "Bearer token123"},
+///   "body": {"name": "John", "email": "john@example.com"},
+///   "results": [
+///     {
+///       "statusCode": 200,
+///       "action": {"type": "navigate", "routeName": "/success"}
+///     },
+///     {
+///       "statusCode": 400,
+///       "action": {"type": "showSnackBar", "message": "Invalid data"}
+///     }
+///   ]
+/// }
+/// ```
+/// {@end-tool}
 @JsonSerializable()
 class StacNetworkRequest extends StacAction {
   /// Creates a [StacNetworkRequest] to perform an HTTP call.
@@ -55,6 +106,7 @@ class StacNetworkRequest extends StacAction {
   /// List of conditional results that map a response status code to an action.
   final List<StacNetworkResult> results;
 
+  /// Action type identifier.
   @override
   String get actionType => ActionType.networkRequest.name;
 
@@ -67,6 +119,37 @@ class StacNetworkRequest extends StacAction {
   Map<String, dynamic> toJson() => _$StacNetworkRequestToJson(this);
 }
 
+/// A conditional result that maps HTTP status codes to actions.
+///
+/// Used with [StacNetworkRequest] to define different actions to execute
+/// based on the HTTP response status code. This allows for sophisticated
+/// error handling and conditional flows based on network request outcomes.
+///
+/// {@tool snippet}
+/// Dart Example:
+/// ```dart
+/// const StacNetworkResult(
+///   statusCode: 404,
+///   action: {
+///     'type': 'showSnackBar',
+///     'message': 'Resource not found'
+///   },
+/// )
+/// ```
+/// {@end-tool}
+///
+/// {@tool snippet}
+/// JSON Example:
+/// ```json
+/// {
+///   "statusCode": 404,
+///   "action": {
+///     "type": "showSnackBar",
+///     "message": "Resource not found"
+///   }
+/// }
+/// ```
+/// {@end-tool}
 @JsonSerializable()
 class StacNetworkResult {
   /// Creates a mapping from an HTTP [statusCode] to an action payload.
