@@ -1,10 +1,16 @@
 name: stac_core
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: A pure Dart package that provides the core functionalities and common interfaces for the Stac server-driven UI framework.
+version: 0.1.0
+homepage: https://github.com/StacDev/stac
 
 environment:
   sdk: ^3.8.1
+
+topics:
+  - ui
+  - widget
+  - server-driven-ui
+  - dynamic-widgets
 
 dependencies:
   json_annotation: ^4.9.0
