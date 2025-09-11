@@ -350,6 +350,12 @@ extension StacAlignmentParser on StacAlignment {
   }
 }
 
+extension StacAlignmentGeometryParser on StacAlignmentGeometry {
+  Alignment get parse {
+    return Alignment(dx, dy);
+  }
+}
+
 extension StacClipParser on StacClip {
   Clip get parse {
     switch (this) {

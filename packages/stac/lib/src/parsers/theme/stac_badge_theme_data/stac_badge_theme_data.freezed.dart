@@ -81,8 +81,6 @@ abstract mixin class $StacBadgeThemeDataCopyWith<$Res> {
       StacEdgeInsets? padding,
       StacAlignmentGeometry? alignment,
       StacOffset? offset});
-
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
 
 /// @nodoc
@@ -141,20 +139,6 @@ class _$StacBadgeThemeDataCopyWithImpl<$Res>
           : offset // ignore: cast_nullable_to_non_nullable
               as StacOffset?,
     ));
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment {
-    if (_self.alignment == null) {
-      return null;
-    }
-
-    return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
-      return _then(_self.copyWith(alignment: value));
-    });
   }
 }
 
@@ -462,9 +446,6 @@ abstract mixin class _$StacBadgeThemeDataCopyWith<$Res>
       StacEdgeInsets? padding,
       StacAlignmentGeometry? alignment,
       StacOffset? offset});
-
-  @override
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
 
 /// @nodoc
@@ -523,20 +504,6 @@ class __$StacBadgeThemeDataCopyWithImpl<$Res>
           : offset // ignore: cast_nullable_to_non_nullable
               as StacOffset?,
     ));
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment {
-    if (_self.alignment == null) {
-      return null;
-    }
-
-    return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
-      return _then(_self.copyWith(alignment: value));
-    });
   }
 }
 
