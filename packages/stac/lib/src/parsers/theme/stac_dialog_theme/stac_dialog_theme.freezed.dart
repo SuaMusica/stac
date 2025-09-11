@@ -100,8 +100,6 @@ abstract mixin class $StacDialogThemeCopyWith<$Res> {
       StacTextStyle? contentTextStyle,
       StacEdgeInsets? actionsPadding,
       String? iconColor});
-
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
 
 /// @nodoc
@@ -170,20 +168,6 @@ class _$StacDialogThemeCopyWithImpl<$Res>
           : iconColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment {
-    if (_self.alignment == null) {
-      return null;
-    }
-
-    return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
-      return _then(_self.copyWith(alignment: value));
-    });
   }
 }
 
@@ -526,9 +510,6 @@ abstract mixin class _$StacDialogThemeCopyWith<$Res>
       StacTextStyle? contentTextStyle,
       StacEdgeInsets? actionsPadding,
       String? iconColor});
-
-  @override
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment;
 }
 
 /// @nodoc
@@ -597,20 +578,6 @@ class __$StacDialogThemeCopyWithImpl<$Res>
           : iconColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacDialogTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment {
-    if (_self.alignment == null) {
-      return null;
-    }
-
-    return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
-      return _then(_self.copyWith(alignment: value));
-    });
   }
 }
 
