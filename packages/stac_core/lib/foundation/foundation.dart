@@ -3,6 +3,7 @@ library;
 // Alignment and positioning
 export 'alignment/stac_alignment.dart';
 export 'alignment/stac_alignment_directional.dart';
+export 'alignment/stac_alignment_geometry/stac_alignment_geometry.dart';
 export 'alignment/stac_cross_axis_alignment.dart';
 export 'alignment/stac_main_axis_alignment.dart';
 export 'alignment/stac_main_axis_size.dart';
