@@ -10,7 +10,6 @@ import 'package:stac/src/parsers/parsers.dart';
 import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value_parser.dart';
 import 'package:stac/src/services/stac_network_service.dart';
-import 'package:stac/src/utils/log.dart';
 import 'package:stac/src/utils/version/stac_version.dart';
 import 'package:stac/src/utils/variable_resolver.dart';
 import 'package:stac/src/utils/widget_type.dart';
