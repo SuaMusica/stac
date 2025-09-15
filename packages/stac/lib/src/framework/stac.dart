@@ -4,14 +4,18 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:stac/src/action_parsers/action_parsers.dart';
-import 'package:stac/src/action_parsers/stac_network_request/stac_network_request_parser.dart';
 import 'package:stac/src/framework/stac_registry.dart';
+import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request_parser.dart';
 import 'package:stac/src/parsers/parsers.dart';
+import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell_parser.dart';
+import 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value_parser.dart';
 import 'package:stac/src/services/stac_network_service.dart';
 import 'package:stac/src/utils/log.dart';
 import 'package:stac/src/utils/version/stac_version.dart';
+import 'package:stac/src/utils/variable_resolver.dart';
+import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac_framework/stac_framework.dart';
+import 'package:stac_logger/stac_logger.dart';
 
 typedef ErrorWidgetBuilder = Widget Function(
   BuildContext context,
@@ -38,6 +42,7 @@ class Stac {
     const StacCenterParser(),
     const StacRowParser(),
     const StacColumnParser(),
+    const StacCustomScrollViewParser(),
     const StacStackParser(),
     const StacPositionedParser(),
     const StacIconButtonParser(),
@@ -84,17 +89,30 @@ class Stac {
     const StacCarouselViewParser(),
     const StacColoredBoxParser(),
     const StacDividerParser(),
+    const StacDrawerParser(),
     const StacCircularProgressIndicatorParser(),
     const StacLinearProgressIndicatorParser(),
     const StacHeroParser(),
     const StacRadioParser(),
     const StacRadioGroupParser(),
     const StacSliderParser(),
+    const StacSliverAppBarParser(),
     const StacOpacityParser(),
     const StacPlaceholderParser(),
     const StacAspectRatioParser(),
     const StacFittedBoxParser(),
     const StacLimitedBoxParser(),
+    const StacDynamicViewParser(),
+    const StacDropdownMenuParser(),
+    const StacClipRRectParser(),
+    const StacClipOvalParser(),
+    const StacGestureDetectorParser(),
+    const StacSetValueParser(),
+    const StacInkwellParser(),
+    const StacConditionalParser(),
+    const StacVisibilityParser(),
+    const StacBackdropFilterParser(),
+    const StacVerticalDividerParser(),
   ];
 
   static final _actionParsers = <StacActionParser>[
@@ -106,6 +124,9 @@ class Stac {
     const StacGetFormValueParser(),
     const StacFormValidateParser(),
     const StacSnackBarParser(),
+    const StacSetValueActionParser(),
+    const StacMultiActionParser(),
+    const StacDelayActionParser(),
   ];
 
   static Future<void> initialize({
@@ -146,8 +167,16 @@ class Stac {
 
         String widgetType = json['type'];
         StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
+
         if (stacParser != null) {
-          final model = stacParser.getModel(json);
+          Map<String, dynamic> resolvedJson;
+          if (widgetType == WidgetType.setValue.name) {
+            resolvedJson = json;
+          } else {
+            resolvedJson = resolveVariablesInJson(json, StacRegistry.instance);
+          }
+          final model = stacParser.getModel(resolvedJson);
+
           return stacParser.parse(context, model);
         } else {
           Log.w('Widget type [$widgetType] not supported');
