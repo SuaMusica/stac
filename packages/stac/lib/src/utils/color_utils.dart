@@ -4,20 +4,44 @@ import 'package:stac/stac.dart';
 
 const String _hashtag = "#";
 const String _empty = "";
-const String _defaultOpacity = "ff";
+const String _transparencySeparator = "@";
 
 extension ColorExt on String? {
   Color? toColor(BuildContext context) {
     if (this?.isEmpty ?? true) return null;
 
-    final parsedColor = _parseThemeColor(this!, context);
-    if (parsedColor != null) {
-      return parsedColor;
-    } else if (this!.startsWith(_hashtag)) {
-      return _parseHexColor(this!);
-    } else {
-      return _parseNameColor(this!);
+    // Extract transparency if specified
+    String colorString = this!;
+    int opacity = 255; // Default: fully opaque
+
+    if (colorString.contains(_transparencySeparator)) {
+      final parts = colorString.split(_transparencySeparator);
+      colorString = parts[0];
+      // Parse transparency percentage (0-100) and convert to alpha value (0-255)
+      final opacityPercentage = int.tryParse(parts[1]);
+      if (opacityPercentage != null &&
+          opacityPercentage >= 0 &&
+          opacityPercentage <= 100) {
+        opacity = ((opacityPercentage) * 255 / 100).round();
+      }
     }
+
+    // Parse the color based on its format
+    Color? parsedColor;
+    if (colorString.startsWith(_hashtag)) {
+      parsedColor = _parseHexColor(colorString, opacity);
+    } else {
+      // Try theme color first, then named color
+      parsedColor = _parseThemeColor(colorString, context);
+      parsedColor ??= _parseNameColor(colorString);
+    }
+
+    // Apply transparency if a valid color was parsed and transparency is not 255 (fully opaque)
+    if (parsedColor != null && opacity != 255) {
+      return parsedColor.withAlpha(opacity);
+    }
+
+    return parsedColor;
   }
 }
 
@@ -37,6 +61,14 @@ Color? _parseThemeColor(String color, BuildContext context) {
       return Theme.of(context).colorScheme.primaryContainer;
     case StacColorType.onPrimaryContainer:
       return Theme.of(context).colorScheme.onPrimaryContainer;
+    case StacColorType.primaryFixed:
+      return Theme.of(context).colorScheme.primaryFixed;
+    case StacColorType.primaryFixedDim:
+      return Theme.of(context).colorScheme.primaryFixedDim;
+    case StacColorType.onPrimaryFixed:
+      return Theme.of(context).colorScheme.onPrimaryFixed;
+    case StacColorType.onPrimaryFixedVariant:
+      return Theme.of(context).colorScheme.onPrimaryFixedVariant;
     case StacColorType.secondary:
       return Theme.of(context).colorScheme.secondary;
     case StacColorType.onSecondary:
@@ -45,6 +77,14 @@ Color? _parseThemeColor(String color, BuildContext context) {
       return Theme.of(context).colorScheme.secondaryContainer;
     case StacColorType.onSecondaryContainer:
       return Theme.of(context).colorScheme.onSecondaryContainer;
+    case StacColorType.secondaryFixed:
+      return Theme.of(context).colorScheme.secondaryFixed;
+    case StacColorType.secondaryFixedDim:
+      return Theme.of(context).colorScheme.secondaryFixedDim;
+    case StacColorType.onSecondaryFixed:
+      return Theme.of(context).colorScheme.onSecondaryFixed;
+    case StacColorType.onSecondaryFixedVariant:
+      return Theme.of(context).colorScheme.onSecondaryFixedVariant;
     case StacColorType.tertiary:
       return Theme.of(context).colorScheme.tertiary;
     case StacColorType.onTertiary:
@@ -53,6 +93,14 @@ Color? _parseThemeColor(String color, BuildContext context) {
       return Theme.of(context).colorScheme.tertiaryContainer;
     case StacColorType.onTertiaryContainer:
       return Theme.of(context).colorScheme.onTertiaryContainer;
+    case StacColorType.tertiaryFixed:
+      return Theme.of(context).colorScheme.tertiaryFixed;
+    case StacColorType.tertiaryFixedDim:
+      return Theme.of(context).colorScheme.tertiaryFixedDim;
+    case StacColorType.onTertiaryFixed:
+      return Theme.of(context).colorScheme.onTertiaryFixed;
+    case StacColorType.onTertiaryFixedVariant:
+      return Theme.of(context).colorScheme.onTertiaryFixedVariant;
     case StacColorType.error:
       return Theme.of(context).colorScheme.error;
     case StacColorType.onError:
@@ -61,15 +109,23 @@ Color? _parseThemeColor(String color, BuildContext context) {
       return Theme.of(context).colorScheme.errorContainer;
     case StacColorType.onErrorContainer:
       return Theme.of(context).colorScheme.onErrorContainer;
-    case StacColorType.background:
-      return Theme.of(context).colorScheme.surface;
-    case StacColorType.onBackground:
-      return Theme.of(context).colorScheme.onSurface;
     case StacColorType.surface:
       return Theme.of(context).colorScheme.surface;
     case StacColorType.onSurface:
       return Theme.of(context).colorScheme.onSurface;
-    case StacColorType.surfaceVariant:
+    case StacColorType.surfaceDim:
+      return Theme.of(context).colorScheme.surfaceDim;
+    case StacColorType.surfaceBright:
+      return Theme.of(context).colorScheme.surfaceBright;
+    case StacColorType.surfaceContainerLowest:
+      return Theme.of(context).colorScheme.surfaceContainerLowest;
+    case StacColorType.surfaceContainerLow:
+      return Theme.of(context).colorScheme.surfaceContainerLow;
+    case StacColorType.surfaceContainer:
+      return Theme.of(context).colorScheme.surfaceContainer;
+    case StacColorType.surfaceContainerHigh:
+      return Theme.of(context).colorScheme.surfaceContainerHigh;
+    case StacColorType.surfaceContainerHighest:
       return Theme.of(context).colorScheme.surfaceContainerHighest;
     case StacColorType.onSurfaceVariant:
       return Theme.of(context).colorScheme.onSurfaceVariant;
@@ -89,8 +145,6 @@ Color? _parseThemeColor(String color, BuildContext context) {
       return Theme.of(context).colorScheme.inversePrimary;
     case StacColorType.surfaceTint:
       return Theme.of(context).colorScheme.surfaceTint;
-    case StacColorType.scaffoldBackgroundColor:
-      return Theme.of(context).scaffoldBackgroundColor;
     case StacColorType.none:
       final customColor = StacRegistry.instance.parseCustomColor?.call(color);
       if (customColor != null) {
@@ -100,10 +154,13 @@ Color? _parseThemeColor(String color, BuildContext context) {
   }
 }
 
-Color _parseHexColor(String color) {
-  // Ex: #000000
+Color _parseHexColor(String color, [int alpha = 255]) {
+  // Ex: #000000 or #FF000000
   final buffer = StringBuffer();
-  if (color.length == 6 || color.length == 7) buffer.write(_defaultOpacity);
+  if (color.length == 6 || color.length == 7) {
+    // Add alpha channel
+    buffer.write(alpha.toRadixString(16).padLeft(2, '0'));
+  }
   buffer.write(color.replaceFirst(_hashtag, _empty));
   int? intColor = int.tryParse(buffer.toString(), radix: 16);
   intColor = intColor ?? 0x00000000;

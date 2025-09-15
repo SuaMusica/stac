@@ -1,3 +1,57 @@
+## 1.0.0-dev.6
+
+* BREAKING: Minimum Flutter SDK is now 3.35.0+
+* BREAKING: Switch — rename `activeColor` → `activeThumbColor` (align with Flutter API). Update your JSON accordingly
+* BREAKING: `ThemeData.bottomAppBarTheme` now expects `BottomAppBarThemeData` (aligned with Flutter 3.35). No JSON change for `StacBottomAppBarTheme`
+* docs: Updated Switch and Radio docs; added guidance for RadioGroup usage
+* chore: Static analysis cleanups for latest Flutter
+
+## 1.0.0-dev.5
+
+* feat: WASM compatibility for Web/WASM platform support
+* feat: Implemented conditional widget with expression evaluation for dynamic UI logic
+* feat: Added SVG file rendering capability to StacImage by @Potatomonsta
+* feat: Added TextStyle.copyWith() functionality via copyWithStyle property by @Abdalqader27
+* feat: Implemented border side customization in BoxDecoration by @MohamedAbd0
+* feat: Added multi_action_parser support for advanced interaction handling by @antonioacademy10 
+* feat: Integrated SnackBarThemeData for consistent styling by @Potatomonsta
+* feat: Implemented BackdropFilter widget by @manav-m 
+* feat: Introduced color transparency using @ notation (e.g. "primary@50")
+* feat: Added support for Visibility widget by @Abdalqader27
+
+## 1.0.0-dev.4
+
+* chore: update pub dependencies
+
+## 1.0.0-dev.3
+
+* feat: Replace networkImage with CachedNetwork Image 
+* feat: add ClipRRect widget support 
+* fix: rename ItemTemplate → itemTemplate for consistency by @ayatsuno
+* feat: Add GestureDetector widget support with tap, drag and press handlers 
+* feat: Add Material 3 fixed color and new surface variants to color scheme 
+* feat: add ClipOval widget support by @vijaykarthiktk
+* feat: add support for inkwell widget by @AbhijithKonnayil 
+* feat: add variable support with setValue widget and action 
+* feat: add support to StacDouble class by @AbhijithKonnayil 
+
+## 1.0.0-dev.2
+
+* feat: update stac theme with new ThemeData classes
+* fix: Make background & onBackground as nullable in ColorScheme by @oyewalekehinde
+* feat: Add support for the DropdownMenu widget by @Odinachi
+
+## 1.0.0-dev.1
+
+* feat: Add SliverAppBar & CustomScrollView parser by @nikb7
+* chore: update pub dependencies
+* feat: Add StacDynamicView parser for fetching and rendering API data
+
+## 0.10.0
+
+* Migrate to Flutter 3.29
+* feat: Remove IconAlignment from button widgets by @divyanshub024
+
 ## 0.9.3
 
 * Add pub.dev topics 

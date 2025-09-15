@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/utils/log.dart';
+import 'package:stac_logger/stac_logger.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacRegistry {
@@ -18,6 +19,7 @@ class StacRegistry {
   Color? Function(String?)? parseCustomColor;
   int? _buildNumber;
   int? get buildNumber => _buildNumber;
+  static final Map<String, dynamic> _variables = {};
 
   bool register(StacParser parser, [bool override = false]) {
     final String type = parser.type;
@@ -85,5 +87,21 @@ class StacRegistry {
 
   StacActionParser<dynamic>? getActionParser(String type) {
     return _stacActionParsers[type];
+  }
+
+  dynamic setValue(String key, dynamic value) {
+    if (value == null) {
+      removeValue(key);
+    } else {
+      _variables[key] = value;
+    }
+  }
+
+  dynamic removeValue(String key) {
+    return _variables.remove(key);
+  }
+
+  dynamic getValue(String key) {
+    return _variables[key];
   }
 }

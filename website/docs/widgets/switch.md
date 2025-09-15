@@ -11,7 +11,7 @@ To know more about the Switch widget in Flutter, refer to the [official document
 | value                 | `bool`                  | Whether this switch is on or off.                                                                               |
 | onChanged             | `Map<String, dynamic>`  | Called when the user toggles the switch on or off.                                                              |
 | autofocus             | `bool`                  | True if this widget will be selected as the initial focus when no other node in its scope is currently focused. |
-| activeColor           | `String`                | The color to use when this switch is on.                                                                        |
+| activeThumbColor      | `String`                | The color to use when this switch is on.                                                                        |
 | activeTrackColor      | `String`                | The color to use on the track when this switch is on.                                                           |
 | focusColor            | `String`                | The color for the button's when it has the input focus.                                                         |
 | hoverColor            | `String`                | The color for the button's when a pointer is hovering over it.                                                  |
