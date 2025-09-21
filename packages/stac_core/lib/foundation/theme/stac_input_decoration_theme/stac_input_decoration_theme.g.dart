@@ -11,22 +11,20 @@ StacInputDecorationTheme _$StacInputDecorationThemeFromJson(
 ) => StacInputDecorationTheme(
   labelStyle: json['labelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['labelStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['labelStyle']),
   floatingLabelStyle: json['floatingLabelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(
-          json['floatingLabelStyle'] as Map<String, dynamic>,
-        ),
+      : StacTextStyle.fromJson(json['floatingLabelStyle']),
   helperStyle: json['helperStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['helperStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['helperStyle']),
   helperMaxLines: (json['helperMaxLines'] as num?)?.toInt(),
   hintStyle: json['hintStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['hintStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['hintStyle']),
   errorStyle: json['errorStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['errorStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['errorStyle']),
   errorMaxLines: (json['errorMaxLines'] as num?)?.toInt(),
   floatingLabelBehavior: json['floatingLabelBehavior'] as String?,
   floatingLabelAlignment: json['floatingLabelAlignment'] as String?,
@@ -38,15 +36,15 @@ StacInputDecorationTheme _$StacInputDecorationThemeFromJson(
   iconColor: json['iconColor'] as String?,
   prefixStyle: json['prefixStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['prefixStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['prefixStyle']),
   prefixIconColor: json['prefixIconColor'] as String?,
   suffixStyle: json['suffixStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['suffixStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['suffixStyle']),
   suffixIconColor: json['suffixIconColor'] as String?,
   counterStyle: json['counterStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['counterStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['counterStyle']),
   filled: json['filled'] as bool?,
   fillColor: json['fillColor'] as String?,
   activeIndicatorBorder: json['activeIndicatorBorder'] == null
