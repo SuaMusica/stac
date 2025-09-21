@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/stac_widget.dart';
-import 'package:stac_core/core/converters/stac_text_style_converter.dart';
 import 'package:stac_core/foundation/colors/stac_color/stac_colors.dart';
 import 'package:stac_core/foundation/text/stac_text_span/stac_text_span.dart';
 import 'package:stac_core/foundation/text/stac_text_style/stac_text_style.dart';
@@ -68,7 +67,6 @@ class StacText extends StacWidget {
   /// (e.g., {"color": "#FF2196F3"}) for custom styles.
   ///
   /// Type: [StacTextStyle]
-  @StacTextStyleConverter()
   final StacTextStyle? style;
 
   /// Optional style overrides applied on top of [style].
@@ -79,7 +77,6 @@ class StacText extends StacWidget {
   /// Any non-null fields in [copyWithStyle] override those from [style].
   ///
   /// Type: [StacCustomTextStyle]
-  @StacTextStyleConverter()
   final StacCustomTextStyle? copyWithStyle;
 
   /// How the text should be aligned horizontally.

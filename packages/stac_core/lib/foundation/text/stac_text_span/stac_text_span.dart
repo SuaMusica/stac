@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stac_core/core/converters/stac_text_style_converter.dart';
 import 'package:stac_core/core/stac_widget.dart';
 import 'package:stac_core/foundation/text/stac_text_style/stac_text_style.dart';
 
@@ -44,7 +43,6 @@ class StacTextSpan implements StacElement {
   final String? text;
 
   /// The style to apply to the text in this span.
-  @StacTextStyleConverter()
   final StacTextStyle? style;
 
   /// Additional text spans to include as children.

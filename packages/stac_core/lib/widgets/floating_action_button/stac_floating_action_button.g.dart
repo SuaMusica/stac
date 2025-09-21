@@ -14,7 +14,7 @@ StacFloatingActionButton _$StacFloatingActionButtonFromJson(
       : StacAction.fromJson(json['onPressed'] as Map<String, dynamic>),
   textStyle: json['textStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['textStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['textStyle']),
   buttonType:
       $enumDecodeNullable(
         _$StacFloatingActionButtonTypeEnumMap,
@@ -32,9 +32,7 @@ StacFloatingActionButton _$StacFloatingActionButtonFromJson(
   splashColor: json['splashColor'] as String?,
   extendedTextStyle: json['extendedTextStyle'] == null
       ? null
-      : StacTextStyle.fromJson(
-          json['extendedTextStyle'] as Map<String, dynamic>,
-        ),
+      : StacTextStyle.fromJson(json['extendedTextStyle']),
   elevation: (json['elevation'] as num?)?.toDouble(),
   focusElevation: (json['focusElevation'] as num?)?.toDouble(),
   hoverElevation: (json['hoverElevation'] as num?)?.toDouble(),

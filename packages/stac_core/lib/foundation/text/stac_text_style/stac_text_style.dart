@@ -250,31 +250,68 @@ abstract class StacTextStyle implements StacElement {
 
   /// Creates a [StacTextStyle] from JSON.
   ///
-  /// Decides the concrete subtype using the `type` field.
-  /// - When `type` is `custom`, returns [StacCustomTextStyle].
-  /// - When `type` is `theme`, returns [StacThemeTextStyle].
+  /// Handles different input formats:
+  /// - String (e.g., "bodyMedium") -> [StacThemeTextStyle]
+  /// - Object (e.g., {"color": "#FF2196F3"}) -> [StacCustomTextStyle]
+  /// - [StacTextStyle] values -> pass through
+  ///
+  /// Throws [FormatException] for invalid input including null values.
   ///
   /// Example:
   /// ```json
-  /// { "type": "theme", "style": "titleMedium" }
+  /// { "type": "theme", "textTheme": "titleMedium" }
   /// ```
-  factory StacTextStyle.fromJson(Map<String, dynamic> json) {
-    final typeString = json['type'];
+  factory StacTextStyle.fromJson(dynamic json) {
+    if (json == null) {
+      throw FormatException('StacTextStyle.fromJson called on null object');
+    }
 
-    StacTextStyleType parsedType = StacTextStyleType.custom;
-    for (final value in StacTextStyleType.values) {
-      if (value.name == typeString) {
-        parsedType = value;
-        break;
+    if (json is StacTextStyle) return json;
+
+    if (json is String) {
+      for (final value in StacMaterialTextStyle.values) {
+        if (value.name == json) {
+          return StacTextStyle.fromTheme(textTheme: value);
+        }
+      }
+
+      throw FormatException(
+        'Invalid theme style string "$json". '
+        'Valid values are: ${StacMaterialTextStyle.values.map((e) => e.name).join(', ')}.',
+      );
+    }
+
+    if (json is Map<String, dynamic>) {
+      try {
+        if (json.containsKey('type')) {
+          final typeString = json['type'];
+
+          StacTextStyleType parsedType = StacTextStyleType.custom;
+          for (final value in StacTextStyleType.values) {
+            if (value.name == typeString) {
+              parsedType = value;
+              break;
+            }
+          }
+
+          switch (parsedType) {
+            case StacTextStyleType.custom:
+              return StacCustomTextStyle.fromJson(json);
+            case StacTextStyleType.theme:
+              return StacThemeTextStyle.fromJson(json);
+          }
+        } else {
+          return StacCustomTextStyle.fromJson(json);
+        }
+      } catch (e) {
+        throw FormatException('Failed to parse style object: $json. Error: $e');
       }
     }
 
-    switch (parsedType) {
-      case StacTextStyleType.custom:
-        return StacCustomTextStyle.fromJson(json);
-      case StacTextStyleType.theme:
-        return StacThemeTextStyle.fromJson(json);
-    }
+    throw FormatException(
+      'Unexpected type ${json.runtimeType} for style value: $json. '
+      'Expected theme TextStyle key or custom TextStyle.',
+    );
   }
 
   /// Creates a [StacThemeTextStyle] from a `TextTheme` key.
@@ -284,6 +321,10 @@ abstract class StacTextStyle implements StacElement {
   factory StacTextStyle.fromTheme({required StacMaterialTextStyle textTheme}) {
     return StacThemeTextStyle(textTheme: textTheme);
   }
+
+  /// Converts this [StacTextStyle] to JSON.
+  @override
+  Map<String, dynamic> toJson();
 }
 
 /// A custom text style similar to Flutter's `TextStyle`.

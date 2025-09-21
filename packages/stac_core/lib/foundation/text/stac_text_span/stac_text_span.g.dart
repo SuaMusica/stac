@@ -8,7 +8,7 @@ part of 'stac_text_span.dart';
 
 StacTextSpan _$StacTextSpanFromJson(Map<String, dynamic> json) => StacTextSpan(
   text: json['text'] as String?,
-  style: const StacTextStyleConverter().fromJson(json['style']),
+  style: json['style'] == null ? null : StacTextStyle.fromJson(json['style']),
   children:
       (json['children'] as List<dynamic>?)
           ?.map((e) => StacTextSpan.fromJson(e as Map<String, dynamic>))
@@ -20,7 +20,7 @@ StacTextSpan _$StacTextSpanFromJson(Map<String, dynamic> json) => StacTextSpan(
 Map<String, dynamic> _$StacTextSpanToJson(StacTextSpan instance) =>
     <String, dynamic>{
       'text': instance.text,
-      'style': const StacTextStyleConverter().toJson(instance.style),
+      'style': instance.style?.toJson(),
       'children': instance.children.map((e) => e.toJson()).toList(),
       'onTap': instance.onTap,
     };

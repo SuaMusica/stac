@@ -39,12 +39,10 @@ StacAppBar _$StacAppBarFromJson(Map<String, dynamic> json) => StacAppBar(
   leadingWidth: (json['leadingWidth'] as num?)?.toDouble(),
   toolbarTextStyle: json['toolbarTextStyle'] == null
       ? null
-      : StacTextStyle.fromJson(
-          json['toolbarTextStyle'] as Map<String, dynamic>,
-        ),
+      : StacTextStyle.fromJson(json['toolbarTextStyle']),
   titleTextStyle: json['titleTextStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['titleTextStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['titleTextStyle']),
   systemOverlayStyle: json['systemOverlayStyle'] == null
       ? null
       : StacSystemUIOverlayStyle.fromJson(
