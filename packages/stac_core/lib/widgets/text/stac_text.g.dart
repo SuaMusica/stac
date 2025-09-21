@@ -11,7 +11,7 @@ StacText _$StacTextFromJson(Map<String, dynamic> json) => StacText(
   children: (json['children'] as List<dynamic>?)
       ?.map((e) => StacTextSpan.fromJson(e as Map<String, dynamic>))
       .toList(),
-  style: const StacTextStyleConverter().fromJson(json['style']),
+  style: json['style'] == null ? null : StacTextStyle.fromJson(json['style']),
   copyWithStyle: json['copyWithStyle'] == null
       ? null
       : StacCustomTextStyle.fromJson(
@@ -37,7 +37,7 @@ StacText _$StacTextFromJson(Map<String, dynamic> json) => StacText(
 Map<String, dynamic> _$StacTextToJson(StacText instance) => <String, dynamic>{
   'data': instance.data,
   'children': instance.children?.map((e) => e.toJson()).toList(),
-  'style': const StacTextStyleConverter().toJson(instance.style),
+  'style': instance.style?.toJson(),
   'copyWithStyle': instance.copyWithStyle?.toJson(),
   'textAlign': _$StacTextAlignEnumMap[instance.textAlign],
   'textDirection': _$StacTextDirectionEnumMap[instance.textDirection],

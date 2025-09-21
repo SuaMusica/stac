@@ -13,7 +13,7 @@ StacChip _$StacChipFromJson(Map<String, dynamic> json) => StacChip(
   label: StacWidget.fromJson(json['label'] as Map<String, dynamic>),
   labelStyle: json['labelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['labelStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['labelStyle']),
   labelPadding: json['labelPadding'] == null
       ? null
       : StacEdgeInsets.fromJson(json['labelPadding']),

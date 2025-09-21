@@ -27,9 +27,7 @@ StacTextField _$StacTextFieldFromJson(
     _$StacTextCapitalizationEnumMap,
     json['textCapitalization'],
   ),
-  style: json['style'] == null
-      ? null
-      : StacTextStyle.fromJson(json['style'] as Map<String, dynamic>),
+  style: json['style'] == null ? null : StacTextStyle.fromJson(json['style']),
   textAlign: $enumDecodeNullable(_$StacTextAlignEnumMap, json['textAlign']),
   textDirection: $enumDecodeNullable(
     _$StacTextDirectionEnumMap,
