@@ -64,7 +64,7 @@ class StacTextParser extends StacParser<StacText> {
 
     final overrideParsed = override.parse(context);
     if (overrideParsed == null) return baseStyle;
-    if (baseStyle == null) return overrideParsed;
+    if (baseStyle == null) return null;
 
     return baseStyle.copyWith(
       inherit: override.inherit,
