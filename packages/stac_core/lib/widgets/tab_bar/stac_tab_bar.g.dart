@@ -32,16 +32,14 @@ StacTabBar _$StacTabBarFromJson(Map<String, dynamic> json) => StacTabBar(
   labelColor: json['labelColor'] as String?,
   labelStyle: json['labelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['labelStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['labelStyle']),
   labelPadding: json['labelPadding'] == null
       ? null
       : StacEdgeInsets.fromJson(json['labelPadding']),
   unselectedLabelColor: json['unselectedLabelColor'] as String?,
   unselectedLabelStyle: json['unselectedLabelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(
-          json['unselectedLabelStyle'] as Map<String, dynamic>,
-        ),
+      : StacTextStyle.fromJson(json['unselectedLabelStyle']),
   dragStartBehavior: $enumDecodeNullable(
     _$StacDragStartBehaviorEnumMap,
     json['dragStartBehavior'],

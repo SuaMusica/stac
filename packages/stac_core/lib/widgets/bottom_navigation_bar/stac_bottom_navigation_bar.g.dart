@@ -30,14 +30,10 @@ StacBottomNavigationBar _$StacBottomNavigationBarFromJson(
   ),
   selectedLabelStyle: json['selectedLabelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(
-          json['selectedLabelStyle'] as Map<String, dynamic>,
-        ),
+      : StacTextStyle.fromJson(json['selectedLabelStyle']),
   unselectedLabelStyle: json['unselectedLabelStyle'] == null
       ? null
-      : StacTextStyle.fromJson(
-          json['unselectedLabelStyle'] as Map<String, dynamic>,
-        ),
+      : StacTextStyle.fromJson(json['unselectedLabelStyle']),
   showSelectedLabels: json['showSelectedLabels'] as bool?,
   showUnselectedLabels: json['showUnselectedLabels'] as bool?,
   enableFeedback: json['enableFeedback'] as bool?,

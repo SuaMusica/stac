@@ -14,33 +14,33 @@ StacInputDecoration _$StacInputDecorationFromJson(Map<String, dynamic> json) =>
       labelText: json['labelText'] as String?,
       labelStyle: json['labelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['labelStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['labelStyle']),
       hintText: json['hintText'] as String?,
       hintStyle: json['hintStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['hintStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['hintStyle']),
       helperText: json['helperText'] as String?,
       helperStyle: json['helperStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['helperStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['helperStyle']),
       errorText: json['errorText'] as String?,
       errorStyle: json['errorStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['errorStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['errorStyle']),
       prefixIcon: json['prefixIcon'] == null
           ? null
           : StacWidget.fromJson(json['prefixIcon'] as Map<String, dynamic>),
       prefixText: json['prefixText'] as String?,
       prefixStyle: json['prefixStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['prefixStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['prefixStyle']),
       suffixIcon: json['suffixIcon'] == null
           ? null
           : StacWidget.fromJson(json['suffixIcon'] as Map<String, dynamic>),
       suffixText: json['suffixText'] as String?,
       suffixStyle: json['suffixStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['suffixStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['suffixStyle']),
       isDense: json['isDense'] as bool?,
       contentPadding: json['contentPadding'] == null
           ? null

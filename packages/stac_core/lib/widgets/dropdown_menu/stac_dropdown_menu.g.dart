@@ -37,7 +37,7 @@ StacDropdownMenu _$StacDropdownMenuFromJson(
   ),
   textStyle: json['textStyle'] == null
       ? null
-      : StacTextStyle.fromJson(json['textStyle'] as Map<String, dynamic>),
+      : StacTextStyle.fromJson(json['textStyle']),
   textAlign: $enumDecodeNullable(_$StacTextAlignEnumMap, json['textAlign']),
   inputDecorationTheme: json['inputDecorationTheme'] == null
       ? null
