@@ -1,129 +1,136 @@
+## 1.0.0-dev.7
+
+- feat: Added support for Dart-to-Json conversion via Stac DSL
+- breaking: TextSpan now takes `text` as a pram instead of `data`
+- feat: Improved Stac border and styles
+- Minor bug fixes and improvements
+
 ## 1.0.0-dev.6
 
-* BREAKING: Minimum Flutter SDK is now 3.35.0+
-* BREAKING: Switch — rename `activeColor` → `activeThumbColor` (align with Flutter API). Update your JSON accordingly
-* BREAKING: `ThemeData.bottomAppBarTheme` now expects `BottomAppBarThemeData` (aligned with Flutter 3.35). No JSON change for `StacBottomAppBarTheme`
-* docs: Updated Switch and Radio docs; added guidance for RadioGroup usage
-* chore: Static analysis cleanups for latest Flutter
+- BREAKING: Minimum Flutter SDK is now 3.35.0+
+- BREAKING: Switch — rename `activeColor` → `activeThumbColor` (align with Flutter API). Update your JSON accordingly
+- BREAKING: `ThemeData.bottomAppBarTheme` now expects `BottomAppBarThemeData` (aligned with Flutter 3.35). No JSON change for `StacBottomAppBarTheme`
+- docs: Updated Switch and Radio docs; added guidance for RadioGroup usage
+- chore: Static analysis cleanups for latest Flutter
 
 ## 1.0.0-dev.5
 
-* feat: WASM compatibility for Web/WASM platform support
-* feat: Implemented conditional widget with expression evaluation for dynamic UI logic
-* feat: Added SVG file rendering capability to StacImage by @Potatomonsta
-* feat: Added TextStyle.copyWith() functionality via copyWithStyle property by @Abdalqader27
-* feat: Implemented border side customization in BoxDecoration by @MohamedAbd0
-* feat: Added multi_action_parser support for advanced interaction handling by @antonioacademy10 
-* feat: Integrated SnackBarThemeData for consistent styling by @Potatomonsta
-* feat: Implemented BackdropFilter widget by @manav-m 
-* feat: Introduced color transparency using @ notation (e.g. "primary@50")
-* feat: Added support for Visibility widget by @Abdalqader27
+- feat: WASM compatibility for Web/WASM platform support
+- feat: Implemented conditional widget with expression evaluation for dynamic UI logic
+- feat: Added SVG file rendering capability to StacImage by @Potatomonsta
+- feat: Added TextStyle.copyWith() functionality via copyWithStyle property by @Abdalqader27
+- feat: Implemented border side customization in BoxDecoration by @MohamedAbd0
+- feat: Added multi_action_parser support for advanced interaction handling by @antonioacademy10 
+- feat: Integrated SnackBarThemeData for consistent styling by @Potatomonsta
+- feat: Implemented BackdropFilter widget by @manav-m 
+- feat: Introduced color transparency using @ notation (e.g. "primary@50")
+- feat: Added support for Visibility widget by @Abdalqader27
 
 ## 1.0.0-dev.4
 
-* chore: update pub dependencies
+- chore: update pub dependencies
 
 ## 1.0.0-dev.3
 
-* feat: Replace networkImage with CachedNetwork Image 
-* feat: add ClipRRect widget support 
-* fix: rename ItemTemplate → itemTemplate for consistency by @ayatsuno
-* feat: Add GestureDetector widget support with tap, drag and press handlers 
-* feat: Add Material 3 fixed color and new surface variants to color scheme 
-* feat: add ClipOval widget support by @vijaykarthiktk
-* feat: add support for inkwell widget by @AbhijithKonnayil 
-* feat: add variable support with setValue widget and action 
-* feat: add support to StacDouble class by @AbhijithKonnayil 
+- feat: Replace networkImage with CachedNetwork Image 
+- feat: add ClipRRect widget support 
+- fix: rename ItemTemplate → itemTemplate for consistency by @ayatsuno
+- feat: Add GestureDetector widget support with tap, drag and press handlers 
+- feat: Add Material 3 fixed color and new surface variants to color scheme 
+- feat: add ClipOval widget support by @vijaykarthiktk
+- feat: add support for inkwell widget by @AbhijithKonnayil 
+- feat: add variable support with setValue widget and action 
+- feat: add support to StacDouble class by @AbhijithKonnayil 
 
 ## 1.0.0-dev.2
 
-* feat: update stac theme with new ThemeData classes
-* fix: Make background & onBackground as nullable in ColorScheme by @oyewalekehinde
-* feat: Add support for the DropdownMenu widget by @Odinachi
+- feat: update stac theme with new ThemeData classes
+- fix: Make background & onBackground as nullable in ColorScheme by @oyewalekehinde
+- feat: Add support for the DropdownMenu widget by @Odinachi
 
 ## 1.0.0-dev.1
 
-* feat: Add SliverAppBar & CustomScrollView parser by @nikb7
-* chore: update pub dependencies
-* feat: Add StacDynamicView parser for fetching and rendering API data
+- feat: Add SliverAppBar & CustomScrollView parser by @nikb7
+- chore: update pub dependencies
+- feat: Add StacDynamicView parser for fetching and rendering API data
 
 ## 0.10.0
 
-* Migrate to Flutter 3.29
-* feat: Remove IconAlignment from button widgets by @divyanshub024
+- Migrate to Flutter 3.29
+- feat: Remove IconAlignment from button widgets by @divyanshub024
 
 ## 0.9.3
 
-* Add pub.dev topics 
+- Add pub.dev topics 
 
 ## 0.9.2
 
-* chore: update readme
+- chore: update readme
 
 ## 0.9.0
 
-* feat: Add Stac parser for hero widget by @Yash-Khattar
-* feat: Added support for radio widget by @ishanvaghani
-* feat: Added support for slider widget by @ishanvaghani
-* feat: Add support for Opacity widget by @vinothvino42
-* feat: Add material as default icon type and update icon example by @vinothvino42
-* fix: filledButton onPressed and onLongPress Functionality by @ShalmonAnandas
-* feat: Added support for snackbar by @ishanvaghani
-* feat: Adding Support Placeholder by @MohamedAbd0
-* feat : Adding AspectRatio, FittedBox, LimitedBox Widgets by @MohamedAbd0
-* feat: Update Stac webview @divyanshub024
-* fix: Simplify table border configuration by @divyanshub024
-* feat: Added support for name colors by @ishanvaghani
-* feat: standardize parameters in buttons by @ishanvaghani
-* feat: Update Chip widget params by @divyanshub024
-* fix: change all icon button widget property from child to icon by @vinothvino42
+- feat: Add Stac parser for hero widget by @Yash-Khattar
+- feat: Added support for radio widget by @ishanvaghani
+- feat: Added support for slider widget by @ishanvaghani
+- feat: Add support for Opacity widget by @vinothvino42
+- feat: Add material as default icon type and update icon example by @vinothvino42
+- fix: filledButton onPressed and onLongPress Functionality by @ShalmonAnandas
+- feat: Added support for snackbar by @ishanvaghani
+- feat: Adding Support Placeholder by @MohamedAbd0
+- feat : Adding AspectRatio, FittedBox, LimitedBox Widgets by @MohamedAbd0
+- feat: Update Stac webview @divyanshub024
+- fix: Simplify table border configuration by @divyanshub024
+- feat: Added support for name colors by @ishanvaghani
+- feat: standardize parameters in buttons by @ishanvaghani
+- feat: Update Chip widget params by @divyanshub024
+- fix: change all icon button widget property from child to icon by @vinothvino42
 
 ## 0.8.3
 
-* chore: Rename from Mirai to Stac
-* chore: update readme
+- chore: Rename from Mirai to Stac
+- chore: update readme
 
 ## 0.8.0
 
-* chore: Code Refactoring :) by @divyanshub024
-* feat: Add Row and Column Spacing by @divyanshub024
-* feat: Add Stac carousel view with example by @divyanshub024
-* feat: Add Stac colored box parser by @divyanshub024
-* fix: Replace cache network image with the Image.network. by @divyanshub024
-* feat: Add support for the Divider widget by @bhattkrutij
-* feat: added ability to override stac parsers and action_parsers. by @khanjasir90
-* feat: Added support for stac progress indicators by @ishanvaghani
+- chore: Code Refactoring :) by @divyanshub024
+- feat: Add Row and Column Spacing by @divyanshub024
+- feat: Add Stac carousel view with example by @divyanshub024
+- feat: Add Stac colored box parser by @divyanshub024
+- fix: Replace cache network image with the Image.network. by @divyanshub024
+- feat: Add support for the Divider widget by @bhattkrutij
+- feat: added ability to override stac parsers and action_parsers. by @khanjasir90
+- feat: Added support for stac progress indicators by @ishanvaghani
 
 ## 0.7.2
 
-* update Readme
+- update Readme
 
 ## 0.7.0
 
-* Added support for new widgets: CircleAvatar, GridView, Chip, Wrap & FilledButton
-* Rename scrollView to SingleChildScrollView
-* Added defaultBottomNavigationController & bottomNavigationView
-* A new and better way to define Stac Network Request & Network Result
-* Revamp Stac Form to add form validation, getting form values and submitting Form
-* Use app text theme in text styles 
-* A new way to declare EdgeInsets & BorderRadius
-* A lot of enhancement, refactoring and bug fixes
+- Added support for new widgets: CircleAvatar, GridView, Chip, Wrap & FilledButton
+- Rename scrollView to SingleChildScrollView
+- Added defaultBottomNavigationController & bottomNavigationView
+- A new and better way to define Stac Network Request & Network Result
+- Revamp Stac Form to add form validation, getting form values and submitting Form
+- Use app text theme in text styles 
+- A new way to declare EdgeInsets & BorderRadius
+- A lot of enhancement, refactoring and bug fixes
 
 ## 0.6.0
 
-* chore: update readme by @divyanshub024
-* feat: Add Stac Switch by @kushalmahapatro
-* :bug: fix: Failed assertion 'initialValue == null || controller == null': is not true in TextFormField by @loud-at-heart
-* :rocket: Added support for align widget by @loud-at-heart
-* feat: Added tabAlignment in stac tab bar by @i-asimkhan
-* fix: Added scroll physics export statement in utils.dart by @i-asimkhan
-* fix: Added support for `flex` in expanded widget by @i-asimkhan
-* feat: Added `PageView` widget parser in `stac` widget parsers by @i-asimkhan
-* Update banner by @divyanshub024
-* feat: Use app theme colors in color property by @i-asimkhan
-* feat: Added support for `textScaler` in Stac Text Parser by @i-asimkhan
-* feat: Add Stac Network Widget by @divyanshub024
-* feat: Added refresh-indicator to get a fresh `listView` json from the remote URL by @i-asimkhan
+- chore: update readme by @divyanshub024
+- feat: Add Stac Switch by @kushalmahapatro
+- :bug: fix: Failed assertion 'initialValue == null || controller == null': is not true in TextFormField by @loud-at-heart
+- :rocket: Added support for align widget by @loud-at-heart
+- feat: Added tabAlignment in stac tab bar by @i-asimkhan
+- fix: Added scroll physics export statement in utils.dart by @i-asimkhan
+- fix: Added support for `flex` in expanded widget by @i-asimkhan
+- feat: Added `PageView` widget parser in `stac` widget parsers by @i-asimkhan
+- Update banner by @divyanshub024
+- feat: Use app theme colors in color property by @i-asimkhan
+- feat: Added support for `textScaler` in Stac Text Parser by @i-asimkhan
+- feat: Add Stac Network Widget by @divyanshub024
+- feat: Added refresh-indicator to get a fresh `listView` json from the remote URL by @i-asimkhan
 
 ## 0.5.1
 
@@ -168,36 +175,36 @@
 
 ## 0.2.0
 
-* BREAKING: feat: Call `Stac.initialize` to initialize Stac (#103)
-* feat: Add support for iconTheme (#91)
-* feat: Add FractionallySizedBox widget (#100)
-* feat: Add support for elevatedButtonTheme (#92)
-* feat: Add support for outlinedButtonTheme (#93)
-* feat: Add support for iconButtonTheme (#94)
-* feat: Add center widget (#102)
-* feat: Add support to inject dio instance (#104)
-* feat: Add support for InputFormatters (#111)
-* feat: Add support for InputValidation (#106)
-* feat: Add `BoxDecoration` support for Container (#112)
-* feat: Add Stack and Positioned widget (#114)
-* chore: Update Readme (#101)
+- BREAKING: feat: Call `Stac.initialize` to initialize Stac (#103)
+- feat: Add support for iconTheme (#91)
+- feat: Add FractionallySizedBox widget (#100)
+- feat: Add support for elevatedButtonTheme (#92)
+- feat: Add support for outlinedButtonTheme (#93)
+- feat: Add support for iconButtonTheme (#94)
+- feat: Add center widget (#102)
+- feat: Add support to inject dio instance (#104)
+- feat: Add support for InputFormatters (#111)
+- feat: Add support for InputValidation (#106)
+- feat: Add `BoxDecoration` support for Container (#112)
+- feat: Add Stack and Positioned widget (#114)
+- chore: Update Readme (#101)
 
 ## 0.1.0
 
-* Added Stac Theme support
-* Added new Stac Tab Parser
-* Added BoxFit support for Stac Image 
-* Fixed AppBar size issue
-* Updated examples in Stac Gallery
+- Added Stac Theme support
+- Added new Stac Tab Parser
+- Added BoxFit support for Stac Image 
+- Fixed AppBar size issue
+- Updated examples in Stac Gallery
 
 ## 0.0.5
 
-* Update assets
+- Update assets
 
 ## 0.0.2
 
-* Fix README assets
+- Fix README assets
 
 ## 0.0.1
 
-* initial release 🎉
+- initial release 🎉
