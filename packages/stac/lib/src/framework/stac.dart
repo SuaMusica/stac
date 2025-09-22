@@ -8,7 +8,6 @@ import 'package:stac/src/services/stac_cloud.dart';
 import 'package:stac_core/actions/network_request/stac_network_request.dart';
 import 'package:stac_core/core/stac_options.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_logger/stac_logger.dart';
 
 typedef ErrorWidgetBuilder = Widget Function(
   BuildContext context,
@@ -58,7 +57,6 @@ class Stac extends StatelessWidget {
     Map<String, dynamic>? json,
     BuildContext context,
   ) {
-    Log.d('fromJson: $json');
     return StacService.fromJson(json, context);
   }
 

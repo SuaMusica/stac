@@ -3,7 +3,7 @@
   "body": {
     "type": "refreshIndicator",
     "onRefresh": {
-      "actionType": "request",
+      "actionType": "networkRequest",
       "url": "https://raw.githubusercontent.com/StacDev/stac/main/examples/stac_gallery/assets/json/list_view_example.json",
       "method": "get",
       "contentType": "application/json"

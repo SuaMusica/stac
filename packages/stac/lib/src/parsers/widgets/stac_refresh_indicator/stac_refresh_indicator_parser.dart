@@ -49,8 +49,7 @@ class _RefreshIndicatorWidgetState extends State<_RefreshIndicatorWidget> {
       displacement: widget.model.displacement ?? 40.0,
       edgeOffset: widget.model.edgeOffset ?? 0.0,
       onRefresh: () async {
-        Response result =
-            await widget.model.onRefresh?.parse(context) as Response;
+        Response result = await widget.model.onRefresh?.parse(context);
 
         if (context.mounted) {
           if (result.data != null) {
