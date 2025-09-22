@@ -28,8 +28,8 @@ abstract class StacTabBarThemeData with _$StacTabBarThemeData {
 }
 
 extension StacTabBarThemeDataParser on StacTabBarThemeData {
-  TabBarTheme? parse(BuildContext context) {
-    return TabBarTheme(
+  TabBarThemeData? parse(BuildContext context) {
+    return TabBarThemeData(
       indicator: indicator.parse(context),
       indicatorColor: indicatorColor.toColor(context),
       indicatorSize: indicatorSize,
