@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac/src/parsers/widgets/stac_text_button/stac_text_button.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacTextButtonParser extends StacParser<StacTextButton> {
@@ -20,18 +21,23 @@ class StacTextButtonParser extends StacParser<StacTextButton> {
     return TextButton(
       onPressed: model.onPressed == null
           ? null
-          : () => Stac.onCallFromJson(model.onPressed, context),
+          : () => Stac.onCallFromJson(model.onPressed?.toJson(), context),
       onLongPress: model.onLongPress == null
           ? null
-          : () => Stac.onCallFromJson(model.onLongPress, context),
-      onHover: (bool value) => value == false ? null : model.onHover,
-      onFocusChange: (bool value) =>
-          value == false ? null : model.onFocusChange,
+          : () => Stac.onCallFromJson(model.onLongPress?.toJson(), context),
+      onHover: model.onHover == null
+          ? null
+          : (bool value) =>
+              Stac.onCallFromJson(model.onHover?.toJson(), context),
+      onFocusChange: model.onFocusChange == null
+          ? null
+          : (bool value) =>
+              Stac.onCallFromJson(model.onFocusChange?.toJson(), context),
       style: model.style?.parseTextButton(context),
-      autofocus: model.autofocus,
-      clipBehavior: model.clipBehavior,
+      autofocus: model.autofocus ?? false,
+      clipBehavior: model.clipBehavior?.parse,
       isSemanticButton: model.isSemanticButton,
-      child: Stac.fromJson(model.child, context) ?? const SizedBox(),
+      child: model.child?.parse(context) ?? const SizedBox(),
     );
   }
 }

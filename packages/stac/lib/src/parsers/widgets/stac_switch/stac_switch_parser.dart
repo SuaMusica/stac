@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/theme/stac_material_color/stac_material_color.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_switch.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_drag_start_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_material_tap_target_size_parser.dart';
+import 'package:stac/stac.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacSwitchParser extends StacParser<StacSwitch> {
   const StacSwitchParser();
 
-  /// The reason this type does not come from [WidgetType] is because any value cannot be named as "switch".
   @override
   String get type => "switch";
 
@@ -45,8 +44,9 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
   @override
   Widget build(BuildContext context) {
     final StacSwitch model = widget.model;
+    final StacSwitchType type = model.switchType ?? StacSwitchType.material;
 
-    switch (model.switchType) {
+    switch (type) {
       case StacSwitchType.cupertino:
         return _buildCupertinoSwitch(context, model);
       case StacSwitchType.adaptive:
@@ -59,9 +59,7 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
   /// Change the value of the switch as the user toggles it.
   void _onChanged(bool value) {
     isSelected = value;
-    if (widget.model.onChanged != null) {
-      Stac.onCallFromJson(widget.model.onChanged, context);
-    }
+    widget.model.onChanged?.parse(context);
     setState(() {});
   }
 
@@ -80,15 +78,16 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
     return CupertinoSwitch(
       value: isSelected,
       onChanged: _onChanged,
-      activeTrackColor: model.activeThumbColor?.toColor(context),
-      inactiveTrackColor: model.trackColor?.parse(context),
-      thumbColor: model.thumbColor?.parse(context),
+      activeTrackColor: model.activeTrackColor?.toColor(context),
+      inactiveTrackColor: model.inactiveTrackColor?.toColor(context),
+      thumbColor: model.thumbColor?.toColor(context),
       applyTheme: model.applyTheme,
       focusColor: model.focusColor?.toColor(context),
       onLabelColor: model.onLabelColor?.toColor(context),
       offLabelColor: model.offLabelColor?.toColor(context),
-      autofocus: model.autofocus,
-      dragStartBehavior: model.dragStartBehavior,
+      autofocus: model.autofocus ?? false,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
     );
   }
 
@@ -106,25 +105,25 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
       inactiveThumbImage: model.inactiveThumbImage != null
           ? NetworkImage(model.inactiveThumbImage!)
           : null,
-      materialTapTargetSize: model.materialTapTargetSize,
-      thumbColor: WidgetStateProperty.all(model.thumbColor?.parse(context)),
-      trackColor: WidgetStateProperty.all(model.trackColor?.parse(context)),
+      materialTapTargetSize: model.materialTapTargetSize?.parse,
+      thumbColor: WidgetStateProperty.all(model.thumbColor?.toColor(context)),
+      trackColor: WidgetStateProperty.all(model.trackColor?.toColor(context)),
       trackOutlineColor: WidgetStateProperty.all(
-        model.trackOutlineColor?.parse(context),
+        model.trackOutlineColor?.toColor(context),
       ),
-      trackOutlineWidth:
-          WidgetStateProperty.all(model.trackOutlineWidth?.parse),
+      trackOutlineWidth: WidgetStateProperty.all(model.trackOutlineWidth),
       thumbIcon: WidgetStateProperty.all(
-        Stac.fromJson(model.thumbIcon, context) as Icon?,
+        model.thumbIcon?.parse(context) as Icon?,
       ),
-      dragStartBehavior: model.dragStartBehavior,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
       focusColor: model.focusColor?.toColor(context),
       hoverColor: model.hoverColor?.toColor(context),
       overlayColor: WidgetStateProperty.all(
-        model.overlayColor?.parse(context),
+        model.overlayColor?.toColor(context),
       ),
-      splashRadius: model.splashRadius?.parse,
-      autofocus: model.autofocus,
+      splashRadius: model.splashRadius ?? 0.0,
+      autofocus: model.autofocus ?? false,
       applyCupertinoTheme: model.applyCupertinoTheme,
     );
   }
@@ -143,25 +142,25 @@ class _SwitchWidgetState extends State<_SwitchWidget> {
       inactiveThumbImage: model.inactiveThumbImage != null
           ? NetworkImage(model.inactiveThumbImage!)
           : null,
-      thumbColor: WidgetStateProperty.all(model.thumbColor?.parse(context)),
-      trackColor: WidgetStateProperty.all(model.trackColor?.parse(context)),
+      thumbColor: WidgetStateProperty.all(model.thumbColor?.toColor(context)),
+      trackColor: WidgetStateProperty.all(model.trackColor?.toColor(context)),
       trackOutlineColor: WidgetStateProperty.all(
-        model.trackOutlineColor?.parse(context),
+        model.trackOutlineColor?.toColor(context),
       ),
-      trackOutlineWidth:
-          WidgetStateProperty.all(model.trackOutlineWidth?.parse),
+      trackOutlineWidth: WidgetStateProperty.all(model.trackOutlineWidth),
       thumbIcon: WidgetStateProperty.all(
-        Stac.fromJson(model.thumbIcon, context) as Icon?,
+        model.thumbIcon?.parse(context) as Icon?,
       ),
-      materialTapTargetSize: model.materialTapTargetSize,
-      dragStartBehavior: model.dragStartBehavior,
+      materialTapTargetSize: model.materialTapTargetSize?.parse,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
       focusColor: model.focusColor?.toColor(context),
       hoverColor: model.hoverColor?.toColor(context),
       overlayColor: WidgetStateProperty.all(
-        model.overlayColor?.parse(context),
+        model.overlayColor?.toColor(context),
       ),
-      splashRadius: model.splashRadius?.parse,
-      autofocus: model.autofocus,
+      splashRadius: model.splashRadius ?? 0.0,
+      autofocus: model.autofocus ?? false,
     );
   }
 }

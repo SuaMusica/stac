@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -127,22 +126,6 @@ abstract mixin class $StacTextThemeCopyWith<$Res> {
       StacTextStyle? labelLarge,
       StacTextStyle? labelMedium,
       StacTextStyle? labelSmall});
-
-  $StacTextStyleCopyWith<$Res>? get displayLarge;
-  $StacTextStyleCopyWith<$Res>? get displayMedium;
-  $StacTextStyleCopyWith<$Res>? get displaySmall;
-  $StacTextStyleCopyWith<$Res>? get headlineLarge;
-  $StacTextStyleCopyWith<$Res>? get headlineMedium;
-  $StacTextStyleCopyWith<$Res>? get headlineSmall;
-  $StacTextStyleCopyWith<$Res>? get titleLarge;
-  $StacTextStyleCopyWith<$Res>? get titleMedium;
-  $StacTextStyleCopyWith<$Res>? get titleSmall;
-  $StacTextStyleCopyWith<$Res>? get bodyLarge;
-  $StacTextStyleCopyWith<$Res>? get bodyMedium;
-  $StacTextStyleCopyWith<$Res>? get bodySmall;
-  $StacTextStyleCopyWith<$Res>? get labelLarge;
-  $StacTextStyleCopyWith<$Res>? get labelMedium;
-  $StacTextStyleCopyWith<$Res>? get labelSmall;
 }
 
 /// @nodoc
@@ -237,215 +220,255 @@ class _$StacTextThemeCopyWithImpl<$Res>
               as StacTextStyle?,
     ));
   }
+}
 
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get displayLarge {
-    if (_self.displayLarge == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacTextTheme].
+extension StacTextThemePatterns on StacTextTheme {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacTextTheme value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacTextTheme() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacTextStyleCopyWith<$Res>(_self.displayLarge!, (value) {
-      return _then(_self.copyWith(displayLarge: value));
-    });
   }
 
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get displayMedium {
-    if (_self.displayMedium == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.displayMedium!, (value) {
-      return _then(_self.copyWith(displayMedium: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacTextTheme value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTextTheme():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get displaySmall {
-    if (_self.displaySmall == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.displaySmall!, (value) {
-      return _then(_self.copyWith(displaySmall: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacTextTheme value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTextTheme() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
   }
 
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headlineLarge {
-    if (_self.headlineLarge == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.headlineLarge!, (value) {
-      return _then(_self.copyWith(headlineLarge: value));
-    });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            StacTextStyle? displayLarge,
+            StacTextStyle? displayMedium,
+            StacTextStyle? displaySmall,
+            StacTextStyle? headlineLarge,
+            StacTextStyle? headlineMedium,
+            StacTextStyle? headlineSmall,
+            StacTextStyle? titleLarge,
+            StacTextStyle? titleMedium,
+            StacTextStyle? titleSmall,
+            StacTextStyle? bodyLarge,
+            StacTextStyle? bodyMedium,
+            StacTextStyle? bodySmall,
+            StacTextStyle? labelLarge,
+            StacTextStyle? labelMedium,
+            StacTextStyle? labelSmall)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacTextTheme() when $default != null:
+        return $default(
+            _that.displayLarge,
+            _that.displayMedium,
+            _that.displaySmall,
+            _that.headlineLarge,
+            _that.headlineMedium,
+            _that.headlineSmall,
+            _that.titleLarge,
+            _that.titleMedium,
+            _that.titleSmall,
+            _that.bodyLarge,
+            _that.bodyMedium,
+            _that.bodySmall,
+            _that.labelLarge,
+            _that.labelMedium,
+            _that.labelSmall);
+      case _:
+        return orElse();
+    }
   }
 
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headlineMedium {
-    if (_self.headlineMedium == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.headlineMedium!, (value) {
-      return _then(_self.copyWith(headlineMedium: value));
-    });
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            StacTextStyle? displayLarge,
+            StacTextStyle? displayMedium,
+            StacTextStyle? displaySmall,
+            StacTextStyle? headlineLarge,
+            StacTextStyle? headlineMedium,
+            StacTextStyle? headlineSmall,
+            StacTextStyle? titleLarge,
+            StacTextStyle? titleMedium,
+            StacTextStyle? titleSmall,
+            StacTextStyle? bodyLarge,
+            StacTextStyle? bodyMedium,
+            StacTextStyle? bodySmall,
+            StacTextStyle? labelLarge,
+            StacTextStyle? labelMedium,
+            StacTextStyle? labelSmall)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTextTheme():
+        return $default(
+            _that.displayLarge,
+            _that.displayMedium,
+            _that.displaySmall,
+            _that.headlineLarge,
+            _that.headlineMedium,
+            _that.headlineSmall,
+            _that.titleLarge,
+            _that.titleMedium,
+            _that.titleSmall,
+            _that.bodyLarge,
+            _that.bodyMedium,
+            _that.bodySmall,
+            _that.labelLarge,
+            _that.labelMedium,
+            _that.labelSmall);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headlineSmall {
-    if (_self.headlineSmall == null) {
-      return null;
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            StacTextStyle? displayLarge,
+            StacTextStyle? displayMedium,
+            StacTextStyle? displaySmall,
+            StacTextStyle? headlineLarge,
+            StacTextStyle? headlineMedium,
+            StacTextStyle? headlineSmall,
+            StacTextStyle? titleLarge,
+            StacTextStyle? titleMedium,
+            StacTextStyle? titleSmall,
+            StacTextStyle? bodyLarge,
+            StacTextStyle? bodyMedium,
+            StacTextStyle? bodySmall,
+            StacTextStyle? labelLarge,
+            StacTextStyle? labelMedium,
+            StacTextStyle? labelSmall)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTextTheme() when $default != null:
+        return $default(
+            _that.displayLarge,
+            _that.displayMedium,
+            _that.displaySmall,
+            _that.headlineLarge,
+            _that.headlineMedium,
+            _that.headlineSmall,
+            _that.titleLarge,
+            _that.titleMedium,
+            _that.titleSmall,
+            _that.bodyLarge,
+            _that.bodyMedium,
+            _that.bodySmall,
+            _that.labelLarge,
+            _that.labelMedium,
+            _that.labelSmall);
+      case _:
+        return null;
     }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headlineSmall!, (value) {
-      return _then(_self.copyWith(headlineSmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleLarge {
-    if (_self.titleLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleLarge!, (value) {
-      return _then(_self.copyWith(titleLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleMedium {
-    if (_self.titleMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleMedium!, (value) {
-      return _then(_self.copyWith(titleMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleSmall {
-    if (_self.titleSmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleSmall!, (value) {
-      return _then(_self.copyWith(titleSmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get bodyLarge {
-    if (_self.bodyLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.bodyLarge!, (value) {
-      return _then(_self.copyWith(bodyLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get bodyMedium {
-    if (_self.bodyMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.bodyMedium!, (value) {
-      return _then(_self.copyWith(bodyMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get bodySmall {
-    if (_self.bodySmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.bodySmall!, (value) {
-      return _then(_self.copyWith(bodySmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelLarge {
-    if (_self.labelLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelLarge!, (value) {
-      return _then(_self.copyWith(labelLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelMedium {
-    if (_self.labelMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelMedium!, (value) {
-      return _then(_self.copyWith(labelMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelSmall {
-    if (_self.labelSmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelSmall!, (value) {
-      return _then(_self.copyWith(labelSmall: value));
-    });
   }
 }
 
@@ -604,37 +627,6 @@ abstract mixin class _$StacTextThemeCopyWith<$Res>
       StacTextStyle? labelLarge,
       StacTextStyle? labelMedium,
       StacTextStyle? labelSmall});
-
-  @override
-  $StacTextStyleCopyWith<$Res>? get displayLarge;
-  @override
-  $StacTextStyleCopyWith<$Res>? get displayMedium;
-  @override
-  $StacTextStyleCopyWith<$Res>? get displaySmall;
-  @override
-  $StacTextStyleCopyWith<$Res>? get headlineLarge;
-  @override
-  $StacTextStyleCopyWith<$Res>? get headlineMedium;
-  @override
-  $StacTextStyleCopyWith<$Res>? get headlineSmall;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleLarge;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleMedium;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleSmall;
-  @override
-  $StacTextStyleCopyWith<$Res>? get bodyLarge;
-  @override
-  $StacTextStyleCopyWith<$Res>? get bodyMedium;
-  @override
-  $StacTextStyleCopyWith<$Res>? get bodySmall;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelLarge;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelMedium;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelSmall;
 }
 
 /// @nodoc
@@ -728,216 +720,6 @@ class __$StacTextThemeCopyWithImpl<$Res>
           : labelSmall // ignore: cast_nullable_to_non_nullable
               as StacTextStyle?,
     ));
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get displayLarge {
-    if (_self.displayLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.displayLarge!, (value) {
-      return _then(_self.copyWith(displayLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get displayMedium {
-    if (_self.displayMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.displayMedium!, (value) {
-      return _then(_self.copyWith(displayMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get displaySmall {
-    if (_self.displaySmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.displaySmall!, (value) {
-      return _then(_self.copyWith(displaySmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headlineLarge {
-    if (_self.headlineLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headlineLarge!, (value) {
-      return _then(_self.copyWith(headlineLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headlineMedium {
-    if (_self.headlineMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headlineMedium!, (value) {
-      return _then(_self.copyWith(headlineMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headlineSmall {
-    if (_self.headlineSmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headlineSmall!, (value) {
-      return _then(_self.copyWith(headlineSmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleLarge {
-    if (_self.titleLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleLarge!, (value) {
-      return _then(_self.copyWith(titleLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleMedium {
-    if (_self.titleMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleMedium!, (value) {
-      return _then(_self.copyWith(titleMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleSmall {
-    if (_self.titleSmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleSmall!, (value) {
-      return _then(_self.copyWith(titleSmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get bodyLarge {
-    if (_self.bodyLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.bodyLarge!, (value) {
-      return _then(_self.copyWith(bodyLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get bodyMedium {
-    if (_self.bodyMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.bodyMedium!, (value) {
-      return _then(_self.copyWith(bodyMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get bodySmall {
-    if (_self.bodySmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.bodySmall!, (value) {
-      return _then(_self.copyWith(bodySmall: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelLarge {
-    if (_self.labelLarge == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelLarge!, (value) {
-      return _then(_self.copyWith(labelLarge: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelMedium {
-    if (_self.labelMedium == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelMedium!, (value) {
-      return _then(_self.copyWith(labelMedium: value));
-    });
-  }
-
-  /// Create a copy of StacTextTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelSmall {
-    if (_self.labelSmall == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelSmall!, (value) {
-      return _then(_self.copyWith(labelSmall: value));
-    });
   }
 }
 

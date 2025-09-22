@@ -1,9 +1,14 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac/src/parsers/widgets/stac_list_view/stac_list_view.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_drag_start_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_scroll_physics_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_scroll_view_keyboard_dismiss_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_axis_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_core/widgets/list_view/stac_list_view.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacListViewParser extends StacParser<StacListView> {
@@ -21,26 +26,32 @@ class StacListViewParser extends StacParser<StacListView> {
   @override
   Widget parse(BuildContext context, StacListView model) {
     return ListView.separated(
-      scrollDirection: model.scrollDirection,
-      reverse: model.reverse,
+      scrollDirection: model.scrollDirection?.parse ?? Axis.vertical,
+      reverse: model.reverse ?? false,
       controller: controller,
       primary: model.primary,
       physics: model.physics?.parse,
-      shrinkWrap: model.shrinkWrap,
+      shrinkWrap: model.shrinkWrap ?? false,
       padding: model.padding?.parse,
-      addAutomaticKeepAlives: model.addAutomaticKeepAlives,
-      addRepaintBoundaries: model.addRepaintBoundaries,
-      addSemanticIndexes: model.addSemanticIndexes,
-      cacheExtent: model.cacheExtent?.parse,
-      dragStartBehavior: model.dragStartBehavior,
-      keyboardDismissBehavior: model.keyboardDismissBehavior,
+      addAutomaticKeepAlives: model.addAutomaticKeepAlives ?? true,
+      addRepaintBoundaries: model.addRepaintBoundaries ?? true,
+      addSemanticIndexes: model.addSemanticIndexes ?? true,
+      cacheExtent: model.cacheExtent,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+      keyboardDismissBehavior: model.keyboardDismissBehavior?.parse ??
+          ScrollViewKeyboardDismissBehavior.manual,
       restorationId: model.restorationId,
-      clipBehavior: model.clipBehavior,
-      itemCount: model.children.length,
-      itemBuilder: (context, index) =>
-          Stac.fromJson(model.children[index], context),
+      clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
+      itemCount: model.children?.length ?? 0,
+      itemBuilder: (context, index) {
+        if (model.children == null || model.children!.isEmpty) {
+          return const SizedBox();
+        }
+        return model.children![index].parse(context);
+      },
       separatorBuilder: (context, _) =>
-          Stac.fromJson(model.separator, context) ?? const SizedBox(),
+          model.separator.parse(context) ?? const SizedBox(),
     );
   }
 }

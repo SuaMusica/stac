@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_side_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_box_constraints_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
 import 'package:stac/stac.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_chip_theme_data.freezed.dart';
 part 'stac_chip_theme_data.g.dart';
@@ -51,9 +57,9 @@ extension StacChipThemeDataParser on StacChipThemeData {
       selectedShadowColor: selectedShadowColor?.toColor(context),
       showCheckmark: showCheckmark,
       checkmarkColor: checkmarkColor?.toColor(context),
-      labelPadding: labelPadding.parse,
-      padding: padding.parse,
-      side: side.parse(context),
+      labelPadding: labelPadding?.parse,
+      padding: padding?.parse,
+      side: side?.parse(context),
       shape: shape?.parse(context) as OutlinedBorder,
       labelStyle: labelStyle?.parse(context),
       secondaryLabelStyle: secondaryLabelStyle?.parse(context),

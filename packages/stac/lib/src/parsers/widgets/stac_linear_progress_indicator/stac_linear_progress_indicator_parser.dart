@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_radius_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacLinearProgressIndicatorParser
     extends StacParser<StacLinearProgressIndicator> {

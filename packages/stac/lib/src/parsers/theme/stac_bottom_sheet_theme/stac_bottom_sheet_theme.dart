@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_border/stac_border.dart';
-import 'package:stac/src/parsers/widgets/stac_box_constraints/stac_box_constraints.dart';
-import 'package:stac/src/parsers/widgets/stac_size/stac_size.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_box_constraints_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_size_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_bottom_sheet_theme.freezed.dart';
 part 'stac_bottom_sheet_theme.g.dart';
@@ -43,7 +44,7 @@ extension StacBottomSheetThemeDataParser on StacBottomSheetThemeData {
       shape: shape?.parse(context),
       showDragHandle: showDragHandle,
       dragHandleColor: dragHandleColor.toColor(context),
-      dragHandleSize: dragHandleSize.parse,
+      dragHandleSize: dragHandleSize?.parse,
       clipBehavior: clipBehavior,
       constraints: constraints?.parse,
     );

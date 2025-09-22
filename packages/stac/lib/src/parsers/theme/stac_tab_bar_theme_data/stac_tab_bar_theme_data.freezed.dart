@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -102,11 +101,6 @@ abstract mixin class $StacTabBarThemeDataCopyWith<$Res> {
       String? unselectedLabelColor,
       StacTextStyle? unselectedLabelStyle,
       String? overlayColor});
-
-  $StacBoxDecorationCopyWith<$Res>? get indicator;
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -176,61 +170,225 @@ class _$StacTabBarThemeDataCopyWithImpl<$Res>
               as String?,
     ));
   }
+}
 
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxDecorationCopyWith<$Res>? get indicator {
-    if (_self.indicator == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacTabBarThemeData].
+extension StacTabBarThemeDataPatterns on StacTabBarThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacTabBarThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacTabBarThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacBoxDecorationCopyWith<$Res>(_self.indicator!, (value) {
-      return _then(_self.copyWith(indicator: value));
-    });
   }
 
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacTabBarThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTabBarThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacTabBarThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTabBarThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
   }
 
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
-    });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            StacBoxDecoration? indicator,
+            String? indicatorColor,
+            TabBarIndicatorSize? indicatorSize,
+            String? dividerColor,
+            String? labelColor,
+            StacEdgeInsets? labelPadding,
+            StacTextStyle? labelStyle,
+            String? unselectedLabelColor,
+            StacTextStyle? unselectedLabelStyle,
+            String? overlayColor)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacTabBarThemeData() when $default != null:
+        return $default(
+            _that.indicator,
+            _that.indicatorColor,
+            _that.indicatorSize,
+            _that.dividerColor,
+            _that.labelColor,
+            _that.labelPadding,
+            _that.labelStyle,
+            _that.unselectedLabelColor,
+            _that.unselectedLabelStyle,
+            _that.overlayColor);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            StacBoxDecoration? indicator,
+            String? indicatorColor,
+            TabBarIndicatorSize? indicatorSize,
+            String? dividerColor,
+            String? labelColor,
+            StacEdgeInsets? labelPadding,
+            StacTextStyle? labelStyle,
+            String? unselectedLabelColor,
+            StacTextStyle? unselectedLabelStyle,
+            String? overlayColor)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTabBarThemeData():
+        return $default(
+            _that.indicator,
+            _that.indicatorColor,
+            _that.indicatorSize,
+            _that.dividerColor,
+            _that.labelColor,
+            _that.labelPadding,
+            _that.labelStyle,
+            _that.unselectedLabelColor,
+            _that.unselectedLabelStyle,
+            _that.overlayColor);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            StacBoxDecoration? indicator,
+            String? indicatorColor,
+            TabBarIndicatorSize? indicatorSize,
+            String? dividerColor,
+            String? labelColor,
+            StacEdgeInsets? labelPadding,
+            StacTextStyle? labelStyle,
+            String? unselectedLabelColor,
+            StacTextStyle? unselectedLabelStyle,
+            String? overlayColor)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTabBarThemeData() when $default != null:
+        return $default(
+            _that.indicator,
+            _that.indicatorColor,
+            _that.indicatorSize,
+            _that.dividerColor,
+            _that.labelColor,
+            _that.labelPadding,
+            _that.labelStyle,
+            _that.unselectedLabelColor,
+            _that.unselectedLabelStyle,
+            _that.overlayColor);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -355,15 +513,6 @@ abstract mixin class _$StacTabBarThemeDataCopyWith<$Res>
       String? unselectedLabelColor,
       StacTextStyle? unselectedLabelStyle,
       String? overlayColor});
-
-  @override
-  $StacBoxDecorationCopyWith<$Res>? get indicator;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -432,62 +581,6 @@ class __$StacTabBarThemeDataCopyWithImpl<$Res>
           : overlayColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxDecorationCopyWith<$Res>? get indicator {
-    if (_self.indicator == null) {
-      return null;
-    }
-
-    return $StacBoxDecorationCopyWith<$Res>(_self.indicator!, (value) {
-      return _then(_self.copyWith(indicator: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacTabBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
-    });
   }
 }
 

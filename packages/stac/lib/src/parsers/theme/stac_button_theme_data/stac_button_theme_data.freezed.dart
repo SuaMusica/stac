@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -125,8 +124,6 @@ abstract mixin class $StacButtonThemeDataCopyWith<$Res> {
       StacColorScheme? colorScheme,
       MaterialTapTargetSize? materialTapTargetSize});
 
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
 }
 
@@ -227,34 +224,6 @@ class _$StacButtonThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacColorSchemeCopyWith<$Res>? get colorScheme {
     if (_self.colorScheme == null) {
       return null;
@@ -263,6 +232,256 @@ class _$StacButtonThemeDataCopyWithImpl<$Res>
     return $StacColorSchemeCopyWith<$Res>(_self.colorScheme!, (value) {
       return _then(_self.copyWith(colorScheme: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [StacButtonThemeData].
+extension StacButtonThemeDataPatterns on StacButtonThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacButtonThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacButtonThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacButtonThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacButtonThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacButtonThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacButtonThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            ButtonTextTheme textTheme,
+            double minWidth,
+            double height,
+            StacEdgeInsets? padding,
+            StacShapeBorder? shape,
+            ButtonBarLayoutBehavior layoutBehavior,
+            bool alignedDropdown,
+            String? buttonColor,
+            String? disabledColor,
+            String? focusColor,
+            String? hoverColor,
+            String? highlightColor,
+            String? splashColor,
+            StacColorScheme? colorScheme,
+            MaterialTapTargetSize? materialTapTargetSize)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacButtonThemeData() when $default != null:
+        return $default(
+            _that.textTheme,
+            _that.minWidth,
+            _that.height,
+            _that.padding,
+            _that.shape,
+            _that.layoutBehavior,
+            _that.alignedDropdown,
+            _that.buttonColor,
+            _that.disabledColor,
+            _that.focusColor,
+            _that.hoverColor,
+            _that.highlightColor,
+            _that.splashColor,
+            _that.colorScheme,
+            _that.materialTapTargetSize);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            ButtonTextTheme textTheme,
+            double minWidth,
+            double height,
+            StacEdgeInsets? padding,
+            StacShapeBorder? shape,
+            ButtonBarLayoutBehavior layoutBehavior,
+            bool alignedDropdown,
+            String? buttonColor,
+            String? disabledColor,
+            String? focusColor,
+            String? hoverColor,
+            String? highlightColor,
+            String? splashColor,
+            StacColorScheme? colorScheme,
+            MaterialTapTargetSize? materialTapTargetSize)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacButtonThemeData():
+        return $default(
+            _that.textTheme,
+            _that.minWidth,
+            _that.height,
+            _that.padding,
+            _that.shape,
+            _that.layoutBehavior,
+            _that.alignedDropdown,
+            _that.buttonColor,
+            _that.disabledColor,
+            _that.focusColor,
+            _that.hoverColor,
+            _that.highlightColor,
+            _that.splashColor,
+            _that.colorScheme,
+            _that.materialTapTargetSize);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            ButtonTextTheme textTheme,
+            double minWidth,
+            double height,
+            StacEdgeInsets? padding,
+            StacShapeBorder? shape,
+            ButtonBarLayoutBehavior layoutBehavior,
+            bool alignedDropdown,
+            String? buttonColor,
+            String? disabledColor,
+            String? focusColor,
+            String? hoverColor,
+            String? highlightColor,
+            String? splashColor,
+            StacColorScheme? colorScheme,
+            MaterialTapTargetSize? materialTapTargetSize)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacButtonThemeData() when $default != null:
+        return $default(
+            _that.textTheme,
+            _that.minWidth,
+            _that.height,
+            _that.padding,
+            _that.shape,
+            _that.layoutBehavior,
+            _that.alignedDropdown,
+            _that.buttonColor,
+            _that.disabledColor,
+            _that.focusColor,
+            _that.hoverColor,
+            _that.highlightColor,
+            _that.splashColor,
+            _that.colorScheme,
+            _that.materialTapTargetSize);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -426,10 +645,6 @@ abstract mixin class _$StacButtonThemeDataCopyWith<$Res>
       MaterialTapTargetSize? materialTapTargetSize});
 
   @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
 }
 
@@ -524,34 +739,6 @@ class __$StacButtonThemeDataCopyWithImpl<$Res>
           : materialTapTargetSize // ignore: cast_nullable_to_non_nullable
               as MaterialTapTargetSize?,
     ));
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacButtonThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
   /// Create a copy of StacButtonThemeData

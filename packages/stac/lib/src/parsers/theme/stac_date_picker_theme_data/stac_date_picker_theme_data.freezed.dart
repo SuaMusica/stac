@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -241,21 +240,6 @@ abstract mixin class $StacDatePickerThemeDataCopyWith<$Res> {
       StacInputDecorationTheme? inputDecorationTheme,
       StacButtonStyle? cancelButtonStyle,
       StacButtonStyle? confirmButtonStyle});
-
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle;
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle;
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle;
-  $StacTextStyleCopyWith<$Res>? get dayStyle;
-  $StacShapeBorderCopyWith<$Res>? get dayShape;
-  $StacBorderSideCopyWith<$Res>? get todayBorder;
-  $StacTextStyleCopyWith<$Res>? get yearStyle;
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape;
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle;
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle;
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle;
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle;
 }
 
 /// @nodoc
@@ -462,204 +446,387 @@ class _$StacDatePickerThemeDataCopyWithImpl<$Res>
               as StacButtonStyle?,
     ));
   }
+}
 
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacDatePickerThemeData].
+extension StacDatePickerThemeDataPatterns on StacDatePickerThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacDatePickerThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacDatePickerThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle {
-    if (_self.headerHeadlineStyle == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.headerHeadlineStyle!, (value) {
-      return _then(_self.copyWith(headerHeadlineStyle: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacDatePickerThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacDatePickerThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle {
-    if (_self.headerHelpStyle == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.headerHelpStyle!, (value) {
-      return _then(_self.copyWith(headerHelpStyle: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacDatePickerThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacDatePickerThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
   }
 
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle {
-    if (_self.weekdayStyle == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.weekdayStyle!, (value) {
-      return _then(_self.copyWith(weekdayStyle: value));
-    });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            double? elevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            StacShapeBorder? shape,
+            String? headerBackgroundColor,
+            String? headerForegroundColor,
+            StacTextStyle? headerHeadlineStyle,
+            StacTextStyle? headerHelpStyle,
+            StacTextStyle? weekdayStyle,
+            StacTextStyle? dayStyle,
+            String? dayForegroundColor,
+            String? dayBackgroundColor,
+            String? dayOverlayColor,
+            StacShapeBorder? dayShape,
+            String? todayForegroundColor,
+            String? todayBackgroundColor,
+            StacBorderSide? todayBorder,
+            StacTextStyle? yearStyle,
+            String? yearForegroundColor,
+            String? yearBackgroundColor,
+            String? yearOverlayColor,
+            String? rangePickerBackgroundColor,
+            double? rangePickerElevation,
+            String? rangePickerShadowColor,
+            String? rangePickerSurfaceTintColor,
+            StacShapeBorder? rangePickerShape,
+            String? rangePickerHeaderBackgroundColor,
+            String? rangePickerHeaderForegroundColor,
+            StacTextStyle? rangePickerHeaderHeadlineStyle,
+            StacTextStyle? rangePickerHeaderHelpStyle,
+            String? rangeSelectionBackgroundColor,
+            String? rangeSelectionOverlayColor,
+            String? dividerColor,
+            StacInputDecorationTheme? inputDecorationTheme,
+            StacButtonStyle? cancelButtonStyle,
+            StacButtonStyle? confirmButtonStyle)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacDatePickerThemeData() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.shape,
+            _that.headerBackgroundColor,
+            _that.headerForegroundColor,
+            _that.headerHeadlineStyle,
+            _that.headerHelpStyle,
+            _that.weekdayStyle,
+            _that.dayStyle,
+            _that.dayForegroundColor,
+            _that.dayBackgroundColor,
+            _that.dayOverlayColor,
+            _that.dayShape,
+            _that.todayForegroundColor,
+            _that.todayBackgroundColor,
+            _that.todayBorder,
+            _that.yearStyle,
+            _that.yearForegroundColor,
+            _that.yearBackgroundColor,
+            _that.yearOverlayColor,
+            _that.rangePickerBackgroundColor,
+            _that.rangePickerElevation,
+            _that.rangePickerShadowColor,
+            _that.rangePickerSurfaceTintColor,
+            _that.rangePickerShape,
+            _that.rangePickerHeaderBackgroundColor,
+            _that.rangePickerHeaderForegroundColor,
+            _that.rangePickerHeaderHeadlineStyle,
+            _that.rangePickerHeaderHelpStyle,
+            _that.rangeSelectionBackgroundColor,
+            _that.rangeSelectionOverlayColor,
+            _that.dividerColor,
+            _that.inputDecorationTheme,
+            _that.cancelButtonStyle,
+            _that.confirmButtonStyle);
+      case _:
+        return orElse();
+    }
   }
 
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get dayStyle {
-    if (_self.dayStyle == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.dayStyle!, (value) {
-      return _then(_self.copyWith(dayStyle: value));
-    });
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            double? elevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            StacShapeBorder? shape,
+            String? headerBackgroundColor,
+            String? headerForegroundColor,
+            StacTextStyle? headerHeadlineStyle,
+            StacTextStyle? headerHelpStyle,
+            StacTextStyle? weekdayStyle,
+            StacTextStyle? dayStyle,
+            String? dayForegroundColor,
+            String? dayBackgroundColor,
+            String? dayOverlayColor,
+            StacShapeBorder? dayShape,
+            String? todayForegroundColor,
+            String? todayBackgroundColor,
+            StacBorderSide? todayBorder,
+            StacTextStyle? yearStyle,
+            String? yearForegroundColor,
+            String? yearBackgroundColor,
+            String? yearOverlayColor,
+            String? rangePickerBackgroundColor,
+            double? rangePickerElevation,
+            String? rangePickerShadowColor,
+            String? rangePickerSurfaceTintColor,
+            StacShapeBorder? rangePickerShape,
+            String? rangePickerHeaderBackgroundColor,
+            String? rangePickerHeaderForegroundColor,
+            StacTextStyle? rangePickerHeaderHeadlineStyle,
+            StacTextStyle? rangePickerHeaderHelpStyle,
+            String? rangeSelectionBackgroundColor,
+            String? rangeSelectionOverlayColor,
+            String? dividerColor,
+            StacInputDecorationTheme? inputDecorationTheme,
+            StacButtonStyle? cancelButtonStyle,
+            StacButtonStyle? confirmButtonStyle)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacDatePickerThemeData():
+        return $default(
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.shape,
+            _that.headerBackgroundColor,
+            _that.headerForegroundColor,
+            _that.headerHeadlineStyle,
+            _that.headerHelpStyle,
+            _that.weekdayStyle,
+            _that.dayStyle,
+            _that.dayForegroundColor,
+            _that.dayBackgroundColor,
+            _that.dayOverlayColor,
+            _that.dayShape,
+            _that.todayForegroundColor,
+            _that.todayBackgroundColor,
+            _that.todayBorder,
+            _that.yearStyle,
+            _that.yearForegroundColor,
+            _that.yearBackgroundColor,
+            _that.yearOverlayColor,
+            _that.rangePickerBackgroundColor,
+            _that.rangePickerElevation,
+            _that.rangePickerShadowColor,
+            _that.rangePickerSurfaceTintColor,
+            _that.rangePickerShape,
+            _that.rangePickerHeaderBackgroundColor,
+            _that.rangePickerHeaderForegroundColor,
+            _that.rangePickerHeaderHeadlineStyle,
+            _that.rangePickerHeaderHelpStyle,
+            _that.rangeSelectionBackgroundColor,
+            _that.rangeSelectionOverlayColor,
+            _that.dividerColor,
+            _that.inputDecorationTheme,
+            _that.cancelButtonStyle,
+            _that.confirmButtonStyle);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get dayShape {
-    if (_self.dayShape == null) {
-      return null;
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? backgroundColor,
+            double? elevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            StacShapeBorder? shape,
+            String? headerBackgroundColor,
+            String? headerForegroundColor,
+            StacTextStyle? headerHeadlineStyle,
+            StacTextStyle? headerHelpStyle,
+            StacTextStyle? weekdayStyle,
+            StacTextStyle? dayStyle,
+            String? dayForegroundColor,
+            String? dayBackgroundColor,
+            String? dayOverlayColor,
+            StacShapeBorder? dayShape,
+            String? todayForegroundColor,
+            String? todayBackgroundColor,
+            StacBorderSide? todayBorder,
+            StacTextStyle? yearStyle,
+            String? yearForegroundColor,
+            String? yearBackgroundColor,
+            String? yearOverlayColor,
+            String? rangePickerBackgroundColor,
+            double? rangePickerElevation,
+            String? rangePickerShadowColor,
+            String? rangePickerSurfaceTintColor,
+            StacShapeBorder? rangePickerShape,
+            String? rangePickerHeaderBackgroundColor,
+            String? rangePickerHeaderForegroundColor,
+            StacTextStyle? rangePickerHeaderHeadlineStyle,
+            StacTextStyle? rangePickerHeaderHelpStyle,
+            String? rangeSelectionBackgroundColor,
+            String? rangeSelectionOverlayColor,
+            String? dividerColor,
+            StacInputDecorationTheme? inputDecorationTheme,
+            StacButtonStyle? cancelButtonStyle,
+            StacButtonStyle? confirmButtonStyle)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacDatePickerThemeData() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.shape,
+            _that.headerBackgroundColor,
+            _that.headerForegroundColor,
+            _that.headerHeadlineStyle,
+            _that.headerHelpStyle,
+            _that.weekdayStyle,
+            _that.dayStyle,
+            _that.dayForegroundColor,
+            _that.dayBackgroundColor,
+            _that.dayOverlayColor,
+            _that.dayShape,
+            _that.todayForegroundColor,
+            _that.todayBackgroundColor,
+            _that.todayBorder,
+            _that.yearStyle,
+            _that.yearForegroundColor,
+            _that.yearBackgroundColor,
+            _that.yearOverlayColor,
+            _that.rangePickerBackgroundColor,
+            _that.rangePickerElevation,
+            _that.rangePickerShadowColor,
+            _that.rangePickerSurfaceTintColor,
+            _that.rangePickerShape,
+            _that.rangePickerHeaderBackgroundColor,
+            _that.rangePickerHeaderForegroundColor,
+            _that.rangePickerHeaderHeadlineStyle,
+            _that.rangePickerHeaderHelpStyle,
+            _that.rangeSelectionBackgroundColor,
+            _that.rangeSelectionOverlayColor,
+            _that.dividerColor,
+            _that.inputDecorationTheme,
+            _that.cancelButtonStyle,
+            _that.confirmButtonStyle);
+      case _:
+        return null;
     }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.dayShape!, (value) {
-      return _then(_self.copyWith(dayShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get todayBorder {
-    if (_self.todayBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.todayBorder!, (value) {
-      return _then(_self.copyWith(todayBorder: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get yearStyle {
-    if (_self.yearStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.yearStyle!, (value) {
-      return _then(_self.copyWith(yearStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape {
-    if (_self.rangePickerShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.rangePickerShape!, (value) {
-      return _then(_self.copyWith(rangePickerShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle {
-    if (_self.rangePickerHeaderHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHeadlineStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle {
-    if (_self.rangePickerHeaderHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHelpStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHelpStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle {
-    if (_self.cancelButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.cancelButtonStyle!, (value) {
-      return _then(_self.copyWith(cancelButtonStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle {
-    if (_self.confirmButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.confirmButtonStyle!, (value) {
-      return _then(_self.copyWith(confirmButtonStyle: value));
-    });
   }
 }
 
@@ -977,35 +1144,6 @@ abstract mixin class _$StacDatePickerThemeDataCopyWith<$Res>
       StacInputDecorationTheme? inputDecorationTheme,
       StacButtonStyle? cancelButtonStyle,
       StacButtonStyle? confirmButtonStyle});
-
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get dayStyle;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get dayShape;
-  @override
-  $StacBorderSideCopyWith<$Res>? get todayBorder;
-  @override
-  $StacTextStyleCopyWith<$Res>? get yearStyle;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle;
-  @override
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle;
 }
 
 /// @nodoc
@@ -1211,205 +1349,6 @@ class __$StacDatePickerThemeDataCopyWithImpl<$Res>
           : confirmButtonStyle // ignore: cast_nullable_to_non_nullable
               as StacButtonStyle?,
     ));
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHeadlineStyle {
-    if (_self.headerHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headerHeadlineStyle!, (value) {
-      return _then(_self.copyWith(headerHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get headerHelpStyle {
-    if (_self.headerHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.headerHelpStyle!, (value) {
-      return _then(_self.copyWith(headerHelpStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get weekdayStyle {
-    if (_self.weekdayStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.weekdayStyle!, (value) {
-      return _then(_self.copyWith(weekdayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get dayStyle {
-    if (_self.dayStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.dayStyle!, (value) {
-      return _then(_self.copyWith(dayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get dayShape {
-    if (_self.dayShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.dayShape!, (value) {
-      return _then(_self.copyWith(dayShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get todayBorder {
-    if (_self.todayBorder == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.todayBorder!, (value) {
-      return _then(_self.copyWith(todayBorder: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get yearStyle {
-    if (_self.yearStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.yearStyle!, (value) {
-      return _then(_self.copyWith(yearStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get rangePickerShape {
-    if (_self.rangePickerShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.rangePickerShape!, (value) {
-      return _then(_self.copyWith(rangePickerShape: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHeadlineStyle {
-    if (_self.rangePickerHeaderHeadlineStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHeadlineStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHeadlineStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get rangePickerHeaderHelpStyle {
-    if (_self.rangePickerHeaderHelpStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.rangePickerHeaderHelpStyle!,
-        (value) {
-      return _then(_self.copyWith(rangePickerHeaderHelpStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get cancelButtonStyle {
-    if (_self.cancelButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.cancelButtonStyle!, (value) {
-      return _then(_self.copyWith(cancelButtonStyle: value));
-    });
-  }
-
-  /// Create a copy of StacDatePickerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get confirmButtonStyle {
-    if (_self.confirmButtonStyle == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.confirmButtonStyle!, (value) {
-      return _then(_self.copyWith(confirmButtonStyle: value));
-    });
   }
 }
 

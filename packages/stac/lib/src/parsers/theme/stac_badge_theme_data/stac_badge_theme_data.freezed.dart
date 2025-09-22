@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -82,11 +81,6 @@ abstract mixin class $StacBadgeThemeDataCopyWith<$Res> {
       StacEdgeInsets? padding,
       StacAlignmentGeometry? alignment,
       StacOffset? offset});
-
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment;
-  $StacOffsetCopyWith<$Res>? get offset;
 }
 
 /// @nodoc
@@ -146,61 +140,213 @@ class _$StacBadgeThemeDataCopyWithImpl<$Res>
               as StacOffset?,
     ));
   }
+}
 
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacBadgeThemeData].
+extension StacBadgeThemeDataPatterns on StacBadgeThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacBadgeThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacBadgeThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
   }
 
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacBadgeThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBadgeThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment {
-    if (_self.alignment == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
-      return _then(_self.copyWith(alignment: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacBadgeThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBadgeThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
   }
 
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res>? get offset {
-    if (_self.offset == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-    return $StacOffsetCopyWith<$Res>(_self.offset!, (value) {
-      return _then(_self.copyWith(offset: value));
-    });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            String? textColor,
+            double? smallSize,
+            double? largeSize,
+            StacTextStyle? textStyle,
+            StacEdgeInsets? padding,
+            StacAlignmentGeometry? alignment,
+            StacOffset? offset)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacBadgeThemeData() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.textColor,
+            _that.smallSize,
+            _that.largeSize,
+            _that.textStyle,
+            _that.padding,
+            _that.alignment,
+            _that.offset);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            String? textColor,
+            double? smallSize,
+            double? largeSize,
+            StacTextStyle? textStyle,
+            StacEdgeInsets? padding,
+            StacAlignmentGeometry? alignment,
+            StacOffset? offset)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBadgeThemeData():
+        return $default(
+            _that.backgroundColor,
+            _that.textColor,
+            _that.smallSize,
+            _that.largeSize,
+            _that.textStyle,
+            _that.padding,
+            _that.alignment,
+            _that.offset);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? backgroundColor,
+            String? textColor,
+            double? smallSize,
+            double? largeSize,
+            StacTextStyle? textStyle,
+            StacEdgeInsets? padding,
+            StacAlignmentGeometry? alignment,
+            StacOffset? offset)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBadgeThemeData() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.textColor,
+            _that.smallSize,
+            _that.largeSize,
+            _that.textStyle,
+            _that.padding,
+            _that.alignment,
+            _that.offset);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -300,15 +446,6 @@ abstract mixin class _$StacBadgeThemeDataCopyWith<$Res>
       StacEdgeInsets? padding,
       StacAlignmentGeometry? alignment,
       StacOffset? offset});
-
-  @override
-  $StacTextStyleCopyWith<$Res>? get textStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment;
-  @override
-  $StacOffsetCopyWith<$Res>? get offset;
 }
 
 /// @nodoc
@@ -367,62 +504,6 @@ class __$StacBadgeThemeDataCopyWithImpl<$Res>
           : offset // ignore: cast_nullable_to_non_nullable
               as StacOffset?,
     ));
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get textStyle {
-    if (_self.textStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.textStyle!, (value) {
-      return _then(_self.copyWith(textStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacAlignmentGeometryCopyWith<$Res>? get alignment {
-    if (_self.alignment == null) {
-      return null;
-    }
-
-    return $StacAlignmentGeometryCopyWith<$Res>(_self.alignment!, (value) {
-      return _then(_self.copyWith(alignment: value));
-    });
-  }
-
-  /// Create a copy of StacBadgeThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacOffsetCopyWith<$Res>? get offset {
-    if (_self.offset == null) {
-      return null;
-    }
-
-    return $StacOffsetCopyWith<$Res>(_self.offset!, (value) {
-      return _then(_self.copyWith(offset: value));
-    });
   }
 }
 

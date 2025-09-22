@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_default_tab_controller/stac_default_tab_controller.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_duration_parsers.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacDefaultTabControllerParser
@@ -19,8 +19,9 @@ class StacDefaultTabControllerParser
   Widget parse(BuildContext context, StacDefaultTabController model) {
     return DefaultTabController(
       length: model.length,
-      initialIndex: model.initialIndex,
-      child: Stac.fromJson(model.child, context) ?? const SizedBox(),
+      initialIndex: model.initialIndex ?? 0,
+      animationDuration: model.animationDuration?.parse,
+      child: model.child.parse(context) ?? const SizedBox(),
     );
   }
 }

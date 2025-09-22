@@ -2,49 +2,25 @@
   "type": "scaffold",
   "appBar": {
     "type": "appBar",
+    "automaticallyImplyLeading": true,
     "title": {
       "type": "text",
-      "data": "Appbar"
+      "data": "Stac Appbar",
+      "children": [],
+      "style": null,
+      "softWrap": null,
+      "textScaleFactor": null,
+      "maxLines": null,
+      "semanticsLabel": null,
+      "selectionColor": null,
+      "copyWithStyle": null
     },
-    "leading": {
-      "type": "iconButton",
-      "icon": {
-        "type": "icon",
-        "iconType": "material",
-        "icon": "menu"
-      },
-      "onPressed": {}
-    },
-    "backgroundColor": "primary",
-    "actions": [
-      {
-        "type": "iconButton",
-        "icon": {
-          "type": "icon",
-          "iconType": "cupertino",
-          "icon": "heart_solid"
-        },
-        "onPressed": {}
-      },
-      {
-        "type": "iconButton",
-        "icon": {
-          "type": "icon",
-          "iconType": "material",
-          "icon": "search"
-        },
-        "onPressed": {}
-      },
-      {
-        "type": "iconButton",
-        "icon": {
-          "type": "icon",
-          "iconType": "material",
-          "icon": "more_horiz"
-        },
-        "onPressed": {}
-      }
-    ]
+    "primary": true,
+    "excludeHeaderSemantics": false,
+    "toolbarOpacity": 1.0,
+    "bottomOpacity": 1.0,
+    "forceMaterialTransparency": false,
+    "useDefaultSemanticsOrder": true
   },
   "body": {
     "type": "center",

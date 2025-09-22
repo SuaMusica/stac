@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -337,7 +336,6 @@ abstract mixin class $StacThemeCopyWith<$Res> {
       StacTabBarThemeData? tabBarTheme,
       StacButtonStyle? textButtonTheme});
 
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
   $StacScrollbarThemeDataCopyWith<$Res>? get scrollbarTheme;
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
   $StacMaterialColorCopyWith<$Res>? get primarySwatch;
@@ -359,20 +357,13 @@ abstract mixin class $StacThemeCopyWith<$Res> {
   $StacDialogThemeCopyWith<$Res>? get dialogTheme;
   $StacDividerThemeDataCopyWith<$Res>? get dividerTheme;
   $StacDrawerThemeDataCopyWith<$Res>? get drawerTheme;
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme;
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme;
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme;
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme;
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme;
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme;
   $StacNavigationBarThemeDataCopyWith<$Res>? get navigationBarTheme;
   $StacNavigationDrawerThemeDataCopyWith<$Res>? get navigationDrawerTheme;
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme;
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme;
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme;
   $StacTabBarThemeDataCopyWith<$Res>? get tabBarTheme;
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme;
 }
 
 /// @nodoc
@@ -696,21 +687,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacScrollbarThemeDataCopyWith<$Res>? get scrollbarTheme {
     if (_self.scrollbarTheme == null) {
       return null;
@@ -1011,34 +987,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme {
-    if (_self.elevatedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.elevatedButtonTheme!, (value) {
-      return _then(_self.copyWith(elevatedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme {
-    if (_self.filledButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.filledButtonTheme!, (value) {
-      return _then(_self.copyWith(filledButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme {
     if (_self.floatingActionButtonTheme == null) {
@@ -1055,20 +1003,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme {
-    if (_self.iconButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.iconButtonTheme!, (value) {
-      return _then(_self.copyWith(iconButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme {
     if (_self.listTileTheme == null) {
       return null;
@@ -1076,20 +1010,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
 
     return $StacListTileThemeDataCopyWith<$Res>(_self.listTileTheme!, (value) {
       return _then(_self.copyWith(listTileTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme {
-    if (_self.menuButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.menuButtonTheme!, (value) {
-      return _then(_self.copyWith(menuButtonTheme: value));
     });
   }
 
@@ -1127,34 +1047,6 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme {
-    if (_self.outlinedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.outlinedButtonTheme!, (value) {
-      return _then(_self.copyWith(outlinedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme {
-    if (_self.segmentedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.segmentedButtonTheme!, (value) {
-      return _then(_self.copyWith(segmentedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme {
     if (_self.snackBarTheme == null) {
       return null;
@@ -1178,19 +1070,525 @@ class _$StacThemeCopyWithImpl<$Res> implements $StacThemeCopyWith<$Res> {
       return _then(_self.copyWith(tabBarTheme: value));
     });
   }
+}
 
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme {
-    if (_self.textButtonTheme == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacTheme].
+extension StacThemePatterns on StacTheme {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacTheme value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacTheme() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
+  }
 
-    return $StacButtonStyleCopyWith<$Res>(_self.textButtonTheme!, (value) {
-      return _then(_self.copyWith(textButtonTheme: value));
-    });
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacTheme value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTheme():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacTheme value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTheme() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            bool? applyElevationOverlayColor,
+            StacInputDecorationTheme? inputDecorationTheme,
+            MaterialTapTargetSize? materialTapTargetSize,
+            TargetPlatform? platform,
+            StacScrollbarThemeData? scrollbarTheme,
+            bool? useMaterial3,
+            StacColorScheme? colorScheme,
+            Brightness? brightness,
+            String? colorSchemeSeed,
+            String? canvasColor,
+            String? cardColor,
+            String? disabledColor,
+            String? dividerColor,
+            String? focusColor,
+            String? highlightColor,
+            String? hintColor,
+            String? hoverColor,
+            String? primaryColor,
+            String? primaryColorDark,
+            String? primaryColorLight,
+            StacMaterialColor? primarySwatch,
+            String? scaffoldBackgroundColor,
+            String? secondaryHeaderColor,
+            String? shadowColor,
+            String? splashColor,
+            String? unselectedWidgetColor,
+            String? fontFamily,
+            List<String>? fontFamilyFallback,
+            String? package,
+            StacIconThemeData? iconTheme,
+            StacIconThemeData? primaryIconTheme,
+            StacTextTheme? primaryTextTheme,
+            StacTextTheme? textTheme,
+            StacAppBarTheme? appBarTheme,
+            StacBadgeThemeData? badgeTheme,
+            StacMaterialBannerThemeData? bannerTheme,
+            StacBottomAppBarTheme? bottomAppBarTheme,
+            StacBottomNavBarThemeData? bottomNavigationBarTheme,
+            StacBottomSheetThemeData? bottomSheetTheme,
+            StacButtonThemeData? buttonTheme,
+            StacCardThemeData? cardTheme,
+            StacCheckboxThemeData? checkboxTheme,
+            StacChipThemeData? chipTheme,
+            StacDatePickerThemeData? datePickerTheme,
+            StacDialogTheme? dialogTheme,
+            StacDividerThemeData? dividerTheme,
+            StacDrawerThemeData? drawerTheme,
+            StacButtonStyle? elevatedButtonTheme,
+            StacButtonStyle? filledButtonTheme,
+            StacFloatingActionButtonThemeData? floatingActionButtonTheme,
+            StacButtonStyle? iconButtonTheme,
+            StacListTileThemeData? listTileTheme,
+            StacButtonStyle? menuButtonTheme,
+            StacNavigationBarThemeData? navigationBarTheme,
+            StacNavigationDrawerThemeData? navigationDrawerTheme,
+            StacButtonStyle? outlinedButtonTheme,
+            StacButtonStyle? segmentedButtonTheme,
+            StacSnackBarThemeData? snackBarTheme,
+            StacTabBarThemeData? tabBarTheme,
+            StacButtonStyle? textButtonTheme)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacTheme() when $default != null:
+        return $default(
+            _that.applyElevationOverlayColor,
+            _that.inputDecorationTheme,
+            _that.materialTapTargetSize,
+            _that.platform,
+            _that.scrollbarTheme,
+            _that.useMaterial3,
+            _that.colorScheme,
+            _that.brightness,
+            _that.colorSchemeSeed,
+            _that.canvasColor,
+            _that.cardColor,
+            _that.disabledColor,
+            _that.dividerColor,
+            _that.focusColor,
+            _that.highlightColor,
+            _that.hintColor,
+            _that.hoverColor,
+            _that.primaryColor,
+            _that.primaryColorDark,
+            _that.primaryColorLight,
+            _that.primarySwatch,
+            _that.scaffoldBackgroundColor,
+            _that.secondaryHeaderColor,
+            _that.shadowColor,
+            _that.splashColor,
+            _that.unselectedWidgetColor,
+            _that.fontFamily,
+            _that.fontFamilyFallback,
+            _that.package,
+            _that.iconTheme,
+            _that.primaryIconTheme,
+            _that.primaryTextTheme,
+            _that.textTheme,
+            _that.appBarTheme,
+            _that.badgeTheme,
+            _that.bannerTheme,
+            _that.bottomAppBarTheme,
+            _that.bottomNavigationBarTheme,
+            _that.bottomSheetTheme,
+            _that.buttonTheme,
+            _that.cardTheme,
+            _that.checkboxTheme,
+            _that.chipTheme,
+            _that.datePickerTheme,
+            _that.dialogTheme,
+            _that.dividerTheme,
+            _that.drawerTheme,
+            _that.elevatedButtonTheme,
+            _that.filledButtonTheme,
+            _that.floatingActionButtonTheme,
+            _that.iconButtonTheme,
+            _that.listTileTheme,
+            _that.menuButtonTheme,
+            _that.navigationBarTheme,
+            _that.navigationDrawerTheme,
+            _that.outlinedButtonTheme,
+            _that.segmentedButtonTheme,
+            _that.snackBarTheme,
+            _that.tabBarTheme,
+            _that.textButtonTheme);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            bool? applyElevationOverlayColor,
+            StacInputDecorationTheme? inputDecorationTheme,
+            MaterialTapTargetSize? materialTapTargetSize,
+            TargetPlatform? platform,
+            StacScrollbarThemeData? scrollbarTheme,
+            bool? useMaterial3,
+            StacColorScheme? colorScheme,
+            Brightness? brightness,
+            String? colorSchemeSeed,
+            String? canvasColor,
+            String? cardColor,
+            String? disabledColor,
+            String? dividerColor,
+            String? focusColor,
+            String? highlightColor,
+            String? hintColor,
+            String? hoverColor,
+            String? primaryColor,
+            String? primaryColorDark,
+            String? primaryColorLight,
+            StacMaterialColor? primarySwatch,
+            String? scaffoldBackgroundColor,
+            String? secondaryHeaderColor,
+            String? shadowColor,
+            String? splashColor,
+            String? unselectedWidgetColor,
+            String? fontFamily,
+            List<String>? fontFamilyFallback,
+            String? package,
+            StacIconThemeData? iconTheme,
+            StacIconThemeData? primaryIconTheme,
+            StacTextTheme? primaryTextTheme,
+            StacTextTheme? textTheme,
+            StacAppBarTheme? appBarTheme,
+            StacBadgeThemeData? badgeTheme,
+            StacMaterialBannerThemeData? bannerTheme,
+            StacBottomAppBarTheme? bottomAppBarTheme,
+            StacBottomNavBarThemeData? bottomNavigationBarTheme,
+            StacBottomSheetThemeData? bottomSheetTheme,
+            StacButtonThemeData? buttonTheme,
+            StacCardThemeData? cardTheme,
+            StacCheckboxThemeData? checkboxTheme,
+            StacChipThemeData? chipTheme,
+            StacDatePickerThemeData? datePickerTheme,
+            StacDialogTheme? dialogTheme,
+            StacDividerThemeData? dividerTheme,
+            StacDrawerThemeData? drawerTheme,
+            StacButtonStyle? elevatedButtonTheme,
+            StacButtonStyle? filledButtonTheme,
+            StacFloatingActionButtonThemeData? floatingActionButtonTheme,
+            StacButtonStyle? iconButtonTheme,
+            StacListTileThemeData? listTileTheme,
+            StacButtonStyle? menuButtonTheme,
+            StacNavigationBarThemeData? navigationBarTheme,
+            StacNavigationDrawerThemeData? navigationDrawerTheme,
+            StacButtonStyle? outlinedButtonTheme,
+            StacButtonStyle? segmentedButtonTheme,
+            StacSnackBarThemeData? snackBarTheme,
+            StacTabBarThemeData? tabBarTheme,
+            StacButtonStyle? textButtonTheme)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTheme():
+        return $default(
+            _that.applyElevationOverlayColor,
+            _that.inputDecorationTheme,
+            _that.materialTapTargetSize,
+            _that.platform,
+            _that.scrollbarTheme,
+            _that.useMaterial3,
+            _that.colorScheme,
+            _that.brightness,
+            _that.colorSchemeSeed,
+            _that.canvasColor,
+            _that.cardColor,
+            _that.disabledColor,
+            _that.dividerColor,
+            _that.focusColor,
+            _that.highlightColor,
+            _that.hintColor,
+            _that.hoverColor,
+            _that.primaryColor,
+            _that.primaryColorDark,
+            _that.primaryColorLight,
+            _that.primarySwatch,
+            _that.scaffoldBackgroundColor,
+            _that.secondaryHeaderColor,
+            _that.shadowColor,
+            _that.splashColor,
+            _that.unselectedWidgetColor,
+            _that.fontFamily,
+            _that.fontFamilyFallback,
+            _that.package,
+            _that.iconTheme,
+            _that.primaryIconTheme,
+            _that.primaryTextTheme,
+            _that.textTheme,
+            _that.appBarTheme,
+            _that.badgeTheme,
+            _that.bannerTheme,
+            _that.bottomAppBarTheme,
+            _that.bottomNavigationBarTheme,
+            _that.bottomSheetTheme,
+            _that.buttonTheme,
+            _that.cardTheme,
+            _that.checkboxTheme,
+            _that.chipTheme,
+            _that.datePickerTheme,
+            _that.dialogTheme,
+            _that.dividerTheme,
+            _that.drawerTheme,
+            _that.elevatedButtonTheme,
+            _that.filledButtonTheme,
+            _that.floatingActionButtonTheme,
+            _that.iconButtonTheme,
+            _that.listTileTheme,
+            _that.menuButtonTheme,
+            _that.navigationBarTheme,
+            _that.navigationDrawerTheme,
+            _that.outlinedButtonTheme,
+            _that.segmentedButtonTheme,
+            _that.snackBarTheme,
+            _that.tabBarTheme,
+            _that.textButtonTheme);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            bool? applyElevationOverlayColor,
+            StacInputDecorationTheme? inputDecorationTheme,
+            MaterialTapTargetSize? materialTapTargetSize,
+            TargetPlatform? platform,
+            StacScrollbarThemeData? scrollbarTheme,
+            bool? useMaterial3,
+            StacColorScheme? colorScheme,
+            Brightness? brightness,
+            String? colorSchemeSeed,
+            String? canvasColor,
+            String? cardColor,
+            String? disabledColor,
+            String? dividerColor,
+            String? focusColor,
+            String? highlightColor,
+            String? hintColor,
+            String? hoverColor,
+            String? primaryColor,
+            String? primaryColorDark,
+            String? primaryColorLight,
+            StacMaterialColor? primarySwatch,
+            String? scaffoldBackgroundColor,
+            String? secondaryHeaderColor,
+            String? shadowColor,
+            String? splashColor,
+            String? unselectedWidgetColor,
+            String? fontFamily,
+            List<String>? fontFamilyFallback,
+            String? package,
+            StacIconThemeData? iconTheme,
+            StacIconThemeData? primaryIconTheme,
+            StacTextTheme? primaryTextTheme,
+            StacTextTheme? textTheme,
+            StacAppBarTheme? appBarTheme,
+            StacBadgeThemeData? badgeTheme,
+            StacMaterialBannerThemeData? bannerTheme,
+            StacBottomAppBarTheme? bottomAppBarTheme,
+            StacBottomNavBarThemeData? bottomNavigationBarTheme,
+            StacBottomSheetThemeData? bottomSheetTheme,
+            StacButtonThemeData? buttonTheme,
+            StacCardThemeData? cardTheme,
+            StacCheckboxThemeData? checkboxTheme,
+            StacChipThemeData? chipTheme,
+            StacDatePickerThemeData? datePickerTheme,
+            StacDialogTheme? dialogTheme,
+            StacDividerThemeData? dividerTheme,
+            StacDrawerThemeData? drawerTheme,
+            StacButtonStyle? elevatedButtonTheme,
+            StacButtonStyle? filledButtonTheme,
+            StacFloatingActionButtonThemeData? floatingActionButtonTheme,
+            StacButtonStyle? iconButtonTheme,
+            StacListTileThemeData? listTileTheme,
+            StacButtonStyle? menuButtonTheme,
+            StacNavigationBarThemeData? navigationBarTheme,
+            StacNavigationDrawerThemeData? navigationDrawerTheme,
+            StacButtonStyle? outlinedButtonTheme,
+            StacButtonStyle? segmentedButtonTheme,
+            StacSnackBarThemeData? snackBarTheme,
+            StacTabBarThemeData? tabBarTheme,
+            StacButtonStyle? textButtonTheme)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacTheme() when $default != null:
+        return $default(
+            _that.applyElevationOverlayColor,
+            _that.inputDecorationTheme,
+            _that.materialTapTargetSize,
+            _that.platform,
+            _that.scrollbarTheme,
+            _that.useMaterial3,
+            _that.colorScheme,
+            _that.brightness,
+            _that.colorSchemeSeed,
+            _that.canvasColor,
+            _that.cardColor,
+            _that.disabledColor,
+            _that.dividerColor,
+            _that.focusColor,
+            _that.highlightColor,
+            _that.hintColor,
+            _that.hoverColor,
+            _that.primaryColor,
+            _that.primaryColorDark,
+            _that.primaryColorLight,
+            _that.primarySwatch,
+            _that.scaffoldBackgroundColor,
+            _that.secondaryHeaderColor,
+            _that.shadowColor,
+            _that.splashColor,
+            _that.unselectedWidgetColor,
+            _that.fontFamily,
+            _that.fontFamilyFallback,
+            _that.package,
+            _that.iconTheme,
+            _that.primaryIconTheme,
+            _that.primaryTextTheme,
+            _that.textTheme,
+            _that.appBarTheme,
+            _that.badgeTheme,
+            _that.bannerTheme,
+            _that.bottomAppBarTheme,
+            _that.bottomNavigationBarTheme,
+            _that.bottomSheetTheme,
+            _that.buttonTheme,
+            _that.cardTheme,
+            _that.checkboxTheme,
+            _that.chipTheme,
+            _that.datePickerTheme,
+            _that.dialogTheme,
+            _that.dividerTheme,
+            _that.drawerTheme,
+            _that.elevatedButtonTheme,
+            _that.filledButtonTheme,
+            _that.floatingActionButtonTheme,
+            _that.iconButtonTheme,
+            _that.listTileTheme,
+            _that.menuButtonTheme,
+            _that.navigationBarTheme,
+            _that.navigationDrawerTheme,
+            _that.outlinedButtonTheme,
+            _that.segmentedButtonTheme,
+            _that.snackBarTheme,
+            _that.tabBarTheme,
+            _that.textButtonTheme);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1669,8 +2067,6 @@ abstract mixin class _$StacThemeCopyWith<$Res>
       StacButtonStyle? textButtonTheme});
 
   @override
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme;
-  @override
   $StacScrollbarThemeDataCopyWith<$Res>? get scrollbarTheme;
   @override
   $StacColorSchemeCopyWith<$Res>? get colorScheme;
@@ -1713,32 +2109,18 @@ abstract mixin class _$StacThemeCopyWith<$Res>
   @override
   $StacDrawerThemeDataCopyWith<$Res>? get drawerTheme;
   @override
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme;
-  @override
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme;
   @override
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme;
-  @override
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme;
   @override
   $StacNavigationBarThemeDataCopyWith<$Res>? get navigationBarTheme;
   @override
   $StacNavigationDrawerThemeDataCopyWith<$Res>? get navigationDrawerTheme;
   @override
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme;
-  @override
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme;
   @override
   $StacTabBarThemeDataCopyWith<$Res>? get tabBarTheme;
-  @override
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme;
 }
 
 /// @nodoc
@@ -2062,21 +2444,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacInputDecorationThemeCopyWith<$Res>? get inputDecorationTheme {
-    if (_self.inputDecorationTheme == null) {
-      return null;
-    }
-
-    return $StacInputDecorationThemeCopyWith<$Res>(_self.inputDecorationTheme!,
-        (value) {
-      return _then(_self.copyWith(inputDecorationTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacScrollbarThemeDataCopyWith<$Res>? get scrollbarTheme {
     if (_self.scrollbarTheme == null) {
       return null;
@@ -2377,34 +2744,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get elevatedButtonTheme {
-    if (_self.elevatedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.elevatedButtonTheme!, (value) {
-      return _then(_self.copyWith(elevatedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get filledButtonTheme {
-    if (_self.filledButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.filledButtonTheme!, (value) {
-      return _then(_self.copyWith(filledButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacFloatingActionButtonThemeDataCopyWith<$Res>?
       get floatingActionButtonTheme {
     if (_self.floatingActionButtonTheme == null) {
@@ -2421,20 +2760,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get iconButtonTheme {
-    if (_self.iconButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.iconButtonTheme!, (value) {
-      return _then(_self.copyWith(iconButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacListTileThemeDataCopyWith<$Res>? get listTileTheme {
     if (_self.listTileTheme == null) {
       return null;
@@ -2442,20 +2767,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
 
     return $StacListTileThemeDataCopyWith<$Res>(_self.listTileTheme!, (value) {
       return _then(_self.copyWith(listTileTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get menuButtonTheme {
-    if (_self.menuButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.menuButtonTheme!, (value) {
-      return _then(_self.copyWith(menuButtonTheme: value));
     });
   }
 
@@ -2493,34 +2804,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get outlinedButtonTheme {
-    if (_self.outlinedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.outlinedButtonTheme!, (value) {
-      return _then(_self.copyWith(outlinedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get segmentedButtonTheme {
-    if (_self.segmentedButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.segmentedButtonTheme!, (value) {
-      return _then(_self.copyWith(segmentedButtonTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacSnackBarThemeDataCopyWith<$Res>? get snackBarTheme {
     if (_self.snackBarTheme == null) {
       return null;
@@ -2542,20 +2825,6 @@ class __$StacThemeCopyWithImpl<$Res> implements _$StacThemeCopyWith<$Res> {
 
     return $StacTabBarThemeDataCopyWith<$Res>(_self.tabBarTheme!, (value) {
       return _then(_self.copyWith(tabBarTheme: value));
-    });
-  }
-
-  /// Create a copy of StacTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacButtonStyleCopyWith<$Res>? get textButtonTheme {
-    if (_self.textButtonTheme == null) {
-      return null;
-    }
-
-    return $StacButtonStyleCopyWith<$Res>(_self.textButtonTheme!, (value) {
-      return _then(_self.copyWith(textButtonTheme: value));
     });
   }
 }

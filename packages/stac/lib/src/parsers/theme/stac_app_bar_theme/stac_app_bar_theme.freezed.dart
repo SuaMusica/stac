@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -132,13 +131,8 @@ abstract mixin class $StacAppBarThemeCopyWith<$Res> {
       StacSystemUIOverlayStyle? systemOverlayStyle,
       StacEdgeInsets? actionsPadding});
 
-  $StacShapeBorderCopyWith<$Res>? get shape;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle;
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
 }
 
 /// @nodoc
@@ -243,20 +237,6 @@ class _$StacAppBarThemeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacIconThemeDataCopyWith<$Res>? get iconTheme {
     if (_self.iconTheme == null) {
       return null;
@@ -280,62 +260,261 @@ class _$StacAppBarThemeCopyWithImpl<$Res>
       return _then(_self.copyWith(actionsIconTheme: value));
     });
   }
+}
 
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle {
-    if (_self.toolbarTextStyle == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacAppBarTheme].
+extension StacAppBarThemePatterns on StacAppBarTheme {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacAppBarTheme value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacAppBarTheme() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacTextStyleCopyWith<$Res>(_self.toolbarTextStyle!, (value) {
-      return _then(_self.copyWith(toolbarTextStyle: value));
-    });
   }
 
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacAppBarTheme value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacAppBarTheme():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle {
-    if (_self.systemOverlayStyle == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacSystemUIOverlayStyleCopyWith<$Res>(_self.systemOverlayStyle!,
-        (value) {
-      return _then(_self.copyWith(systemOverlayStyle: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacAppBarTheme value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacAppBarTheme() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
   }
 
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
-    });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            String? foregroundColor,
+            double? elevation,
+            double? scrolledUnderElevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            StacShapeBorder? shape,
+            StacIconThemeData? iconTheme,
+            StacIconThemeData? actionsIconTheme,
+            bool? centerTitle,
+            double? titleSpacing,
+            double? toolbarHeight,
+            StacTextStyle? toolbarTextStyle,
+            StacTextStyle? titleTextStyle,
+            StacSystemUIOverlayStyle? systemOverlayStyle,
+            StacEdgeInsets? actionsPadding)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacAppBarTheme() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.foregroundColor,
+            _that.elevation,
+            _that.scrolledUnderElevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.shape,
+            _that.iconTheme,
+            _that.actionsIconTheme,
+            _that.centerTitle,
+            _that.titleSpacing,
+            _that.toolbarHeight,
+            _that.toolbarTextStyle,
+            _that.titleTextStyle,
+            _that.systemOverlayStyle,
+            _that.actionsPadding);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            String? foregroundColor,
+            double? elevation,
+            double? scrolledUnderElevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            StacShapeBorder? shape,
+            StacIconThemeData? iconTheme,
+            StacIconThemeData? actionsIconTheme,
+            bool? centerTitle,
+            double? titleSpacing,
+            double? toolbarHeight,
+            StacTextStyle? toolbarTextStyle,
+            StacTextStyle? titleTextStyle,
+            StacSystemUIOverlayStyle? systemOverlayStyle,
+            StacEdgeInsets? actionsPadding)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacAppBarTheme():
+        return $default(
+            _that.backgroundColor,
+            _that.foregroundColor,
+            _that.elevation,
+            _that.scrolledUnderElevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.shape,
+            _that.iconTheme,
+            _that.actionsIconTheme,
+            _that.centerTitle,
+            _that.titleSpacing,
+            _that.toolbarHeight,
+            _that.toolbarTextStyle,
+            _that.titleTextStyle,
+            _that.systemOverlayStyle,
+            _that.actionsPadding);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? backgroundColor,
+            String? foregroundColor,
+            double? elevation,
+            double? scrolledUnderElevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            StacShapeBorder? shape,
+            StacIconThemeData? iconTheme,
+            StacIconThemeData? actionsIconTheme,
+            bool? centerTitle,
+            double? titleSpacing,
+            double? toolbarHeight,
+            StacTextStyle? toolbarTextStyle,
+            StacTextStyle? titleTextStyle,
+            StacSystemUIOverlayStyle? systemOverlayStyle,
+            StacEdgeInsets? actionsPadding)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacAppBarTheme() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.foregroundColor,
+            _that.elevation,
+            _that.scrolledUnderElevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.shape,
+            _that.iconTheme,
+            _that.actionsIconTheme,
+            _that.centerTitle,
+            _that.titleSpacing,
+            _that.toolbarHeight,
+            _that.toolbarTextStyle,
+            _that.titleTextStyle,
+            _that.systemOverlayStyle,
+            _that.actionsPadding);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -502,19 +681,9 @@ abstract mixin class _$StacAppBarThemeCopyWith<$Res>
       StacEdgeInsets? actionsPadding});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
   @override
   $StacIconThemeDataCopyWith<$Res>? get actionsIconTheme;
-  @override
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  @override
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding;
 }
 
 /// @nodoc
@@ -619,20 +788,6 @@ class __$StacAppBarThemeCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacIconThemeDataCopyWith<$Res>? get iconTheme {
     if (_self.iconTheme == null) {
       return null;
@@ -654,63 +809,6 @@ class __$StacAppBarThemeCopyWithImpl<$Res>
 
     return $StacIconThemeDataCopyWith<$Res>(_self.actionsIconTheme!, (value) {
       return _then(_self.copyWith(actionsIconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get toolbarTextStyle {
-    if (_self.toolbarTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.toolbarTextStyle!, (value) {
-      return _then(_self.copyWith(toolbarTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSystemUIOverlayStyleCopyWith<$Res>? get systemOverlayStyle {
-    if (_self.systemOverlayStyle == null) {
-      return null;
-    }
-
-    return $StacSystemUIOverlayStyleCopyWith<$Res>(_self.systemOverlayStyle!,
-        (value) {
-      return _then(_self.copyWith(systemOverlayStyle: value));
-    });
-  }
-
-  /// Create a copy of StacAppBarTheme
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get actionsPadding {
-    if (_self.actionsPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.actionsPadding!, (value) {
-      return _then(_self.copyWith(actionsPadding: value));
     });
   }
 }

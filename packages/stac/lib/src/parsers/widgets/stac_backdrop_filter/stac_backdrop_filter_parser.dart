@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_image_filter/stac_image_filter.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/colors/stac_blend_mode_parser.dart';
+import 'package:stac/src/parsers/foundation/effects/stac_image_filter_parsers.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_backdrop_filter.dart';
 
 class StacBackdropFilterParser extends StacParser<StacBackdropFilter> {
   const StacBackdropFilterParser();
@@ -18,13 +17,11 @@ class StacBackdropFilterParser extends StacParser<StacBackdropFilter> {
 
   @override
   Widget parse(BuildContext context, StacBackdropFilter model) {
-    final child = Stac.fromJson(model.child, context) ?? const SizedBox();
-
     return BackdropFilter(
-      filter: model.filter.parse!,
-      blendMode: model.blendMode,
-      enabled: model.enabled,
-      child: child,
+      filter: model.filter.parse,
+      blendMode: (model.blendMode ?? StacBlendMode.srcOver).parse,
+      enabled: model.enabled ?? true,
+      child: model.child?.parse(context) ?? const SizedBox(),
     );
   }
 }

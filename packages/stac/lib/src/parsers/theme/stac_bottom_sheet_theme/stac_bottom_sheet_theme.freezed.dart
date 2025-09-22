@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -116,10 +115,6 @@ abstract mixin class $StacBottomSheetThemeDataCopyWith<$Res> {
       StacSize? dragHandleSize,
       Clip? clipBehavior,
       StacBoxConstraints? constraints});
-
-  $StacBorderCopyWith<$Res>? get shape;
-  $StacSizeCopyWith<$Res>? get dragHandleSize;
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -204,47 +199,243 @@ class _$StacBottomSheetThemeDataCopyWithImpl<$Res>
               as StacBoxConstraints?,
     ));
   }
+}
 
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacBottomSheetThemeData].
+extension StacBottomSheetThemeDataPatterns on StacBottomSheetThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacBottomSheetThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacBottomSheetThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSizeCopyWith<$Res>? get dragHandleSize {
-    if (_self.dragHandleSize == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacSizeCopyWith<$Res>(_self.dragHandleSize!, (value) {
-      return _then(_self.copyWith(dragHandleSize: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacBottomSheetThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBottomSheetThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacBottomSheetThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBottomSheetThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            String? surfaceTintColor,
+            double? elevation,
+            String? modalBackgroundColor,
+            String? modalBarrierColor,
+            String? shadowColor,
+            double? modalElevation,
+            StacBorder? shape,
+            bool? showDragHandle,
+            String? dragHandleColor,
+            StacSize? dragHandleSize,
+            Clip? clipBehavior,
+            StacBoxConstraints? constraints)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacBottomSheetThemeData() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.surfaceTintColor,
+            _that.elevation,
+            _that.modalBackgroundColor,
+            _that.modalBarrierColor,
+            _that.shadowColor,
+            _that.modalElevation,
+            _that.shape,
+            _that.showDragHandle,
+            _that.dragHandleColor,
+            _that.dragHandleSize,
+            _that.clipBehavior,
+            _that.constraints);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? backgroundColor,
+            String? surfaceTintColor,
+            double? elevation,
+            String? modalBackgroundColor,
+            String? modalBarrierColor,
+            String? shadowColor,
+            double? modalElevation,
+            StacBorder? shape,
+            bool? showDragHandle,
+            String? dragHandleColor,
+            StacSize? dragHandleSize,
+            Clip? clipBehavior,
+            StacBoxConstraints? constraints)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBottomSheetThemeData():
+        return $default(
+            _that.backgroundColor,
+            _that.surfaceTintColor,
+            _that.elevation,
+            _that.modalBackgroundColor,
+            _that.modalBarrierColor,
+            _that.shadowColor,
+            _that.modalElevation,
+            _that.shape,
+            _that.showDragHandle,
+            _that.dragHandleColor,
+            _that.dragHandleSize,
+            _that.clipBehavior,
+            _that.constraints);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? backgroundColor,
+            String? surfaceTintColor,
+            double? elevation,
+            String? modalBackgroundColor,
+            String? modalBarrierColor,
+            String? shadowColor,
+            double? modalElevation,
+            StacBorder? shape,
+            bool? showDragHandle,
+            String? dragHandleColor,
+            StacSize? dragHandleSize,
+            Clip? clipBehavior,
+            StacBoxConstraints? constraints)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacBottomSheetThemeData() when $default != null:
+        return $default(
+            _that.backgroundColor,
+            _that.surfaceTintColor,
+            _that.elevation,
+            _that.modalBackgroundColor,
+            _that.modalBarrierColor,
+            _that.shadowColor,
+            _that.modalElevation,
+            _that.shape,
+            _that.showDragHandle,
+            _that.dragHandleColor,
+            _that.dragHandleSize,
+            _that.clipBehavior,
+            _that.constraints);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -389,13 +580,6 @@ abstract mixin class _$StacBottomSheetThemeDataCopyWith<$Res>
       StacSize? dragHandleSize,
       Clip? clipBehavior,
       StacBoxConstraints? constraints});
-
-  @override
-  $StacBorderCopyWith<$Res>? get shape;
-  @override
-  $StacSizeCopyWith<$Res>? get dragHandleSize;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get constraints;
 }
 
 /// @nodoc
@@ -479,48 +663,6 @@ class __$StacBottomSheetThemeDataCopyWithImpl<$Res>
           : constraints // ignore: cast_nullable_to_non_nullable
               as StacBoxConstraints?,
     ));
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSizeCopyWith<$Res>? get dragHandleSize {
-    if (_self.dragHandleSize == null) {
-      return null;
-    }
-
-    return $StacSizeCopyWith<$Res>(_self.dragHandleSize!, (value) {
-      return _then(_self.copyWith(dragHandleSize: value));
-    });
-  }
-
-  /// Create a copy of StacBottomSheetThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get constraints {
-    if (_self.constraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.constraints!, (value) {
-      return _then(_self.copyWith(constraints: value));
-    });
   }
 }
 

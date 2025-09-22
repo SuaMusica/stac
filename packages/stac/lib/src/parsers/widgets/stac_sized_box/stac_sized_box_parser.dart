@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_sized_box/stac_sized_box.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacSizedBoxParser extends StacParser<StacSizedBox> {
@@ -18,9 +16,9 @@ class StacSizedBoxParser extends StacParser<StacSizedBox> {
   @override
   Widget parse(BuildContext context, StacSizedBox model) {
     return SizedBox(
-      width: model.width?.parse,
-      height: model.height?.parse,
-      child: Stac.fromJson(model.child, context),
+      width: model.width,
+      height: model.height,
+      child: model.child.parse(context),
     );
   }
 }

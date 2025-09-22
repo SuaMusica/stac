@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
 import 'package:stac/src/utils/variable_resolver.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 import 'stac_set_value.dart';

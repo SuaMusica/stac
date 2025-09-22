@@ -132,9 +132,6 @@ abstract mixin class $StacBottomNavigationBarCopyWith<$Res> {
       bool? showUnselectedLabels,
       bool? enableFeedback,
       BottomNavigationBarLandscapeLayout? landscapeLayout});
-
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle;
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -233,34 +230,6 @@ class _$StacBottomNavigationBarCopyWithImpl<$Res>
           : landscapeLayout // ignore: cast_nullable_to_non_nullable
               as BottomNavigationBarLandscapeLayout?,
     ));
-  }
-
-  /// Create a copy of StacBottomNavigationBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle {
-    if (_self.selectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.selectedLabelStyle!, (value) {
-      return _then(_self.copyWith(selectedLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBottomNavigationBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
-    });
   }
 }
 
@@ -437,11 +406,6 @@ abstract mixin class _$StacBottomNavigationBarCopyWith<$Res>
       bool? showUnselectedLabels,
       bool? enableFeedback,
       BottomNavigationBarLandscapeLayout? landscapeLayout});
-
-  @override
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle;
 }
 
 /// @nodoc
@@ -540,34 +504,6 @@ class __$StacBottomNavigationBarCopyWithImpl<$Res>
           : landscapeLayout // ignore: cast_nullable_to_non_nullable
               as BottomNavigationBarLandscapeLayout?,
     ));
-  }
-
-  /// Create a copy of StacBottomNavigationBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get selectedLabelStyle {
-    if (_self.selectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.selectedLabelStyle!, (value) {
-      return _then(_self.copyWith(selectedLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacBottomNavigationBar
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get unselectedLabelStyle {
-    if (_self.unselectedLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.unselectedLabelStyle!, (value) {
-      return _then(_self.copyWith(unselectedLabelStyle: value));
-    });
   }
 }
 

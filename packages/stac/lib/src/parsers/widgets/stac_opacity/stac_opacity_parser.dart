@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_opacity/stac_opacity.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacOpacityParser extends StacParser<StacOpacity> {
@@ -17,8 +15,9 @@ class StacOpacityParser extends StacParser<StacOpacity> {
   @override
   Widget parse(BuildContext context, StacOpacity model) {
     return Opacity(
-      opacity: model.opacity.parse,
-      child: Stac.fromJson(model.child, context),
+      opacity: model.opacity,
+      alwaysIncludeSemantics: model.alwaysIncludeSemantics ?? false,
+      child: model.child?.parse(context),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_form/stac_form.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/forms/stac_autovalidate_mode_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacFormParser extends StacParser<StacForm> {
@@ -47,8 +47,8 @@ class _FormWidgetState extends State<_FormWidget> {
         builder: (context) {
           return Form(
             key: StacFormScope.of(context)?.formKey,
-            child:
-                Stac.fromJson(widget.model.child, context) ?? const SizedBox(),
+            autovalidateMode: widget.model.autovalidateMode?.parse,
+            child: widget.model.child?.parse(context) ?? const SizedBox(),
           );
         },
       ),

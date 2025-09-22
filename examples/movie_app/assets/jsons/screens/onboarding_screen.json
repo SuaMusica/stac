@@ -22,6 +22,7 @@
                     "height": 500,
                     "decoration": {
                         "gradient": {
+                            "gradientType": "linear",
                             "colors": [
                                 "#00050608",
                                 "#050608",
@@ -55,7 +56,7 @@
                                     "style": "displayMedium",
                                     "children": [
                                         {
-                                            "data": "\nDatabase",
+                                            "text": "\nDatabase",
                                             "style": {
                                                 "color": "primary"
                                             }

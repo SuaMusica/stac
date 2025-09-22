@@ -23,8 +23,7 @@ _StacCheckboxThemeData _$StacCheckboxThemeDataFromJson(
               json['visualDensity'] as Map<String, dynamic>),
       shape: json['shape'] == null
           ? null
-          : StacRoundedRactangleBorder.fromJson(
-              json['shape'] as Map<String, dynamic>),
+          : StacShapeBorder.fromJson(json['shape'] as Map<String, dynamic>),
       side: json['side'] == null
           ? null
           : StacBorderSide.fromJson(json['side'] as Map<String, dynamic>),

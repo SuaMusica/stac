@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/actions/stac_navigate_action/stac_navigate_action.dart';
-import 'package:stac/src/utils/action_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacNavigateActionParser extends StacActionParser<StacNavigateAction> {
@@ -25,6 +24,14 @@ class StacNavigateActionParser extends StacActionParser<StacNavigateAction> {
       widget = Stac.fromNetwork(context: context, request: model.request!);
     } else if (model.assetPath != null) {
       widget = Stac.fromAssets(model.assetPath!);
+    } else if (model.routeName != null &&
+        (model.navigationStyle == null ||
+            model.navigationStyle == NavigationStyle.push ||
+            model.navigationStyle == NavigationStyle.pushReplacement ||
+            model.navigationStyle == NavigationStyle.pushAndRemoveAll)) {
+      // If a routeName is provided and we're using a push-style navigation,
+      // render the remote screen using the Stac(routeName) widget.
+      widget = Stac(routeName: model.routeName!);
     }
     return _navigate(
       context: context,

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -146,13 +145,6 @@ abstract mixin class $StacListTileThemeDataCopyWith<$Res> {
       StacVisualDensity? visualDensity,
       ListTileTitleAlignment? titleAlignment,
       List<StacShadow>? shadows});
-
-  $StacBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle;
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -267,90 +259,279 @@ class _$StacListTileThemeDataCopyWithImpl<$Res>
               as List<StacShadow>?,
     ));
   }
+}
 
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacListTileThemeData].
+extension StacListTileThemeDataPatterns on StacListTileThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacListTileThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacListTileThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacListTileThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacListTileThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle {
-    if (_self.subtitleTextStyle == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.subtitleTextStyle!, (value) {
-      return _then(_self.copyWith(subtitleTextStyle: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacListTileThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacListTileThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
   }
 
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle {
-    if (_self.leadingAndTrailingTextStyle == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.leadingAndTrailingTextStyle!,
-        (value) {
-      return _then(_self.copyWith(leadingAndTrailingTextStyle: value));
-    });
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            bool? dense,
+            StacBorder? shape,
+            ListTileStyle? style,
+            String? selectedColor,
+            String? iconColor,
+            String? textColor,
+            StacTextStyle? titleTextStyle,
+            StacTextStyle? subtitleTextStyle,
+            StacTextStyle? leadingAndTrailingTextStyle,
+            StacEdgeInsets? contentPadding,
+            String? tileColor,
+            String? selectedTileColor,
+            double? horizontalTitleGap,
+            double? minVerticalPadding,
+            double? minLeadingWidth,
+            bool? enableFeedback,
+            StacVisualDensity? visualDensity,
+            ListTileTitleAlignment? titleAlignment,
+            List<StacShadow>? shadows)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacListTileThemeData() when $default != null:
+        return $default(
+            _that.dense,
+            _that.shape,
+            _that.style,
+            _that.selectedColor,
+            _that.iconColor,
+            _that.textColor,
+            _that.titleTextStyle,
+            _that.subtitleTextStyle,
+            _that.leadingAndTrailingTextStyle,
+            _that.contentPadding,
+            _that.tileColor,
+            _that.selectedTileColor,
+            _that.horizontalTitleGap,
+            _that.minVerticalPadding,
+            _that.minLeadingWidth,
+            _that.enableFeedback,
+            _that.visualDensity,
+            _that.titleAlignment,
+            _that.shadows);
+      case _:
+        return orElse();
+    }
   }
 
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            bool? dense,
+            StacBorder? shape,
+            ListTileStyle? style,
+            String? selectedColor,
+            String? iconColor,
+            String? textColor,
+            StacTextStyle? titleTextStyle,
+            StacTextStyle? subtitleTextStyle,
+            StacTextStyle? leadingAndTrailingTextStyle,
+            StacEdgeInsets? contentPadding,
+            String? tileColor,
+            String? selectedTileColor,
+            double? horizontalTitleGap,
+            double? minVerticalPadding,
+            double? minLeadingWidth,
+            bool? enableFeedback,
+            StacVisualDensity? visualDensity,
+            ListTileTitleAlignment? titleAlignment,
+            List<StacShadow>? shadows)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacListTileThemeData():
+        return $default(
+            _that.dense,
+            _that.shape,
+            _that.style,
+            _that.selectedColor,
+            _that.iconColor,
+            _that.textColor,
+            _that.titleTextStyle,
+            _that.subtitleTextStyle,
+            _that.leadingAndTrailingTextStyle,
+            _that.contentPadding,
+            _that.tileColor,
+            _that.selectedTileColor,
+            _that.horizontalTitleGap,
+            _that.minVerticalPadding,
+            _that.minLeadingWidth,
+            _that.enableFeedback,
+            _that.visualDensity,
+            _that.titleAlignment,
+            _that.shadows);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            bool? dense,
+            StacBorder? shape,
+            ListTileStyle? style,
+            String? selectedColor,
+            String? iconColor,
+            String? textColor,
+            StacTextStyle? titleTextStyle,
+            StacTextStyle? subtitleTextStyle,
+            StacTextStyle? leadingAndTrailingTextStyle,
+            StacEdgeInsets? contentPadding,
+            String? tileColor,
+            String? selectedTileColor,
+            double? horizontalTitleGap,
+            double? minVerticalPadding,
+            double? minLeadingWidth,
+            bool? enableFeedback,
+            StacVisualDensity? visualDensity,
+            ListTileTitleAlignment? titleAlignment,
+            List<StacShadow>? shadows)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacListTileThemeData() when $default != null:
+        return $default(
+            _that.dense,
+            _that.shape,
+            _that.style,
+            _that.selectedColor,
+            _that.iconColor,
+            _that.textColor,
+            _that.titleTextStyle,
+            _that.subtitleTextStyle,
+            _that.leadingAndTrailingTextStyle,
+            _that.contentPadding,
+            _that.tileColor,
+            _that.selectedTileColor,
+            _that.horizontalTitleGap,
+            _that.minVerticalPadding,
+            _that.minLeadingWidth,
+            _that.enableFeedback,
+            _that.visualDensity,
+            _that.titleAlignment,
+            _that.shadows);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -545,19 +726,6 @@ abstract mixin class _$StacListTileThemeDataCopyWith<$Res>
       StacVisualDensity? visualDensity,
       ListTileTitleAlignment? titleAlignment,
       List<StacShadow>? shadows});
-
-  @override
-  $StacBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding;
-  @override
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
 }
 
 /// @nodoc
@@ -671,91 +839,6 @@ class __$StacListTileThemeDataCopyWithImpl<$Res>
           : shadows // ignore: cast_nullable_to_non_nullable
               as List<StacShadow>?,
     ));
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get titleTextStyle {
-    if (_self.titleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.titleTextStyle!, (value) {
-      return _then(_self.copyWith(titleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get subtitleTextStyle {
-    if (_self.subtitleTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.subtitleTextStyle!, (value) {
-      return _then(_self.copyWith(subtitleTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get leadingAndTrailingTextStyle {
-    if (_self.leadingAndTrailingTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.leadingAndTrailingTextStyle!,
-        (value) {
-      return _then(_self.copyWith(leadingAndTrailingTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get contentPadding {
-    if (_self.contentPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.contentPadding!, (value) {
-      return _then(_self.copyWith(contentPadding: value));
-    });
-  }
-
-  /// Create a copy of StacListTileThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 }
 
