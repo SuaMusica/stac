@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:stac_logger/stac_logger.dart';
 import 'package:stac_framework/stac_framework.dart';
 
@@ -14,6 +15,9 @@ class StacRegistry {
 
   static final _stacActionParsers = <String, StacActionParser>{};
 
+  Color? Function(String?)? parseCustomColor;
+  int? _buildNumber;
+  int? get buildNumber => _buildNumber;
   static final Map<String, dynamic> _variables = {};
 
   bool register(StacParser parser, [bool override = false]) {
@@ -68,6 +72,12 @@ class StacRegistry {
         return registerAction(parser, override);
       },
     );
+  }
+
+  void registerBuildNumber(int? buildNumber) {
+    if (buildNumber != null) {
+      _buildNumber = buildNumber;
+    }
   }
 
   StacParser<dynamic>? getParser(String type) {
