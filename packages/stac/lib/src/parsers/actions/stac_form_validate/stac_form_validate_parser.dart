@@ -1,12 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
-import 'package:stac/src/utils/action_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_form_validate.dart';
 
 class StacFormValidateParser extends StacActionParser<StacFormValidate> {
   const StacFormValidateParser();
@@ -24,9 +22,9 @@ class StacFormValidateParser extends StacActionParser<StacFormValidate> {
         StacFormScope.of(context)?.formKey.currentState?.validate() ?? false;
 
     if (isValid) {
-      return Stac.onCallFromJson(model.isValid, context);
+      return model.isValid?.parse(context);
     } else {
-      return Stac.onCallFromJson(model.isNotValid, context);
+      return model.isNotValid?.parse(context);
     }
   }
 }

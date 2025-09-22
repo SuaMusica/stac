@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:stac/src/framework/ui/stac_outline_input_border.dart';
-import 'package:stac/src/parsers/widgets/stac_border_radius/stac_border_radius.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_radius_parser.dart';
+import 'package:stac/src/parsers/foundation/effects/stac_gradient_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_gradient/stac_gradient.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_input_border.freezed.dart';
 part 'stac_input_border.g.dart';
@@ -37,12 +38,17 @@ extension StacInputBorderParser on StacInputBorder {
             color: color?.toColor(context) ?? Colors.black,
             width: width.parse,
           ),
-          borderRadius: borderRadius.parse,
+          borderRadius: borderRadius?.parse ??
+              const BorderRadius.only(
+                topLeft: Radius.circular(4.0),
+                topRight: Radius.circular(4.0),
+              ),
         );
       case StacInputBorderType.outlineInputBorder:
         return StacOutlineInputBorder(
           width: width.parse,
-          borderRadius: borderRadius.parse,
+          borderRadius:
+              borderRadius?.parse ?? BorderRadius.all(Radius.circular(4.0)),
           gapPadding: gapPadding,
           color: color?.toColor(context) ?? Colors.black,
           gradient: gradient?.parse(context),

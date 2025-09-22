@@ -19,8 +19,8 @@
       {
         "type": "listTile",
         "leading": {
-          "type": "image",
-          "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          "type": "icon",
+          "icon": "person"
         },
         "title": {
           "type": "padding",
@@ -62,8 +62,8 @@
       {
         "type": "listTile",
         "leading": {
-          "type": "image",
-          "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          "type": "icon",
+          "icon": "person"
         },
         "title": {
           "type": "padding",

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -166,15 +165,7 @@ abstract mixin class $StacChipThemeDataCopyWith<$Res> {
       StacBoxConstraints? avatarBoxConstraints,
       StacBoxConstraints? deleteIconBoxConstraints});
 
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  $StacBorderSideCopyWith<$Res>? get side;
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  $StacTextStyleCopyWith<$Res>? get secondaryLabelStyle;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints;
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints;
 }
 
 /// @nodoc
@@ -314,90 +305,6 @@ class _$StacChipThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get secondaryLabelStyle {
-    if (_self.secondaryLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.secondaryLabelStyle!, (value) {
-      return _then(_self.copyWith(secondaryLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacIconThemeDataCopyWith<$Res>? get iconTheme {
     if (_self.iconTheme == null) {
       return null;
@@ -407,35 +314,303 @@ class _$StacChipThemeDataCopyWithImpl<$Res>
       return _then(_self.copyWith(iconTheme: value));
     });
   }
+}
 
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints {
-    if (_self.avatarBoxConstraints == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacChipThemeData].
+extension StacChipThemeDataPatterns on StacChipThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacChipThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacChipThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.avatarBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(avatarBoxConstraints: value));
-    });
   }
 
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints {
-    if (_self.deleteIconBoxConstraints == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacBoxConstraintsCopyWith<$Res>(_self.deleteIconBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(deleteIconBoxConstraints: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacChipThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacChipThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacChipThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacChipThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? color,
+            String? backgroundColor,
+            String? deleteIconColor,
+            String? disabledColor,
+            String? selectedColor,
+            String? secondarySelectedColor,
+            String? shadowColor,
+            String? surfaceTintColor,
+            String? selectedShadowColor,
+            bool? showCheckmark,
+            String? checkmarkColor,
+            StacEdgeInsets? labelPadding,
+            StacEdgeInsets? padding,
+            StacBorderSide? side,
+            StacShapeBorder? shape,
+            StacTextStyle? labelStyle,
+            StacTextStyle? secondaryLabelStyle,
+            Brightness? brightness,
+            double? elevation,
+            double? pressElevation,
+            StacIconThemeData? iconTheme,
+            StacBoxConstraints? avatarBoxConstraints,
+            StacBoxConstraints? deleteIconBoxConstraints)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacChipThemeData() when $default != null:
+        return $default(
+            _that.color,
+            _that.backgroundColor,
+            _that.deleteIconColor,
+            _that.disabledColor,
+            _that.selectedColor,
+            _that.secondarySelectedColor,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.selectedShadowColor,
+            _that.showCheckmark,
+            _that.checkmarkColor,
+            _that.labelPadding,
+            _that.padding,
+            _that.side,
+            _that.shape,
+            _that.labelStyle,
+            _that.secondaryLabelStyle,
+            _that.brightness,
+            _that.elevation,
+            _that.pressElevation,
+            _that.iconTheme,
+            _that.avatarBoxConstraints,
+            _that.deleteIconBoxConstraints);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? color,
+            String? backgroundColor,
+            String? deleteIconColor,
+            String? disabledColor,
+            String? selectedColor,
+            String? secondarySelectedColor,
+            String? shadowColor,
+            String? surfaceTintColor,
+            String? selectedShadowColor,
+            bool? showCheckmark,
+            String? checkmarkColor,
+            StacEdgeInsets? labelPadding,
+            StacEdgeInsets? padding,
+            StacBorderSide? side,
+            StacShapeBorder? shape,
+            StacTextStyle? labelStyle,
+            StacTextStyle? secondaryLabelStyle,
+            Brightness? brightness,
+            double? elevation,
+            double? pressElevation,
+            StacIconThemeData? iconTheme,
+            StacBoxConstraints? avatarBoxConstraints,
+            StacBoxConstraints? deleteIconBoxConstraints)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacChipThemeData():
+        return $default(
+            _that.color,
+            _that.backgroundColor,
+            _that.deleteIconColor,
+            _that.disabledColor,
+            _that.selectedColor,
+            _that.secondarySelectedColor,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.selectedShadowColor,
+            _that.showCheckmark,
+            _that.checkmarkColor,
+            _that.labelPadding,
+            _that.padding,
+            _that.side,
+            _that.shape,
+            _that.labelStyle,
+            _that.secondaryLabelStyle,
+            _that.brightness,
+            _that.elevation,
+            _that.pressElevation,
+            _that.iconTheme,
+            _that.avatarBoxConstraints,
+            _that.deleteIconBoxConstraints);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? color,
+            String? backgroundColor,
+            String? deleteIconColor,
+            String? disabledColor,
+            String? selectedColor,
+            String? secondarySelectedColor,
+            String? shadowColor,
+            String? surfaceTintColor,
+            String? selectedShadowColor,
+            bool? showCheckmark,
+            String? checkmarkColor,
+            StacEdgeInsets? labelPadding,
+            StacEdgeInsets? padding,
+            StacBorderSide? side,
+            StacShapeBorder? shape,
+            StacTextStyle? labelStyle,
+            StacTextStyle? secondaryLabelStyle,
+            Brightness? brightness,
+            double? elevation,
+            double? pressElevation,
+            StacIconThemeData? iconTheme,
+            StacBoxConstraints? avatarBoxConstraints,
+            StacBoxConstraints? deleteIconBoxConstraints)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacChipThemeData() when $default != null:
+        return $default(
+            _that.color,
+            _that.backgroundColor,
+            _that.deleteIconColor,
+            _that.disabledColor,
+            _that.selectedColor,
+            _that.secondarySelectedColor,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.selectedShadowColor,
+            _that.showCheckmark,
+            _that.checkmarkColor,
+            _that.labelPadding,
+            _that.padding,
+            _that.side,
+            _that.shape,
+            _that.labelStyle,
+            _that.secondaryLabelStyle,
+            _that.brightness,
+            _that.elevation,
+            _that.pressElevation,
+            _that.iconTheme,
+            _that.avatarBoxConstraints,
+            _that.deleteIconBoxConstraints);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -650,23 +825,7 @@ abstract mixin class _$StacChipThemeDataCopyWith<$Res>
       StacBoxConstraints? deleteIconBoxConstraints});
 
   @override
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get padding;
-  @override
-  $StacBorderSideCopyWith<$Res>? get side;
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelStyle;
-  @override
-  $StacTextStyleCopyWith<$Res>? get secondaryLabelStyle;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints;
-  @override
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints;
 }
 
 /// @nodoc
@@ -806,90 +965,6 @@ class __$StacChipThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get labelPadding {
-    if (_self.labelPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.labelPadding!, (value) {
-      return _then(_self.copyWith(labelPadding: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get padding {
-    if (_self.padding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.padding!, (value) {
-      return _then(_self.copyWith(padding: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelStyle {
-    if (_self.labelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelStyle!, (value) {
-      return _then(_self.copyWith(labelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get secondaryLabelStyle {
-    if (_self.secondaryLabelStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.secondaryLabelStyle!, (value) {
-      return _then(_self.copyWith(secondaryLabelStyle: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacIconThemeDataCopyWith<$Res>? get iconTheme {
     if (_self.iconTheme == null) {
       return null;
@@ -897,36 +972,6 @@ class __$StacChipThemeDataCopyWithImpl<$Res>
 
     return $StacIconThemeDataCopyWith<$Res>(_self.iconTheme!, (value) {
       return _then(_self.copyWith(iconTheme: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get avatarBoxConstraints {
-    if (_self.avatarBoxConstraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.avatarBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(avatarBoxConstraints: value));
-    });
-  }
-
-  /// Create a copy of StacChipThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBoxConstraintsCopyWith<$Res>? get deleteIconBoxConstraints {
-    if (_self.deleteIconBoxConstraints == null) {
-      return null;
-    }
-
-    return $StacBoxConstraintsCopyWith<$Res>(_self.deleteIconBoxConstraints!,
-        (value) {
-      return _then(_self.copyWith(deleteIconBoxConstraints: value));
     });
   }
 }

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -129,10 +128,6 @@ abstract mixin class $StacSnackBarThemeDataCopyWith<$Res> {
       double? actionOverflowThreshold,
       String? actionBackgroundColor,
       String? disabledActionBackgroundColor});
-
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding;
 }
 
 /// @nodoc
@@ -227,47 +222,255 @@ class _$StacSnackBarThemeDataCopyWithImpl<$Res>
               as String?,
     ));
   }
+}
 
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacSnackBarThemeData].
+extension StacSnackBarThemeDataPatterns on StacSnackBarThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacSnackBarThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacSnackBarThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
   }
 
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacSnackBarThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacSnackBarThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding {
-    if (_self.insetPadding == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacEdgeInsetsCopyWith<$Res>(_self.insetPadding!, (value) {
-      return _then(_self.copyWith(insetPadding: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacSnackBarThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacSnackBarThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            SnackBarBehavior? behavior,
+            String? backgroundColor,
+            double? elevation,
+            StacShapeBorder? shape,
+            double? width,
+            StacTextStyle? contentTextStyle,
+            String? actionTextColor,
+            String? disabledActionTextColor,
+            StacEdgeInsets? insetPadding,
+            DismissDirection? dismissDirection,
+            bool? showCloseIcon,
+            String? closeIconColor,
+            double? actionOverflowThreshold,
+            String? actionBackgroundColor,
+            String? disabledActionBackgroundColor)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacSnackBarThemeData() when $default != null:
+        return $default(
+            _that.behavior,
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shape,
+            _that.width,
+            _that.contentTextStyle,
+            _that.actionTextColor,
+            _that.disabledActionTextColor,
+            _that.insetPadding,
+            _that.dismissDirection,
+            _that.showCloseIcon,
+            _that.closeIconColor,
+            _that.actionOverflowThreshold,
+            _that.actionBackgroundColor,
+            _that.disabledActionBackgroundColor);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            SnackBarBehavior? behavior,
+            String? backgroundColor,
+            double? elevation,
+            StacShapeBorder? shape,
+            double? width,
+            StacTextStyle? contentTextStyle,
+            String? actionTextColor,
+            String? disabledActionTextColor,
+            StacEdgeInsets? insetPadding,
+            DismissDirection? dismissDirection,
+            bool? showCloseIcon,
+            String? closeIconColor,
+            double? actionOverflowThreshold,
+            String? actionBackgroundColor,
+            String? disabledActionBackgroundColor)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacSnackBarThemeData():
+        return $default(
+            _that.behavior,
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shape,
+            _that.width,
+            _that.contentTextStyle,
+            _that.actionTextColor,
+            _that.disabledActionTextColor,
+            _that.insetPadding,
+            _that.dismissDirection,
+            _that.showCloseIcon,
+            _that.closeIconColor,
+            _that.actionOverflowThreshold,
+            _that.actionBackgroundColor,
+            _that.disabledActionBackgroundColor);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            SnackBarBehavior? behavior,
+            String? backgroundColor,
+            double? elevation,
+            StacShapeBorder? shape,
+            double? width,
+            StacTextStyle? contentTextStyle,
+            String? actionTextColor,
+            String? disabledActionTextColor,
+            StacEdgeInsets? insetPadding,
+            DismissDirection? dismissDirection,
+            bool? showCloseIcon,
+            String? closeIconColor,
+            double? actionOverflowThreshold,
+            String? actionBackgroundColor,
+            String? disabledActionBackgroundColor)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacSnackBarThemeData() when $default != null:
+        return $default(
+            _that.behavior,
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shape,
+            _that.width,
+            _that.contentTextStyle,
+            _that.actionTextColor,
+            _that.disabledActionTextColor,
+            _that.insetPadding,
+            _that.dismissDirection,
+            _that.showCloseIcon,
+            _that.closeIconColor,
+            _that.actionOverflowThreshold,
+            _that.actionBackgroundColor,
+            _that.disabledActionBackgroundColor);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -429,13 +632,6 @@ abstract mixin class _$StacSnackBarThemeDataCopyWith<$Res>
       double? actionOverflowThreshold,
       String? actionBackgroundColor,
       String? disabledActionBackgroundColor});
-
-  @override
-  $StacShapeBorderCopyWith<$Res>? get shape;
-  @override
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle;
-  @override
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding;
 }
 
 /// @nodoc
@@ -529,48 +725,6 @@ class __$StacSnackBarThemeDataCopyWithImpl<$Res>
           : disabledActionBackgroundColor // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get contentTextStyle {
-    if (_self.contentTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.contentTextStyle!, (value) {
-      return _then(_self.copyWith(contentTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacSnackBarThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacEdgeInsetsCopyWith<$Res>? get insetPadding {
-    if (_self.insetPadding == null) {
-      return null;
-    }
-
-    return $StacEdgeInsetsCopyWith<$Res>(_self.insetPadding!, (value) {
-      return _then(_self.copyWith(insetPadding: value));
-    });
   }
 }
 

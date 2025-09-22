@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -22,7 +21,7 @@ mixin _$StacCheckboxThemeData {
   double? get splashRadius;
   MaterialTapTargetSize? get materialTapTargetSize;
   StacVisualDensity? get visualDensity;
-  StacRoundedRactangleBorder? get shape;
+  StacShapeBorder? get shape;
   StacBorderSide? get side;
 
   /// Create a copy of StacCheckboxThemeData
@@ -93,12 +92,8 @@ abstract mixin class $StacCheckboxThemeDataCopyWith<$Res> {
       double? splashRadius,
       MaterialTapTargetSize? materialTapTargetSize,
       StacVisualDensity? visualDensity,
-      StacRoundedRactangleBorder? shape,
+      StacShapeBorder? shape,
       StacBorderSide? side});
-
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape;
-  $StacBorderSideCopyWith<$Res>? get side;
 }
 
 /// @nodoc
@@ -156,54 +151,226 @@ class _$StacCheckboxThemeDataCopyWithImpl<$Res>
       shape: freezed == shape
           ? _self.shape
           : shape // ignore: cast_nullable_to_non_nullable
-              as StacRoundedRactangleBorder?,
+              as StacShapeBorder?,
       side: freezed == side
           ? _self.side
           : side // ignore: cast_nullable_to_non_nullable
               as StacBorderSide?,
     ));
   }
+}
 
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
+/// Adds pattern-matching-related methods to [StacCheckboxThemeData].
+extension StacCheckboxThemeDataPatterns on StacCheckboxThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacCheckboxThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacCheckboxThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
     }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
   }
 
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-    return $StacRoundedRactangleBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacCheckboxThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacCheckboxThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
   }
 
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
-    });
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacCheckboxThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacCheckboxThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            StacMouseCursor? mouseCursor,
+            String? fillColor,
+            String? checkColor,
+            String? overlayColor,
+            double? splashRadius,
+            MaterialTapTargetSize? materialTapTargetSize,
+            StacVisualDensity? visualDensity,
+            StacShapeBorder? shape,
+            StacBorderSide? side)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacCheckboxThemeData() when $default != null:
+        return $default(
+            _that.mouseCursor,
+            _that.fillColor,
+            _that.checkColor,
+            _that.overlayColor,
+            _that.splashRadius,
+            _that.materialTapTargetSize,
+            _that.visualDensity,
+            _that.shape,
+            _that.side);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            StacMouseCursor? mouseCursor,
+            String? fillColor,
+            String? checkColor,
+            String? overlayColor,
+            double? splashRadius,
+            MaterialTapTargetSize? materialTapTargetSize,
+            StacVisualDensity? visualDensity,
+            StacShapeBorder? shape,
+            StacBorderSide? side)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacCheckboxThemeData():
+        return $default(
+            _that.mouseCursor,
+            _that.fillColor,
+            _that.checkColor,
+            _that.overlayColor,
+            _that.splashRadius,
+            _that.materialTapTargetSize,
+            _that.visualDensity,
+            _that.shape,
+            _that.side);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            StacMouseCursor? mouseCursor,
+            String? fillColor,
+            String? checkColor,
+            String? overlayColor,
+            double? splashRadius,
+            MaterialTapTargetSize? materialTapTargetSize,
+            StacVisualDensity? visualDensity,
+            StacShapeBorder? shape,
+            StacBorderSide? side)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacCheckboxThemeData() when $default != null:
+        return $default(
+            _that.mouseCursor,
+            _that.fillColor,
+            _that.checkColor,
+            _that.overlayColor,
+            _that.splashRadius,
+            _that.materialTapTargetSize,
+            _that.visualDensity,
+            _that.shape,
+            _that.side);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -238,7 +405,7 @@ class _StacCheckboxThemeData implements StacCheckboxThemeData {
   @override
   final StacVisualDensity? visualDensity;
   @override
-  final StacRoundedRactangleBorder? shape;
+  final StacShapeBorder? shape;
   @override
   final StacBorderSide? side;
 
@@ -317,15 +484,8 @@ abstract mixin class _$StacCheckboxThemeDataCopyWith<$Res>
       double? splashRadius,
       MaterialTapTargetSize? materialTapTargetSize,
       StacVisualDensity? visualDensity,
-      StacRoundedRactangleBorder? shape,
+      StacShapeBorder? shape,
       StacBorderSide? side});
-
-  @override
-  $StacVisualDensityCopyWith<$Res>? get visualDensity;
-  @override
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape;
-  @override
-  $StacBorderSideCopyWith<$Res>? get side;
 }
 
 /// @nodoc
@@ -383,54 +543,12 @@ class __$StacCheckboxThemeDataCopyWithImpl<$Res>
       shape: freezed == shape
           ? _self.shape
           : shape // ignore: cast_nullable_to_non_nullable
-              as StacRoundedRactangleBorder?,
+              as StacShapeBorder?,
       side: freezed == side
           ? _self.side
           : side // ignore: cast_nullable_to_non_nullable
               as StacBorderSide?,
     ));
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacVisualDensityCopyWith<$Res>? get visualDensity {
-    if (_self.visualDensity == null) {
-      return null;
-    }
-
-    return $StacVisualDensityCopyWith<$Res>(_self.visualDensity!, (value) {
-      return _then(_self.copyWith(visualDensity: value));
-    });
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacRoundedRactangleBorderCopyWith<$Res>? get shape {
-    if (_self.shape == null) {
-      return null;
-    }
-
-    return $StacRoundedRactangleBorderCopyWith<$Res>(_self.shape!, (value) {
-      return _then(_self.copyWith(shape: value));
-    });
-  }
-
-  /// Create a copy of StacCheckboxThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacBorderSideCopyWith<$Res>? get side {
-    if (_self.side == null) {
-      return null;
-    }
-
-    return $StacBorderSideCopyWith<$Res>(_self.side!, (value) {
-      return _then(_self.copyWith(side: value));
-    });
   }
 }
 

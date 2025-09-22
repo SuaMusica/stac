@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
-import 'package:stac/src/parsers/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
-import 'package:stac/src/parsers/widgets/stac_border_side/stac_border_side.dart';
-import 'package:stac/src/parsers/widgets/stac_shape_border/stac_shape_border.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_side_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/foundation/theme/stac_input_decoration_theme_parser.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_date_picker_theme_data.freezed.dart';
 part 'stac_date_picker_theme_data.g.dart';

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stac/src/parsers/foundation/theme/stac_input_decoration_theme_parser.dart';
 import 'package:stac/src/parsers/theme/stac_app_bar_theme/stac_app_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_badge_theme_data/stac_badge_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_app_bar_theme/stac_bottom_app_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_nav_bar_theme/stac_bottom_nav_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_sheet_theme/stac_bottom_sheet_theme.dart';
-import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style.dart';
+import 'package:stac/src/parsers/theme/stac_button_style/stac_button_style_parser.dart';
 import 'package:stac/src/parsers/theme/stac_button_theme_data/stac_button_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_card_theme_data/stac_card_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_checkbox_theme_data/stac_checkbox_theme_data.dart';
@@ -17,7 +18,6 @@ import 'package:stac/src/parsers/theme/stac_divider_theme_data/stac_divider_them
 import 'package:stac/src/parsers/theme/stac_drawer_theme_data/stac_drawer_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_floating_action_button_theme_data/stac_floating_action_button_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_icon_theme_data/stac_icon_theme_data.dart';
-import 'package:stac/src/parsers/theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
 import 'package:stac/src/parsers/theme/stac_list_tile_theme_data/stac_list_tile_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_material_banner_theme_data/stac_material_banner_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_material_color/stac_material_color.dart';
@@ -28,6 +28,7 @@ import 'package:stac/src/parsers/theme/stac_snack_bar_theme_data/stac_snack_bar_
 import 'package:stac/src/parsers/theme/stac_tab_bar_theme_data/stac_tab_bar_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_text_theme/stac_text_theme.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_theme.freezed.dart';
 part 'stac_theme.g.dart';

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -105,9 +104,6 @@ abstract mixin class $StacNavigationDrawerThemeDataCopyWith<$Res> {
       StacTextStyle? labelTextStyle,
       StacIconThemeData? iconTheme});
 
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape;
-  $StacSizeCopyWith<$Res>? get indicatorSize;
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle;
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -183,48 +179,6 @@ class _$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape {
-    if (_self.indicatorShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.indicatorShape!, (value) {
-      return _then(_self.copyWith(indicatorShape: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSizeCopyWith<$Res>? get indicatorSize {
-    if (_self.indicatorSize == null) {
-      return null;
-    }
-
-    return $StacSizeCopyWith<$Res>(_self.indicatorSize!, (value) {
-      return _then(_self.copyWith(indicatorSize: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle {
-    if (_self.labelTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelTextStyle!, (value) {
-      return _then(_self.copyWith(labelTextStyle: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $StacIconThemeDataCopyWith<$Res>? get iconTheme {
     if (_self.iconTheme == null) {
       return null;
@@ -233,6 +187,227 @@ class _$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
     return $StacIconThemeDataCopyWith<$Res>(_self.iconTheme!, (value) {
       return _then(_self.copyWith(iconTheme: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [StacNavigationDrawerThemeData].
+extension StacNavigationDrawerThemeDataPatterns
+    on StacNavigationDrawerThemeData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StacNavigationDrawerThemeData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacNavigationDrawerThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StacNavigationDrawerThemeData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacNavigationDrawerThemeData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StacNavigationDrawerThemeData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacNavigationDrawerThemeData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? tileHeight,
+            String? backgroundColor,
+            double? elevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            String? indicatorColor,
+            StacShapeBorder? indicatorShape,
+            StacSize? indicatorSize,
+            StacTextStyle? labelTextStyle,
+            StacIconThemeData? iconTheme)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StacNavigationDrawerThemeData() when $default != null:
+        return $default(
+            _that.tileHeight,
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.indicatorColor,
+            _that.indicatorShape,
+            _that.indicatorSize,
+            _that.labelTextStyle,
+            _that.iconTheme);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? tileHeight,
+            String? backgroundColor,
+            double? elevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            String? indicatorColor,
+            StacShapeBorder? indicatorShape,
+            StacSize? indicatorSize,
+            StacTextStyle? labelTextStyle,
+            StacIconThemeData? iconTheme)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacNavigationDrawerThemeData():
+        return $default(
+            _that.tileHeight,
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.indicatorColor,
+            _that.indicatorShape,
+            _that.indicatorSize,
+            _that.labelTextStyle,
+            _that.iconTheme);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? tileHeight,
+            String? backgroundColor,
+            double? elevation,
+            String? shadowColor,
+            String? surfaceTintColor,
+            String? indicatorColor,
+            StacShapeBorder? indicatorShape,
+            StacSize? indicatorSize,
+            StacTextStyle? labelTextStyle,
+            StacIconThemeData? iconTheme)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StacNavigationDrawerThemeData() when $default != null:
+        return $default(
+            _that.tileHeight,
+            _that.backgroundColor,
+            _that.elevation,
+            _that.shadowColor,
+            _that.surfaceTintColor,
+            _that.indicatorColor,
+            _that.indicatorShape,
+            _that.indicatorSize,
+            _that.labelTextStyle,
+            _that.iconTheme);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -360,12 +535,6 @@ abstract mixin class _$StacNavigationDrawerThemeDataCopyWith<$Res>
       StacIconThemeData? iconTheme});
 
   @override
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape;
-  @override
-  $StacSizeCopyWith<$Res>? get indicatorSize;
-  @override
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle;
-  @override
   $StacIconThemeDataCopyWith<$Res>? get iconTheme;
 }
 
@@ -435,48 +604,6 @@ class __$StacNavigationDrawerThemeDataCopyWithImpl<$Res>
           : iconTheme // ignore: cast_nullable_to_non_nullable
               as StacIconThemeData?,
     ));
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacShapeBorderCopyWith<$Res>? get indicatorShape {
-    if (_self.indicatorShape == null) {
-      return null;
-    }
-
-    return $StacShapeBorderCopyWith<$Res>(_self.indicatorShape!, (value) {
-      return _then(_self.copyWith(indicatorShape: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacSizeCopyWith<$Res>? get indicatorSize {
-    if (_self.indicatorSize == null) {
-      return null;
-    }
-
-    return $StacSizeCopyWith<$Res>(_self.indicatorSize!, (value) {
-      return _then(_self.copyWith(indicatorSize: value));
-    });
-  }
-
-  /// Create a copy of StacNavigationDrawerThemeData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StacTextStyleCopyWith<$Res>? get labelTextStyle {
-    if (_self.labelTextStyle == null) {
-      return null;
-    }
-
-    return $StacTextStyleCopyWith<$Res>(_self.labelTextStyle!, (value) {
-      return _then(_self.copyWith(labelTextStyle: value));
-    });
   }
 
   /// Create a copy of StacNavigationDrawerThemeData

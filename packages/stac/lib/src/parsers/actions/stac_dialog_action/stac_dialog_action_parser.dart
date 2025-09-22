@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/actions/stac_dialog_action/stac_dialog_action.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/utils/action_type.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_traversal_edge_behavior_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacDialogActionParser extends StacActionParser<StacDialogAction> {
@@ -29,7 +29,7 @@ class StacDialogActionParser extends StacActionParser<StacDialogAction> {
       return _showDialog(
         context,
         model,
-        Stac.fromAssets(model.assetPath!) ?? const SizedBox(),
+        Stac.fromAssets(model.assetPath!),
       );
     } else if (model.request != null) {
       return _showDialog(
@@ -48,11 +48,11 @@ class StacDialogActionParser extends StacActionParser<StacDialogAction> {
     return showDialog(
       context: context,
       builder: (_) => widget,
-      barrierDismissible: model.barrierDismissible,
+      barrierDismissible: model.barrierDismissible ?? true,
       barrierColor: model.barrierColor.toColor(context),
       barrierLabel: model.barrierLabel,
-      useSafeArea: model.useSafeArea,
-      traversalEdgeBehavior: model.traversalEdgeBehavior,
+      useSafeArea: model.useSafeArea ?? true,
+      traversalEdgeBehavior: model.traversalEdgeBehavior?.parse,
     );
   }
 }

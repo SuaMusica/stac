@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:stac/src/parsers/widgets/stac_rect_tween/stac_rect_tween.dart';
-import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_rect_tween_parser.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacHeroParser extends StacParser<StacHero> {
   const StacHeroParser();
@@ -22,19 +23,18 @@ class StacHeroParser extends StacParser<StacHero> {
       flightShuttleBuilder: model.flightShuttleBuilder != null
           ? (flightContext, animation, flightDirection, fromHeroContext,
               toHeroContext) {
-              final widget =
-                  Stac.fromJson(model.flightShuttleBuilder!, context);
+              final widget = model.flightShuttleBuilder!.parse(flightContext);
               return widget ?? const SizedBox();
             }
           : null,
       placeholderBuilder: model.placeholderBuilder != null
           ? (context, heroSize, child) {
-              final widget = Stac.fromJson(model.placeholderBuilder!, context);
+              final widget = model.placeholderBuilder!.parse(context);
               return widget ?? const SizedBox();
             }
           : null,
-      transitionOnUserGestures: model.transitionOnUserGestures,
-      child: Stac.fromJson(model.child, context) ?? const SizedBox(),
+      transitionOnUserGestures: model.transitionOnUserGestures ?? false,
+      child: model.child.parse(context) ?? const SizedBox(),
     );
   }
 }

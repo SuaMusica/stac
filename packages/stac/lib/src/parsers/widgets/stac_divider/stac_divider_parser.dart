@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacDividerParser extends StacParser<StacDivider> {
   const StacDividerParser();
 
   @override
-  StacDivider getModel(Map<String, dynamic> json) {
-    return StacDivider.fromJson(json);
-  }
+  String get type => WidgetType.divider.name;
+
+  @override
+  StacDivider getModel(Map<String, dynamic> json) => StacDivider.fromJson(json);
 
   @override
   Widget parse(BuildContext context, StacDivider model) {
     return Divider(
-      thickness: model.thickness?.parse,
-      color: model.color.toColor(context),
-      height: model.height?.parse,
+      height: model.height,
+      thickness: model.thickness,
+      indent: model.indent,
+      endIndent: model.endIndent,
+      color: model.color?.toColor(context),
     );
   }
-
-  @override
-  String get type => WidgetType.divider.name;
 }

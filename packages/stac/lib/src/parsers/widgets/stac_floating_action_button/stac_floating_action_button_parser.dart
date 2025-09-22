@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_floating_action_button/stac_floating_action_button.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
-import 'package:stac/src/utils/button_utils.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacFloatingActionButtonParser
@@ -22,95 +20,95 @@ class StacFloatingActionButtonParser
   @override
   Widget parse(BuildContext context, StacFloatingActionButton model) {
     switch (model.buttonType) {
-      case FloatingActionButtonType.extended:
+      case StacFloatingActionButtonType.extended:
         return FloatingActionButton.extended(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
-          icon: Stac.fromJson(model.icon, context),
+              : () => model.onPressed?.parse(context),
+          icon: model.icon?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
           hoverColor: model.hoverColor?.toColor(context),
           splashColor: model.splashColor?.toColor(context),
           extendedTextStyle: model.extendedTextStyle?.parse(context),
-          elevation: model.elevation?.parse,
-          focusElevation: model.focusElevation?.parse,
-          hoverElevation: model.hoverElevation?.parse,
-          disabledElevation: model.disabledElevation?.parse,
-          highlightElevation: model.highlightElevation?.parse,
-          extendedIconLabelSpacing: model.extendedIconLabelSpacing?.parse,
+          elevation: model.elevation,
+          focusElevation: model.focusElevation,
+          hoverElevation: model.hoverElevation,
+          disabledElevation: model.disabledElevation,
+          highlightElevation: model.highlightElevation,
+          extendedIconLabelSpacing: model.extendedIconLabelSpacing,
           enableFeedback: model.enableFeedback,
-          autofocus: model.autofocus,
+          autofocus: model.autofocus ?? false,
           tooltip: model.tooltip,
           heroTag: model.heroTag,
-          label: Stac.fromJson(model.child, context) ?? const SizedBox(),
+          label: model.child?.parse(context) ?? const SizedBox(),
         );
 
-      case FloatingActionButtonType.large:
+      case StacFloatingActionButtonType.large:
         return FloatingActionButton.large(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
+              : () => model.onPressed?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
           hoverColor: model.hoverColor?.toColor(context),
           splashColor: model.splashColor?.toColor(context),
-          elevation: model.elevation?.parse,
-          focusElevation: model.focusElevation?.parse,
-          hoverElevation: model.hoverElevation?.parse,
-          disabledElevation: model.disabledElevation?.parse,
-          highlightElevation: model.highlightElevation?.parse,
+          elevation: model.elevation,
+          focusElevation: model.focusElevation,
+          hoverElevation: model.hoverElevation,
+          disabledElevation: model.disabledElevation,
+          highlightElevation: model.highlightElevation,
           enableFeedback: model.enableFeedback,
-          autofocus: model.autofocus,
+          autofocus: model.autofocus ?? false,
           tooltip: model.tooltip,
           heroTag: model.heroTag,
-          child: Stac.fromJson(model.child, context),
+          child: model.child?.parse(context),
         );
 
-      case FloatingActionButtonType.medium:
+      case StacFloatingActionButtonType.medium:
         return FloatingActionButton(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
+              : () => model.onPressed?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
           hoverColor: model.hoverColor?.toColor(context),
           splashColor: model.splashColor?.toColor(context),
-          elevation: model.elevation?.parse,
-          focusElevation: model.focusElevation?.parse,
-          hoverElevation: model.hoverElevation?.parse,
-          disabledElevation: model.disabledElevation?.parse,
-          highlightElevation: model.highlightElevation?.parse,
+          elevation: model.elevation,
+          focusElevation: model.focusElevation,
+          hoverElevation: model.hoverElevation,
+          disabledElevation: model.disabledElevation,
+          highlightElevation: model.highlightElevation,
           enableFeedback: model.enableFeedback,
-          autofocus: model.autofocus,
+          autofocus: model.autofocus ?? false,
           tooltip: model.tooltip,
           heroTag: model.heroTag,
-          child: Stac.fromJson(model.child, context),
+          child: model.child?.parse(context),
         );
 
-      case FloatingActionButtonType.small:
+      case StacFloatingActionButtonType.small:
         return FloatingActionButton.small(
           onPressed: model.onPressed == null
               ? null
-              : () => Stac.onCallFromJson(model.onPressed, context),
+              : () => model.onPressed?.parse(context),
           backgroundColor: model.backgroundColor?.toColor(context),
           foregroundColor: model.foregroundColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
           hoverColor: model.hoverColor?.toColor(context),
           splashColor: model.splashColor?.toColor(context),
-          elevation: model.elevation?.parse,
-          focusElevation: model.focusElevation?.parse,
-          hoverElevation: model.hoverElevation?.parse,
-          disabledElevation: model.disabledElevation?.parse,
-          highlightElevation: model.highlightElevation?.parse,
+          elevation: model.elevation,
+          focusElevation: model.focusElevation,
+          hoverElevation: model.hoverElevation,
+          disabledElevation: model.disabledElevation,
+          highlightElevation: model.highlightElevation,
           enableFeedback: model.enableFeedback,
-          autofocus: model.autofocus,
+          autofocus: model.autofocus ?? false,
           tooltip: model.tooltip,
           heroTag: model.heroTag,
-          child: Stac.fromJson(model.child, context),
+          child: model.child?.parse(context),
         );
     }
   }

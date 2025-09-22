@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/parsers.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_text_theme.freezed.dart';
 part 'stac_text_theme.g.dart';

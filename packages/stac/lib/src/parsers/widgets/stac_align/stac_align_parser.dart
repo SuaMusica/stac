@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
 import 'package:stac/src/parsers/widgets/stac_align/stac_align.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacAlignParser extends StacParser<StacAlign> {

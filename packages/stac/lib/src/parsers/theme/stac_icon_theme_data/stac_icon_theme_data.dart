@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_shadow/stac_shadow.dart';
+import 'package:stac/src/parsers/foundation/effects/stac_shadow_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 
 part 'stac_icon_theme_data.freezed.dart';
 part 'stac_icon_theme_data.g.dart';

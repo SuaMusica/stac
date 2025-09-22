@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/stac.dart' show Stac, StacApp;
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_gallery/app/details/details_screen.dart';
 import 'package:stac_gallery/app/example/example_screen_parser.dart';
 import 'package:stac_gallery/app/home/home_screen.dart';
@@ -54,4 +55,19 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+StacWidget home() {
+  return StacScaffold(
+    body: StacCenter(
+      child: StacElevatedButton(
+        onPressed: StacNavigateAction(
+          assetPath: 'assets/json/app_bar_example.json',
+        ),
+        child: StacText(
+          data: 'click me!',
+        ),
+      ),
+    ),
+  );
 }

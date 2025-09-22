@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_visual_density_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_material_tap_target_size_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_scope.dart';
-import 'package:stac/src/parsers/widgets/stac_visual_density/stac_visual_density.dart';
-import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacRadioParser extends StacParser<StacRadio> {
   const StacRadioParser();
@@ -37,7 +39,7 @@ class _RadioWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final FocusNode focusNode = FocusNode();
 
-    switch (model.radioType) {
+    switch (model.radioType ?? StacRadioType.material) {
       case StacRadioType.cupertino:
         return _buildCupertinoRadio(context, model, focusNode);
       case StacRadioType.adaptive:
@@ -57,15 +59,15 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return CupertinoRadio(
           value: model.value,
-          mouseCursor: model.mouseCursor?.value,
-          toggleable: model.toggleable,
-          activeColor: model.activeColor.toColor(context),
+          mouseCursor: model.mouseCursor?.parse,
+          toggleable: model.toggleable ?? false,
+          activeColor: model.activeColor?.toColor(context),
           inactiveColor: model.inactiveColor?.toColor(context),
           fillColor: model.fillColor?.toColor(context),
           focusColor: model.focusColor?.toColor(context),
           focusNode: focusNode,
-          autofocus: model.autofocus,
-          useCheckmarkStyle: model.useCheckmarkStyle,
+          autofocus: model.autofocus ?? false,
+          useCheckmarkStyle: model.useCheckmarkStyle ?? false,
         );
       },
     );
@@ -81,8 +83,8 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return Radio.adaptive(
           value: model.value,
-          mouseCursor: model.mouseCursor?.value,
-          toggleable: model.toggleable,
+          mouseCursor: model.mouseCursor?.parse,
+          toggleable: model.toggleable ?? false,
           activeColor: model.activeColor?.toColor(context),
           fillColor: WidgetStateProperty.all(model.fillColor?.toColor(context)),
           focusColor: model.focusColor?.toColor(context),
@@ -90,12 +92,12 @@ class _RadioWidget extends StatelessWidget {
           overlayColor: WidgetStateProperty.all(
             model.overlayColor?.toColor(context),
           ),
-          splashRadius: model.splashRadius?.parse,
-          materialTapTargetSize: model.materialTapTargetSize,
+          splashRadius: model.splashRadius,
+          materialTapTargetSize: model.materialTapTargetSize?.parse,
           visualDensity: model.visualDensity?.parse,
           focusNode: focusNode,
-          autofocus: model.autofocus,
-          useCupertinoCheckmarkStyle: model.useCupertinoCheckmarkStyle,
+          autofocus: model.autofocus ?? false,
+          useCupertinoCheckmarkStyle: model.useCupertinoCheckmarkStyle ?? false,
         );
       },
     );
@@ -111,20 +113,20 @@ class _RadioWidget extends StatelessWidget {
       builder: (context, value, child) {
         return Radio(
           value: model.value,
-          mouseCursor: model.mouseCursor?.value,
-          toggleable: model.toggleable,
-          activeColor: model.activeColor.toColor(context),
+          mouseCursor: model.mouseCursor?.parse,
+          toggleable: model.toggleable ?? false,
+          activeColor: model.activeColor?.toColor(context),
           fillColor: WidgetStateProperty.all(model.fillColor?.toColor(context)),
           focusColor: model.focusColor?.toColor(context),
           hoverColor: model.hoverColor?.toColor(context),
           overlayColor: WidgetStateProperty.all(
             model.overlayColor?.toColor(context),
           ),
-          splashRadius: model.splashRadius?.parse,
-          materialTapTargetSize: model.materialTapTargetSize,
+          splashRadius: model.splashRadius,
+          materialTapTargetSize: model.materialTapTargetSize?.parse,
           visualDensity: model.visualDensity?.parse,
           focusNode: focusNode,
-          autofocus: model.autofocus,
+          autofocus: model.autofocus ?? false,
         );
       },
     );

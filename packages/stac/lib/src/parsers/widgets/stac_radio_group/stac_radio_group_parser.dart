@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/parsers/widgets/stac_radio_group/stac_radio_group_scope.dart';
-import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac/stac.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacRadioGroupParser extends StacParser<StacRadioGroup> {
   const StacRadioGroupParser();
@@ -71,7 +73,7 @@ class __RadioGroupWidgetState extends State<_RadioGroupWidget> {
       radioGroupValue: groupValue,
       onSelect: _updateGroupValue,
       child: Builder(builder: (context) {
-        return Stac.fromJson(model.child, context) ?? const SizedBox();
+        return model.child?.parse(context) ?? const SizedBox();
       }),
     );
   }
