@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/core/core.dart';
+import 'package:stac_core/foundation/specifications/action_type.dart';
 
 part 'stac_snack_bar_action.g.dart';
 
@@ -24,7 +25,7 @@ part 'stac_snack_bar_action.g.dart';
 /// }
 /// ```
 @JsonSerializable()
-class StacSnackBarAction {
+class StacSnackBarAction extends StacAction {
   /// Creates a [StacSnackBarAction] that shows a snack bar action.
   const StacSnackBarAction({
     this.textColor,
@@ -65,6 +66,10 @@ class StacSnackBarAction {
   /// Type: `StacAction?` (serialized with `toJson`).
   final StacAction? onPressed;
 
+  /// Unique action type string used for routing.
+  @override
+  String get actionType => ActionType.showSnackBar.name;
+
   /// Creates a `StacSnackBarAction` from JSON.
   ///
   /// Type: `factory StacSnackBarAction.fromJson(Map<String, dynamic> json)`.
@@ -74,5 +79,6 @@ class StacSnackBarAction {
   /// Converts this action to JSON.
   ///
   /// Type: `Map<String, dynamic> toJson()`.
+  @override
   Map<String, dynamic> toJson() => _$StacSnackBarActionToJson(this);
 }
