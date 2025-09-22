@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stac/src/parsers/foundation/theme/stac_input_decoration_theme_parser.dart';
 import 'package:stac/src/parsers/theme/stac_app_bar_theme/stac_app_bar_theme.dart';
 import 'package:stac/src/parsers/theme/stac_badge_theme_data/stac_badge_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_bottom_app_bar_theme/stac_bottom_app_bar_theme.dart';
@@ -26,7 +27,6 @@ import 'package:stac/src/parsers/theme/stac_scrollbar_theme_data/stac_scrollbar_
 import 'package:stac/src/parsers/theme/stac_snack_bar_theme_data/stac_snack_bar_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_tab_bar_theme_data/stac_tab_bar_theme_data.dart';
 import 'package:stac/src/parsers/theme/stac_text_theme/stac_text_theme.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 

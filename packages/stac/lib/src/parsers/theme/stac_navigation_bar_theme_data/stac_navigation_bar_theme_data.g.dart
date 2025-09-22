@@ -20,8 +20,7 @@ _StacNavigationBarThemeData _$StacNavigationBarThemeDataFromJson(
           : StacBorder.fromJson(json['indicatorShape'] as Map<String, dynamic>),
       labelTextStyle: json['labelTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['labelTextStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['labelTextStyle']),
       iconTheme: json['iconTheme'] == null
           ? null
           : StacIconThemeData.fromJson(

@@ -22,12 +22,11 @@ _StacTabBarThemeData _$StacTabBarThemeDataFromJson(Map<String, dynamic> json) =>
           : StacEdgeInsets.fromJson(json['labelPadding']),
       labelStyle: json['labelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['labelStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['labelStyle']),
       unselectedLabelColor: json['unselectedLabelColor'] as String?,
       unselectedLabelStyle: json['unselectedLabelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['unselectedLabelStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['unselectedLabelStyle']),
       overlayColor: json['overlayColor'] as String?,
     );
 

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_traversal_edge_behavior_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -52,7 +52,7 @@ class StacDialogActionParser extends StacActionParser<StacDialogAction> {
       barrierColor: model.barrierColor.toColor(context),
       barrierLabel: model.barrierLabel,
       useSafeArea: model.useSafeArea ?? true,
-      traversalEdgeBehavior: model.traversalEdgeBehavior.parse,
+      traversalEdgeBehavior: model.traversalEdgeBehavior?.parse,
     );
   }
 }

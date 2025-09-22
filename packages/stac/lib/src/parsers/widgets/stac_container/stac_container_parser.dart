@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/parsers/painting/stac_box_decoration_parser.dart';
-import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/decoration/stac_box_decoration_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_box_constraints_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
 import 'package:stac/stac.dart';
 import 'package:stac_core/stac_core.dart';
 

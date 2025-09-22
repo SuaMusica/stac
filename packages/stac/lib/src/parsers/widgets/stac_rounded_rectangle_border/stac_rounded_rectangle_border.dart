@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_radius_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_side_parser.dart';
 import 'package:stac_core/foundation/borders/stac_border_radius/stac_border_radius.dart';
 import 'package:stac_core/foundation/borders/stac_border_side/stac_border_side.dart';
 
