@@ -26,7 +26,7 @@ class StacImageParser extends StacParser<StacImage> {
       case StacImageType.asset:
         return _assetImage(model, context);
       default:
-        return const SizedBox();
+        return _networkImage(model, context);
     }
   }
 
