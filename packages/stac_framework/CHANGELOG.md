@@ -1,3 +1,8 @@
+# 0.4.0
+
+* Remove StacAction typedef
+* Code refactoring and improvements
+
 # 0.3.0
 
 * Add StacAction and StacWidget types
