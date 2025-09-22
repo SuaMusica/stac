@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_cross_axis_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_main_axis_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_main_axis_size_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_vertical_direction_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_direction_parser.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 

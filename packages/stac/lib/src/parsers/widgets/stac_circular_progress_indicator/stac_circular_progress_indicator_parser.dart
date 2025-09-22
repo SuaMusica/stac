@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_stroke_cap_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -25,7 +25,7 @@ class StacCircularProgressIndicatorParser
       strokeAlign: model.strokeAlign ?? 0.0,
       semanticsLabel: model.semanticsLabel,
       semanticsValue: model.semanticsValue,
-      strokeCap: model.strokeCap.parse,
+      strokeCap: model.strokeCap?.parse,
     );
   }
 }

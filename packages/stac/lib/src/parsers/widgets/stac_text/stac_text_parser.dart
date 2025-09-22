@@ -1,8 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_align_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_direction_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_overflow_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_width_basis_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/foundation/specifications/widget_type.dart';
 import 'package:stac_core/foundation/text/stac_text_style/stac_text_style.dart';

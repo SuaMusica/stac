@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_stack_fit_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_direction_parser.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 

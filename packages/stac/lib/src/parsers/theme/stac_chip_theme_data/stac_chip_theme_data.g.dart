@@ -33,11 +33,10 @@ _StacChipThemeData _$StacChipThemeDataFromJson(Map<String, dynamic> json) =>
           : StacShapeBorder.fromJson(json['shape'] as Map<String, dynamic>),
       labelStyle: json['labelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(json['labelStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['labelStyle']),
       secondaryLabelStyle: json['secondaryLabelStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['secondaryLabelStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['secondaryLabelStyle']),
       brightness: $enumDecodeNullable(_$BrightnessEnumMap, json['brightness']),
       elevation: (json['elevation'] as num?)?.toDouble(),
       pressElevation: (json['pressElevation'] as num?)?.toDouble(),

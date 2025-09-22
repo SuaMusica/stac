@@ -19,16 +19,13 @@ _StacListTileThemeData _$StacListTileThemeDataFromJson(
       textColor: json['textColor'] as String?,
       titleTextStyle: json['titleTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['titleTextStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['titleTextStyle']),
       subtitleTextStyle: json['subtitleTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['subtitleTextStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['subtitleTextStyle']),
       leadingAndTrailingTextStyle: json['leadingAndTrailingTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['leadingAndTrailingTextStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['leadingAndTrailingTextStyle']),
       contentPadding: json['contentPadding'] == null
           ? null
           : StacEdgeInsets.fromJson(json['contentPadding']),

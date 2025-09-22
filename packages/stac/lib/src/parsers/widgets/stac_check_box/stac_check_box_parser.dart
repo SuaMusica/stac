@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/stac.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_material_tap_target_size_parser.dart';
 import 'package:stac/src/parsers/widgets/stac_form/stac_form_scope.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';

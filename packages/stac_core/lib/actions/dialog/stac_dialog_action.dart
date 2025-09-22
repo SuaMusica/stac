@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:stac_core/actions/network_request/stac_network_request.dart';
 import 'package:stac_core/core/stac_action.dart';
 import 'package:stac_core/foundation/specifications/action_type.dart';
-import 'package:stac_core/foundation/ui_components/stac_dialog_traversal_edge_behavior.dart';
+import 'package:stac_core/foundation/ui_components/stac_traversal_edge_behavior.dart';
 
 part 'stac_dialog_action.g.dart';
 
@@ -77,7 +77,7 @@ class StacDialogAction extends StacAction {
   /// Traversal behavior for focus traversal at edges.
   ///
   /// Type: `StacDialogTraversalEdgeBehavior?`.
-  final StacDialogTraversalEdgeBehavior? traversalEdgeBehavior;
+  final StacTraversalEdgeBehavior? traversalEdgeBehavior;
 
   /// Unique action type string used for routing.
   @override

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_action_parser.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_duration_parsers.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_radius_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
 import 'package:stac/stac.dart';
 import 'package:stac_core/stac_core.dart';
 
