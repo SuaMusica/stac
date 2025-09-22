@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
+import 'package:stac/src/parsers/foundation/foundation.dart';
 import 'package:stac/src/parsers/widgets/stac_align/stac_align.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
 import 'package:stac_core/stac_core.dart';
@@ -17,7 +18,7 @@ class StacAlignParser extends StacParser<StacAlign> {
   @override
   Widget parse(BuildContext context, StacAlign model) {
     return Align(
-      alignment: model.alignment.value,
+      alignment: model.alignment.parse,
       heightFactor: model.heightFactor?.parse,
       widthFactor: model.widthFactor?.parse,
       child: Stac.fromJson(model.child, context),
