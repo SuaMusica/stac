@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/painting/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_icon_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_duration_parsers.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_side_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_size_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_visual_density_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_material_tap_target_size_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 

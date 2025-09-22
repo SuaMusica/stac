@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/colors/stac_blend_mode_parser.dart';
+import 'package:stac/src/parsers/foundation/effects/stac_shadow_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_direction_parser.dart';
 import 'package:stac/src/utils/icon_utils.dart';
 import 'package:stac/src/utils/utils.dart';
 import 'package:stac_core/stac_core.dart';

@@ -87,7 +87,7 @@ export 'theme/stac_button_style/stac_button_style.dart';
 export 'theme/stac_input_decoration_theme/stac_input_decoration_theme.dart';
 // UI components and behavior
 export 'ui_components/stac_carousel_view_type.dart';
-export 'ui_components/stac_dialog_traversal_edge_behavior.dart';
+export 'ui_components/stac_traversal_edge_behavior.dart';
 export 'ui_components/stac_dismiss_direction.dart';
 export 'ui_components/stac_dropdown_menu_close_behavior.dart';
 export 'ui_components/stac_dropdown_menu_entry/stac_dropdown_menu_entry.dart';
