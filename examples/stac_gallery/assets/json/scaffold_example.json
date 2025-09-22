@@ -78,40 +78,5 @@
       "size": 32
     },
     "onPressed": {}
-  },
-  "bottomNavigationBar": {
-    "type": "bottomNavigationBar",
-    "items": [
-      {
-        "type": "navigationBarItem",
-        "label": "Comments",
-        "icon": {
-          "type": "icon",
-          "iconType": "material",
-          "icon": "comment",
-          "size": 24
-        }
-      },
-      {
-        "type": "navigationBarItem",
-        "label": "Calendar",
-        "icon": {
-          "type": "icon",
-          "iconType": "material",
-          "icon": "calendar_month",
-          "size": 24
-        }
-      },
-      {
-        "type": "navigationBarItem",
-        "label": "Account",
-        "icon": {
-          "type": "icon",
-          "iconType": "cupertino",
-          "icon": "profile_circled",
-          "size": 24
-        }
-      }
-    ]
   }
 }
