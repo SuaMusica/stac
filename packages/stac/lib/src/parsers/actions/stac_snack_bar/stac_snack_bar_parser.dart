@@ -3,8 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
 import 'package:stac/src/parsers/core/stac_action_parser.dart';
-import 'package:stac/src/parsers/painting/stac_edge_insets_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_duration_parsers.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_hit_test_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac/src/parsers/foundation/ui_components/stac_dismiss_direction_parser.dart';
+import 'package:stac/src/parsers/foundation/ui_components/stac_snack_bar_behavior_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -42,7 +47,7 @@ class StacSnackBarParser extends StacActionParser<StacSnackBar> {
         duration: model.duration?.parse ?? const Duration(milliseconds: 4000),
         onVisible: () => Stac.onCallFromJson(model.onVisible, context),
         dismissDirection: model.dismissDirection?.parse,
-        clipBehavior: model.clipBehavior.parse,
+        clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
       ),
     );
   }

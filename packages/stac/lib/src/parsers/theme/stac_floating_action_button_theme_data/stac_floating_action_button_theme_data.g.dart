@@ -28,8 +28,7 @@ _StacFloatingActionButtonThemeData _$StacFloatingActionButtonThemeDataFromJson(
           : StacEdgeInsets.fromJson(json['extendedPadding']),
       extendedTextStyle: json['extendedTextStyle'] == null
           ? null
-          : StacTextStyle.fromJson(
-              json['extendedTextStyle'] as Map<String, dynamic>),
+          : StacTextStyle.fromJson(json['extendedTextStyle']),
     );
 
 Map<String, dynamic> _$StacFloatingActionButtonThemeDataToJson(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_side_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_visual_density_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/colors/stac_blend_mode_parser.dart';
+import 'package:stac/src/parsers/foundation/effects/stac_image_filter_parsers.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 

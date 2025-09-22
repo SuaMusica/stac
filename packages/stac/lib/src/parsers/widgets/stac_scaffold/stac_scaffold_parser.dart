@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:stac/src/parsers/core/stac_widget_parser.dart';
-import 'package:stac/src/parsers/types/type_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_alignment_directional_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_drag_start_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/navigation/stac_floating_action_button_location_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
