@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:stac/src/parsers/widgets/stac_alignment_directional/stac_alignment_directional.dart';
 import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
+import 'package:stac_core/stac_core.dart';
 
 export 'stac_align_parser.dart';
 
