@@ -21,7 +21,7 @@ extension StacDecorationImageParser on StacDecorationImage {
         image = AssetImage(src);
         break;
       default:
-        return null;
+        image = NetworkImage(src);
     }
 
     return DecorationImage(
