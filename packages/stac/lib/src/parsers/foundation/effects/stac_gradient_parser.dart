@@ -44,7 +44,7 @@ extension StacGradientParser on StacGradient {
       case StacGradientType.sweep:
         return sweepGradient();
       default:
-        return null;
+        return linearGradient();
     }
   }
 }
