@@ -26,4 +26,5 @@ Map<String, dynamic> _$StacSnackBarActionToJson(StacSnackBarAction instance) =>
       'disabledBackgroundColor': instance.disabledBackgroundColor,
       'label': instance.label,
       'onPressed': instance.onPressed?.toJson(),
+      'actionType': instance.actionType,
     };

@@ -1,6 +1,7 @@
 library;
 
 export 'alert_dialog/stac_alert_dialog.dart';
+export 'align/stac_align.dart';
 export 'app_bar/stac_app_bar.dart';
 export 'aspect_ratio/stac_aspect_ratio.dart';
 export 'auto_complete/stac_auto_complete.dart';

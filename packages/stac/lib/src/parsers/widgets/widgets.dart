@@ -1,7 +1,7 @@
 export 'package:stac/src/parsers/theme/stac_color_scheme/stac_color_scheme.dart';
 export 'package:stac/src/parsers/theme/stac_floating_action_button_theme_data/stac_floating_action_button_theme_data.dart';
 export 'package:stac/src/parsers/widgets/stac_alert_dialog/stac_alert_dialog_parser.dart';
-export 'package:stac/src/parsers/widgets/stac_align/stac_align.dart';
+export 'package:stac/src/parsers/widgets/stac_align/stac_align_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_aspect_ratio/stac_aspect_ratio_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_auto_complete/stac_auto_complete_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_backdrop_filter/stac_backdrop_filter_parser.dart';
