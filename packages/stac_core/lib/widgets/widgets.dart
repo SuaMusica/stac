@@ -77,4 +77,5 @@ export 'vertical_divider/stac_vertical_divider.dart';
 export 'visibility/stac_visibility.dart';
 export 'wrap/stac_wrap.dart';
 export 'list_view/stac_list_view.dart';
+export 'list_tile/stac_list_tile.dart';
 export 'gesture_detector/stac_gesture_detector.dart';
