@@ -3,7 +3,7 @@ import 'package:stac/src/parsers/core/stac_widget_parser.dart';
 import 'package:stac/src/parsers/foundation/navigation/stac_bottom_navigation_bar_landscape_layout_parser.dart';
 import 'package:stac/src/parsers/foundation/navigation/stac_bottom_navigation_bar_type_parser.dart';
 import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
+import 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
@@ -21,6 +21,17 @@ class StacBottomNavigationBarParser
 
   @override
   Widget parse(BuildContext context, StacBottomNavigationBar model) {
+    return _BottomNavigationBarWidget(model: model);
+  }
+}
+
+class _BottomNavigationBarWidget extends StatelessWidget {
+  const _BottomNavigationBarWidget({required this.model});
+
+  final StacBottomNavigationBar model;
+
+  @override
+  Widget build(BuildContext context) {
     final controller = BottomNavigationScope.of(context)?.controller;
 
     return BottomNavigationBar(
