@@ -726,7 +726,7 @@ packages:
       path: "../../packages/stac"
       relative: true
     source: path
-    version: "1.0.0-dev.7"
+    version: "1.0.0"
   stac_core:
     dependency: "direct overridden"
     description:
