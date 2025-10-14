@@ -48,7 +48,7 @@ This approach separates your app's presentation layer from its business logic, e
 - 🚀 **[Quick Start](https://docs.stac.dev/quickstart)** – Get up and running in minutes
 - 🛠️ **[Stac CLI](https://docs.stac.dev/cli)** – Command-line tools for development
 - 🎛️ **[Stac Console](https://console.stac.dev/)** – Web interface for managing your app
-- 🤝 **[Contributing](../../CONTRIBUTING.md)** – Help build Stac
+- 🤝 **[Contributing](https://github.com/StacDev/stac/blob/dev/CONTRIBUTING.md)** – Help build Stac
 
 ## License
 
