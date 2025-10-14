@@ -446,7 +446,7 @@ packages:
       path: "../../packages/stac"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.1"
   stac_core:
     dependency: "direct main"
     description:
