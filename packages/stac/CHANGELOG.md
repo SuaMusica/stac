@@ -1,3 +1,10 @@
+## 1.1.0
+
+- Added theming support for Stac DSL (Dart-to-JSON conversion)
+- Added `enabled`, `backgroundColor`, `side`, and `innerRadius` properties to StacRadio widget
+- Added `onChanged` property to StacRadioGroup widget
+- Simplified StacRadio and StacRadioGroup implementations
+
 ## 1.0.1
 
 - Update README
