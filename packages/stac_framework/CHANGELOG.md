@@ -1,6 +1,10 @@
+# 1.0.0
+
+* Stable Release
+
 # 0.4.0
 
-* Remove StacAction typedef
+* Remove StacWidget & StacAction typedef
 * Code refactoring and improvements
 
 # 0.3.0
