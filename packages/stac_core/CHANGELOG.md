@@ -1,3 +1,9 @@
+## 1.1.0
+
+- Added Stac Theme and ThemeData classes to stac_core
+- Added `enabled`, `backgroundColor`, `side` & `innerRadius` in StacRadio widget.
+- Added `onChanged` in StacRadioGroup widget.
+
 ## 1.0.0
 
 - **New Features:**
