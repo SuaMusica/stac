@@ -6,27 +6,26 @@ part of 'stac_webview.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StacWebView _$StacWebViewFromJson(Map<String, dynamic> json) => _StacWebView(
+StacWebView _$StacWebViewFromJson(Map<String, dynamic> json) => StacWebView(
       url: json['url'] as String,
-      javaScriptMode: $enumDecodeNullable(
-              _$JavaScriptModeEnumMap, json['javaScriptMode']) ??
-          JavaScriptMode.unrestricted,
-      backgroundColor: json['backgroundColor'] as String? ?? "#FFFFFF",
+      javaScriptMode:
+          $enumDecodeNullable(_$JavaScriptModeEnumMap, json['javaScriptMode']),
+      backgroundColor: json['backgroundColor'] as String?,
       userAgent: json['userAgent'] as String?,
-      enableZoom: json['enableZoom'] as bool? ?? false,
-      layoutDirection: $enumDecodeNullable(
-              _$TextDirectionEnumMap, json['layoutDirection']) ??
-          TextDirection.ltr,
+      enableZoom: json['enableZoom'] as bool?,
+      layoutDirection:
+          $enumDecodeNullable(_$TextDirectionEnumMap, json['layoutDirection']),
     );
 
-Map<String, dynamic> _$StacWebViewToJson(_StacWebView instance) =>
+Map<String, dynamic> _$StacWebViewToJson(StacWebView instance) =>
     <String, dynamic>{
       'url': instance.url,
-      'javaScriptMode': _$JavaScriptModeEnumMap[instance.javaScriptMode]!,
+      'javaScriptMode': _$JavaScriptModeEnumMap[instance.javaScriptMode],
       'backgroundColor': instance.backgroundColor,
       'userAgent': instance.userAgent,
       'enableZoom': instance.enableZoom,
-      'layoutDirection': _$TextDirectionEnumMap[instance.layoutDirection]!,
+      'layoutDirection': _$TextDirectionEnumMap[instance.layoutDirection],
+      'type': instance.type,
     };
 
 const _$JavaScriptModeEnumMap = {

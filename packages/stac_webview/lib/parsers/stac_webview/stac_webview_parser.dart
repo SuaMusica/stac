@@ -52,18 +52,20 @@ class _WebViewState extends State<_WebView> {
       ..loadRequest(Uri.parse(widget.model.url))
 
       /// Sets the JavaScript mode.
-      ..setJavaScriptMode(widget.model.javaScriptMode)
+      ..setJavaScriptMode(
+        widget.model.javaScriptMode ?? JavaScriptMode.unrestricted,
+      )
 
       /// Sets the background color.
       ..setBackgroundColor(
-        widget.model.backgroundColor.toColor ?? Colors.white,
+        widget.model.backgroundColor?.toColor ?? Colors.white,
       )
 
       /// Sets the user agent.
       ..setUserAgent(widget.model.userAgent)
 
       /// Enables or disables zoom.
-      ..enableZoom(widget.model.enableZoom);
+      ..enableZoom(widget.model.enableZoom ?? false);
   }
 
   /// [build] method builds the widget.
@@ -74,7 +76,7 @@ class _WebViewState extends State<_WebView> {
     /// [WebViewWidget] is a widget that displays a webview.
     return WebViewWidget(
       controller: _controller,
-      layoutDirection: widget.model.layoutDirection,
+      layoutDirection: widget.model.layoutDirection ?? TextDirection.ltr,
     );
   }
 }
