@@ -1,3 +1,10 @@
+## 1.1.2
+
+- chore: Upgrade `dio` to `^5.9.0`
+- chore: Upgrade `flutter_svg` to `^2.2.2`
+- chore: Upgrade `build_runner` to `^2.10.4`
+- chore: Upgrade `json_serializable` to `^6.11.1` 
+
 ## 1.1.0
 
 - Added theming support for Stac DSL (Dart-to-JSON conversion)
