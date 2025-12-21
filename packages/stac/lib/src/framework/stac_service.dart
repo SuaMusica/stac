@@ -130,6 +130,7 @@ class StacService {
     const StacVisibilityParser(),
     const StacBackdropFilterParser(),
     const StacVerticalDividerParser(),
+    const StacSelectableTextParser(),
   ];
 
   static final _actionParsers = <StacActionParser>[

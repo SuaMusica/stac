@@ -134,6 +134,7 @@
                         "pages": [
                             "widgets/custom_scroll_view",
                             "widgets/grid_view",
+                            "widgets/selectable_text",
                             "widgets/table",
                             "widgets/table_cell",
                             "widgets/table_row",
