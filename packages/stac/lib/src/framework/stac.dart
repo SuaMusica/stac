@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -150,6 +151,7 @@ class Stac {
     try {
       if (json != null) {
         Map<String, dynamic>? jsonVersion = json['version'];
+        final platform = json['platform'];
 
         /// Check if has version and buildNumber is not null
         if (jsonVersion != null && StacRegistry.instance.buildNumber != null) {
@@ -160,6 +162,30 @@ class Stac {
           if (!isSatisfied) {
             Log.w(
                 'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${StacRegistry.instance.buildNumber}');
+            return null;
+          }
+        }
+
+        /// Check if platform is specified and validate
+        if (platform != null) {
+          final currentPlatform = Platform.operatingSystem;
+          bool isPlatformSupported = false;
+          List<String> supportedPlatforms = [];
+
+          // Check if platform is a list or a single string
+          if (platform is List) {
+            supportedPlatforms = platform.map((e) => e.toString()).toList();
+            isPlatformSupported = supportedPlatforms.contains(currentPlatform);
+          } else if (platform is String) {
+            supportedPlatforms.add(platform);
+            isPlatformSupported = platform == currentPlatform;
+          }
+
+          // If platform is not supported, log and return null
+          if (!isPlatformSupported) {
+            final platformsStr = supportedPlatforms.join(', ');
+            Log.w(
+                'Widget not supported on platform [$currentPlatform]. Only available for: $platformsStr');
             return null;
           }
         }
