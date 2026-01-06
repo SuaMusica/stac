@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_flex_fit_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_flexible.dart';
 
 class StacFlexibleParser extends StacParser<StacFlexible> {
   const StacFlexibleParser();
@@ -18,9 +17,9 @@ class StacFlexibleParser extends StacParser<StacFlexible> {
   @override
   Widget parse(BuildContext context, StacFlexible model) {
     return Flexible(
-      fit: model.fit,
-      flex: model.flex,
-      child: Stac.fromJson(model.child, context) ?? const SizedBox(),
+      fit: model.fit?.parse ?? FlexFit.loose,
+      flex: model.flex ?? 1,
+      child: model.child.parse(context) ?? const SizedBox.shrink(),
     );
   }
 }

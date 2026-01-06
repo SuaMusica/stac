@@ -54,24 +54,22 @@ class StacRegistry {
     }
   }
 
-  Future<dynamic> registerAll(List<StacParser> parsers,
-      [bool override = false]) {
-    return Future.forEach(
-      parsers,
-      (StacParser parser) {
-        return register(parser, override);
-      },
-    );
+  Future<dynamic> registerAll(
+    List<StacParser> parsers, [
+    bool override = false,
+  ]) {
+    return Future.forEach(parsers, (StacParser parser) {
+      return register(parser, override);
+    });
   }
 
-  Future<dynamic> registerAllActions(List<StacActionParser> parsers,
-      [bool override = false]) {
-    return Future.forEach(
-      parsers,
-      (StacActionParser parser) {
-        return registerAction(parser, override);
-      },
-    );
+  Future<dynamic> registerAllActions(
+    List<StacActionParser> parsers, [
+    bool override = false,
+  ]) {
+    return Future.forEach(parsers, (StacActionParser parser) {
+      return registerAction(parser, override);
+    });
   }
 
   void registerBuildNumber(int? buildNumber) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/utils/widget_type.dart';
 import 'package:stac/stac.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacImageParser extends StacParser<StacImage> {
   const StacImageParser();

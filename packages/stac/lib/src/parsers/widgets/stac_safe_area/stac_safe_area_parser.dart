@@ -1,31 +1,31 @@
-import 'package:flutter/widgets.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:flutter/material.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_safe_area.dart';
 
 class StacSafeAreaParser extends StacParser<StacSafeArea> {
   const StacSafeAreaParser();
+
+  @override
+  String get type => WidgetType.safeArea.name;
 
   @override
   StacSafeArea getModel(Map<String, dynamic> json) =>
       StacSafeArea.fromJson(json);
 
   @override
-  String get type => WidgetType.safeArea.name;
-
-  @override
   Widget parse(BuildContext context, StacSafeArea model) {
+    final child = model.child?.parse(context) ?? const SizedBox.shrink();
+
     return SafeArea(
-      maintainBottomViewPadding: model.maintainBottomViewPadding,
-      left: model.left,
-      top: model.top,
-      right: model.right,
-      bottom: model.bottom,
-      minimum: model.minimum.parse,
-      child: Stac.fromJson(model.child, context) ?? const SizedBox(),
+      left: model.left ?? true,
+      top: model.top ?? true,
+      right: model.right ?? true,
+      bottom: model.bottom ?? true,
+      minimum: model.minimum?.parse ?? EdgeInsets.zero,
+      maintainBottomViewPadding: model.maintainBottomViewPadding ?? false,
+      child: child,
     );
   }
 }

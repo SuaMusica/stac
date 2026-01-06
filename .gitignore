@@ -38,3 +38,9 @@ mason-lock.json
 
 # Local Netlify folder
 .netlify
+
+# Cursor Files
+.cursor/
+
+# FVM Version Cache
+.fvm/

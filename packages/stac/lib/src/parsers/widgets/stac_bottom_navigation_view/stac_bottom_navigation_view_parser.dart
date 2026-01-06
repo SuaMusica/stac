@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_bottom_navigation_view/stac_bottom_navigation_view.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/widgets/stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import '../stac_default_bottom_navigation_controller/stac_default_bottom_navigation_controller.dart';
 
 class StacBottomNavigationViewParser
     extends StacParser<StacBottomNavigationView> {
@@ -19,9 +17,21 @@ class StacBottomNavigationViewParser
 
   @override
   Widget parse(BuildContext context, StacBottomNavigationView model) {
-    final controller = BottomNavigationScope.of(context)?.controller;
+    return _BottomNavigationViewWidget(model: model);
+  }
+}
 
+class _BottomNavigationViewWidget extends StatelessWidget {
+  const _BottomNavigationViewWidget({required this.model});
+
+  final StacBottomNavigationView model;
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = BottomNavigationScope.of(context)?.controller;
+    if (model.children.isEmpty) return const SizedBox();
     final index = controller?.index ?? 0;
-    return Stac.fromJson(model.children[index], context) ?? const SizedBox();
+    final safeIndex = index.clamp(0, model.children.length - 1);
+    return model.children[safeIndex].parse(context) ?? const SizedBox();
   }
 }

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request.dart';
 import 'package:stac/src/framework/framework.dart';
+import 'package:stac_core/actions/network_request/stac_network_request.dart';
 
 class StacNetworkService {
   const StacNetworkService._();
@@ -14,8 +14,9 @@ class StacNetworkService {
     BuildContext context,
     StacNetworkRequest request,
   ) async {
-    Map<String, dynamic> headers =
-        Map<String, dynamic>.from(request.headers ?? {});
+    Map<String, dynamic> headers = Map<String, dynamic>.from(
+      request.headers ?? {},
+    );
     _dio.options.headers = headers;
     _dio.options.contentType = request.contentType;
 
@@ -68,10 +69,7 @@ class StacNetworkService {
     );
   }
 
-  static Future<dynamic> _updateBody(
-    BuildContext context,
-    dynamic body,
-  ) async {
+  static Future<dynamic> _updateBody(BuildContext context, dynamic body) async {
     Map<dynamic, dynamic> bodyMap = {};
 
     if (body is Map) {

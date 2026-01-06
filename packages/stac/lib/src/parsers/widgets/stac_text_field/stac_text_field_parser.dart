@@ -1,18 +1,24 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_input_decoration/stac_input_decoration.dart';
-import 'package:stac/src/parsers/widgets/stac_input_formatters/stac_input_formatter.dart';
-import 'package:stac/src/parsers/widgets/stac_text_field/stac_text_field.dart';
-import 'package:stac/src/parsers/widgets/stac_text_style/stac_text_style.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/foundation/decoration/stac_input_decoration_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_drag_start_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_scroll_physics_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_align_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_capitalization_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_direction_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_input_action_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_input_type_parser.dart';
+import 'package:stac/src/parsers/foundation/text/stac_text_style_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacTextFieldParser extends StacParser<StacTextField> {
-  const StacTextFieldParser({
-    this.controller,
-    this.focusNode,
-  });
+  const StacTextFieldParser({this.controller, this.focusNode});
 
   final TextEditingController? controller;
   final FocusNode? focusNode;
@@ -26,37 +32,55 @@ class StacTextFieldParser extends StacParser<StacTextField> {
 
   @override
   Widget parse(BuildContext context, StacTextField model) {
-    controller?.text = model.initialValue;
+    if ((model.initialValue ?? '').isNotEmpty) {
+      controller?.text = model.initialValue!;
+    }
 
     return TextField(
-      controller: controller ?? TextEditingController(text: model.initialValue),
+      controller:
+          controller ?? TextEditingController(text: model.initialValue ?? ''),
       focusNode: focusNode,
-      keyboardType: model.keyboardType?.value,
-      textInputAction: model.textInputAction,
-      textCapitalization: model.textCapitalization,
-      textAlign: model.textAlign,
-      textAlignVertical: model.textAlignVertical?.value,
-      textDirection: model.textDirection,
-      readOnly: model.readOnly,
+      keyboardType: model.keyboardType?.parse,
+      textInputAction: model.textInputAction?.parse,
+      textCapitalization:
+          model.textCapitalization?.parse ?? TextCapitalization.none,
+      textAlign: model.textAlign?.parse ?? TextAlign.start,
+      textDirection: model.textDirection?.parse,
+      readOnly: model.readOnly ?? false,
       showCursor: model.showCursor,
-      autofocus: model.autofocus,
-      obscuringCharacter: model.obscuringCharacter,
+      autofocus: model.autofocus ?? false,
+      obscuringCharacter: model.obscuringCharacter ?? '•',
       maxLines: model.maxLines,
       minLines: model.minLines,
       maxLength: model.maxLength,
-      obscureText: model.obscureText,
-      enableSuggestions: model.enableSuggestions,
+      obscureText: model.obscureText ?? false,
+      enableSuggestions: model.enableSuggestions ?? true,
       enabled: model.enabled,
-      expands: model.expands,
-      cursorWidth: model.cursorWidth.parse,
-      cursorHeight: model.cursorHeight?.parse,
+      expands: model.expands ?? false,
+      cursorWidth: model.cursorWidth ?? 2.0,
+      cursorHeight: model.cursorHeight,
       cursorColor: model.cursorColor?.toColor(context),
       style: model.style?.parse(context),
       decoration: model.decoration?.parse(context),
-      inputFormatters: model.inputFormatters
-          .map((StacInputFormatter formatter) =>
-              formatter.type.format(formatter.rule ?? ""))
-          .toList(),
+      scrollPadding: model.scrollPadding?.parse ?? const EdgeInsets.all(20.0),
+      enableInteractiveSelection: model.enableInteractiveSelection,
+      mouseCursor: model.mouseCursor?.parse,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+      scrollPhysics: model.scrollPhysics?.parse,
+      restorationId: model.restorationId,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
+      autofillHints: model.autofillHints,
+      onTap: model.onTap == null ? null : () => model.onTap!.parse(context),
+      onChanged: model.onChanged == null
+          ? null
+          : (value) => model.onChanged!.parse(context),
+      onEditingComplete: model.onEditingComplete == null
+          ? null
+          : () => model.onEditingComplete!.parse(context),
+      onSubmitted: model.onSubmitted == null
+          ? null
+          : (value) => model.onSubmitted!.parse(context),
     );
   }
 }

@@ -2,15 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/actions/stac_snack_bar/stac_snack_bar_action.dart';
-import 'package:stac/src/parsers/widgets/stac_duration/stac_duration.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac/src/parsers/widgets/stac_shape_border/stac_shape_border.dart';
-import 'package:stac/src/utils/action_type.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_duration_parsers.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_hit_test_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac/src/parsers/foundation/ui_components/stac_dismiss_direction_parser.dart';
+import 'package:stac/src/parsers/foundation/ui_components/stac_snack_bar_behavior_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_snack_bar.dart';
 
 class StacSnackBarParser extends StacActionParser<StacSnackBar> {
   const StacSnackBarParser();
@@ -36,17 +38,32 @@ class StacSnackBarParser extends StacActionParser<StacSnackBar> {
         padding: model.padding?.parse,
         width: model.width,
         shape: model.shape?.parse(context),
-        hitTestBehavior: model.hitTestBehavior,
-        behavior: model.behavior,
-        action: model.action?.parse(context),
+        hitTestBehavior: model.hitTestBehavior?.parse,
+        behavior: model.behavior?.parse,
+        action: _parseAction(context, model.action),
         actionOverflowThreshold: model.actionOverflowThreshold,
         showCloseIcon: model.showCloseIcon,
         closeIconColor: model.closeIconColor?.toColor(context),
-        duration: model.duration.parse,
+        duration: model.duration?.parse ?? const Duration(milliseconds: 4000),
         onVisible: () => Stac.onCallFromJson(model.onVisible, context),
-        dismissDirection: model.dismissDirection,
-        clipBehavior: model.clipBehavior,
+        dismissDirection: model.dismissDirection?.parse,
+        clipBehavior: model.clipBehavior?.parse ?? Clip.hardEdge,
       ),
+    );
+  }
+
+  SnackBarAction? _parseAction(
+    BuildContext context,
+    StacSnackBarAction? action,
+  ) {
+    if (action == null) return null;
+    return SnackBarAction(
+      textColor: action.textColor?.toColor(context),
+      disabledTextColor: action.disabledTextColor?.toColor(context),
+      backgroundColor: action.backgroundColor?.toColor(context),
+      disabledBackgroundColor: action.disabledBackgroundColor?.toColor(context),
+      label: action.label,
+      onPressed: () => action.onPressed.parse(context),
     );
   }
 }

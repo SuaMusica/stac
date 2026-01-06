@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_border_radius/stac_border_radius.dart';
-import 'package:stac/src/parsers/widgets/stac_clip_rrect/stac_clip_rrect.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_radius_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacClipRRectParser extends StacParser<StacClipRRect> {
@@ -18,9 +18,9 @@ class StacClipRRectParser extends StacParser<StacClipRRect> {
   @override
   Widget parse(BuildContext context, StacClipRRect model) {
     return ClipRRect(
-      borderRadius: model.borderRadius.parse,
-      clipBehavior: model.clipBehavior,
-      child: Stac.fromJson(model.child, context),
+      borderRadius: model.borderRadius?.parse ?? BorderRadius.zero,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.antiAlias,
+      child: model.child?.parse(context),
     );
   }
 }

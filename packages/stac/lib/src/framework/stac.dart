@@ -1,307 +1,384 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:stac/src/framework/stac_registry.dart';
-import 'package:stac/src/parsers/actions/stac_network_request/stac_network_request_parser.dart';
-import 'package:stac/src/parsers/parsers.dart';
-import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell_parser.dart';
-import 'package:stac/src/parsers/widgets/stac_set_value/stac_set_value_parser.dart';
-import 'package:stac/src/services/stac_network_service.dart';
-import 'package:stac/src/utils/version/stac_version.dart';
-import 'package:stac/src/utils/variable_resolver.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/framework/stac_error.dart';
+import 'package:stac/src/framework/stac_service.dart';
+import 'package:stac/src/models/stac_cache_config.dart';
+import 'package:stac/src/services/stac_cloud.dart';
+import 'package:stac_core/actions/network_request/stac_network_request.dart';
+import 'package:stac_core/core/stac_options.dart';
 import 'package:stac_framework/stac_framework.dart';
-import 'package:stac_logger/stac_logger.dart';
 
-typedef ErrorWidgetBuilder = Widget Function(
-  BuildContext context,
-  dynamic error,
-);
+/// Builder function for displaying errors in Stac widgets.
+///
+/// Called when a Stac widget encounters an error during loading or parsing.
+typedef ErrorWidgetBuilder =
+    Widget Function(BuildContext context, dynamic error);
 
+/// Builder function for displaying loading states in Stac widgets.
+///
+/// Called while a Stac widget is fetching data from the network or cache.
 typedef LoadingWidgetBuilder = Widget Function(BuildContext context);
 
-/// The `Stac` class is a central part of the Stac framework.
-/// It provides methods to parse and render widgets from JSON, handle actions from JSON, and fetch and render widgets from network requests or assets.
+/// Global parse-error widget builder for Stac.
 ///
-/// The `Stac` class uses a registry of parsers.md (`StacParser`) and action parsers.md (`StacActionParser`) to handle different types of widgets and actions.
-/// These parsers.md can be registered during the initialization of the `Stac` class.
+/// Allows apps to provide a custom widget when parsing a Stac widget/action
+/// fails. The builder receives useful context like the widget/action type,
+/// original JSON and stack trace (when available).
 ///
-/// The `Stac` class also provides utility methods to convert a widget to a `PreferredSizeWidget`.
-class Stac {
-  static final _parsers = <StacParser>[
-    const StacContainerParser(),
-    const StacTextParser(),
-    const StacTextFieldParser(),
-    const StacElevatedButtonParser(),
-    const StacImageParser(),
-    const StacIconParser(),
-    const StacCenterParser(),
-    const StacRowParser(),
-    const StacColumnParser(),
-    const StacCustomScrollViewParser(),
-    const StacStackParser(),
-    const StacPositionedParser(),
-    const StacIconButtonParser(),
-    const StacFloatingActionButtonParser(),
-    const StacOutlinedButtonParser(),
-    const StacPaddingParser(),
-    const StacAppBarParser(),
-    const StacTextButtonParser(),
-    const StacScaffoldParser(),
-    const StacSizedBoxParser(),
-    const StacFractionallySizedBoxParser(),
-    const StacTextFormFieldParser(),
-    const StacTabBarViewParser(),
-    const StacTabBarParser(),
-    const StacListTileParser(),
-    const StacCardParser(),
-    const StacBottomNavigationBarParser(),
-    const StacListViewParser(),
-    const StacDefaultTabControllerParser(),
-    const StacSingleChildScrollViewParser(),
-    const StacAlertDialogParser(),
-    const StacTabParser(),
-    const StacFormParser(),
-    const StacCheckBoxParser(),
-    const StacExpandedParser(),
-    const StacFlexibleParser(),
-    const StacSpacerParser(),
-    const StacSafeAreaParser(),
-    const StacSwitchParser(),
-    const StacAlignParser(),
-    const StacPageViewParser(),
-    const StacRefreshIndicatorParser(),
-    const StacNetworkWidgetParser(),
-    const StacCircleAvatarParser(),
-    const StacChipParser(),
-    const StacGridViewParser(),
-    const StacFilledButtonParser(),
-    const StacBottomNavigationViewParser(),
-    const StacDefaultBottomNavigationControllerParser(),
-    const StacWrapParser(),
-    const StacAutoCompleteParser(),
-    const StacTableParser(),
-    const StacTableCellParser(),
-    const StacCarouselViewParser(),
-    const StacColoredBoxParser(),
-    const StacDividerParser(),
-    const StacDrawerParser(),
-    const StacCircularProgressIndicatorParser(),
-    const StacLinearProgressIndicatorParser(),
-    const StacHeroParser(),
-    const StacRadioParser(),
-    const StacRadioGroupParser(),
-    const StacSliderParser(),
-    const StacSliverAppBarParser(),
-    const StacOpacityParser(),
-    const StacPlaceholderParser(),
-    const StacAspectRatioParser(),
-    const StacFittedBoxParser(),
-    const StacLimitedBoxParser(),
-    const StacDynamicViewParser(),
-    const StacDropdownMenuParser(),
-    const StacClipRRectParser(),
-    const StacClipOvalParser(),
-    const StacGestureDetectorParser(),
-    const StacSetValueParser(),
-    const StacInkwellParser(),
-    const StacConditionalParser(),
-    const StacVisibilityParser(),
-    const StacBackdropFilterParser(),
-    const StacVerticalDividerParser(),
-  ];
+/// Example:
+/// ```dart
+/// Stac.initialize(
+///   errorWidgetBuilder: (context, errorDetails) {
+///     return Text('Error in ${errorDetails.type}: ${errorDetails.error}');
+///   },
+/// );
+/// ```
+typedef StacErrorWidgetBuilder =
+    Widget Function(BuildContext context, StacError errorDetails);
 
-  static final _actionParsers = <StacActionParser>[
-    const StacNoneActionParser(),
-    const StacNavigateActionParser(),
-    const StacNetworkRequestParser(),
-    const StacModalBottomSheetActionParser(),
-    const StacDialogActionParser(),
-    const StacGetFormValueParser(),
-    const StacFormValidateParser(),
-    const StacSnackBarParser(),
-    const StacSetValueActionParser(),
-    const StacMultiActionParser(),
-    const StacDelayActionParser(),
-  ];
+/// The main entry point for rendering Server-Driven UI from Stac Cloud.
+///
+/// [Stac] is a widget that fetches screen definitions from Stac Cloud
+/// and renders them as Flutter widgets. It supports intelligent caching,
+/// offline access, and background updates.
+///
+/// ## Basic Usage
+///
+/// ```dart
+/// // First, initialize Stac in your app's main function
+/// void main() async {
+///   WidgetsFlutterBinding.ensureInitialized();
+///   await Stac.initialize(
+///     options: StacOptions(projectId: 'your-project-id'),
+///   );
+///   runApp(MyApp());
+/// }
+///
+/// // Then use Stac widget to render server-driven screens
+/// Stac(routeName: '/home')
+/// ```
+///
+/// ## Caching
+///
+/// By default, Stac uses an optimistic caching strategy that returns
+/// cached data immediately while fetching updates in the background.
+///
+/// ```dart
+/// Stac(
+///   routeName: '/home',
+///   cacheConfig: StacCacheConfig(
+///     strategy: StacCacheStrategy.cacheFirst,
+///     maxAge: Duration(hours: 24),
+///   ),
+/// )
+/// ```
+///
+/// ## Custom Loading and Error States
+///
+/// ```dart
+/// Stac(
+///   routeName: '/home',
+///   loadingWidget: Center(child: CircularProgressIndicator()),
+///   errorWidget: Center(child: Text('Failed to load')),
+/// )
+/// ```
+///
+/// ## Static Methods
+///
+/// Stac also provides static methods for rendering widgets from various sources:
+/// - [fromJson] - Render from a JSON map
+/// - [fromAssets] - Render from a local asset file
+/// - [fromNetwork] - Render from a custom network request
+///
+/// See also:
+/// - [StacCacheConfig] for cache configuration options
+/// - [StacOptions] for initialization options
+class Stac extends StatelessWidget {
+  /// Creates a Stac widget that renders a screen from Stac Cloud.
+  ///
+  /// The [routeName] identifies which screen to fetch from the cloud.
+  /// This should match the screen name configured in your Stac Cloud project.
+  ///
+  /// Optionally provide [loadingWidget] and [errorWidget] to customize
+  /// the loading and error states. If not provided, defaults are used.
+  ///
+  /// The [cacheConfig] controls caching behavior. Defaults to optimistic
+  /// caching which returns cached data immediately and updates in background.
+  const Stac({
+    super.key,
+    required this.routeName,
+    this.loadingWidget,
+    this.errorWidget,
+    this.cacheConfig = const StacCacheConfig(
+      strategy: StacCacheStrategy.optimistic,
+    ),
+  });
 
+  /// The route name identifying the screen to fetch from Stac Cloud.
+  ///
+  /// This should match the screen name configured in your Stac Cloud project.
+  /// For example: `/home`, `/profile`, `/settings`.
+  final String routeName;
+
+  /// Widget to display while the screen is loading.
+  ///
+  /// If `null`, a default loading indicator is shown (centered
+  /// [CircularProgressIndicator] in a [Scaffold]).
+  final Widget? loadingWidget;
+
+  /// Widget to display when an error occurs.
+  ///
+  /// If `null`, an empty [SizedBox] is shown on error.
+  final Widget? errorWidget;
+
+  /// Configuration for cache behavior.
+  ///
+  /// Controls cache strategy, TTL, background refresh, and more.
+  ///
+  /// Defaults to optimistic caching strategy.
+  ///
+  /// Example:
+  /// ```dart
+  /// Stac(
+  ///   routeName: '/home',
+  ///   cacheConfig: StacCacheConfig(
+  ///     maxAge: Duration(hours: 24),
+  ///     strategy: StacCacheStrategy.optimistic,
+  ///   ),
+  /// )
+  /// ```
+  ///
+  /// Or use presets:
+  /// ```dart
+  /// Stac(
+  ///   routeName: '/home',
+  ///   cacheConfig: StacCacheConfig.cacheFirst,
+  /// )
+  /// ```
+  final StacCacheConfig cacheConfig;
+
+  /// Initializes Stac with the provided configuration.
+  ///
+  /// This must be called before using any Stac widgets, typically in
+  /// your app's `main` function after `WidgetsFlutterBinding.ensureInitialized()`.
+  ///
+  /// ## Parameters
+  ///
+  /// - [options]: Configuration containing your Stac Cloud project ID.
+  ///   Required for fetching screens from Stac Cloud.
+  ///
+  /// - [parsers]: Custom widget parsers for extending Stac with custom widgets.
+  ///   These are merged with the built-in parsers.
+  ///
+  /// - [actionParsers]: Custom action parsers for extending Stac with custom actions.
+  ///   These are merged with the built-in action parsers.
+  ///
+  /// - [dio]: Custom Dio instance for network requests. If not provided,
+  ///   a default instance is used.
+  ///
+  /// - [override]: If `true`, allows re-initialization. Useful for testing.
+  ///   Defaults to `false`.
+  ///
+  /// - [showErrorWidgets]: If `true`, shows error widgets when parsing fails.
+  ///   If `false`, errors are silent. Defaults to `true`.
+  ///
+  /// - [logStackTraces]: If `true`, logs stack traces for debugging.
+  ///   Defaults to `true`.
+  ///
+  /// - [errorWidgetBuilder]: Custom builder for error widgets shown when
+  ///   parsing fails.
+  ///
+  /// ## Example
+  ///
+  /// ```dart
+  /// void main() async {
+  ///   WidgetsFlutterBinding.ensureInitialized();
+  ///   await Stac.initialize(
+  ///     options: StacOptions(projectId: 'your-project-id'),
+  ///     parsers: [MyCustomWidgetParser()],
+  ///     actionParsers: [MyCustomActionParser()],
+  ///   );
+  ///   runApp(MyApp());
+  /// }
+  /// ```
   static Future<void> initialize({
+    StacOptions? options,
     List<StacParser> parsers = const [],
     List<StacActionParser> actionParsers = const [],
     Dio? dio,
     bool override = false,
+    bool showErrorWidgets = true,
+    bool logStackTraces = true,
+    StacErrorWidgetBuilder? errorWidgetBuilder,
     int? buildNumber,
   }) async {
-    _parsers.addAll(parsers);
-    _actionParsers.addAll(actionParsers);
-    StacRegistry.instance.registerAll(_parsers, override);
-    StacRegistry.instance.registerAllActions(_actionParsers, override);
-    StacRegistry.instance.registerBuildNumber(buildNumber);
-    StacNetworkService.initialize(dio ?? Dio());
+    return StacService.initialize(
+      options: options,
+      parsers: parsers,
+      actionParsers: actionParsers,
+      dio: dio,
+      override: override,
+      showErrorWidgets: showErrorWidgets,
+      logStackTraces: logStackTraces,
+      errorWidgetBuilder: errorWidgetBuilder,
+      buildNumber: buildNumber,
+    );
   }
 
-  static void setParseCustomColor(Color? Function(String?)? parseCustomColor) =>
-      StacRegistry.instance.parseCustomColor = parseCustomColor;
+  @override
+  Widget build(BuildContext context) {
+    return _StacView(
+      routeName: routeName,
+      loadingWidget: loadingWidget,
+      errorWidget: errorWidget,
+      cacheConfig: cacheConfig,
+    );
+  }
 
+  /// Converts a JSON map to a Flutter widget.
+  ///
+  /// Use this method to render a Stac widget definition that you already
+  /// have as a JSON map (e.g., from a local file or custom API).
+  ///
+  /// Returns `null` if the JSON is `null` or cannot be parsed.
+  ///
+  /// ## Example
+  ///
+  /// ```dart
+  /// final json = {
+  ///   'type': 'text',
+  ///   'data': 'Hello, World!',
+  /// };
+  /// final widget = Stac.fromJson(json, context);
+  /// ```
   static Widget? fromJson(Map<String, dynamic>? json, BuildContext context) {
-    try {
-      if (json != null) {
-        Map<String, dynamic>? jsonVersion = json['version'];
-        final platform = json['platform'];
-
-        /// Check if has version and buildNumber is not null
-        if (jsonVersion != null && StacRegistry.instance.buildNumber != null) {
-          final stacVersion = StacVersion.fromJson(jsonVersion);
-          final isSatisfied =
-              stacVersion.isSatisfied(StacRegistry.instance.buildNumber!);
-          // If version is not satisfied, return null
-          if (!isSatisfied) {
-            Log.w(
-                'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${StacRegistry.instance.buildNumber}');
-            return null;
-          }
-        }
-
-        /// Check if platform is specified and validate
-        if (platform != null) {
-          final currentPlatform = Platform.operatingSystem;
-          bool isPlatformSupported = false;
-          List<String> supportedPlatforms = [];
-
-          // Check if platform is a list or a single string
-          if (platform is List) {
-            supportedPlatforms = platform.map((e) => e.toString()).toList();
-            isPlatformSupported = supportedPlatforms.contains(currentPlatform);
-          } else if (platform is String) {
-            supportedPlatforms.add(platform);
-            isPlatformSupported = platform == currentPlatform;
-          }
-
-          // If platform is not supported, log and return null
-          if (!isPlatformSupported) {
-            final platformsStr = supportedPlatforms.join(', ');
-            Log.w(
-                'Widget not supported on platform [$currentPlatform]. Only available for: $platformsStr');
-            return null;
-          }
-        }
-
-        String widgetType = json['type'];
-        StacParser? stacParser = StacRegistry.instance.getParser(widgetType);
-
-        if (stacParser != null) {
-          Map<String, dynamic> resolvedJson;
-          if (widgetType == WidgetType.setValue.name) {
-            resolvedJson = json;
-          } else {
-            resolvedJson = resolveVariablesInJson(json, StacRegistry.instance);
-          }
-          final model = stacParser.getModel(resolvedJson);
-
-          return stacParser.parse(context, model);
-        } else {
-          Log.w('Widget type [$widgetType] not supported');
-        }
-      }
-    } catch (e) {
-      Log.e(e);
-    }
-    return null;
+    return StacService.fromJson(json, context);
   }
 
-  static FutureOr<dynamic> onCallFromJson(
-    Map<String, dynamic>? json,
-    BuildContext context,
-  ) {
-    try {
-      if (json != null && json['actionType'] != null) {
-        String actionType = json['actionType'];
-        StacActionParser? stacActionParser =
-            StacRegistry.instance.getActionParser(actionType);
-        if (stacActionParser != null) {
-          final model = stacActionParser.getModel(json);
-          return stacActionParser.onCall(context, model);
-        } else {
-          Log.w('Action type [$actionType] not supported');
-        }
-      }
-    } catch (e) {
-      Log.e(e);
-    }
-    return null;
+  /// Loads and renders a Stac widget from a local asset file.
+  ///
+  /// The [assetPath] should point to a JSON file in your assets folder
+  /// containing a valid Stac widget definition.
+  ///
+  /// ## Example
+  ///
+  /// ```dart
+  /// Stac.fromAssets(
+  ///   'assets/screens/home.json',
+  ///   loadingWidget: (context) => CircularProgressIndicator(),
+  ///   errorWidget: (context, error) => Text('Error: $error'),
+  /// )
+  /// ```
+  static Widget fromAssets(
+    String assetPath, {
+    LoadingWidgetBuilder? loadingWidget,
+    ErrorWidgetBuilder? errorWidget,
+  }) {
+    return StacService.fromAssets(
+      assetPath,
+      loadingWidget: loadingWidget,
+      errorWidget: errorWidget,
+    );
   }
 
+  /// Loads and renders a Stac widget from a custom network request.
+  ///
+  /// Use this when you need to fetch Stac widget definitions from your
+  /// own API instead of Stac Cloud.
+  ///
+  /// The [request] defines the network request configuration including
+  /// URL, method, headers, and body.
+  ///
+  /// ## Example
+  ///
+  /// ```dart
+  /// Stac.fromNetwork(
+  ///   context: context,
+  ///   request: StacNetworkRequest(
+  ///     url: 'https://api.example.com/screens/home',
+  ///     method: 'GET',
+  ///   ),
+  ///   loadingWidget: (context) => CircularProgressIndicator(),
+  /// )
+  /// ```
   static Widget fromNetwork({
     required BuildContext context,
     required StacNetworkRequest request,
     LoadingWidgetBuilder? loadingWidget,
     ErrorWidgetBuilder? errorWidget,
   }) {
-    return FutureBuilder<Response?>(
-      future: StacNetworkService.request(context, request),
-      builder: (context, snapshot) {
-        switch (snapshot.connectionState) {
-          case ConnectionState.waiting:
-            Widget? widget;
-            if (loadingWidget != null) {
-              widget = loadingWidget(context);
-              return widget;
-            }
-            break;
-          case ConnectionState.done:
-            if (snapshot.hasData) {
-              final json = jsonDecode(snapshot.data.toString());
-              return Stac.fromJson(json, context) ?? const SizedBox();
-            } else if (snapshot.hasError) {
-              Log.e(snapshot.error);
-              if (errorWidget != null) {
-                final widget = errorWidget(context, snapshot.error);
-                return widget;
-              }
-            }
-            break;
-          default:
-            break;
-        }
-        return const SizedBox();
-      },
+    return StacService.fromNetwork(
+      context: context,
+      request: request,
+      loadingWidget: loadingWidget,
+      errorWidget: errorWidget,
     );
   }
 
-  static Widget? fromAssets(
-    String assetPath, {
-    LoadingWidgetBuilder? loadingWidget,
-    ErrorWidgetBuilder? errorWidget,
-  }) {
-    return FutureBuilder<String>(
-      future: rootBundle.loadString(assetPath),
+  /// Executes a Stac action from a JSON definition.
+  ///
+  /// Use this to programmatically trigger Stac actions (like navigation,
+  /// network requests, or custom actions) from JSON definitions.
+  ///
+  /// Returns the result of the action, which varies by action type.
+  ///
+  /// ## Example
+  ///
+  /// ```dart
+  /// final actionJson = {
+  ///   'actionType': 'navigate',
+  ///   'routeName': '/details',
+  /// };
+  /// await Stac.onCallFromJson(actionJson, context);
+  /// ```
+  static FutureOr<dynamic> onCallFromJson(
+    Map<String, dynamic>? json,
+    BuildContext context,
+  ) {
+    return StacService.onCallFromJson(json, context);
+  }
+}
+
+/// Internal stateless widget that handles fetching and rendering Stac screens.
+class _StacView extends StatelessWidget {
+  const _StacView({
+    required this.routeName,
+    this.loadingWidget,
+    this.errorWidget,
+    required this.cacheConfig,
+  });
+
+  final String routeName;
+  final Widget? loadingWidget;
+  final Widget? errorWidget;
+  final StacCacheConfig cacheConfig;
+
+  @override
+  Widget build(BuildContext context) {
+    final options = StacService.options;
+    if (options == null) {
+      throw Exception('StacOptions is not set');
+    }
+
+    return FutureBuilder<Response?>(
+      future: StacCloud.fetchScreen(
+        routeName: routeName,
+        cacheConfig: cacheConfig,
+      ),
       builder: (context, snapshot) {
-        switch (snapshot.connectionState) {
-          case ConnectionState.waiting:
-            Widget? widget;
-            if (loadingWidget != null) {
-              widget = loadingWidget(context);
-              return widget;
-            }
-            break;
-          case ConnectionState.done:
-            if (snapshot.hasData) {
-              final json = jsonDecode(snapshot.data.toString());
-              return Stac.fromJson(json, context) ?? const SizedBox();
-            } else if (snapshot.hasError) {
-              Log.e(snapshot.error);
-              if (errorWidget != null) {
-                final widget = errorWidget(context, snapshot.error);
-                return widget;
-              }
-            }
-            break;
-          default:
-            break;
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return loadingWidget ?? const _LoadingWidget();
+        }
+        if (snapshot.hasError) {
+          return errorWidget ?? const SizedBox();
+        }
+        if (snapshot.hasData) {
+          final jsonString = snapshot.data!.data['stacJson'];
+          return StacService.fromJson(jsonDecode(jsonString), context) ??
+              const SizedBox();
         }
         return const SizedBox();
       },
@@ -309,11 +386,12 @@ class Stac {
   }
 }
 
-extension StacExtension on Widget? {
-  PreferredSizeWidget? get toPreferredSizeWidget {
-    if (this != null) {
-      return this as PreferredSizeWidget;
-    }
-    return null;
+/// Default loading widget shown when no custom loading widget is provided.
+class _LoadingWidget extends StatelessWidget {
+  const _LoadingWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Material(child: Center(child: CircularProgressIndicator()));
   }
 }

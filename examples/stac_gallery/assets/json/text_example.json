@@ -49,7 +49,7 @@
           "data": "This is a ",
           "children": [
             {
-              "data": "Rich Text.",
+              "text": "Rich Text.",
               "style": {
                 "fontWeight": "w800",
                 "color": "#6750A4"

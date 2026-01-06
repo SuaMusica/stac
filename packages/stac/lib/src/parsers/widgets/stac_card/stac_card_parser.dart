@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_card/stac_card.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_edge_insets/stac_edge_insets.dart';
-import 'package:stac/src/parsers/widgets/stac_shape_border/stac_shape_border.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_edge_insets_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacCardParser extends StacParser<StacCard> {
@@ -23,13 +22,13 @@ class StacCardParser extends StacParser<StacCard> {
       color: model.color?.toColor(context),
       shadowColor: model.shadowColor?.toColor(context),
       surfaceTintColor: model.surfaceTintColor?.toColor(context),
-      elevation: model.elevation?.parse,
+      elevation: model.elevation,
       shape: model.shape?.parse(context),
-      borderOnForeground: model.borderOnForeground,
-      clipBehavior: model.clipBehavior,
-      semanticContainer: model.semanticContainer,
+      borderOnForeground: model.borderOnForeground ?? true,
+      clipBehavior: model.clipBehavior?.parse,
+      semanticContainer: model.semanticContainer ?? true,
       margin: model.margin?.parse,
-      child: Stac.fromJson(model.child, context),
+      child: model.child?.parse(context),
     );
   }
 }
