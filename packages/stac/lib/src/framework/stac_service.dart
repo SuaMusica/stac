@@ -168,12 +168,15 @@ class StacService {
     _actionParsers.addAll(actionParsers);
     StacRegistry.instance.registerAll(_parsers, override);
     StacRegistry.instance.registerAllActions(_actionParsers, override);
+    StacRegistry.instance.registerBuildNumber(buildNumber);
     StacNetworkService.initialize(dio ?? Dio());
     _showErrorWidgets = showErrorWidgets;
     _logStackTraces = logStackTraces;
     _errorWidgetBuilder = errorWidgetBuilder;
-    StacRegistry.instance.registerBuildNumber(buildNumber);
   }
+
+  static void setParseCustomColor(Color? Function(String?)? parseCustomColor) =>
+      StacRegistry.instance.parseCustomColor = parseCustomColor;
 
   static Widget? fromJson(Map<String, dynamic>? json, BuildContext context) {
     try {
@@ -187,12 +190,14 @@ class StacService {
       /// Check if has version and buildNumber is not null
       if (jsonVersion != null && StacRegistry.instance.buildNumber != null) {
         final stacVersion = StacVersion.fromJson(jsonVersion);
-        final isSatisfied =
-            stacVersion.isSatisfied(StacRegistry.instance.buildNumber!);
+        final isSatisfied = stacVersion.isSatisfied(
+          StacRegistry.instance.buildNumber!,
+        );
         // If version is not satisfied, return null
         if (!isSatisfied) {
           Log.w(
-              'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${StacRegistry.instance.buildNumber}');
+            'Stac buildNumber ${stacVersion.buildNumber} is not satisfied; current build is: ${StacRegistry.instance.buildNumber}',
+          );
           return null;
         }
       }
@@ -216,7 +221,8 @@ class StacService {
         if (!isPlatformSupported) {
           final platformsStr = supportedPlatforms.join(', ');
           Log.w(
-              'Widget not supported on platform [$currentPlatform]. Only available for: $platformsStr');
+            'Widget not supported on platform [$currentPlatform]. Only available for: $platformsStr',
+          );
           return null;
         }
       }
