@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/utils/widget_type.dart';
-import 'package:stac_framework/stac_framework.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_alignment_parser.dart';
 
-import 'stac_fractionally_sized_box.dart';
+import 'package:stac_core/stac_core.dart';
+import 'package:stac_framework/stac_framework.dart';
 
 class StacFractionallySizedBoxParser
     extends StacParser<StacFractionallySizedBox> {
@@ -20,10 +19,10 @@ class StacFractionallySizedBoxParser
   @override
   Widget parse(BuildContext context, StacFractionallySizedBox model) {
     return FractionallySizedBox(
-      alignment: model.alignment?.value ?? Alignment.center,
-      widthFactor: model.widthFactor?.parse,
-      heightFactor: model.heightFactor?.parse,
-      child: Stac.fromJson(model.child, context),
+      alignment: model.alignment?.parse ?? Alignment.center,
+      widthFactor: model.widthFactor,
+      heightFactor: model.heightFactor,
+      child: model.child.parse(context),
     );
   }
 }

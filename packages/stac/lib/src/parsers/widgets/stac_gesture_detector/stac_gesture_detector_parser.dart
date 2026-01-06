@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart' show DragStartBehavior;
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_gesture_detector/stac_gesture_detector.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_action_parser.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_drag_start_behavior_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_hit_test_behavior_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
@@ -18,158 +21,180 @@ class StacGestureDetectorParser extends StacParser<StacGestureDetector> {
   Widget parse(BuildContext context, StacGestureDetector model) {
     return GestureDetector(
       onTapDown: model.onTapDown != null
-          ? (_) => Stac.onCallFromJson(model.onTapDown, context)
+          ? (_) => model.onTapDown!.parse(context)
           : null,
       onTapUp: model.onTapUp != null
-          ? (_) => Stac.onCallFromJson(model.onTapUp, context)
+          ? (_) => model.onTapUp!.parse(context)
           : null,
-      onTap: model.onTap != null
-          ? () => Stac.onCallFromJson(model.onTap, context)
-          : null,
+      onTap: model.onTap != null ? () => model.onTap!.parse(context) : null,
       onTapCancel: model.onTapCancel != null
-          ? () => Stac.onCallFromJson(model.onTapCancel, context)
+          ? () => model.onTapCancel!.parse(context)
           : null,
       onSecondaryTap: model.onSecondaryTap != null
-          ? () => Stac.onCallFromJson(model.onSecondaryTap, context)
+          ? () => model.onSecondaryTap!.parse(context)
           : null,
       onSecondaryTapDown: model.onSecondaryTapDown != null
-          ? (_) => Stac.onCallFromJson(model.onSecondaryTapDown, context)
+          ? (_) => model.onSecondaryTapDown!.parse(context)
           : null,
       onSecondaryTapUp: model.onSecondaryTapUp != null
-          ? (_) => Stac.onCallFromJson(model.onSecondaryTapUp, context)
+          ? (_) => model.onSecondaryTapUp!.parse(context)
           : null,
       onSecondaryTapCancel: model.onSecondaryTapCancel != null
-          ? () => Stac.onCallFromJson(model.onSecondaryTapCancel, context)
+          ? () => model.onSecondaryTapCancel!.parse(context)
           : null,
       onTertiaryTapDown: model.onTertiaryTapDown != null
-          ? (_) => Stac.onCallFromJson(model.onTertiaryTapDown, context)
+          ? (_) => model.onTertiaryTapDown!.parse(context)
           : null,
       onTertiaryTapUp: model.onTertiaryTapUp != null
-          ? (_) => Stac.onCallFromJson(model.onTertiaryTapUp, context)
+          ? (_) => model.onTertiaryTapUp!.parse(context)
           : null,
       onTertiaryTapCancel: model.onTertiaryTapCancel != null
-          ? () => Stac.onCallFromJson(model.onTertiaryTapCancel, context)
+          ? () => model.onTertiaryTapCancel!.parse(context)
           : null,
       onDoubleTapDown: model.onDoubleTapDown != null
-          ? (_) => Stac.onCallFromJson(model.onDoubleTapDown, context)
+          ? (_) => model.onDoubleTapDown!.parse(context)
           : null,
       onDoubleTap: model.onDoubleTap != null
-          ? () => Stac.onCallFromJson(model.onDoubleTap, context)
+          ? () => model.onDoubleTap!.parse(context)
           : null,
       onDoubleTapCancel: model.onDoubleTapCancel != null
-          ? () => Stac.onCallFromJson(model.onDoubleTapCancel, context)
+          ? () => model.onDoubleTapCancel!.parse(context)
           : null,
       onLongPressDown: model.onLongPressDown != null
-          ? (_) => Stac.onCallFromJson(model.onLongPressDown, context)
+          ? (_) => model.onLongPressDown!.parse(context)
           : null,
       onLongPressCancel: model.onLongPressCancel != null
-          ? () => Stac.onCallFromJson(model.onLongPressCancel, context)
+          ? () => model.onLongPressCancel!.parse(context)
           : null,
       onLongPress: model.onLongPress != null
-          ? () => Stac.onCallFromJson(model.onLongPress, context)
+          ? () => model.onLongPress!.parse(context)
           : null,
       onLongPressStart: model.onLongPressStart != null
-          ? (_) => Stac.onCallFromJson(model.onLongPressStart, context)
+          ? (_) => model.onLongPressStart!.parse(context)
           : null,
       onLongPressMoveUpdate: model.onLongPressMoveUpdate != null
-          ? (_) => Stac.onCallFromJson(model.onLongPressMoveUpdate, context)
+          ? (_) => model.onLongPressMoveUpdate!.parse(context)
           : null,
       onLongPressUp: model.onLongPressUp != null
-          ? () => Stac.onCallFromJson(model.onLongPressUp, context)
+          ? () => model.onLongPressUp!.parse(context)
           : null,
       onLongPressEnd: model.onLongPressEnd != null
-          ? (_) => Stac.onCallFromJson(model.onLongPressEnd, context)
+          ? (_) => model.onLongPressEnd!.parse(context)
           : null,
       onSecondaryLongPressDown: model.onSecondaryLongPressDown != null
-          ? (_) => Stac.onCallFromJson(model.onSecondaryLongPressDown, context)
+          ? (_) => model.onSecondaryLongPressDown!.parse(context)
           : null,
       onSecondaryLongPressCancel: model.onSecondaryLongPressCancel != null
-          ? () => Stac.onCallFromJson(model.onSecondaryLongPressCancel, context)
+          ? () => model.onSecondaryLongPressCancel!.parse(context)
           : null,
       onSecondaryLongPress: model.onSecondaryLongPress != null
-          ? () => Stac.onCallFromJson(model.onSecondaryLongPress, context)
+          ? () => model.onSecondaryLongPress!.parse(context)
           : null,
       onSecondaryLongPressStart: model.onSecondaryLongPressStart != null
-          ? (_) => Stac.onCallFromJson(model.onSecondaryLongPressStart, context)
+          ? (_) => model.onSecondaryLongPressStart!.parse(context)
           : null,
-      onSecondaryLongPressMoveUpdate: model.onSecondaryLongPressMoveUpdate !=
-              null
-          ? (_) =>
-              Stac.onCallFromJson(model.onSecondaryLongPressMoveUpdate, context)
+      onSecondaryLongPressMoveUpdate:
+          model.onSecondaryLongPressMoveUpdate != null
+          ? (_) => model.onSecondaryLongPressMoveUpdate!.parse(context)
           : null,
       onSecondaryLongPressUp: model.onSecondaryLongPressUp != null
-          ? () => Stac.onCallFromJson(model.onSecondaryLongPressUp, context)
+          ? () => model.onSecondaryLongPressUp!.parse(context)
           : null,
       onSecondaryLongPressEnd: model.onSecondaryLongPressEnd != null
-          ? (_) => Stac.onCallFromJson(model.onSecondaryLongPressEnd, context)
+          ? (_) => model.onSecondaryLongPressEnd!.parse(context)
           : null,
       onTertiaryLongPressDown: model.onTertiaryLongPressDown != null
-          ? (_) => Stac.onCallFromJson(model.onTertiaryLongPressDown, context)
+          ? (_) => model.onTertiaryLongPressDown!.parse(context)
           : null,
       onTertiaryLongPressCancel: model.onTertiaryLongPressCancel != null
-          ? () => Stac.onCallFromJson(model.onTertiaryLongPressCancel, context)
+          ? () => model.onTertiaryLongPressCancel!.parse(context)
           : null,
       onTertiaryLongPress: model.onTertiaryLongPress != null
-          ? () => Stac.onCallFromJson(model.onTertiaryLongPress, context)
+          ? () => model.onTertiaryLongPress!.parse(context)
           : null,
       onTertiaryLongPressStart: model.onTertiaryLongPressStart != null
-          ? (_) => Stac.onCallFromJson(model.onTertiaryLongPressStart, context)
+          ? (_) => model.onTertiaryLongPressStart!.parse(context)
           : null,
       onTertiaryLongPressMoveUpdate: model.onTertiaryLongPressMoveUpdate != null
-          ? (_) =>
-              Stac.onCallFromJson(model.onTertiaryLongPressMoveUpdate, context)
+          ? (_) => model.onTertiaryLongPressMoveUpdate!.parse(context)
           : null,
       onTertiaryLongPressUp: model.onTertiaryLongPressUp != null
-          ? () => Stac.onCallFromJson(model.onTertiaryLongPressUp, context)
+          ? () => model.onTertiaryLongPressUp!.parse(context)
           : null,
       onTertiaryLongPressEnd: model.onTertiaryLongPressEnd != null
-          ? (_) => Stac.onCallFromJson(model.onTertiaryLongPressEnd, context)
+          ? (_) => model.onTertiaryLongPressEnd!.parse(context)
           : null,
       onVerticalDragDown: model.onVerticalDragDown != null
-          ? (_) => Stac.onCallFromJson(model.onVerticalDragDown, context)
+          ? (_) => model.onVerticalDragDown!.parse(context)
           : null,
       onVerticalDragStart: model.onVerticalDragStart != null
-          ? (_) => Stac.onCallFromJson(model.onVerticalDragStart, context)
+          ? (_) => model.onVerticalDragStart!.parse(context)
           : null,
       onVerticalDragUpdate: model.onVerticalDragUpdate != null
-          ? (_) => Stac.onCallFromJson(model.onVerticalDragUpdate, context)
+          ? (_) => model.onVerticalDragUpdate!.parse(context)
           : null,
       onVerticalDragEnd: model.onVerticalDragEnd != null
-          ? (_) => Stac.onCallFromJson(model.onVerticalDragEnd, context)
+          ? (_) => model.onVerticalDragEnd!.parse(context)
           : null,
       onVerticalDragCancel: model.onVerticalDragCancel != null
-          ? () => Stac.onCallFromJson(model.onVerticalDragCancel, context)
+          ? () => model.onVerticalDragCancel!.parse(context)
           : null,
       onHorizontalDragDown: model.onHorizontalDragDown != null
-          ? (_) => Stac.onCallFromJson(model.onHorizontalDragDown, context)
+          ? (_) => model.onHorizontalDragDown!.parse(context)
           : null,
       onHorizontalDragStart: model.onHorizontalDragStart != null
-          ? (_) => Stac.onCallFromJson(model.onHorizontalDragStart, context)
+          ? (_) => model.onHorizontalDragStart!.parse(context)
           : null,
       onHorizontalDragUpdate: model.onHorizontalDragUpdate != null
-          ? (_) => Stac.onCallFromJson(model.onHorizontalDragUpdate, context)
+          ? (_) => model.onHorizontalDragUpdate!.parse(context)
           : null,
       onHorizontalDragEnd: model.onHorizontalDragEnd != null
-          ? (_) => Stac.onCallFromJson(model.onHorizontalDragEnd, context)
+          ? (_) => model.onHorizontalDragEnd!.parse(context)
           : null,
       onHorizontalDragCancel: model.onHorizontalDragCancel != null
-          ? () => Stac.onCallFromJson(model.onHorizontalDragCancel, context)
+          ? () => model.onHorizontalDragCancel!.parse(context)
           : null,
       onForcePressStart: model.onForcePressStart != null
-          ? (_) => Stac.onCallFromJson(model.onForcePressStart, context)
+          ? (_) => model.onForcePressStart!.parse(context)
           : null,
       onForcePressPeak: model.onForcePressPeak != null
-          ? (_) => Stac.onCallFromJson(model.onForcePressPeak, context)
+          ? (_) => model.onForcePressPeak!.parse(context)
           : null,
       onForcePressUpdate: model.onForcePressUpdate != null
-          ? (_) => Stac.onCallFromJson(model.onForcePressUpdate, context)
+          ? (_) => model.onForcePressUpdate!.parse(context)
           : null,
       onForcePressEnd: model.onForcePressEnd != null
-          ? (_) => Stac.onCallFromJson(model.onForcePressEnd, context)
+          ? (_) => model.onForcePressEnd!.parse(context)
           : null,
-      excludeFromSemantics: model.excludeFromSemantics,
-      dragStartBehavior: model.dragStartBehavior,
-      child: Stac.fromJson(model.child, context),
+      onPanDown: model.onPanDown != null
+          ? (_) => model.onPanDown!.parse(context)
+          : null,
+      onPanStart: model.onPanStart != null
+          ? (_) => model.onPanStart!.parse(context)
+          : null,
+      onPanUpdate: model.onPanUpdate != null
+          ? (_) => model.onPanUpdate!.parse(context)
+          : null,
+      onPanEnd: model.onPanEnd != null
+          ? (_) => model.onPanEnd!.parse(context)
+          : null,
+      onPanCancel: model.onPanCancel != null
+          ? () => model.onPanCancel!.parse(context)
+          : null,
+      onScaleStart: model.onScaleStart != null
+          ? (_) => model.onScaleStart!.parse(context)
+          : null,
+      onScaleUpdate: model.onScaleUpdate != null
+          ? (_) => model.onScaleUpdate!.parse(context)
+          : null,
+      onScaleEnd: model.onScaleEnd != null
+          ? (_) => model.onScaleEnd!.parse(context)
+          : null,
+      behavior: model.behavior?.parse,
+      excludeFromSemantics: model.excludeFromSemantics ?? false,
+      dragStartBehavior:
+          model.dragStartBehavior?.parse ?? DragStartBehavior.start,
+      child: model.child.parse(context),
     );
   }
 }

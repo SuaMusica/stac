@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_aspect_ratio/stac_aspect_ratio.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
 
 class StacAspectRatioParser extends StacParser<StacAspectRatio> {
@@ -18,8 +16,8 @@ class StacAspectRatioParser extends StacParser<StacAspectRatio> {
   @override
   Widget parse(BuildContext context, StacAspectRatio model) {
     return AspectRatio(
-      aspectRatio: model.aspectRatio.parse,
-      child: Stac.fromJson(model.child, context),
+      aspectRatio: model.aspectRatio,
+      child: model.child.parse(context),
     );
   }
 }

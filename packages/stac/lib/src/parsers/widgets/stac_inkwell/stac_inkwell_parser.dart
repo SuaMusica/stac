@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/widgets/stac_double/stac_double.dart';
-import 'package:stac/src/parsers/widgets/stac_inkwell/stac_inkwell.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/foundation/animation/stac_duration_parsers.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_radius_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_shape_border_parser.dart';
+import 'package:stac/src/parsers/foundation/interaction/stac_mouse_cursor_parser.dart';
 import 'package:stac/stac.dart';
+import 'package:stac_core/stac_core.dart';
 
 class StacInkwellParser extends StacParser<StacInkWell> {
   const StacInkwellParser();
@@ -18,59 +20,36 @@ class StacInkwellParser extends StacParser<StacInkWell> {
   @override
   Widget parse(BuildContext context, StacInkWell model) {
     return InkWell(
-      onTap: model.onTap == null
+      onTap: () => model.onTap?.parse(context),
+      onDoubleTap: () => model.onDoubleTap?.parse(context),
+      onLongPress: () => model.onLongPress?.parse(context),
+      onTapCancel: () => model.onTapCancel?.parse(context),
+      onSecondaryTap: () => model.onSecondaryTap?.parse(context),
+      onSecondaryTapCancel: () => model.onSecondaryTapCancel?.parse(context),
+      onTapDown: (_) => model.onTapDown?.parse(context),
+      onTapUp: (_) => model.onTapUp?.parse(context),
+      onSecondaryTapUp: (_) => model.onSecondaryTapUp?.parse(context),
+      onSecondaryTapDown: (_) => model.onSecondaryTapDown?.parse(context),
+      onHighlightChanged: (_) => model.onHighlightChanged?.parse(context),
+      onHover: (_) => model.onHover?.parse(context),
+      onFocusChange: (_) => model.onFocusChange?.parse(context),
+      mouseCursor: model.mouseCursor?.parse,
+      focusColor: model.focusColor?.toColor(context),
+      hoverColor: model.hoverColor?.toColor(context),
+      highlightColor: model.highlightColor?.toColor(context),
+      overlayColor: model.overlayColor == null
           ? null
-          : () => Stac.onCallFromJson(model.onTap, context),
-      onDoubleTap: model.onDoubleTap == null
-          ? null
-          : () => Stac.onCallFromJson(model.onDoubleTap, context),
-      onLongPress: model.onLongPress == null
-          ? null
-          : () => Stac.onCallFromJson(model.onLongPress, context),
-      onTapDown: model.onTapDown == null
-          ? null
-          : (_) => Stac.onCallFromJson(model.onTapDown, context),
-      onTapUp: model.onTapUp == null
-          ? null
-          : (_) => Stac.onCallFromJson(model.onTapUp, context),
-      onTapCancel: model.onTapCancel == null
-          ? null
-          : () => Stac.onCallFromJson(model.onTapCancel, context),
-      onSecondaryTap: model.onSecondaryTap == null
-          ? null
-          : () => Stac.onCallFromJson(model.onSecondaryTap, context),
-      onSecondaryTapUp: model.onSecondaryTapUp == null
-          ? null
-          : (_) => Stac.onCallFromJson(model.onSecondaryTapUp, context),
-      onSecondaryTapDown: model.onSecondaryTapDown == null
-          ? null
-          : (_) => Stac.onCallFromJson(model.onSecondaryTapDown, context),
-      onSecondaryTapCancel: model.onSecondaryTapCancel == null
-          ? null
-          : () => Stac.onCallFromJson(model.onSecondaryTapCancel, context),
-      onHighlightChanged: model.onHighlightChanged == null
-          ? null
-          : (_) => Stac.onCallFromJson(model.onHighlightChanged, context),
-      onHover: model.onHover == null
-          ? null
-          : (_) => Stac.onCallFromJson(model.onHover, context),
-      mouseCursor: model.mouseCursor?.value,
-      focusColor: model.focusColor.toColor(context),
-      hoverColor: model.hoverColor.toColor(context),
-      highlightColor: model.highlightColor.toColor(context),
-      overlayColor:
-          WidgetStateProperty.all(model.overlayColor?.toColor(context)),
-      splashColor: model.splashColor.toColor(context),
-      radius: model.radius?.parse,
-      borderRadius: model.borderRadius.parse,
+          : WidgetStateProperty.all(model.overlayColor!.toColor(context)),
+      splashColor: model.splashColor?.toColor(context),
+      radius: model.radius,
+      borderRadius: model.borderRadius?.parse,
       customBorder: model.customBorder?.parse(context),
-      enableFeedback: model.enableFeedback,
-      excludeFromSemantics: model.excludeFromSemantics,
-      canRequestFocus: model.canRequestFocus,
-      onFocusChange: (_) => Stac.onCallFromJson(model.onFocusChange, context),
-      autofocus: model.autofocus,
+      enableFeedback: model.enableFeedback ?? true,
+      excludeFromSemantics: model.excludeFromSemantics ?? false,
+      canRequestFocus: model.canRequestFocus ?? true,
+      autofocus: model.autofocus ?? false,
       hoverDuration: model.hoverDuration?.parse,
-      child: Stac.fromJson(model.child, context),
+      child: model.child.parse(context),
     );
   }
 }

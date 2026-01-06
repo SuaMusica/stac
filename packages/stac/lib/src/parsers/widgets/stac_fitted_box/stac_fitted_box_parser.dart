@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/alignment/stac_alignment_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_box_fit_parser.dart';
+import 'package:stac/src/parsers/foundation/layout/stac_clip_parser.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_fitted_box.dart';
 
 class StacFittedBoxParser extends StacParser<StacFittedBox> {
   const StacFittedBoxParser();
@@ -18,10 +19,10 @@ class StacFittedBoxParser extends StacParser<StacFittedBox> {
   @override
   Widget parse(BuildContext context, StacFittedBox model) {
     return FittedBox(
-      fit: model.fit,
-      alignment: model.alignment.value,
-      clipBehavior: model.clipBehavior,
-      child: Stac.fromJson(model.child, context),
+      fit: model.fit?.parse ?? BoxFit.contain,
+      alignment: model.alignment?.parse ?? Alignment.center,
+      clipBehavior: model.clipBehavior?.parse ?? Clip.none,
+      child: model.child.parse(context),
     );
   }
 }

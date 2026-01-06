@@ -1,3 +1,10 @@
+# 1.0.0
+
+  - Converted `StacWebView` from Freezed to `StacWidget` base class
+  - Fields are now nullable with defaults applied in the parser
+  - `StacWebView` now extends `StacWidget` for consistency with other Stac widgets
+  - Improved documentation following Stac widget patterns
+
 # 0.2.0
 
 * Bump webview_flutter and json_serializable versions.

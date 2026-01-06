@@ -1,15 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:stac/src/parsers/actions/stac_modal_bottom_sheet_action/stac_modal_bottom_sheet_action.dart';
 import 'package:stac/src/framework/framework.dart';
-import 'package:stac/src/parsers/widgets/stac_border/stac_border.dart';
-import 'package:stac/src/parsers/widgets/stac_box_constraints/stac_box_constraints.dart';
-import 'package:stac/src/utils/action_type.dart';
+import 'package:stac/src/parsers/core/stac_widget_parser.dart';
+import 'package:stac/src/parsers/foundation/borders/stac_border_parser.dart';
+import 'package:stac/src/parsers/foundation/geometry/stac_box_constraints_parser.dart';
 import 'package:stac/src/utils/color_utils.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-export 'stac_modal_bottom_sheet_action.dart';
 
 class StacModalBottomSheetActionParser
     extends StacActionParser<StacModalBottomSheetAction> {
@@ -28,13 +26,13 @@ class StacModalBottomSheetActionParser
       return _showModalBottomSheet(
         context,
         model,
-        Stac.fromJson(model.widget, context) ?? const SizedBox(),
+        model.widget?.parse(context) ?? const SizedBox(),
       );
     } else if (model.assetPath?.isNotEmpty ?? false) {
       return _showModalBottomSheet(
         context,
         model,
-        Stac.fromAssets(model.assetPath!) ?? const SizedBox(),
+        Stac.fromAssets(model.assetPath!),
       );
     } else if (model.request != null) {
       return _showModalBottomSheet(
@@ -59,12 +57,12 @@ class StacModalBottomSheetActionParser
       shape: model.shape?.parse(context),
       constraints: model.constraints?.parse,
       barrierColor: model.barrierColor.toColor(context),
-      isScrollControlled: model.isScrollControlled,
-      useRootNavigator: model.useRootNavigator,
-      isDismissible: model.isDismissible,
-      enableDrag: model.enableDrag,
+      isScrollControlled: model.isScrollControlled ?? false,
+      useRootNavigator: model.useRootNavigator ?? false,
+      isDismissible: model.isDismissible ?? true,
+      enableDrag: model.enableDrag ?? true,
       showDragHandle: model.showDragHandle,
-      useSafeArea: model.useSafeArea,
+      useSafeArea: model.useSafeArea ?? false,
     );
   }
 }

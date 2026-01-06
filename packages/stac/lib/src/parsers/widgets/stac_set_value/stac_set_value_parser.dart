@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stac/src/framework/framework.dart';
 import 'package:stac/src/utils/variable_resolver.dart';
-import 'package:stac/src/utils/widget_type.dart';
+import 'package:stac_core/stac_core.dart';
 import 'package:stac_framework/stac_framework.dart';
-
-import 'stac_set_value.dart';
 
 class StacSetValueParser extends StacParser<StacSetValue> {
   const StacSetValueParser();
@@ -53,10 +51,14 @@ class _SetValueWidgetState extends State<_SetValueWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final resolvedJson = resolveVariablesInJson(
-      widget.model.child,
-      _stacRegistry,
-    );
+    if (widget.model.child == null) {
+      return const SizedBox();
+    }
+
+    // Convert the StacWidget to JSON, resolve variables, then parse it back
+    final childJson = widget.model.child!.toJson();
+
+    final resolvedJson = resolveVariablesInJson(childJson, _stacRegistry);
 
     return Stac.fromJson(resolvedJson, context) ?? const SizedBox();
   }
