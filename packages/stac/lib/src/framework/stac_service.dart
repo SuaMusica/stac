@@ -115,6 +115,7 @@ class StacService {
     const StacRadioGroupParser(),
     const StacSliderParser(),
     const StacSliverAppBarParser(),
+    const StacSliverGridParser(),
     const StacSliverFillRemainingParser(),
     const StacSliverListParser(),
     const StacSliverVisibilityParser(),
