@@ -1,3 +1,7 @@
+## 1.3.1
+
+- fix: Bump `stac_core`to ^1.3.0
+
 ## 1.3.0
 
 - **BREAKING**: Refactored caching to use global configuration via `Stac.initialize()`. See [Caching Docs](https://docs.stac.dev/concepts/caching) for migration guide.
