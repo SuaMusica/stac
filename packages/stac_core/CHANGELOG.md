@@ -1,3 +1,23 @@
+## 1.3.0
+
+- Added `StacSliverToBoxAdapter` widget model
+- Added `StacSliverPadding` widget model
+- Added `StacSliverSafeArea` widget model
+- Added `StacSliverOpacity` widget model
+- Added `StacSliverVisibility` widget model
+- Added `StacSliverList` widget model
+- Added `StacSliverFillRemaining` widget model
+- Added `StacSliverGrid` widget model
+
+## 1.2.0
+
+- Added `StacBadge` widget model for displaying badges with labels or counts
+- Added `StacTooltip` widget model for tooltip functionality
+- Added `StacSelectableText` widget model for selectable text display
+- Added `loadingWidget` and `errorWidget` properties to `StacNetworkWidget` model
+- Added `StacTooltipThemeData` model for tooltip theme configuration
+- Added `StacThemeRef` annotation for Stac Theme DSL support
+
 ## 1.1.0
 
 - Added Stac Theme and ThemeData classes to stac_core

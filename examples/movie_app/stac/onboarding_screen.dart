@@ -13,10 +13,7 @@ StacWidget onboardingScreen() {
           height: double.maxFinite,
           fit: StacBoxFit.cover,
         ),
-        StacPositioned(
-          left: 0,
-          right: 0,
-          bottom: 0,
+        StacPositioned.fill(
           child: StacContainer(
             width: double.maxFinite,
             height: 500,
@@ -62,7 +59,7 @@ StacWidget onboardingScreen() {
                       child: StacText(
                         data: AppStrings.onboardingGetStartedButton,
                       ),
-                      onPressed: StacNavigateAction(routeName: 'home_screen'),
+                      onPressed: StacNavigator.pushStac('home_screen'),
                     ),
                   ),
                 ],
