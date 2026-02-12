@@ -65,6 +65,14 @@ export 'package:stac/src/parsers/widgets/stac_single_child_scroll_view/stac_sing
 export 'package:stac/src/parsers/widgets/stac_sized_box/stac_sized_box_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_slider/stac_slider_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_sliver_app_bar/stac_sliver_app_bar_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_grid/stac_sliver_grid_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_list/stac_sliver_list_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_visibility/stac_sliver_visibility_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_fill_remaining/stac_sliver_fill_remaining_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_opacity/stac_sliver_opacity_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_safe_area/stac_sliver_safe_area_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_padding/stac_sliver_padding_parser.dart';
+export 'package:stac/src/parsers/widgets/stac_sliver_to_box_adapter/stac_sliver_to_box_adapter_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_spacer/stac_spacer_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_stack/stac_stack_parser.dart';
 export 'package:stac/src/parsers/widgets/stac_switch/stac_switch_parser.dart';

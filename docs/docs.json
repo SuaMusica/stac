@@ -29,8 +29,11 @@
                             "introduction",
                             "quickstart",
                             "sdui",
+                            "dsl",
                             "cli",
-                            "project_structure"
+                            "project_structure",
+                            "skills",
+                            "changelog"
                         ]
                     },
                     {
@@ -38,10 +41,19 @@
                         "icon": "book",
                         "pages": [
                             "concepts/rendering_stac_widgets",
+                            "concepts/navigation_in_stac",
                             "concepts/caching",
                             "concepts/custom_widgets",
                             "concepts/custom_actions",
                             "concepts/theming"
+                        ]
+                    },
+                    {
+                        "group": "Guides",
+                        "icon": "map",
+                        "pages": [
+                            "guides/migration",
+                            "guides/troubleshooting"
                         ]
                     }
                 ]
@@ -67,6 +79,8 @@
                             "widgets/row",
                             "widgets/safe_area",
                             "widgets/sized_box",
+                            "widgets/sliver_padding",
+                            "widgets/sliver_to_box_adapter",
                             "widgets/spacer",
                             "widgets/stack",
                             "widgets/wrap",
@@ -77,16 +91,21 @@
                         "group": "Display Widgets",
                         "pages": [
                             "widgets/backdrop_filter",
+                            "widgets/badge",
                             "widgets/card",
                             "widgets/carousel_view",
                             "widgets/circle_avatar",
                             "widgets/clip_oval",
                             "widgets/clip_rrect",
                             "widgets/colored_box",
+                            "widgets/conditional",
+                            "widgets/divider",
+                            "widgets/hero",
                             "widgets/icon",
                             "widgets/image",
                             "widgets/opacity",
                             "widgets/placeholder",
+                            "widgets/set_value",
                             "widgets/visibility"
                         ]
                     },
@@ -122,6 +141,12 @@
                             "widgets/single_child_scroll_view",
                             "widgets/slider",
                             "widgets/sliver_app_bar",
+                            "widgets/sliver_grid",
+                            "widgets/sliver_fill_remaining",
+                            "widgets/sliver_list",
+                            "widgets/sliver_visibility",
+                            "widgets/sliver_opacity",
+                            "widgets/sliver_safe_area",
                             "widgets/switch",
                             "widgets/tab_bar",
                             "widgets/text_button",
@@ -176,11 +201,64 @@
                         ]
                     },
                     {
+                        "group": "State Actions",
+                        "pages": [
+                            "actions/set_value"
+                        ]
+                    },
+                    {
                         "group": "Utility Actions",
                         "pages": [
                             "actions/delay_action",
                             "actions/multi_action",
                             "actions/none"
+                        ]
+                    }
+                ]
+            },
+            {
+                "tab": "Styles",
+                "groups": [
+                    {
+                        "group": "Layout Styles",
+                        "pages": [
+                            "styles/edge_insets",
+                            "styles/alignment",
+                            "styles/stac_alignment_directional",
+                            "styles/box_constraints",
+                            "styles/box_fit",
+                            "styles/clip_behavior"
+                        ]
+                    },
+                    {
+                        "group": "Decoration Styles",
+                        "pages": [
+                            "styles/box_decoration",
+                            "styles/gradient",
+                            "styles/box_shadow",
+                            "styles/colors"
+                        ]
+                    },
+                    {
+                        "group": "Border Styles",
+                        "pages": [
+                            "styles/border",
+                            "styles/border_radius",
+                            "styles/border_side",
+                            "styles/shape_borders"
+                        ]
+                    },
+                    {
+                        "group": "Text Styles",
+                        "pages": [
+                            "styles/text_style"
+                        ]
+                    },
+                    {
+                        "group": "Table Styles",
+                        "pages": [
+                            "styles/table_border",
+                            "styles/table_column_width"
                         ]
                     }
                 ]
