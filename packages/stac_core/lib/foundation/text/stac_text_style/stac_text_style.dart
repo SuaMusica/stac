@@ -705,3 +705,79 @@ class StacThemeTextStyle extends StacTextStyle {
     );
   }
 }
+
+/// Extension so [StacTextStyle] can use [copyWith] without changing the plugin.
+/// Delegates to [StacCustomTextStyle.copyWith] or [StacThemeTextStyle.copyWith].
+extension StacTextStyleCopyWith on StacTextStyle {
+  StacTextStyle copyWith({
+    bool? inherit,
+    StacColor? color,
+    StacColor? backgroundColor,
+    double? fontSize,
+    StacFontWeight? fontWeight,
+    StacFontStyle? fontStyle,
+    double? letterSpacing,
+    double? wordSpacing,
+    StacTextBaseline? textBaseline,
+    double? height,
+    StacTextLeadingDistribution? leadingDistribution,
+    StacColor? decorationColor,
+    StacTextDecorationStyle? decorationStyle,
+    double? decorationThickness,
+    String? debugLabel,
+    String? fontFamily,
+    List<String>? fontFamilyFallback,
+    String? package,
+    StacTextOverflow? overflow,
+  }) {
+    if (this is StacCustomTextStyle) {
+      return (this as StacCustomTextStyle).copyWith(
+        inherit: inherit,
+        color: color,
+        backgroundColor: backgroundColor,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+        textBaseline: textBaseline,
+        height: height,
+        leadingDistribution: leadingDistribution,
+        decorationColor: decorationColor,
+        decorationStyle: decorationStyle,
+        decorationThickness: decorationThickness,
+        debugLabel: debugLabel,
+        fontFamily: fontFamily,
+        fontFamilyFallback: fontFamilyFallback,
+        package: package,
+        overflow: overflow,
+      );
+    }
+    if (this is StacThemeTextStyle) {
+      return (this as StacThemeTextStyle).copyWith(
+        inherit: inherit,
+        color: color,
+        backgroundColor: backgroundColor,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+        textBaseline: textBaseline,
+        height: height,
+        leadingDistribution: leadingDistribution,
+        decorationColor: decorationColor,
+        decorationStyle: decorationStyle,
+        decorationThickness: decorationThickness,
+        debugLabel: debugLabel,
+        fontFamily: fontFamily,
+        fontFamilyFallback: fontFamilyFallback,
+        package: package,
+        overflow: overflow,
+      );
+    }
+    throw StateError(
+      'copyWith only supported on StacCustomTextStyle and StacThemeTextStyle',
+    );
+  }
+}
