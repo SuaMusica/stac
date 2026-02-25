@@ -19,33 +19,6 @@ import 'package:stac_core/core/stac_options.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_logger/stac_logger.dart';
 
-/// Canonical platform identifiers supported in JSON "platform" field.
-/// Incoming values are normalized (e.g. lowercased) and validated against this list.
-const List<String> supportedPlatformStrings = [
-  'android',
-  'ios',
-  'linux',
-  'macos',
-  'windows',
-  'web',
-];
-
-/// Returns the current platform as a canonical string (one of [supportedPlatformStrings]).
-String _currentPlatformString() {
-  if (kIsWeb) {
-    return 'web';
-  }
-
-  return switch (defaultTargetPlatform) {
-    TargetPlatform.android => 'android',
-    TargetPlatform.iOS => 'ios',
-    TargetPlatform.linux => 'linux',
-    TargetPlatform.macOS => 'macos',
-    TargetPlatform.windows => 'windows',
-    _ => 'unknown',
-  };
-}
-
 /// Internal service that manages Stac parsers, actions, and rendering.
 ///
 /// This service is the core of the Stac framework, responsible for:
@@ -248,7 +221,7 @@ class StacService {
 
       /// Check if platform is specified and validate
       if (platform != null) {
-        final currentPlatform = _currentPlatformString();
+        final currentPlatform = currentPlatformString();
         final rawList = platform is List
             ? platform.map((e) => e.toString().toLowerCase()).toList()
             : <String>[platform.toString().toLowerCase()];
