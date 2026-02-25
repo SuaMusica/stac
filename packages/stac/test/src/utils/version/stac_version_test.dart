@@ -49,7 +49,7 @@ void main() {
           '<': StacConditionVersion.lessThan,
           '<=': StacConditionVersion.lessThanOrEqual,
           '==': StacConditionVersion.equal,
-          'invalid': StacConditionVersion.notEqual,
+          'invalid': StacConditionVersion.greaterThanOrEqual,
         };
 
         conditions.forEach((input, expected) {
@@ -57,10 +57,10 @@ void main() {
         });
       });
 
-      test('handles null input by returning notEqual', () {
+      test('handles null input by returning greaterThanOrEqual', () {
         String? nullString;
-        expect(
-            nullString.toStacConditionVersion(), StacConditionVersion.notEqual);
+        expect(nullString.toStacConditionVersion(),
+            StacConditionVersion.greaterThanOrEqual);
       });
     });
 
