@@ -2,15 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/foundation.dart';
 import 'package:stac/src/framework/stac_registry.dart';
 import 'package:stac/src/utils/version/stac_version.dart';
+import 'package:stac/src/utils/stac_platforms.dart';
 
-String _platformSuffix() {
-  if (kIsWeb) {
-    return 'web';
-  }
-  return defaultTargetPlatform.name.toLowerCase();
-}
-
-final String platform = _platformSuffix();
+final String platform = currentPlatformString();
 
 void main() {
   group('StacVersion', () {
