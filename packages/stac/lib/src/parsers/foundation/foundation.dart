@@ -69,6 +69,7 @@ export 'layout/stac_stack_fit_parser.dart';
 export 'layout/stac_vertical_direction_parser.dart';
 export 'layout/stac_wrap_alignment_parser.dart';
 export 'layout/stac_wrap_cross_alignment_parser.dart';
+export 'layout/parsers.dart';
 // Navigation parsers
 export 'navigation/stac_bottom_navigation_bar_landscape_layout_parser.dart';
 export 'navigation/stac_bottom_navigation_bar_type_parser.dart';

@@ -1,13 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' hide ErrorWidgetBuilder;
 import 'package:flutter/services.dart';
-import 'package:stac/src/framework/stac.dart';
-import 'package:stac/src/models/stac_cache_config.dart';
 import 'package:stac/src/framework/stac_error.dart';
 import 'package:stac/src/parsers/actions/stac_form_validate/stac_form_validate_parser.dart';
 import 'package:stac/src/parsers/actions/stac_get_form_value/stac_get_form_value_parser.dart';
@@ -21,6 +18,33 @@ import 'package:stac/stac.dart';
 import 'package:stac_core/core/stac_options.dart';
 import 'package:stac_core/stac_core.dart';
 import 'package:stac_logger/stac_logger.dart';
+
+/// Canonical platform identifiers supported in JSON "platform" field.
+/// Incoming values are normalized (e.g. lowercased) and validated against this list.
+const List<String> supportedPlatformStrings = [
+  'android',
+  'ios',
+  'linux',
+  'macos',
+  'windows',
+  'web',
+];
+
+/// Returns the current platform as a canonical string (one of [supportedPlatformStrings]).
+String _currentPlatformString() {
+  if (kIsWeb) {
+    return 'web';
+  }
+
+  return switch (defaultTargetPlatform) {
+    TargetPlatform.android => 'android',
+    TargetPlatform.iOS => 'ios',
+    TargetPlatform.linux => 'linux',
+    TargetPlatform.macOS => 'macos',
+    TargetPlatform.windows => 'windows',
+    _ => 'unknown',
+  };
+}
 
 /// Internal service that manages Stac parsers, actions, and rendering.
 ///
@@ -224,24 +248,29 @@ class StacService {
 
       /// Check if platform is specified and validate
       if (platform != null) {
-        final currentPlatform = Platform.operatingSystem;
-        bool isPlatformSupported = false;
-        List<String> supportedPlatforms = [];
-
-        // Check if platform is a list or a single string
-        if (platform is List) {
-          supportedPlatforms = platform.map((e) => e.toString()).toList();
-          isPlatformSupported = supportedPlatforms.contains(currentPlatform);
-        } else if (platform is String) {
-          supportedPlatforms.add(platform);
-          isPlatformSupported = platform == currentPlatform;
+        final currentPlatform = _currentPlatformString();
+        final rawList = platform is List
+            ? platform.map((e) => e.toString().toLowerCase()).toList()
+            : <String>[platform.toString().toLowerCase()];
+        final validatedPlatforms = rawList
+            .where((s) => supportedPlatformStrings.contains(s))
+            .toList();
+        final invalid = rawList
+            .where((s) => !supportedPlatformStrings.contains(s))
+            .toList();
+        if (invalid.isNotEmpty) {
+          Log.w(
+            'Unknown platform identifier(s) in "platform": $invalid. Supported: $supportedPlatformStrings',
+          );
         }
 
-        // If platform is not supported, log and return null
-        if (!isPlatformSupported) {
-          final platformsStr = supportedPlatforms.join(', ');
+        final isPlatformSupported = validatedPlatforms.contains(
+          currentPlatform,
+        );
+
+        if (!isPlatformSupported && validatedPlatforms.isNotEmpty) {
           Log.w(
-            'Widget not supported on platform [$currentPlatform]. Only available for: $platformsStr',
+            'Widget not supported on platform [$currentPlatform]. Only available for: ${validatedPlatforms.join(', ')}',
           );
           return null;
         }
