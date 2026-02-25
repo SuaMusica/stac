@@ -4,7 +4,6 @@ export 'package:stac/src/parsers/actions/actions.dart';
 export 'package:stac/src/parsers/parsers.dart';
 export 'package:stac/src/services/services.dart';
 export 'package:stac/src/utils/utils.dart';
-export 'package:stac/src/parsers/foundation/layout/parsers.dart';
 // Theme exports
 export 'package:stac_core/stac_core.dart' show StacTheme;
 
