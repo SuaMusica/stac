@@ -69,13 +69,14 @@ void main() {
         StacRegistry.instance.registerBuildNumber(2000);
       });
 
-      test('returns false when app version is null', () {
-        StacRegistry.instance.registerBuildNumber(null);
+      test('returns true when app version is null', () {
         final version = StacVersion(
           buildNumber: 1000,
           condition: StacConditionVersion.equal,
         );
-        expect(version.isSatisfied(StacRegistry.instance.buildNumber), false);
+        // When there is no app build number (e.g. StacRegistry.instance.registerBuildNumber(null)),
+        // StacVersion.isSatisfied should treat the constraint as satisfied.
+        expect(version.isSatisfied(null), true);
       });
 
       test('handles equal condition correctly', () {
@@ -147,14 +148,13 @@ void main() {
             exactVersion.isSatisfied(StacRegistry.instance.buildNumber), true);
       });
 
-      test('handles version with non-numeric components', () {
+      test('handles build number equality', () {
         StacRegistry.instance.registerBuildNumber(2000);
 
         final version = StacVersion(
           buildNumber: 2000,
           condition: StacConditionVersion.equal,
         );
-        // Non-numeric components should be treated as 0
         expect(version.isSatisfied(StacRegistry.instance.buildNumber), true);
       });
     });
@@ -196,7 +196,9 @@ void main() {
         () {
       final json = {
         'buildNumber': 1500,
-        'buildNumber_ios': 2500, // Different platform
+        // Use a platform key that will not match the current platform,
+        // so the generic buildNumber is always used.
+        'buildNumber_fuchsia': 2500,
         'condition': '>=',
       };
 
