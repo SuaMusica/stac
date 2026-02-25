@@ -1,10 +1,16 @@
-import 'dart:io';
-
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/foundation.dart';
 import 'package:stac/src/framework/stac_registry.dart';
 import 'package:stac/src/utils/version/stac_version.dart';
 
-String platform = Platform.operatingSystem;
+String _platformSuffix() {
+  if (kIsWeb) {
+    return 'web';
+  }
+  return defaultTargetPlatform.name.toLowerCase();
+}
+
+final String platform = _platformSuffix();
 
 void main() {
   group('StacVersion', () {

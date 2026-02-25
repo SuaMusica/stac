@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:stac/stac.dart';
 
 /// # STAC Version Management System
@@ -128,10 +126,7 @@ class StacVersion {
   ///
   /// [buildNumber] is the reference build number for comparison.
   /// [condition] defines how the comparison should be performed.
-  const StacVersion({
-    required this.buildNumber,
-    required this.condition,
-  });
+  const StacVersion({required this.buildNumber, required this.condition});
 
   /// The reference build number used for version comparisons.
   final int buildNumber;
@@ -168,8 +163,9 @@ class StacVersion {
   ///
   /// This enables different version requirements per platform while
   /// maintaining a single configuration source.
-  static dynamic toPlatformJson(Map<String, dynamic> json, String key) =>
-      json['${key}_${Platform.operatingSystem}'] ?? json[key];
+  static dynamic toPlatformJson(Map<String, dynamic> json, String key) {
+    return json['${key}_${currentPlatformString()}'] ?? json[key];
+  }
 }
 
 /// Defines the available comparison operators for version conditions.
@@ -216,14 +212,14 @@ enum StacConditionVersion {
 extension StacConditionVersionX on String? {
   /// Converts a string operator to its corresponding [StacConditionVersion].
   StacConditionVersion toStacConditionVersion() => switch (this) {
-        '>' => StacConditionVersion.greaterThan,
-        '>=' => StacConditionVersion.greaterThanOrEqual,
-        '<' => StacConditionVersion.lessThan,
-        '<=' => StacConditionVersion.lessThanOrEqual,
-        '==' => StacConditionVersion.equal,
-        '!=' => StacConditionVersion.notEqual,
-        _ => StacConditionVersion.notEqual,
-      };
+    '>' => StacConditionVersion.greaterThan,
+    '>=' => StacConditionVersion.greaterThanOrEqual,
+    '<' => StacConditionVersion.lessThan,
+    '<=' => StacConditionVersion.lessThanOrEqual,
+    '==' => StacConditionVersion.equal,
+    '!=' => StacConditionVersion.notEqual,
+    _ => StacConditionVersion.notEqual,
+  };
 }
 
 /// Extension to convert [StacConditionVersion] enum values back to string operators.
@@ -232,13 +228,13 @@ extension StacConditionVersionX on String? {
 extension StacConditionVersionToStringX on StacConditionVersion {
   /// Returns the string representation of the condition operator.
   String toTypeString() => switch (this) {
-        StacConditionVersion.greaterThan => '>',
-        StacConditionVersion.greaterThanOrEqual => '>=',
-        StacConditionVersion.lessThan => '<',
-        StacConditionVersion.lessThanOrEqual => '<=',
-        StacConditionVersion.equal => '==',
-        StacConditionVersion.notEqual => '!=',
-      };
+    StacConditionVersion.greaterThan => '>',
+    StacConditionVersion.greaterThanOrEqual => '>=',
+    StacConditionVersion.lessThan => '<',
+    StacConditionVersion.lessThanOrEqual => '<=',
+    StacConditionVersion.equal => '==',
+    StacConditionVersion.notEqual => '!=',
+  };
 }
 
 /// Extension providing version satisfaction checking functionality.
