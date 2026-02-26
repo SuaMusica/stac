@@ -7,7 +7,7 @@ part of 'stac_text_span.dart';
 // **************************************************************************
 
 StacTextSpan _$StacTextSpanFromJson(Map<String, dynamic> json) => StacTextSpan(
-  text: json['text'] as String?,
+  text: _readTextOrData(json, 'text') as String?,
   style: json['style'] == null ? null : StacTextStyle.fromJson(json['style']),
   children:
       (json['children'] as List<dynamic>?)
